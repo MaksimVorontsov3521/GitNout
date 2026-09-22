@@ -1,0 +1,10 @@
+Flow Status : Successful - Tue Oct 04 14:43:02 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : lab2
+Top-level Entity Name : Risk
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 6 / 128 ( 4 % )
+Total pins : 8 / 68 ( 11 % )

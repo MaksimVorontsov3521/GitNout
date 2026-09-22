@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+Risk
+# case_insensitive
+# source_file
+Risk.bdf
+1789897365
+23
+# storage
+db|lab2.(0).cnf
+db|lab2.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

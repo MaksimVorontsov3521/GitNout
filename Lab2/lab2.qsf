@@ -1,0 +1,61 @@
+# Copyright (C) 1991-2005 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic       
+# functions, and any output files any of the foregoing           
+# (including device programming or simulation files), and any    
+# associated documentation or information are expressly subject  
+# to the terms and conditions of the Altera Program License      
+# Subscription Agreement, Altera MegaCore Function License       
+# Agreement, or other applicable license agreement, including,   
+# without limitation, that your use is for the sole purpose of   
+# programming logic devices manufactured by Altera and sold by   
+# Altera or its authorized distributors.  Please refer to the    
+# applicable agreement for further details.
+
+
+# The default values for assignments are stored in the file
+#		lab2_assignment_defaults.qdf
+# If this file doesn't exist, and for assignments not listed, see file
+#		assignment_defaults.qdf
+
+# Altera recommends that you do not modify this file. This
+# file is updated automatically by the Quartus II software
+# and any changes you make may be lost or overwritten.
+
+
+# Project-Wide Assignments
+# ========================
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 5.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:51:10  SEPTEMBER 24, 2022"
+set_global_assignment -name LAST_QUARTUS_VERSION 5.0
+set_global_assignment -name BDF_FILE lab2.bdf
+set_global_assignment -name BDF_FILE Risk.bdf
+set_global_assignment -name BDF_FILE pluse_gen.bdf
+set_global_assignment -name BDF_FILE pluse_former.bdf
+set_global_assignment -name BDF_FILE pluse_former_parasite_output.bdf
+set_global_assignment -name BDF_FILE pluse_former_fon_and_slice.bdf
+set_global_assignment -name BDF_FILE pluse_former_XOR.bdf
+set_global_assignment -name VECTOR_WAVEFORM_FILE lab2.vwf
+
+# Timing Assignments
+# ==================
+set_global_assignment -name IGNORE_CLOCK_SETTINGS ON
+
+# Analysis & Synthesis Assignments
+# ================================
+set_global_assignment -name FAMILY MAX7000S
+set_global_assignment -name ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS OFF
+set_global_assignment -name NOT_GATE_PUSH_BACK OFF
+set_global_assignment -name MAX7000_IGNORE_LCELL_BUFFERS OFF
+set_global_assignment -name TOP_LEVEL_ENTITY Risk
+
+# Fitter Assignments
+# ==================
+set_global_assignment -name DEVICE "EPM7128SLC84-15"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+
+# Simulator Assignments
+# =====================
+set_global_assignment -name SIMULATION_MODE TIMING

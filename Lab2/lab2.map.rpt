@@ -1,0 +1,165 @@
+Analysis & Synthesis report for lab2
+Tue Oct 04 14:43:00 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis Equations
+  8. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Oct 04 14:43:00 2022    ;
+; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name               ; lab2                                     ;
+; Top-level Entity Name       ; Risk                                     ;
+; Family                      ; MAX7000S                                 ;
+; Total macrocells            ; 6                                        ;
+; Total pins                  ; 4                                        ;
++-----------------------------+------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                          ;
++----------------------------------------------------------------------+-----------------+---------------+
+; Option                                                               ; Setting         ; Default Value ;
++----------------------------------------------------------------------+-----------------+---------------+
+; Device                                                               ; EPM7128SLC84-15 ;               ;
+; Top-level entity name                                                ; Risk            ; lab2          ;
+; Family name                                                          ; MAX7000S        ; Stratix       ;
+; Add Pass-Through Logic to Inferred RAMs                              ; Off             ; On            ;
+; NOT Gate Push-Back                                                   ; Off             ; On            ;
+; Ignore LCELL Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A           ; Off             ; Auto          ;
+; Use smart compilation                                                ; Off             ; Off           ;
+; Create Debugging Nodes for IP Cores                                  ; off             ; off           ;
+; Preserve fewer node names                                            ; On              ; On            ;
+; Disable OpenCore Plus hardware evaluation                            ; Off             ; Off           ;
+; Verilog Version                                                      ; Verilog_2001    ; Verilog_2001  ;
+; VHDL Version                                                         ; VHDL93          ; VHDL93        ;
+; State Machine Processing                                             ; Auto            ; Auto          ;
+; Extract Verilog State Machines                                       ; On              ; On            ;
+; Extract VHDL State Machines                                          ; On              ; On            ;
+; Power-Up Don't Care                                                  ; On              ; On            ;
+; Remove Redundant Logic Cells                                         ; Off             ; Off           ;
+; Remove Duplicate Registers                                           ; On              ; On            ;
+; Ignore CARRY Buffers                                                 ; Off             ; Off           ;
+; Ignore CASCADE Buffers                                               ; Off             ; Off           ;
+; Ignore GLOBAL Buffers                                                ; Off             ; Off           ;
+; Ignore ROW GLOBAL Buffers                                            ; Off             ; Off           ;
+; Ignore SOFT Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A            ; Off             ; Off           ;
+; Limit AHDL Integers to 32 Bits                                       ; Off             ; Off           ;
+; Optimization Technique -- MAX 7000B/7000AE/3000A/7000S/7000A         ; Speed           ; Speed         ;
+; Allow XOR Gate Usage                                                 ; On              ; On            ;
+; Auto Logic Cell Insertion                                            ; On              ; On            ;
+; Parallel Expander Chain Length -- MAX 7000B/7000AE/3000A/7000S/7000A ; 4               ; 4             ;
+; Auto Parallel Expanders                                              ; On              ; On            ;
+; Auto Open-Drain Pins                                                 ; On              ; On            ;
+; Remove Duplicate Logic                                               ; On              ; On            ;
+; Auto Resource Sharing                                                ; Off             ; Off           ;
+; Maximum Fan-in Per Macrocell -- MAX 7000B/7000AE/3000A/7000S/7000A   ; 100             ; 100           ;
+; Ignore translate_off and translate_on Synthesis Directives           ; Off             ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report                   ; On              ; On            ;
++----------------------------------------------------------------------+-----------------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                 ;
++----------------------------------+-----------------+------------------------------------+------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path ;
++----------------------------------+-----------------+------------------------------------+------------------------------+
+; Risk.bdf                         ; yes             ; User Block Diagram/Schematic File  ; Z:/Lab2/Risk.bdf             ;
++----------------------------------+-----------------+------------------------------------+------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++----------------------+----------------------+
+; Resource             ; Usage                ;
++----------------------+----------------------+
+; Logic cells          ; 6                    ;
+; Total registers      ; 0                    ;
+; I/O pins             ; 4                    ;
+; Maximum fan-out node ; inst7                ;
+; Maximum fan-out      ; 2                    ;
+; Total fan-out        ; 10                   ;
+; Average fan-out      ; 1.00                 ;
++----------------------+----------------------+
+
+
++----------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                  ;
++----------------------------+------------+------+---------------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ;
++----------------------------+------------+------+---------------------+
+; |Risk                      ; 6          ; 4    ; |Risk               ;
++----------------------------+------------+------+---------------------+
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in Z:/Lab2/lab2.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Tue Oct 04 14:42:58 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
+Info: Found 1 design units, including 1 entities, in source file lab2.bdf
+    Info: Found entity 1: lab2
+Info: Found 1 design units, including 1 entities, in source file Risk.bdf
+    Info: Found entity 1: Risk
+Info: Found 1 design units, including 1 entities, in source file pluse_gen.bdf
+    Info: Found entity 1: pluse_gen
+Info: Found 1 design units, including 1 entities, in source file pluse_former.bdf
+    Info: Found entity 1: pluse_former
+Info: Found 1 design units, including 1 entities, in source file pluse_former_parasite_output.bdf
+    Info: Found entity 1: pluse_former_parasite_output
+Info: Found 1 design units, including 1 entities, in source file pluse_former_fon_and_slice.bdf
+    Info: Found entity 1: pluse_former_fon_and_slice
+Info: Found 1 design units, including 1 entities, in source file pluse_former_XOR.bdf
+    Info: Found entity 1: pluse_former_XOR
+Info: Elaborating entity "Risk" for the top level hierarchy
+Info: Implemented 10 device resources after synthesis - the final resource count might be different
+    Info: Implemented 1 input pins
+    Info: Implemented 3 output pins
+    Info: Implemented 6 macrocells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Processing ended: Tue Oct 04 14:43:00 2022
+    Info: Elapsed time: 00:00:02
+
+

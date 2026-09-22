@@ -1,0 +1,68 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--inst7 is inst7
+inst7_or_out = !Risk_A;
+inst7 = inst7_or_out;
+
+
+--inst5 is inst5
+inst5_or_out = !Risk_A;
+inst5 = inst5_or_out;
+
+
+--inst6 is inst6
+inst6_or_out = !inst5;
+inst6 = inst6_or_out;
+
+
+--A1L4 is inst9~0
+A1L4_p1_out = !inst7 & !inst6;
+A1L4_or_out = A1L4_p1_out;
+A1L4 = !(A1L4_or_out);
+
+
+--A1L8 is Risk_X1~xor
+A1L8_or_out = inst7;
+A1L8 = !(A1L8_or_out);
+
+
+--A1L01 is Risk_X2~xor
+A1L01_or_out = inst6;
+A1L01 = !(A1L01_or_out);
+
+
+--Risk_A is Risk_A
+--operation mode is input
+
+Risk_A = INPUT();
+
+
+--Risk_X1 is Risk_X1
+--operation mode is output
+
+Risk_X1 = OUTPUT(A1L8);
+
+
+--Risk_B is Risk_B
+--operation mode is output
+
+Risk_B = OUTPUT(A1L4);
+
+
+--Risk_X2 is Risk_X2
+--operation mode is output
+
+Risk_X2 = OUTPUT(A1L01);
+
+
