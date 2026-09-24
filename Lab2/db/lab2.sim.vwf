@@ -24,21 +24,120 @@ HEADER
 {
 	VERSION = 1;
 	TIME_UNIT = ns;
-	PRINT_OPTIONS = "Print_options_version 6\
-range_start 0ps\
-range_end 200.0ns\
-width 1\
-names_percentage 25\
-comments 1\
-grid_lines 1\
-time_bars 1\
-name_every_page 0\
-expand_groups 0\
-print_all 1";
 	SIMULATION_TIME = 200.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("pluse_former_fon_and_slice_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_fon_and_slice_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_parasite_out_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_parasite_out_output_x")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_parasite_out_output_y")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_XOR_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_former_XOR_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_gen_in")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("pluse_gen_out")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
 }
 
 SIGNAL("Risk_A")
@@ -81,14 +180,213 @@ SIGNAL("Risk_X2")
 	PARENT = "";
 }
 
+TRANSITION_LIST("pluse_former_fon_and_slice_in")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_fon_and_slice_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 55.0;
+		NODE
+		{
+			REPEAT = 3;
+			LEVEL 0 FOR 27.0;
+			LEVEL 1 FOR 13.0;
+		}
+		LEVEL 0 FOR 25.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_in")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 55.0;
+		LEVEL 0 FOR 18.0;
+		LEVEL 1 FOR 62.0;
+		LEVEL 0 FOR 18.0;
+		LEVEL 1 FOR 47.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_parasite_out_in")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_parasite_out_output_x")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 64.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 1 FOR 9.0;
+			LEVEL 0 FOR 9.0;
+		}
+		LEVEL 1 FOR 4.0;
+		LEVEL 0 FOR 40.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 1 FOR 9.0;
+			LEVEL 0 FOR 9.0;
+		}
+		LEVEL 1 FOR 4.0;
+		LEVEL 0 FOR 16.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_parasite_out_output_y")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 55.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 9.0;
+			LEVEL 1 FOR 9.0;
+		}
+		LEVEL 0 FOR 4.0;
+		LEVEL 1 FOR 40.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 9.0;
+			LEVEL 1 FOR 9.0;
+		}
+		LEVEL 0 FOR 4.0;
+		LEVEL 1 FOR 25.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_XOR_in")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
+	}
+}
+
+TRANSITION_LIST("pluse_former_XOR_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 55.0;
+		NODE
+		{
+			REPEAT = 3;
+			LEVEL 1 FOR 18.0;
+			LEVEL 0 FOR 22.0;
+		}
+		LEVEL 1 FOR 18.0;
+		LEVEL 0 FOR 7.0;
+	}
+}
+
+TRANSITION_LIST("pluse_gen_in")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
+	}
+}
+
+TRANSITION_LIST("pluse_gen_out")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 95.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 1 FOR 9.0;
+			LEVEL 0 FOR 9.0;
+		}
+		LEVEL 1 FOR 4.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 9.0;
+		LEVEL 0 FOR 9.0;
+		LEVEL 1 FOR 7.0;
+	}
+}
+
 TRANSITION_LIST("Risk_A")
 {
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.379;
-		LEVEL 1 FOR 59.526;
-		LEVEL 0 FOR 100.095;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+		}
+		LEVEL 0 FOR 40.0;
 	}
 }
 
@@ -97,9 +395,11 @@ TRANSITION_LIST("Risk_B")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 64.379;
+		LEVEL 1 FOR 64.0;
 		LEVEL 0 FOR 9.0;
-		LEVEL 1 FOR 126.621;
+		LEVEL 1 FOR 71.0;
+		LEVEL 0 FOR 9.0;
+		LEVEL 1 FOR 47.0;
 	}
 }
 
@@ -108,9 +408,11 @@ TRANSITION_LIST("Risk_X1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 64.379;
-		LEVEL 1 FOR 59.526;
-		LEVEL 0 FOR 76.095;
+		LEVEL 0 FOR 55.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 25.0;
 	}
 }
 
@@ -119,9 +421,11 @@ TRANSITION_LIST("Risk_X2")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 73.379;
-		LEVEL 0 FOR 59.526;
-		LEVEL 1 FOR 67.095;
+		LEVEL 1 FOR 64.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 16.0;
 	}
 }
 
@@ -136,7 +440,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Risk_B";
+	CHANNEL = "Risk_X1";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
@@ -145,7 +449,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "Risk_X1";
+	CHANNEL = "Risk_B";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 2;
@@ -161,9 +465,108 @@ DISPLAY_LINE
 	TREE_LEVEL = 0;
 }
 
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_gen_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_gen_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_parasite_out_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_parasite_out_output_x";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_parasite_out_output_y";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_fon_and_slice_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_fon_and_slice_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_XOR_in";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pluse_former_XOR_out";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 0;
+}
+
 TIME_BAR
 {
-	TIME = 64379;
+	TIME = 99905;
 	MASTER = TRUE;
 }
 ;

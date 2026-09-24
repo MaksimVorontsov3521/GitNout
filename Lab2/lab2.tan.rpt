@@ -1,5 +1,5 @@
 Timing Analyzer report for lab2
-Sat Oct 08 09:43:18 2022
+Sat Oct 08 10:46:46 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -33,14 +33,14 @@ applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                     ;
-+------------------------------+-------+---------------+-------------+--------+--------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From   ; To     ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+--------+--------+------------+----------+--------------+
-; Worst-case tpd               ; N/A   ; None          ; 33.000 ns   ; Risk_A ; Risk_B ;            ;          ; 0            ;
-; Total number of failed paths ;       ;               ;             ;        ;        ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+--------+--------+------------+----------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                    ;
++------------------------------+-------+---------------+-------------+-------------------------------+--------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From                          ; To                             ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-------------------------------+--------------------------------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 42.000 ns   ; pluse_former_fon_and_slice_in ; pluse_former_fon_and_slice_out ;            ;          ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                               ;                                ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-------------------------------+--------------------------------+------------+----------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -68,18 +68,21 @@ applicable agreement for further details.
 +-------------------------------------------------------+--------------------+------+----+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; tpd                                                                                                             ;
-+-------+-------------------+-----------------+------------------------------+------------------------------------+
-; Slack ; Required P2P Time ; Actual P2P Time ; From                         ; To                                 ;
-+-------+-------------------+-----------------+------------------------------+------------------------------------+
-; N/A   ; None              ; 33.000 ns       ; Risk_A                       ; Risk_X2                            ;
-; N/A   ; None              ; 33.000 ns       ; Risk_A                       ; Risk_B                             ;
-; N/A   ; None              ; 24.000 ns       ; pluse_former_parasite_out_in ; pluse_former_parasite_out_output_y ;
-; N/A   ; None              ; 24.000 ns       ; Risk_A                       ; Risk_X1                            ;
-; N/A   ; None              ; 15.000 ns       ; pluse_former_parasite_out_in ; pluse_former_parasite_out_output_x ;
-; N/A   ; None              ; 15.000 ns       ; pluse_gen_in                 ; pluse_gen_out                      ;
-+-------+-------------------+-----------------+------------------------------+------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; tpd                                                                                                              ;
++-------+-------------------+-----------------+-------------------------------+------------------------------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From                          ; To                                 ;
++-------+-------------------+-----------------+-------------------------------+------------------------------------+
+; N/A   ; None              ; 42.000 ns       ; pluse_former_fon_and_slice_in ; pluse_former_fon_and_slice_out     ;
+; N/A   ; None              ; 33.000 ns       ; pluse_former_XOR_in           ; pluse_former_XOR_out               ;
+; N/A   ; None              ; 33.000 ns       ; pluse_former_in               ; pluse_former_out                   ;
+; N/A   ; None              ; 33.000 ns       ; Risk_A                        ; Risk_B                             ;
+; N/A   ; None              ; 24.000 ns       ; pluse_former_parasite_out_in  ; pluse_former_parasite_out_output_x ;
+; N/A   ; None              ; 24.000 ns       ; Risk_A                        ; Risk_X2                            ;
+; N/A   ; None              ; 15.000 ns       ; pluse_former_parasite_out_in  ; pluse_former_parasite_out_output_y ;
+; N/A   ; None              ; 15.000 ns       ; pluse_gen_in                  ; pluse_gen_out                      ;
+; N/A   ; None              ; 15.000 ns       ; Risk_A                        ; Risk_X1                            ;
++-------+-------------------+-----------------+-------------------------------+------------------------------------+
 
 
 +--------------------------+
@@ -88,24 +91,25 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Timing Analyzer
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 08 09:43:18 2022
+    Info: Processing started: Sat Oct 08 10:46:46 2022
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off lab2 -c lab2
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Info: Found combinational loop of 1 nodes
-    Info: Node "pluse_former_parasite_output:inst4|inst5~6"
+    Info: Node "pluse_former_parasite_output:inst4|inst5~4"
 Info: Found combinational loop of 1 nodes
-    Info: Node "pluse_gen:inst1|inst9~9"
-Info: Longest tpd from source pin "Risk_A" to destination pin "Risk_X2" is 33.000 ns
-    Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_33; Fanout = 2; PIN Node = 'Risk_A'
-    Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC2; Fanout = 1; COMB Node = 'Risk:inst|inst5'
-    Info: 3: + IC(2.000 ns) + CELL(7.000 ns) = 20.000 ns; Loc. = LC1; Fanout = 2; COMB Node = 'Risk:inst|inst6'
-    Info: 4: + IC(2.000 ns) + CELL(7.000 ns) = 29.000 ns; Loc. = LC5; Fanout = 1; COMB Node = 'Risk_X2~xor'
-    Info: 5: + IC(0.000 ns) + CELL(4.000 ns) = 33.000 ns; Loc. = PIN_11; Fanout = 0; PIN Node = 'Risk_X2'
-    Info: Total cell delay = 27.000 ns ( 81.82 % )
-    Info: Total interconnect delay = 6.000 ns ( 18.18 % )
+    Info: Node "pluse_gen:inst1|inst9~8"
+Info: Longest tpd from source pin "pluse_former_fon_and_slice_in" to destination pin "pluse_former_fon_and_slice_out" is 42.000 ns
+    Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_52; Fanout = 2; PIN Node = 'pluse_former_fon_and_slice_in'
+    Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC9; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst12'
+    Info: 3: + IC(2.000 ns) + CELL(7.000 ns) = 20.000 ns; Loc. = LC15; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst14'
+    Info: 4: + IC(2.000 ns) + CELL(7.000 ns) = 29.000 ns; Loc. = LC7; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst15'
+    Info: 5: + IC(2.000 ns) + CELL(7.000 ns) = 38.000 ns; Loc. = LC3; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst13~3'
+    Info: 6: + IC(0.000 ns) + CELL(4.000 ns) = 42.000 ns; Loc. = PIN_12; Fanout = 0; PIN Node = 'pluse_former_fon_and_slice_out'
+    Info: Total cell delay = 34.000 ns ( 80.95 % )
+    Info: Total interconnect delay = 8.000 ns ( 19.05 % )
 Info: Quartus II Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 08 09:43:18 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sat Oct 08 10:46:46 2022
+    Info: Elapsed time: 00:00:00
 
 

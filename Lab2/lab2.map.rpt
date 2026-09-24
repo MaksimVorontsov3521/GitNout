@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Sat Oct 08 09:43:14 2022
+Sat Oct 08 10:46:43 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -40,12 +40,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 08 09:43:14 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 08 10:46:43 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; lab2                                     ;
 ; Top-level Entity Name       ; lab2                                     ;
 ; Family                      ; MAX7000S                                 ;
-; Total macrocells            ; 12                                       ;
+; Total macrocells            ; 17                                       ;
 ; Total pins                  ; 15                                       ;
 +-----------------------------+------------------------------------------+
 
@@ -59,7 +59,6 @@ applicable agreement for further details.
 ; Top-level entity name                                                ; lab2            ; lab2          ;
 ; Family name                                                          ; MAX7000S        ; Stratix       ;
 ; Add Pass-Through Logic to Inferred RAMs                              ; Off             ; On            ;
-; NOT Gate Push-Back                                                   ; Off             ; On            ;
 ; Ignore LCELL Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A           ; Off             ; Auto          ;
 ; Use smart compilation                                                ; Off             ; Off           ;
 ; Create Debugging Nodes for IP Cores                                  ; off             ; off           ;
@@ -70,6 +69,7 @@ applicable agreement for further details.
 ; State Machine Processing                                             ; Auto            ; Auto          ;
 ; Extract Verilog State Machines                                       ; On              ; On            ;
 ; Extract VHDL State Machines                                          ; On              ; On            ;
+; NOT Gate Push-Back                                                   ; On              ; On            ;
 ; Power-Up Don't Care                                                  ; On              ; On            ;
 ; Remove Redundant Logic Cells                                         ; Off             ; Off           ;
 ; Remove Duplicate Registers                                           ; On              ; On            ;
@@ -113,13 +113,13 @@ applicable agreement for further details.
 +----------------------+--------------------------------------------+
 ; Resource             ; Usage                                      ;
 +----------------------+--------------------------------------------+
-; Logic cells          ; 12                                         ;
+; Logic cells          ; 17                                         ;
 ; Total registers      ; 0                                          ;
 ; I/O pins             ; 15                                         ;
-; Maximum fan-out node ; pluse_former_parasite_output:inst4|inst5~6 ;
+; Maximum fan-out node ; pluse_former_parasite_output:inst4|inst5~4 ;
 ; Maximum fan-out      ; 3                                          ;
-; Total fan-out        ; 21                                         ;
-; Average fan-out      ; 0.78                                       ;
+; Total fan-out        ; 32                                         ;
+; Average fan-out      ; 1.00                                       ;
 +----------------------+--------------------------------------------+
 
 
@@ -128,9 +128,12 @@ applicable agreement for further details.
 +-----------------------------------------+------------+------+------------------------------------------+
 ; Compilation Hierarchy Node              ; Macrocells ; Pins ; Full Hierarchy Name                      ;
 +-----------------------------------------+------------+------+------------------------------------------+
-; |lab2                                   ; 12         ; 15   ; |lab2                                    ;
+; |lab2                                   ; 17         ; 15   ; |lab2                                    ;
 ;    |Risk:inst|                          ; 4          ; 0    ; |lab2|Risk:inst                          ;
-;    |pluse_former_parasite_output:inst4| ; 1          ; 0    ; |lab2|pluse_former_parasite_output:inst4 ;
+;    |pluse_former:inst2|                 ; 3          ; 0    ; |lab2|pluse_former:inst2                 ;
+;    |pluse_former_XOR:inst5|             ; 3          ; 0    ; |lab2|pluse_former_XOR:inst5             ;
+;    |pluse_former_fon_and_slice:inst3|   ; 4          ; 0    ; |lab2|pluse_former_fon_and_slice:inst3   ;
+;    |pluse_former_parasite_output:inst4| ; 2          ; 0    ; |lab2|pluse_former_parasite_output:inst4 ;
 ;    |pluse_gen:inst1|                    ; 1          ; 0    ; |lab2|pluse_gen:inst1                    ;
 +-----------------------------------------+------------+------+------------------------------------------+
 
@@ -159,7 +162,7 @@ The equations can be found in C:/altera/Lab2/lab2.map.eqn.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 08 09:43:13 2022
+    Info: Processing started: Sat Oct 08 10:46:42 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Info: Found 1 design units, including 1 entities, in source file lab2.bdf
     Info: Found entity 1: lab2
@@ -182,20 +185,12 @@ Info: Elaborating entity "pluse_gen" for hierarchy "pluse_gen:inst1"
 Info: Elaborating entity "pluse_former_parasite_output" for hierarchy "pluse_former_parasite_output:inst4"
 Info: Elaborating entity "pluse_former_fon_and_slice" for hierarchy "pluse_former_fon_and_slice:inst3"
 Info: Elaborating entity "pluse_former_XOR" for hierarchy "pluse_former_XOR:inst5"
-Warning: Output pins are stuck at VCC or GND
-    Warning: Pin "pluse_former_out" stuck at VCC
-    Warning: Pin "pluse_former_fon_and_slice_out" stuck at VCC
-    Warning: Pin "pluse_former_XOR_out" stuck at GND
-Warning: Design contains 3 input pin(s) that do not drive logic
-    Warning: No output dependent on input pin "pluse_former_in"
-    Warning: No output dependent on input pin "pluse_former_fon_and_slice_in"
-    Warning: No output dependent on input pin "pluse_former_XOR_in"
-Info: Implemented 27 device resources after synthesis - the final resource count might be different
+Info: Implemented 32 device resources after synthesis - the final resource count might be different
     Info: Implemented 6 input pins
     Info: Implemented 9 output pins
-    Info: Implemented 12 macrocells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Processing ended: Sat Oct 08 09:43:14 2022
+    Info: Implemented 17 macrocells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sat Oct 08 10:46:43 2022
     Info: Elapsed time: 00:00:01
 
 

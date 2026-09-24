@@ -56,14 +56,14 @@ GND+                         : 1         :        :                   :         
 GND+                         : 2         :        :                   :         :           :                
 VCCINT                       : 3         : power  :                   : 5.0V    :           :                
 pluse_gen_out                : 4         : output : TTL               :         :           : N              
-pluse_former_parasite_out_output_x : 5         : output : TTL               :         :           : N              
-Risk_B                       : 6         : output : TTL               :         :           : N              
+Risk_X2                      : 5         : output : TTL               :         :           : N              
+Risk_X1                      : 6         : output : TTL               :         :           : N              
 GND                          : 7         : gnd    :                   :         :           :                
-pluse_former_fon_and_slice_out : 8         : output : TTL               :         :           : N              
-pluse_former_XOR_out         : 9         : output : TTL               :         :           : N              
-Risk_X1                      : 10        : output : TTL               :         :           : N              
-Risk_X2                      : 11        : output : TTL               :         :           : N              
-pluse_former_parasite_out_output_y : 12        : output : TTL               :         :           : N              
+pluse_former_parasite_out_output_y : 8         : output : TTL               :         :           : N              
+pluse_former_out             : 9         : output : TTL               :         :           : N              
+pluse_former_XOR_out         : 10        : output : TTL               :         :           : N              
+pluse_former_parasite_out_output_x : 11        : output : TTL               :         :           : N              
+pluse_former_fon_and_slice_out : 12        : output : TTL               :         :           : N              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 RESERVED                     : 15        :        :                   :         :           :                
@@ -73,9 +73,9 @@ RESERVED                     : 18        :        :                   :         
 GND                          : 19        : gnd    :                   :         :           :                
 RESERVED                     : 20        :        :                   :         :           :                
 RESERVED                     : 21        :        :                   :         :           :                
-pluse_former_out             : 22        : output : TTL               :         :           : N              
+Risk_B                       : 22        : output : TTL               :         :           : N              
 TMS                          : 23        : input  : TTL               :         :           : N              
-pluse_former_fon_and_slice_in : 24        : input  : TTL               :         :           : N              
+pluse_former_in              : 24        : input  : TTL               :         :           : N              
 RESERVED                     : 25        :        :                   :         :           :                
 VCCIO                        : 26        : power  :                   : 5.0V    :           :                
 RESERVED                     : 27        :        :                   :         :           :                
@@ -84,7 +84,7 @@ RESERVED                     : 29        :        :                   :         
 RESERVED                     : 30        :        :                   :         :           :                
 RESERVED                     : 31        :        :                   :         :           :                
 GND                          : 32        : gnd    :                   :         :           :                
-Risk_A                       : 33        : input  : TTL               :         :           : N              
+pluse_former_parasite_out_in : 33        : input  : TTL               :         :           : N              
 RESERVED                     : 34        :        :                   :         :           :                
 RESERVED                     : 35        :        :                   :         :           :                
 RESERVED                     : 36        :        :                   :         :           :                
@@ -103,7 +103,7 @@ RESERVED                     : 48        :        :                   :         
 RESERVED                     : 49        :        :                   :         :           :                
 RESERVED                     : 50        :        :                   :         :           :                
 RESERVED                     : 51        :        :                   :         :           :                
-pluse_gen_in                 : 52        : input  : TTL               :         :           : N              
+pluse_former_fon_and_slice_in : 52        : input  : TTL               :         :           : N              
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 RESERVED                     : 54        :        :                   :         :           :                
 RESERVED                     : 55        :        :                   :         :           :                
@@ -112,7 +112,7 @@ RESERVED                     : 57        :        :                   :         
 RESERVED                     : 58        :        :                   :         :           :                
 GND                          : 59        : gnd    :                   :         :           :                
 RESERVED                     : 60        :        :                   :         :           :                
-pluse_former_XOR_in          : 61        : input  : TTL               :         :           : N              
+Risk_A                       : 61        : input  : TTL               :         :           : N              
 TCK                          : 62        : input  : TTL               :         :           : N              
 RESERVED                     : 63        :        :                   :         :           :                
 RESERVED                     : 64        :        :                   :         :           :                
@@ -131,8 +131,8 @@ RESERVED                     : 76        :        :                   :         
 RESERVED                     : 77        :        :                   :         :           :                
 VCCIO                        : 78        : power  :                   : 5.0V    :           :                
 RESERVED                     : 79        :        :                   :         :           :                
-pluse_former_in              : 80        : input  : TTL               :         :           : N              
-pluse_former_parasite_out_in : 81        : input  : TTL               :         :           : N              
+pluse_gen_in                 : 80        : input  : TTL               :         :           : N              
+pluse_former_XOR_in          : 81        : input  : TTL               :         :           : N              
 GND                          : 82        : gnd    :                   :         :           :                
 GND+                         : 83        :        :                   :         :           :                
 GND+                         : 84        :        :                   :         :           :                

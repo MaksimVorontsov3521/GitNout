@@ -1,4 +1,4 @@
-Flow Status : Successful - Sat Oct 08 09:43:15 2022
+Flow Status : Successful - Sat Oct 08 10:46:44 2022
 Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
 Revision Name : lab2
 Top-level Entity Name : lab2
@@ -6,5 +6,5 @@ Family : MAX7000S
 Device : EPM7128SLC84-15
 Timing Models : Final
 Met timing requirements : N/A
-Total macrocells : 12 / 128 ( 9 % )
+Total macrocells : 17 / 128 ( 13 % )
 Total pins : 19 / 68 ( 27 % )

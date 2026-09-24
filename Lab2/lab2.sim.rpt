@@ -1,5 +1,5 @@
 Simulator report for lab2
-Sat Oct 08 09:43:20 2022
+Sat Oct 08 10:46:50 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -41,9 +41,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 200.0 ns     ;
-; Simulation Netlist Size     ; 27 nodes     ;
-; Simulation Coverage         ;      72.73 % ;
-; Total Number of Transitions ; 117          ;
+; Simulation Netlist Size     ; 32 nodes     ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 189          ;
 +-----------------------------+--------------+
 
 
@@ -85,13 +85,12 @@ Please use Quartus II to view the waveform report data.
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 08 09:43:19 2022
+    Info: Processing started: Sat Oct 08 10:46:50 2022
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off lab2 -c lab2
-Info: Overwriting simulation input file with simulation results
-Info: Simulation coverage is      72.73 %
-Info: Number of transitions in simulation is 117
+Info: Simulation coverage is     100.00 %
+Info: Number of transitions in simulation is 189
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 08 09:43:20 2022
+    Info: Processing ended: Sat Oct 08 10:46:50 2022
     Info: Elapsed time: 00:00:01
 
 

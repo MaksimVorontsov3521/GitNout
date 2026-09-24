@@ -69,7 +69,7 @@ applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 896 208 1072 224)
+	(rect 976 208 1152 224)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "Risk_X2" (rect 90 0 130 12)(font "Arial" ))
 	(pt 0 8)
@@ -370,28 +370,12 @@ applicable agreement for further details.
 	(pt 864 152)
 )
 (connector
-	(pt 896 216)
-	(pt 896 192)
-)
-(connector
 	(pt 768 184)
 	(pt 768 192)
 )
 (connector
-	(pt 808 192)
-	(pt 808 168)
-)
-(connector
 	(pt 808 168)
 	(pt 864 168)
-)
-(connector
-	(pt 768 192)
-	(pt 808 192)
-)
-(connector
-	(pt 808 192)
-	(pt 896 192)
 )
 (connector
 	(pt 632 136)
@@ -409,6 +393,22 @@ applicable agreement for further details.
 	(text "node_chain1S" (rect 328 120 396 132)(font "Arial" ))
 	(pt 328 136)
 	(pt 352 136)
+)
+(connector
+	(pt 768 192)
+	(pt 808 192)
+)
+(connector
+	(pt 808 216)
+	(pt 976 216)
+)
+(connector
+	(pt 808 168)
+	(pt 808 192)
+)
+(connector
+	(pt 808 192)
+	(pt 808 216)
 )
 (junction (pt 264 136))
 (junction (pt 808 192))

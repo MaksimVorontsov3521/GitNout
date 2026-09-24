@@ -12,7 +12,7 @@
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
 --B1_inst7 is Risk:inst|inst7
-B1_inst7_or_out = !Risk_A;
+B1_inst7_or_out = Risk_A;
 B1_inst7 = B1_inst7_or_out;
 
 
@@ -21,57 +21,83 @@ B1_inst5_or_out = !Risk_A;
 B1_inst5 = B1_inst5_or_out;
 
 
+--D1_inst7 is pluse_former:inst2|inst7
+D1_inst7_or_out = pluse_former_in;
+D1_inst7 = D1_inst7_or_out;
+
+
+--E1_inst12 is pluse_former_fon_and_slice:inst3|inst12
+E1_inst12_or_out = !pluse_former_fon_and_slice_in;
+E1_inst12 = E1_inst12_or_out;
+
+
+--G1_inst6 is pluse_former_XOR:inst5|inst6
+G1_inst6_or_out = !pluse_former_XOR_in;
+G1_inst6 = G1_inst6_or_out;
+
+
 --B1_inst6 is Risk:inst|inst6
-B1_inst6_or_out = !B1_inst5;
+B1_inst6_or_out = B1_inst5;
 B1_inst6 = B1_inst6_or_out;
 
 
---C1L1 is pluse_gen:inst1|inst9~9
+--D1_inst8 is pluse_former:inst2|inst8
+D1_inst8_or_out = !D1_inst7;
+D1_inst8 = D1_inst8_or_out;
+
+
+--E1_inst14 is pluse_former_fon_and_slice:inst3|inst14
+E1_inst14_or_out = !E1_inst12;
+E1_inst14 = E1_inst14_or_out;
+
+
+--G1_inst9 is pluse_former_XOR:inst5|inst9
+G1_inst9_or_out = G1_inst6;
+G1_inst9 = G1_inst9_or_out;
+
+
+--C1L1 is pluse_gen:inst1|inst9~8
 C1L1_p1_out = !C1L1 & !pluse_gen_in;
 C1L1_or_out = C1L1_p1_out;
 C1L1 = C1L1_or_out;
 
 
---F1L1 is pluse_former_parasite_output:inst4|inst5~6
-F1L1_p1_out = !F1L1 & pluse_former_parasite_out_in;
+--F1L1 is pluse_former_parasite_output:inst4|inst5~4
+F1L1_p1_out = F1L1 & pluse_former_parasite_out_in;
 F1L1_or_out = F1L1_p1_out;
-F1L1 = F1L1_or_out;
+F1L1 = !(F1L1_or_out);
 
 
 --B1L4 is Risk:inst|inst9~0
-B1L4_p1_out = !B1_inst7 & !B1_inst6;
+B1L4_p1_out = B1_inst7 & B1_inst6;
 B1L4_or_out = B1L4_p1_out;
 B1L4 = !(B1L4_or_out);
 
 
---~VCC~0 is ~VCC~0
-~VCC~0_or_out = GND;
-~VCC~0 = !(~VCC~0_or_out);
+--D1L1 is pluse_former:inst2|inst6~8
+D1L1_p1_out = D1_inst8 & pluse_former_in;
+D1L1_or_out = D1L1_p1_out;
+D1L1 = !(D1L1_or_out);
 
 
---~VCC~1 is ~VCC~1
-~VCC~1_or_out = GND;
-~VCC~1 = !(~VCC~1_or_out);
+--E1_inst15 is pluse_former_fon_and_slice:inst3|inst15
+E1_inst15_or_out = !E1_inst14;
+E1_inst15 = E1_inst15_or_out;
 
 
---~GND~0 is ~GND~0
-~GND~0_or_out = GND;
-~GND~0 = ~GND~0_or_out;
+--G1L1 is pluse_former_XOR:inst5|inst4~0
+G1L1_or_out = pluse_former_XOR_in;
+G1L1 = !G1_inst9 $ G1L1_or_out;
 
 
---A1L61 is Risk_X1~xor
-A1L61_or_out = B1_inst7;
-A1L61 = !(A1L61_or_out);
+--F1L2 is pluse_former_parasite_output:inst4|inst5~6
+F1L2_or_out = !F1L1;
+F1L2 = F1L2_or_out;
 
 
---A1L81 is Risk_X2~xor
-A1L81_or_out = B1_inst6;
-A1L81 = !(A1L81_or_out);
-
-
---A1L8 is pluse_former_parasite_out_output_y~xor
-A1L8_or_out = F1L1;
-A1L8 = !(A1L8_or_out);
+--E1L2 is pluse_former_fon_and_slice:inst3|inst13~3
+E1L2_or_out = !pluse_former_fon_and_slice_in;
+E1L2 = !E1_inst15 $ E1L2_or_out;
 
 
 --Risk_A is Risk_A
@@ -110,28 +136,16 @@ pluse_former_fon_and_slice_in = INPUT();
 pluse_former_XOR_in = INPUT();
 
 
---pluse_former_out is pluse_former_out
---operation mode is output
-
-pluse_former_out = OUTPUT(~VCC~0);
-
-
---pluse_former_fon_and_slice_out is pluse_former_fon_and_slice_out
---operation mode is output
-
-pluse_former_fon_and_slice_out = OUTPUT(~VCC~1);
-
-
---pluse_former_XOR_out is pluse_former_XOR_out
---operation mode is output
-
-pluse_former_XOR_out = OUTPUT(~GND~0);
-
-
 --Risk_X1 is Risk_X1
 --operation mode is output
 
-Risk_X1 = OUTPUT(A1L61);
+Risk_X1 = OUTPUT(B1_inst7);
+
+
+--Risk_X2 is Risk_X2
+--operation mode is output
+
+Risk_X2 = OUTPUT(B1_inst6);
 
 
 --pluse_gen_out is pluse_gen_out
@@ -140,27 +154,39 @@ Risk_X1 = OUTPUT(A1L61);
 pluse_gen_out = OUTPUT(C1L1);
 
 
+--pluse_former_parasite_out_output_y is pluse_former_parasite_out_output_y
+--operation mode is output
+
+pluse_former_parasite_out_output_y = OUTPUT(F1L1);
+
+
 --Risk_B is Risk_B
 --operation mode is output
 
 Risk_B = OUTPUT(B1L4);
 
 
---Risk_X2 is Risk_X2
+--pluse_former_out is pluse_former_out
 --operation mode is output
 
-Risk_X2 = OUTPUT(A1L81);
+pluse_former_out = OUTPUT(D1L1);
 
 
 --pluse_former_parasite_out_output_x is pluse_former_parasite_out_output_x
 --operation mode is output
 
-pluse_former_parasite_out_output_x = OUTPUT(F1L1);
+pluse_former_parasite_out_output_x = OUTPUT(F1L2);
 
 
---pluse_former_parasite_out_output_y is pluse_former_parasite_out_output_y
+--pluse_former_XOR_out is pluse_former_XOR_out
 --operation mode is output
 
-pluse_former_parasite_out_output_y = OUTPUT(A1L8);
+pluse_former_XOR_out = OUTPUT(G1L1);
+
+
+--pluse_former_fon_and_slice_out is pluse_former_fon_and_slice_out
+--operation mode is output
+
+pluse_former_fon_and_slice_out = OUTPUT(E1L2);
 
 
