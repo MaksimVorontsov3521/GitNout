@@ -47,7 +47,7 @@ set_global_assignment -name FAMILY MAX7000S
 set_global_assignment -name ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS OFF
 set_global_assignment -name NOT_GATE_PUSH_BACK OFF
 set_global_assignment -name MAX7000_IGNORE_LCELL_BUFFERS OFF
-set_global_assignment -name TOP_LEVEL_ENTITY Risk
+set_global_assignment -name TOP_LEVEL_ENTITY lab2
 
 # Fitter Assignments
 # ==================

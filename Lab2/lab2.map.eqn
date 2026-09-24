@@ -11,35 +11,67 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---inst7 is inst7
-inst7_or_out = !Risk_A;
-inst7 = inst7_or_out;
+--B1_inst7 is Risk:inst|inst7
+B1_inst7_or_out = !Risk_A;
+B1_inst7 = B1_inst7_or_out;
 
 
---inst5 is inst5
-inst5_or_out = !Risk_A;
-inst5 = inst5_or_out;
+--B1_inst5 is Risk:inst|inst5
+B1_inst5_or_out = !Risk_A;
+B1_inst5 = B1_inst5_or_out;
 
 
---inst6 is inst6
-inst6_or_out = !inst5;
-inst6 = inst6_or_out;
+--B1_inst6 is Risk:inst|inst6
+B1_inst6_or_out = !B1_inst5;
+B1_inst6 = B1_inst6_or_out;
 
 
---A1L4 is inst9~0
-A1L4_p1_out = !inst7 & !inst6;
-A1L4_or_out = A1L4_p1_out;
-A1L4 = !(A1L4_or_out);
+--C1L1 is pluse_gen:inst1|inst9~9
+C1L1_p1_out = !C1L1 & !pluse_gen_in;
+C1L1_or_out = C1L1_p1_out;
+C1L1 = C1L1_or_out;
 
 
---A1L8 is Risk_X1~xor
-A1L8_or_out = inst7;
+--F1L1 is pluse_former_parasite_output:inst4|inst5~6
+F1L1_p1_out = !F1L1 & pluse_former_parasite_out_in;
+F1L1_or_out = F1L1_p1_out;
+F1L1 = F1L1_or_out;
+
+
+--B1L4 is Risk:inst|inst9~0
+B1L4_p1_out = !B1_inst7 & !B1_inst6;
+B1L4_or_out = B1L4_p1_out;
+B1L4 = !(B1L4_or_out);
+
+
+--~VCC~0 is ~VCC~0
+~VCC~0_or_out = GND;
+~VCC~0 = !(~VCC~0_or_out);
+
+
+--~VCC~1 is ~VCC~1
+~VCC~1_or_out = GND;
+~VCC~1 = !(~VCC~1_or_out);
+
+
+--~GND~0 is ~GND~0
+~GND~0_or_out = GND;
+~GND~0 = ~GND~0_or_out;
+
+
+--A1L61 is Risk_X1~xor
+A1L61_or_out = B1_inst7;
+A1L61 = !(A1L61_or_out);
+
+
+--A1L81 is Risk_X2~xor
+A1L81_or_out = B1_inst6;
+A1L81 = !(A1L81_or_out);
+
+
+--A1L8 is pluse_former_parasite_out_output_y~xor
+A1L8_or_out = F1L1;
 A1L8 = !(A1L8_or_out);
-
-
---A1L01 is Risk_X2~xor
-A1L01_or_out = inst6;
-A1L01 = !(A1L01_or_out);
 
 
 --Risk_A is Risk_A
@@ -48,21 +80,87 @@ A1L01 = !(A1L01_or_out);
 Risk_A = INPUT();
 
 
+--pluse_former_in is pluse_former_in
+--operation mode is input
+
+pluse_former_in = INPUT();
+
+
+--pluse_gen_in is pluse_gen_in
+--operation mode is input
+
+pluse_gen_in = INPUT();
+
+
+--pluse_former_parasite_out_in is pluse_former_parasite_out_in
+--operation mode is input
+
+pluse_former_parasite_out_in = INPUT();
+
+
+--pluse_former_fon_and_slice_in is pluse_former_fon_and_slice_in
+--operation mode is input
+
+pluse_former_fon_and_slice_in = INPUT();
+
+
+--pluse_former_XOR_in is pluse_former_XOR_in
+--operation mode is input
+
+pluse_former_XOR_in = INPUT();
+
+
+--pluse_former_out is pluse_former_out
+--operation mode is output
+
+pluse_former_out = OUTPUT(~VCC~0);
+
+
+--pluse_former_fon_and_slice_out is pluse_former_fon_and_slice_out
+--operation mode is output
+
+pluse_former_fon_and_slice_out = OUTPUT(~VCC~1);
+
+
+--pluse_former_XOR_out is pluse_former_XOR_out
+--operation mode is output
+
+pluse_former_XOR_out = OUTPUT(~GND~0);
+
+
 --Risk_X1 is Risk_X1
 --operation mode is output
 
-Risk_X1 = OUTPUT(A1L8);
+Risk_X1 = OUTPUT(A1L61);
+
+
+--pluse_gen_out is pluse_gen_out
+--operation mode is output
+
+pluse_gen_out = OUTPUT(C1L1);
 
 
 --Risk_B is Risk_B
 --operation mode is output
 
-Risk_B = OUTPUT(A1L4);
+Risk_B = OUTPUT(B1L4);
 
 
 --Risk_X2 is Risk_X2
 --operation mode is output
 
-Risk_X2 = OUTPUT(A1L01);
+Risk_X2 = OUTPUT(A1L81);
+
+
+--pluse_former_parasite_out_output_x is pluse_former_parasite_out_output_x
+--operation mode is output
+
+pluse_former_parasite_out_output_x = OUTPUT(F1L1);
+
+
+--pluse_former_parasite_out_output_y is pluse_former_parasite_out_output_y
+--operation mode is output
+
+pluse_former_parasite_out_output_y = OUTPUT(A1L8);
 
 

@@ -212,30 +212,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 648 280 696 312)
-	(text "WIRE" (rect 1 0 24 10)(font "Arial" (font_size 6)))
-	(text "inst6" (rect 3 21 26 33)(font "Arial" ))
-	(port
-		(pt 0 16)
-		(input)
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(text "IN" (rect 2 7 13 19)(font "Courier New" (bold))(invisible))
-		(line (pt 0 16)(pt 14 16)(line_width 1))
-	)
-	(port
-		(pt 48 16)
-		(output)
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(text "OUT" (rect 32 7 49 19)(font "Courier New" (bold))(invisible))
-		(line (pt 32 16)(pt 48 16)(line_width 1))
-	)
-	(drawing
-		(line (pt 14 7)(pt 32 16)(line_width 1))
-		(line (pt 14 25)(pt 14 7)(line_width 1))
-		(line (pt 14 25)(pt 32 16)(line_width 1))
-	)
-)
-(symbol
 	(rect 576 176 624 208)
 	(text "WIRE" (rect 1 0 24 10)(font "Arial" (font_size 6)))
 	(text "inst7" (rect 3 21 26 33)(font "Arial" ))

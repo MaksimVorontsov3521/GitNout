@@ -1,8 +1,56 @@
-|Risk
+|lab2
+Risk_X1 <= Risk:inst.Risk_X1
+Risk_A => Risk:inst.Risk_A
+Risk_B <= Risk:inst.Risk_B
+Risk_X2 <= Risk:inst.Risk_X2
+pluse_former_out <= pluse_former:inst2.pluse_former_out
+pluse_former_in => pluse_former:inst2.pluse_former_in
+pluse_gen_out <= pluse_gen:inst1.pluse_gen_out
+pluse_gen_in => pluse_gen:inst1.pluse_gen_in
+pluse_former_parasite_out_output_x <= pluse_former_parasite_output:inst4.pluse_former_parasite_out_output_x
+pluse_former_parasite_out_in => pluse_former_parasite_output:inst4.pluse_former_parasite_out_in
+pluse_former_parasite_out_output_y <= pluse_former_parasite_output:inst4.pluse_former_parasite_out_output_y
+pluse_former_fon_and_slice_out <= pluse_former_fon_and_slice:inst3.pluse_former_fon_and_slice_out
+pluse_former_fon_and_slice_in => pluse_former_fon_and_slice:inst3.pluse_former_fon_and_slice_in
+pluse_former_XOR_out <= pluse_former_XOR:inst5.pluse_former_XOR_out
+pluse_former_XOR_in => pluse_former_XOR:inst5.pluse_former_XOR_in
+
+
+|lab2|Risk:inst
 Risk_X1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 Risk_A => inst.IN0
 Risk_A => inst2.IN0
 Risk_B <= inst9.DB_MAX_OUTPUT_PORT_TYPE
 Risk_X2 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2|pluse_former:inst2
+pluse_former_out <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+pluse_former_in => inst2.IN0
+pluse_former_in => inst2.IN1
+pluse_former_in => inst6.IN1
+
+
+|lab2|pluse_gen:inst1
+pluse_gen_out <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+pluse_gen_in => inst.IN0
+
+
+|lab2|pluse_former_parasite_output:inst4
+pluse_former_parasite_out_output_x <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+pluse_former_parasite_out_in => inst2.IN1
+pluse_former_parasite_out_output_y <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|lab2|pluse_former_fon_and_slice:inst3
+pluse_former_fon_and_slice_out <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+pluse_former_fon_and_slice_in => inst3.IN0
+pluse_former_fon_and_slice_in => inst11.IN0
+
+
+|lab2|pluse_former_XOR:inst5
+pluse_former_XOR_out <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+pluse_former_XOR_in => inst4.IN0
+pluse_former_XOR_in => inst.IN0
 
 

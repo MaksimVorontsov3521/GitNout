@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Tue Oct 04 14:43:00 2022
+Sat Oct 08 09:43:14 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -12,8 +12,9 @@ Version 5.0 Build 148 04/26/2005 SJ Full Version
   4. Analysis & Synthesis Source Files Read
   5. Analysis & Synthesis Resource Usage Summary
   6. Analysis & Synthesis Resource Utilization by Entity
-  7. Analysis & Synthesis Equations
-  8. Analysis & Synthesis Messages
+  7. Logic Cells Representing Combinational Loops
+  8. Analysis & Synthesis Equations
+  9. Analysis & Synthesis Messages
 
 
 
@@ -39,13 +40,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Tue Oct 04 14:43:00 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 08 09:43:14 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; lab2                                     ;
-; Top-level Entity Name       ; Risk                                     ;
+; Top-level Entity Name       ; lab2                                     ;
 ; Family                      ; MAX7000S                                 ;
-; Total macrocells            ; 6                                        ;
-; Total pins                  ; 4                                        ;
+; Total macrocells            ; 12                                       ;
+; Total pins                  ; 15                                       ;
 +-----------------------------+------------------------------------------+
 
 
@@ -55,7 +56,7 @@ applicable agreement for further details.
 ; Option                                                               ; Setting         ; Default Value ;
 +----------------------------------------------------------------------+-----------------+---------------+
 ; Device                                                               ; EPM7128SLC84-15 ;               ;
-; Top-level entity name                                                ; Risk            ; lab2          ;
+; Top-level entity name                                                ; lab2            ; lab2          ;
 ; Family name                                                          ; MAX7000S        ; Stratix       ;
 ; Add Pass-Through Logic to Inferred RAMs                              ; Off             ; On            ;
 ; NOT Gate Push-Back                                                   ; Off             ; On            ;
@@ -92,43 +93,64 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+-----------------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                 ;
-+----------------------------------+-----------------+------------------------------------+------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path ;
-+----------------------------------+-----------------+------------------------------------+------------------------------+
-; Risk.bdf                         ; yes             ; User Block Diagram/Schematic File  ; Z:/Lab2/Risk.bdf             ;
-+----------------------------------+-----------------+------------------------------------+------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                    ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------+
+; lab2.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/lab2.bdf                         ;
+; Risk.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/Risk.bdf                         ;
+; pluse_gen.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/pluse_gen.bdf                    ;
+; pluse_former.bdf                 ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/pluse_former.bdf                 ;
+; pluse_former_parasite_output.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/pluse_former_parasite_output.bdf ;
+; pluse_former_fon_and_slice.bdf   ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/pluse_former_fon_and_slice.bdf   ;
+; pluse_former_XOR.bdf             ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab2/pluse_former_XOR.bdf             ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+----------------------+----------------------+
-; Resource             ; Usage                ;
-+----------------------+----------------------+
-; Logic cells          ; 6                    ;
-; Total registers      ; 0                    ;
-; I/O pins             ; 4                    ;
-; Maximum fan-out node ; inst7                ;
-; Maximum fan-out      ; 2                    ;
-; Total fan-out        ; 10                   ;
-; Average fan-out      ; 1.00                 ;
-+----------------------+----------------------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++----------------------+--------------------------------------------+
+; Resource             ; Usage                                      ;
++----------------------+--------------------------------------------+
+; Logic cells          ; 12                                         ;
+; Total registers      ; 0                                          ;
+; I/O pins             ; 15                                         ;
+; Maximum fan-out node ; pluse_former_parasite_output:inst4|inst5~6 ;
+; Maximum fan-out      ; 3                                          ;
+; Total fan-out        ; 21                                         ;
+; Average fan-out      ; 0.78                                       ;
++----------------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                  ;
-+----------------------------+------------+------+---------------------+
-; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ;
-+----------------------------+------------+------+---------------------+
-; |Risk                      ; 6          ; 4    ; |Risk               ;
-+----------------------------+------------+------+---------------------+
++--------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                    ;
++-----------------------------------------+------------+------+------------------------------------------+
+; Compilation Hierarchy Node              ; Macrocells ; Pins ; Full Hierarchy Name                      ;
++-----------------------------------------+------------+------+------------------------------------------+
+; |lab2                                   ; 12         ; 15   ; |lab2                                    ;
+;    |Risk:inst|                          ; 4          ; 0    ; |lab2|Risk:inst                          ;
+;    |pluse_former_parasite_output:inst4| ; 1          ; 0    ; |lab2|pluse_former_parasite_output:inst4 ;
+;    |pluse_gen:inst1|                    ; 1          ; 0    ; |lab2|pluse_gen:inst1                    ;
++-----------------------------------------+------------+------+------------------------------------------+
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; pluse_gen:inst1|inst9~0                                ;   ;
+; pluse_former_parasite_output:inst4|inst5~0             ;   ;
+; Number of logic cells representing combinational loops ; 2 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +--------------------------------+
 ; Analysis & Synthesis Equations ;
 +--------------------------------+
-The equations can be found in Z:/Lab2/lab2.map.eqn.
+The equations can be found in C:/altera/Lab2/lab2.map.eqn.
 
 
 +-------------------------------+
@@ -137,7 +159,7 @@ The equations can be found in Z:/Lab2/lab2.map.eqn.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Tue Oct 04 14:42:58 2022
+    Info: Processing started: Sat Oct 08 09:43:13 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Info: Found 1 design units, including 1 entities, in source file lab2.bdf
     Info: Found entity 1: lab2
@@ -153,13 +175,27 @@ Info: Found 1 design units, including 1 entities, in source file pluse_former_fo
     Info: Found entity 1: pluse_former_fon_and_slice
 Info: Found 1 design units, including 1 entities, in source file pluse_former_XOR.bdf
     Info: Found entity 1: pluse_former_XOR
-Info: Elaborating entity "Risk" for the top level hierarchy
-Info: Implemented 10 device resources after synthesis - the final resource count might be different
-    Info: Implemented 1 input pins
-    Info: Implemented 3 output pins
-    Info: Implemented 6 macrocells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Tue Oct 04 14:43:00 2022
-    Info: Elapsed time: 00:00:02
+Info: Elaborating entity "lab2" for the top level hierarchy
+Info: Elaborating entity "Risk" for hierarchy "Risk:inst"
+Info: Elaborating entity "pluse_former" for hierarchy "pluse_former:inst2"
+Info: Elaborating entity "pluse_gen" for hierarchy "pluse_gen:inst1"
+Info: Elaborating entity "pluse_former_parasite_output" for hierarchy "pluse_former_parasite_output:inst4"
+Info: Elaborating entity "pluse_former_fon_and_slice" for hierarchy "pluse_former_fon_and_slice:inst3"
+Info: Elaborating entity "pluse_former_XOR" for hierarchy "pluse_former_XOR:inst5"
+Warning: Output pins are stuck at VCC or GND
+    Warning: Pin "pluse_former_out" stuck at VCC
+    Warning: Pin "pluse_former_fon_and_slice_out" stuck at VCC
+    Warning: Pin "pluse_former_XOR_out" stuck at GND
+Warning: Design contains 3 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "pluse_former_in"
+    Warning: No output dependent on input pin "pluse_former_fon_and_slice_in"
+    Warning: No output dependent on input pin "pluse_former_XOR_in"
+Info: Implemented 27 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 9 output pins
+    Info: Implemented 12 macrocells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Processing ended: Sat Oct 08 09:43:14 2022
+    Info: Elapsed time: 00:00:01
 
 

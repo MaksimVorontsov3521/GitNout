@@ -1,5 +1,5 @@
 Fitter report for lab2
-Tue Oct 04 14:43:02 2022
+Sat Oct 08 09:43:15 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -49,15 +49,15 @@ applicable agreement for further details.
 +------------------------------------------------------------------+
 ; Fitter Summary                                                   ;
 +-----------------------+------------------------------------------+
-; Fitter Status         ; Successful - Tue Oct 04 14:43:02 2022    ;
+; Fitter Status         ; Successful - Sat Oct 08 09:43:15 2022    ;
 ; Quartus II Version    ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name         ; lab2                                     ;
-; Top-level Entity Name ; Risk                                     ;
+; Top-level Entity Name ; lab2                                     ;
 ; Family                ; MAX7000S                                 ;
 ; Device                ; EPM7128SLC84-15                          ;
 ; Timing Models         ; Final                                    ;
-; Total macrocells      ; 6 / 128 ( 4 % )                          ;
-; Total pins            ; 8 / 68 ( 11 % )                          ;
+; Total macrocells      ; 12 / 128 ( 9 % )                         ;
+; Total pins            ; 19 / 68 ( 27 % )                         ;
 +-----------------------+------------------------------------------+
 
 
@@ -96,148 +96,159 @@ applicable agreement for further details.
 +------------------+
 ; Fitter Equations ;
 +------------------+
-The equations can be found in Z:/Lab2/lab2.fit.eqn.
+The equations can be found in C:/altera/Lab2/lab2.fit.eqn.
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in Z:/Lab2/lab2.pin.
+The pin-out file can be found in C:/altera/Lab2/lab2.pin.
 
 
-+-------------------------------------------------+
-; Fitter Resource Usage Summary                   ;
-+-------------------------------+-----------------+
-; Resource                      ; Usage           ;
-+-------------------------------+-----------------+
-; Logic cells                   ; 6 / 128 ( 4 % ) ;
-; Registers                     ; 0 / 128 ( 0 % ) ;
-; Number of pterms used         ; 6               ;
-; User inserted logic elements  ; 0               ;
-; I/O pins                      ; 8 / 68 ( 11 % ) ;
-;     -- Clock pins             ; 0 / 2 ( 0 % )   ;
-;     -- Dedicated input pins   ; 0 / 2 ( 0 % )   ;
-; Global signals                ; 0               ;
-; Shareable expanders           ; 0 / 128 ( 0 % ) ;
-; Parallel expanders            ; 0 / 120 ( 0 % ) ;
-; Cells using turbo bit         ; 6 / 128 ( 4 % ) ;
-; Maximum fan-out node          ; inst7           ;
-; Maximum fan-out               ; 2               ;
-; Total fan-out                 ; 10              ;
-; Average fan-out               ; 0.71            ;
-+-------------------------------+-----------------+
++----------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                              ;
++-------------------------------+--------------------------------------------+
+; Resource                      ; Usage                                      ;
++-------------------------------+--------------------------------------------+
+; Logic cells                   ; 12 / 128 ( 9 % )                           ;
+; Registers                     ; 0 / 128 ( 0 % )                            ;
+; Number of pterms used         ; 9                                          ;
+; User inserted logic elements  ; 0                                          ;
+; I/O pins                      ; 19 / 68 ( 27 % )                           ;
+;     -- Clock pins             ; 0 / 2 ( 0 % )                              ;
+;     -- Dedicated input pins   ; 0 / 2 ( 0 % )                              ;
+; Global signals                ; 0                                          ;
+; Shareable expanders           ; 0 / 128 ( 0 % )                            ;
+; Parallel expanders            ; 0 / 120 ( 0 % )                            ;
+; Cells using turbo bit         ; 12 / 128 ( 9 % )                           ;
+; Maximum fan-out node          ; pluse_former_parasite_output:inst4|inst5~6 ;
+; Maximum fan-out               ; 3                                          ;
+; Total fan-out                 ; 21                                         ;
+; Average fan-out               ; 0.68                                       ;
++-------------------------------+--------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                   ;
-+--------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
-; Name   ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
-+--------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
-; Risk_A ; 81    ; --       ; 8   ; 2                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
-+--------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                          ;
++-------------------------------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; Name                          ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
++-------------------------------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
+; Risk_A                        ; 33    ; --       ; 4   ; 2                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; pluse_former_XOR_in           ; 61    ; --       ; 6   ; 0                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; pluse_former_fon_and_slice_in ; 24    ; --       ; 3   ; 0                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; pluse_former_in               ; 80    ; --       ; 8   ; 0                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; pluse_former_parasite_out_in  ; 81    ; --       ; 8   ; 1                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; pluse_gen_in                  ; 52    ; --       ; 5   ; 1                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
++-------------------------------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                          ;
-+---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
-; Name    ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load        ;
-+---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
-; Risk_B  ; 12    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-; Risk_X1 ; 11    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-; Risk_X2 ; 10    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-+---------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                     ;
++------------------------------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
+; Name                               ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load        ;
++------------------------------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
+; Risk_B                             ; 6     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; Risk_X1                            ; 10    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; Risk_X2                            ; 11    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; pluse_former_XOR_out               ; 9     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; pluse_former_fon_and_slice_out     ; 8     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; pluse_former_out                   ; 22    ; --       ; 2   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; pluse_former_parasite_out_output_x ; 5     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; pluse_former_parasite_out_output_y ; 12    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; pluse_gen_out                      ; 4     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
++------------------------------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; All Package Pins                                                                                      ;
-+----------+------------+----------+----------------+--------+--------------+---------+-----------------+
-; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
-+----------+------------+----------+----------------+--------+--------------+---------+-----------------+
-; 1        ; 0          ; --       ; GND+           ;        ;              ;         ;                 ;
-; 2        ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
-; 3        ; 2          ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
-; 4        ; 3          ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 5        ; 4          ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 6        ; 5          ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 7        ; 6          ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 8        ; 7          ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 9        ; 8          ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 10       ; 9          ; --       ; Risk_X2        ; output ; TTL          ;         ; N               ;
-; 11       ; 10         ; --       ; Risk_X1        ; output ; TTL          ;         ; N               ;
-; 12       ; 11         ; --       ; Risk_B         ; output ; TTL          ;         ; N               ;
-; 13       ; 12         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 14       ; 13         ; --       ; +TDI           ; input  ; TTL          ;         ; N               ;
-; 15       ; 14         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 16       ; 15         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 17       ; 16         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 18       ; 17         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 19       ; 18         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 20       ; 19         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 21       ; 20         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 22       ; 21         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 23       ; 22         ; --       ; +TMS           ; input  ; TTL          ;         ; N               ;
-; 24       ; 23         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 25       ; 24         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 26       ; 25         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 27       ; 26         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 28       ; 27         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 29       ; 28         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 30       ; 29         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 31       ; 30         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 32       ; 31         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 33       ; 32         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 34       ; 33         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 35       ; 34         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 36       ; 35         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 37       ; 36         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 38       ; 37         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 39       ; 38         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 40       ; 39         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 41       ; 40         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 42       ; 41         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 43       ; 42         ; --       ; VCCINT         ; power  ;              ; 5.0V    ;                 ;
-; 44       ; 43         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 45       ; 44         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 46       ; 45         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 47       ; 46         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 48       ; 47         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 49       ; 48         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 50       ; 49         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 51       ; 50         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 52       ; 51         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 53       ; 52         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 54       ; 53         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 55       ; 54         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 56       ; 55         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 57       ; 56         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 58       ; 57         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 59       ; 58         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 60       ; 59         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 61       ; 60         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 62       ; 61         ; --       ; +TCK           ; input  ; TTL          ;         ; N               ;
-; 63       ; 62         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 64       ; 63         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 65       ; 64         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 66       ; 65         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 67       ; 66         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 68       ; 67         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 69       ; 68         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 70       ; 69         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 71       ; 70         ; --       ; *TDO           ; output ; TTL          ;         ; N               ;
-; 72       ; 71         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 73       ; 72         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 74       ; 73         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 75       ; 74         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 76       ; 75         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 77       ; 76         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 78       ; 77         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
-; 79       ; 78         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 80       ; 79         ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 81       ; 80         ; --       ; Risk_A         ; input  ; TTL          ;         ; N               ;
-; 82       ; 81         ; --       ; GND            ; gnd    ;              ;         ;                 ;
-; 83       ; 82         ; --       ; GND+           ;        ;              ;         ;                 ;
-; 84       ; 83         ; --       ; GND+           ;        ;              ;         ;                 ;
-+----------+------------+----------+----------------+--------+--------------+---------+-----------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                                          ;
++----------+------------+----------+------------------------------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage                     ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+------------------------------------+--------+--------------+---------+-----------------+
+; 1        ; 0          ; --       ; GND+                               ;        ;              ;         ;                 ;
+; 2        ; 1          ; --       ; GND+                               ;        ;              ;         ;                 ;
+; 3        ; 2          ; --       ; VCCINT                             ; power  ;              ; 5.0V    ;                 ;
+; 4        ; 3          ; --       ; pluse_gen_out                      ; output ; TTL          ;         ; N               ;
+; 5        ; 4          ; --       ; pluse_former_parasite_out_output_x ; output ; TTL          ;         ; N               ;
+; 6        ; 5          ; --       ; Risk_B                             ; output ; TTL          ;         ; N               ;
+; 7        ; 6          ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 8        ; 7          ; --       ; pluse_former_fon_and_slice_out     ; output ; TTL          ;         ; N               ;
+; 9        ; 8          ; --       ; pluse_former_XOR_out               ; output ; TTL          ;         ; N               ;
+; 10       ; 9          ; --       ; Risk_X1                            ; output ; TTL          ;         ; N               ;
+; 11       ; 10         ; --       ; Risk_X2                            ; output ; TTL          ;         ; N               ;
+; 12       ; 11         ; --       ; pluse_former_parasite_out_output_y ; output ; TTL          ;         ; N               ;
+; 13       ; 12         ; --       ; VCCIO                              ; power  ;              ; 5.0V    ;                 ;
+; 14       ; 13         ; --       ; +TDI                               ; input  ; TTL          ;         ; N               ;
+; 15       ; 14         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 16       ; 15         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 17       ; 16         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 18       ; 17         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 19       ; 18         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 20       ; 19         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 21       ; 20         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 22       ; 21         ; --       ; pluse_former_out                   ; output ; TTL          ;         ; N               ;
+; 23       ; 22         ; --       ; +TMS                               ; input  ; TTL          ;         ; N               ;
+; 24       ; 23         ; --       ; pluse_former_fon_and_slice_in      ; input  ; TTL          ;         ; N               ;
+; 25       ; 24         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 26       ; 25         ; --       ; VCCIO                              ; power  ;              ; 5.0V    ;                 ;
+; 27       ; 26         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 28       ; 27         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 29       ; 28         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 30       ; 29         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 31       ; 30         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 32       ; 31         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 33       ; 32         ; --       ; Risk_A                             ; input  ; TTL          ;         ; N               ;
+; 34       ; 33         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 35       ; 34         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 36       ; 35         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 37       ; 36         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 38       ; 37         ; --       ; VCCIO                              ; power  ;              ; 5.0V    ;                 ;
+; 39       ; 38         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 40       ; 39         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 41       ; 40         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 42       ; 41         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 43       ; 42         ; --       ; VCCINT                             ; power  ;              ; 5.0V    ;                 ;
+; 44       ; 43         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 45       ; 44         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 46       ; 45         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 47       ; 46         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 48       ; 47         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 49       ; 48         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 50       ; 49         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 51       ; 50         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 52       ; 51         ; --       ; pluse_gen_in                       ; input  ; TTL          ;         ; N               ;
+; 53       ; 52         ; --       ; VCCIO                              ; power  ;              ; 5.0V    ;                 ;
+; 54       ; 53         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 55       ; 54         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 56       ; 55         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 57       ; 56         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 58       ; 57         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 59       ; 58         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 60       ; 59         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 61       ; 60         ; --       ; pluse_former_XOR_in                ; input  ; TTL          ;         ; N               ;
+; 62       ; 61         ; --       ; +TCK                               ; input  ; TTL          ;         ; N               ;
+; 63       ; 62         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 64       ; 63         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 65       ; 64         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 66       ; 65         ; --       ; VCCIO                              ; power  ;              ; 5.0V    ;                 ;
+; 67       ; 66         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 68       ; 67         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 69       ; 68         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 70       ; 69         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 71       ; 70         ; --       ; *TDO                               ; output ; TTL          ;         ; N               ;
+; 72       ; 71         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 73       ; 72         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 74       ; 73         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 75       ; 74         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 76       ; 75         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 77       ; 76         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 78       ; 77         ; --       ; VCCIO                              ; power  ;              ; 5.0V    ;                 ;
+; 79       ; 78         ; --       ; RESERVED                           ;        ;              ;         ;                 ;
+; 80       ; 79         ; --       ; pluse_former_in                    ; input  ; TTL          ;         ; N               ;
+; 81       ; 80         ; --       ; pluse_former_parasite_out_in       ; input  ; TTL          ;         ; N               ;
+; 82       ; 81         ; --       ; GND                                ; gnd    ;              ;         ;                 ;
+; 83       ; 82         ; --       ; GND+                               ;        ;              ;         ;                 ;
+; 84       ; 83         ; --       ; GND+                               ;        ;              ;         ;                 ;
++----------+------------+----------+------------------------------------+--------+--------------+---------+-----------------+
 
 
 +-----------------------------------------------+
@@ -252,28 +263,39 @@ The pin-out file can be found in Z:/Lab2/lab2.pin.
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+----------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                ;
-+----------------------------+------------+------+---------------------+
-; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ;
-+----------------------------+------------+------+---------------------+
-; |Risk                      ; 6          ; 8    ; |Risk               ;
-+----------------------------+------------+------+---------------------+
++--------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                  ;
++-----------------------------------------+------------+------+------------------------------------------+
+; Compilation Hierarchy Node              ; Macrocells ; Pins ; Full Hierarchy Name                      ;
++-----------------------------------------+------------+------+------------------------------------------+
+; |lab2                                   ; 12         ; 19   ; |lab2                                    ;
+;    |Risk:inst|                          ; 4          ; 0    ; |lab2|Risk:inst                          ;
+;    |pluse_former_parasite_output:inst4| ; 1          ; 0    ; |lab2|pluse_former_parasite_output:inst4 ;
+;    |pluse_gen:inst1|                    ; 1          ; 0    ; |lab2|pluse_gen:inst1                    ;
++-----------------------------------------+------------+------+------------------------------------------+
 
 
-+---------------------------------+
-; Non-Global High Fan-Out Signals ;
-+-------------+-------------------+
-; Name        ; Fan-Out           ;
-+-------------+-------------------+
-; Risk_A      ; 2                 ;
-; inst6       ; 2                 ;
-; inst7       ; 2                 ;
-; Risk_X2~xor ; 1                 ;
-; Risk_X1~xor ; 1                 ;
-; inst9~0     ; 1                 ;
-; inst5       ; 1                 ;
-+-------------+-------------------+
++------------------------------------------------------+
+; Non-Global High Fan-Out Signals                      ;
++--------------------------------------------+---------+
+; Name                                       ; Fan-Out ;
++--------------------------------------------+---------+
+; pluse_former_parasite_output:inst4|inst5~6 ; 3       ;
+; Risk_A                                     ; 2       ;
+; pluse_gen:inst1|inst9~9                    ; 2       ;
+; Risk:inst|inst6                            ; 2       ;
+; Risk:inst|inst7                            ; 2       ;
+; pluse_former_parasite_out_in               ; 1       ;
+; pluse_gen_in                               ; 1       ;
+; pluse_former_parasite_out_output_y~xor     ; 1       ;
+; Risk_X2~xor                                ; 1       ;
+; Risk_X1~xor                                ; 1       ;
+; ~GND~0                                     ; 1       ;
+; ~VCC~1                                     ; 1       ;
+; ~VCC~0                                     ; 1       ;
+; Risk:inst|inst9~0                          ; 1       ;
+; Risk:inst|inst5                            ; 1       ;
++--------------------------------------------+---------+
 
 
 +----------------------------------------------+
@@ -282,51 +304,66 @@ Note: User assignments will override these defaults. The user specified values a
 ; Interconnect Resource Type ; Usage           ;
 +----------------------------+-----------------+
 ; Output enables             ; 0 / 6 ( 0 % )   ;
-; PIA buffers                ; 4 / 288 ( 1 % ) ;
-; PIAs                       ; 4 / 288 ( 1 % ) ;
+; PIA buffers                ; 8 / 288 ( 2 % ) ;
+; PIAs                       ; 8 / 288 ( 2 % ) ;
 +----------------------------+-----------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB External Interconnect                                                  ;
 +----------------------------------------------+-----------------------------+
-; LAB External Interconnects  (Average = 0.50) ; Number of LABs  (Total = 1) ;
+; LAB External Interconnects  (Average = 1.00) ; Number of LABs  (Total = 1) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 7                           ;
 ; 1                                            ; 0                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 1                           ;
+; 4                                            ; 0                           ;
+; 5                                            ; 0                           ;
+; 6                                            ; 0                           ;
+; 7                                            ; 0                           ;
+; 8                                            ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------+
 ; LAB Macrocells                                                       ;
 +----------------------------------------+-----------------------------+
-; Number of Macrocells  (Average = 0.75) ; Number of LABs  (Total = 1) ;
+; Number of Macrocells  (Average = 1.50) ; Number of LABs  (Total = 2) ;
 +----------------------------------------+-----------------------------+
-; 0                                      ; 7                           ;
-; 1                                      ; 0                           ;
+; 0                                      ; 6                           ;
+; 1                                      ; 1                           ;
 ; 2                                      ; 0                           ;
 ; 3                                      ; 0                           ;
 ; 4                                      ; 0                           ;
 ; 5                                      ; 0                           ;
-; 6                                      ; 1                           ;
+; 6                                      ; 0                           ;
+; 7                                      ; 0                           ;
+; 8                                      ; 0                           ;
+; 9                                      ; 0                           ;
+; 10                                     ; 0                           ;
+; 11                                     ; 1                           ;
 +----------------------------------------+-----------------------------+
 
 
-+--------------------------------------------------------+
-; Logic Cell Interconnection                             ;
-+-----+------------+--------------+----------------------+
-; LAB ; Logic Cell ; Input        ; Output               ;
-+-----+------------+--------------+----------------------+
-;  A  ; LC1        ; Risk_A       ; inst9~0, Risk_X1~xor ;
-;  A  ; LC2        ; Risk_A       ; inst6                ;
-;  A  ; LC4        ; inst5        ; inst9~0, Risk_X2~xor ;
-;  A  ; LC3        ; inst7, inst6 ; Risk_B               ;
-;  A  ; LC5        ; inst7        ; Risk_X1              ;
-;  A  ; LC6        ; inst6        ; Risk_X2              ;
-+-----+------------+--------------+----------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                           ;
++-----+------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                    ; Output                                                                                                                 ;
++-----+------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+;  A  ; LC4        ; Risk_A                                                                   ; Risk:inst|inst9~0, Risk_X1~xor                                                                                         ;
+;  A  ; LC2        ; Risk_A                                                                   ; Risk:inst|inst6                                                                                                        ;
+;  A  ; LC1        ; Risk:inst|inst5                                                          ; Risk:inst|inst9~0, Risk_X2~xor                                                                                         ;
+;  A  ; LC16       ; pluse_gen:inst1|inst9~9, pluse_gen_in                                    ; pluse_gen:inst1|inst9~9, pluse_gen_out                                                                                 ;
+;  A  ; LC14       ; pluse_former_parasite_output:inst4|inst5~6, pluse_former_parasite_out_in ; pluse_former_parasite_output:inst4|inst5~6, pluse_former_parasite_out_output_x, pluse_former_parasite_out_output_y~xor ;
+;  A  ; LC13       ; Risk:inst|inst7, Risk:inst|inst6                                         ; Risk_B                                                                                                                 ;
+;  A  ; LC11       ;                                                                          ; pluse_former_fon_and_slice_out                                                                                         ;
+;  A  ; LC8        ;                                                                          ; pluse_former_XOR_out                                                                                                   ;
+;  A  ; LC6        ; Risk:inst|inst7                                                          ; Risk_X1                                                                                                                ;
+;  A  ; LC5        ; Risk:inst|inst6                                                          ; Risk_X2                                                                                                                ;
+;  A  ; LC3        ; pluse_former_parasite_output:inst4|inst5~6                               ; pluse_former_parasite_out_output_y                                                                                     ;
+;  B  ; LC17       ;                                                                          ; pluse_former_out                                                                                                       ;
++-----+------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------+
@@ -335,11 +372,11 @@ Note: User assignments will override these defaults. The user specified values a
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Tue Oct 04 14:43:01 2022
+    Info: Processing started: Sat Oct 08 09:43:15 2022
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off lab2 -c lab2
 Info: Selected device EPM7128SLC84-15 for design "lab2"
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
-    Info: Processing ended: Tue Oct 04 14:43:02 2022
+    Info: Processing ended: Sat Oct 08 09:43:15 2022
     Info: Elapsed time: 00:00:01
 
 
