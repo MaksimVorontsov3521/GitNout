@@ -1,5 +1,5 @@
 Timing Analyzer report for lab2
-Sat Oct 08 10:46:46 2022
+Sat Oct 08 13:17:29 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -73,6 +73,7 @@ applicable agreement for further details.
 +-------+-------------------+-----------------+-------------------------------+------------------------------------+
 ; Slack ; Required P2P Time ; Actual P2P Time ; From                          ; To                                 ;
 +-------+-------------------+-----------------+-------------------------------+------------------------------------+
+; N/A   ; None              ; 42.000 ns       ; pluse_gen_in                  ; pluse_gen_out                      ;
 ; N/A   ; None              ; 42.000 ns       ; pluse_former_fon_and_slice_in ; pluse_former_fon_and_slice_out     ;
 ; N/A   ; None              ; 33.000 ns       ; pluse_former_XOR_in           ; pluse_former_XOR_out               ;
 ; N/A   ; None              ; 33.000 ns       ; pluse_former_in               ; pluse_former_out                   ;
@@ -80,7 +81,6 @@ applicable agreement for further details.
 ; N/A   ; None              ; 24.000 ns       ; pluse_former_parasite_out_in  ; pluse_former_parasite_out_output_x ;
 ; N/A   ; None              ; 24.000 ns       ; Risk_A                        ; Risk_X2                            ;
 ; N/A   ; None              ; 15.000 ns       ; pluse_former_parasite_out_in  ; pluse_former_parasite_out_output_y ;
-; N/A   ; None              ; 15.000 ns       ; pluse_gen_in                  ; pluse_gen_out                      ;
 ; N/A   ; None              ; 15.000 ns       ; Risk_A                        ; Risk_X1                            ;
 +-------+-------------------+-----------------+-------------------------------+------------------------------------+
 
@@ -91,25 +91,28 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Timing Analyzer
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 08 10:46:46 2022
+    Info: Processing started: Sat Oct 08 13:17:29 2022
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off lab2 -c lab2
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Info: Found combinational loop of 1 nodes
     Info: Node "pluse_former_parasite_output:inst4|inst5~4"
-Info: Found combinational loop of 1 nodes
-    Info: Node "pluse_gen:inst1|inst9~8"
-Info: Longest tpd from source pin "pluse_former_fon_and_slice_in" to destination pin "pluse_former_fon_and_slice_out" is 42.000 ns
-    Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_52; Fanout = 2; PIN Node = 'pluse_former_fon_and_slice_in'
-    Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 11.000 ns; Loc. = LC9; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst12'
-    Info: 3: + IC(2.000 ns) + CELL(7.000 ns) = 20.000 ns; Loc. = LC15; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst14'
-    Info: 4: + IC(2.000 ns) + CELL(7.000 ns) = 29.000 ns; Loc. = LC7; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst15'
-    Info: 5: + IC(2.000 ns) + CELL(7.000 ns) = 38.000 ns; Loc. = LC3; Fanout = 1; COMB Node = 'pluse_former_fon_and_slice:inst3|inst13~3'
-    Info: 6: + IC(0.000 ns) + CELL(4.000 ns) = 42.000 ns; Loc. = PIN_12; Fanout = 0; PIN Node = 'pluse_former_fon_and_slice_out'
-    Info: Total cell delay = 34.000 ns ( 80.95 % )
-    Info: Total interconnect delay = 8.000 ns ( 19.05 % )
+Info: Found combinational loop of 4 nodes
+    Info: Node "pluse_gen:inst1|inst13"
+    Info: Node "pluse_gen:inst1|inst10"
+    Info: Node "pluse_gen:inst1|inst11"
+    Info: Node "pluse_gen:inst1|inst12"
+Info: Longest tpd from source pin "pluse_gen_in" to destination pin "pluse_gen_out" is 42.000 ns
+    Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_80; Fanout = 2; PIN Node = 'pluse_gen_in'
+    Info: 2: + IC(0.000 ns) + CELL(36.000 ns) = 38.000 ns; Loc. = LC3; Fanout = 2; COMB LOOP Node = 'pluse_gen:inst1|inst13'
+        Info: Loc. = LC12; Node "pluse_gen:inst1|inst10"
+        Info: Loc. = LC3; Node "pluse_gen:inst1|inst13"
+        Info: Loc. = LC18; Node "pluse_gen:inst1|inst12"
+        Info: Loc. = LC20; Node "pluse_gen:inst1|inst11"
+    Info: 3: + IC(0.000 ns) + CELL(4.000 ns) = 42.000 ns; Loc. = PIN_12; Fanout = 0; PIN Node = 'pluse_gen_out'
+    Info: Total cell delay = 42.000 ns ( 100.00 % )
 Info: Quartus II Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 08 10:46:46 2022
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Sat Oct 08 13:17:29 2022
+    Info: Elapsed time: 00:00:01
 
 

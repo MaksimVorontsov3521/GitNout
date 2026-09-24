@@ -185,15 +185,11 @@ TRANSITION_LIST("pluse_former_fon_and_slice_in")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 40.0;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 70.0;
 	}
 }
 
@@ -211,13 +207,11 @@ TRANSITION_LIST("pluse_former_in")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 70.0;
 	}
 }
 
@@ -235,13 +229,11 @@ TRANSITION_LIST("pluse_former_parasite_out_in")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 70.0;
 	}
 }
 
@@ -268,15 +260,11 @@ TRANSITION_LIST("pluse_former_XOR_in")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 40.0;
-		NODE
-		{
-			REPEAT = 1;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 70.0;
 	}
 }
 
@@ -294,13 +282,8 @@ TRANSITION_LIST("pluse_gen_in")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 2;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
-		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 140.0;
 	}
 }
 
@@ -318,13 +301,15 @@ TRANSITION_LIST("Risk_A")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 10.0;
 		NODE
 		{
-			REPEAT = 2;
-			LEVEL 0 FOR 40.0;
-			LEVEL 1 FOR 40.0;
+			REPEAT = 1;
+			LEVEL 1 FOR 20.0;
+			LEVEL 0 FOR 80.0;
 		}
-		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 20.0;
+		LEVEL 0 FOR 70.0;
 	}
 }
 

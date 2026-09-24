@@ -16,22 +16,22 @@ B1_inst7_or_out = Risk_A;
 B1_inst7 = B1_inst7_or_out;
 
 
---B1_inst5 is Risk:inst|inst5 at LC12
+--B1_inst5 is Risk:inst|inst5 at LC1
 B1_inst5_or_out = !Risk_A;
 B1_inst5 = B1_inst5_or_out;
 
 
---D1_inst7 is pluse_former:inst2|inst7 at LC10
+--D1_inst7 is pluse_former:inst2|inst7 at LC2
 D1_inst7_or_out = pluse_former_in;
 D1_inst7 = D1_inst7_or_out;
 
 
---E1_inst12 is pluse_former_fon_and_slice:inst3|inst12 at LC9
+--E1_inst12 is pluse_former_fon_and_slice:inst3|inst12 at LC4
 E1_inst12_or_out = !pluse_former_fon_and_slice_in;
 E1_inst12 = E1_inst12_or_out;
 
 
---G1_inst6 is pluse_former_XOR:inst5|inst6 at LC1
+--G1_inst6 is pluse_former_XOR:inst5|inst6 at LC7
 G1_inst6_or_out = !pluse_former_XOR_in;
 G1_inst6 = G1_inst6_or_out;
 
@@ -41,9 +41,15 @@ B1_inst6_or_out = B1_inst5;
 B1_inst6 = B1_inst6_or_out;
 
 
---D1_inst8 is pluse_former:inst2|inst8 at LC4
+--D1_inst8 is pluse_former:inst2|inst8 at LC10
 D1_inst8_or_out = !D1_inst7;
 D1_inst8 = D1_inst8_or_out;
+
+
+--C1_inst10 is pluse_gen:inst1|inst10 at LC12
+C1_inst10_p1_out = !C1_inst13 & !pluse_gen_in;
+C1_inst10_or_out = C1_inst10_p1_out;
+C1_inst10 = C1_inst10_or_out;
 
 
 --E1_inst14 is pluse_former_fon_and_slice:inst3|inst14 at LC15
@@ -51,18 +57,12 @@ E1_inst14_or_out = !E1_inst12;
 E1_inst14 = E1_inst14_or_out;
 
 
---G1_inst9 is pluse_former_XOR:inst5|inst9 at LC2
+--G1_inst9 is pluse_former_XOR:inst5|inst9 at LC9
 G1_inst9_or_out = G1_inst6;
 G1_inst9 = G1_inst9_or_out;
 
 
---C1L1 is pluse_gen:inst1|inst9~8 at LC16
-C1L1_p1_out = !C1L1 & !pluse_gen_in;
-C1L1_or_out = C1L1_p1_out;
-C1L1 = C1L1_or_out;
-
-
---F1L1 is pluse_former_parasite_output:inst4|inst5~4 at LC11
+--F1L1 is pluse_former_parasite_output:inst4|inst5~4 at LC16
 F1L1_p1_out = F1L1 & pluse_former_parasite_out_in;
 F1L1_or_out = F1L1_p1_out;
 F1L1 = !(F1L1_or_out);
@@ -74,30 +74,45 @@ B1L4_or_out = B1L4_p1_out;
 B1L4 = !(B1L4_or_out);
 
 
---D1L1 is pluse_former:inst2|inst6~8 at LC8
+--D1L1 is pluse_former:inst2|inst6~8 at LC11
 D1L1_p1_out = D1_inst8 & pluse_former_in;
 D1L1_or_out = D1L1_p1_out;
 D1L1 = !(D1L1_or_out);
 
 
---E1_inst15 is pluse_former_fon_and_slice:inst3|inst15 at LC7
+--C1_inst11 is pluse_gen:inst1|inst11 at LC20
+C1_inst11_or_out = C1_inst10;
+C1_inst11 = C1_inst11_or_out;
+
+
+--E1_inst15 is pluse_former_fon_and_slice:inst3|inst15 at LC19
 E1_inst15_or_out = !E1_inst14;
 E1_inst15 = E1_inst15_or_out;
 
 
---G1L1 is pluse_former_XOR:inst5|inst4~0 at LC6
+--G1L1 is pluse_former_XOR:inst5|inst4~0 at LC8
 G1L1_or_out = pluse_former_XOR_in;
 G1L1 = !G1_inst9 $ G1L1_or_out;
 
 
---F1L2 is pluse_former_parasite_output:inst4|inst5~6 at LC5
+--F1L2 is pluse_former_parasite_output:inst4|inst5~6 at LC6
 F1L2_or_out = !F1L1;
 F1L2 = F1L2_or_out;
 
 
---E1L2 is pluse_former_fon_and_slice:inst3|inst13~3 at LC3
+--C1_inst12 is pluse_gen:inst1|inst12 at LC18
+C1_inst12_or_out = C1_inst11;
+C1_inst12 = C1_inst12_or_out;
+
+
+--E1L2 is pluse_former_fon_and_slice:inst3|inst13~3 at LC5
 E1L2_or_out = !pluse_former_fon_and_slice_in;
 E1L2 = !E1_inst15 $ E1L2_or_out;
+
+
+--C1_inst13 is pluse_gen:inst1|inst13 at LC3
+C1_inst13_or_out = C1_inst12;
+C1_inst13 = C1_inst13_or_out;
 
 
 --Risk_A is Risk_A at PIN_61
@@ -148,13 +163,7 @@ Risk_X1 = OUTPUT(B1_inst7);
 Risk_X2 = OUTPUT(B1_inst6);
 
 
---pluse_gen_out is pluse_gen_out at PIN_4
---operation mode is output
-
-pluse_gen_out = OUTPUT(C1L1);
-
-
---pluse_former_parasite_out_output_y is pluse_former_parasite_out_output_y at PIN_8
+--pluse_former_parasite_out_output_y is pluse_former_parasite_out_output_y at PIN_4
 --operation mode is output
 
 pluse_former_parasite_out_output_y = OUTPUT(F1L1);
@@ -166,28 +175,34 @@ pluse_former_parasite_out_output_y = OUTPUT(F1L1);
 Risk_B = OUTPUT(B1L4);
 
 
---pluse_former_out is pluse_former_out at PIN_9
+--pluse_former_out is pluse_former_out at PIN_8
 --operation mode is output
 
 pluse_former_out = OUTPUT(D1L1);
 
 
---pluse_former_parasite_out_output_x is pluse_former_parasite_out_output_x at PIN_11
+--pluse_former_parasite_out_output_x is pluse_former_parasite_out_output_x at PIN_10
 --operation mode is output
 
 pluse_former_parasite_out_output_x = OUTPUT(F1L2);
 
 
---pluse_former_XOR_out is pluse_former_XOR_out at PIN_10
+--pluse_former_XOR_out is pluse_former_XOR_out at PIN_9
 --operation mode is output
 
 pluse_former_XOR_out = OUTPUT(G1L1);
 
 
---pluse_former_fon_and_slice_out is pluse_former_fon_and_slice_out at PIN_12
+--pluse_former_fon_and_slice_out is pluse_former_fon_and_slice_out at PIN_11
 --operation mode is output
 
 pluse_former_fon_and_slice_out = OUTPUT(E1L2);
+
+
+--pluse_gen_out is pluse_gen_out at PIN_12
+--operation mode is output
+
+pluse_gen_out = OUTPUT(C1_inst13);
 
 
 

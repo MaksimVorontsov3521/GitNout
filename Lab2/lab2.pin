@@ -55,15 +55,15 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 GND+                         : 1         :        :                   :         :           :                
 GND+                         : 2         :        :                   :         :           :                
 VCCINT                       : 3         : power  :                   : 5.0V    :           :                
-pluse_gen_out                : 4         : output : TTL               :         :           : N              
+pluse_former_parasite_out_output_y : 4         : output : TTL               :         :           : N              
 Risk_X2                      : 5         : output : TTL               :         :           : N              
 Risk_X1                      : 6         : output : TTL               :         :           : N              
 GND                          : 7         : gnd    :                   :         :           :                
-pluse_former_parasite_out_output_y : 8         : output : TTL               :         :           : N              
-pluse_former_out             : 9         : output : TTL               :         :           : N              
-pluse_former_XOR_out         : 10        : output : TTL               :         :           : N              
-pluse_former_parasite_out_output_x : 11        : output : TTL               :         :           : N              
-pluse_former_fon_and_slice_out : 12        : output : TTL               :         :           : N              
+pluse_former_out             : 8         : output : TTL               :         :           : N              
+pluse_former_XOR_out         : 9         : output : TTL               :         :           : N              
+pluse_former_parasite_out_output_x : 10        : output : TTL               :         :           : N              
+pluse_former_fon_and_slice_out : 11        : output : TTL               :         :           : N              
+pluse_gen_out                : 12        : output : TTL               :         :           : N              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 RESERVED                     : 15        :        :                   :         :           :                

@@ -1,5 +1,5 @@
 Flow report for lab2
-Sat Oct 08 10:46:46 2022
+Sat Oct 08 13:17:29 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Successful - Sat Oct 08 10:46:46 2022    ;
+; Flow Status             ; Successful - Sat Oct 08 13:17:29 2022    ;
 ; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name           ; lab2                                     ;
 ; Top-level Entity Name   ; lab2                                     ;
@@ -44,7 +44,7 @@ applicable agreement for further details.
 ; Device                  ; EPM7128SLC84-15                          ;
 ; Timing Models           ; Final                                    ;
 ; Met timing requirements ; Yes                                      ;
-; Total macrocells        ; 17 / 128 ( 13 % )                        ;
+; Total macrocells        ; 20 / 128 ( 15 % )                        ;
 ; Total pins              ; 19 / 68 ( 27 % )                         ;
 +-------------------------+------------------------------------------+
 
@@ -54,7 +54,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/08/2022 10:46:43 ;
+; Start date & time ; 10/08/2022 13:17:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab2                ;
 +-------------------+---------------------+
@@ -66,10 +66,10 @@ applicable agreement for further details.
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
 ; Analysis & Synthesis ; 00:00:01     ;
-; Fitter               ; 00:00:00     ;
+; Fitter               ; 00:00:01     ;
 ; Assembler            ; 00:00:00     ;
-; Timing Analyzer      ; 00:00:00     ;
-; Total                ; 00:00:01     ;
+; Timing Analyzer      ; 00:00:01     ;
+; Total                ; 00:00:03     ;
 +----------------------+--------------+
 
 
