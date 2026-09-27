@@ -1,0 +1,190 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+notand
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+notand.vhd
+1665339113
+4
+# storage
+db|Lab3.(0).cnf
+db|Lab3.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+dstr:inst4|notand:u1
+dstr:inst4|notand:u2
+}
+# end
+# entity
+RS-trigger
+# case_insensitive
+# source_file
+RS-trigger.bdf
+1790086834
+23
+# storage
+db|Lab3.(1).cnf
+db|Lab3.(1).cnf
+# hierarchies {
+D-trigger:inst2|RS-trigger:inst1
+}
+# end
+# entity
+D-trigger
+# case_insensitive
+# source_file
+D-trigger.bdf
+1665480721
+23
+# storage
+db|Lab3.(2).cnf
+db|Lab3.(2).cnf
+# hierarchies {
+D-trigger:inst2
+}
+# end
+# entity
+d_behav
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+d_behav.vhd
+1665339624
+4
+# storage
+db|Lab3.(4).cnf
+db|Lab3.(4).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+d_behav:inst3
+}
+# end
+# entity
+dstr
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+dstr.vhd
+1665339598
+4
+# storage
+db|Lab3.(5).cnf
+db|Lab3.(5).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# include_file {
+notand.vhd
+1665339113
+}
+# hierarchies {
+dstr:inst4
+}
+# end
+# entity
+rstr
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+rstr.vhd
+1665339519
+4
+# storage
+db|Lab3.(6).cnf
+db|Lab3.(6).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# include_file {
+notand.vhd
+1665339113
+}
+# end
+# entity
+rstr1
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+rstr1.vhd
+1665339564
+4
+# storage
+db|Lab3.(7).cnf
+db|Lab3.(7).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# end
+# entity
+RS-test
+# case_insensitive
+# source_file
+RS-test.bdf
+1665483355
+23
+# storage
+db|Lab3.(3).cnf
+db|Lab3.(3).cnf
+# end
+# entity
+D-test
+# case_insensitive
+# source_file
+D-test.bdf
+1665483312
+23
+# storage
+db|Lab3.(8).cnf
+db|Lab3.(8).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

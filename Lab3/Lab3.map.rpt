@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Lab3
-Thu Oct 06 16:48:08 2022
+Tue Oct 11 14:43:03 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -10,7 +10,11 @@ Version 5.0 Build 148 04/26/2005 SJ Full Version
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Analysis & Synthesis Source Files Read
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Logic Cells Representing Combinational Loops
+  8. Analysis & Synthesis Equations
+  9. Analysis & Synthesis Messages
 
 
 
@@ -36,11 +40,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Oct 06 16:48:08 2022        ;
+; Analysis & Synthesis Status ; Successful - Tue Oct 11 14:43:03 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; Lab3                                     ;
-; Top-level Entity Name       ; RS-trigger                               ;
+; Top-level Entity Name       ; D-test                                   ;
 ; Family                      ; MAX7000S                                 ;
+; Total macrocells            ; 5                                        ;
+; Total pins                  ; 7                                        ;
 +-----------------------------+------------------------------------------+
 
 
@@ -50,7 +56,7 @@ applicable agreement for further details.
 ; Option                                                               ; Setting         ; Default Value ;
 +----------------------------------------------------------------------+-----------------+---------------+
 ; Device                                                               ; EPM7128SLC84-15 ;               ;
-; Top-level entity name                                                ; RS-trigger      ; Lab3          ;
+; Top-level entity name                                                ; D-test          ; Lab3          ;
 ; Family name                                                          ; MAX7000S        ; Stratix       ;
 ; Use smart compilation                                                ; Off             ; Off           ;
 ; Create Debugging Nodes for IP Cores                                  ; off             ; off           ;
@@ -87,11 +93,67 @@ applicable agreement for further details.
 +----------------------------------------------------------------------+-----------------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                        ;
-+----------------------------------+-----------------+-----------+------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type ; File Name with Absolute Path ;
-+----------------------------------+-----------------+-----------+------------------------------+
++-------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path  ;
++----------------------------------+-----------------+------------------------------------+-------------------------------+
+; notand.vhd                       ; yes             ; User VHDL File                     ; C:/altera/Lab3/notand.vhd     ;
+; RS-trigger.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab3/RS-trigger.bdf ;
+; D-trigger.bdf                    ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab3/D-trigger.bdf  ;
+; dstr.vhd                         ; yes             ; User VHDL File                     ; C:/altera/Lab3/dstr.vhd       ;
+; d_behav.vhd                      ; yes             ; User VHDL File                     ; C:/altera/Lab3/d_behav.vhd    ;
+; D-test.bdf                       ; yes             ; User Block Diagram/Schematic File  ; C:/altera/Lab3/D-test.bdf     ;
++----------------------------------+-----------------+------------------------------------+-------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++----------------------+----------------------+
+; Resource             ; Usage                ;
++----------------------+----------------------+
+; Logic cells          ; 5                    ;
+; Total registers      ; 1                    ;
+; I/O pins             ; 7                    ;
+; Shareable expanders  ; 1                    ;
+; Maximum fan-out node ; D-input              ;
+; Maximum fan-out      ; 4                    ;
+; Total fan-out        ; 19                   ;
+; Average fan-out      ; 1.46                 ;
++----------------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                       ;
++----------------------------+------------+------+------------------------------------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name                      ;
++----------------------------+------------+------+------------------------------------------+
+; |D-test                    ; 5          ; 7    ; |D-test                                  ;
+;    |D-trigger:inst2|       ; 2          ; 0    ; |D-test|D-trigger:inst2                  ;
+;       |RS-trigger:inst1|   ; 2          ; 0    ; |D-test|D-trigger:inst2|RS-trigger:inst1 ;
+;    |d_behav:inst3|         ; 1          ; 0    ; |D-test|d_behav:inst3                    ;
+;    |dstr:inst4|            ; 2          ; 0    ; |D-test|dstr:inst4                       ;
+;       |notand:u1|          ; 1          ; 0    ; |D-test|dstr:inst4|notand:u1             ;
+;       |notand:u2|          ; 1          ; 0    ; |D-test|dstr:inst4|notand:u2             ;
++----------------------------+------------+------+------------------------------------------+
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; D-trigger:inst2|RS-trigger:inst1|inst~0                ;   ;
+; dstr:inst4|notand:u1|c~2                               ;   ;
+; Number of logic cells representing combinational loops ; 2 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in C:/altera/Lab3/Lab3.map.eqn.
 
 
 +-------------------------------+
@@ -100,31 +162,48 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Thu Oct 06 16:48:07 2022
+    Info: Processing started: Tue Oct 11 14:43:02 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab3 -c Lab3
-Error: VHDL syntax error at notand.vhd(1) near text "Libary";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration"
-Error: VHDL error at notand.vhd(2): object "ieee" is used but not declared
-Error: VHDL error at notand.vhd(5): object "std_logic" is used but not declared
-Error: VHDL error at notand.vhd(6): object "std_logic" is used but not declared
-Error: VHDL error at notand.vhd(7): object "std_logic" is used but not declared
-Error: Ignored construct notand at notand.vhd(4) because of previous errors
-Error: VHDL error at notand.vhd(10): entity "notand" is used but not declared
-Error: VHDL error at notand.vhd(12): object "c" is used but not declared
-Info: Found 0 design units, including 0 entities, in source file notand.vhd
+Info: Found 1 design units, including 1 entities, in source file RS-test.bdf
+    Info: Found entity 1: RS-test
+Info: Found 2 design units, including 1 entities, in source file notand.vhd
+    Info: Found design unit 1: notand-behavior
+    Info: Found entity 1: notand
 Info: Found 1 design units, including 1 entities, in source file RS-trigger.bdf
     Info: Found entity 1: RS-trigger
 Info: Found 1 design units, including 1 entities, in source file D-trigger.bdf
     Info: Found entity 1: D-trigger
-Error: VHDL syntax error at Lab3.vhd(1) near text "Libary";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration"
-Error: VHDL error at Lab3.vhd(2): object "ieee" is used but not declared
-Error: VHDL error at Lab3.vhd(6): object "b" is used but not declared
-Error: VHDL error at Lab3.vhd(5): object "std_logic" is used but not declared
-Error: VHDL syntax error at Lab3.vhd(6) near text ":";  expecting ";", or ")"
-Error: VHDL error at Lab3.vhd(10): entity "notand" is used but not declared
-Error: VHDL error at Lab3.vhd(12): object "c" is used but not declared
-Info: Found 0 design units, including 0 entities, in source file Lab3.vhd
-Error: Quartus II Analysis & Synthesis was unsuccessful. 15 errors, 0 warnings
-    Error: Processing ended: Thu Oct 06 16:48:08 2022
-    Error: Elapsed time: 00:00:01
+Info: Found 3 design units, including 1 entities, in source file rstr.vhd
+    Info: Found design unit 1: rstr-behav
+    Info: Found design unit 2: con
+    Info: Found entity 1: rstr
+Info: Found 2 design units, including 1 entities, in source file rstr1.vhd
+    Info: Found design unit 1: rstr1-behav
+    Info: Found entity 1: rstr1
+Info: Found 3 design units, including 1 entities, in source file dstr.vhd
+    Info: Found design unit 1: dstr-behav
+    Info: Found design unit 2: con_d
+    Info: Found entity 1: dstr
+Info: Found 2 design units, including 1 entities, in source file d_behav.vhd
+    Info: Found design unit 1: d_behav-behav
+    Info: Found entity 1: d_behav
+Info: Found 1 design units, including 1 entities, in source file D-test.bdf
+    Info: Found entity 1: D-test
+Info: Elaborating entity "D-test" for the top level hierarchy
+Info: Elaborating entity "D-trigger" for hierarchy "D-trigger:inst2"
+Info: Elaborating entity "RS-trigger" for hierarchy "D-trigger:inst2|RS-trigger:inst1"
+Info: Elaborating entity "d_behav" for hierarchy "d_behav:inst3"
+Info: Elaborating entity "dstr" for hierarchy "dstr:inst4"
+Info: Elaborating entity "notand" for hierarchy "dstr:inst4|notand:u1"
+Info: Promoted pin-driven signal(s) to global signal
+    Info: Promoted clock signal driven by pin "C-input" to global clock signal
+Info: Implemented 13 device resources after synthesis - the final resource count might be different
+    Info: Implemented 2 input pins
+    Info: Implemented 5 output pins
+    Info: Implemented 5 macrocells
+    Info: Implemented 1 shareable expanders
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Processing ended: Tue Oct 11 14:43:03 2022
+    Info: Elapsed time: 00:00:01
 
 

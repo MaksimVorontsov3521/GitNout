@@ -1,5 +1,5 @@
 Flow report for Lab3
-Thu Oct 06 16:48:08 2022
+Tue Oct 11 14:43:06 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,14 +36,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Flow Failed - Thu Oct 06 16:48:08 2022   ;
+; Flow Status             ; Successful - Tue Oct 11 14:43:06 2022    ;
 ; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name           ; Lab3                                     ;
-; Top-level Entity Name   ; RS-trigger                               ;
+; Top-level Entity Name   ; D-test                                   ;
 ; Family                  ; MAX7000S                                 ;
 ; Device                  ; EPM7128SLC84-15                          ;
 ; Timing Models           ; Final                                    ;
-; Met timing requirements ; N/A                                      ;
+; Met timing requirements ; Yes                                      ;
+; Total macrocells        ; 5 / 128 ( 3 % )                          ;
+; Total pins              ; 11 / 68 ( 16 % )                         ;
 +-------------------------+------------------------------------------+
 
 
@@ -52,7 +54,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/06/2022 16:48:07 ;
+; Start date & time ; 10/11/2022 14:43:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Lab3                ;
 +-------------------+---------------------+
@@ -64,7 +66,10 @@ applicable agreement for further details.
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
 ; Analysis & Synthesis ; 00:00:01     ;
-; Total                ; 00:00:01     ;
+; Fitter               ; 00:00:00     ;
+; Assembler            ; 00:00:00     ;
+; Timing Analyzer      ; 00:00:01     ;
+; Total                ; 00:00:02     ;
 +----------------------+--------------+
 
 
@@ -72,6 +77,9 @@ applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Lab3 -c Lab3
+quartus_fit --read_settings_files=off --write_settings_files=off Lab3 -c Lab3
+quartus_asm --read_settings_files=off --write_settings_files=off Lab3 -c Lab3
+quartus_tan --read_settings_files=off --write_settings_files=off Lab3 -c Lab3
 
 
 

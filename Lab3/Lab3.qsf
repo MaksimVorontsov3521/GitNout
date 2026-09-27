@@ -28,17 +28,26 @@
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 5.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:19:17  OCTOBER 06, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION 5.0
+set_global_assignment -name BDF_FILE "RS-test.bdf"
 set_global_assignment -name VHDL_FILE notand.vhd
 set_global_assignment -name BDF_FILE "RS-trigger.bdf"
 set_global_assignment -name BDF_FILE "D-trigger.bdf"
-set_global_assignment -name VHDL_FILE Lab3.vhd
+set_global_assignment -name VHDL_FILE rstr.vhd
+set_global_assignment -name VHDL_FILE rstr1.vhd
+set_global_assignment -name VHDL_FILE dstr.vhd
+set_global_assignment -name VHDL_FILE d_behav.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE Lab3.vwf
+set_global_assignment -name BDF_FILE "D-test.bdf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "Rs-test.vwf"
 
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY MAX7000S
-set_global_assignment -name TOP_LEVEL_ENTITY "RS-trigger"
+set_global_assignment -name TOP_LEVEL_ENTITY "D-test"
 
 # Fitter Assignments
 # ==================
 set_global_assignment -name DEVICE "EPM7128SLC84-15"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1

@@ -1,0 +1,93 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1_q is d_behav:inst3|q
+C1_q_or_out = D-input;
+C1_q_reg_input = C1_q_or_out;
+C1_q = DFFE(C1_q_reg_input, GLOBAL(C-input), , , );
+
+
+--E1L2 is D-trigger:inst2|RS-trigger:inst1|inst~30
+E1L2_p1_out = !E1L2 & !GLOBAL(C-input);
+E1L2_p2_out = !E1L2 & !D-input;
+E1L2_p4_out = GLOBAL(C-input) & !D-input;
+E1L2_or_out = E1L2_p1_out # E1L2_p2_out # GND # E1L2_p4_out;
+E1L2 = !(E1L2_or_out);
+
+
+--F1L1 is dstr:inst4|notand:u1|c~8
+F1L1_p1_out = F1L1 & !GLOBAL(C-input);
+F1L1_p2_out = GLOBAL(C-input) & D-input;
+F1L1_p3_out = F1L1 & D-input;
+F1L1_or_out = F1L1_p1_out # F1L1_p2_out # F1L1_p3_out;
+F1L1 = F1L1_or_out;
+
+
+--E1L1 is D-trigger:inst2|RS-trigger:inst1|inst3~2
+E1L1_p1_out = E1L2 & B1L1;
+E1L1_or_out = E1L1_p1_out;
+E1L1 = !(E1L1_or_out);
+
+
+--F2L1 is dstr:inst4|notand:u2|c~27
+F2L1_p1_out = F1L1 & B1L1;
+F2L1_or_out = F2L1_p1_out;
+F2L1 = !(F2L1_or_out);
+
+
+--B1L1 is D-trigger:inst2|inst3~3sexp
+B1L1 = EXP(C-input & !D-input);
+
+
+--D-input is D-input
+--operation mode is input
+
+D-input = INPUT();
+
+
+--C-input is C-input
+--operation mode is input
+
+C-input = INPUT();
+
+
+--d_behav_q is d_behav_q
+--operation mode is output
+
+d_behav_q = OUTPUT(C1_q);
+
+
+--D-trigger-Q is D-trigger-Q
+--operation mode is output
+
+D-trigger-Q = OUTPUT(E1L2);
+
+
+--dstr_q is dstr_q
+--operation mode is output
+
+dstr_q = OUTPUT(F1L1);
+
+
+--D-trigger_QB is D-trigger_QB
+--operation mode is output
+
+D-trigger_QB = OUTPUT(E1L1);
+
+
+--dstr_qb is dstr_qb
+--operation mode is output
+
+dstr_qb = OUTPUT(F2L1);
+
+

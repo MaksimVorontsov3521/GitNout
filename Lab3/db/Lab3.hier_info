@@ -1,0 +1,56 @@
+|D-test
+D-trigger-Q <= D-trigger:inst2.Q
+D-input => D-trigger:inst2.D
+D-input => d_behav:inst3.d
+D-input => dstr:inst4.d
+C-input => D-trigger:inst2.L
+C-input => d_behav:inst3.c
+C-input => dstr:inst4.c
+D-trigger_QB <= D-trigger:inst2.QB
+d_behav_q <= d_behav:inst3.q
+dstr_q <= dstr:inst4.q
+dstr_qb <= dstr:inst4.qb
+
+
+|D-test|D-trigger:inst2
+Q <= RS-trigger:inst1.Q
+L => inst.IN0
+L => inst3.IN0
+D => inst.IN1
+QB <= RS-trigger:inst1.QB
+
+
+|D-test|D-trigger:inst2|RS-trigger:inst1
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+R => inst3.IN0
+S => inst.IN1
+QB <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D-test|d_behav:inst3
+d => qs.DATAIN
+c => qs.CLK
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D-test|dstr:inst4
+d => s_int~0.IN0
+d => r_int~0.IN0
+c => s_int~0.IN1
+c => r_int~1.IN0
+q <= notand:u1.c
+qb <= notand:u2.c
+
+
+|D-test|dstr:inst4|notand:u1
+a => c~0.IN0
+b => c~0.IN1
+c <= c~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D-test|dstr:inst4|notand:u2
+a => c~0.IN0
+b => c~0.IN1
+c <= c~1.DB_MAX_OUTPUT_PORT_TYPE
+
+
