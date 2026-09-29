@@ -9,144 +9,95 @@
 
 #define PortCan0 0x40
 
-void beep(unsigned iTone, unsigned iDlit);  // Prototype of the sound function
+void beep(unsigned iTone, unsigned iDlit);  // Prototype (not used now)
 
 void main(void)
 {
-    // Variable declarations (C89 requires all declarations at the top)
-    long int lCnt = 0;   // Repetition counter
-    int iA = 0x1234;     // Dummy variable used in the instruction under test
+    // --- Variable declarations (C89: all at the top) ---
+    long int lCnt = 0;          // Repetition counter for C loop
+    int iA = 0x1234;            // Dummy variable used in the instruction under test
     char far *pT;
     int i;
     unsigned char Tmm;
     long far *pTime;
     int Time;
+    long startTicks, endTicks;  // For tick measurement
+    long cLoopTicks, asmLoopTicks; // Results
 
-    /************************************************
-     * How to view the contents of a byte at a known
-     * physical address in C
-     ************************************************/
-    // If we want to print the contents of the byte at address 0046Ch,
-    // declare a far pointer to a char variable and initialize
-    // this pointer with the address value, having previously cast it to char *
-    pT = (char *)0x46C;  // (1)
-
+    // --- Part 1: Reading memory via far pointer ---
+    pT = (char *)0x46C;
     printf("\n Printing 10 times the value of the byte at a known address \n");
-    
-    // Removed 'int' from the loop for C89 compliance
     for (i = 0; i < 10; i++) {
-        printf(" \n  %d ", *pT);   // (1)
+        printf(" \n  %d ", *pT);
     }
 
     printf("\n Press any key to continue \n");
-    getch();  // Wait for a keypress
+    getch();
 
-    /************************************************
-     * How to view the contents of a port in C
-     ************************************************/
-    // Reading the port at address 40 using C functions
+    // --- Part 2: Reading port 0x40 via C function ---
     printf("\n Reading the port at address 40 using C functions \n");
-    // The loop repeats every 0.5 seconds
     printf("\n Press any key to exit the loop \n");
 
-    while (bioskey(1) == 0)  // until any key is pressed
-    {
-        printf(" \n Port40 = %d ", inp(PortCan0));  // (2)
-        // Use Turbo Debugger to see how the inp() function translates
-        // into machine instructions
-        delay(500);  // 500 ms delay
+    while (bioskey(1) == 0) {
+        printf(" \n Port40 = %d ", inp(PortCan0));
+        delay(500);
     }
+    getch();
 
-    getch();  // Clear keyboard buffer
-
-    /************************************************
-     * Notes:
-     * The printf(...) function allows you to print variable values
-     * and arbitrary text on the screen.
-     * The bioskey(1) function allows you to check if a key is pressed.
-     * The inp(uPort) function allows you to read a byte from the Port.
-     * The outp(uPort, iValue) function allows you to output the iValue
-     * to the uPort.
-     * The delay(uTime) function creates a software delay for uTime
-     * milliseconds.
-     * The getch() function reads a single character from the keyboard buffer.
-     *
-     * In this case, it is needed to clear the keyboard buffer.
-     ************************************************/
-
-    // Reading the same port again using inline assembly
+    // --- Part 3: Reading port 0x40 via inline assembly ---
     printf("\n Reading the port at address 40 using assembly \n");
 
-    while (bioskey(1) == 0)  // This loop will repeat until a key is pressed
-    {
-        // Examples of using inline assembly (3)
+    while (bioskey(1) == 0) {
         asm {
-            push ax   // Inline assembly syntax variant 1
+            push ax
             in al, 0x40
         }
-
-        Tmm = _AL;  // This is equivalent to mov Tmm, al
-                    // !! Verify this with Turbo Debugger
-
-        asm pop ax  // Inline assembly syntax variant 2
-
+        Tmm = _AL;
+        asm pop ax
         delay(500);
         printf(" \n Port40 = %d ", Tmm);
-        // If a key is pressed - exit
     }
-
     getch();
 
     printf("\n Press any key to continue \n ");
     getch();
 
-    /************************************************
-     * How to view the contents of a long (e.g.,
-     * four-byte) variable at address 0046C
-     * using C tools
-     ************************************************/
+    // --- Part 4: Reading long variable from 0x46C via C ---
     pTime = (long *)0x46C;  // Pointer to the tick counter
 
-    while (bioskey(1) == 0)
-    {
+    while (bioskey(1) == 0) {
         printf("\n %ld", *pTime);
         delay(1000);
     }
-
     getch();
 
-    // Reading and printing the contents of a two-byte variable
-    // at address 0046C using inline assembly
-    while (bioskey(1) == 0)
-    {
-        asm push ds       // Save registers just in case
+    // --- Part 5: Reading two-byte variable from 0x46C via assembly ---
+    while (bioskey(1) == 0) {
+        asm push ds
         asm push si
-
-        // In inline assembly
-        asm mov ax, 40h   // hex constants can be written like this ...
+        asm mov ax, 40h
         asm mov ds, ax
-        asm mov si, 0x6C  // ... or like this
+        asm mov si, 0x6C
         asm mov ax, [ds:si]
         asm mov Time, ax
-
-        asm pop si        // Now restore the registers
-        asm pop ds        // (do not mix up the order !!!)
+        asm pop si
+        asm pop ds
 
         printf("\n %d", Time);
         delay(300);
     }
+    getch();
 
-    /************************************************
-     * Example of completing a Type I task
-     * You need to measure the execution time of a given instruction
-     * (in the example - the mov reg, mem instruction, but ask your
-     * teacher which instruction you should take).
-     * Measuring execution time of a code fragment
-     ************************************************/
-    beep(400, 200);  // Signal marks the start of the interval (5)
+    // ============================================================
+    // TIMING SECTION
+    // ============================================================
+    printf("\n\n--- Timing measurement using system ticks at 0x46C ---\n");
 
-    for (lCnt = 0; lCnt < 1000000; lCnt++)
-    {
+    // --- Measure C loop ---
+    printf("\n Running C loop (1,000,000 iterations of 10 MOVs)...\n");
+    startTicks = *pTime;
+
+    for (lCnt = 0; lCnt < 1000000; lCnt++) {
 a1:
         asm {
             mov ax, iA
@@ -163,10 +114,56 @@ a2:
         }
     }
 
-    beep(400, 200);  // Signal marks the end of the interval (5)
+    endTicks = *pTime;
+    cLoopTicks = endTicks - startTicks;
+    printf(" C loop took %ld ticks.\n", cLoopTicks);
+
+
+    // --- Measure assembly loop ---
+    beep(400, 200);
+    // --- Measure assembly loop ---
+    // --- Measure assembly loop (pure assembly, 2 nested loops) ---
+    printf("\n Running assembly loop (100 * 10000 = 1,000,000 iterations)...\n");
+    startTicks = *pTime;
+
+    asm {
+        push bx
+        push cx
+        mov bx, 100         // Внешний счётчик: 100 итераций
+    }
+
+outer_loop:                 // C-метка для внешнего цикла
+    asm {
+        mov cx, 10000       // Внутренний счётчик: 10000 итераций
+    }
+
+inner_loop:                 // C-метка для внутреннего цикла
+    asm {
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        mov ax, iA
+        loop inner_loop     // Уменьшить CX и перейти, если CX != 0
+        dec bx              // Уменьшить внешний счётчик
+        jnz outer_loop      // Перейти, если BX != 0
+        pop cx
+        pop bx
+    }
+
+    endTicks = *pTime;
+    asmLoopTicks = endTicks - startTicks;
+    beep(400, 200);
+    printf(" Assembly loop took %ld ticks.\n", asmLoopTicks);
+    getch();
 }
 
-// Function to produce a sound signal of a given tone and duration (5)
+// Sound function (kept for reference, but not used)
 void beep(unsigned iTone, unsigned iDlit)
 {
     sound(iTone);
