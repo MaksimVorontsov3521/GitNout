@@ -1,0 +1,10 @@
+Flow Status : Successful - Sat Oct 15 11:19:03 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : 9
+Top-level Entity Name : 2-stroke_D-trigger
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 2 / 128 ( 1 % )
+Total pins : 9 / 68 ( 13 % )

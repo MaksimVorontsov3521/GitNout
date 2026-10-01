@@ -1,0 +1,56 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.000 ns
+From           : D
+To             : Two-digit_single-stroke_shift_register:inst3|inst
+From Clock     : 
+To Clock       : C
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.000 ns
+From           : shift_reg_1clk:inst1|tmp[0]
+To             : VHDQ1
+From Clock     : C
+To Clock       : 
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : -3.000 ns
+From           : D
+To             : Two-digit_single-stroke_shift_register:inst3|inst
+From Clock     : 
+To Clock       : C
+Failed Paths   : 0
+
+Type           : Clock Setup: 'C'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 38.46 MHz ( period = 26.000 ns )
+From           : Two-digit_single-stroke_shift_register:inst3|inst
+To             : Two-digit_single-stroke_shift_register:inst3|inst3
+From Clock     : C
+To Clock       : C
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

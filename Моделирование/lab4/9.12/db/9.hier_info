@@ -1,0 +1,9 @@
+|2-stroke_D-trigger
+Q <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+R => inst4.ACLR
+R => inst.ACLR
+C2 => inst4.CLK
+C1 => inst.CLK
+D => inst.DATAIN
+
+

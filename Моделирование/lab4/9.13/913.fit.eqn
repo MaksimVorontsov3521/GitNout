@@ -1,0 +1,99 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--D1_inst is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst at LC2
+D1_inst_or_out = D;
+D1_inst_reg_input = D1_inst_or_out;
+D1_inst = DFFE(D1_inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
+
+
+--D1_inst4 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4 at LC8
+D1_inst4_or_out = D1_inst;
+D1_inst4_reg_input = D1_inst4_or_out;
+D1_inst4 = DFFE(D1_inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
+
+
+--D2_inst is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst at LC1
+D2_inst_or_out = D1_inst4;
+D2_inst_reg_input = D2_inst_or_out;
+D2_inst = DFFE(D2_inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
+
+
+--D1L3 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4~4 at LC6
+D1L3_or_out = D1_inst4;
+D1L3 = D1L3_or_out;
+
+
+--D2_inst4 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4 at LC3
+D2_inst4_or_out = D2_inst;
+D2_inst4_reg_input = D2_inst4_or_out;
+D2_inst4 = DFFE(D2_inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
+
+
+--D2L3 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4~2 at LC5
+D2L3_or_out = D2_inst4;
+D2L3 = D2L3_or_out;
+
+
+--D is D at PIN_81
+--operation mode is input
+
+D = INPUT();
+
+
+--C1 is C1 at PIN_83
+--operation mode is input
+
+C1 = INPUT();
+
+
+--C2 is C2 at PIN_2
+--operation mode is input
+
+C2 = INPUT();
+
+
+--R is R at PIN_1
+--operation mode is input
+
+R = INPUT();
+
+
+--Q1BDF is Q1BDF at PIN_9
+--operation mode is output
+
+Q1BDF = OUTPUT(D1_inst4);
+
+
+--Q1VHD is Q1VHD at PIN_10
+--operation mode is output
+
+Q1VHD = OUTPUT(D1L3);
+
+
+--Q2BDF is Q2BDF at PIN_12
+--operation mode is output
+
+Q2BDF = OUTPUT(D2_inst4);
+
+
+--Q2VHD is Q2VHD at PIN_11
+--operation mode is output
+
+Q2VHD = OUTPUT(D2L3);
+
+
+
+
+
+

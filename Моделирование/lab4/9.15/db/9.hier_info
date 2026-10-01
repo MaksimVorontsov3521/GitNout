@@ -1,0 +1,41 @@
+|74395_universal_register
+Q1 <= 74395:inst.Q1
+Load => 74395:inst.LD/SHN
+Ser => 74395:inst.SER
+D1 => 74395:inst.D1
+D2 => 74395:inst.D2
+D3 => 74395:inst.D3
+R => 74395:inst.CLRN
+C => 74395:inst.CLK
+D4 => 74395:inst.D4
+O => 74395:inst.OEN
+Q2 <= 74395:inst.Q2
+Q3 <= 74395:inst.Q3
+Q4 <= 74395:inst.Q4
+S <= 74395:inst.Q4B
+
+
+|74395_universal_register|74395:inst
+Q4B <= 20.DB_MAX_OUTPUT_PORT_TYPE
+CLRN => 20.ACLR
+CLRN => 15.ACLR
+CLRN => 10.ACLR
+CLRN => 7.ACLR
+CLK => 41.IN0
+LD/SHN => 22.IN0
+LD/SHN => 16.IN0
+LD/SHN => 13.IN0
+LD/SHN => 4.IN0
+LD/SHN => 36.IN0
+D4 => 22.IN1
+D3 => 16.IN1
+D2 => 13.IN1
+D1 => 4.IN1
+SER => 40.IN0
+Q4 <= 31.DB_MAX_OUTPUT_PORT_TYPE
+OEN => 35.IN0
+Q3 <= 29.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= 27.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= 25.DB_MAX_OUTPUT_PORT_TYPE
+
+

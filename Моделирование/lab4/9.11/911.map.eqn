@@ -1,0 +1,91 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_tmp[0] is shift_reg_1clk:inst1|tmp[0]
+B1_tmp[0]_or_out = D;
+B1_tmp[0]_reg_input = B1_tmp[0]_or_out;
+B1_tmp[0] = DFFE(B1_tmp[0]_reg_input, !GLOBAL(C), GLOBAL(R), , );
+
+
+--C1_inst is Two-digit_single-stroke_shift_register:inst3|inst
+C1_inst_or_out = D;
+C1_inst_reg_input = C1_inst_or_out;
+C1_inst = DFFE(C1_inst_reg_input, GLOBAL(C), GLOBAL(R), , );
+
+
+--B1_tmp[1] is shift_reg_1clk:inst1|tmp[1]
+B1_tmp[1]_or_out = B1_tmp[0];
+B1_tmp[1]_reg_input = B1_tmp[1]_or_out;
+B1_tmp[1] = DFFE(B1_tmp[1]_reg_input, !GLOBAL(C), GLOBAL(R), , );
+
+
+--C1_inst3 is Two-digit_single-stroke_shift_register:inst3|inst3
+C1_inst3_or_out = C1_inst;
+C1_inst3_reg_input = C1_inst3_or_out;
+C1_inst3 = DFFE(C1_inst3_reg_input, !GLOBAL(C), GLOBAL(R), , );
+
+
+--C1_inst4 is Two-digit_single-stroke_shift_register:inst3|inst4
+C1_inst4_or_out = C1_inst3;
+C1_inst4_reg_input = C1_inst4_or_out;
+C1_inst4 = DFFE(C1_inst4_reg_input, GLOBAL(C), GLOBAL(R), , );
+
+
+--C1_inst5 is Two-digit_single-stroke_shift_register:inst3|inst5
+C1_inst5_or_out = C1_inst4;
+C1_inst5_reg_input = C1_inst5_or_out;
+C1_inst5 = DFFE(C1_inst5_reg_input, !GLOBAL(C), GLOBAL(R), , );
+
+
+--D is D
+--operation mode is input
+
+D = INPUT();
+
+
+--C is C
+--operation mode is input
+
+C = INPUT();
+
+
+--R is R
+--operation mode is input
+
+R = INPUT();
+
+
+--VHDQ1 is VHDQ1
+--operation mode is output
+
+VHDQ1 = OUTPUT(B1_tmp[0]);
+
+
+--VHDQ2 is VHDQ2
+--operation mode is output
+
+VHDQ2 = OUTPUT(B1_tmp[1]);
+
+
+--BDFQ1 is BDFQ1
+--operation mode is output
+
+BDFQ1 = OUTPUT(C1_inst3);
+
+
+--BDFQ2 is BDFQ2
+--operation mode is output
+
+BDFQ2 = OUTPUT(C1_inst5);
+
+
