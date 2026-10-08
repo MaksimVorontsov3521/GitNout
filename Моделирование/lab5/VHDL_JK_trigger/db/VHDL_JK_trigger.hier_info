@@ -1,0 +1,10 @@
+|JK_trigger
+J => process0~1.IN0
+J => process0~4.IN0
+K => process0~2.IN0
+K => process0~3.IN0
+CLK => state.CLK
+Q <= state.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= state~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

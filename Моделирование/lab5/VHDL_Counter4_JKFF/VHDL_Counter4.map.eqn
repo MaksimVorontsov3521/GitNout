@@ -1,0 +1,83 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--s0 is s0
+--operation mode is normal
+
+s0_lut_out = !s0 & !RST;
+s0 = DFFEAS(s0_lut_out, CLK, VCC, , , , , , );
+
+
+--s1 is s1
+--operation mode is normal
+
+s1_lut_out = !RST & (s0 $ s1);
+s1 = DFFEAS(s1_lut_out, CLK, VCC, , , , , , );
+
+
+--s2 is s2
+--operation mode is normal
+
+s2_lut_out = !RST & (s2 $ (s0 & s1));
+s2 = DFFEAS(s2_lut_out, CLK, VCC, , , , , , );
+
+
+--s3 is s3
+--operation mode is normal
+
+s3_lut_out = !RST & (s3 $ (s2 & A1L1));
+s3 = DFFEAS(s3_lut_out, CLK, VCC, , , , , , );
+
+
+--A1L1 is add~111
+--operation mode is normal
+
+A1L1 = s0 & s1;
+
+
+--RST is RST
+--operation mode is input
+
+RST = INPUT();
+
+
+--CLK is CLK
+--operation mode is input
+
+CLK = INPUT();
+
+
+--q0 is q0
+--operation mode is output
+
+q0 = OUTPUT(s0);
+
+
+--q1 is q1
+--operation mode is output
+
+q1 = OUTPUT(s1);
+
+
+--q2 is q2
+--operation mode is output
+
+q2 = OUTPUT(s2);
+
+
+--q3 is q3
+--operation mode is output
+
+q3 = OUTPUT(s3);
+
+

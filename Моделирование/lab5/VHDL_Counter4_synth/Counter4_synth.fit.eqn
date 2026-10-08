@@ -1,0 +1,102 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--cnt[0] is cnt[0] at LC_X2_Y29_N8
+--operation mode is normal
+
+cnt[0]_lut_out = !cnt[0];
+cnt[0] = DFFEAS(cnt[0]_lut_out, GLOBAL(CLK), GLOBAL(RST_N), , EN, , , , );
+
+
+--cnt[1] is cnt[1] at LC_X2_Y29_N2
+--operation mode is normal
+
+cnt[1]_lut_out = !cnt[1];
+cnt[1] = DFFEAS(cnt[1]_lut_out, GLOBAL(CLK), GLOBAL(RST_N), , A1L5, , , , );
+
+
+--cnt[2] is cnt[2] at LC_X1_Y29_N2
+--operation mode is normal
+
+cnt[2]_lut_out = !cnt[2];
+cnt[2] = DFFEAS(cnt[2]_lut_out, GLOBAL(CLK), GLOBAL(RST_N), , A1L7, , , , );
+
+
+--cnt[3] is cnt[3] at LC_X3_Y29_N2
+--operation mode is normal
+
+cnt[3]_lut_out = !cnt[3];
+cnt[3] = DFFEAS(cnt[3]_lut_out, GLOBAL(CLK), GLOBAL(RST_N), , A1L9, , , , );
+
+
+--A1L5 is cnt[1]~40 at LC_X2_Y29_N6
+--operation mode is normal
+
+A1L5 = EN & cnt[0];
+
+
+--A1L7 is cnt[2]~41 at LC_X2_Y29_N5
+--operation mode is normal
+
+A1L7 = cnt[1] & (EN & cnt[0]);
+
+
+--A1L9 is cnt[3]~42 at LC_X2_Y29_N4
+--operation mode is normal
+
+A1L9 = cnt[1] & cnt[2] & EN & cnt[0];
+
+
+--CLK is CLK at PIN_L2
+--operation mode is input
+
+CLK = INPUT();
+
+
+--RST_N is RST_N at PIN_L3
+--operation mode is input
+
+RST_N = INPUT();
+
+
+--EN is EN at PIN_E22
+--operation mode is input
+
+EN = INPUT();
+
+
+--Q[0] is Q[0] at PIN_C21
+--operation mode is output
+
+Q[0] = OUTPUT(cnt[0]);
+
+
+--Q[1] is Q[1] at PIN_E21
+--operation mode is output
+
+Q[1] = OUTPUT(cnt[1]);
+
+
+--Q[2] is Q[2] at PIN_F18
+--operation mode is output
+
+Q[2] = OUTPUT(cnt[2]);
+
+
+--Q[3] is Q[3] at PIN_A19
+--operation mode is output
+
+Q[3] = OUTPUT(cnt[3]);
+
+
+

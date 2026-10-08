@@ -1,0 +1,82 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--inst3 is inst3 at LC3
+inst3_reg_input = VCC;
+inst3 = TFFE(inst3_reg_input, GLOBAL(c), GLOBAL(r), , jk);
+
+
+--inst2 is inst2 at LC5
+inst2_or_out = jk;
+inst2_reg_input = inst2_or_out;
+inst2 = TFFE(inst2_reg_input, !inst3, GLOBAL(r), , );
+
+
+--inst1 is inst1 at LC6
+inst1_or_out = jk;
+inst1_reg_input = inst1_or_out;
+inst1 = TFFE(inst1_reg_input, !inst2, GLOBAL(r), , );
+
+
+--inst is inst at LC8
+inst_or_out = jk;
+inst_reg_input = inst_or_out;
+inst = TFFE(inst_reg_input, !inst1, GLOBAL(r), , );
+
+
+--r is r at PIN_1
+--operation mode is input
+
+r = INPUT();
+
+
+--jk is jk at PIN_81
+--operation mode is input
+
+jk = INPUT();
+
+
+--c is c at PIN_83
+--operation mode is input
+
+c = INPUT();
+
+
+--q0 is q0 at PIN_12
+--operation mode is output
+
+q0 = OUTPUT(inst3);
+
+
+--q1 is q1 at PIN_11
+--operation mode is output
+
+q1 = OUTPUT(inst2);
+
+
+--q2 is q2 at PIN_10
+--operation mode is output
+
+q2 = OUTPUT(inst1);
+
+
+--q3 is q3 at PIN_9
+--operation mode is output
+
+q3 = OUTPUT(inst);
+
+
+
+
+
+

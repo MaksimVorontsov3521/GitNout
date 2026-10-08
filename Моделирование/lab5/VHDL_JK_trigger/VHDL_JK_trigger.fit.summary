@@ -1,0 +1,10 @@
+Flow Status : Successful - Sat Oct 22 08:05:56 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : VHDL_JK_trigger
+Top-level Entity Name : JK_trigger
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 2 / 128 ( 1 % )
+Total pins : 9 / 68 ( 13 % )

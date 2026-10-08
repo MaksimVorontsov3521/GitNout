@@ -1,0 +1,7 @@
+|T_trigger
+T => state~1.OUTPUTSELECT
+CLK => state.CLK
+Q <= state.DB_MAX_OUTPUT_PORT_TYPE
+Qn <= state~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

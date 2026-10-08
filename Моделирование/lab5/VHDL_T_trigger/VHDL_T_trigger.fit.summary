@@ -1,0 +1,10 @@
+Flow Status : Successful - Sat Oct 22 08:11:59 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : VHDL_T_trigger
+Top-level Entity Name : T_trigger
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 2 / 128 ( 1 % )
+Total pins : 8 / 68 ( 11 % )

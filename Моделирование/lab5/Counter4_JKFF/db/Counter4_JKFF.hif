@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+Counter4_JKFF
+# case_insensitive
+# source_file
+Counter4_JKFF.bdf
+1666408981
+23
+# storage
+db|Counter4_JKFF.(0).cnf
+db|Counter4_JKFF.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

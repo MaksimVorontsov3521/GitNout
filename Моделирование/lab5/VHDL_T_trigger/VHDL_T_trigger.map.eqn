@@ -1,0 +1,47 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--state is state
+state_reg_input = VCC;
+state = TFFE(state_reg_input, GLOBAL(CLK), , , T);
+
+
+--A1L5 is state~9
+A1L5_or_out = !state;
+A1L5 = A1L5_or_out;
+
+
+--T is T
+--operation mode is input
+
+T = INPUT();
+
+
+--CLK is CLK
+--operation mode is input
+
+CLK = INPUT();
+
+
+--Q is Q
+--operation mode is output
+
+Q = OUTPUT(state);
+
+
+--Qn is Qn
+--operation mode is output
+
+Qn = OUTPUT(A1L5);
+
+
