@@ -62,8 +62,8 @@ GND                          : 7         : gnd    :                   :         
 RESERVED                     : 8         :        :                   :         :           :                
 RESERVED                     : 9         :        :                   :         :           :                
 RESERVED                     : 10        :        :                   :         :           :                
-RESERVED                     : 11        :        :                   :         :           :                
-Q                            : 12        : output : TTL               :         :           : N              
+Q                            : 11        : output : TTL               :         :           : N              
+Q1                           : 12        : output : TTL               :         :           : N              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 RESERVED                     : 15        :        :                   :         :           :                

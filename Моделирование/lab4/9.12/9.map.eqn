@@ -47,6 +47,12 @@ C1 = INPUT();
 D = INPUT();
 
 
+--Q1 is Q1
+--operation mode is output
+
+Q1 = OUTPUT(inst);
+
+
 --Q is Q
 --operation mode is output
 

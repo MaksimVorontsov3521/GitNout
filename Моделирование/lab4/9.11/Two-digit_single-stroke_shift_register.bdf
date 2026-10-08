@@ -99,6 +99,38 @@ applicable agreement for further details.
 		(line (pt 78 12)(pt 82 8)(line_width 1))
 	)
 )
+(pin
+	(output)
+	(rect 528 64 704 80)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "D1" (rect 90 0 104 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
+(pin
+	(output)
+	(rect 776 112 952 128)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "D2" (rect 90 0 104 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8)(line_width 1))
+		(line (pt 52 4)(pt 78 4)(line_width 1))
+		(line (pt 52 12)(pt 78 12)(line_width 1))
+		(line (pt 52 12)(pt 52 4)(line_width 1))
+		(line (pt 78 4)(pt 82 8)(line_width 1))
+		(line (pt 82 8)(pt 78 12)(line_width 1))
+		(line (pt 78 12)(pt 82 8)(line_width 1))
+	)
+)
 (symbol
 	(rect 400 136 464 216)
 	(text "DFF" (rect 1 0 19 10)(font "Arial" (font_size 6)))
@@ -356,14 +388,6 @@ applicable agreement for further details.
 	(pt 288 160)
 )
 (connector
-	(pt 464 160)
-	(pt 536 160)
-)
-(connector
-	(pt 712 160)
-	(pt 776 160)
-)
-(connector
 	(pt 744 240)
 	(pt 744 176)
 )
@@ -471,6 +495,38 @@ applicable agreement for further details.
 	(pt 680 360)
 	(pt 808 360)
 )
+(connector
+	(pt 528 72)
+	(pt 488 72)
+)
+(connector
+	(pt 488 72)
+	(pt 488 160)
+)
+(connector
+	(pt 464 160)
+	(pt 488 160)
+)
+(connector
+	(pt 488 160)
+	(pt 536 160)
+)
+(connector
+	(pt 776 120)
+	(pt 736 120)
+)
+(connector
+	(pt 736 120)
+	(pt 736 160)
+)
+(connector
+	(pt 712 160)
+	(pt 736 160)
+)
+(connector
+	(pt 736 160)
+	(pt 776 160)
+)
 (junction (pt 336 328))
 (junction (pt 496 328))
 (junction (pt 616 328))
@@ -478,3 +534,5 @@ applicable agreement for further details.
 (junction (pt 568 360))
 (junction (pt 680 360))
 (junction (pt 624 160))
+(junction (pt 488 160))
+(junction (pt 736 160))

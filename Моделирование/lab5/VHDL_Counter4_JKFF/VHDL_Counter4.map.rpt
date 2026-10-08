@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VHDL_Counter4
-Sat Oct 22 10:37:35 2022
+Sat Oct 22 11:16:02 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 22 10:37:35 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 22 11:16:02 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; VHDL_Counter4                            ;
 ; Top-level Entity Name       ; Counter4                                 ;
@@ -181,7 +181,7 @@ The equations can be found in C:/altera/lab5/VHDL_Counter4_JKFF/VHDL_Counter4.ma
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 22 10:37:34 2022
+    Info: Processing started: Sat Oct 22 11:16:01 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VHDL_Counter4 -c VHDL_Counter4
 Info: Found 2 design units, including 1 entities, in source file Counter4.vhd
     Info: Found design unit 1: Counter4-Behavioral
@@ -192,7 +192,7 @@ Info: Implemented 11 device resources after synthesis - the final resource count
     Info: Implemented 4 output pins
     Info: Implemented 5 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 22 10:37:35 2022
+    Info: Processing ended: Sat Oct 22 11:16:02 2022
     Info: Elapsed time: 00:00:01
 
 

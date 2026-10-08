@@ -1,0 +1,130 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_20 is 74395:inst|20 at LC_X19_Y1_N2
+--operation mode is normal
+
+B1_20_lut_out = Load & (D4) # !Load & (B1_15);
+B1_20 = DFFEAS(B1_20_lut_out, !GLOBAL(CLK), GLOBAL(CLRN), , , , , , );
+
+
+--B1_7 is 74395:inst|7 at LC_X19_Y1_N4
+--operation mode is normal
+
+B1_7_lut_out = Load & D1 # !Load & (Ser);
+B1_7 = DFFEAS(B1_7_lut_out, !GLOBAL(CLK), GLOBAL(CLRN), , , , , , );
+
+
+--B1_10 is 74395:inst|10 at LC_X19_Y1_N5
+--operation mode is normal
+
+B1_10_lut_out = Load & D2 # !Load & (B1_7);
+B1_10 = DFFEAS(B1_10_lut_out, !GLOBAL(CLK), GLOBAL(CLRN), , , , , , );
+
+
+--B1_15 is 74395:inst|15 at LC_X19_Y1_N6
+--operation mode is normal
+
+B1_15_lut_out = Load & (D3) # !Load & (B1_10);
+B1_15 = DFFEAS(B1_15_lut_out, !GLOBAL(CLK), GLOBAL(CLRN), , , , , , );
+
+
+--OEN is OEN at PIN_N14
+--operation mode is input
+
+OEN = INPUT();
+
+
+--D4 is D4 at PIN_T14
+--operation mode is input
+
+D4 = INPUT();
+
+
+--Load is Load at PIN_P13
+--operation mode is input
+
+Load = INPUT();
+
+
+--CLK is CLK at PIN_L2
+--operation mode is input
+
+CLK = INPUT();
+
+
+--CLRN is CLRN at PIN_L3
+--operation mode is input
+
+CLRN = INPUT();
+
+
+--D1 is D1 at PIN_P15
+--operation mode is input
+
+D1 = INPUT();
+
+
+--Ser is Ser at PIN_P14
+--operation mode is input
+
+Ser = INPUT();
+
+
+--D2 is D2 at PIN_Y14
+--operation mode is input
+
+D2 = INPUT();
+
+
+--D3 is D3 at PIN_N15
+--operation mode is input
+
+D3 = INPUT();
+
+
+--Q1 is Q1 at PIN_U14
+--operation mode is output
+
+Q1_tri_out = TRI(B1_7, !OEN);
+Q1 = OUTPUT(Q1_tri_out);
+
+
+--Q2 is Q2 at PIN_W15
+--operation mode is output
+
+Q2_tri_out = TRI(B1_10, !OEN);
+Q2 = OUTPUT(Q2_tri_out);
+
+
+--Q3 is Q3 at PIN_U15
+--operation mode is output
+
+Q3_tri_out = TRI(B1_15, !OEN);
+Q3 = OUTPUT(Q3_tri_out);
+
+
+--Q4 is Q4 at PIN_W14
+--operation mode is output
+
+Q4_tri_out = TRI(B1_20, !OEN);
+Q4 = OUTPUT(Q4_tri_out);
+
+
+--S is S at PIN_V14
+--operation mode is output
+
+S = OUTPUT(B1_20);
+
+
+

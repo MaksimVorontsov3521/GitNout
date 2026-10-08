@@ -37,7 +37,7 @@ set_global_assignment -name BDF_FILE 913.bdf
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY MAX7000S
-set_global_assignment -name TOP_LEVEL_ENTITY 913
+set_global_assignment -name TOP_LEVEL_ENTITY "2-stroke_two-digit_shift_register"
 
 # Fitter Assignments
 # ==================

@@ -55,15 +55,15 @@ Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage 
 Reset                        : 1         : input  : TTL               :         :           : N              
 GND+                         : 2         :        :                   :         :           :                
 VCCINT                       : 3         : power  :                   : 5.0V    :           :                
-Q1V                          : 4         : output : TTL               :         :           : N              
-Q2V                          : 5         : output : TTL               :         :           : N              
-Q3V                          : 6         : output : TTL               :         :           : N              
+X2                           : 4         : input  : TTL               :         :           : N              
+RESERVED                     : 5         :        :                   :         :           :                
+RESERVED                     : 6         :        :                   :         :           :                
 GND                          : 7         : gnd    :                   :         :           :                
-Q4V                          : 8         : output : TTL               :         :           : N              
-Q1                           : 9         : output : TTL               :         :           : N              
-Q2                           : 10        : output : TTL               :         :           : N              
-Q3                           : 11        : output : TTL               :         :           : N              
-Q4                           : 12        : output : TTL               :         :           : N              
+RESERVED                     : 8         :        :                   :         :           :                
+Q4                           : 9         : output : TTL               :         :           : N              
+Q3                           : 10        : output : TTL               :         :           : N              
+Q2                           : 11        : output : TTL               :         :           : N              
+Q1                           : 12        : output : TTL               :         :           : N              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 RESERVED                     : 15        :        :                   :         :           :                
@@ -75,7 +75,7 @@ RESERVED                     : 20        :        :                   :         
 RESERVED                     : 21        :        :                   :         :           :                
 RESERVED                     : 22        :        :                   :         :           :                
 TMS                          : 23        : input  : TTL               :         :           : N              
-X2                           : 24        : input  : TTL               :         :           : N              
+X1                           : 24        : input  : TTL               :         :           : N              
 RESERVED                     : 25        :        :                   :         :           :                
 VCCIO                        : 26        : power  :                   : 5.0V    :           :                
 RESERVED                     : 27        :        :                   :         :           :                
@@ -84,7 +84,7 @@ RESERVED                     : 29        :        :                   :         
 RESERVED                     : 30        :        :                   :         :           :                
 RESERVED                     : 31        :        :                   :         :           :                
 GND                          : 32        : gnd    :                   :         :           :                
-X3                           : 33        : input  : TTL               :         :           : N              
+Read                         : 33        : input  : TTL               :         :           : N              
 RESERVED                     : 34        :        :                   :         :           :                
 RESERVED                     : 35        :        :                   :         :           :                
 RESERVED                     : 36        :        :                   :         :           :                
@@ -103,7 +103,7 @@ RESERVED                     : 48        :        :                   :         
 RESERVED                     : 49        :        :                   :         :           :                
 RESERVED                     : 50        :        :                   :         :           :                
 RESERVED                     : 51        :        :                   :         :           :                
-X4                           : 52        : input  : TTL               :         :           : N              
+X3                           : 52        : input  : TTL               :         :           : N              
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 RESERVED                     : 54        :        :                   :         :           :                
 RESERVED                     : 55        :        :                   :         :           :                
@@ -112,7 +112,7 @@ RESERVED                     : 57        :        :                   :         
 RESERVED                     : 58        :        :                   :         :           :                
 GND                          : 59        : gnd    :                   :         :           :                
 RESERVED                     : 60        :        :                   :         :           :                
-X1                           : 61        : input  : TTL               :         :           : N              
+RESERVED                     : 61        :        :                   :         :           :                
 TCK                          : 62        : input  : TTL               :         :           : N              
 RESERVED                     : 63        :        :                   :         :           :                
 RESERVED                     : 64        :        :                   :         :           :                
@@ -132,7 +132,7 @@ RESERVED                     : 77        :        :                   :         
 VCCIO                        : 78        : power  :                   : 5.0V    :           :                
 RESERVED                     : 79        :        :                   :         :           :                
 RESERVED                     : 80        :        :                   :         :           :                
-Read                         : 81        : input  : TTL               :         :           : N              
+X4                           : 81        : input  : TTL               :         :           : N              
 GND                          : 82        : gnd    :                   :         :           :                
 Write                        : 83        : input  : TTL               :         :           : N              
 GND+                         : 84        :        :                   :         :           :                

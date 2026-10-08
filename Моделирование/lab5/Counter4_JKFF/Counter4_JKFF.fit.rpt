@@ -1,5 +1,5 @@
 Fitter report for Counter4_JKFF
-Sat Oct 22 07:27:38 2022
+Sat Oct 22 11:13:59 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -53,7 +53,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------+
 ; Fitter Summary                                                   ;
 +-----------------------+------------------------------------------+
-; Fitter Status         ; Successful - Sat Oct 22 07:27:38 2022    ;
+; Fitter Status         ; Successful - Sat Oct 22 11:13:59 2022    ;
 ; Quartus II Version    ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name         ; Counter4_JKFF                            ;
 ; Top-level Entity Name ; Counter4_JKFF                            ;
@@ -100,13 +100,13 @@ applicable agreement for further details.
 +------------------+
 ; Fitter Equations ;
 +------------------+
-The equations can be found in C:/altera/lab5/Counter4_JKFF.fit.eqn.
+The equations can be found in C:/altera/lab5/Counter4_JKFF/Counter4_JKFF.fit.eqn.
 
 
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/altera/lab5/Counter4_JKFF.pin.
+The pin-out file can be found in C:/altera/lab5/Counter4_JKFF/Counter4_JKFF.pin.
 
 
 +--------------------------------------------------+
@@ -379,11 +379,11 @@ Note: User assignments will override these defaults. The user specified values a
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 22 07:27:38 2022
+    Info: Processing started: Sat Oct 22 11:13:58 2022
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off lab5_Counter4_JKFF -c Counter4_JKFF
 Info: Selected device EPM7128SLC84-15 for design "Counter4_JKFF"
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 22 07:27:38 2022
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Sat Oct 22 11:13:59 2022
+    Info: Elapsed time: 00:00:01
 
 

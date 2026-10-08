@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 913
-Sat Oct 15 11:04:50 2022
+Sat Oct 15 15:29:01 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -39,57 +39,57 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 15 11:04:50 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 15 15:29:01 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; 913                                      ;
-; Top-level Entity Name       ; 913                                      ;
+; Top-level Entity Name       ; 2-stroke_two-digit_shift_register        ;
 ; Family                      ; MAX7000S                                 ;
-; Total macrocells            ; 6                                        ;
+; Total macrocells            ; 4                                        ;
 ; Total pins                  ; 8                                        ;
 +-----------------------------+------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                          ;
-+----------------------------------------------------------------------+-----------------+---------------+
-; Option                                                               ; Setting         ; Default Value ;
-+----------------------------------------------------------------------+-----------------+---------------+
-; Device                                                               ; EPM7128SLC84-15 ;               ;
-; Top-level entity name                                                ; 913             ; 913           ;
-; Family name                                                          ; MAX7000S        ; Stratix       ;
-; Use smart compilation                                                ; Off             ; Off           ;
-; Create Debugging Nodes for IP Cores                                  ; off             ; off           ;
-; Preserve fewer node names                                            ; On              ; On            ;
-; Disable OpenCore Plus hardware evaluation                            ; Off             ; Off           ;
-; Verilog Version                                                      ; Verilog_2001    ; Verilog_2001  ;
-; VHDL Version                                                         ; VHDL93          ; VHDL93        ;
-; State Machine Processing                                             ; Auto            ; Auto          ;
-; Extract Verilog State Machines                                       ; On              ; On            ;
-; Extract VHDL State Machines                                          ; On              ; On            ;
-; Add Pass-Through Logic to Inferred RAMs                              ; On              ; On            ;
-; NOT Gate Push-Back                                                   ; On              ; On            ;
-; Power-Up Don't Care                                                  ; On              ; On            ;
-; Remove Redundant Logic Cells                                         ; Off             ; Off           ;
-; Remove Duplicate Registers                                           ; On              ; On            ;
-; Ignore CARRY Buffers                                                 ; Off             ; Off           ;
-; Ignore CASCADE Buffers                                               ; Off             ; Off           ;
-; Ignore GLOBAL Buffers                                                ; Off             ; Off           ;
-; Ignore ROW GLOBAL Buffers                                            ; Off             ; Off           ;
-; Ignore LCELL Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A           ; Auto            ; Auto          ;
-; Ignore SOFT Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A            ; Off             ; Off           ;
-; Limit AHDL Integers to 32 Bits                                       ; Off             ; Off           ;
-; Optimization Technique -- MAX 7000B/7000AE/3000A/7000S/7000A         ; Speed           ; Speed         ;
-; Allow XOR Gate Usage                                                 ; On              ; On            ;
-; Auto Logic Cell Insertion                                            ; On              ; On            ;
-; Parallel Expander Chain Length -- MAX 7000B/7000AE/3000A/7000S/7000A ; 4               ; 4             ;
-; Auto Parallel Expanders                                              ; On              ; On            ;
-; Auto Open-Drain Pins                                                 ; On              ; On            ;
-; Remove Duplicate Logic                                               ; On              ; On            ;
-; Auto Resource Sharing                                                ; Off             ; Off           ;
-; Maximum Fan-in Per Macrocell -- MAX 7000B/7000AE/3000A/7000S/7000A   ; 100             ; 100           ;
-; Ignore translate_off and translate_on Synthesis Directives           ; Off             ; Off           ;
-; Show Parameter Settings Tables in Synthesis Report                   ; On              ; On            ;
-+----------------------------------------------------------------------+-----------------+---------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                            ;
++----------------------------------------------------------------------+-----------------------------------+---------------+
+; Option                                                               ; Setting                           ; Default Value ;
++----------------------------------------------------------------------+-----------------------------------+---------------+
+; Device                                                               ; EPM7128SLC84-15                   ;               ;
+; Top-level entity name                                                ; 2-stroke_two-digit_shift_register ; 913           ;
+; Family name                                                          ; MAX7000S                          ; Stratix       ;
+; Use smart compilation                                                ; Off                               ; Off           ;
+; Create Debugging Nodes for IP Cores                                  ; off                               ; off           ;
+; Preserve fewer node names                                            ; On                                ; On            ;
+; Disable OpenCore Plus hardware evaluation                            ; Off                               ; Off           ;
+; Verilog Version                                                      ; Verilog_2001                      ; Verilog_2001  ;
+; VHDL Version                                                         ; VHDL93                            ; VHDL93        ;
+; State Machine Processing                                             ; Auto                              ; Auto          ;
+; Extract Verilog State Machines                                       ; On                                ; On            ;
+; Extract VHDL State Machines                                          ; On                                ; On            ;
+; Add Pass-Through Logic to Inferred RAMs                              ; On                                ; On            ;
+; NOT Gate Push-Back                                                   ; On                                ; On            ;
+; Power-Up Don't Care                                                  ; On                                ; On            ;
+; Remove Redundant Logic Cells                                         ; Off                               ; Off           ;
+; Remove Duplicate Registers                                           ; On                                ; On            ;
+; Ignore CARRY Buffers                                                 ; Off                               ; Off           ;
+; Ignore CASCADE Buffers                                               ; Off                               ; Off           ;
+; Ignore GLOBAL Buffers                                                ; Off                               ; Off           ;
+; Ignore ROW GLOBAL Buffers                                            ; Off                               ; Off           ;
+; Ignore LCELL Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A           ; Auto                              ; Auto          ;
+; Ignore SOFT Buffers -- MAX 7000B/7000AE/3000A/7000S/7000A            ; Off                               ; Off           ;
+; Limit AHDL Integers to 32 Bits                                       ; Off                               ; Off           ;
+; Optimization Technique -- MAX 7000B/7000AE/3000A/7000S/7000A         ; Speed                             ; Speed         ;
+; Allow XOR Gate Usage                                                 ; On                                ; On            ;
+; Auto Logic Cell Insertion                                            ; On                                ; On            ;
+; Parallel Expander Chain Length -- MAX 7000B/7000AE/3000A/7000S/7000A ; 4                                 ; 4             ;
+; Auto Parallel Expanders                                              ; On                                ; On            ;
+; Auto Open-Drain Pins                                                 ; On                                ; On            ;
+; Remove Duplicate Logic                                               ; On                                ; On            ;
+; Auto Resource Sharing                                                ; Off                               ; Off           ;
+; Maximum Fan-in Per Macrocell -- MAX 7000B/7000AE/3000A/7000S/7000A   ; 100                               ; 100           ;
+; Ignore translate_off and translate_on Synthesis Directives           ; Off                               ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report                   ; On                                ; On            ;
++----------------------------------------------------------------------+-----------------------------------+---------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -99,8 +99,6 @@ applicable agreement for further details.
 +---------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+
 ; 2-stroke_D-trigger.bdf                ; yes             ; User Block Diagram/Schematic File  ; C:/altera/lab4/9.13/2-stroke_D-trigger.bdf                ;
 ; 2-stroke_two-digit_shift_register.bdf ; yes             ; User Block Diagram/Schematic File  ; C:/altera/lab4/9.13/2-stroke_two-digit_shift_register.bdf ;
-; 2-S_2-d_s_r.vhd                       ; yes             ; User VHDL File                     ; C:/altera/lab4/9.13/2-S_2-d_s_r.vhd                       ;
-; 913.bdf                               ; yes             ; User Block Diagram/Schematic File  ; C:/altera/lab4/9.13/913.bdf                               ;
 +---------------------------------------+-----------------+------------------------------------+-----------------------------------------------------------+
 
 
@@ -109,26 +107,25 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 6                    ;
+; Logic cells          ; 4                    ;
 ; Total registers      ; 4                    ;
 ; I/O pins             ; 8                    ;
 ; Maximum fan-out node ; R                    ;
 ; Maximum fan-out      ; 4                    ;
-; Total fan-out        ; 18                   ;
-; Average fan-out      ; 1.29                 ;
+; Total fan-out        ; 16                   ;
+; Average fan-out      ; 1.33                 ;
 +----------------------+----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                    ;
-+---------------------------------------------+------------+------+----------------------------------------------------------------------+
-; Compilation Hierarchy Node                  ; Macrocells ; Pins ; Full Hierarchy Name                                                  ;
-+---------------------------------------------+------------+------+----------------------------------------------------------------------+
-; |913                                        ; 6          ; 8    ; |913                                                                 ;
-;    |2-stroke_two-digit_shift_register:inst| ; 6          ; 0    ; |913|2-stroke_two-digit_shift_register:inst                          ;
-;       |2-stroke_D-trigger:inst1|            ; 3          ; 0    ; |913|2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1 ;
-;       |2-stroke_D-trigger:inst|             ; 3          ; 0    ; |913|2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst  ;
-+---------------------------------------------+------------+------+----------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                  ;
++------------------------------------+------------+------+-------------------------------------------------------------+
+; Compilation Hierarchy Node         ; Macrocells ; Pins ; Full Hierarchy Name                                         ;
++------------------------------------+------------+------+-------------------------------------------------------------+
+; |2-stroke_two-digit_shift_register ; 4          ; 8    ; |2-stroke_two-digit_shift_register                          ;
+;    |2-stroke_D-trigger:inst3|      ; 2          ; 0    ; |2-stroke_two-digit_shift_register|2-stroke_D-trigger:inst3 ;
+;    |2-stroke_D-trigger:inst4|      ; 2          ; 0    ; |2-stroke_two-digit_shift_register|2-stroke_D-trigger:inst4 ;
++------------------------------------+------------+------+-------------------------------------------------------------+
 
 
 +--------------------------------+
@@ -143,7 +140,7 @@ The equations can be found in C:/altera/lab4/9.13/913.map.eqn.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 15 11:04:49 2022
+    Info: Processing started: Sat Oct 15 15:29:00 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 913 -c 913
 Info: Found 1 design units, including 1 entities, in source file 2-stroke_D-trigger.bdf
     Info: Found entity 1: 2-stroke_D-trigger
@@ -154,25 +151,18 @@ Info: Found 2 design units, including 1 entities, in source file 2-S_2-d_s_r.vhd
     Info: Found entity 1: shift_reg_2clk
 Info: Found 1 design units, including 1 entities, in source file 913.bdf
     Info: Found entity 1: 913
-Info: Elaborating entity "913" for the top level hierarchy
-Info: Elaborating entity "2-stroke_two-digit_shift_register" for hierarchy "2-stroke_two-digit_shift_register:inst"
-Info: Elaborating entity "2-stroke_D-trigger" for hierarchy "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst"
-Info: Elaborating entity "shift_reg_2clk" for hierarchy "shift_reg_2clk:inst1"
-Info: Duplicate registers merged to single register
-    Info: Duplicate register "shift_reg_2clk:inst1|m1" merged to single register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst"
-    Info: Duplicate register "shift_reg_2clk:inst1|Q1" merged to single register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4"
-    Info: Duplicate register "shift_reg_2clk:inst1|m2" merged to single register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst"
-    Info: Duplicate register "shift_reg_2clk:inst1|Q2" merged to single register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4"
+Info: Elaborating entity "2-stroke_two-digit_shift_register" for the top level hierarchy
+Info: Elaborating entity "2-stroke_D-trigger" for hierarchy "2-stroke_D-trigger:inst3"
 Info: Promoted pin-driven signal(s) to global signal
     Info: Promoted clock signal driven by pin "C2" to global clock signal
     Info: Promoted clock signal driven by pin "C1" to global clock signal
     Info: Promoted clear signal driven by pin "R" to global clear signal
-Info: Implemented 14 device resources after synthesis - the final resource count might be different
+Info: Implemented 12 device resources after synthesis - the final resource count might be different
     Info: Implemented 4 input pins
     Info: Implemented 4 output pins
-    Info: Implemented 6 macrocells
+    Info: Implemented 4 macrocells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 15 11:04:50 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sat Oct 15 15:29:01 2022
+    Info: Elapsed time: 00:00:02
 
 

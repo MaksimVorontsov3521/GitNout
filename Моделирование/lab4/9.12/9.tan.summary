@@ -16,9 +16,9 @@ Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
 Actual Time    : 8.000 ns
-From           : inst4
-To             : Q
-From Clock     : C2
+From           : inst
+To             : Q1
+From Clock     : C1
 To Clock       : 
 Failed Paths   : 0
 

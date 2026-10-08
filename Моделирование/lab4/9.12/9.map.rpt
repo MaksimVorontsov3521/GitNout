@@ -1,5 +1,5 @@
 Analysis & Synthesis report for 9
-Sat Oct 15 11:19:02 2022
+Sat Oct 15 15:14:20 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -39,13 +39,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Oct 15 11:19:02 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Oct 15 15:14:20 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; 9                                        ;
 ; Top-level Entity Name       ; 2-stroke_D-trigger                       ;
 ; Family                      ; MAX7000S                                 ;
 ; Total macrocells            ; 2                                        ;
-; Total pins                  ; 5                                        ;
+; Total pins                  ; 6                                        ;
 +-----------------------------+------------------------------------------+
 
 
@@ -108,10 +108,10 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Logic cells          ; 2                    ;
 ; Total registers      ; 2                    ;
-; I/O pins             ; 5                    ;
-; Maximum fan-out node ; R                    ;
+; I/O pins             ; 6                    ;
+; Maximum fan-out node ; inst                 ;
 ; Maximum fan-out      ; 2                    ;
-; Total fan-out        ; 7                    ;
+; Total fan-out        ; 8                    ;
 ; Average fan-out      ; 1.00                 ;
 +----------------------+----------------------+
 
@@ -121,7 +121,7 @@ applicable agreement for further details.
 +----------------------------+------------+------+---------------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ;
 +----------------------------+------------+------+---------------------+
-; |2-stroke_D-trigger        ; 2          ; 5    ; |2-stroke_D-trigger ;
+; |2-stroke_D-trigger        ; 2          ; 6    ; |2-stroke_D-trigger ;
 +----------------------------+------------+------+---------------------+
 
 
@@ -137,7 +137,7 @@ The equations can be found in C:/altera/lab4/9.12/9.map.eqn.
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 15 11:19:02 2022
+    Info: Processing started: Sat Oct 15 15:14:20 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 912 -c 9
 Info: Found 1 design units, including 1 entities, in source file 2-stroke_D-trigger.bdf
     Info: Found entity 1: 2-stroke_D-trigger
@@ -146,12 +146,12 @@ Info: Promoted pin-driven signal(s) to global signal
     Info: Promoted clock signal driven by pin "C2" to global clock signal
     Info: Promoted clock signal driven by pin "C1" to global clock signal
     Info: Promoted clear signal driven by pin "R" to global clear signal
-Info: Implemented 7 device resources after synthesis - the final resource count might be different
+Info: Implemented 8 device resources after synthesis - the final resource count might be different
     Info: Implemented 4 input pins
-    Info: Implemented 1 output pins
+    Info: Implemented 2 output pins
     Info: Implemented 2 macrocells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 15 11:19:02 2022
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Sat Oct 15 15:14:20 2022
+    Info: Elapsed time: 00:00:01
 
 

@@ -11,13 +11,13 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---inst is inst at LC1
+--inst is inst at LC3
 inst_or_out = D;
 inst_reg_input = inst_or_out;
 inst = DFFE(inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
 
 
---inst4 is inst4 at LC3
+--inst4 is inst4 at LC5
 inst4_or_out = inst;
 inst4_reg_input = inst4_or_out;
 inst4 = DFFE(inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
@@ -47,7 +47,13 @@ C1 = INPUT();
 D = INPUT();
 
 
---Q is Q at PIN_12
+--Q1 is Q1 at PIN_12
+--operation mode is output
+
+Q1 = OUTPUT(inst);
+
+
+--Q is Q at PIN_11
 --operation mode is output
 
 Q = OUTPUT(inst4);

@@ -11,32 +11,15 @@ VRSM_ON
 VHSM_ON
 0
 # entity
-Simplest_memory_regi
-# case_insensitive
-# source_file
-Simplest_memory_regi.bdf
-1665780809
-23
-# storage
-db|915.(0).cnf
-db|915.(0).cnf
-# hierarchies {
-Simplest_memory_regi:inst1
-}
-# end
-# entity
 915
 # case_insensitive
 # source_file
 915.bdf
-1665823844
+1665823846
 23
 # storage
-db|915.(1).cnf
-db|915.(1).cnf
-# hierarchies {
-|
-}
+db|915.(0).cnf
+db|915.(0).cnf
 # end
 # entity
 SMReg
@@ -47,19 +30,30 @@ ON
 # case_insensitive
 # source_file
 SMReg.vhd
-1665823829
+1665823830
 4
 # storage
-db|915.(2).cnf
-db|915.(2).cnf
+db|915.(1).cnf
+db|915.(1).cnf
 # internal_option {
 ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
 ON
 AUTO_RESOURCE_SHARING
 OFF
 }
+# end
+# entity
+Simplest_memory_regi
+# case_insensitive
+# source_file
+Simplest_memory_regi.bdf
+1665829916
+23
+# storage
+db|915.(2).cnf
+db|915.(2).cnf
 # hierarchies {
-SMReg:inst
+|
 }
 # end
 # complete

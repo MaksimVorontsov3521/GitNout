@@ -1,56 +1,34 @@
-|913
-Q1BDF <= 2-stroke_two-digit_shift_register:inst.Q1
-D => 2-stroke_two-digit_shift_register:inst.D
-D => shift_reg_2clk:inst1.D
-C1 => 2-stroke_two-digit_shift_register:inst.C1
-C1 => shift_reg_2clk:inst1.C1
-C2 => 2-stroke_two-digit_shift_register:inst.C2
-C2 => shift_reg_2clk:inst1.C2
-R => 2-stroke_two-digit_shift_register:inst.R
-R => shift_reg_2clk:inst1.R
-Q2BDF <= 2-stroke_two-digit_shift_register:inst.Q2
-Q1VHD <= shift_reg_2clk:inst1.Q1
-Q2VHD <= shift_reg_2clk:inst1.Q2
+|2-stroke_two-digit_shift_register
+Q1 <= 2-stroke_D-trigger:inst3.Q
+D => 2-stroke_D-trigger:inst3.D
+C1 => 2-stroke_D-trigger:inst3.C1
+C1 => 2-stroke_D-trigger:inst4.C1
+C2 => 2-stroke_D-trigger:inst3.C2
+C2 => 2-stroke_D-trigger:inst4.C2
+R => 2-stroke_D-trigger:inst3.R
+R => 2-stroke_D-trigger:inst4.R
+Q2 <= 2-stroke_D-trigger:inst4.Q
+Q11 <= 2-stroke_D-trigger:inst3.Q1
+Q22 <= 2-stroke_D-trigger:inst4.Q1
 
 
-|913|2-stroke_two-digit_shift_register:inst
-Q1 <= 2-stroke_D-trigger:inst.Q
-D => 2-stroke_D-trigger:inst.D
-C1 => 2-stroke_D-trigger:inst.C1
-C1 => 2-stroke_D-trigger:inst1.C1
-C2 => 2-stroke_D-trigger:inst.C2
-C2 => 2-stroke_D-trigger:inst1.C2
-R => 2-stroke_D-trigger:inst.R
-R => 2-stroke_D-trigger:inst1.R
-Q2 <= 2-stroke_D-trigger:inst1.Q
-
-
-|913|2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst
+|2-stroke_two-digit_shift_register|2-stroke_D-trigger:inst3
 Q <= inst4.DB_MAX_OUTPUT_PORT_TYPE
 R => inst4.ACLR
 R => inst.ACLR
 C2 => inst4.CLK
 C1 => inst.CLK
 D => inst.DATAIN
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|913|2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1
+|2-stroke_two-digit_shift_register|2-stroke_D-trigger:inst4
 Q <= inst4.DB_MAX_OUTPUT_PORT_TYPE
 R => inst4.ACLR
 R => inst.ACLR
 C2 => inst4.CLK
 C1 => inst.CLK
 D => inst.DATAIN
-
-
-|913|shift_reg_2clk:inst1
-D => m1.DATAIN
-C1 => m2.CLK
-C1 => m1.CLK
-C2 => s2.CLK
-C2 => s1.CLK
-R => process1~0.IN0
-Q1 <= s1.DB_MAX_OUTPUT_PORT_TYPE
-Q2 <= s2.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
 
 

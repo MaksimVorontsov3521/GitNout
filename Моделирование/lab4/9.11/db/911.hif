@@ -15,13 +15,13 @@ Two-digit_single-stroke_shift_register
 # case_insensitive
 # source_file
 Two-digit_single-stroke_shift_register.bdf
-1665778994
+1665830947
 23
 # storage
 db|911.(0).cnf
 db|911.(0).cnf
 # hierarchies {
-Two-digit_single-stroke_shift_register:inst3
+|
 }
 # end
 # entity
@@ -29,14 +29,11 @@ Two-digit_single-stroke_shift_register:inst3
 # case_insensitive
 # source_file
 911.bdf
-1665821274
+1665821276
 23
 # storage
 db|911.(1).cnf
 db|911.(1).cnf
-# hierarchies {
-|
-}
 # end
 # entity
 shift_reg_1clk
@@ -47,7 +44,7 @@ ON
 # case_insensitive
 # source_file
 T-D_S-S_S_R.vhd
-1665821210
+1665821212
 4
 # storage
 db|911.(2).cnf
@@ -57,9 +54,6 @@ ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
 ON
 AUTO_RESOURCE_SHARING
 OFF
-}
-# hierarchies {
-shift_reg_1clk:inst1
 }
 # end
 # complete

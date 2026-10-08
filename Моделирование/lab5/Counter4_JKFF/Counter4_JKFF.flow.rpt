@@ -1,5 +1,5 @@
 Flow report for Counter4_JKFF
-Sat Oct 22 07:27:40 2022
+Sat Oct 22 11:14:01 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Successful - Sat Oct 22 07:27:40 2022    ;
+; Flow Status             ; Successful - Sat Oct 22 11:14:01 2022    ;
 ; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name           ; Counter4_JKFF                            ;
 ; Top-level Entity Name   ; Counter4_JKFF                            ;
@@ -54,7 +54,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/22/2022 07:27:37 ;
+; Start date & time ; 10/22/2022 11:13:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Counter4_JKFF       ;
 +-------------------+---------------------+
@@ -65,11 +65,11 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:00     ;
-; Fitter               ; 00:00:00     ;
+; Analysis & Synthesis ; 00:00:01     ;
+; Fitter               ; 00:00:01     ;
 ; Assembler            ; 00:00:00     ;
-; Timing Analyzer      ; 00:00:01     ;
-; Total                ; 00:00:01     ;
+; Timing Analyzer      ; 00:00:00     ;
+; Total                ; 00:00:02     ;
 +----------------------+--------------+
 
 

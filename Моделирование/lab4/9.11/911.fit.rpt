@@ -1,5 +1,5 @@
 Fitter report for 911
-Sat Oct 15 12:07:57 2022
+Sat Oct 15 15:32:29 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -53,14 +53,14 @@ applicable agreement for further details.
 +------------------------------------------------------------------+
 ; Fitter Summary                                                   ;
 +-----------------------+------------------------------------------+
-; Fitter Status         ; Successful - Sat Oct 15 12:07:57 2022    ;
+; Fitter Status         ; Successful - Sat Oct 15 15:32:29 2022    ;
 ; Quartus II Version    ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name         ; 911                                      ;
-; Top-level Entity Name ; 911                                      ;
+; Top-level Entity Name ; Two-digit_single-stroke_shift_register   ;
 ; Family                ; MAX7000S                                 ;
 ; Device                ; EPM7128SLC84-15                          ;
 ; Timing Models         ; Final                                    ;
-; Total macrocells      ; 6 / 128 ( 4 % )                          ;
+; Total macrocells      ; 4 / 128 ( 3 % )                          ;
 ; Total pins            ; 11 / 68 ( 16 % )                         ;
 +-----------------------+------------------------------------------+
 
@@ -114,9 +114,9 @@ The pin-out file can be found in C:/altera/lab4/9.11/911.pin.
 +-------------------------------+------------------+
 ; Resource                      ; Usage            ;
 +-------------------------------+------------------+
-; Logic cells                   ; 6 / 128 ( 4 % )  ;
-; Registers                     ; 6 / 128 ( 4 % )  ;
-; Number of pterms used         ; 6                ;
+; Logic cells                   ; 4 / 128 ( 3 % )  ;
+; Registers                     ; 4 / 128 ( 3 % )  ;
+; Number of pterms used         ; 4                ;
 ; User inserted logic elements  ; 0                ;
 ; I/O pins                      ; 11 / 68 ( 16 % ) ;
 ;     -- Clock pins             ; 1 / 2 ( 50 % )   ;
@@ -124,11 +124,11 @@ The pin-out file can be found in C:/altera/lab4/9.11/911.pin.
 ; Global signals                ; 2                ;
 ; Shareable expanders           ; 0 / 128 ( 0 % )  ;
 ; Parallel expanders            ; 0 / 120 ( 0 % )  ;
-; Cells using turbo bit         ; 6 / 128 ( 4 % )  ;
-; Maximum fan-out node          ; C                ;
-; Maximum fan-out               ; 6                ;
-; Total fan-out                 ; 22               ;
-; Average fan-out               ; 1.29             ;
+; Cells using turbo bit         ; 4 / 128 ( 3 % )  ;
+; Maximum fan-out node          ; R                ;
+; Maximum fan-out               ; 4                ;
+; Total fan-out                 ; 16               ;
+; Average fan-out               ; 1.07             ;
 +-------------------------------+------------------+
 
 
@@ -137,22 +137,22 @@ The pin-out file can be found in C:/altera/lab4/9.11/911.pin.
 +------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; I/O Standard ; Location assigned by ;
 +------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
-; C    ; 83    ; --       ; --  ; 6                     ; 0                  ; yes    ; no             ; TTL          ; Fitter               ;
-; D    ; 81    ; --       ; 8   ; 2                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
-; R    ; 1     ; --       ; --  ; 6                     ; 0                  ; yes    ; no             ; TTL          ; Fitter               ;
+; C    ; 83    ; --       ; --  ; 4                     ; 0                  ; yes    ; no             ; TTL          ; Fitter               ;
+; D    ; 81    ; --       ; 8   ; 1                     ; 0                  ; no     ; no             ; TTL          ; Fitter               ;
+; R    ; 1     ; --       ; --  ; 4                     ; 0                  ; yes    ; no             ; TTL          ; Fitter               ;
 +------+-------+----------+-----+-----------------------+--------------------+--------+----------------+--------------+----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Output Pins                                                                                                                                        ;
-+-------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
-; Name  ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load        ;
-+-------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
-; BDFQ1 ; 12    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-; BDFQ2 ; 11    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-; VHDQ1 ; 9     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-; VHDQ2 ; 10    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
-+-------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                       ;
++------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
+; Name ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load        ;
++------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
+; D1   ; 12    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; D2   ; 10    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; Q1   ; 11    ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
+; Q2   ; 9     ; --       ; 1   ; no              ; no             ; no         ; no            ; TTL          ; Fitter               ; Unspecified ;
++------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------------+
 
 
 +-------------------------------------------------------------------------------------------------------+
@@ -168,10 +168,10 @@ The pin-out file can be found in C:/altera/lab4/9.11/911.pin.
 ; 6        ; 5          ; --       ; RESERVED       ;        ;              ;         ;                 ;
 ; 7        ; 6          ; --       ; GND            ; gnd    ;              ;         ;                 ;
 ; 8        ; 7          ; --       ; RESERVED       ;        ;              ;         ;                 ;
-; 9        ; 8          ; --       ; VHDQ1          ; output ; TTL          ;         ; N               ;
-; 10       ; 9          ; --       ; VHDQ2          ; output ; TTL          ;         ; N               ;
-; 11       ; 10         ; --       ; BDFQ2          ; output ; TTL          ;         ; N               ;
-; 12       ; 11         ; --       ; BDFQ1          ; output ; TTL          ;         ; N               ;
+; 9        ; 8          ; --       ; Q2             ; output ; TTL          ;         ; N               ;
+; 10       ; 9          ; --       ; D2             ; output ; TTL          ;         ; N               ;
+; 11       ; 10         ; --       ; Q1             ; output ; TTL          ;         ; N               ;
+; 12       ; 11         ; --       ; D1             ; output ; TTL          ;         ; N               ;
 ; 13       ; 12         ; --       ; VCCIO          ; power  ;              ; 5.0V    ;                 ;
 ; 14       ; 13         ; --       ; +TDI           ; input  ; TTL          ;         ; N               ;
 ; 15       ; 14         ; --       ; RESERVED       ;        ;              ;         ;                 ;
@@ -278,15 +278,13 @@ The pin-out file can be found in C:/altera/lab4/9.11/911.pin.
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                     ;
-+---------------------------------------------------+------------+------+---------------------------------------------------+
-; Compilation Hierarchy Node                        ; Macrocells ; Pins ; Full Hierarchy Name                               ;
-+---------------------------------------------------+------------+------+---------------------------------------------------+
-; |911                                              ; 6          ; 11   ; |911                                              ;
-;    |Two-digit_single-stroke_shift_register:inst3| ; 4          ; 0    ; |911|Two-digit_single-stroke_shift_register:inst3 ;
-;    |shift_reg_1clk:inst1|                         ; 2          ; 0    ; |911|shift_reg_1clk:inst1                         ;
-+---------------------------------------------------+------------+------+---------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                 ;
++-----------------------------------------+------------+------+-----------------------------------------+
+; Compilation Hierarchy Node              ; Macrocells ; Pins ; Full Hierarchy Name                     ;
++-----------------------------------------+------------+------+-----------------------------------------+
+; |Two-digit_single-stroke_shift_register ; 4          ; 11   ; |Two-digit_single-stroke_shift_register ;
++-----------------------------------------+------------+------+-----------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------+
@@ -294,8 +292,8 @@ Note: User assignments will override these defaults. The user specified values a
 +------+----------+---------+--------------+--------+----------------------+------------------+
 ; Name ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
 +------+----------+---------+--------------+--------+----------------------+------------------+
-; C    ; PIN_83   ; 6       ; Clock        ; yes    ; On                   ; --               ;
-; R    ; PIN_1    ; 6       ; Async. clear ; yes    ; On                   ; --               ;
+; C    ; PIN_83   ; 4       ; Clock        ; yes    ; On                   ; --               ;
+; R    ; PIN_1    ; 4       ; Async. clear ; yes    ; On                   ; --               ;
 +------+----------+---------+--------------+--------+----------------------+------------------+
 
 
@@ -304,24 +302,22 @@ Note: User assignments will override these defaults. The user specified values a
 +------+----------+---------+----------------------+------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
 +------+----------+---------+----------------------+------------------+
-; C    ; PIN_83   ; 6       ; On                   ; --               ;
-; R    ; PIN_1    ; 6       ; On                   ; --               ;
+; C    ; PIN_83   ; 4       ; On                   ; --               ;
+; R    ; PIN_1    ; 4       ; On                   ; --               ;
 +------+----------+---------+----------------------+------------------+
 
 
-+--------------------------------------------------------------+
-; Non-Global High Fan-Out Signals                              ;
-+----------------------------------------------------+---------+
-; Name                                               ; Fan-Out ;
-+----------------------------------------------------+---------+
-; D                                                  ; 2       ;
-; Two-digit_single-stroke_shift_register:inst3|inst3 ; 2       ;
-; shift_reg_1clk:inst1|tmp[0]                        ; 2       ;
-; Two-digit_single-stroke_shift_register:inst3|inst5 ; 1       ;
-; Two-digit_single-stroke_shift_register:inst3|inst4 ; 1       ;
-; shift_reg_1clk:inst1|tmp[1]                        ; 1       ;
-; Two-digit_single-stroke_shift_register:inst3|inst  ; 1       ;
-+----------------------------------------------------+---------+
++---------------------------------+
+; Non-Global High Fan-Out Signals ;
++-------+-------------------------+
+; Name  ; Fan-Out                 ;
++-------+-------------------------+
+; inst4 ; 2                       ;
+; inst3 ; 2                       ;
+; inst  ; 2                       ;
+; D     ; 1                       ;
+; inst5 ; 1                       ;
++-------+-------------------------+
 
 
 +----------------------------------------------+
@@ -330,52 +326,47 @@ Note: User assignments will override these defaults. The user specified values a
 ; Interconnect Resource Type ; Usage           ;
 +----------------------------+-----------------+
 ; Output enables             ; 0 / 6 ( 0 % )   ;
-; PIA buffers                ; 5 / 288 ( 1 % ) ;
-; PIAs                       ; 5 / 288 ( 1 % ) ;
+; PIA buffers                ; 4 / 288 ( 1 % ) ;
+; PIAs                       ; 4 / 288 ( 1 % ) ;
 +----------------------------+-----------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB External Interconnect                                                  ;
 +----------------------------------------------+-----------------------------+
-; LAB External Interconnects  (Average = 0.63) ; Number of LABs  (Total = 1) ;
+; LAB External Interconnects  (Average = 0.50) ; Number of LABs  (Total = 1) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 7                           ;
 ; 1                                            ; 0                           ;
 ; 2                                            ; 0                           ;
 ; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 1                           ;
+; 4                                            ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
 +----------------------------------------------------------------------+
 ; LAB Macrocells                                                       ;
 +----------------------------------------+-----------------------------+
-; Number of Macrocells  (Average = 0.75) ; Number of LABs  (Total = 1) ;
+; Number of Macrocells  (Average = 0.50) ; Number of LABs  (Total = 1) ;
 +----------------------------------------+-----------------------------+
 ; 0                                      ; 7                           ;
 ; 1                                      ; 0                           ;
 ; 2                                      ; 0                           ;
 ; 3                                      ; 0                           ;
-; 4                                      ; 0                           ;
-; 5                                      ; 0                           ;
-; 6                                      ; 1                           ;
+; 4                                      ; 1                           ;
 +----------------------------------------+-----------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-; Logic Cell Interconnection                                                                                                              ;
-+-----+------------+----------------------------------------------------------+-----------------------------------------------------------+
-; LAB ; Logic Cell ; Input                                                    ; Output                                                    ;
-+-----+------------+----------------------------------------------------------+-----------------------------------------------------------+
-;  A  ; LC8        ; C, R, D                                                  ; VHDQ1, shift_reg_1clk:inst1|tmp[1]                        ;
-;  A  ; LC2        ; C, R, D                                                  ; Two-digit_single-stroke_shift_register:inst3|inst3        ;
-;  A  ; LC6        ; C, R, shift_reg_1clk:inst1|tmp[0]                        ; VHDQ2                                                     ;
-;  A  ; LC3        ; C, R, Two-digit_single-stroke_shift_register:inst3|inst  ; BDFQ1, Two-digit_single-stroke_shift_register:inst3|inst4 ;
-;  A  ; LC1        ; C, R, Two-digit_single-stroke_shift_register:inst3|inst3 ; Two-digit_single-stroke_shift_register:inst3|inst5        ;
-;  A  ; LC5        ; C, R, Two-digit_single-stroke_shift_register:inst3|inst4 ; BDFQ2                                                     ;
-+-----+------------+----------------------------------------------------------+-----------------------------------------------------------+
++--------------------------------------------+
+; Logic Cell Interconnection                 ;
++-----+------------+-------------+-----------+
+; LAB ; Logic Cell ; Input       ; Output    ;
++-----+------------+-------------+-----------+
+;  A  ; LC3        ; C, R, D     ; inst3, D1 ;
+;  A  ; LC5        ; C, R, inst  ; Q1, inst4 ;
+;  A  ; LC6        ; C, R, inst3 ; inst5, D2 ;
+;  A  ; LC8        ; C, R, inst4 ; Q2        ;
++-----+------------+-------------+-----------+
 
 
 +-----------------+
@@ -384,11 +375,11 @@ Note: User assignments will override these defaults. The user specified values a
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 15 12:07:57 2022
+    Info: Processing started: Sat Oct 15 15:32:29 2022
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off 911 -c 911
 Info: Selected device EPM7128SLC84-15 for design "911"
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Oct 15 12:07:57 2022
+    Info: Processing ended: Sat Oct 15 15:32:29 2022
     Info: Elapsed time: 00:00:00
 
 

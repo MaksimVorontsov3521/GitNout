@@ -1,25 +1,4 @@
-|911
-VHDQ1 <= shift_reg_1clk:inst1.Q1
-D => shift_reg_1clk:inst1.D
-D => Two-digit_single-stroke_shift_register:inst3.D
-C => shift_reg_1clk:inst1.C
-C => Two-digit_single-stroke_shift_register:inst3.C
-R => shift_reg_1clk:inst1.R
-R => Two-digit_single-stroke_shift_register:inst3.R
-VHDQ2 <= shift_reg_1clk:inst1.Q2
-BDFQ1 <= Two-digit_single-stroke_shift_register:inst3.Q1
-BDFQ2 <= Two-digit_single-stroke_shift_register:inst3.Q2
-
-
-|911|shift_reg_1clk:inst1
-D => tmp[0].DATAIN
-C => process0~1.IN0
-R => process0~0.IN0
-Q1 <= tmp[0].DB_MAX_OUTPUT_PORT_TYPE
-Q2 <= tmp[1].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|911|Two-digit_single-stroke_shift_register:inst3
+|Two-digit_single-stroke_shift_register
 Q1 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
 R => inst3.ACLR
 R => inst.ACLR
@@ -31,5 +10,7 @@ C => inst7.IN0
 C => inst4.CLK
 D => inst.DATAIN
 Q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+D1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+D2 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
 
 

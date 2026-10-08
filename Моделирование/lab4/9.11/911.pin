@@ -60,10 +60,10 @@ RESERVED                     : 5         :        :                   :         
 RESERVED                     : 6         :        :                   :         :           :                
 GND                          : 7         : gnd    :                   :         :           :                
 RESERVED                     : 8         :        :                   :         :           :                
-VHDQ1                        : 9         : output : TTL               :         :           : N              
-VHDQ2                        : 10        : output : TTL               :         :           : N              
-BDFQ2                        : 11        : output : TTL               :         :           : N              
-BDFQ1                        : 12        : output : TTL               :         :           : N              
+Q2                           : 9         : output : TTL               :         :           : N              
+D2                           : 10        : output : TTL               :         :           : N              
+Q1                           : 11        : output : TTL               :         :           : N              
+D1                           : 12        : output : TTL               :         :           : N              
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 RESERVED                     : 15        :        :                   :         :           :                

@@ -11,82 +11,76 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---B1_reg_q2 is SMReg:inst|reg_q2
-B1_reg_q2_or_out = X2;
-B1_reg_q2_reg_input = B1_reg_q2_or_out;
-B1_reg_q2 = DFFE(B1_reg_q2_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+--inst is inst
+inst_or_out = X1;
+inst_reg_input = inst_or_out;
+inst = DFFE(inst_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
 
 
---B1_reg_q3 is SMReg:inst|reg_q3
-B1_reg_q3_or_out = X3;
-B1_reg_q3_reg_input = B1_reg_q3_or_out;
-B1_reg_q3 = DFFE(B1_reg_q3_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+--inst4 is inst4
+inst4_or_out = X2;
+inst4_reg_input = inst4_or_out;
+inst4 = DFFE(inst4_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
 
 
---B1_reg_q4 is SMReg:inst|reg_q4
-B1_reg_q4_or_out = X4;
-B1_reg_q4_reg_input = B1_reg_q4_or_out;
-B1_reg_q4 = DFFE(B1_reg_q4_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+--inst5 is inst5
+inst5_or_out = X3;
+inst5_reg_input = inst5_or_out;
+inst5 = DFFE(inst5_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
 
 
---B1_reg_q1 is SMReg:inst|reg_q1
-B1_reg_q1_or_out = X1;
-B1_reg_q1_reg_input = B1_reg_q1_or_out;
-B1_reg_q1 = DFFE(B1_reg_q1_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+--inst6 is inst6
+inst6_or_out = X4;
+inst6_reg_input = inst6_or_out;
+inst6 = DFFE(inst6_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
 
 
---B1L1 is SMReg:inst|Q1~13
-B1L1_p1_out = B1_reg_q1 & Read;
-B1L1_or_out = B1L1_p1_out;
-B1L1 = B1L1_or_out;
+--A1L5 is inst7~8
+A1L5_p1_out = inst & Read;
+A1L5_or_out = A1L5_p1_out;
+A1L5 = A1L5_or_out;
 
 
---B1L3 is SMReg:inst|Q2~13
-B1L3_p1_out = Read & B1_reg_q2;
-B1L3_or_out = B1L3_p1_out;
-B1L3 = B1L3_or_out;
+--A1L6 is inst8~8
+A1L6_p1_out = Read & inst4;
+A1L6_or_out = A1L6_p1_out;
+A1L6 = A1L6_or_out;
 
 
---B1L5 is SMReg:inst|Q3~13
-B1L5_p1_out = Read & B1_reg_q3;
-B1L5_or_out = B1L5_p1_out;
-B1L5 = B1L5_or_out;
+--A1L7 is inst9~8
+A1L7_p1_out = Read & inst5;
+A1L7_or_out = A1L7_p1_out;
+A1L7 = A1L7_or_out;
 
 
---B1L7 is SMReg:inst|Q4~13
-B1L7_p1_out = Read & B1_reg_q4;
-B1L7_or_out = B1L7_p1_out;
-B1L7 = B1L7_or_out;
+--A1L8 is inst10~8
+A1L8_p1_out = Read & inst6;
+A1L8_or_out = A1L8_p1_out;
+A1L8 = A1L8_or_out;
 
 
---B1L2 is SMReg:inst|Q1~15
-B1L2_p1_out = B1_reg_q1 & Read;
-B1L2_or_out = B1L2_p1_out;
-B1L2 = B1L2_or_out;
+--Reset is Reset
+--operation mode is input
+
+Reset = INPUT();
 
 
---B1L4 is SMReg:inst|Q2~15
-B1L4_p1_out = Read & B1_reg_q2;
-B1L4_or_out = B1L4_p1_out;
-B1L4 = B1L4_or_out;
+--Write is Write
+--operation mode is input
 
-
---B1L6 is SMReg:inst|Q3~15
-B1L6_p1_out = Read & B1_reg_q3;
-B1L6_or_out = B1L6_p1_out;
-B1L6 = B1L6_or_out;
-
-
---B1L8 is SMReg:inst|Q4~15
-B1L8_p1_out = Read & B1_reg_q4;
-B1L8_or_out = B1L8_p1_out;
-B1L8 = B1L8_or_out;
+Write = INPUT();
 
 
 --X1 is X1
 --operation mode is input
 
 X1 = INPUT();
+
+
+--Read is Read
+--operation mode is input
+
+Read = INPUT();
 
 
 --X2 is X2
@@ -107,69 +101,27 @@ X3 = INPUT();
 X4 = INPUT();
 
 
---Write is Write
---operation mode is input
-
-Write = INPUT();
-
-
---Reset is Reset
---operation mode is input
-
-Reset = INPUT();
-
-
---Read is Read
---operation mode is input
-
-Read = INPUT();
-
-
---Q1V is Q1V
---operation mode is output
-
-Q1V = OUTPUT(B1L1);
-
-
---Q2V is Q2V
---operation mode is output
-
-Q2V = OUTPUT(B1L3);
-
-
---Q3V is Q3V
---operation mode is output
-
-Q3V = OUTPUT(B1L5);
-
-
---Q4V is Q4V
---operation mode is output
-
-Q4V = OUTPUT(B1L7);
-
-
 --Q1 is Q1
 --operation mode is output
 
-Q1 = OUTPUT(B1L2);
+Q1 = OUTPUT(A1L5);
 
 
 --Q2 is Q2
 --operation mode is output
 
-Q2 = OUTPUT(B1L4);
+Q2 = OUTPUT(A1L6);
 
 
 --Q3 is Q3
 --operation mode is output
 
-Q3 = OUTPUT(B1L6);
+Q3 = OUTPUT(A1L7);
 
 
 --Q4 is Q4
 --operation mode is output
 
-Q4 = OUTPUT(B1L8);
+Q4 = OUTPUT(A1L8);
 
 

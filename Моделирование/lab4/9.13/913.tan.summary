@@ -7,7 +7,7 @@ Slack          : N/A
 Required Time  : None
 Actual Time    : 11.000 ns
 From           : D
-To             : 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst
+To             : 2-stroke_D-trigger:inst3|inst
 From Clock     : 
 To Clock       : C1
 Failed Paths   : 0
@@ -15,10 +15,10 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 17.000 ns
-From           : 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4
-To             : Q1VHD
-From Clock     : C2
+Actual Time    : 8.000 ns
+From           : 2-stroke_D-trigger:inst3|inst
+To             : Q11
+From Clock     : C1
 To Clock       : 
 Failed Paths   : 0
 
@@ -27,7 +27,7 @@ Slack          : N/A
 Required Time  : None
 Actual Time    : -3.000 ns
 From           : D
-To             : 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst
+To             : 2-stroke_D-trigger:inst3|inst
 From Clock     : 
 To Clock       : C1
 Failed Paths   : 0

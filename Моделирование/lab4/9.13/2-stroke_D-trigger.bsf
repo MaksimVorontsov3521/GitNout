@@ -54,9 +54,16 @@ applicable agreement for further details.
 	(port
 		(pt 96 32)
 		(output)
-		(text "Q" (rect 0 0 9 14)(font "Arial" (font_size 8)))
-		(text "Q" (rect 66 27 75 41)(font "Arial" (font_size 8)))
+		(text "Q1" (rect 0 0 16 14)(font "Arial" (font_size 8)))
+		(text "Q1" (rect 59 27 75 41)(font "Arial" (font_size 8)))
 		(line (pt 96 32)(pt 80 32)(line_width 1))
+	)
+	(port
+		(pt 96 48)
+		(output)
+		(text "Q" (rect 0 0 9 14)(font "Arial" (font_size 8)))
+		(text "Q" (rect 66 43 75 57)(font "Arial" (font_size 8)))
+		(line (pt 96 48)(pt 80 48)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 80 112)(line_width 1))

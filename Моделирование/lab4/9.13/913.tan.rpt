@@ -1,5 +1,5 @@
 Timing Analyzer report for 913
-Sat Oct 15 11:04:53 2022
+Sat Oct 15 15:29:06 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,16 +36,16 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                                                                                                                                                                                                ;
-+------------------------------+-------+---------------+-------------+----------------------------------------------------------------------+---------------------------------------------------------------------+------------+----------+--------------+
-; Type                         ; Slack ; Required Time ; Actual Time ; From                                                                 ; To                                                                  ; From Clock ; To Clock ; Failed Paths ;
-+------------------------------+-------+---------------+-------------+----------------------------------------------------------------------+---------------------------------------------------------------------+------------+----------+--------------+
-; Worst-case tsu               ; N/A   ; None          ; 11.000 ns   ; D                                                                    ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst ;            ; C1       ; 0            ;
-; Worst-case tco               ; N/A   ; None          ; 17.000 ns   ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4 ; Q1VHD                                                               ; C2         ;          ; 0            ;
-; Worst-case th                ; N/A   ; None          ; -3.000 ns   ; D                                                                    ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst ;            ; C1       ; 0            ;
-; Total number of failed paths ;       ;               ;             ;                                                                      ;                                                                     ;            ;          ; 0            ;
-+------------------------------+-------+---------------+-------------+----------------------------------------------------------------------+---------------------------------------------------------------------+------------+----------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                   ;
++------------------------------+-------+---------------+-------------+-------------------------------+-------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From                          ; To                            ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+-------------------------------+-------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 11.000 ns   ; D                             ; 2-stroke_D-trigger:inst3|inst ;            ; C1       ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 8.000 ns    ; 2-stroke_D-trigger:inst3|inst ; Q11                           ; C1         ;          ; 0            ;
+; Worst-case th                ; N/A   ; None          ; -3.000 ns   ; D                             ; 2-stroke_D-trigger:inst3|inst ;            ; C1       ; 0            ;
+; Total number of failed paths ;       ;               ;             ;                               ;                               ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+-------------------------------+-------------------------------+------------+----------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -83,34 +83,34 @@ applicable agreement for further details.
 +-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; tsu                                                                                                                       ;
-+-------+--------------+------------+------+---------------------------------------------------------------------+----------+
-; Slack ; Required tsu ; Actual tsu ; From ; To                                                                  ; To Clock ;
-+-------+--------------+------------+------+---------------------------------------------------------------------+----------+
-; N/A   ; None         ; 11.000 ns  ; D    ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst ; C1       ;
-+-------+--------------+------------+------+---------------------------------------------------------------------+----------+
++-------------------------------------------------------------------------------------+
+; tsu                                                                                 ;
++-------+--------------+------------+------+-------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From ; To                            ; To Clock ;
++-------+--------------+------------+------+-------------------------------+----------+
+; N/A   ; None         ; 11.000 ns  ; D    ; 2-stroke_D-trigger:inst3|inst ; C1       ;
++-------+--------------+------------+------+-------------------------------+----------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; tco                                                                                                                            ;
-+-------+--------------+------------+-----------------------------------------------------------------------+-------+------------+
-; Slack ; Required tco ; Actual tco ; From                                                                  ; To    ; From Clock ;
-+-------+--------------+------------+-----------------------------------------------------------------------+-------+------------+
-; N/A   ; None         ; 17.000 ns  ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4 ; Q2VHD ; C2         ;
-; N/A   ; None         ; 17.000 ns  ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4  ; Q1VHD ; C2         ;
-; N/A   ; None         ; 8.000 ns   ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4 ; Q2BDF ; C2         ;
-; N/A   ; None         ; 8.000 ns   ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4  ; Q1BDF ; C2         ;
-+-------+--------------+------------+-----------------------------------------------------------------------+-------+------------+
++---------------------------------------------------------------------------------------+
+; tco                                                                                   ;
++-------+--------------+------------+--------------------------------+-----+------------+
+; Slack ; Required tco ; Actual tco ; From                           ; To  ; From Clock ;
++-------+--------------+------------+--------------------------------+-----+------------+
+; N/A   ; None         ; 8.000 ns   ; 2-stroke_D-trigger:inst4|inst4 ; Q2  ; C2         ;
+; N/A   ; None         ; 8.000 ns   ; 2-stroke_D-trigger:inst4|inst  ; Q22 ; C1         ;
+; N/A   ; None         ; 8.000 ns   ; 2-stroke_D-trigger:inst3|inst4 ; Q1  ; C2         ;
+; N/A   ; None         ; 8.000 ns   ; 2-stroke_D-trigger:inst3|inst  ; Q11 ; C1         ;
++-------+--------------+------------+--------------------------------+-----+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; th                                                                                                                              ;
-+---------------+-------------+-----------+------+---------------------------------------------------------------------+----------+
-; Minimum Slack ; Required th ; Actual th ; From ; To                                                                  ; To Clock ;
-+---------------+-------------+-----------+------+---------------------------------------------------------------------+----------+
-; N/A           ; None        ; -3.000 ns ; D    ; 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst ; C1       ;
-+---------------+-------------+-----------+------+---------------------------------------------------------------------+----------+
++-------------------------------------------------------------------------------------------+
+; th                                                                                        ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From ; To                            ; To Clock ;
++---------------+-------------+-----------+------+-------------------------------+----------+
+; N/A           ; None        ; -3.000 ns ; D    ; 2-stroke_D-trigger:inst3|inst ; C1       ;
++---------------+-------------+-----------+------+-------------------------------+----------+
 
 
 +--------------------------+
@@ -119,7 +119,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Timing Analyzer
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Oct 15 11:04:52 2022
+    Info: Processing started: Sat Oct 15 15:29:05 2022
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off 913 -c 913
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
@@ -128,42 +128,40 @@ Warning: Found pins functioning as undefined clocks and/or memory enables
     Info: Assuming node "C2" is an undefined clock
 Info: No valid register-to-register data paths exist for clock "C1"
 Info: No valid register-to-register data paths exist for clock "C2"
-Info: tsu for register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst" (data pin = "D", clock pin = "C1") is 11.000 ns
+Info: tsu for register "2-stroke_D-trigger:inst3|inst" (data pin = "D", clock pin = "C1") is 11.000 ns
     Info: + Longest pin to register delay is 10.000 ns
         Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_81; Fanout = 1; PIN Node = 'D'
-        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC2; Fanout = 1; REG Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst'
+        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC3; Fanout = 2; REG Node = '2-stroke_D-trigger:inst3|inst'
         Info: Total cell delay = 8.000 ns ( 80.00 % )
         Info: Total interconnect delay = 2.000 ns ( 20.00 % )
     Info: + Micro setup delay of destination is 4.000 ns
     Info: - Shortest clock path from clock "C1" to destination register is 3.000 ns
         Info: 1: + IC(0.000 ns) + CELL(3.000 ns) = 3.000 ns; Loc. = PIN_83; Fanout = 2; CLK Node = 'C1'
-        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 3.000 ns; Loc. = LC2; Fanout = 1; REG Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst'
+        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 3.000 ns; Loc. = LC3; Fanout = 2; REG Node = '2-stroke_D-trigger:inst3|inst'
         Info: Total cell delay = 3.000 ns ( 100.00 % )
-Info: tco from clock "C2" to destination pin "Q2VHD" through register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4" is 17.000 ns
+Info: tco from clock "C2" to destination pin "Q2" through register "2-stroke_D-trigger:inst4|inst4" is 8.000 ns
     Info: + Longest clock path from clock "C2" to source register is 3.000 ns
         Info: 1: + IC(0.000 ns) + CELL(3.000 ns) = 3.000 ns; Loc. = PIN_2; Fanout = 2; CLK Node = 'C2'
-        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 3.000 ns; Loc. = LC3; Fanout = 2; REG Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4'
+        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 3.000 ns; Loc. = LC8; Fanout = 1; REG Node = '2-stroke_D-trigger:inst4|inst4'
         Info: Total cell delay = 3.000 ns ( 100.00 % )
     Info: + Micro clock to output delay of source is 1.000 ns
-    Info: + Longest register to pin delay is 13.000 ns
-        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC3; Fanout = 2; REG Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4'
-        Info: 2: + IC(2.000 ns) + CELL(7.000 ns) = 9.000 ns; Loc. = LC5; Fanout = 1; COMB Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4~2'
-        Info: 3: + IC(0.000 ns) + CELL(4.000 ns) = 13.000 ns; Loc. = PIN_11; Fanout = 0; PIN Node = 'Q2VHD'
-        Info: Total cell delay = 11.000 ns ( 84.62 % )
-        Info: Total interconnect delay = 2.000 ns ( 15.38 % )
-Info: th for register "2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst" (data pin = "D", clock pin = "C1") is -3.000 ns
+    Info: + Longest register to pin delay is 4.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC8; Fanout = 1; REG Node = '2-stroke_D-trigger:inst4|inst4'
+        Info: 2: + IC(0.000 ns) + CELL(4.000 ns) = 4.000 ns; Loc. = PIN_9; Fanout = 0; PIN Node = 'Q2'
+        Info: Total cell delay = 4.000 ns ( 100.00 % )
+Info: th for register "2-stroke_D-trigger:inst3|inst" (data pin = "D", clock pin = "C1") is -3.000 ns
     Info: + Longest clock path from clock "C1" to destination register is 3.000 ns
         Info: 1: + IC(0.000 ns) + CELL(3.000 ns) = 3.000 ns; Loc. = PIN_83; Fanout = 2; CLK Node = 'C1'
-        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 3.000 ns; Loc. = LC2; Fanout = 1; REG Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst'
+        Info: 2: + IC(0.000 ns) + CELL(0.000 ns) = 3.000 ns; Loc. = LC3; Fanout = 2; REG Node = '2-stroke_D-trigger:inst3|inst'
         Info: Total cell delay = 3.000 ns ( 100.00 % )
     Info: + Micro hold delay of destination is 4.000 ns
     Info: - Shortest pin to register delay is 10.000 ns
         Info: 1: + IC(0.000 ns) + CELL(2.000 ns) = 2.000 ns; Loc. = PIN_81; Fanout = 1; PIN Node = 'D'
-        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC2; Fanout = 1; REG Node = '2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst'
+        Info: 2: + IC(2.000 ns) + CELL(6.000 ns) = 10.000 ns; Loc. = LC3; Fanout = 2; REG Node = '2-stroke_D-trigger:inst3|inst'
         Info: Total cell delay = 8.000 ns ( 80.00 % )
         Info: Total interconnect delay = 2.000 ns ( 20.00 % )
 Info: Quartus II Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Processing ended: Sat Oct 15 11:04:53 2022
+    Info: Processing ended: Sat Oct 15 15:29:06 2022
     Info: Elapsed time: 00:00:01
 
 

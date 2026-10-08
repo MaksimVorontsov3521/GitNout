@@ -24,18 +24,7 @@ HEADER
 {
 	VERSION = 1;
 	TIME_UNIT = ns;
-	PRINT_OPTIONS = "Print_options_version 6\
-range_start 0ps\
-range_end 800.0ns\
-width 1\
-names_percentage 25\
-comments 1\
-grid_lines 1\
-time_bars 1\
-name_every_page 0\
-expand_groups 0\
-print_all 1";
-	SIMULATION_TIME = 800.0;
+	SIMULATION_TIME = 400.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
@@ -116,9 +105,11 @@ TRANSITION_LIST("c")
 	NODE
 	{
 		REPEAT = 1;
+		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 10.0;
 		NODE
 		{
-			REPEAT = 40;
+			REPEAT = 18;
 			LEVEL 0 FOR 10.0;
 			LEVEL 1 FOR 10.0;
 		}
@@ -130,7 +121,7 @@ TRANSITION_LIST("jk")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 800.0;
+		LEVEL 1 FOR 400.0;
 	}
 }
 
@@ -139,15 +130,15 @@ TRANSITION_LIST("q0")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 18.0;
+		LEVEL 0 FOR 38.0;
 		NODE
 		{
-			REPEAT = 19;
+			REPEAT = 7;
 			LEVEL 1 FOR 20.0;
 			LEVEL 0 FOR 20.0;
 		}
 		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 2.0;
+		LEVEL 0 FOR 62.0;
 	}
 }
 
@@ -156,14 +147,15 @@ TRANSITION_LIST("q1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 47.0;
+		LEVEL 0 FOR 67.0;
 		NODE
 		{
-			REPEAT = 9;
+			REPEAT = 3;
 			LEVEL 1 FOR 40.0;
 			LEVEL 0 FOR 40.0;
 		}
-		LEVEL 1 FOR 33.0;
+		LEVEL 1 FOR 40.0;
+		LEVEL 0 FOR 53.0;
 	}
 }
 
@@ -172,14 +164,11 @@ TRANSITION_LIST("q2")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 96.0;
-		NODE
-		{
-			REPEAT = 4;
-			LEVEL 1 FOR 80.0;
-			LEVEL 0 FOR 80.0;
-		}
-		LEVEL 1 FOR 64.0;
+		LEVEL 0 FOR 116.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 80.0;
+		LEVEL 1 FOR 80.0;
+		LEVEL 0 FOR 44.0;
 	}
 }
 
@@ -188,11 +177,9 @@ TRANSITION_LIST("q3")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 185.0;
-		LEVEL 1 FOR 160.0;
-		LEVEL 0 FOR 160.0;
-		LEVEL 1 FOR 160.0;
-		LEVEL 0 FOR 135.0;
+		LEVEL 0 FOR 205.0;
+		LEVEL 1 FOR 156.0;
+		LEVEL 0 FOR 39.0;
 	}
 }
 
@@ -202,7 +189,8 @@ TRANSITION_LIST("r")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 10.0;
-		LEVEL 1 FOR 790.0;
+		LEVEL 1 FOR 340.0;
+		LEVEL 0 FOR 50.0;
 	}
 }
 
@@ -271,7 +259,7 @@ DISPLAY_LINE
 
 TIME_BAR
 {
-	TIME = 0;
+	TIME = 24025;
 	MASTER = TRUE;
 }
 ;

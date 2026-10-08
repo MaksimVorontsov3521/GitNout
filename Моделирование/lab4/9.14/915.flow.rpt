@@ -1,5 +1,5 @@
 Flow report for 915
-Sat Oct 15 12:50:52 2022
+Sat Oct 15 15:43:34 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,16 +36,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Successful - Sat Oct 15 12:50:52 2022    ;
+; Flow Status             ; Successful - Sat Oct 15 15:43:34 2022    ;
 ; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name           ; 915                                      ;
-; Top-level Entity Name   ; 915                                      ;
+; Top-level Entity Name   ; Simplest_memory_regi                     ;
 ; Family                  ; MAX7000S                                 ;
 ; Device                  ; EPM7128SLC84-15                          ;
 ; Timing Models           ; Final                                    ;
 ; Met timing requirements ; Yes                                      ;
-; Total macrocells        ; 12 / 128 ( 9 % )                         ;
-; Total pins              ; 19 / 68 ( 27 % )                         ;
+; Total macrocells        ; 8 / 128 ( 6 % )                          ;
+; Total pins              ; 15 / 68 ( 22 % )                         ;
 +-------------------------+------------------------------------------+
 
 
@@ -54,7 +54,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/15/2022 12:50:49 ;
+; Start date & time ; 10/15/2022 15:43:28 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 915                 ;
 +-------------------+---------------------+
@@ -65,11 +65,11 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:01     ;
+; Analysis & Synthesis ; 00:00:02     ;
 ; Fitter               ; 00:00:00     ;
 ; Assembler            ; 00:00:01     ;
 ; Timing Analyzer      ; 00:00:00     ;
-; Total                ; 00:00:02     ;
+; Total                ; 00:00:03     ;
 +----------------------+--------------+
 
 

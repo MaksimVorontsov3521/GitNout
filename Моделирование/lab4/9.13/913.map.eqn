@@ -11,38 +11,28 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---D1_inst is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst
-D1_inst_or_out = D;
-D1_inst_reg_input = D1_inst_or_out;
-D1_inst = DFFE(D1_inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
+--B1_inst is 2-stroke_D-trigger:inst3|inst
+B1_inst_or_out = D;
+B1_inst_reg_input = B1_inst_or_out;
+B1_inst = DFFE(B1_inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
 
 
---D1_inst4 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4
-D1_inst4_or_out = D1_inst;
-D1_inst4_reg_input = D1_inst4_or_out;
-D1_inst4 = DFFE(D1_inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
+--B1_inst4 is 2-stroke_D-trigger:inst3|inst4
+B1_inst4_or_out = B1_inst;
+B1_inst4_reg_input = B1_inst4_or_out;
+B1_inst4 = DFFE(B1_inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
 
 
---D2_inst is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst
-D2_inst_or_out = D1_inst4;
-D2_inst_reg_input = D2_inst_or_out;
-D2_inst = DFFE(D2_inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
+--B2_inst is 2-stroke_D-trigger:inst4|inst
+B2_inst_or_out = B1_inst4;
+B2_inst_reg_input = B2_inst_or_out;
+B2_inst = DFFE(B2_inst_reg_input, GLOBAL(C1), GLOBAL(R), , );
 
 
---D1L3 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst|inst4~4
-D1L3_or_out = D1_inst4;
-D1L3 = D1L3_or_out;
-
-
---D2_inst4 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4
-D2_inst4_or_out = D2_inst;
-D2_inst4_reg_input = D2_inst4_or_out;
-D2_inst4 = DFFE(D2_inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
-
-
---D2L3 is 2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1|inst4~2
-D2L3_or_out = D2_inst4;
-D2L3 = D2L3_or_out;
+--B2_inst4 is 2-stroke_D-trigger:inst4|inst4
+B2_inst4_or_out = B2_inst;
+B2_inst4_reg_input = B2_inst4_or_out;
+B2_inst4 = DFFE(B2_inst4_reg_input, GLOBAL(C2), GLOBAL(R), , );
 
 
 --D is D
@@ -69,27 +59,27 @@ C2 = INPUT();
 R = INPUT();
 
 
---Q1BDF is Q1BDF
+--Q11 is Q11
 --operation mode is output
 
-Q1BDF = OUTPUT(D1_inst4);
+Q11 = OUTPUT(B1_inst);
 
 
---Q1VHD is Q1VHD
+--Q1 is Q1
 --operation mode is output
 
-Q1VHD = OUTPUT(D1L3);
+Q1 = OUTPUT(B1_inst4);
 
 
---Q2BDF is Q2BDF
+--Q22 is Q22
 --operation mode is output
 
-Q2BDF = OUTPUT(D2_inst4);
+Q22 = OUTPUT(B2_inst);
 
 
---Q2VHD is Q2VHD
+--Q2 is Q2
 --operation mode is output
 
-Q2VHD = OUTPUT(D2L3);
+Q2 = OUTPUT(B2_inst4);
 
 

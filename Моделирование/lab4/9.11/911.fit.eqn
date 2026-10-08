@@ -11,52 +11,28 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---B1_tmp[0] is shift_reg_1clk:inst1|tmp[0] at LC8
-B1_tmp[0]_or_out = D;
-B1_tmp[0]_reg_input = B1_tmp[0]_or_out;
-B1_tmp[0] = DFFE(B1_tmp[0]_reg_input, !GLOBAL(C), GLOBAL(R), , );
+--inst is inst at LC3
+inst_or_out = D;
+inst_reg_input = inst_or_out;
+inst = DFFE(inst_reg_input, GLOBAL(C), GLOBAL(R), , );
 
 
---C1_inst is Two-digit_single-stroke_shift_register:inst3|inst at LC2
-C1_inst_or_out = D;
-C1_inst_reg_input = C1_inst_or_out;
-C1_inst = DFFE(C1_inst_reg_input, GLOBAL(C), GLOBAL(R), , );
+--inst3 is inst3 at LC5
+inst3_or_out = inst;
+inst3_reg_input = inst3_or_out;
+inst3 = DFFE(inst3_reg_input, !GLOBAL(C), GLOBAL(R), , );
 
 
---B1_tmp[1] is shift_reg_1clk:inst1|tmp[1] at LC6
-B1_tmp[1]_or_out = B1_tmp[0];
-B1_tmp[1]_reg_input = B1_tmp[1]_or_out;
-B1_tmp[1] = DFFE(B1_tmp[1]_reg_input, !GLOBAL(C), GLOBAL(R), , );
+--inst4 is inst4 at LC6
+inst4_or_out = inst3;
+inst4_reg_input = inst4_or_out;
+inst4 = DFFE(inst4_reg_input, GLOBAL(C), GLOBAL(R), , );
 
 
---C1_inst3 is Two-digit_single-stroke_shift_register:inst3|inst3 at LC3
-C1_inst3_or_out = C1_inst;
-C1_inst3_reg_input = C1_inst3_or_out;
-C1_inst3 = DFFE(C1_inst3_reg_input, !GLOBAL(C), GLOBAL(R), , );
-
-
---C1_inst4 is Two-digit_single-stroke_shift_register:inst3|inst4 at LC1
-C1_inst4_or_out = C1_inst3;
-C1_inst4_reg_input = C1_inst4_or_out;
-C1_inst4 = DFFE(C1_inst4_reg_input, GLOBAL(C), GLOBAL(R), , );
-
-
---C1_inst5 is Two-digit_single-stroke_shift_register:inst3|inst5 at LC5
-C1_inst5_or_out = C1_inst4;
-C1_inst5_reg_input = C1_inst5_or_out;
-C1_inst5 = DFFE(C1_inst5_reg_input, !GLOBAL(C), GLOBAL(R), , );
-
-
---D is D at PIN_81
---operation mode is input
-
-D = INPUT();
-
-
---C is C at PIN_83
---operation mode is input
-
-C = INPUT();
+--inst5 is inst5 at LC8
+inst5_or_out = inst4;
+inst5_reg_input = inst5_or_out;
+inst5 = DFFE(inst5_reg_input, !GLOBAL(C), GLOBAL(R), , );
 
 
 --R is R at PIN_1
@@ -65,28 +41,40 @@ C = INPUT();
 R = INPUT();
 
 
---VHDQ1 is VHDQ1 at PIN_9
+--C is C at PIN_83
+--operation mode is input
+
+C = INPUT();
+
+
+--D is D at PIN_81
+--operation mode is input
+
+D = INPUT();
+
+
+--D1 is D1 at PIN_12
 --operation mode is output
 
-VHDQ1 = OUTPUT(B1_tmp[0]);
+D1 = OUTPUT(inst);
 
 
---VHDQ2 is VHDQ2 at PIN_10
+--Q1 is Q1 at PIN_11
 --operation mode is output
 
-VHDQ2 = OUTPUT(B1_tmp[1]);
+Q1 = OUTPUT(inst3);
 
 
---BDFQ1 is BDFQ1 at PIN_12
+--D2 is D2 at PIN_10
 --operation mode is output
 
-BDFQ1 = OUTPUT(C1_inst3);
+D2 = OUTPUT(inst4);
 
 
---BDFQ2 is BDFQ2 at PIN_11
+--Q2 is Q2 at PIN_9
 --operation mode is output
 
-BDFQ2 = OUTPUT(C1_inst5);
+Q2 = OUTPUT(inst5);
 
 
 

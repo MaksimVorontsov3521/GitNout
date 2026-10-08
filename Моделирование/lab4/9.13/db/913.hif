@@ -11,68 +11,30 @@ VRSM_ON
 VHSM_ON
 0
 # entity
-2-stroke_two-digit_shift_register
-# case_insensitive
-# source_file
-2-stroke_two-digit_shift_register.bdf
-1665779894
-23
-# storage
-db|913.(0).cnf
-db|913.(0).cnf
-# hierarchies {
-2-stroke_two-digit_shift_register:inst
-}
-# end
-# entity
 2-stroke_D-trigger
 # case_insensitive
 # source_file
 2-stroke_D-trigger.bdf
-1665779305
+1665832822
 23
 # storage
 db|913.(1).cnf
 db|913.(1).cnf
 # hierarchies {
-2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst
-2-stroke_two-digit_shift_register:inst|2-stroke_D-trigger:inst1
+2-stroke_D-trigger:inst3
+2-stroke_D-trigger:inst4
 }
 # end
 # entity
-shift_reg_2clk
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
+2-stroke_two-digit_shift_register
 # case_insensitive
 # source_file
-2-S_2-d_s_r.vhd
-1665816213
-4
-# storage
-db|913.(3).cnf
-db|913.(3).cnf
-# internal_option {
-ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
-ON
-AUTO_RESOURCE_SHARING
-OFF
-}
-# hierarchies {
-shift_reg_2clk:inst1
-}
-# end
-# entity
-913
-# case_insensitive
-# source_file
-913.bdf
-1665817466
+2-stroke_two-digit_shift_register.bdf
+1665833290
 23
 # storage
-db|913.(2).cnf
-db|913.(2).cnf
+db|913.(0).cnf
+db|913.(0).cnf
 # hierarchies {
 |
 }

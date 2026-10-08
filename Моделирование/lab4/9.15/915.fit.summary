@@ -1,0 +1,10 @@
+Flow Status : Successful - Sat Oct 22 12:25:10 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : 915
+Top-level Entity Name : Simplest_memory_regi
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 8 / 128 ( 6 % )
+Total pins : 19 / 68 ( 27 % )

@@ -5,5 +5,6 @@ R => inst.ACLR
 C2 => inst4.CLK
 C1 => inst.CLK
 D => inst.DATAIN
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,5 +1,5 @@
 Flow report for 911
-Sat Oct 15 12:07:59 2022
+Sat Oct 15 15:32:33 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,15 +36,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+
 ; Flow Summary                                                       ;
 +-------------------------+------------------------------------------+
-; Flow Status             ; Successful - Sat Oct 15 12:07:59 2022    ;
+; Flow Status             ; Successful - Sat Oct 15 15:32:32 2022    ;
 ; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name           ; 911                                      ;
-; Top-level Entity Name   ; 911                                      ;
+; Top-level Entity Name   ; Two-digit_single-stroke_shift_register   ;
 ; Family                  ; MAX7000S                                 ;
 ; Device                  ; EPM7128SLC84-15                          ;
 ; Timing Models           ; Final                                    ;
 ; Met timing requirements ; Yes                                      ;
-; Total macrocells        ; 6 / 128 ( 4 % )                          ;
+; Total macrocells        ; 4 / 128 ( 3 % )                          ;
 ; Total pins              ; 11 / 68 ( 16 % )                         ;
 +-------------------------+------------------------------------------+
 
@@ -54,7 +54,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/15/2022 12:07:56 ;
+; Start date & time ; 10/15/2022 15:32:26 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; 911                 ;
 +-------------------+---------------------+
@@ -65,11 +65,11 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:01     ;
+; Analysis & Synthesis ; 00:00:02     ;
 ; Fitter               ; 00:00:00     ;
-; Assembler            ; 00:00:00     ;
+; Assembler            ; 00:00:01     ;
 ; Timing Analyzer      ; 00:00:00     ;
-; Total                ; 00:00:01     ;
+; Total                ; 00:00:03     ;
 +----------------------+--------------+
 
 

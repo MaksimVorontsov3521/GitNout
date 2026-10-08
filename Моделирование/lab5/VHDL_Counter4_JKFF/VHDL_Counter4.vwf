@@ -97,7 +97,7 @@ TRANSITION_LIST("CLK")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 10;
+			REPEAT = 25;
 			LEVEL 0 FOR 10.0;
 			LEVEL 1 FOR 10.0;
 		}
@@ -109,7 +109,12 @@ TRANSITION_LIST("q0")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 200.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL X FOR 200.0;
+		}
+		LEVEL X FOR 100.0;
 	}
 }
 
@@ -118,7 +123,12 @@ TRANSITION_LIST("q1")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 200.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL X FOR 200.0;
+		}
+		LEVEL X FOR 100.0;
 	}
 }
 
@@ -127,7 +137,12 @@ TRANSITION_LIST("q2")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 200.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL X FOR 200.0;
+		}
+		LEVEL X FOR 100.0;
 	}
 }
 
@@ -136,7 +151,12 @@ TRANSITION_LIST("q3")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 200.0;
+		NODE
+		{
+			REPEAT = 2;
+			LEVEL X FOR 200.0;
+		}
+		LEVEL X FOR 100.0;
 	}
 }
 
@@ -146,7 +166,7 @@ TRANSITION_LIST("RST")
 	{
 		REPEAT = 1;
 		LEVEL 1 FOR 25.0;
-		LEVEL 0 FOR 175.0;
+		LEVEL 0 FOR 475.0;
 	}
 }
 

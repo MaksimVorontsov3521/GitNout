@@ -1,0 +1,60 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+915
+# case_insensitive
+# source_file
+915.bdf
+1665823846
+23
+# storage
+db|915.(0).cnf
+db|915.(0).cnf
+# end
+# entity
+SMReg
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+SMReg.vhd
+1665823830
+4
+# storage
+db|915.(1).cnf
+db|915.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# end
+# entity
+Simplest_memory_regi
+# case_insensitive
+# source_file
+Simplest_memory_regi.bdf
+1666427108
+23
+# storage
+db|915.(2).cnf
+db|915.(2).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+
