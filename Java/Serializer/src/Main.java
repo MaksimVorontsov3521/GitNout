@@ -5,9 +5,11 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Task task1 = new Task("Проснуться", Priority.MEDIUM);
+        Task task1 = new Task("Проснуться", Priority.MEDIUM_rare);
         Task task2 = new Task("Улыбнуться", Priority.LOW);
         Task task3 = new Task("Идти на учёбу", Priority.HIGH);
+
+        //task3.setPriority(Priority.LOW);
 
         Serializer xmlSerializer = new XmlSerializer();
         System.out.println("\nXML:" + xmlSerializer.serialize(task1));

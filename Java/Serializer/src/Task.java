@@ -14,6 +14,8 @@ public class Task {
 
     public int getId() { return id; }
     public String getName() { return name; }
+    public void setName(String _name) { name = _name;}
     public Priority getPriority() { return priority; }
+    public  void  setPriority (Priority _priority) {priority=_priority; }
 }
 
