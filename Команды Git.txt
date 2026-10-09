@@ -2,12 +2,12 @@ git show <commit-hash> > changes.txt
 
 git diff <старый_коммит> <новый_коммит> > Diff.txt
 
-git diff <старый_коммит>^..<новый_коммит> -- путь/к/файлу_или_папке/что-то.что > changes.patch changes.txt
+git diff <старый_коммит>..<новый_коммит> -- путь/к/файлу_или_папке/что-то.что > changes.patch changes.txt
 
 
 git show <commit-hash> > changes.patch
 
 git diff <старый_коммит> <новый_коммит> > changes.diff
 
-git diff <старый_коммит>^..<новый_коммит> -- путь/к/файлу_или_папке > changes.patch
+git diff <старый_коммит>..<новый_коммит> -- путь/к/файлу_или_папке > changes.patch
 

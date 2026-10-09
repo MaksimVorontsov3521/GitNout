@@ -1,4 +1,5 @@
 import java.lang.reflect.Field;
+import java.util.Map;
 
 public class XmlSerializer implements Serializer {
 
@@ -25,20 +26,24 @@ public class XmlSerializer implements Serializer {
 
     }
 
+    private String serializeIterable(Iterable<?> iterable, Object obj){
+        String name = obj.getClass().getSimpleName();
+        StringBuilder SB = new StringBuilder();
+        SB.append("<").append(name).append(">\n");
+
+        for (Object object : iterable) {
+            SB.append(serializeObj(object));
+        }
+
+        SB.append("<").append(name).append(">\n");
+        return SB.toString();
+    }
+
     @Override
     public String serialize(Object obj) {
         String xml;
         if (obj instanceof Iterable<?> iterable) {
-            String name = obj.getClass().getSimpleName();
-            StringBuilder SB = new StringBuilder();
-            SB.append("<").append(name).append(">\n");
-
-            for (Object object : iterable) {
-                SB.append(serializeObj(object));
-            }
-
-            SB.append("<").append(name).append(">\n");
-            xml= SB.toString();
+            xml= serializeIterable(iterable,obj);
         } else {
             xml= serializeObj(obj);
         }
@@ -58,6 +63,18 @@ public class XmlSerializer implements Serializer {
             SB.append(serializeObj(obj));
         }
 
+        SB.append("<").append(name).append(">\n");
+        return SB.toString();
+    }
+
+    @Override
+    public String serialize(Map<?,?> map){
+        String name = map.getClass().getSimpleName();
+        StringBuilder SB = new StringBuilder();
+        SB.append("<").append(name).append(">\n");
+        for (Object value : map.values()) {
+            SB.append(serializeObj(value));
+        }
         SB.append("<").append(name).append(">\n");
         return SB.toString();
     }

@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,6 +14,14 @@ public class Main {
 
         Serializer jsonSerializer = new JsonSerializer();
         System.out.println("\nJSON:" + jsonSerializer.serialize(task1));
+
+
+        System.out.println("Сериализация Набора");
+
+        Set<Task> taskSet = Set.<Task>of(task1,task2,task3);
+
+        System.out.println("\nXML:" + xmlSerializer.serialize(taskSet));
+        System.out.println("\nJSON:" + jsonSerializer.serialize(taskSet));
 
         System.out.println("Сериализация Списка");
 
@@ -29,5 +39,15 @@ public class Main {
 
         System.out.println("\nXML:" + xmlSerializer.serialize(taskArray));
         System.out.println("\nJSON:" + jsonSerializer.serialize(taskArray));
+
+        System.out.println("\nСериализация Map");
+        Map<Integer,Task> map = Map.ofEntries(
+                Map.entry(1, task1),
+                Map.entry(2, task2),
+                Map.entry(3, task3)
+        );
+        System.out.println("\nXML:" + xmlSerializer.serialize(map));
+        System.out.println("\nJSON:" + jsonSerializer.serialize(map));
+
     }
 }

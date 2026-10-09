@@ -1,4 +1,5 @@
 import java.lang.reflect.Field;
+import java.util.Map;
 
 public class JsonSerializer implements Serializer {
 
@@ -24,26 +25,28 @@ public class JsonSerializer implements Serializer {
 
     }
 
+    private String serializeIterable(Iterable<?> iterable, Object obj){
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+
+        for (Object object : iterable) {
+            SB.append(serializeObj(object));
+        }
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
+    }
+
     @Override
     public String serialize(Object obj) {
         String json;
         if (obj instanceof Iterable<?> iterable) {
-            StringBuilder SB = new StringBuilder();
-            SB.append("[");
-
-            for (Object object : iterable) {
-                SB.append(serializeObj(object));
-            }
-            SB.deleteCharAt(SB.length() - 1);
-            SB.append("]\n");
-            json= SB.toString();
+            json = serializeIterable(iterable,obj);
         } else {
-            json= serializeObj(obj);
+            json = serializeObj(obj);
         }
         return json;
     }
-
-
 
     @Override
     public String serialize(Object[] objs) {
@@ -53,6 +56,18 @@ public class JsonSerializer implements Serializer {
 
         for (Object obj : objs) {
             SB.append(serializeObj(obj));
+        }
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
+    }
+
+    @Override
+    public String serialize(Map<?,?> map){
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+        for (Object value : map.values()) {
+            SB.append(serializeObj(value));
         }
         SB.deleteCharAt(SB.length() - 1);
         SB.append("]\n");
