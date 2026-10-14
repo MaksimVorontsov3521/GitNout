@@ -1,0 +1,10 @@
+Flow Status : Successful - Fri Oct 28 20:00:49 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : Two-digit_single-stroke_shift_register
+Top-level Entity Name : Two-digit_single-stroke_shift_register
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 4
+Total pins : 7

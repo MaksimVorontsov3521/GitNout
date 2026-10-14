@@ -1,0 +1,138 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_7 is 74395:inst|7
+B1_7_p1_out = Load & D1;
+B1_7_p2_out = !Load & Ser;
+B1_7_or_out = B1_7_p1_out # B1_7_p2_out;
+B1_7_reg_input = B1_7_or_out;
+B1_7 = DFFE(B1_7_reg_input, !GLOBAL(CLK), GLOBAL(CLRN), , );
+
+
+--B1_10 is 74395:inst|10
+B1_10_p1_out = Load & D2;
+B1_10_p2_out = !Load & B1_7;
+B1_10_or_out = B1_10_p1_out # B1_10_p2_out;
+B1_10_reg_input = B1_10_or_out;
+B1_10 = DFFE(B1_10_reg_input, !GLOBAL(CLK), GLOBAL(CLRN), , );
+
+
+--B1_15 is 74395:inst|15
+B1_15_p1_out = Load & D3;
+B1_15_p2_out = !Load & B1_10;
+B1_15_or_out = B1_15_p1_out # B1_15_p2_out;
+B1_15_reg_input = B1_15_or_out;
+B1_15 = DFFE(B1_15_reg_input, !GLOBAL(CLK), GLOBAL(CLRN), , );
+
+
+--B1_20 is 74395:inst|20
+B1_20_p1_out = Load & D4;
+B1_20_p2_out = !Load & B1_15;
+B1_20_or_out = B1_20_p1_out # B1_20_p2_out;
+B1_20_reg_input = B1_20_or_out;
+B1_20 = DFFE(B1_20_reg_input, !GLOBAL(CLK), GLOBAL(CLRN), , );
+
+
+--B1L5 is 74395:inst|20~2
+B1L5_or_out = B1_20;
+B1L5 = B1L5_or_out;
+
+
+--Load is Load
+--operation mode is input
+
+Load = INPUT();
+
+
+--Ser is Ser
+--operation mode is input
+
+Ser = INPUT();
+
+
+--D1 is D1
+--operation mode is input
+
+D1 = INPUT();
+
+
+--D2 is D2
+--operation mode is input
+
+D2 = INPUT();
+
+
+--D3 is D3
+--operation mode is input
+
+D3 = INPUT();
+
+
+--CLRN is CLRN
+--operation mode is input
+
+CLRN = INPUT();
+
+
+--CLK is CLK
+--operation mode is input
+
+CLK = INPUT();
+
+
+--D4 is D4
+--operation mode is input
+
+D4 = INPUT();
+
+
+--OEN is OEN
+--operation mode is input
+
+OEN = INPUT();
+
+
+--Q1 is Q1
+--operation mode is output
+
+Q1_tri_out = TRI(B1_7, !GLOBAL(OEN));
+Q1 = OUTPUT(Q1_tri_out);
+
+
+--Q2 is Q2
+--operation mode is output
+
+Q2_tri_out = TRI(B1_10, !GLOBAL(OEN));
+Q2 = OUTPUT(Q2_tri_out);
+
+
+--Q3 is Q3
+--operation mode is output
+
+Q3_tri_out = TRI(B1_15, !GLOBAL(OEN));
+Q3 = OUTPUT(Q3_tri_out);
+
+
+--Q4 is Q4
+--operation mode is output
+
+Q4_tri_out = TRI(B1_20, !GLOBAL(OEN));
+Q4 = OUTPUT(Q4_tri_out);
+
+
+--S is S
+--operation mode is output
+
+S = OUTPUT(B1L5);
+
+

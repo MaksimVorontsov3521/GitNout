@@ -1,0 +1,127 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--reg2 is reg2
+reg2_or_out = X2;
+reg2_reg_input = reg2_or_out;
+reg2 = DFFE(reg2_reg_input, GLOBAL(write), GLOBAL(Reset), , );
+
+
+--reg3 is reg3
+reg3_or_out = X3;
+reg3_reg_input = reg3_or_out;
+reg3 = DFFE(reg3_reg_input, GLOBAL(write), GLOBAL(Reset), , );
+
+
+--reg4 is reg4
+reg4_or_out = X4;
+reg4_reg_input = reg4_or_out;
+reg4 = DFFE(reg4_reg_input, GLOBAL(write), GLOBAL(Reset), , );
+
+
+--reg1 is reg1
+reg1_or_out = X1;
+reg1_reg_input = reg1_or_out;
+reg1 = DFFE(reg1_reg_input, GLOBAL(write), GLOBAL(Reset), , );
+
+
+--A1L2 is Q1~9
+A1L2_p1_out = reg1 & Read;
+A1L2_or_out = A1L2_p1_out;
+A1L2 = A1L2_or_out;
+
+
+--A1L4 is Q2~9
+A1L4_p1_out = Read & reg2;
+A1L4_or_out = A1L4_p1_out;
+A1L4 = A1L4_or_out;
+
+
+--A1L6 is Q3~9
+A1L6_p1_out = Read & reg3;
+A1L6_or_out = A1L6_p1_out;
+A1L6 = A1L6_or_out;
+
+
+--A1L8 is Q4~9
+A1L8_p1_out = Read & reg4;
+A1L8_or_out = A1L8_p1_out;
+A1L8 = A1L8_or_out;
+
+
+--X1 is X1
+--operation mode is input
+
+X1 = INPUT();
+
+
+--X2 is X2
+--operation mode is input
+
+X2 = INPUT();
+
+
+--X3 is X3
+--operation mode is input
+
+X3 = INPUT();
+
+
+--X4 is X4
+--operation mode is input
+
+X4 = INPUT();
+
+
+--write is write
+--operation mode is input
+
+write = INPUT();
+
+
+--Reset is Reset
+--operation mode is input
+
+Reset = INPUT();
+
+
+--Read is Read
+--operation mode is input
+
+Read = INPUT();
+
+
+--Q1 is Q1
+--operation mode is output
+
+Q1 = OUTPUT(A1L2);
+
+
+--Q2 is Q2
+--operation mode is output
+
+Q2 = OUTPUT(A1L4);
+
+
+--Q3 is Q3
+--operation mode is output
+
+Q3 = OUTPUT(A1L6);
+
+
+--Q4 is Q4
+--operation mode is output
+
+Q4 = OUTPUT(A1L8);
+
+

@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+Two-digit_single-stroke_shift_register
+# case_insensitive
+# source_file
+Two-digit_single-stroke_shift_register.bdf
+1665830948
+23
+# storage
+db|Two-digit_single-stroke_shift_register.(0).cnf
+db|Two-digit_single-stroke_shift_register.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

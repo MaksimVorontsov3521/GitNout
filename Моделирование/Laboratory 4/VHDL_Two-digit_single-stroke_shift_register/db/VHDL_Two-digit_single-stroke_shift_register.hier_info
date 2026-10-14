@@ -1,0 +1,12 @@
+|shift
+D => s1.DATAIN
+C => s2.CLK
+C => process1~0.IN0
+C => s1.CLK
+R => process0~0.IN0
+D1 <= s1.DB_MAX_OUTPUT_PORT_TYPE
+Q1 <= s2.DB_MAX_OUTPUT_PORT_TYPE
+D2 <= s3.DB_MAX_OUTPUT_PORT_TYPE
+Q2 <= s4.DB_MAX_OUTPUT_PORT_TYPE
+
+

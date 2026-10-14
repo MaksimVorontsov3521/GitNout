@@ -1,0 +1,43 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+2-stroke_two-digit_shift_register
+# case_insensitive
+# source_file
+2-stroke_two-digit_shift_register.bdf
+1665833292
+23
+# storage
+db|2-stroke_two-digit_shift_register.(0).cnf
+db|2-stroke_two-digit_shift_register.(0).cnf
+# hierarchies {
+|
+}
+# end
+# entity
+2-stroke_D-trigger
+# case_insensitive
+# source_file
+2-stroke_D-trigger.bdf
+1665832824
+23
+# storage
+db|2-stroke_two-digit_shift_register.(1).cnf
+db|2-stroke_two-digit_shift_register.(1).cnf
+# hierarchies {
+2-stroke_D-trigger:inst3
+2-stroke_D-trigger:inst4
+}
+# end
+# complete
+

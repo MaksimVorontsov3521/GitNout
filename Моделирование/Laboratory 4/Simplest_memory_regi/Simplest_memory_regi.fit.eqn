@@ -1,0 +1,155 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--inst is inst at LC5
+inst_or_out = X1;
+inst_reg_input = inst_or_out;
+inst = DFFE(inst_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+
+
+--inst4 is inst4 at LC6
+inst4_or_out = X2;
+inst4_reg_input = inst4_or_out;
+inst4 = DFFE(inst4_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+
+
+--inst5 is inst5 at LC8
+inst5_or_out = X3;
+inst5_reg_input = inst5_or_out;
+inst5 = DFFE(inst5_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+
+
+--inst6 is inst6 at LC11
+inst6_or_out = X4;
+inst6_reg_input = inst6_or_out;
+inst6 = DFFE(inst6_reg_input, GLOBAL(Write), GLOBAL(Reset), , );
+
+
+--A1L5 is inst7~8 at LC13
+A1L5_p1_out = inst & Read;
+A1L5_or_out = A1L5_p1_out;
+A1L5 = A1L5_or_out;
+
+
+--A1L6 is inst8~8 at LC14
+A1L6_p1_out = Read & inst4;
+A1L6_or_out = A1L6_p1_out;
+A1L6 = A1L6_or_out;
+
+
+--A1L7 is inst9~8 at LC16
+A1L7_p1_out = Read & inst5;
+A1L7_or_out = A1L7_p1_out;
+A1L7 = A1L7_or_out;
+
+
+--A1L8 is inst10~8 at LC3
+A1L8_p1_out = Read & inst6;
+A1L8_or_out = A1L8_p1_out;
+A1L8 = A1L8_or_out;
+
+
+--Reset is Reset at PIN_1
+--operation mode is input
+
+Reset = INPUT();
+
+
+--Write is Write at PIN_83
+--operation mode is input
+
+Write = INPUT();
+
+
+--X1 is X1 at PIN_61
+--operation mode is input
+
+X1 = INPUT();
+
+
+--Read is Read at PIN_81
+--operation mode is input
+
+Read = INPUT();
+
+
+--X2 is X2 at PIN_52
+--operation mode is input
+
+X2 = INPUT();
+
+
+--X3 is X3 at PIN_33
+--operation mode is input
+
+X3 = INPUT();
+
+
+--X4 is X4 at PIN_24
+--operation mode is input
+
+X4 = INPUT();
+
+
+--Q1I is Q1I at PIN_11
+--operation mode is output
+
+Q1I = OUTPUT(inst);
+
+
+--Q2I is Q2I at PIN_10
+--operation mode is output
+
+Q2I = OUTPUT(inst4);
+
+
+--Q3I is Q3I at PIN_9
+--operation mode is output
+
+Q3I = OUTPUT(inst5);
+
+
+--Q4I is Q4I at PIN_8
+--operation mode is output
+
+Q4I = OUTPUT(inst6);
+
+
+--Q1 is Q1 at PIN_6
+--operation mode is output
+
+Q1 = OUTPUT(A1L5);
+
+
+--Q2 is Q2 at PIN_5
+--operation mode is output
+
+Q2 = OUTPUT(A1L6);
+
+
+--Q3 is Q3 at PIN_4
+--operation mode is output
+
+Q3 = OUTPUT(A1L7);
+
+
+--Q4 is Q4 at PIN_12
+--operation mode is output
+
+Q4 = OUTPUT(A1L8);
+
+
+
+
+
+

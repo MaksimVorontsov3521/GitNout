@@ -1,0 +1,10 @@
+|shift_reg
+clk => rs[2].CLK
+clk => rs[1].CLK
+clk => rs[0].CLK
+clk => rs[3].CLK
+data => rs[3].DATAIN
+reset => process0~0.IN0
+q <= rs[0].DB_MAX_OUTPUT_PORT_TYPE
+
+

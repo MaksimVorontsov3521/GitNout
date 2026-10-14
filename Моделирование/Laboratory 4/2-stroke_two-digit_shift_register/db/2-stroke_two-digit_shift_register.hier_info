@@ -1,0 +1,34 @@
+|2-stroke_two-digit_shift_register
+Q1 <= 2-stroke_D-trigger:inst3.Q
+D => 2-stroke_D-trigger:inst3.D
+C1 => 2-stroke_D-trigger:inst3.C1
+C1 => 2-stroke_D-trigger:inst4.C1
+C2 => 2-stroke_D-trigger:inst3.C2
+C2 => 2-stroke_D-trigger:inst4.C2
+R => 2-stroke_D-trigger:inst3.R
+R => 2-stroke_D-trigger:inst4.R
+Q2 <= 2-stroke_D-trigger:inst4.Q
+Q11 <= 2-stroke_D-trigger:inst3.Q1
+Q22 <= 2-stroke_D-trigger:inst4.Q1
+
+
+|2-stroke_two-digit_shift_register|2-stroke_D-trigger:inst3
+Q <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+R => inst4.ACLR
+R => inst.ACLR
+C2 => inst4.CLK
+C1 => inst.CLK
+D => inst.DATAIN
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|2-stroke_two-digit_shift_register|2-stroke_D-trigger:inst4
+Q <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+R => inst4.ACLR
+R => inst.ACLR
+C2 => inst4.CLK
+C1 => inst.CLK
+D => inst.DATAIN
+Q1 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+
+

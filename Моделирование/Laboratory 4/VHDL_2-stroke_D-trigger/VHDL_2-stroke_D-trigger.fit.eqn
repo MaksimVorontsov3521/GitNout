@@ -1,0 +1,77 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--m1 is m1 at LC1
+m1_or_out = D;
+m1_reg_input = m1_or_out;
+m1 = DFFE(m1_reg_input, GLOBAL(C1), GLOBAL(R), , );
+
+
+--s1 is s1 at LC3
+s1_or_out = m1;
+s1_reg_input = s1_or_out;
+s1 = DFFE(s1_reg_input, GLOBAL(C2), GLOBAL(R), , );
+
+
+--m2 is m2 at LC2
+m2_or_out = s1;
+m2_reg_input = m2_or_out;
+m2 = DFFE(m2_reg_input, GLOBAL(C1), GLOBAL(R), , );
+
+
+--s2 is s2 at LC5
+s2_or_out = m2;
+s2_reg_input = s2_or_out;
+s2 = DFFE(s2_reg_input, GLOBAL(C2), GLOBAL(R), , );
+
+
+--D is D at PIN_4
+--operation mode is input
+
+D = INPUT();
+
+
+--C1 is C1 at PIN_83
+--operation mode is input
+
+C1 = INPUT();
+
+
+--C2 is C2 at PIN_2
+--operation mode is input
+
+C2 = INPUT();
+
+
+--R is R at PIN_1
+--operation mode is input
+
+R = INPUT();
+
+
+--Q1 is Q1 at PIN_12
+--operation mode is output
+
+Q1 = OUTPUT(s1);
+
+
+--Q2 is Q2 at PIN_11
+--operation mode is output
+
+Q2 = OUTPUT(s2);
+
+
+
+
+
+
