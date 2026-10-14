@@ -1,0 +1,45 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--inst12 is inst12
+inst12_or_out = !pluse_former_fon_and_slice_in;
+inst12 = inst12_or_out;
+
+
+--inst14 is inst14
+inst14_or_out = !inst12;
+inst14 = inst14_or_out;
+
+
+--inst15 is inst15
+inst15_or_out = !inst14;
+inst15 = inst15_or_out;
+
+
+--A1L2 is inst13~3
+A1L2_or_out = !pluse_former_fon_and_slice_in;
+A1L2 = !inst15 $ A1L2_or_out;
+
+
+--pluse_former_fon_and_slice_in is pluse_former_fon_and_slice_in
+--operation mode is input
+
+pluse_former_fon_and_slice_in = INPUT();
+
+
+--pluse_former_fon_and_slice_out is pluse_former_fon_and_slice_out
+--operation mode is output
+
+pluse_former_fon_and_slice_out = OUTPUT(A1L2);
+
+

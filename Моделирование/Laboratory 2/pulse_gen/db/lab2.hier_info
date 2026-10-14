@@ -1,0 +1,5 @@
+|pluse_gen
+pluse_gen_out <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+pluse_gen_in => inst.IN0
+
+

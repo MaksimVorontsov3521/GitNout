@@ -1,0 +1,89 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+notand
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+notand.vhd
+1666965825
+4
+# storage
+db|D_VHDL_Structural.(1).cnf
+db|D_VHDL_Structural.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+notand:u1
+notand:u2
+RS_VHDL:u3|notand:u1
+RS_VHDL:u3|notand:u2
+}
+# end
+# entity
+D_VHDL_Structural
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+D_VHDL_Structural.vhd
+1666970700
+4
+# storage
+db|D_VHDL_Structural.(0).cnf
+db|D_VHDL_Structural.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
+RS_VHDL
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+RS_VHDL.vhd
+1666965856
+4
+# storage
+db|D_VHDL_Structural.(2).cnf
+db|D_VHDL_Structural.(2).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+RS_VHDL:u3
+}
+# end
+# complete
+

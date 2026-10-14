@@ -1,0 +1,42 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+D
+# case_insensitive
+# source_file
+D.bdf
+1666967447
+23
+# storage
+db|D.(0).cnf
+db|D.(0).cnf
+# hierarchies {
+|
+}
+# end
+# entity
+RS-trigger
+# case_insensitive
+# source_file
+RS-trigger.bdf
+1790086834
+23
+# storage
+db|D.(1).cnf
+db|D.(1).cnf
+# hierarchies {
+RS-trigger:inst3
+}
+# end
+# complete
+

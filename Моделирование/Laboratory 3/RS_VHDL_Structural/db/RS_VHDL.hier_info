@@ -1,0 +1,19 @@
+|RS_VHDL
+s => notand:u1.a
+r => notand:u2.b
+q <= notand:u1.c
+qb <= notand:u2.c
+
+
+|RS_VHDL|notand:u1
+a => c~0.IN0
+b => c~0.IN1
+c <= c~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|RS_VHDL|notand:u2
+a => c~0.IN0
+b => c~0.IN1
+c <= c~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,7 @@
+|RS-trigger
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+R => inst3.IN0
+S => inst.IN1
+QB <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+

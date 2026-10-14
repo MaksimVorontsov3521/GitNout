@@ -1,0 +1,7 @@
+|D_VHDL
+d => qs.DATAIN
+l => qs.LATCH_ENABLE
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+qb <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+

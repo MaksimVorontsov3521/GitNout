@@ -1,0 +1,39 @@
+|D_VHDL_Structural
+d => notand:u1.a
+l => notand:u2.a
+l => notand:u1.b
+q <= RS_VHDL:u3.q
+qb <= RS_VHDL:u3.qb
+
+
+|D_VHDL_Structural|notand:u1
+a => c~0.IN0
+b => c~0.IN1
+c <= c~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_VHDL_Structural|notand:u2
+a => c~0.IN0
+b => c~0.IN1
+c <= c~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_VHDL_Structural|RS_VHDL:u3
+s => notand:u1.a
+r => notand:u2.b
+q <= notand:u1.c
+qb <= notand:u2.c
+
+
+|D_VHDL_Structural|RS_VHDL:u3|notand:u1
+a => c~0.IN0
+b => c~0.IN1
+c <= c~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|D_VHDL_Structural|RS_VHDL:u3|notand:u2
+a => c~0.IN0
+b => c~0.IN1
+c <= c~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

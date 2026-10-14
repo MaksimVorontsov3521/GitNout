@@ -1,0 +1,10 @@
+Flow Status : Successful - Wed Oct 26 21:05:44 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : lab2
+Top-level Entity Name : pluse_former_XOR
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 3 / 128 ( 2 % )
+Total pins : 6 / 68 ( 8 % )

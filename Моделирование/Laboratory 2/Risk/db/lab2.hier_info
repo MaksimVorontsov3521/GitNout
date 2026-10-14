@@ -1,0 +1,8 @@
+|Risk
+Risk_X1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+Risk_A => inst.IN0
+Risk_A => inst2.IN0
+Risk_B <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+Risk_X2 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+
+

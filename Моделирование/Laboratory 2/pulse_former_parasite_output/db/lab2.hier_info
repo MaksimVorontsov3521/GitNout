@@ -1,0 +1,6 @@
+|pluse_former_parasite_output
+pluse_former_parasite_out_output_x <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+pluse_former_parasite_out_in => inst2.IN1
+pluse_former_parasite_out_output_y <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+

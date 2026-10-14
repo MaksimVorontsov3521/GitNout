@@ -1,0 +1,15 @@
+|D
+Q <= RS-trigger:inst3.Q
+L => inst.IN0
+L => inst2.IN0
+D => inst.IN1
+QB <= RS-trigger:inst3.QB
+
+
+|D|RS-trigger:inst3
+Q <= inst.DB_MAX_OUTPUT_PORT_TYPE
+R => inst3.IN0
+S => inst.IN1
+QB <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+
+

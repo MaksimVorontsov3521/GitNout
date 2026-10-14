@@ -1,0 +1,107 @@
+Timing Analyzer report for D_VHDL_Structural
+Fri Oct 28 19:25:06 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. tpd
+  5. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                               ;
++------------------------------+-------+---------------+-------------+------+----+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From ; To ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+------+----+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 8.876 ns    ; l    ; qb ;            ;          ; 0            ;
+; Total number of failed paths ;       ;               ;             ;      ;    ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+------+----+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1S10F484C5       ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; Off                ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++---------------------------------------------------------+
+; tpd                                                     ;
++-------+-------------------+-----------------+------+----+
+; Slack ; Required P2P Time ; Actual P2P Time ; From ; To ;
++-------+-------------------+-----------------+------+----+
+; N/A   ; None              ; 8.876 ns        ; l    ; qb ;
+; N/A   ; None              ; 8.707 ns        ; d    ; qb ;
+; N/A   ; None              ; 8.478 ns        ; l    ; q  ;
+; N/A   ; None              ; 8.309 ns        ; d    ; q  ;
++-------+-------------------+-----------------+------+----+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Fri Oct 28 19:25:06 2022
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off D_VHDL_Structural -c D_VHDL_Structural --timing_analysis_only
+Warning: Timing Analysis found one or more latches implemented as combinational loops
+    Warning: Node "RS_VHDL:u3|notand:u1|c~26" is a latch
+Info: Found combinational loop of 1 nodes
+    Info: Node "RS_VHDL:u3|notand:u1|c~26"
+Info: Longest tpd from source pin "l" to destination pin "qb" is 8.876 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.087 ns) = 1.087 ns; Loc. = PIN_W4; Fanout = 3; PIN Node = 'l'
+    Info: 2: + IC(0.000 ns) + CELL(3.873 ns) = 4.960 ns; Loc. = LC_X52_Y1_N4; Fanout = 3; COMB LOOP Node = 'RS_VHDL:u3|notand:u1|c~26'
+        Info: Loc. = LC_X52_Y1_N4; Node "RS_VHDL:u3|notand:u1|c~26"
+    Info: 3: + IC(0.323 ns) + CELL(0.075 ns) = 5.358 ns; Loc. = LC_X52_Y1_N2; Fanout = 1; COMB Node = 'RS_VHDL:u3|notand:u2|c~3'
+    Info: 4: + IC(1.114 ns) + CELL(2.404 ns) = 8.876 ns; Loc. = PIN_AA3; Fanout = 0; PIN Node = 'qb'
+    Info: Total cell delay = 7.439 ns ( 83.81 % )
+    Info: Total interconnect delay = 1.437 ns ( 16.19 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Processing ended: Fri Oct 28 19:25:06 2022
+    Info: Elapsed time: 00:00:00
+
+

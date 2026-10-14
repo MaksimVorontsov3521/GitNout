@@ -1,0 +1,11 @@
+|RS_VHDL
+s => process0~1.IN0
+s => process0~0.IN0
+s => process0~2.IN0
+r => process0~0.IN1
+r => process0~1.IN1
+r => process0~2.IN1
+q <= qs.DB_MAX_OUTPUT_PORT_TYPE
+qb <= qs.DB_MAX_OUTPUT_PORT_TYPE
+
+

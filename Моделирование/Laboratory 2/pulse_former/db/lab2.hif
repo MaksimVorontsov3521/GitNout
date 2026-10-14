@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+pluse_former
+# case_insensitive
+# source_file
+pluse_former.bdf
+1665211419
+23
+# storage
+db|lab2.(9).cnf
+db|lab2.(9).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

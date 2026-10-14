@@ -1,0 +1,6 @@
+|pluse_former_fon_and_slice
+pluse_former_fon_and_slice_out <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+pluse_former_fon_and_slice_in => inst3.IN0
+pluse_former_fon_and_slice_in => inst11.IN0
+
+

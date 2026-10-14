@@ -1,0 +1,49 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B4L1 is RS_VHDL:u3|notand:u2|c~3
+--operation mode is normal
+
+B4L1 = B3L1 # l & (!d);
+
+
+--B3L1 is RS_VHDL:u3|notand:u1|c~26
+--operation mode is normal
+
+B3L1 = l & (!d) # !l & B3L1;
+
+
+--l is l
+--operation mode is input
+
+l = INPUT();
+
+
+--d is d
+--operation mode is input
+
+d = INPUT();
+
+
+--q is q
+--operation mode is output
+
+q = OUTPUT(!B3L1);
+
+
+--qb is qb
+--operation mode is output
+
+qb = OUTPUT(B4L1);
+
+
