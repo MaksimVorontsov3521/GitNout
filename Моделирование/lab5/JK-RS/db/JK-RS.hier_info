@@ -1,0 +1,10 @@
+|JK-RS
+q <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+k => inst11.IN0
+k => inst9.IN1
+r => inst13.IN1
+s => inst12.IN0
+j => inst8.IN0
+q1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+

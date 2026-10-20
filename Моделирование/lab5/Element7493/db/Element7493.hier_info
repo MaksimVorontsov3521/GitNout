@@ -1,0 +1,21 @@
+|Element7493
+q0 <= 7493:inst.QA
+r => 7493:inst.RO1
+r => 7493:inst.RO2
+c => 7493:inst.CLKA
+q1 <= 7493:inst.QB
+q2 <= 7493:inst.QC
+q3 <= 7493:inst.QD
+
+
+|Element7493|7493:inst
+QD <= 13.DB_MAX_OUTPUT_PORT_TYPE
+RO1 => 1.IN0
+RO2 => 1.IN1
+CLKB => 44.IN0
+QC <= 14.DB_MAX_OUTPUT_PORT_TYPE
+QB <= 15.DB_MAX_OUTPUT_PORT_TYPE
+QA <= 16.DB_MAX_OUTPUT_PORT_TYPE
+CLKA => 43.IN0
+
+
