@@ -1,0 +1,229 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is 74138:inst|15~48
+--operation mode is normal
+
+B1L1 = !a3 & !a2 & !a1 & !a0;
+
+
+--B1L2 is 74138:inst|15~49
+--operation mode is normal
+
+B1L2 = !a3 & !a2 & !a1 & a0;
+
+
+--B1L3 is 74138:inst|15~50
+--operation mode is normal
+
+B1L3 = !a3 & !a2 & a1 & !a0;
+
+
+--B1L4 is 74138:inst|15~51
+--operation mode is normal
+
+B1L4 = !a3 & !a2 & a1 & a0;
+
+
+--B1L5 is 74138:inst|15~52
+--operation mode is normal
+
+B1L5 = !a3 & a2 & !a1 & !a0;
+
+
+--B1L6 is 74138:inst|15~53
+--operation mode is normal
+
+B1L6 = !a3 & a2 & !a1 & a0;
+
+
+--B1L7 is 74138:inst|15~54
+--operation mode is normal
+
+B1L7 = !a3 & a2 & a1 & !a0;
+
+
+--B1L8 is 74138:inst|15~55
+--operation mode is normal
+
+B1L8 = !a3 & a2 & a1 & a0;
+
+
+--B1L9 is 74138:inst|15~56
+--operation mode is normal
+
+B1L9 = a3 & !a2 & !a1 & !a0;
+
+
+--B1L01 is 74138:inst|15~57
+--operation mode is normal
+
+B1L01 = a3 & !a2 & !a1 & a0;
+
+
+--B1L11 is 74138:inst|15~58
+--operation mode is normal
+
+B1L11 = a3 & !a2 & a1 & !a0;
+
+
+--B1L21 is 74138:inst|15~59
+--operation mode is normal
+
+B1L21 = a3 & !a2 & a1 & a0;
+
+
+--B1L31 is 74138:inst|15~60
+--operation mode is normal
+
+B1L31 = a3 & a2 & !a1 & !a0;
+
+
+--B1L41 is 74138:inst|15~61
+--operation mode is normal
+
+B1L41 = a3 & a2 & !a1 & a0;
+
+
+--B1L51 is 74138:inst|15~62
+--operation mode is normal
+
+B1L51 = a3 & a2 & a1 & !a0;
+
+
+--B1L61 is 74138:inst|15~63
+--operation mode is normal
+
+B1L61 = a3 & a2 & a1 & a0;
+
+
+--a3 is a3
+--operation mode is input
+
+a3 = INPUT();
+
+
+--a2 is a2
+--operation mode is input
+
+a2 = INPUT();
+
+
+--a1 is a1
+--operation mode is input
+
+a1 = INPUT();
+
+
+--a0 is a0
+--operation mode is input
+
+a0 = INPUT();
+
+
+--q0 is q0
+--operation mode is output
+
+q0 = OUTPUT(!B1L1);
+
+
+--q1 is q1
+--operation mode is output
+
+q1 = OUTPUT(!B1L2);
+
+
+--q2 is q2
+--operation mode is output
+
+q2 = OUTPUT(!B1L3);
+
+
+--q3 is q3
+--operation mode is output
+
+q3 = OUTPUT(!B1L4);
+
+
+--q4 is q4
+--operation mode is output
+
+q4 = OUTPUT(!B1L5);
+
+
+--q5 is q5
+--operation mode is output
+
+q5 = OUTPUT(!B1L6);
+
+
+--q6 is q6
+--operation mode is output
+
+q6 = OUTPUT(!B1L7);
+
+
+--q7 is q7
+--operation mode is output
+
+q7 = OUTPUT(!B1L8);
+
+
+--q8 is q8
+--operation mode is output
+
+q8 = OUTPUT(!B1L9);
+
+
+--q9 is q9
+--operation mode is output
+
+q9 = OUTPUT(!B1L01);
+
+
+--q10 is q10
+--operation mode is output
+
+q10 = OUTPUT(!B1L11);
+
+
+--q11 is q11
+--operation mode is output
+
+q11 = OUTPUT(!B1L21);
+
+
+--q12 is q12
+--operation mode is output
+
+q12 = OUTPUT(!B1L31);
+
+
+--q13 is q13
+--operation mode is output
+
+q13 = OUTPUT(!B1L41);
+
+
+--q14 is q14
+--operation mode is output
+
+q14 = OUTPUT(!B1L51);
+
+
+--q15 is q15
+--operation mode is output
+
+q15 = OUTPUT(!B1L61);
+
+

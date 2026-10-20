@@ -1,0 +1,233 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L5 is inst5~225 at LC35
+A1L5_p1_out = !a0 & !a1 & !a2 & !a3;
+A1L5_or_out = A1L5_p1_out;
+A1L5 = A1L5_or_out;
+
+
+--A1L6 is inst5~227 at LC5
+A1L6_p1_out = !a2 & !a3 & a0 & !a1;
+A1L6_or_out = A1L6_p1_out;
+A1L6 = A1L6_or_out;
+
+
+--A1L7 is inst5~229 at LC6
+A1L7_p1_out = !a2 & !a3 & !a0 & a1;
+A1L7_or_out = A1L7_p1_out;
+A1L7 = A1L7_or_out;
+
+
+--A1L8 is inst5~231 at LC8
+A1L8_p1_out = !a2 & !a3 & a0 & a1;
+A1L8_or_out = A1L8_p1_out;
+A1L8 = A1L8_or_out;
+
+
+--A1L9 is inst5~233 at LC11
+A1L9_p1_out = !a0 & !a1 & a2 & !a3;
+A1L9_or_out = A1L9_p1_out;
+A1L9 = A1L9_or_out;
+
+
+--A1L01 is inst5~235 at LC16
+A1L01_p1_out = a0 & !a1 & a2 & !a3;
+A1L01_or_out = A1L01_p1_out;
+A1L01 = A1L01_or_out;
+
+
+--A1L11 is inst5~237 at LC14
+A1L11_p1_out = !a0 & a1 & a2 & !a3;
+A1L11_or_out = A1L11_p1_out;
+A1L11 = A1L11_or_out;
+
+
+--A1L21 is inst5~239 at LC13
+A1L21_p1_out = a0 & a1 & a2 & !a3;
+A1L21_or_out = A1L21_p1_out;
+A1L21 = A1L21_or_out;
+
+
+--A1L31 is inst5~241 at LC29
+A1L31_p1_out = !a0 & !a1 & !a2 & a3;
+A1L31_or_out = A1L31_p1_out;
+A1L31 = A1L31_or_out;
+
+
+--A1L41 is inst5~243 at LC27
+A1L41_p1_out = a0 & !a1 & !a2 & a3;
+A1L41_or_out = A1L41_p1_out;
+A1L41 = A1L41_or_out;
+
+
+--A1L51 is inst5~245 at LC25
+A1L51_p1_out = !a0 & a1 & !a2 & a3;
+A1L51_or_out = A1L51_p1_out;
+A1L51 = A1L51_or_out;
+
+
+--A1L61 is inst5~247 at LC24
+A1L61_p1_out = a0 & a1 & !a2 & a3;
+A1L61_or_out = A1L61_p1_out;
+A1L61 = A1L61_or_out;
+
+
+--A1L71 is inst5~249 at LC21
+A1L71_p1_out = !a0 & !a1 & a2 & a3;
+A1L71_or_out = A1L71_p1_out;
+A1L71 = A1L71_or_out;
+
+
+--A1L81 is inst5~251 at LC19
+A1L81_p1_out = a0 & !a1 & a2 & a3;
+A1L81_or_out = A1L81_p1_out;
+A1L81 = A1L81_or_out;
+
+
+--A1L91 is inst5~253 at LC17
+A1L91_p1_out = !a0 & a1 & a2 & a3;
+A1L91_or_out = A1L91_p1_out;
+A1L91 = A1L91_or_out;
+
+
+--A1L02 is inst5~255 at LC3
+A1L02_p1_out = a0 & a1 & a2 & a3;
+A1L02_or_out = A1L02_p1_out;
+A1L02 = A1L02_or_out;
+
+
+--a0 is a0 at PIN_33
+--operation mode is input
+
+a0 = INPUT();
+
+
+--a1 is a1 at PIN_81
+--operation mode is input
+
+a1 = INPUT();
+
+
+--a2 is a2 at PIN_52
+--operation mode is input
+
+a2 = INPUT();
+
+
+--a3 is a3 at PIN_24
+--operation mode is input
+
+a3 = INPUT();
+
+
+--q0 is q0 at PIN_31
+--operation mode is output
+
+q0 = OUTPUT(A1L5);
+
+
+--q1 is q1 at PIN_11
+--operation mode is output
+
+q1 = OUTPUT(A1L6);
+
+
+--q2 is q2 at PIN_10
+--operation mode is output
+
+q2 = OUTPUT(A1L7);
+
+
+--q3 is q3 at PIN_9
+--operation mode is output
+
+q3 = OUTPUT(A1L8);
+
+
+--q4 is q4 at PIN_8
+--operation mode is output
+
+q4 = OUTPUT(A1L9);
+
+
+--q5 is q5 at PIN_4
+--operation mode is output
+
+q5 = OUTPUT(A1L01);
+
+
+--q6 is q6 at PIN_5
+--operation mode is output
+
+q6 = OUTPUT(A1L11);
+
+
+--q7 is q7 at PIN_6
+--operation mode is output
+
+q7 = OUTPUT(A1L21);
+
+
+--q8 is q8 at PIN_15
+--operation mode is output
+
+q8 = OUTPUT(A1L31);
+
+
+--q9 is q9 at PIN_16
+--operation mode is output
+
+q9 = OUTPUT(A1L41);
+
+
+--q10 is q10 at PIN_17
+--operation mode is output
+
+q10 = OUTPUT(A1L51);
+
+
+--q11 is q11 at PIN_18
+--operation mode is output
+
+q11 = OUTPUT(A1L61);
+
+
+--q12 is q12 at PIN_20
+--operation mode is output
+
+q12 = OUTPUT(A1L71);
+
+
+--q13 is q13 at PIN_21
+--operation mode is output
+
+q13 = OUTPUT(A1L81);
+
+
+--q14 is q14 at PIN_22
+--operation mode is output
+
+q14 = OUTPUT(A1L91);
+
+
+--q15 is q15 at PIN_12
+--operation mode is output
+
+q15 = OUTPUT(A1L02);
+
+
+
+
+
+

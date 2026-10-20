@@ -1,0 +1,63 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+29
+1521
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+decoder_4_16
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+decoder_4_16.vhd
+1667502689
+4
+# storage
+db|VHDL_decoder_4-16.(0).cnf
+db|VHDL_decoder_4-16.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
+decoder
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+decoder.vhd
+1667502297
+4
+# storage
+db|VHDL_decoder_4-16.(1).cnf
+db|VHDL_decoder_4-16.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+decoder:DEC_LOW
+decoder:DEC_HIGH
+}
+# end
+# complete
+

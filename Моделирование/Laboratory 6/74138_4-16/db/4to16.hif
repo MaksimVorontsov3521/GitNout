@@ -1,0 +1,43 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+74138
+# case_insensitive
+# source_file
+..|..|quartus50|libraries|others|maxplus2|74138.bdf
+1107588360
+23
+# storage
+db|4to16.(1).cnf
+db|4to16.(1).cnf
+# hierarchies {
+74138:inst
+74138:inst1
+}
+# end
+# entity
+4to16
+# case_insensitive
+# source_file
+4to16.bdf
+1667504222
+23
+# storage
+db|4to16.(0).cnf
+db|4to16.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

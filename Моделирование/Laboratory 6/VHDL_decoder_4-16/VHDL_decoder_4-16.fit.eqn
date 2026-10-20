@@ -1,0 +1,239 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B2L1 is decoder:DEC_LOW|q[0]~138 at LC35
+B2L1_p1_out = !a[2] & !a[3] & !a[0] & en & !a[1];
+B2L1_or_out = B2L1_p1_out;
+B2L1 = B2L1_or_out;
+
+
+--B2L3 is decoder:DEC_LOW|q[2]~140 at LC6
+B2L3_p1_out = !a[2] & !a[3] & !a[0] & en & a[1];
+B2L3_or_out = B2L3_p1_out;
+B2L3 = B2L3_or_out;
+
+
+--B1L1 is decoder:DEC_HIGH|q[0]~120 at LC8
+B1L1_p1_out = !a[0] & en & !a[1] & !a[2] & a[3];
+B1L1_or_out = B1L1_p1_out;
+B1L1 = B1L1_or_out;
+
+
+--B1L3 is decoder:DEC_HIGH|q[2]~122 at LC11
+B1L3_p1_out = !a[0] & en & a[1] & !a[2] & a[3];
+B1L3_or_out = B1L3_p1_out;
+B1L3 = B1L3_or_out;
+
+
+--B2L4 is decoder:DEC_LOW|q[3]~143 at LC13
+B2L4_p1_out = !a[2] & !a[3] & a[1] & a[0] & en;
+B2L4_or_out = B2L4_p1_out;
+B2L4 = B2L4_or_out;
+
+
+--B1L4 is decoder:DEC_HIGH|q[3]~125 at LC16
+B1L4_p1_out = a[1] & a[0] & en & !a[2] & a[3];
+B1L4_or_out = B1L4_p1_out;
+B1L4 = B1L4_or_out;
+
+
+--B2L5 is decoder:DEC_LOW|q[4]~144 at LC14
+B2L5_p1_out = !a[3] & a[2] & !a[0] & en & !a[1];
+B2L5_or_out = B2L5_p1_out;
+B2L5 = B2L5_or_out;
+
+
+--B2L7 is decoder:DEC_LOW|q[6]~146 at LC29
+B2L7_p1_out = !a[3] & a[2] & !a[0] & en & a[1];
+B2L7_or_out = B2L7_p1_out;
+B2L7 = B2L7_or_out;
+
+
+--B1L5 is decoder:DEC_HIGH|q[4]~126 at LC27
+B1L5_p1_out = a[3] & a[2] & !a[0] & en & !a[1];
+B1L5_or_out = B1L5_p1_out;
+B1L5 = B1L5_or_out;
+
+
+--B1L7 is decoder:DEC_HIGH|q[6]~128 at LC25
+B1L7_p1_out = a[3] & a[2] & !a[0] & en & a[1];
+B1L7_or_out = B1L7_p1_out;
+B1L7 = B1L7_or_out;
+
+
+--B2L2 is decoder:DEC_LOW|q[1]~149 at LC5
+B2L2_p1_out = !a[3] & !a[2] & !a[1] & a[0] & en;
+B2L2_or_out = B2L2_p1_out;
+B2L2 = B2L2_or_out;
+
+
+--B2L6 is decoder:DEC_LOW|q[5]~151 at LC24
+B2L6_p1_out = !a[3] & a[2] & !a[1] & a[0] & en;
+B2L6_or_out = B2L6_p1_out;
+B2L6 = B2L6_or_out;
+
+
+--B2L8 is decoder:DEC_LOW|q[7]~153 at LC21
+B2L8_p1_out = !a[3] & a[2] & a[1] & a[0] & en;
+B2L8_or_out = B2L8_p1_out;
+B2L8 = B2L8_or_out;
+
+
+--B1L2 is decoder:DEC_HIGH|q[1]~131 at LC19
+B1L2_p1_out = a[3] & !a[2] & !a[1] & a[0] & en;
+B1L2_or_out = B1L2_p1_out;
+B1L2 = B1L2_or_out;
+
+
+--B1L6 is decoder:DEC_HIGH|q[5]~133 at LC17
+B1L6_p1_out = a[3] & a[2] & !a[1] & a[0] & en;
+B1L6_or_out = B1L6_p1_out;
+B1L6 = B1L6_or_out;
+
+
+--B1L8 is decoder:DEC_HIGH|q[7]~135 at LC3
+B1L8_p1_out = a[3] & a[2] & a[1] & a[0] & en;
+B1L8_or_out = B1L8_p1_out;
+B1L8 = B1L8_or_out;
+
+
+--a[0] is a[0] at PIN_24
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--a[1] is a[1] at PIN_33
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--a[2] is a[2] at PIN_81
+--operation mode is input
+
+a[2] = INPUT();
+
+
+--a[3] is a[3] at PIN_80
+--operation mode is input
+
+a[3] = INPUT();
+
+
+--en is en at PIN_52
+--operation mode is input
+
+en = INPUT();
+
+
+--q[0] is q[0] at PIN_31
+--operation mode is output
+
+q[0] = OUTPUT(B2L1);
+
+
+--q[2] is q[2] at PIN_10
+--operation mode is output
+
+q[2] = OUTPUT(B2L3);
+
+
+--q[3] is q[3] at PIN_6
+--operation mode is output
+
+q[3] = OUTPUT(B2L4);
+
+
+--q[8] is q[8] at PIN_9
+--operation mode is output
+
+q[8] = OUTPUT(B1L1);
+
+
+--q[10] is q[10] at PIN_8
+--operation mode is output
+
+q[10] = OUTPUT(B1L3);
+
+
+--q[11] is q[11] at PIN_4
+--operation mode is output
+
+q[11] = OUTPUT(B1L4);
+
+
+--q[1] is q[1] at PIN_11
+--operation mode is output
+
+q[1] = OUTPUT(B2L2);
+
+
+--q[4] is q[4] at PIN_5
+--operation mode is output
+
+q[4] = OUTPUT(B2L5);
+
+
+--q[5] is q[5] at PIN_18
+--operation mode is output
+
+q[5] = OUTPUT(B2L6);
+
+
+--q[6] is q[6] at PIN_15
+--operation mode is output
+
+q[6] = OUTPUT(B2L7);
+
+
+--q[7] is q[7] at PIN_20
+--operation mode is output
+
+q[7] = OUTPUT(B2L8);
+
+
+--q[9] is q[9] at PIN_21
+--operation mode is output
+
+q[9] = OUTPUT(B1L2);
+
+
+--q[12] is q[12] at PIN_16
+--operation mode is output
+
+q[12] = OUTPUT(B1L5);
+
+
+--q[13] is q[13] at PIN_22
+--operation mode is output
+
+q[13] = OUTPUT(B1L6);
+
+
+--q[14] is q[14] at PIN_17
+--operation mode is output
+
+q[14] = OUTPUT(B1L7);
+
+
+--q[15] is q[15] at PIN_12
+--operation mode is output
+
+q[15] = OUTPUT(B1L8);
+
+
+
+
+
+

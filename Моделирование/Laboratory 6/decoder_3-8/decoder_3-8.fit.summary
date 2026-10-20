@@ -1,0 +1,10 @@
+Flow Status : Successful - Wed Nov 02 12:13:07 2022
+Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
+Revision Name : decoder_3-8
+Top-level Entity Name : decoder_3-8
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Met timing requirements : N/A
+Total macrocells : 8 / 128 ( 6 % )
+Total pins : 15 / 68 ( 22 % )

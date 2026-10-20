@@ -1,0 +1,78 @@
+|decoder_4-16
+q0 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+a0 => decoder_3-8:inst.a0
+a0 => decoder_3-8:inst1.a0
+a1 => decoder_3-8:inst.a1
+a1 => decoder_3-8:inst1.a1
+a2 => decoder_3-8:inst.a2
+a2 => decoder_3-8:inst1.a2
+a3 => inst22.IN0
+q1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+q2 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+q3 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+q4 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+q5 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+q6 <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+q7 <= inst12.DB_MAX_OUTPUT_PORT_TYPE
+q8 <= inst13.DB_MAX_OUTPUT_PORT_TYPE
+q9 <= inst14.DB_MAX_OUTPUT_PORT_TYPE
+q10 <= inst15.DB_MAX_OUTPUT_PORT_TYPE
+q11 <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+q12 <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+q13 <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+q14 <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+q15 <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder_4-16|decoder_3-8:inst
+q0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+a2 => inst4.IN0
+a2 => inst18.IN2
+a2 => inst19.IN2
+a2 => inst20.IN2
+a2 => inst21.IN2
+a1 => inst3.IN0
+a1 => inst16.IN1
+a1 => inst17.IN1
+a1 => inst20.IN1
+a1 => inst21.IN1
+a0 => inst.IN0
+a0 => inst15.IN0
+a0 => inst17.IN0
+a0 => inst19.IN0
+a0 => inst21.IN0
+q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+q3 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+q4 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+q5 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+q6 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+q7 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoder_4-16|decoder_3-8:inst1
+q0 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+a2 => inst4.IN0
+a2 => inst18.IN2
+a2 => inst19.IN2
+a2 => inst20.IN2
+a2 => inst21.IN2
+a1 => inst3.IN0
+a1 => inst16.IN1
+a1 => inst17.IN1
+a1 => inst20.IN1
+a1 => inst21.IN1
+a0 => inst.IN0
+a0 => inst15.IN0
+a0 => inst17.IN0
+a0 => inst19.IN0
+a0 => inst21.IN0
+q1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+q2 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+q3 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+q4 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+q5 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+q6 <= inst9.DB_MAX_OUTPUT_PORT_TYPE
+q7 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+
+

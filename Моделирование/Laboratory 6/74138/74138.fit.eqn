@@ -1,0 +1,131 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is 74138:inst|15~91 at LC6
+B1L1_p1_out = !a & !c & !b;
+B1L1_or_out = B1L1_p1_out;
+B1L1 = !(B1L1_or_out);
+
+
+--B1L2 is 74138:inst|15~94 at LC8
+B1L2_p1_out = !a & c & !b;
+B1L2_or_out = B1L2_p1_out;
+B1L2 = !(B1L2_or_out);
+
+
+--B1L3 is 74138:inst|15~97 at LC11
+B1L3_p1_out = !c & !a & b;
+B1L3_or_out = B1L3_p1_out;
+B1L3 = !(B1L3_or_out);
+
+
+--B1L4 is 74138:inst|15~100 at LC13
+B1L4_p1_out = c & !a & b;
+B1L4_or_out = B1L4_p1_out;
+B1L4 = !(B1L4_or_out);
+
+
+--B1L5 is 74138:inst|15~103 at LC14
+B1L5_p1_out = a & !c & !b;
+B1L5_or_out = B1L5_p1_out;
+B1L5 = !(B1L5_or_out);
+
+
+--B1L6 is 74138:inst|15~106 at LC16
+B1L6_p1_out = a & c & !b;
+B1L6_or_out = B1L6_p1_out;
+B1L6 = !(B1L6_or_out);
+
+
+--B1L7 is 74138:inst|15~109 at LC5
+B1L7_p1_out = !c & a & b;
+B1L7_or_out = B1L7_p1_out;
+B1L7 = !(B1L7_or_out);
+
+
+--B1L8 is 74138:inst|15~112 at LC3
+B1L8_p1_out = c & a & b;
+B1L8_or_out = B1L8_p1_out;
+B1L8 = !(B1L8_or_out);
+
+
+--a is a at PIN_33
+--operation mode is input
+
+a = INPUT();
+
+
+--b is b at PIN_52
+--operation mode is input
+
+b = INPUT();
+
+
+--c is c at PIN_81
+--operation mode is input
+
+c = INPUT();
+
+
+--y0 is y0 at PIN_10
+--operation mode is output
+
+y0 = OUTPUT(B1L1);
+
+
+--y1 is y1 at PIN_5
+--operation mode is output
+
+y1 = OUTPUT(B1L5);
+
+
+--y2 is y2 at PIN_8
+--operation mode is output
+
+y2 = OUTPUT(B1L3);
+
+
+--y3 is y3 at PIN_11
+--operation mode is output
+
+y3 = OUTPUT(B1L7);
+
+
+--y4 is y4 at PIN_9
+--operation mode is output
+
+y4 = OUTPUT(B1L2);
+
+
+--y5 is y5 at PIN_4
+--operation mode is output
+
+y5 = OUTPUT(B1L6);
+
+
+--y6 is y6 at PIN_6
+--operation mode is output
+
+y6 = OUTPUT(B1L4);
+
+
+--y7 is y7 at PIN_12
+--operation mode is output
+
+y7 = OUTPUT(B1L8);
+
+
+
+
+
+
