@@ -1,0 +1,871 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_inst is decoder_3-8_en:inst|inst
+--operation mode is normal
+
+B1_inst = en & !a[3] & !a[4] & !a[5];
+
+
+--B2_inst is decoder_3-8_en:inst5|inst
+--operation mode is normal
+
+B2_inst = B1_inst & !a[0] & !a[1] & !a[2];
+
+
+--B2_inst5 is decoder_3-8_en:inst5|inst5
+--operation mode is normal
+
+B2_inst5 = a[0] & B1_inst & !a[1] & !a[2];
+
+
+--B2_inst7 is decoder_3-8_en:inst5|inst7
+--operation mode is normal
+
+B2_inst7 = a[1] & B1_inst & !a[0] & !a[2];
+
+
+--B2_inst6 is decoder_3-8_en:inst5|inst6
+--operation mode is normal
+
+B2_inst6 = a[0] & a[1] & B1_inst & !a[2];
+
+
+--B2_inst9 is decoder_3-8_en:inst5|inst9
+--operation mode is normal
+
+B2_inst9 = B1_inst & a[2] & !a[0] & !a[1];
+
+
+--B2_inst8 is decoder_3-8_en:inst5|inst8
+--operation mode is normal
+
+B2_inst8 = a[0] & B1_inst & a[2] & !a[1];
+
+
+--B2_inst10 is decoder_3-8_en:inst5|inst10
+--operation mode is normal
+
+B2_inst10 = a[1] & B1_inst & a[2] & !a[0];
+
+
+--B2_inst11 is decoder_3-8_en:inst5|inst11
+--operation mode is normal
+
+B2_inst11 = a[0] & a[1] & B1_inst & a[2];
+
+
+--B1_inst5 is decoder_3-8_en:inst|inst5
+--operation mode is normal
+
+B1_inst5 = en & a[3] & !a[4] & !a[5];
+
+
+--B3_inst is decoder_3-8_en:inst6|inst
+--operation mode is normal
+
+B3_inst = B1_inst5 & !a[0] & !a[1] & !a[2];
+
+
+--B3_inst5 is decoder_3-8_en:inst6|inst5
+--operation mode is normal
+
+B3_inst5 = a[0] & B1_inst5 & !a[1] & !a[2];
+
+
+--B3_inst7 is decoder_3-8_en:inst6|inst7
+--operation mode is normal
+
+B3_inst7 = a[1] & B1_inst5 & !a[0] & !a[2];
+
+
+--B3_inst6 is decoder_3-8_en:inst6|inst6
+--operation mode is normal
+
+B3_inst6 = a[0] & a[1] & B1_inst5 & !a[2];
+
+
+--B3_inst9 is decoder_3-8_en:inst6|inst9
+--operation mode is normal
+
+B3_inst9 = a[2] & B1_inst5 & !a[0] & !a[1];
+
+
+--B3_inst8 is decoder_3-8_en:inst6|inst8
+--operation mode is normal
+
+B3_inst8 = a[0] & a[2] & B1_inst5 & !a[1];
+
+
+--B3_inst10 is decoder_3-8_en:inst6|inst10
+--operation mode is normal
+
+B3_inst10 = a[1] & a[2] & B1_inst5 & !a[0];
+
+
+--B3_inst11 is decoder_3-8_en:inst6|inst11
+--operation mode is normal
+
+B3_inst11 = a[0] & a[1] & a[2] & B1_inst5;
+
+
+--B1_inst7 is decoder_3-8_en:inst|inst7
+--operation mode is normal
+
+B1_inst7 = en & a[4] & !a[3] & !a[5];
+
+
+--B4_inst is decoder_3-8_en:inst7|inst
+--operation mode is normal
+
+B4_inst = B1_inst7 & !a[0] & !a[1] & !a[2];
+
+
+--B4_inst5 is decoder_3-8_en:inst7|inst5
+--operation mode is normal
+
+B4_inst5 = a[0] & B1_inst7 & !a[1] & !a[2];
+
+
+--B4_inst7 is decoder_3-8_en:inst7|inst7
+--operation mode is normal
+
+B4_inst7 = a[1] & B1_inst7 & !a[0] & !a[2];
+
+
+--B4_inst6 is decoder_3-8_en:inst7|inst6
+--operation mode is normal
+
+B4_inst6 = a[0] & a[1] & B1_inst7 & !a[2];
+
+
+--B4_inst9 is decoder_3-8_en:inst7|inst9
+--operation mode is normal
+
+B4_inst9 = a[2] & B1_inst7 & !a[0] & !a[1];
+
+
+--B4_inst8 is decoder_3-8_en:inst7|inst8
+--operation mode is normal
+
+B4_inst8 = a[0] & a[2] & B1_inst7 & !a[1];
+
+
+--B4_inst10 is decoder_3-8_en:inst7|inst10
+--operation mode is normal
+
+B4_inst10 = a[1] & a[2] & B1_inst7 & !a[0];
+
+
+--B4_inst11 is decoder_3-8_en:inst7|inst11
+--operation mode is normal
+
+B4_inst11 = a[0] & a[1] & a[2] & B1_inst7;
+
+
+--B1_inst6 is decoder_3-8_en:inst|inst6
+--operation mode is normal
+
+B1_inst6 = en & a[3] & a[4] & !a[5];
+
+
+--B5_inst is decoder_3-8_en:inst8|inst
+--operation mode is normal
+
+B5_inst = B1_inst6 & !a[0] & !a[1] & !a[2];
+
+
+--B5_inst5 is decoder_3-8_en:inst8|inst5
+--operation mode is normal
+
+B5_inst5 = a[0] & B1_inst6 & !a[1] & !a[2];
+
+
+--B5_inst7 is decoder_3-8_en:inst8|inst7
+--operation mode is normal
+
+B5_inst7 = a[1] & B1_inst6 & !a[0] & !a[2];
+
+
+--B5_inst6 is decoder_3-8_en:inst8|inst6
+--operation mode is normal
+
+B5_inst6 = a[0] & a[1] & B1_inst6 & !a[2];
+
+
+--B5_inst9 is decoder_3-8_en:inst8|inst9
+--operation mode is normal
+
+B5_inst9 = a[2] & B1_inst6 & !a[0] & !a[1];
+
+
+--B5_inst8 is decoder_3-8_en:inst8|inst8
+--operation mode is normal
+
+B5_inst8 = a[0] & a[2] & B1_inst6 & !a[1];
+
+
+--B5_inst10 is decoder_3-8_en:inst8|inst10
+--operation mode is normal
+
+B5_inst10 = a[1] & a[2] & B1_inst6 & !a[0];
+
+
+--B5_inst11 is decoder_3-8_en:inst8|inst11
+--operation mode is normal
+
+B5_inst11 = a[0] & a[1] & a[2] & B1_inst6;
+
+
+--B1_inst9 is decoder_3-8_en:inst|inst9
+--operation mode is normal
+
+B1_inst9 = en & a[5] & !a[3] & !a[4];
+
+
+--B6_inst is decoder_3-8_en:inst9|inst
+--operation mode is normal
+
+B6_inst = B1_inst9 & !a[0] & !a[1] & !a[2];
+
+
+--B6_inst5 is decoder_3-8_en:inst9|inst5
+--operation mode is normal
+
+B6_inst5 = a[0] & B1_inst9 & !a[1] & !a[2];
+
+
+--B6_inst7 is decoder_3-8_en:inst9|inst7
+--operation mode is normal
+
+B6_inst7 = a[1] & B1_inst9 & !a[0] & !a[2];
+
+
+--B6_inst6 is decoder_3-8_en:inst9|inst6
+--operation mode is normal
+
+B6_inst6 = a[0] & a[1] & B1_inst9 & !a[2];
+
+
+--B6_inst9 is decoder_3-8_en:inst9|inst9
+--operation mode is normal
+
+B6_inst9 = a[2] & B1_inst9 & !a[0] & !a[1];
+
+
+--B6_inst8 is decoder_3-8_en:inst9|inst8
+--operation mode is normal
+
+B6_inst8 = a[0] & a[2] & B1_inst9 & !a[1];
+
+
+--B6_inst10 is decoder_3-8_en:inst9|inst10
+--operation mode is normal
+
+B6_inst10 = a[1] & a[2] & B1_inst9 & !a[0];
+
+
+--B6_inst11 is decoder_3-8_en:inst9|inst11
+--operation mode is normal
+
+B6_inst11 = a[0] & a[1] & a[2] & B1_inst9;
+
+
+--B1_inst8 is decoder_3-8_en:inst|inst8
+--operation mode is normal
+
+B1_inst8 = en & a[3] & a[5] & !a[4];
+
+
+--B7_inst is decoder_3-8_en:inst10|inst
+--operation mode is normal
+
+B7_inst = B1_inst8 & !a[0] & !a[1] & !a[2];
+
+
+--B7_inst5 is decoder_3-8_en:inst10|inst5
+--operation mode is normal
+
+B7_inst5 = a[0] & B1_inst8 & !a[1] & !a[2];
+
+
+--B7_inst7 is decoder_3-8_en:inst10|inst7
+--operation mode is normal
+
+B7_inst7 = a[1] & B1_inst8 & !a[0] & !a[2];
+
+
+--B7_inst6 is decoder_3-8_en:inst10|inst6
+--operation mode is normal
+
+B7_inst6 = a[0] & a[1] & B1_inst8 & !a[2];
+
+
+--B7_inst9 is decoder_3-8_en:inst10|inst9
+--operation mode is normal
+
+B7_inst9 = a[2] & B1_inst8 & !a[0] & !a[1];
+
+
+--B7_inst8 is decoder_3-8_en:inst10|inst8
+--operation mode is normal
+
+B7_inst8 = a[0] & a[2] & B1_inst8 & !a[1];
+
+
+--B7_inst10 is decoder_3-8_en:inst10|inst10
+--operation mode is normal
+
+B7_inst10 = a[1] & a[2] & B1_inst8 & !a[0];
+
+
+--B7_inst11 is decoder_3-8_en:inst10|inst11
+--operation mode is normal
+
+B7_inst11 = a[0] & a[1] & a[2] & B1_inst8;
+
+
+--B1_inst10 is decoder_3-8_en:inst|inst10
+--operation mode is normal
+
+B1_inst10 = en & a[4] & a[5] & !a[3];
+
+
+--B8_inst is decoder_3-8_en:inst11|inst
+--operation mode is normal
+
+B8_inst = B1_inst10 & !a[0] & !a[1] & !a[2];
+
+
+--B8_inst5 is decoder_3-8_en:inst11|inst5
+--operation mode is normal
+
+B8_inst5 = a[0] & B1_inst10 & !a[1] & !a[2];
+
+
+--B8_inst7 is decoder_3-8_en:inst11|inst7
+--operation mode is normal
+
+B8_inst7 = a[1] & B1_inst10 & !a[0] & !a[2];
+
+
+--B8_inst6 is decoder_3-8_en:inst11|inst6
+--operation mode is normal
+
+B8_inst6 = a[0] & a[1] & B1_inst10 & !a[2];
+
+
+--B8_inst9 is decoder_3-8_en:inst11|inst9
+--operation mode is normal
+
+B8_inst9 = a[2] & B1_inst10 & !a[0] & !a[1];
+
+
+--B8_inst8 is decoder_3-8_en:inst11|inst8
+--operation mode is normal
+
+B8_inst8 = a[0] & a[2] & B1_inst10 & !a[1];
+
+
+--B8_inst10 is decoder_3-8_en:inst11|inst10
+--operation mode is normal
+
+B8_inst10 = a[1] & a[2] & B1_inst10 & !a[0];
+
+
+--B8_inst11 is decoder_3-8_en:inst11|inst11
+--operation mode is normal
+
+B8_inst11 = a[0] & a[1] & a[2] & B1_inst10;
+
+
+--B1_inst11 is decoder_3-8_en:inst|inst11
+--operation mode is normal
+
+B1_inst11 = en & a[3] & a[4] & a[5];
+
+
+--B9_inst is decoder_3-8_en:inst12|inst
+--operation mode is normal
+
+B9_inst = B1_inst11 & !a[0] & !a[1] & !a[2];
+
+
+--B9_inst5 is decoder_3-8_en:inst12|inst5
+--operation mode is normal
+
+B9_inst5 = a[0] & B1_inst11 & !a[1] & !a[2];
+
+
+--B9_inst7 is decoder_3-8_en:inst12|inst7
+--operation mode is normal
+
+B9_inst7 = a[1] & B1_inst11 & !a[0] & !a[2];
+
+
+--B9_inst6 is decoder_3-8_en:inst12|inst6
+--operation mode is normal
+
+B9_inst6 = a[0] & a[1] & B1_inst11 & !a[2];
+
+
+--B9_inst9 is decoder_3-8_en:inst12|inst9
+--operation mode is normal
+
+B9_inst9 = a[2] & B1_inst11 & !a[0] & !a[1];
+
+
+--B9_inst8 is decoder_3-8_en:inst12|inst8
+--operation mode is normal
+
+B9_inst8 = a[0] & a[2] & B1_inst11 & !a[1];
+
+
+--B9_inst10 is decoder_3-8_en:inst12|inst10
+--operation mode is normal
+
+B9_inst10 = a[1] & a[2] & B1_inst11 & !a[0];
+
+
+--B9_inst11 is decoder_3-8_en:inst12|inst11
+--operation mode is normal
+
+B9_inst11 = a[0] & a[1] & a[2] & B1_inst11;
+
+
+--en is en
+--operation mode is input
+
+en = INPUT();
+
+
+--a[3] is a[3]
+--operation mode is input
+
+a[3] = INPUT();
+
+
+--a[4] is a[4]
+--operation mode is input
+
+a[4] = INPUT();
+
+
+--a[5] is a[5]
+--operation mode is input
+
+a[5] = INPUT();
+
+
+--a[0] is a[0]
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--a[1] is a[1]
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--a[2] is a[2]
+--operation mode is input
+
+a[2] = INPUT();
+
+
+--q0 is q0
+--operation mode is output
+
+q0 = OUTPUT(B2_inst);
+
+
+--q1 is q1
+--operation mode is output
+
+q1 = OUTPUT(B2_inst5);
+
+
+--q2 is q2
+--operation mode is output
+
+q2 = OUTPUT(B2_inst7);
+
+
+--q3 is q3
+--operation mode is output
+
+q3 = OUTPUT(B2_inst6);
+
+
+--q4 is q4
+--operation mode is output
+
+q4 = OUTPUT(B2_inst9);
+
+
+--q5 is q5
+--operation mode is output
+
+q5 = OUTPUT(B2_inst8);
+
+
+--q6 is q6
+--operation mode is output
+
+q6 = OUTPUT(B2_inst10);
+
+
+--q7 is q7
+--operation mode is output
+
+q7 = OUTPUT(B2_inst11);
+
+
+--q8 is q8
+--operation mode is output
+
+q8 = OUTPUT(B3_inst);
+
+
+--q9 is q9
+--operation mode is output
+
+q9 = OUTPUT(B3_inst5);
+
+
+--q10 is q10
+--operation mode is output
+
+q10 = OUTPUT(B3_inst7);
+
+
+--q11 is q11
+--operation mode is output
+
+q11 = OUTPUT(B3_inst6);
+
+
+--q12 is q12
+--operation mode is output
+
+q12 = OUTPUT(B3_inst9);
+
+
+--q13 is q13
+--operation mode is output
+
+q13 = OUTPUT(B3_inst8);
+
+
+--q14 is q14
+--operation mode is output
+
+q14 = OUTPUT(B3_inst10);
+
+
+--q15 is q15
+--operation mode is output
+
+q15 = OUTPUT(B3_inst11);
+
+
+--q16 is q16
+--operation mode is output
+
+q16 = OUTPUT(B4_inst);
+
+
+--q17 is q17
+--operation mode is output
+
+q17 = OUTPUT(B4_inst5);
+
+
+--q18 is q18
+--operation mode is output
+
+q18 = OUTPUT(B4_inst7);
+
+
+--q19 is q19
+--operation mode is output
+
+q19 = OUTPUT(B4_inst6);
+
+
+--q20 is q20
+--operation mode is output
+
+q20 = OUTPUT(B4_inst9);
+
+
+--q21 is q21
+--operation mode is output
+
+q21 = OUTPUT(B4_inst8);
+
+
+--q22 is q22
+--operation mode is output
+
+q22 = OUTPUT(B4_inst10);
+
+
+--q23 is q23
+--operation mode is output
+
+q23 = OUTPUT(B4_inst11);
+
+
+--q24 is q24
+--operation mode is output
+
+q24 = OUTPUT(B5_inst);
+
+
+--q25 is q25
+--operation mode is output
+
+q25 = OUTPUT(B5_inst5);
+
+
+--q26 is q26
+--operation mode is output
+
+q26 = OUTPUT(B5_inst7);
+
+
+--q27 is q27
+--operation mode is output
+
+q27 = OUTPUT(B5_inst6);
+
+
+--q28 is q28
+--operation mode is output
+
+q28 = OUTPUT(B5_inst9);
+
+
+--q29 is q29
+--operation mode is output
+
+q29 = OUTPUT(B5_inst8);
+
+
+--q30 is q30
+--operation mode is output
+
+q30 = OUTPUT(B5_inst10);
+
+
+--q31 is q31
+--operation mode is output
+
+q31 = OUTPUT(B5_inst11);
+
+
+--q32 is q32
+--operation mode is output
+
+q32 = OUTPUT(B6_inst);
+
+
+--q33 is q33
+--operation mode is output
+
+q33 = OUTPUT(B6_inst5);
+
+
+--q34 is q34
+--operation mode is output
+
+q34 = OUTPUT(B6_inst7);
+
+
+--q35 is q35
+--operation mode is output
+
+q35 = OUTPUT(B6_inst6);
+
+
+--q36 is q36
+--operation mode is output
+
+q36 = OUTPUT(B6_inst9);
+
+
+--q37 is q37
+--operation mode is output
+
+q37 = OUTPUT(B6_inst8);
+
+
+--q38 is q38
+--operation mode is output
+
+q38 = OUTPUT(B6_inst10);
+
+
+--q39 is q39
+--operation mode is output
+
+q39 = OUTPUT(B6_inst11);
+
+
+--q40 is q40
+--operation mode is output
+
+q40 = OUTPUT(B7_inst);
+
+
+--q41 is q41
+--operation mode is output
+
+q41 = OUTPUT(B7_inst5);
+
+
+--q42 is q42
+--operation mode is output
+
+q42 = OUTPUT(B7_inst7);
+
+
+--q43 is q43
+--operation mode is output
+
+q43 = OUTPUT(B7_inst6);
+
+
+--q44 is q44
+--operation mode is output
+
+q44 = OUTPUT(B7_inst9);
+
+
+--q45 is q45
+--operation mode is output
+
+q45 = OUTPUT(B7_inst8);
+
+
+--q46 is q46
+--operation mode is output
+
+q46 = OUTPUT(B7_inst10);
+
+
+--q47 is q47
+--operation mode is output
+
+q47 = OUTPUT(B7_inst11);
+
+
+--q48 is q48
+--operation mode is output
+
+q48 = OUTPUT(B8_inst);
+
+
+--q49 is q49
+--operation mode is output
+
+q49 = OUTPUT(B8_inst5);
+
+
+--q50 is q50
+--operation mode is output
+
+q50 = OUTPUT(B8_inst7);
+
+
+--q51 is q51
+--operation mode is output
+
+q51 = OUTPUT(B8_inst6);
+
+
+--q52 is q52
+--operation mode is output
+
+q52 = OUTPUT(B8_inst9);
+
+
+--q53 is q53
+--operation mode is output
+
+q53 = OUTPUT(B8_inst8);
+
+
+--q54 is q54
+--operation mode is output
+
+q54 = OUTPUT(B8_inst10);
+
+
+--q55 is q55
+--operation mode is output
+
+q55 = OUTPUT(B8_inst11);
+
+
+--q56 is q56
+--operation mode is output
+
+q56 = OUTPUT(B9_inst);
+
+
+--q57 is q57
+--operation mode is output
+
+q57 = OUTPUT(B9_inst5);
+
+
+--q58 is q58
+--operation mode is output
+
+q58 = OUTPUT(B9_inst7);
+
+
+--q59 is q59
+--operation mode is output
+
+q59 = OUTPUT(B9_inst6);
+
+
+--q60 is q60
+--operation mode is output
+
+q60 = OUTPUT(B9_inst9);
+
+
+--q61 is q61
+--operation mode is output
+
+q61 = OUTPUT(B9_inst8);
+
+
+--q62 is q62
+--operation mode is output
+
+q62 = OUTPUT(B9_inst10);
+
+
+--q63 is q63
+--operation mode is output
+
+q63 = OUTPUT(B9_inst11);
+
+

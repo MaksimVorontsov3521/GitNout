@@ -1,5 +1,5 @@
 Flow report for decoder_6to64
-Sat Nov 05 14:27:10 2022
+Wed Nov 09 18:23:07 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +--------------------------+------------------------------------------+
-; Flow Status              ; Successful - Sat Nov 05 14:27:10 2022    ;
+; Flow Status              ; Successful - Wed Nov 09 18:23:07 2022    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; decoder_6to64                            ;
 ; Top-level Entity Name    ; decoder_6to64                            ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/05/2022 14:27:02 ;
+; Start date & time ; 11/09/2022 18:22:59 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; decoder_6to64       ;
 +-------------------+---------------------+
@@ -71,10 +71,10 @@ applicable agreement for further details.
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
 ; Analysis & Synthesis ; 00:00:01     ;
-; Fitter               ; 00:00:03     ;
+; Fitter               ; 00:00:02     ;
 ; Assembler            ; 00:00:01     ;
 ; Timing Analyzer      ; 00:00:00     ;
-; Total                ; 00:00:05     ;
+; Total                ; 00:00:04     ;
 +----------------------+--------------+
 
 

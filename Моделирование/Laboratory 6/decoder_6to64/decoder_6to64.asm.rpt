@@ -1,5 +1,5 @@
 Assembler report for decoder_6to64
-Sat Nov 05 14:27:09 2022
+Wed Nov 09 18:23:06 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -10,8 +10,8 @@ Version 5.0 Build 148 04/26/2005 SJ Full Version
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/altera/quartus50/Lab6/decoder_6to64/decoder_6to64.sof
-  6. Assembler Device Options: C:/altera/quartus50/Lab6/decoder_6to64/decoder_6to64.pof
+  5. Assembler Device Options: C:/altera/Laboratory 6/decoder_6to64/decoder_6to64.sof
+  6. Assembler Device Options: C:/altera/Laboratory 6/decoder_6to64/decoder_6to64.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Nov 05 14:27:09 2022 ;
+; Assembler Status      ; Successful - Wed Nov 09 18:23:06 2022 ;
 ; Revision Name         ; decoder_6to64                         ;
 ; Top-level Entity Name ; decoder_6to64                         ;
 ; Family                ; Stratix                               ;
@@ -78,36 +78,36 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+----------+---------------+
 
 
-+----------------------------------------------------------+
-; Assembler Generated Files                                ;
-+----------------------------------------------------------+
-; File Name                                                ;
-+----------------------------------------------------------+
-; C:/altera/quartus50/Lab6/decoder_6to64/decoder_6to64.sof ;
-; C:/altera/quartus50/Lab6/decoder_6to64/decoder_6to64.pof ;
-+----------------------------------------------------------+
++--------------------------------------------------------+
+; Assembler Generated Files                              ;
++--------------------------------------------------------+
+; File Name                                              ;
++--------------------------------------------------------+
+; C:/altera/Laboratory 6/decoder_6to64/decoder_6to64.sof ;
+; C:/altera/Laboratory 6/decoder_6to64/decoder_6to64.pof ;
++--------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/altera/quartus50/Lab6/decoder_6to64/decoder_6to64.sof ;
-+----------------+-------------------------------------------------------------------+
-; Option         ; Setting                                                           ;
-+----------------+-------------------------------------------------------------------+
-; Device         ; EP1S10F484C5                                                      ;
-; JTAG usercode  ; 0xFFFFFFFF                                                        ;
-; Checksum       ; 0x00148F74                                                        ;
-+----------------+-------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Assembler Device Options: C:/altera/Laboratory 6/decoder_6to64/decoder_6to64.sof ;
++----------------+-----------------------------------------------------------------+
+; Option         ; Setting                                                         ;
++----------------+-----------------------------------------------------------------+
+; Device         ; EP1S10F484C5                                                    ;
+; JTAG usercode  ; 0xFFFFFFFF                                                      ;
+; Checksum       ; 0x00148F74                                                      ;
++----------------+-----------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/altera/quartus50/Lab6/decoder_6to64/decoder_6to64.pof ;
-+----------------+-------------------------------------------------------------------+
-; Option         ; Setting                                                           ;
-+----------------+-------------------------------------------------------------------+
-; Device         ; EPC4                                                              ;
-; JTAG usercode  ; 0x00000000                                                        ;
-; Checksum       ; 0x062F7BED                                                        ;
-+----------------+-------------------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Assembler Device Options: C:/altera/Laboratory 6/decoder_6to64/decoder_6to64.pof ;
++----------------+-----------------------------------------------------------------+
+; Option         ; Setting                                                         ;
++----------------+-----------------------------------------------------------------+
+; Device         ; EPC4                                                            ;
+; JTAG usercode  ; 0x00000000                                                      ;
+; Checksum       ; 0x062F7BED                                                      ;
++----------------+-----------------------------------------------------------------+
 
 
 +--------------------+
@@ -116,10 +116,10 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Nov 05 14:27:08 2022
+    Info: Processing started: Wed Nov 09 18:23:05 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off decoder_6to64 -c decoder_6to64
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Nov 05 14:27:09 2022
+    Info: Processing ended: Wed Nov 09 18:23:06 2022
     Info: Elapsed time: 00:00:01
 
 

@@ -1,0 +1,913 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L8 is Decoder~533
+--operation mode is normal
+
+A1L8 = !a[0] & !a[1] & !a[2] & !a[3];
+
+
+--A1L9 is Decoder~534
+--operation mode is normal
+
+A1L9 = A1L8 & (!a[4] & !a[5]);
+
+
+--A1L01 is Decoder~535
+--operation mode is normal
+
+A1L01 = a[0] & !a[1] & !a[2] & !a[3];
+
+
+--A1L11 is Decoder~536
+--operation mode is normal
+
+A1L11 = A1L01 & (!a[4] & !a[5]);
+
+
+--A1L21 is Decoder~537
+--operation mode is normal
+
+A1L21 = !a[0] & a[1] & !a[2] & !a[3];
+
+
+--A1L31 is Decoder~538
+--operation mode is normal
+
+A1L31 = A1L21 & (!a[4] & !a[5]);
+
+
+--A1L41 is Decoder~539
+--operation mode is normal
+
+A1L41 = a[0] & a[1] & !a[2] & !a[3];
+
+
+--A1L51 is Decoder~540
+--operation mode is normal
+
+A1L51 = A1L41 & (!a[4] & !a[5]);
+
+
+--A1L61 is Decoder~541
+--operation mode is normal
+
+A1L61 = !a[0] & !a[1] & a[2] & !a[3];
+
+
+--A1L71 is Decoder~542
+--operation mode is normal
+
+A1L71 = A1L61 & (!a[4] & !a[5]);
+
+
+--A1L81 is Decoder~543
+--operation mode is normal
+
+A1L81 = a[0] & !a[1] & a[2] & !a[3];
+
+
+--A1L91 is Decoder~544
+--operation mode is normal
+
+A1L91 = A1L81 & (!a[4] & !a[5]);
+
+
+--A1L02 is Decoder~545
+--operation mode is normal
+
+A1L02 = !a[0] & a[1] & a[2] & !a[3];
+
+
+--A1L12 is Decoder~546
+--operation mode is normal
+
+A1L12 = A1L02 & (!a[4] & !a[5]);
+
+
+--A1L22 is Decoder~547
+--operation mode is normal
+
+A1L22 = a[0] & a[1] & a[2] & !a[3];
+
+
+--A1L32 is Decoder~548
+--operation mode is normal
+
+A1L32 = A1L22 & (!a[4] & !a[5]);
+
+
+--A1L42 is Decoder~549
+--operation mode is normal
+
+A1L42 = !a[0] & !a[1] & !a[2] & a[3];
+
+
+--A1L52 is Decoder~550
+--operation mode is normal
+
+A1L52 = A1L42 & (!a[4] & !a[5]);
+
+
+--A1L62 is Decoder~551
+--operation mode is normal
+
+A1L62 = a[0] & !a[1] & !a[2] & a[3];
+
+
+--A1L72 is Decoder~552
+--operation mode is normal
+
+A1L72 = A1L62 & (!a[4] & !a[5]);
+
+
+--A1L82 is Decoder~553
+--operation mode is normal
+
+A1L82 = !a[0] & a[1] & !a[2] & a[3];
+
+
+--A1L92 is Decoder~554
+--operation mode is normal
+
+A1L92 = A1L82 & (!a[4] & !a[5]);
+
+
+--A1L03 is Decoder~555
+--operation mode is normal
+
+A1L03 = a[0] & a[1] & !a[2] & a[3];
+
+
+--A1L13 is Decoder~556
+--operation mode is normal
+
+A1L13 = A1L03 & (!a[4] & !a[5]);
+
+
+--A1L23 is Decoder~557
+--operation mode is normal
+
+A1L23 = !a[0] & !a[1] & a[2] & a[3];
+
+
+--A1L33 is Decoder~558
+--operation mode is normal
+
+A1L33 = A1L23 & (!a[4] & !a[5]);
+
+
+--A1L43 is Decoder~559
+--operation mode is normal
+
+A1L43 = a[0] & !a[1] & a[2] & a[3];
+
+
+--A1L53 is Decoder~560
+--operation mode is normal
+
+A1L53 = A1L43 & (!a[4] & !a[5]);
+
+
+--A1L63 is Decoder~561
+--operation mode is normal
+
+A1L63 = !a[0] & a[1] & a[2] & a[3];
+
+
+--A1L73 is Decoder~562
+--operation mode is normal
+
+A1L73 = A1L63 & (!a[4] & !a[5]);
+
+
+--A1L83 is Decoder~563
+--operation mode is normal
+
+A1L83 = a[0] & a[1] & a[2] & a[3];
+
+
+--A1L93 is Decoder~564
+--operation mode is normal
+
+A1L93 = A1L83 & (!a[4] & !a[5]);
+
+
+--A1L04 is Decoder~565
+--operation mode is normal
+
+A1L04 = A1L8 & a[4] & (!a[5]);
+
+
+--A1L14 is Decoder~566
+--operation mode is normal
+
+A1L14 = a[4] & A1L01 & (!a[5]);
+
+
+--A1L24 is Decoder~567
+--operation mode is normal
+
+A1L24 = a[4] & A1L21 & (!a[5]);
+
+
+--A1L34 is Decoder~568
+--operation mode is normal
+
+A1L34 = a[4] & A1L41 & (!a[5]);
+
+
+--A1L44 is Decoder~569
+--operation mode is normal
+
+A1L44 = a[4] & A1L61 & (!a[5]);
+
+
+--A1L54 is Decoder~570
+--operation mode is normal
+
+A1L54 = a[4] & A1L81 & (!a[5]);
+
+
+--A1L64 is Decoder~571
+--operation mode is normal
+
+A1L64 = a[4] & A1L02 & (!a[5]);
+
+
+--A1L74 is Decoder~572
+--operation mode is normal
+
+A1L74 = a[4] & A1L22 & (!a[5]);
+
+
+--A1L84 is Decoder~573
+--operation mode is normal
+
+A1L84 = a[4] & A1L42 & (!a[5]);
+
+
+--A1L94 is Decoder~574
+--operation mode is normal
+
+A1L94 = a[4] & A1L62 & (!a[5]);
+
+
+--A1L05 is Decoder~575
+--operation mode is normal
+
+A1L05 = a[4] & A1L82 & (!a[5]);
+
+
+--A1L15 is Decoder~576
+--operation mode is normal
+
+A1L15 = a[4] & A1L03 & (!a[5]);
+
+
+--A1L25 is Decoder~577
+--operation mode is normal
+
+A1L25 = a[4] & A1L23 & (!a[5]);
+
+
+--A1L35 is Decoder~578
+--operation mode is normal
+
+A1L35 = a[4] & A1L43 & (!a[5]);
+
+
+--A1L45 is Decoder~579
+--operation mode is normal
+
+A1L45 = a[4] & A1L63 & (!a[5]);
+
+
+--A1L55 is Decoder~580
+--operation mode is normal
+
+A1L55 = a[4] & A1L83 & (!a[5]);
+
+
+--A1L65 is Decoder~581
+--operation mode is normal
+
+A1L65 = A1L8 & a[5] & (!a[4]);
+
+
+--A1L75 is Decoder~582
+--operation mode is normal
+
+A1L75 = a[5] & A1L01 & (!a[4]);
+
+
+--A1L85 is Decoder~583
+--operation mode is normal
+
+A1L85 = a[5] & A1L21 & (!a[4]);
+
+
+--A1L95 is Decoder~584
+--operation mode is normal
+
+A1L95 = a[5] & A1L41 & (!a[4]);
+
+
+--A1L06 is Decoder~585
+--operation mode is normal
+
+A1L06 = a[5] & A1L61 & (!a[4]);
+
+
+--A1L16 is Decoder~586
+--operation mode is normal
+
+A1L16 = a[5] & A1L81 & (!a[4]);
+
+
+--A1L26 is Decoder~587
+--operation mode is normal
+
+A1L26 = a[5] & A1L02 & (!a[4]);
+
+
+--A1L36 is Decoder~588
+--operation mode is normal
+
+A1L36 = a[5] & A1L22 & (!a[4]);
+
+
+--A1L46 is Decoder~589
+--operation mode is normal
+
+A1L46 = a[5] & A1L42 & (!a[4]);
+
+
+--A1L56 is Decoder~590
+--operation mode is normal
+
+A1L56 = a[5] & A1L62 & (!a[4]);
+
+
+--A1L66 is Decoder~591
+--operation mode is normal
+
+A1L66 = a[5] & A1L82 & (!a[4]);
+
+
+--A1L76 is Decoder~592
+--operation mode is normal
+
+A1L76 = a[5] & A1L03 & (!a[4]);
+
+
+--A1L86 is Decoder~593
+--operation mode is normal
+
+A1L86 = a[5] & A1L23 & (!a[4]);
+
+
+--A1L96 is Decoder~594
+--operation mode is normal
+
+A1L96 = a[5] & A1L43 & (!a[4]);
+
+
+--A1L07 is Decoder~595
+--operation mode is normal
+
+A1L07 = a[5] & A1L63 & (!a[4]);
+
+
+--A1L17 is Decoder~596
+--operation mode is normal
+
+A1L17 = a[5] & A1L83 & (!a[4]);
+
+
+--A1L27 is Decoder~597
+--operation mode is normal
+
+A1L27 = A1L8 & a[4] & a[5];
+
+
+--A1L37 is Decoder~598
+--operation mode is normal
+
+A1L37 = a[4] & a[5] & A1L01;
+
+
+--A1L47 is Decoder~599
+--operation mode is normal
+
+A1L47 = a[4] & a[5] & A1L21;
+
+
+--A1L57 is Decoder~600
+--operation mode is normal
+
+A1L57 = a[4] & a[5] & A1L41;
+
+
+--A1L67 is Decoder~601
+--operation mode is normal
+
+A1L67 = a[4] & a[5] & A1L61;
+
+
+--A1L77 is Decoder~602
+--operation mode is normal
+
+A1L77 = a[4] & a[5] & A1L81;
+
+
+--A1L87 is Decoder~603
+--operation mode is normal
+
+A1L87 = a[4] & a[5] & A1L02;
+
+
+--A1L97 is Decoder~604
+--operation mode is normal
+
+A1L97 = a[4] & a[5] & A1L22;
+
+
+--A1L08 is Decoder~605
+--operation mode is normal
+
+A1L08 = a[4] & a[5] & A1L42;
+
+
+--A1L18 is Decoder~606
+--operation mode is normal
+
+A1L18 = a[4] & a[5] & A1L62;
+
+
+--A1L28 is Decoder~607
+--operation mode is normal
+
+A1L28 = a[4] & a[5] & A1L82;
+
+
+--A1L38 is Decoder~608
+--operation mode is normal
+
+A1L38 = a[4] & a[5] & A1L03;
+
+
+--A1L48 is Decoder~609
+--operation mode is normal
+
+A1L48 = a[4] & a[5] & A1L23;
+
+
+--A1L58 is Decoder~610
+--operation mode is normal
+
+A1L58 = a[4] & a[5] & A1L43;
+
+
+--A1L68 is Decoder~611
+--operation mode is normal
+
+A1L68 = a[4] & a[5] & A1L63;
+
+
+--A1L78 is Decoder~612
+--operation mode is normal
+
+A1L78 = a[4] & a[5] & A1L83;
+
+
+--a[0] is a[0]
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--a[1] is a[1]
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--a[2] is a[2]
+--operation mode is input
+
+a[2] = INPUT();
+
+
+--a[3] is a[3]
+--operation mode is input
+
+a[3] = INPUT();
+
+
+--a[4] is a[4]
+--operation mode is input
+
+a[4] = INPUT();
+
+
+--a[5] is a[5]
+--operation mode is input
+
+a[5] = INPUT();
+
+
+--q[0] is q[0]
+--operation mode is output
+
+q[0] = OUTPUT(A1L9);
+
+
+--q[1] is q[1]
+--operation mode is output
+
+q[1] = OUTPUT(A1L11);
+
+
+--q[2] is q[2]
+--operation mode is output
+
+q[2] = OUTPUT(A1L31);
+
+
+--q[3] is q[3]
+--operation mode is output
+
+q[3] = OUTPUT(A1L51);
+
+
+--q[4] is q[4]
+--operation mode is output
+
+q[4] = OUTPUT(A1L71);
+
+
+--q[5] is q[5]
+--operation mode is output
+
+q[5] = OUTPUT(A1L91);
+
+
+--q[6] is q[6]
+--operation mode is output
+
+q[6] = OUTPUT(A1L12);
+
+
+--q[7] is q[7]
+--operation mode is output
+
+q[7] = OUTPUT(A1L32);
+
+
+--q[8] is q[8]
+--operation mode is output
+
+q[8] = OUTPUT(A1L52);
+
+
+--q[9] is q[9]
+--operation mode is output
+
+q[9] = OUTPUT(A1L72);
+
+
+--q[10] is q[10]
+--operation mode is output
+
+q[10] = OUTPUT(A1L92);
+
+
+--q[11] is q[11]
+--operation mode is output
+
+q[11] = OUTPUT(A1L13);
+
+
+--q[12] is q[12]
+--operation mode is output
+
+q[12] = OUTPUT(A1L33);
+
+
+--q[13] is q[13]
+--operation mode is output
+
+q[13] = OUTPUT(A1L53);
+
+
+--q[14] is q[14]
+--operation mode is output
+
+q[14] = OUTPUT(A1L73);
+
+
+--q[15] is q[15]
+--operation mode is output
+
+q[15] = OUTPUT(A1L93);
+
+
+--q[16] is q[16]
+--operation mode is output
+
+q[16] = OUTPUT(A1L04);
+
+
+--q[17] is q[17]
+--operation mode is output
+
+q[17] = OUTPUT(A1L14);
+
+
+--q[18] is q[18]
+--operation mode is output
+
+q[18] = OUTPUT(A1L24);
+
+
+--q[19] is q[19]
+--operation mode is output
+
+q[19] = OUTPUT(A1L34);
+
+
+--q[20] is q[20]
+--operation mode is output
+
+q[20] = OUTPUT(A1L44);
+
+
+--q[21] is q[21]
+--operation mode is output
+
+q[21] = OUTPUT(A1L54);
+
+
+--q[22] is q[22]
+--operation mode is output
+
+q[22] = OUTPUT(A1L64);
+
+
+--q[23] is q[23]
+--operation mode is output
+
+q[23] = OUTPUT(A1L74);
+
+
+--q[24] is q[24]
+--operation mode is output
+
+q[24] = OUTPUT(A1L84);
+
+
+--q[25] is q[25]
+--operation mode is output
+
+q[25] = OUTPUT(A1L94);
+
+
+--q[26] is q[26]
+--operation mode is output
+
+q[26] = OUTPUT(A1L05);
+
+
+--q[27] is q[27]
+--operation mode is output
+
+q[27] = OUTPUT(A1L15);
+
+
+--q[28] is q[28]
+--operation mode is output
+
+q[28] = OUTPUT(A1L25);
+
+
+--q[29] is q[29]
+--operation mode is output
+
+q[29] = OUTPUT(A1L35);
+
+
+--q[30] is q[30]
+--operation mode is output
+
+q[30] = OUTPUT(A1L45);
+
+
+--q[31] is q[31]
+--operation mode is output
+
+q[31] = OUTPUT(A1L55);
+
+
+--q[32] is q[32]
+--operation mode is output
+
+q[32] = OUTPUT(A1L65);
+
+
+--q[33] is q[33]
+--operation mode is output
+
+q[33] = OUTPUT(A1L75);
+
+
+--q[34] is q[34]
+--operation mode is output
+
+q[34] = OUTPUT(A1L85);
+
+
+--q[35] is q[35]
+--operation mode is output
+
+q[35] = OUTPUT(A1L95);
+
+
+--q[36] is q[36]
+--operation mode is output
+
+q[36] = OUTPUT(A1L06);
+
+
+--q[37] is q[37]
+--operation mode is output
+
+q[37] = OUTPUT(A1L16);
+
+
+--q[38] is q[38]
+--operation mode is output
+
+q[38] = OUTPUT(A1L26);
+
+
+--q[39] is q[39]
+--operation mode is output
+
+q[39] = OUTPUT(A1L36);
+
+
+--q[40] is q[40]
+--operation mode is output
+
+q[40] = OUTPUT(A1L46);
+
+
+--q[41] is q[41]
+--operation mode is output
+
+q[41] = OUTPUT(A1L56);
+
+
+--q[42] is q[42]
+--operation mode is output
+
+q[42] = OUTPUT(A1L66);
+
+
+--q[43] is q[43]
+--operation mode is output
+
+q[43] = OUTPUT(A1L76);
+
+
+--q[44] is q[44]
+--operation mode is output
+
+q[44] = OUTPUT(A1L86);
+
+
+--q[45] is q[45]
+--operation mode is output
+
+q[45] = OUTPUT(A1L96);
+
+
+--q[46] is q[46]
+--operation mode is output
+
+q[46] = OUTPUT(A1L07);
+
+
+--q[47] is q[47]
+--operation mode is output
+
+q[47] = OUTPUT(A1L17);
+
+
+--q[48] is q[48]
+--operation mode is output
+
+q[48] = OUTPUT(A1L27);
+
+
+--q[49] is q[49]
+--operation mode is output
+
+q[49] = OUTPUT(A1L37);
+
+
+--q[50] is q[50]
+--operation mode is output
+
+q[50] = OUTPUT(A1L47);
+
+
+--q[51] is q[51]
+--operation mode is output
+
+q[51] = OUTPUT(A1L57);
+
+
+--q[52] is q[52]
+--operation mode is output
+
+q[52] = OUTPUT(A1L67);
+
+
+--q[53] is q[53]
+--operation mode is output
+
+q[53] = OUTPUT(A1L77);
+
+
+--q[54] is q[54]
+--operation mode is output
+
+q[54] = OUTPUT(A1L87);
+
+
+--q[55] is q[55]
+--operation mode is output
+
+q[55] = OUTPUT(A1L97);
+
+
+--q[56] is q[56]
+--operation mode is output
+
+q[56] = OUTPUT(A1L08);
+
+
+--q[57] is q[57]
+--operation mode is output
+
+q[57] = OUTPUT(A1L18);
+
+
+--q[58] is q[58]
+--operation mode is output
+
+q[58] = OUTPUT(A1L28);
+
+
+--q[59] is q[59]
+--operation mode is output
+
+q[59] = OUTPUT(A1L38);
+
+
+--q[60] is q[60]
+--operation mode is output
+
+q[60] = OUTPUT(A1L48);
+
+
+--q[61] is q[61]
+--operation mode is output
+
+q[61] = OUTPUT(A1L58);
+
+
+--q[62] is q[62]
+--operation mode is output
+
+q[62] = OUTPUT(A1L68);
+
+
+--q[63] is q[63]
+--operation mode is output
+
+q[63] = OUTPUT(A1L78);
+
+

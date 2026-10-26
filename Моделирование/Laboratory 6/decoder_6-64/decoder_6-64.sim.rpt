@@ -1,0 +1,160 @@
+Simulator report for decoder_6-64
+Wed Nov 09 19:40:07 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Simulator INI Usage
+  6. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 7.7 us       ;
+; Simulation Netlist Size     ; 143 nodes    ;
+; Simulation Coverage         ;      99.30 % ;
+; Total Number of Transitions ; 2156         ;
++-----------------------------+--------------+
+
+
++-----------------------------------------------------------------+
+; Simulator Settings                                              ;
++-------------------------------------------------------+---------+
+; Option                                                ; Setting ;
++-------------------------------------------------------+---------+
+; Simulation mode                                       ; Timing  ;
+; Start time                                            ; 0ns     ;
+; Add pins automatically to simulation output waveforms ; On      ;
+; Check outputs                                         ; Off     ;
+; Report simulation coverage                            ; On      ;
+; Detect setup and hold time violations                 ; Off     ;
+; Detect glitches                                       ; Off     ;
+; Automatically save/load simulation netlist            ; Off     ;
+; Disable timing delays in Timing Simulation            ; Off     ;
+; Generate Signal Activity File                         ; Off     ;
++-------------------------------------------------------+---------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Processing started: Wed Nov 09 19:40:07 2022
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off decoder_6-64 -c decoder_6-64
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[63]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[62]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[61]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[60]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[59]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[58]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[57]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[56]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[55]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[54]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[53]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[52]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[51]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[50]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[49]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[48]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[47]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[46]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[45]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[44]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[43]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[42]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[41]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[40]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[39]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[38]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[37]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[36]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[35]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[34]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[33]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[32]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[31]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[30]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[29]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[28]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[27]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[26]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[25]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[24]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[23]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[22]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[21]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[20]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[19]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[18]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[17]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[16]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[15]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[14]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[13]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[12]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[11]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[10]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[9]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[8]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[7]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[6]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[5]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[4]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[3]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[2]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[1]" in design.
+Warning: Ignored node in vector source file. Can't find corresponding node name "q[0]" in design.
+Info: Simulation coverage is      99.30 %
+Info: Number of transitions in simulation is 2156
+Info: Quartus II Simulator was successful. 0 errors, 64 warnings
+    Info: Processing ended: Wed Nov 09 19:40:07 2022
+    Info: Elapsed time: 00:00:00
+
+

@@ -1,0 +1,50 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+decoder_3-8_en
+# case_insensitive
+# source_file
+decoder_3-8_en.bdf
+1668011671
+23
+# storage
+db|decoder_6-64.(0).cnf
+db|decoder_6-64.(0).cnf
+# hierarchies {
+decoder_3-8_en:inst5
+decoder_3-8_en:inst
+decoder_3-8_en:inst6
+decoder_3-8_en:inst7
+decoder_3-8_en:inst8
+decoder_3-8_en:inst9
+decoder_3-8_en:inst10
+decoder_3-8_en:inst11
+decoder_3-8_en:inst12
+}
+# end
+# entity
+decoder_6-64
+# case_insensitive
+# source_file
+decoder_6-64.bdf
+1668011846
+23
+# storage
+db|decoder_6-64.(1).cnf
+db|decoder_6-64.(1).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+
