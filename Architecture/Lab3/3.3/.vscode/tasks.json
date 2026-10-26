@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Debug in TD",
+            "type": "shell",
+            "command": "D:\\Desktop\\NF\\GitNout\\Architecture\\DOSBox\\DOSBox.exe",
+            "args": [
+                "-c", "mount c \"D:\\Desktop\\NF\\GitNout\\Architecture\\C\"",
+                "-c", "mount d \"${workspaceFolder}\"",
+                "-c", "c:",
+                "-c", "cd NTA",
+                
+                // Добавлен /zi для отладки
+                "-c", "tasm /zi d:\\Lab3_3.asm",
+                
+                // Добавлен /v и /t (создание .com файла с отладочной информацией)
+                "-c", "tlink /v /t lab3_3",
+                
+                // Запуск программы
+                "-c", "lab3_3",
+                
+                //"-c", "td lab3_3"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
