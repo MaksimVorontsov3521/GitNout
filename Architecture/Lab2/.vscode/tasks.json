@@ -6,10 +6,9 @@
             "type": "shell",
             "command": "D:\\Desktop\\NF\\GitNout\\Architecture\\DOSBox\\DOSBox.exe",
             "args": [
-                // Монтируем диск C (добавлены кавычки на случай пробелов в пути)
                 "-c", "mount c \"D:\\Desktop\\NF\\GitNout\\Architecture\\C\"",
-                // Монтируем диск D (папка проекта)
                 "-c", "mount d \"${workspaceFolder}\"",
+                
                 "-c", "c:",
                 "-c", "cd TC\\BIN",
                 
@@ -22,7 +21,7 @@
 
                 "-c", "Lab2.exe"
                 
-                // "-c", "exit" // Раскомментируйте, если хотите, чтобы консоль закрывалась после выхода из TD
+                // "-c", "exit"
             ],
             "problemMatcher": [],
             "group": {

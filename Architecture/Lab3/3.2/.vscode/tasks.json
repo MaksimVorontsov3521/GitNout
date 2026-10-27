@@ -10,17 +10,9 @@
                 "-c", "mount d \"${workspaceFolder}\"",
                 "-c", "c:",
                 "-c", "cd NTA",
-                
-                // Добавлен /zi для отладки
-                "-c", "tasm /zi d:\\Lab3_2.asm",
-                
-                // Добавлен /v и /t (создание .com файла с отладочной информацией)
+                "-c", "tasm /zi d:\\Lab3_2.ASM",
                 "-c", "tlink /v /t lab3_2",
-                
-                // Запуск программы
                 "-c", "lab3_2",
-                
-                //"-c", "td lab3_2"
             ],
             "problemMatcher": [],
             "group": {

@@ -1,7 +1,3 @@
-; lab3_4.asm
-; Задание 4*: ввод, заполнение массива и вывод чисел
-; в формате с плавающей запятой.
-
 .286
 .287
 .MODEL TINY
@@ -84,7 +80,7 @@ SKIP_SPACES_LOOP:
 
 SKIP_SPACES_START:
     cmp cx, 0
-    jne SPACES_HAS_CHARS    ; ИСПРАВЛЕНИЕ СТРОКИ 87: инвертируем условие
+    jne SPACES_HAS_CHARS
     jmp PARSE_ERROR         ; и делаем безусловный переход
 
 SPACES_HAS_CHARS:
