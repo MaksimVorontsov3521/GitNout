@@ -1,0 +1,24 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Debug in TD",
+            "type": "shell",
+            "command": "D:\\Desktop\\NF\\GitNout\\Architecture\\DOSBox\\DOSBox.exe",
+            "args": [
+                "-c", "mount c \"D:\\Desktop\\NF\\GitNout\\Architecture\\C\"",
+                "-c", "mount d \"${workspaceFolder}\"",
+                "-c", "c:",
+                "-c", "cd NTA",
+                "-c", "tasm /zi d:\\Lab4.ASM",
+                "-c", "tlink /v /t lab4",
+                "-c", "lab4",
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
