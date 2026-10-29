@@ -1,5 +1,5 @@
 Fitter report for encoder_8-3
-Sat Nov 12 10:27:18 2022
+Sat Nov 12 13:31:57 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -53,14 +53,14 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +--------------------------+------------------------------------------+
-; Fitter Status            ; Successful - Sat Nov 12 10:27:18 2022    ;
+; Fitter Status            ; Successful - Sat Nov 12 13:31:57 2022    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; encoder_8-3                              ;
 ; Top-level Entity Name    ; encoder_8-3                              ;
 ; Family                   ; Stratix                                  ;
 ; Device                   ; EP1S10F484C5                             ;
 ; Timing Models            ; Final                                    ;
-; Total logic elements     ; 10 / 10,570 ( < 1 % )                    ;
+; Total logic elements     ; 11 / 10,570 ( < 1 % )                    ;
 ; Total pins               ; 14 / 336 ( 4 % )                         ;
 ; Total virtual pins       ; 0                                        ;
 ; Total memory bits        ; 0 / 920,448 ( 0 % )                      ;
@@ -140,27 +140,27 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 10 / 10,570 ( < 1 % ) ;
-;     -- Combinational with no register       ; 10                    ;
+; Total logic elements                        ; 11 / 10,570 ( < 1 % ) ;
+;     -- Combinational with no register       ; 11                    ;
 ;     -- Register only                        ; 0                     ;
 ;     -- Combinational with a register        ; 0                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 8                     ;
-;     -- 3 input functions                    ; 2                     ;
-;     -- 2 input functions                    ; 0                     ;
+;     -- 4 input functions                    ; 7                     ;
+;     -- 3 input functions                    ; 0                     ;
+;     -- 2 input functions                    ; 4                     ;
 ;     -- 1 input functions                    ; 0                     ;
 ;     -- 0 input functions                    ; 0                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 10                    ;
+;     -- normal mode                          ; 11                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;     -- qfbk mode                            ; 0                     ;
 ;     -- register cascade mode                ; 0                     ;
 ;     -- synchronous clear/load mode          ; 0                     ;
 ;     -- asynchronous clear/load mode         ; 0                     ;
 ;                                             ;                       ;
-; Total LABs                                  ; 1 / 1,057 ( < 1 % )   ;
+; Total LABs                                  ; 2 / 1,057 ( < 1 % )   ;
 ; Logic elements in carry chains              ; 0                     ;
 ; User inserted logic elements                ; 0                     ;
 ; Virtual pins                                ; 0                     ;
@@ -180,8 +180,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; SERDES receivers                            ; 0 / 44 ( 0 % )        ;
 ; Maximum fan-out node                        ; EI                    ;
 ; Maximum fan-out                             ; 6                     ;
-; Total fan-out                               ; 43                    ;
-; Average fan-out                             ; 1.72                  ;
+; Total fan-out                               ; 41                    ;
+; Average fan-out                             ; 1.58                  ;
 +---------------------------------------------+-----------------------+
 
 
@@ -190,15 +190,15 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; EI   ; V4    ; 6        ; 53           ; 1            ; 1           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r0   ; AA2   ; 7        ; 52           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r1   ; T7    ; 7        ; 52           ; 0            ; 4           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r2   ; AA4   ; 7        ; 50           ; 0            ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r3   ; T5    ; 6        ; 53           ; 2            ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r4   ; W3    ; 7        ; 52           ; 0            ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r5   ; W2    ; 6        ; 53           ; 2            ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r6   ; Y3    ; 7        ; 52           ; 0            ; 5           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; r7   ; W4    ; 7        ; 52           ; 0            ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; EI   ; C21   ; 3        ; 3            ; 31           ; 1           ; 6                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r0   ; C19   ; 3        ; 3            ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r1   ; E18   ; 3        ; 5            ; 31           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r2   ; F16   ; 3        ; 7            ; 31           ; 4           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r3   ; A17   ; 3        ; 7            ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r4   ; D17   ; 3        ; 5            ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r5   ; A18   ; 3        ; 5            ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r6   ; B19   ; 3        ; 3            ; 31           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; r7   ; C17   ; 3        ; 7            ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -207,30 +207,30 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 +------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load        ;
 +------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------------+
-; A0   ; P7    ; 7        ; 50           ; 0            ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A1   ; W1    ; 6        ; 53           ; 2            ; 3           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A2   ; U5    ; 6        ; 53           ; 3            ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; E0   ; V3    ; 6        ; 53           ; 1            ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; G    ; AA3   ; 7        ; 52           ; 0            ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A0   ; C18   ; 3        ; 5            ; 31           ; 4           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A1   ; F17   ; 3        ; 7            ; 31           ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A2   ; J14   ; 3        ; 3            ; 31           ; 4           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; E0   ; D18   ; 3        ; 5            ; 31           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; G    ; B18   ; 3        ; 5            ; 31           ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
 +------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------------+
 
 
-+-----------------------------------------------------------+
-; I/O Bank Usage                                            ;
-+----------+-----------------+---------------+--------------+
-; I/O Bank ; Usage           ; VCCIO Voltage ; VREF Voltage ;
-+----------+-----------------+---------------+--------------+
-; 1        ; 0 / 29 ( 0 % )  ; 3.3V          ; --           ;
-; 2        ; 0 / 30 ( 0 % )  ; 3.3V          ; --           ;
-; 3        ; 0 / 51 ( 0 % )  ; 3.3V          ; --           ;
-; 4        ; 1 / 52 ( 1 % )  ; 3.3V          ; --           ;
-; 5        ; 0 / 29 ( 0 % )  ; 3.3V          ; --           ;
-; 6        ; 6 / 29 ( 20 % ) ; 3.3V          ; --           ;
-; 7        ; 8 / 52 ( 15 % ) ; 3.3V          ; --           ;
-; 8        ; 0 / 51 ( 0 % )  ; 3.3V          ; --           ;
-; 9        ; 0 / 6 ( 0 % )   ; 3.3V          ; --           ;
-; 11       ; 0 / 6 ( 0 % )   ; 3.3V          ; --           ;
-+----------+-----------------+---------------+--------------+
++------------------------------------------------------------+
+; I/O Bank Usage                                             ;
++----------+------------------+---------------+--------------+
+; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
++----------+------------------+---------------+--------------+
+; 1        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
+; 2        ; 0 / 30 ( 0 % )   ; 3.3V          ; --           ;
+; 3        ; 14 / 51 ( 27 % ) ; 3.3V          ; --           ;
+; 4        ; 1 / 52 ( 1 % )   ; 3.3V          ; --           ;
+; 5        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
+; 6        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
+; 7        ; 0 / 52 ( 0 % )   ; 3.3V          ; --           ;
+; 8        ; 0 / 51 ( 0 % )   ; 3.3V          ; --           ;
+; 9        ; 0 / 6 ( 0 % )    ; 3.3V          ; --           ;
+; 11       ; 0 / 6 ( 0 % )    ; 3.3V          ; --           ;
++----------+------------------+---------------+--------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,16 +254,16 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; A14      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; A15      ; 416        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; A16      ; 429        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; A17      ; 436        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; A18      ; 444        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; A17      ; 436        ; 3        ; r3                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A18      ; 444        ; 3        ; r5                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; A19      ; 450        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; A20      ;            ; 3        ; VCCIO3                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
 ; A21      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; A22      ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; AA1      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; AA2      ; 225        ; 7        ; r0                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; AA3      ; 224        ; 7        ; G                         ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; AA4      ; 220        ; 7        ; r2                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; AA2      ; 225        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; AA3      ; 224        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; AA4      ; 220        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; AA5      ; 216        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; AA6      ; 210        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; AA7      ; 204        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -321,8 +321,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; B15      ; 428        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B16      ; 432        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B17      ; 438        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; B18      ; 445        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; B19      ; 451        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; B18      ; 445        ; 3        ; G                         ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B19      ; 451        ; 3        ; r6                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; B20      ; 455        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B21      ; 456        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B22      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
@@ -342,11 +342,11 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; C14      ; 407        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C15      ; 417        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C16      ; 433        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C17      ; 440        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C18      ; 441        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C19      ; 452        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; C17      ; 440        ; 3        ; r7                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C18      ; 441        ; 3        ; A0                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C19      ; 452        ; 3        ; r0                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; C20      ; 457        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C21      ; 453        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; C21      ; 453        ; 3        ; EI                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; C22      ;            ; 2        ; VCCIO2                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
 ; D1       ; 329        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; D2       ; 328        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
@@ -364,8 +364,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; D14      ; 419        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D15      ; 425        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D16      ; 434        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; D17      ; 442        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; D18      ; 446        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; D17      ; 442        ; 3        ; r4                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D18      ; 446        ; 3        ; E0                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; D19      ; 454        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D20      ; 458        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D21      ; 1          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
@@ -387,7 +387,7 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; E15      ; 426        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; E16      ; 430        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; E17      ; 437        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; E18      ; 443        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; E18      ; 443        ; 3        ; r1                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; E19      ; 2          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; E20      ; 3          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; E21      ; 4          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
@@ -407,8 +407,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; F13      ;            ; 9        ; VCC_PLL5_OUTA             ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
 ; F14      ; 420        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; F15      ; 427        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; F16      ; 435        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; F17      ; 439        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; F16      ; 435        ; 3        ; r2                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; F17      ; 439        ; 3        ; A1                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; F18      ; 7          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; F19      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; F20      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
@@ -471,7 +471,7 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; J11      ; 386        ; 4        ; #TDI                      ; input  ;              ;         ; --         ; --          ;                 ;
 ; J12      ; 402        ; 3        ; ^nSTATUS                  ;        ;              ;         ; --         ; --          ;                 ;
 ; J13      ; 404        ; 3        ; ^DCLK                     ;        ;              ;         ; --         ; --          ;                 ;
-; J14      ; 448        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; J14      ; 448        ; 3        ; A2                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; J15      ; 418        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; J16      ; 424        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; J17      ; 14         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
@@ -574,7 +574,7 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; P4       ; 251        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; P5       ; 267        ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; P6       ; 247        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; P7       ; 219        ; 7        ; A0                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; P7       ; 219        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; P8       ; 190        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; P9       ; 182        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; P10      ; 180        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -616,9 +616,9 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; T2       ; 265        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; T3       ; 244        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; T4       ; 243        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; T5       ; 234        ; 6        ; r3                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; T5       ; 234        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; T6       ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; T7       ; 229        ; 7        ; r1                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; T7       ; 229        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; T8       ; 197        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; T9       ; 184        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; T10      ; 181        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -638,7 +638,7 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; U2       ; 262        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; U3       ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; U4       ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; U5       ; 238        ; 6        ; A2                        ; output ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; U5       ; 238        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; U6       ; 200        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; U7       ; 205        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; U8       ; 196        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -658,8 +658,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; U22      ; 68         ; 1        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; V1       ; 250        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; V2       ; 249        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; V3       ; 231        ; 6        ; E0                        ; output ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; V4       ; 230        ; 6        ; EI                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; V3       ; 231        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; V4       ; 230        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; V5       ; 208        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; V6       ; 202        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; V7       ; 207        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -678,10 +678,10 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; V20      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; V21      ; 76         ; 1        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; V22      ; 75         ; 1        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; W1       ; 236        ; 6        ; A1                        ; output ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; W2       ; 237        ; 6        ; r5                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; W3       ; 226        ; 7        ; r4                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; W4       ; 227        ; 7        ; r7                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; W1       ; 236        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; W2       ; 237        ; 6        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; W3       ; 226        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; W4       ; 227        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; W5       ; 214        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; W6       ; 211        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; W7       ; 199        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -702,7 +702,7 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.
 ; W22      ; 93         ; 1        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; Y1       ;            ; 6        ; VCCIO6                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
 ; Y2       ; 222        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; Y3       ; 228        ; 7        ; r6                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; Y3       ; 228        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; Y4       ; 223        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; Y5       ; 215        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; Y6       ; 206        ; 7        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -771,7 +771,7 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name ;
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
-; |encoder_8-3               ; 10 (10)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 14   ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_8-3        ;
+; |encoder_8-3               ; 11 (11)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 14   ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_8-3        ;
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -806,42 +806,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; EI                  ;                   ;         ;
 ;      - inst28~105   ; 0                 ; ON      ;
 ;      - inst28~107   ; 0                 ; ON      ;
-;      - inst27~60    ; 0                 ; ON      ;
-;      - inst26~21    ; 0                 ; ON      ;
+;      - inst27~55    ; 0                 ; ON      ;
+;      - inst26~24    ; 0                 ; ON      ;
 ;      - inst24       ; 0                 ; ON      ;
 ;      - inst25       ; 0                 ; ON      ;
 ; r7                  ;                   ;         ;
 ;      - inst28~105   ; 0                 ; ON      ;
-;      - inst27~60    ; 0                 ; ON      ;
-;      - inst26~20    ; 0                 ; ON      ;
+;      - inst27~55    ; 0                 ; ON      ;
+;      - inst26~23    ; 0                 ; ON      ;
 ; r5                  ;                   ;         ;
 ;      - inst28~105   ; 0                 ; ON      ;
-;      - inst27~59    ; 0                 ; ON      ;
-;      - inst26~20    ; 0                 ; ON      ;
+;      - inst26~23    ; 0                 ; ON      ;
+;      - inst27~56    ; 0                 ; ON      ;
 ; r6                  ;                   ;         ;
 ;      - inst28~105   ; 0                 ; ON      ;
 ;      - inst28~107   ; 0                 ; ON      ;
-;      - inst27~60    ; 0                 ; ON      ;
-;      - inst26~21    ; 0                 ; ON      ;
-;      - inst25~28    ; 0                 ; ON      ;
+;      - inst27~55    ; 0                 ; ON      ;
+;      - inst26~23    ; 0                 ; ON      ;
 ; r3                  ;                   ;         ;
-;      - inst28~106   ; 0                 ; ON      ;
-;      - inst27~59    ; 0                 ; ON      ;
-;      - inst25~28    ; 0                 ; ON      ;
-; r1                  ;                   ;         ;
 ;      - inst28~106   ; 1                 ; ON      ;
-;      - inst24       ; 1                 ; ON      ;
-;      - inst25       ; 1                 ; ON      ;
+;      - inst27~54    ; 1                 ; ON      ;
+;      - inst27~56    ; 1                 ; ON      ;
+; r1                  ;                   ;         ;
+;      - inst28~106   ; 0                 ; ON      ;
+;      - inst25~25    ; 0                 ; ON      ;
 ; r2                  ;                   ;         ;
 ;      - inst28~106   ; 1                 ; ON      ;
-;      - inst27~59    ; 1                 ; ON      ;
-;      - inst25~28    ; 1                 ; ON      ;
+;      - inst27~54    ; 1                 ; ON      ;
+;      - inst27~56    ; 1                 ; ON      ;
 ; r4                  ;                   ;         ;
-;      - inst28~106   ; 1                 ; ON      ;
-;      - inst27~59    ; 1                 ; ON      ;
-;      - inst26~20    ; 1                 ; ON      ;
+;      - inst28~106   ; 0                 ; ON      ;
+;      - inst26~23    ; 0                 ; ON      ;
+;      - inst27~56    ; 0                 ; ON      ;
 ; r0                  ;                   ;         ;
-;      - inst25~28    ; 1                 ; ON      ;
+;      - inst25~25    ; 1                 ; ON      ;
 +---------------------+-------------------+---------+
 
 
@@ -851,21 +849,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name       ; Fan-Out            ;
 +------------+--------------------+
 ; EI         ; 6                  ;
-; r6         ; 5                  ;
+; r6         ; 4                  ;
 ; r4         ; 3                  ;
 ; r2         ; 3                  ;
-; r1         ; 3                  ;
 ; r3         ; 3                  ;
 ; r5         ; 3                  ;
 ; r7         ; 3                  ;
-; inst26~20  ; 3                  ;
-; inst25~28  ; 2                  ;
+; r1         ; 2                  ;
+; inst25~25  ; 2                  ;
+; inst26~23  ; 2                  ;
 ; r0         ; 1                  ;
+; inst27~56  ; 1                  ;
 ; inst25     ; 1                  ;
 ; inst24     ; 1                  ;
-; inst26~21  ; 1                  ;
-; inst27~60  ; 1                  ;
-; inst27~59  ; 1                  ;
+; inst26~24  ; 1                  ;
+; inst27~55  ; 1                  ;
+; inst27~54  ; 1                  ;
 ; inst28~107 ; 1                  ;
 ; inst28~106 ; 1                  ;
 ; inst28~105 ; 1                  ;
@@ -877,9 +876,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+----------------------+
 ; Interconnect Resource Type  ; Usage                ;
 +-----------------------------+----------------------+
-; C16 interconnects           ; 1 / 2,286 ( < 1 % )  ;
+; C16 interconnects           ; 4 / 2,286 ( < 1 % )  ;
 ; C4 interconnects            ; 8 / 31,320 ( < 1 % ) ;
-; C8 interconnects            ; 3 / 7,272 ( < 1 % )  ;
+; C8 interconnects            ; 2 / 7,272 ( < 1 % )  ;
 ; DIFFIOCLKs                  ; 0 / 16 ( 0 % )       ;
 ; DQS bus muxes               ; 0 / 56 ( 0 % )       ;
 ; DQS-32 I/O buses            ; 0 / 4 ( 0 % )        ;
@@ -888,21 +887,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Fast regional clocks        ; 0 / 8 ( 0 % )        ;
 ; Global clocks               ; 0 / 16 ( 0 % )       ;
 ; I/O buses                   ; 0 / 208 ( 0 % )      ;
-; LUT chains                  ; 1 / 9,513 ( < 1 % )  ;
+; LUT chains                  ; 2 / 9,513 ( < 1 % )  ;
 ; Local routing interconnects ; 4 / 10,570 ( < 1 % ) ;
 ; R24 interconnects           ; 0 / 2,280 ( 0 % )    ;
-; R4 interconnects            ; 2 / 62,520 ( < 1 % ) ;
-; R8 interconnects            ; 0 / 10,410 ( 0 % )   ;
+; R4 interconnects            ; 7 / 62,520 ( < 1 % ) ;
+; R8 interconnects            ; 1 / 10,410 ( < 1 % ) ;
 ; Regional clocks             ; 0 / 16 ( 0 % )       ;
 +-----------------------------+----------------------+
 
 
++--------------------------------------------------------------------------+
+; LAB Logic Elements                                                       ;
++--------------------------------------------+-----------------------------+
+; Number of Logic Elements  (Average = 5.50) ; Number of LABs  (Total = 2) ;
++--------------------------------------------+-----------------------------+
+; 1                                          ; 1                           ;
+; 2                                          ; 0                           ;
+; 3                                          ; 0                           ;
+; 4                                          ; 0                           ;
+; 5                                          ; 0                           ;
+; 6                                          ; 0                           ;
+; 7                                          ; 0                           ;
+; 8                                          ; 0                           ;
+; 9                                          ; 0                           ;
+; 10                                         ; 1                           ;
++--------------------------------------------+-----------------------------+
+
+
 +---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
+; LAB Signals Sourced                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.00) ; Number of LABs  (Total = 1) ;
+; Number of Signals Sourced  (Average = 5.50) ; Number of LABs  (Total = 2) ;
 +---------------------------------------------+-----------------------------+
-; 1                                           ; 0                           ;
+; 0                                           ; 0                           ;
+; 1                                           ; 1                           ;
 ; 2                                           ; 0                           ;
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
@@ -915,32 +933,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+-----------------------------+
 
 
-+----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 10.00) ; Number of LABs  (Total = 1) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 0                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 0                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 1                           ;
-+----------------------------------------------+-----------------------------+
-
-
 +-------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                       ;
 +-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 5.00) ; Number of LABs  (Total = 1) ;
+; Number of Signals Sourced Out  (Average = 3.00) ; Number of LABs  (Total = 2) ;
 +-------------------------------------------------+-----------------------------+
 ; 0                                               ; 0                           ;
-; 1                                               ; 0                           ;
+; 1                                               ; 1                           ;
 ; 2                                               ; 0                           ;
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
@@ -951,18 +950,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                       ;
 +---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 9.00) ; Number of LABs  (Total = 1) ;
+; Number of Distinct Inputs  (Average = 6.00) ; Number of LABs  (Total = 2) ;
 +---------------------------------------------+-----------------------------+
 ; 0                                           ; 0                           ;
 ; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
+; 2                                           ; 1                           ;
 ; 3                                           ; 0                           ;
 ; 4                                           ; 0                           ;
 ; 5                                           ; 0                           ;
 ; 6                                           ; 0                           ;
 ; 7                                           ; 0                           ;
 ; 8                                           ; 0                           ;
-; 9                                           ; 1                           ;
+; 9                                           ; 0                           ;
+; 10                                          ; 1                           ;
 +---------------------------------------------+-----------------------------+
 
 
@@ -972,7 +972,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Nov 12 10:27:16 2022
+    Info: Processing started: Sat Nov 12 13:31:52 2022
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off encoder_8-3 -c encoder_8-3
 Info: Auto device selection -- successful I/O standard check for EP1S10F484C5
 Info: Auto device selection -- successful PCI I/O clamp diode check for EP1S10F484C5
@@ -1043,7 +1043,7 @@ Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Info: Completed Auto Delay Chain Operation
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Nov 12 10:27:18 2022
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sat Nov 12 13:31:57 2022
+    Info: Elapsed time: 00:00:06
 
 

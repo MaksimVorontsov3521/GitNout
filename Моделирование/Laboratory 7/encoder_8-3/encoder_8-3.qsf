@@ -29,6 +29,7 @@ set_global_assignment -name ORIGINAL_QUARTUS_VERSION 5.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:40:31  NOVEMBER 12, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION 5.0
 set_global_assignment -name BDF_FILE "encoder_8-3.bdf"
+set_global_assignment -name VECTOR_WAVEFORM_FILE "encoder_8-3.vwf"
 
 # Analysis & Synthesis Assignments
 # ================================

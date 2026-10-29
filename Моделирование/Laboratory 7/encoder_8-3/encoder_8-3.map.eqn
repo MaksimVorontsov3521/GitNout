@@ -11,64 +11,70 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---A1L41 is inst28~105
+--A1L51 is inst28~105
 --operation mode is normal
 
-A1L41 = EI & (r7 # r5 & !r6);
+A1L51 = EI & (r7 # r5 & !r6);
 
 
---A1L51 is inst28~106
+--A1L61 is inst28~106
 --operation mode is normal
 
-A1L51 = !r4 & (r3 # r1 & !r2);
+A1L61 = !r4 & (r3 # r1 & !r2);
 
 
---A1L61 is inst28~107
+--A1L71 is inst28~107
 --operation mode is normal
 
-A1L61 = A1L41 # A1L51 & EI & !r6;
+A1L71 = A1L51 # A1L61 & EI & !r6;
 
 
---A1L21 is inst27~59
+--A1L21 is inst27~54
 --operation mode is normal
 
-A1L21 = !r4 & !r5 & (r2 # r3);
+A1L21 = !r2 & !r3;
 
 
---A1L31 is inst27~60
+--A1L31 is inst27~55
 --operation mode is normal
 
-A1L31 = EI & (r6 # r7 # A1L21);
+A1L31 = EI & (r6 # r7 # !A1L41);
 
 
---A1L01 is inst26~20
+--A1L01 is inst26~23
 --operation mode is normal
 
-A1L01 = !r4 & !r5 & !r7;
+A1L01 = !r4 & !r6 & !r5 & !r7;
 
 
---A1L11 is inst26~21
+--A1L11 is inst26~24
 --operation mode is normal
 
-A1L11 = EI & (!A1L01 # !r6);
+A1L11 = EI & (!A1L01);
 
 
---A1L9 is inst25~28
+--A1L9 is inst25~25
 --operation mode is normal
 
-A1L9 = !r2 & !r3 & !r6 & !r0;
+A1L9 = A1L21 & A1L01 & !r1 & !r0;
 
 
 --inst24 is inst24
 --operation mode is normal
 
-inst24 = EI & (r1 # !A1L9 # !A1L01);
+inst24 = EI & (!A1L9);
 
 
 --inst25 is inst25
 --operation mode is normal
 
-inst25 = EI & A1L01 & A1L9 & !r1;
+inst25 = EI & A1L9;
+
+
+--A1L41 is inst27~56
+--operation mode is normal
+
+A1L41 = r4 # r5 # !r2 & !r3;
 
 
 --EI is EI
@@ -128,7 +134,7 @@ r0 = INPUT();
 --A0 is A0
 --operation mode is output
 
-A0 = OUTPUT(A1L61);
+A0 = OUTPUT(A1L71);
 
 
 --A1 is A1

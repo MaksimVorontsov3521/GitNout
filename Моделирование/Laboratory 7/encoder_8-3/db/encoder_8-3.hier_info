@@ -2,6 +2,7 @@
 A0 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
 r6 => inst20.IN0
 r6 => inst35.IN1
+r6 => inst36.IN3
 r6 => inst22.IN6
 r4 => inst18.IN0
 r4 => inst36.IN2

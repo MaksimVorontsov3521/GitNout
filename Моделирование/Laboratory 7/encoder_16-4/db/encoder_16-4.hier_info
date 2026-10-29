@@ -1,0 +1,107 @@
+|encoder_16-4
+a0 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+r8 => encoder_8-3:inst4.r0
+r9 => encoder_8-3:inst4.r1
+r10 => encoder_8-3:inst4.r2
+r11 => encoder_8-3:inst4.r3
+r12 => encoder_8-3:inst4.r4
+r13 => encoder_8-3:inst4.r5
+r14 => encoder_8-3:inst4.r6
+r15 => encoder_8-3:inst4.r7
+EL => encoder_8-3:inst4.EI
+r0 => encoder_8-3:inst.r0
+r1 => encoder_8-3:inst.r1
+r2 => encoder_8-3:inst.r2
+r3 => encoder_8-3:inst.r3
+r4 => encoder_8-3:inst.r4
+r5 => encoder_8-3:inst.r5
+r6 => encoder_8-3:inst.r6
+r7 => encoder_8-3:inst.r7
+a1 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+a2 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+a3 <= inst10.DB_MAX_OUTPUT_PORT_TYPE
+G <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|encoder_16-4|encoder_8-3:inst4
+A0 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+r6 => inst20.IN0
+r6 => inst35.IN1
+r6 => inst36.IN3
+r6 => inst22.IN6
+r4 => inst18.IN0
+r4 => inst36.IN2
+r4 => inst22.IN5
+r2 => inst16.IN0
+r2 => inst33.IN1
+r2 => inst22.IN1
+r1 => inst29.IN3
+r1 => inst22.IN2
+r1 => inst15.IN0
+r5 => inst31.IN0
+r5 => inst19.IN0
+r5 => inst36.IN1
+r5 => inst22.IN4
+r7 => inst34.IN2
+r7 => inst35.IN2
+r7 => inst36.IN0
+r7 => inst22.IN7
+r7 => inst21.IN0
+r3 => inst30.IN2
+r3 => inst32.IN2
+r3 => inst22.IN3
+r3 => inst17.IN0
+EI => inst28.IN1
+EI => inst27.IN1
+EI => inst26.IN1
+EI => inst24.IN1
+EI => inst25.IN1
+A1 <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+A2 <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+G <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+r0 => inst22.IN0
+r0 => inst.IN0
+E0 <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|encoder_16-4|encoder_8-3:inst
+A0 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+r6 => inst20.IN0
+r6 => inst35.IN1
+r6 => inst36.IN3
+r6 => inst22.IN6
+r4 => inst18.IN0
+r4 => inst36.IN2
+r4 => inst22.IN5
+r2 => inst16.IN0
+r2 => inst33.IN1
+r2 => inst22.IN1
+r1 => inst29.IN3
+r1 => inst22.IN2
+r1 => inst15.IN0
+r5 => inst31.IN0
+r5 => inst19.IN0
+r5 => inst36.IN1
+r5 => inst22.IN4
+r7 => inst34.IN2
+r7 => inst35.IN2
+r7 => inst36.IN0
+r7 => inst22.IN7
+r7 => inst21.IN0
+r3 => inst30.IN2
+r3 => inst32.IN2
+r3 => inst22.IN3
+r3 => inst17.IN0
+EI => inst28.IN1
+EI => inst27.IN1
+EI => inst26.IN1
+EI => inst24.IN1
+EI => inst25.IN1
+A1 <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+A2 <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+G <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+r0 => inst22.IN0
+r0 => inst.IN0
+E0 <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+
+

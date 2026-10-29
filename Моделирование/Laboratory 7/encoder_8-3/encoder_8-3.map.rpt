@@ -1,5 +1,5 @@
 Analysis & Synthesis report for encoder_8-3
-Sat Nov 12 10:27:15 2022
+Sat Nov 12 13:31:50 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -40,12 +40,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Nov 12 10:27:15 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Nov 12 13:31:50 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; encoder_8-3                              ;
 ; Top-level Entity Name       ; encoder_8-3                              ;
 ; Family                      ; Stratix                                  ;
-; Total logic elements        ; 10                                       ;
+; Total logic elements        ; 11                                       ;
 ; Total pins                  ; 14                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; Total memory bits           ; 0                                        ;
@@ -127,11 +127,11 @@ applicable agreement for further details.
 +---------------------------------+-----------+
 ; Resource                        ; Usage     ;
 +---------------------------------+-----------+
-; Total logic elements            ; 10        ;
-; Total combinational functions   ; 10        ;
-;     -- Total 4-input functions  ; 8         ;
-;     -- Total 3-input functions  ; 2         ;
-;     -- Total 2-input functions  ; 0         ;
+; Total logic elements            ; 11        ;
+; Total combinational functions   ; 11        ;
+;     -- Total 4-input functions  ; 7         ;
+;     -- Total 3-input functions  ; 0         ;
+;     -- Total 2-input functions  ; 4         ;
 ;     -- Total 1-input functions  ; 0         ;
 ;     -- Total 0-input functions  ; 0         ;
 ; Combinational cells for routing ; 0         ;
@@ -139,8 +139,8 @@ applicable agreement for further details.
 ; I/O pins                        ; 14        ;
 ; Maximum fan-out node            ; EI        ;
 ; Maximum fan-out                 ; 6         ;
-; Total fan-out                   ; 43        ;
-; Average fan-out                 ; 1.79      ;
+; Total fan-out                   ; 41        ;
+; Average fan-out                 ; 1.64      ;
 +---------------------------------+-----------+
 
 
@@ -149,7 +149,7 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name ;
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
-; |encoder_8-3               ; 10 (10)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 14   ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_8-3        ;
+; |encoder_8-3               ; 11 (11)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 14   ; 0            ; 11 (11)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_8-3        ;
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -181,17 +181,17 @@ The equations can be found in C:/altera/Laboratory 7/encoder_8-3/encoder_8-3.map
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Nov 12 10:27:14 2022
+    Info: Processing started: Sat Nov 12 13:31:50 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off encoder_8-3 -c encoder_8-3
 Info: Found 1 design units, including 1 entities, in source file encoder_8-3.bdf
     Info: Found entity 1: encoder_8-3
 Info: Elaborating entity "encoder_8-3" for the top level hierarchy
-Info: Implemented 24 device resources after synthesis - the final resource count might be different
+Info: Implemented 25 device resources after synthesis - the final resource count might be different
     Info: Implemented 9 input pins
     Info: Implemented 5 output pins
-    Info: Implemented 10 logic cells
+    Info: Implemented 11 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Nov 12 10:27:15 2022
+    Info: Processing ended: Sat Nov 12 13:31:50 2022
     Info: Elapsed time: 00:00:01
 
 

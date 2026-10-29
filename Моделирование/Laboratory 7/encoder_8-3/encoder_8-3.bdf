@@ -1666,10 +1666,6 @@ applicable agreement for further details.
 	(pt 424 496)
 )
 (connector
-	(pt 424 496)
-	(pt 888 496)
-)
-(connector
 	(pt 888 -72)
 	(pt 992 -72)
 )
@@ -1720,18 +1716,6 @@ applicable agreement for further details.
 (connector
 	(pt 912 -56)
 	(pt 1000 -56)
-)
-(connector
-	(pt 912 464)
-	(pt 912 -56)
-)
-(connector
-	(pt 768 464)
-	(pt 912 464)
-)
-(connector
-	(pt 912 464)
-	(pt 920 464)
 )
 (connector
 	(pt 752 424)
@@ -1821,6 +1805,22 @@ applicable agreement for further details.
 	(pt 1240 -160)
 	(pt 1584 -160)
 )
+(connector
+	(pt 424 496)
+	(pt 888 496)
+)
+(connector
+	(pt 888 496)
+	(pt 912 496)
+)
+(connector
+	(pt 768 464)
+	(pt 920 464)
+)
+(connector
+	(pt 912 496)
+	(pt 912 -56)
+)
 (junction (pt 296 72))
 (junction (pt 296 136))
 (junction (pt 296 200))
@@ -1850,8 +1850,8 @@ applicable agreement for further details.
 (junction (pt 424 496))
 (junction (pt 1144 -344))
 (junction (pt 1144 -240))
-(junction (pt 912 464))
 (junction (pt 752 424))
 (junction (pt 472 368))
 (junction (pt 1528 -248))
 (junction (pt 1528 -144))
+(junction (pt 888 496))
