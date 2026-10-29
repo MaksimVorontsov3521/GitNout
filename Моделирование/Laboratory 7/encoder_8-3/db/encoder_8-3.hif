@@ -1,0 +1,28 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+encoder_8-3
+# case_insensitive
+# source_file
+encoder_8-3.bdf
+1668238033
+23
+# storage
+db|encoder_8-3.(0).cnf
+db|encoder_8-3.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

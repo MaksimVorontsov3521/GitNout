@@ -1,0 +1,40 @@
+|encoder_8-3
+A0 <= inst28.DB_MAX_OUTPUT_PORT_TYPE
+r6 => inst20.IN0
+r6 => inst35.IN1
+r6 => inst22.IN6
+r4 => inst18.IN0
+r4 => inst36.IN2
+r4 => inst22.IN5
+r2 => inst16.IN0
+r2 => inst33.IN1
+r2 => inst22.IN1
+r1 => inst29.IN3
+r1 => inst22.IN2
+r1 => inst15.IN0
+r5 => inst31.IN0
+r5 => inst19.IN0
+r5 => inst36.IN1
+r5 => inst22.IN4
+r7 => inst34.IN2
+r7 => inst35.IN2
+r7 => inst36.IN0
+r7 => inst22.IN7
+r7 => inst21.IN0
+r3 => inst30.IN2
+r3 => inst32.IN2
+r3 => inst22.IN3
+r3 => inst17.IN0
+EI => inst28.IN1
+EI => inst27.IN1
+EI => inst26.IN1
+EI => inst24.IN1
+EI => inst25.IN1
+A1 <= inst27.DB_MAX_OUTPUT_PORT_TYPE
+A2 <= inst26.DB_MAX_OUTPUT_PORT_TYPE
+G <= inst24.DB_MAX_OUTPUT_PORT_TYPE
+r0 => inst22.IN0
+r0 => inst.IN0
+E0 <= inst25.DB_MAX_OUTPUT_PORT_TYPE
+
+
