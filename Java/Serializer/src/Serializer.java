@@ -6,3 +6,4 @@ public interface Serializer {
     String serialize(Object[] objs);
     String serialize(Map<?, ?> map);
 }
+

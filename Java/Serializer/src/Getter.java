@@ -32,7 +32,7 @@ public final class Getter {
             try {
                 properties.put(methodName, method.invoke(obj));
             } catch (IllegalAccessException | InvocationTargetException e) {
-                throw new RuntimeException("Не удалось вызвать геттер " + method.getName());
+                throw new RuntimeException("Couldn't call getter" + method.getName());
             }
         }
 

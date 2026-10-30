@@ -1,99 +1,156 @@
+import java.lang.reflect.Field;
 import java.util.Map;
 
-public class JsonSerializer implements Serializer {
+public class JsonSerializer implements Serializer, SerializerGetOnly {
 
-    private static final int MAX_DEPTH = 32;
+    // Serializer 1.2
 
-    @Override public String serialize(Object[] objs) { return serializeArray(objs, 0); }
-    @Override public String serialize(Map<?, ?> map) { return serializeMap(map, 0); }
+    private String serializeObjGetOnly(Object obj){
+        try {
+            Map<String, Object> mapGet = Getter.getProperties(obj);
+            StringBuilder SB = new StringBuilder();
+            SB.append("{");
+
+            for (Map.Entry<String, Object> entry : mapGet.entrySet()) {
+                SB.append("\"").append(entry.getKey()).append("\": ")
+                        .append(entry.getValue())
+                        .append(",");
+
+            }
+
+            SB.append("}\n");
+            return SB.toString();
+        }
+        catch (RuntimeException e)
+        {
+            throw new RuntimeException(
+                    "Failed to serialize an object of class " + obj.getClass(), e);
+        }
+
+    }
+
+    private String serializeIterableGetOnly(Iterable<?> iterable, Object obj){
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+
+        for (Object object : iterable) {
+            SB.append(serializeObjGetOnly(object));
+        }
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
+    }
+
+    @Override
+    public String serializeGetOnly(Object obj) {
+        String json;
+        if (obj instanceof Iterable) {
+            Iterable<?> iterable = (Iterable<?>) obj;
+            json = serializeIterableGetOnly(iterable,obj);
+        } else {
+            json = serializeObjGetOnly(obj);
+        }
+        return json;
+    }
+
+    @Override
+    public String serializeGetOnly(Object[] objs) {
+
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+
+        for (Object obj : objs) {
+            SB.append(serializeObjGetOnly(obj));
+        }
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
+    }
+
+    @Override
+    public String serializeGetOnly(Map<?,?> map){
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+        for (Object value : map.values()) {
+            SB.append(serializeObjGetOnly(value));
+        }
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
+    }
+
+
+    // Serializer 1.1
+
+    private String serializeObj(Object obj){
+
+        StringBuilder SB = new StringBuilder();
+        SB.append("{");
+
+        for (Field field : obj.getClass().getDeclaredFields()) {
+            field.setAccessible(true);
+            try {
+                Object value = field.get(obj);
+                SB.append("\"").append(field.getName()).append("\": ")
+                        .append(value)
+                        .append(",");
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException("Не удалось прочитать поле " + field.getName(), e);
+            }
+        }
+
+        SB.append("}\n");
+        return SB.toString();
+
+    }
+
+    private String serializeIterable(Iterable<?> iterable, Object obj){
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+
+        for (Object object : iterable) {
+            SB.append(serializeObj(object));
+        }
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
+    }
 
     @Override
     public String serialize(Object obj) {
-        if (obj == null)                            return "null";
-        if (obj instanceof Object[] array)          return serializeArray(array, 0);
-        if (obj instanceof Iterable<?> iterable)    return serializeIterable(iterable, 0);
-        if (obj instanceof Map<?, ?> map)           return serializeMap(map, 0);
-        return serializeObj(obj, 0);
-    }
-
-    private String serializeObj(Object obj, int depth) {
-        checkDepth(depth);
-        StringBuilder sb = new StringBuilder("{");
-        boolean first = true;
-        for (Map.Entry<String, Object> variable : Getter.getProperties(obj).entrySet()) {
-            if (!first) sb.append(", ");
-            first = false;
-            sb.append('"').append(escape(variable.getKey())).append("\": ")
-                    .append(serializeValue(variable.getValue(), depth + 1));
+        String json;
+        if (obj instanceof Iterable) {
+            Iterable<?> iterable = (Iterable<?>) obj;
+            json = serializeIterable(iterable,obj);
+        } else {
+            json = serializeObj(obj);
         }
-        return sb.append('}').toString();
+        return json;
     }
 
-    private String serializeArray(Object[] objs, int depth) {
-        checkDepth(depth);
-        StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < objs.length; i++) {
-            if (i > 0) sb.append(", ");
-            sb.append(serializeValue(objs[i], depth + 1));
+    @Override
+    public String serialize(Object[] objs) {
+
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
+
+        for (Object obj : objs) {
+            SB.append(serializeObj(obj));
         }
-        return sb.append(']').toString();
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
     }
 
-    private String serializeIterable(Iterable<?> iterable, int depth) {
-        checkDepth(depth);
-        StringBuilder sb = new StringBuilder("[");
-        boolean first = true;
-        for (Object o : iterable) {
-            if (!first) sb.append(", ");
-            first = false;
-            sb.append(serializeValue(o, depth + 1));
-        }
-        return sb.append(']').toString();
-    }
-
-    private String serializeMap(Map<?, ?> map, int depth) {
-        checkDepth(depth);
-        StringBuilder sb = new StringBuilder("[");
-        boolean first = true;
+    @Override
+    public String serialize(Map<?,?> map){
+        StringBuilder SB = new StringBuilder();
+        SB.append("[");
         for (Object value : map.values()) {
-            if (!first) sb.append(", ");
-            first = false;
-            sb.append(serializeValue(value, depth + 1));
+            SB.append(serializeObj(value));
         }
-        return sb.append(']').toString();
+        SB.deleteCharAt(SB.length() - 1);
+        SB.append("]\n");
+        return SB.toString();
     }
-
-
-    private String serializeValue(Object value, int depth) {
-        checkDepth(depth);
-        if (value == null)                                          return "null";
-        if (value instanceof Number || value instanceof Boolean)    return value.toString();
-        if (value instanceof Enum<?> e)                             return '"' + escape(e.name()) + '"';
-        if (value instanceof Object[] array)                        return serializeArray(array, depth);
-        if (value instanceof Iterable<?> iterable)                  return serializeIterable(iterable, depth);
-        return serializeObj(value, depth);
-    }
-
-    private void checkDepth(int depth) {
-        if (depth > MAX_DEPTH) {
-            throw new IllegalStateException( "Превышена максимальная глубина (" + MAX_DEPTH + ").");
-        }
-    }
-
-    private String escape(String s) {
-        StringBuilder sb = new StringBuilder(s.length());
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            switch (c) {
-                case '"'  -> sb.append("\\\"");
-                case '\\' -> sb.append("\\\\");
-                case '\n' -> sb.append("\\n");
-                case '\r' -> sb.append("\\r");
-                case '\t' -> sb.append("\\t");
-                default   -> sb.append(c);
-            }
-        }
-        return sb.toString();
-    }
-
 }
