@@ -1,6 +1,13 @@
-Flow Status : Flow Failed - Sat Nov 12 13:53:47 2022
+Flow Status : Successful - Wed Nov 16 11:10:41 2022
 Quartus II Version : 5.0 Build 148 04/26/2005 SJ Full Version
 Revision Name : encoder_16-4
 Top-level Entity Name : encoder_16-4
 Family : Stratix
 Met timing requirements : N/A
+Total logic elements : 19
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 0
+DSP block 9-bit elements : 0
+Total PLLs : 0
+Total DLLs : 0

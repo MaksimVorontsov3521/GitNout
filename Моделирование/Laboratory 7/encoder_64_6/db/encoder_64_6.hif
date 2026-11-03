@@ -1,0 +1,66 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+multiplexer_8-1
+# case_insensitive
+# source_file
+multiplexer_8-1.bdf
+1668696704
+23
+# storage
+db|encoder_64_6.(1).cnf
+db|encoder_64_6.(1).cnf
+# hierarchies {
+multiplexer_8-1:inst11
+multiplexer_8-1:inst12
+multiplexer_8-1:inst13
+multiplexer_8-1:inst14
+}
+# end
+# entity
+encoder_8-3
+# case_insensitive
+# source_file
+encoder_8-3.bdf
+1793330008
+23
+# storage
+db|encoder_64_6.(2).cnf
+db|encoder_64_6.(2).cnf
+# hierarchies {
+encoder_8-3:E0
+encoder_8-3:E1
+encoder_8-3:E2
+encoder_8-3:E3
+encoder_8-3:E4
+encoder_8-3:E5
+encoder_8-3:E6
+encoder_8-3:E7
+}
+# end
+# entity
+encoder_64-6
+# case_insensitive
+# source_file
+encoder_64-6.bdf
+1668698935
+23
+# storage
+db|encoder_64_6.(0).cnf
+db|encoder_64_6.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

@@ -933,19 +933,11 @@ applicable agreement for further details.
 	(pt 632 64)
 )
 (connector
-	(pt 448 112)
-	(pt 488 112)
-)
-(connector
 	(pt 440 312)
 	(pt 488 312)
 )
 (connector
 	(pt 632 128)
-	(pt 488 128)
-)
-(connector
-	(pt 488 112)
 	(pt 488 128)
 )
 (connector
@@ -969,4 +961,3 @@ applicable agreement for further details.
 	(pt 712 264)
 )
 (junction (pt 544 264))
-(junction (pt 488 128))

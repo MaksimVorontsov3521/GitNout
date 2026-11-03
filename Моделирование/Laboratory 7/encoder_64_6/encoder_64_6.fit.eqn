@@ -1,0 +1,860 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1L1 is multiplexer_8-1:inst11|inst9~605 at LC_X52_Y25_N9
+--operation mode is normal
+
+C1L1 = !44 & (43 # 41 & !42);
+
+
+--C1L2 is multiplexer_8-1:inst11|inst9~606 at LC_X52_Y25_N8
+--operation mode is normal
+
+C1L2 = 47 # !46 & (C1L1 # 45);
+
+
+--C1L3 is multiplexer_8-1:inst11|inst9~607 at LC_X48_Y29_N9
+--operation mode is normal
+
+C1L3 = !60 & (59 # 57 & !58);
+
+
+--C1L4 is multiplexer_8-1:inst11|inst9~608 at LC_X48_Y29_N5
+--operation mode is normal
+
+C1L4 = 63 # !62 & (C1L3 # 61);
+
+
+--B8L5 is encoder_8-3:E7|inst36~2 at LC_X48_Y29_N3
+--operation mode is normal
+
+B8L5 = !62 & !60 & !63 & !61;
+
+
+--C2L31 is multiplexer_8-1:inst12|inst26~31 at LC_X50_Y29_N2
+--operation mode is normal
+
+C2L31 = !58 & !59;
+
+
+--B8L3 is encoder_8-3:E7|inst25~27 at LC_X48_Y29_N7
+--operation mode is normal
+
+B8L3 = !56 & !57;
+
+
+--B8_inst25 is encoder_8-3:E7|inst25 at LC_X48_Y29_N1
+--operation mode is normal
+
+B8_inst25 = B8L3 & EO & B8L5 & C2L31;
+
+
+--B7L3 is encoder_8-3:E6|inst25~51 at LC_X48_Y30_N7
+--operation mode is normal
+
+B7L3 = !52 & !48 & !50 & !53;
+
+
+--B7L4 is encoder_8-3:E6|inst25~52 at LC_X48_Y30_N1
+--operation mode is normal
+
+B7L4 = !54 & !55 & !51 & !49;
+
+
+--B7L5 is encoder_8-3:E6|inst25~53 at LC_X48_Y30_N5
+--operation mode is normal
+
+B7L5 = B7L3 & B7L4;
+
+
+--B6L4 is encoder_8-3:E5|inst36~2 at LC_X52_Y25_N6
+--operation mode is normal
+
+B6L4 = !44 & !47 & !45 & !46;
+
+
+--B6L3 is encoder_8-3:E5|inst25~28 at LC_X52_Y25_N2
+--operation mode is normal
+
+B6L3 = !41 & !43 & !42 & !40;
+
+
+--B6_inst25 is encoder_8-3:E5|inst25 at LC_X48_Y30_N4
+--operation mode is normal
+
+B6_inst25 = B6L3 & B8_inst25 & B6L4 & B7L5;
+
+
+--B5L1 is encoder_8-3:E4|inst25~55 at LC_X36_Y30_N7
+--operation mode is normal
+
+B5L1 = !36 & !32 & !34 & !37;
+
+
+--B5L2 is encoder_8-3:E4|inst25~56 at LC_X36_Y30_N6
+--operation mode is normal
+
+B5L2 = !35 & (!38);
+
+
+--B5L3 is encoder_8-3:E4|inst25~57 at LC_X36_Y30_N8
+--operation mode is normal
+
+B5L3 = !33 & !39 & B5L1 & B5L2;
+
+
+--B4L3 is encoder_8-3:E3|inst25~51 at LC_X36_Y30_N9
+--operation mode is normal
+
+B4L3 = !28 & !24 & !26 & !29;
+
+
+--B4L4 is encoder_8-3:E3|inst25~52 at LC_X36_Y30_N4
+--operation mode is normal
+
+B4L4 = !31 & !30 & !27 & !25;
+
+
+--B4L1 is encoder_8-3:E3|inst24~69 at LC_X46_Y30_N3
+--operation mode is normal
+
+B4L1 = B6_inst25 & B5L3 & (!B4L4 # !B4L3);
+
+
+--B4_inst25 is encoder_8-3:E3|inst25 at LC_X36_Y30_N5
+--operation mode is normal
+
+B4_inst25 = B5L3 & B4L3 & B6_inst25 & B4L4;
+
+
+--C2L7 is multiplexer_8-1:inst12|inst21~32 at LC_X47_Y30_N3
+--operation mode is normal
+
+C2L7 = !23 & (!22);
+
+
+--C2L8 is multiplexer_8-1:inst12|inst21~33 at LC_X47_Y30_N6
+--operation mode is normal
+
+C2L8 = !21 & (!20);
+
+
+--B3L3 is encoder_8-3:E2|inst25~28 at LC_X50_Y30_N4
+--operation mode is normal
+
+B3L3 = !17 & !19 & !18 & !16;
+
+
+--B3_inst24 is encoder_8-3:E2|inst24 at LC_X47_Y30_N0
+--operation mode is normal
+
+B3_inst24 = B4_inst25 & (!B3L3 # !C2L7 # !C2L8);
+
+
+--B8L4 is encoder_8-3:E7|inst25~28 at LC_X48_Y29_N4
+--operation mode is normal
+
+B8L4 = !56 & !57 & B8L5 & C2L31;
+
+
+--B7L1 is encoder_8-3:E6|inst24~65 at LC_X48_Y30_N3
+--operation mode is normal
+
+B7L1 = EO & B8L4 & (!B7L4 # !B7L3);
+
+
+--B8L1 is encoder_8-3:E7|inst24~100 at LC_X48_Y29_N0
+--operation mode is normal
+
+B8L1 = EO & (!C2L31 # !B8L5 # !B8L3);
+
+
+--A4OR is A4OR at LC_X46_Y30_N8
+--operation mode is normal
+
+A4OR = B4L1 # B3_inst24 # B7L1 # B8L1;
+
+
+--C2L1 is multiplexer_8-1:inst12|inst9~483 at LC_X48_Y30_N8
+--operation mode is normal
+
+C2L1 = A4OR & EO;
+
+
+--B7_inst25 is encoder_8-3:E6|inst25 at LC_X48_Y30_N2
+--operation mode is normal
+
+B7_inst25 = B7L3 & EO & B8L4 & B7L4;
+
+
+--C2L2 is multiplexer_8-1:inst12|inst9~484 at LC_X48_Y30_N9
+--operation mode is normal
+
+C2L2 = !A4OR & B7_inst25;
+
+
+--C1L5 is multiplexer_8-1:inst11|inst9~609 at LC_X47_Y29_N8
+--operation mode is normal
+
+C1L5 = C1L4 & (C2L1 # C1L2 & C2L2) # !C1L4 & (C1L2 & C2L2);
+
+
+--C1L6 is multiplexer_8-1:inst11|inst9~610 at LC_X46_Y30_N5
+--operation mode is normal
+
+C1L6 = !4 & (3 # 1 & !2);
+
+
+--C1L7 is multiplexer_8-1:inst11|inst9~611 at LC_X47_Y29_N4
+--operation mode is normal
+
+C1L7 = 7 # !6 & (5 # C1L6);
+
+
+--B3_inst25 is encoder_8-3:E2|inst25 at LC_X47_Y30_N8
+--operation mode is normal
+
+B3_inst25 = B4_inst25 & C2L8 & C2L7 & B3L3;
+
+
+--B2L1 is encoder_8-3:E1|inst25~48 at LC_X1_Y30_N4
+--operation mode is normal
+
+B2L1 = !13 & !12 & !8 & !10;
+
+
+--B2L2 is encoder_8-3:E1|inst25~49 at LC_X1_Y30_N5
+--operation mode is normal
+
+B2L2 = !11 & !14;
+
+
+--B2L3 is encoder_8-3:E1|inst25~50 at LC_X1_Y30_N2
+--operation mode is normal
+
+B2L3 = !15 & B2L2 & !9 & B2L1;
+
+
+--A1L07 is A3OR~11 at LC_X48_Y30_N0
+--operation mode is normal
+
+A1L07 = !B8L1 & (B6L3 & B6L4 # !B7_inst25);
+
+
+--A5OR is A5OR at LC_X46_Y30_N0
+--operation mode is normal
+
+A5OR = B7L1 # B6_inst25 & !B5L3 # !A1L07;
+
+
+--C4L1 is multiplexer_8-1:inst14|inst9~305 at LC_X46_Y30_N9
+--operation mode is normal
+
+C4L1 = !A5OR & B3_inst25 & B2L3;
+
+
+--A3OR is A3OR at LC_X46_Y30_N7
+--operation mode is normal
+
+A3OR = B4L1 # B3_inst25 & !B2L3 # !A1L07;
+
+
+--C1L8 is multiplexer_8-1:inst11|inst9~612 at LC_X46_Y30_N1
+--operation mode is normal
+
+C1L8 = A3OR & A5OR;
+
+
+--C1L9 is multiplexer_8-1:inst11|inst9~613 at LC_X47_Y29_N5
+--operation mode is normal
+
+C1L9 = C1L5 & (C1L8 # C4L1 & C1L7) # !C1L5 & (C4L1 & C1L7);
+
+
+--C3L4 is multiplexer_8-1:inst13|inst21~3 at LC_X47_Y30_N2
+--operation mode is normal
+
+C3L4 = !A3OR & (A4OR & !A5OR);
+
+
+--C1L11 is multiplexer_8-1:inst11|inst21~77 at LC_X50_Y30_N2
+--operation mode is normal
+
+C1L11 = 19 # 17 & !18;
+
+
+--C1L21 is multiplexer_8-1:inst11|inst21~78 at LC_X47_Y30_N1
+--operation mode is normal
+
+C1L21 = !22 & (21 # !20 & C1L11);
+
+
+--C1L01 is multiplexer_8-1:inst11|inst9~614 at LC_X47_Y30_N9
+--operation mode is normal
+
+C1L01 = C1L9 # C3L4 & (C1L21 # 23);
+
+
+--C2L3 is multiplexer_8-1:inst12|inst9~485 at LC_X47_Y29_N6
+--operation mode is normal
+
+C2L3 = !4 & !5 & (2 # 3);
+
+
+--C2L4 is multiplexer_8-1:inst12|inst9~486 at LC_X47_Y29_N0
+--operation mode is normal
+
+C2L4 = C4L1 & (7 # 6 # C2L3);
+
+
+--C2L9 is multiplexer_8-1:inst12|inst21~34 at LC_X50_Y30_N5
+--operation mode is normal
+
+C2L9 = !19 & !18;
+
+
+--C2L01 is multiplexer_8-1:inst12|inst21~35 at LC_X47_Y30_N4
+--operation mode is normal
+
+C2L01 = C3L4 & (C2L8 & !C2L9 # !C2L7);
+
+
+--C2L41 is multiplexer_8-1:inst12|inst26~32 at LC_X48_Y29_N6
+--operation mode is normal
+
+C2L41 = !60 & !61;
+
+
+--C2L51 is multiplexer_8-1:inst12|inst26~33 at LC_X48_Y29_N2
+--operation mode is normal
+
+C2L51 = 62 # 63 # C2L41 & !C2L31;
+
+
+--C2L11 is multiplexer_8-1:inst12|inst24~35 at LC_X52_Y25_N5
+--operation mode is normal
+
+C2L11 = !44 & (42 # 43);
+
+
+--C2L21 is multiplexer_8-1:inst12|inst24~36 at LC_X52_Y25_N4
+--operation mode is normal
+
+C2L21 = 46 # 47 # C2L11 & !45;
+
+
+--C2L5 is multiplexer_8-1:inst12|inst9~487 at LC_X47_Y29_N9
+--operation mode is normal
+
+C2L5 = C2L2 & (C2L21 # C2L1 & C2L51) # !C2L2 & (C2L1 & C2L51);
+
+
+--C2L6 is multiplexer_8-1:inst12|inst9~488 at LC_X47_Y29_N1
+--operation mode is normal
+
+C2L6 = C2L01 # C2L4 # C1L8 & C2L5;
+
+
+--C3L1 is multiplexer_8-1:inst13|inst9~336 at LC_X47_Y29_N2
+--operation mode is normal
+
+C3L1 = B6L4 & C2L1 & !B8L5 # !B6L4 & (C2L2 # C2L1 & !B8L5);
+
+
+--C4L2 is multiplexer_8-1:inst14|inst9~306 at LC_X47_Y29_N7
+--operation mode is normal
+
+C4L2 = !7 & !4 & !5 & !6;
+
+
+--C3L2 is multiplexer_8-1:inst13|inst9~337 at LC_X47_Y29_N3
+--operation mode is normal
+
+C3L2 = C4L2 & C1L8 & (C3L1) # !C4L2 & (C4L1 # C1L8 & C3L1);
+
+
+--C3L3 is multiplexer_8-1:inst13|inst9~338 at LC_X47_Y30_N7
+--operation mode is normal
+
+C3L3 = C3L2 # C3L4 & (!C2L7 # !C2L8);
+
+
+--B6L1 is encoder_8-3:E5|inst24~68 at LC_X48_Y30_N6
+--operation mode is normal
+
+B6L1 = B8_inst25 & B7L5 & (!B6L4 # !B6L3);
+
+
+--C4L3 is multiplexer_8-1:inst14|inst9~307 at LC_X48_Y29_N8
+--operation mode is normal
+
+C4L3 = B8L1 # !B4L1 & B6L1 & !B3_inst24;
+
+
+--C4L4 is multiplexer_8-1:inst14|inst9~308 at LC_X47_Y30_N5
+--operation mode is normal
+
+C4L4 = A3OR & (C4L3) # !A3OR & !A5OR & (B3_inst24);
+
+
+--C4L5 is multiplexer_8-1:inst14|inst9~309 at LC_X46_Y30_N4
+--operation mode is normal
+
+C4L5 = 1 # 3 # 0 # 2;
+
+
+--C4L6 is multiplexer_8-1:inst14|inst9~310 at LC_X46_Y30_N6
+--operation mode is normal
+
+C4L6 = !A4OR & (C4L5 # !C4L2);
+
+
+--C4L7 is multiplexer_8-1:inst14|inst9~311 at LC_X46_Y30_N2
+--operation mode is normal
+
+C4L7 = C4L4 # C4L1 & !A3OR & C4L6;
+
+
+--47 is 47 at PIN_K6
+--operation mode is input
+
+47 = INPUT();
+
+
+--45 is 45 at PIN_F1
+--operation mode is input
+
+45 = INPUT();
+
+
+--43 is 43 at PIN_F2
+--operation mode is input
+
+43 = INPUT();
+
+
+--41 is 41 at PIN_G2
+--operation mode is input
+
+41 = INPUT();
+
+
+--42 is 42 at PIN_H4
+--operation mode is input
+
+42 = INPUT();
+
+
+--44 is 44 at PIN_J4
+--operation mode is input
+
+44 = INPUT();
+
+
+--46 is 46 at PIN_J6
+--operation mode is input
+
+46 = INPUT();
+
+
+--63 is 63 at PIN_G3
+--operation mode is input
+
+63 = INPUT();
+
+
+--61 is 61 at PIN_E1
+--operation mode is input
+
+61 = INPUT();
+
+
+--59 is 59 at PIN_J7
+--operation mode is input
+
+59 = INPUT();
+
+
+--57 is 57 at PIN_K7
+--operation mode is input
+
+57 = INPUT();
+
+
+--58 is 58 at PIN_C3
+--operation mode is input
+
+58 = INPUT();
+
+
+--60 is 60 at PIN_F5
+--operation mode is input
+
+60 = INPUT();
+
+
+--62 is 62 at PIN_E2
+--operation mode is input
+
+62 = INPUT();
+
+
+--EO is EO at PIN_C6
+--operation mode is input
+
+EO = INPUT();
+
+
+--56 is 56 at PIN_G4
+--operation mode is input
+
+56 = INPUT();
+
+
+--50 is 50 at PIN_F3
+--operation mode is input
+
+50 = INPUT();
+
+
+--52 is 52 at PIN_B5
+--operation mode is input
+
+52 = INPUT();
+
+
+--48 is 48 at PIN_E5
+--operation mode is input
+
+48 = INPUT();
+
+
+--53 is 53 at PIN_D1
+--operation mode is input
+
+53 = INPUT();
+
+
+--51 is 51 at PIN_B4
+--operation mode is input
+
+51 = INPUT();
+
+
+--54 is 54 at PIN_G7
+--operation mode is input
+
+54 = INPUT();
+
+
+--55 is 55 at PIN_B3
+--operation mode is input
+
+55 = INPUT();
+
+
+--49 is 49 at PIN_C2
+--operation mode is input
+
+49 = INPUT();
+
+
+--40 is 40 at PIN_H3
+--operation mode is input
+
+40 = INPUT();
+
+
+--34 is 34 at PIN_D9
+--operation mode is input
+
+34 = INPUT();
+
+
+--36 is 36 at PIN_F9
+--operation mode is input
+
+36 = INPUT();
+
+
+--32 is 32 at PIN_F10
+--operation mode is input
+
+32 = INPUT();
+
+
+--37 is 37 at PIN_J9
+--operation mode is input
+
+37 = INPUT();
+
+
+--35 is 35 at PIN_E9
+--operation mode is input
+
+35 = INPUT();
+
+
+--38 is 38 at PIN_G9
+--operation mode is input
+
+38 = INPUT();
+
+
+--39 is 39 at PIN_H8
+--operation mode is input
+
+39 = INPUT();
+
+
+--33 is 33 at PIN_K8
+--operation mode is input
+
+33 = INPUT();
+
+
+--26 is 26 at PIN_J8
+--operation mode is input
+
+26 = INPUT();
+
+
+--28 is 28 at PIN_L7
+--operation mode is input
+
+28 = INPUT();
+
+
+--24 is 24 at PIN_H10
+--operation mode is input
+
+24 = INPUT();
+
+
+--29 is 29 at PIN_K10
+--operation mode is input
+
+29 = INPUT();
+
+
+--27 is 27 at PIN_D8
+--operation mode is input
+
+27 = INPUT();
+
+
+--30 is 30 at PIN_C8
+--operation mode is input
+
+30 = INPUT();
+
+
+--31 is 31 at PIN_C9
+--operation mode is input
+
+31 = INPUT();
+
+
+--25 is 25 at PIN_B8
+--operation mode is input
+
+25 = INPUT();
+
+
+--23 is 23 at PIN_F4
+--operation mode is input
+
+23 = INPUT();
+
+
+--22 is 22 at PIN_B2
+--operation mode is input
+
+22 = INPUT();
+
+
+--21 is 21 at PIN_D5
+--operation mode is input
+
+21 = INPUT();
+
+
+--20 is 20 at PIN_C5
+--operation mode is input
+
+20 = INPUT();
+
+
+--19 is 19 at PIN_D4
+--operation mode is input
+
+19 = INPUT();
+
+
+--18 is 18 at PIN_A4
+--operation mode is input
+
+18 = INPUT();
+
+
+--16 is 16 at PIN_C4
+--operation mode is input
+
+16 = INPUT();
+
+
+--17 is 17 at PIN_D3
+--operation mode is input
+
+17 = INPUT();
+
+
+--7 is 7 at PIN_C7
+--operation mode is input
+
+7 = INPUT();
+
+
+--5 is 5 at PIN_G5
+--operation mode is input
+
+5 = INPUT();
+
+
+--3 is 3 at PIN_A6
+--operation mode is input
+
+3 = INPUT();
+
+
+--1 is 1 at PIN_A7
+--operation mode is input
+
+1 = INPUT();
+
+
+--2 is 2 at PIN_F7
+--operation mode is input
+
+2 = INPUT();
+
+
+--4 is 4 at PIN_D6
+--operation mode is input
+
+4 = INPUT();
+
+
+--6 is 6 at PIN_A5
+--operation mode is input
+
+6 = INPUT();
+
+
+--10 is 10 at PIN_B21
+--operation mode is input
+
+10 = INPUT();
+
+
+--12 is 12 at PIN_D21
+--operation mode is input
+
+12 = INPUT();
+
+
+--8 is 8 at PIN_E20
+--operation mode is input
+
+8 = INPUT();
+
+
+--13 is 13 at PIN_M16
+--operation mode is input
+
+13 = INPUT();
+
+
+--11 is 11 at PIN_D20
+--operation mode is input
+
+11 = INPUT();
+
+
+--14 is 14 at PIN_D22
+--operation mode is input
+
+14 = INPUT();
+
+
+--15 is 15 at PIN_C20
+--operation mode is input
+
+15 = INPUT();
+
+
+--9 is 9 at PIN_D19
+--operation mode is input
+
+9 = INPUT();
+
+
+--0 is 0 at PIN_F6
+--operation mode is input
+
+0 = INPUT();
+
+
+--A0 is A0 at PIN_A8
+--operation mode is output
+
+A0 = OUTPUT(C1L01);
+
+
+--A1 is A1 at PIN_E7
+--operation mode is output
+
+A1 = OUTPUT(C2L6);
+
+
+--A2 is A2 at PIN_D2
+--operation mode is output
+
+A2 = OUTPUT(C3L3);
+
+
+--GS is GS at PIN_D7
+--operation mode is output
+
+GS = OUTPUT(C4L7);
+
+
+--A3 is A3 at PIN_B6
+--operation mode is output
+
+A3 = OUTPUT(A3OR);
+
+
+--A4 is A4 at PIN_B7
+--operation mode is output
+
+A4 = OUTPUT(A4OR);
+
+
+--A5 is A5 at PIN_E6
+--operation mode is output
+
+A5 = OUTPUT(A5OR);
+
+
+

@@ -1,5 +1,5 @@
 Flow report for encoder_16-4
-Sat Nov 12 13:53:47 2022
+Wed Nov 16 11:10:47 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -33,16 +33,25 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------+
-; Flow Summary                                                       ;
-+-------------------------+------------------------------------------+
-; Flow Status             ; Flow Failed - Sat Nov 12 13:53:47 2022   ;
-; Quartus II Version      ; 5.0 Build 148 04/26/2005 SJ Full Version ;
-; Revision Name           ; encoder_16-4                             ;
-; Top-level Entity Name   ; encoder_16-4                             ;
-; Family                  ; Stratix                                  ;
-; Met timing requirements ; N/A                                      ;
-+-------------------------+------------------------------------------+
++---------------------------------------------------------------------+
+; Flow Summary                                                        ;
++--------------------------+------------------------------------------+
+; Flow Status              ; Successful - Wed Nov 16 11:10:47 2022    ;
+; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name            ; encoder_16-4                             ;
+; Top-level Entity Name    ; encoder_16-4                             ;
+; Family                   ; Stratix                                  ;
+; Met timing requirements  ; Yes                                      ;
+; Total logic elements     ; 19 / 10,570 ( < 1 % )                    ;
+; Total pins               ; 22 / 336 ( 6 % )                         ;
+; Total virtual pins       ; 0                                        ;
+; Total memory bits        ; 0 / 920,448 ( 0 % )                      ;
+; DSP block 9-bit elements ; 0 / 48 ( 0 % )                           ;
+; Total PLLs               ; 0 / 6 ( 0 % )                            ;
+; Total DLLs               ; 0 / 2 ( 0 % )                            ;
+; Device                   ; EP1S10F484C5                             ;
+; Timing Models            ; Final                                    ;
++--------------------------+------------------------------------------+
 
 
 +-----------------------------------------+
@@ -50,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/12/2022 13:53:47 ;
+; Start date & time ; 11/16/2022 11:10:41 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; encoder_16-4        ;
 +-------------------+---------------------+
@@ -61,8 +70,11 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:01     ;
-; Total                ; 00:00:01     ;
+; Analysis & Synthesis ; 00:00:00     ;
+; Fitter               ; 00:00:02     ;
+; Assembler            ; 00:00:01     ;
+; Timing Analyzer      ; 00:00:00     ;
+; Total                ; 00:00:03     ;
 +----------------------+--------------+
 
 
@@ -70,6 +82,9 @@ applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off encoder_16-4 -c encoder_16-4
+quartus_fit --read_settings_files=off --write_settings_files=off encoder_16-4 -c encoder_16-4
+quartus_asm --read_settings_files=off --write_settings_files=off encoder_16-4 -c encoder_16-4
+quartus_tan --read_settings_files=off --write_settings_files=off encoder_16-4 -c encoder_16-4 --timing_analysis_only
 
 
 

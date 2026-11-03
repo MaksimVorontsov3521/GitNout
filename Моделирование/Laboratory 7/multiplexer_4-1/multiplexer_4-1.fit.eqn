@@ -1,0 +1,68 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L8 is inst~125 at LC_X36_Y1_N2
+--operation mode is normal
+
+A1L8 = A & (D1 # D3 & B) # !A & (B);
+
+
+--A1L9 is inst~126 at LC_X36_Y1_N4
+--operation mode is normal
+
+A1L9 = A1L8 & (A # D2) # !A1L8 & !A & D0;
+
+
+--D2 is D2 at PIN_Y8
+--operation mode is input
+
+D2 = INPUT();
+
+
+--D0 is D0 at PIN_U9
+--operation mode is input
+
+D0 = INPUT();
+
+
+--A is A at PIN_Y9
+--operation mode is input
+
+A = INPUT();
+
+
+--B is B at PIN_T10
+--operation mode is input
+
+B = INPUT();
+
+
+--D3 is D3 at PIN_AA8
+--operation mode is input
+
+D3 = INPUT();
+
+
+--D1 is D1 at PIN_P8
+--operation mode is input
+
+D1 = INPUT();
+
+
+--F is F at PIN_V9
+--operation mode is output
+
+F = OUTPUT(A1L9);
+
+
+
