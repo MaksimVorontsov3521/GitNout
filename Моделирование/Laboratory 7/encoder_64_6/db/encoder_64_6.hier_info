@@ -68,9 +68,9 @@ EO => encoder_8-3:E7.EI
 A1 <= multiplexer_8-1:inst12.F
 A2 <= multiplexer_8-1:inst13.F
 GS <= multiplexer_8-1:inst14.F
-A3 <= A3OR.DB_MAX_OUTPUT_PORT_TYPE
-A4 <= A4OR.DB_MAX_OUTPUT_PORT_TYPE
-A5 <= A5OR.DB_MAX_OUTPUT_PORT_TYPE
+A3 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+A4 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+A5 <= inst.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |encoder_64-6|multiplexer_8-1:inst11

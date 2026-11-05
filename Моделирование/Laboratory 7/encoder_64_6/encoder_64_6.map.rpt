@@ -1,5 +1,5 @@
 Analysis & Synthesis report for encoder_64_6
-Thu Nov 17 18:28:56 2022
+Sat Nov 19 17:50:24 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -40,12 +40,12 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Nov 17 18:28:56 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Nov 19 17:50:24 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; encoder_64_6                             ;
 ; Top-level Entity Name       ; encoder_64-6                             ;
 ; Family                      ; Stratix                                  ;
-; Total logic elements        ; 69                                       ;
+; Total logic elements        ; 97                                       ;
 ; Total pins                  ; 72                                       ;
 ; Total virtual pins          ; 0                                        ;
 ; Total memory bits           ; 0                                        ;
@@ -129,20 +129,20 @@ applicable agreement for further details.
 +---------------------------------+-----------+
 ; Resource                        ; Usage     ;
 +---------------------------------+-----------+
-; Total logic elements            ; 69        ;
-; Total combinational functions   ; 69        ;
-;     -- Total 4-input functions  ; 52        ;
-;     -- Total 3-input functions  ; 5         ;
-;     -- Total 2-input functions  ; 12        ;
+; Total logic elements            ; 97        ;
+; Total combinational functions   ; 97        ;
+;     -- Total 4-input functions  ; 72        ;
+;     -- Total 3-input functions  ; 9         ;
+;     -- Total 2-input functions  ; 16        ;
 ;     -- Total 1-input functions  ; 0         ;
 ;     -- Total 0-input functions  ; 0         ;
 ; Combinational cells for routing ; 0         ;
 ; Total registers                 ; 0         ;
 ; I/O pins                        ; 72        ;
-; Maximum fan-out node            ; A4OR      ;
-; Maximum fan-out                 ; 5         ;
-; Total fan-out                   ; 254       ;
-; Average fan-out                 ; 1.80      ;
+; Maximum fan-out node            ; inst      ;
+; Maximum fan-out                 ; 14        ;
+; Total fan-out                   ; 354       ;
+; Average fan-out                 ; 2.09      ;
 +---------------------------------+-----------+
 
 
@@ -151,18 +151,18 @@ applicable agreement for further details.
 +-----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
 ; Compilation Hierarchy Node  ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name                  ;
 +-----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
-; |encoder_64-6               ; 69 (4)      ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 72   ; 0            ; 69 (4)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6                        ;
+; |encoder_64-6               ; 97 (4)      ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 72   ; 0            ; 97 (4)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6                        ;
 ;    |encoder_8-3:E1|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E1         ;
 ;    |encoder_8-3:E2|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E2         ;
-;    |encoder_8-3:E3|         ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E3         ;
+;    |encoder_8-3:E3|         ; 2 (2)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E3         ;
 ;    |encoder_8-3:E4|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E4         ;
-;    |encoder_8-3:E5|         ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E5         ;
-;    |encoder_8-3:E6|         ; 5 (5)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E6         ;
-;    |encoder_8-3:E7|         ; 5 (5)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E7         ;
-;    |multiplexer_8-1:inst11| ; 12 (12)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst11 ;
-;    |multiplexer_8-1:inst12| ; 15 (15)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst12 ;
-;    |multiplexer_8-1:inst13| ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst13 ;
-;    |multiplexer_8-1:inst14| ; 7 (7)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst14 ;
+;    |encoder_8-3:E5|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E5         ;
+;    |encoder_8-3:E6|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E6         ;
+;    |encoder_8-3:E7|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E7         ;
+;    |multiplexer_8-1:inst11| ; 27 (27)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst11 ;
+;    |multiplexer_8-1:inst12| ; 29 (29)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst12 ;
+;    |multiplexer_8-1:inst13| ; 7 (7)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst13 ;
+;    |multiplexer_8-1:inst14| ; 10 (10)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst14 ;
 +-----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -194,7 +194,7 @@ The equations can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_6.m
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Thu Nov 17 18:28:55 2022
+    Info: Processing started: Sat Nov 19 17:50:23 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off encoder_64_6 -c encoder_64_6
 Info: Found 1 design units, including 1 entities, in source file multiplexer_4-1.bdf
     Info: Found entity 1: multiplexer_4-1
@@ -207,12 +207,12 @@ Info: Found 1 design units, including 1 entities, in source file encoder_64-6.bd
 Info: Elaborating entity "encoder_64-6" for the top level hierarchy
 Info: Elaborating entity "multiplexer_8-1" for hierarchy "multiplexer_8-1:inst11"
 Info: Elaborating entity "encoder_8-3" for hierarchy "encoder_8-3:E0"
-Info: Implemented 141 device resources after synthesis - the final resource count might be different
+Info: Implemented 169 device resources after synthesis - the final resource count might be different
     Info: Implemented 65 input pins
     Info: Implemented 7 output pins
-    Info: Implemented 69 logic cells
+    Info: Implemented 97 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Thu Nov 17 18:28:56 2022
+    Info: Processing ended: Sat Nov 19 17:50:24 2022
     Info: Elapsed time: 00:00:01
 
 

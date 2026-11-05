@@ -1,5 +1,5 @@
 Fitter report for encoder_64_6
-Thu Nov 17 18:28:59 2022
+Sat Nov 19 17:50:27 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -53,14 +53,14 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Fitter Summary                                                      ;
 +--------------------------+------------------------------------------+
-; Fitter Status            ; Successful - Thu Nov 17 18:28:59 2022    ;
+; Fitter Status            ; Successful - Sat Nov 19 17:50:27 2022    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; encoder_64_6                             ;
 ; Top-level Entity Name    ; encoder_64-6                             ;
 ; Family                   ; Stratix                                  ;
 ; Device                   ; EP1S10F484C5                             ;
 ; Timing Models            ; Final                                    ;
-; Total logic elements     ; 69 / 10,570 ( < 1 % )                    ;
+; Total logic elements     ; 97 / 10,570 ( < 1 % )                    ;
 ; Total pins               ; 72 / 336 ( 21 % )                        ;
 ; Total virtual pins       ; 0                                        ;
 ; Total memory bits        ; 0 / 920,448 ( 0 % )                      ;
@@ -140,32 +140,32 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 +---------------------------------------------+-----------------------+
 ; Resource                                    ; Usage                 ;
 +---------------------------------------------+-----------------------+
-; Total logic elements                        ; 69 / 10,570 ( < 1 % ) ;
-;     -- Combinational with no register       ; 69                    ;
+; Total logic elements                        ; 97 / 10,570 ( < 1 % ) ;
+;     -- Combinational with no register       ; 97                    ;
 ;     -- Register only                        ; 0                     ;
 ;     -- Combinational with a register        ; 0                     ;
 ;                                             ;                       ;
 ; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 52                    ;
-;     -- 3 input functions                    ; 5                     ;
-;     -- 2 input functions                    ; 12                    ;
+;     -- 4 input functions                    ; 72                    ;
+;     -- 3 input functions                    ; 9                     ;
+;     -- 2 input functions                    ; 16                    ;
 ;     -- 1 input functions                    ; 0                     ;
 ;     -- 0 input functions                    ; 0                     ;
 ;                                             ;                       ;
 ; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 69                    ;
+;     -- normal mode                          ; 97                    ;
 ;     -- arithmetic mode                      ; 0                     ;
 ;     -- qfbk mode                            ; 0                     ;
 ;     -- register cascade mode                ; 0                     ;
 ;     -- synchronous clear/load mode          ; 0                     ;
 ;     -- asynchronous clear/load mode         ; 0                     ;
 ;                                             ;                       ;
-; Total LABs                                  ; 10 / 1,057 ( < 1 % )  ;
+; Total LABs                                  ; 13 / 1,057 ( 1 % )    ;
 ; Logic elements in carry chains              ; 0                     ;
 ; User inserted logic elements                ; 0                     ;
 ; Virtual pins                                ; 0                     ;
 ; I/O pins                                    ; 72 / 336 ( 21 % )     ;
-;     -- Clock pins                           ; 0 / 16 ( 0 % )        ;
+;     -- Clock pins                           ; 4 / 16 ( 25 % )       ;
 ; Global signals                              ; 0                     ;
 ; M512s                                       ; 0 / 94 ( 0 % )        ;
 ; M4Ks                                        ; 0 / 60 ( 0 % )        ;
@@ -178,10 +178,10 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; Fast regional clocks                        ; 0 / 8 ( 0 % )         ;
 ; SERDES transmitters                         ; 0 / 44 ( 0 % )        ;
 ; SERDES receivers                            ; 0 / 44 ( 0 % )        ;
-; Maximum fan-out node                        ; A4OR                  ;
-; Maximum fan-out                             ; 5                     ;
-; Total fan-out                               ; 254                   ;
-; Average fan-out                             ; 1.79                  ;
+; Maximum fan-out node                        ; inst                  ;
+; Maximum fan-out                             ; 14                    ;
+; Total fan-out                               ; 354                   ;
+; Average fan-out                             ; 2.08                  ;
 +---------------------------------------------+-----------------------+
 
 
@@ -190,71 +190,71 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; 0    ; F6    ; 4        ; 44           ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 1    ; A7    ; 4        ; 44           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 10   ; B21   ; 3        ; 1            ; 31           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 11   ; D20   ; 3        ; 1            ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 12   ; D21   ; 2        ; 0            ; 30           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 13   ; M16   ; 3        ; 1            ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 14   ; D22   ; 2        ; 0            ; 30           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 15   ; C20   ; 3        ; 1            ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 16   ; C4    ; 4        ; 50           ; 31           ; 5           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 17   ; D3    ; 4        ; 52           ; 31           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 18   ; A4    ; 4        ; 50           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 19   ; D4    ; 4        ; 50           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 2    ; F7    ; 4        ; 46           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 20   ; C5    ; 4        ; 48           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 21   ; D5    ; 4        ; 48           ; 31           ; 5           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 22   ; B2    ; 4        ; 52           ; 31           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 23   ; F4    ; 5        ; 53           ; 30           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 24   ; H10   ; 4        ; 33           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 25   ; B8    ; 4        ; 36           ; 31           ; 4           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 26   ; J8    ; 4        ; 33           ; 31           ; 4           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 27   ; D8    ; 4        ; 41           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 28   ; L7    ; 4        ; 36           ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 29   ; K10   ; 4        ; 31           ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 3    ; A6    ; 4        ; 46           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 30   ; C8    ; 4        ; 41           ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 31   ; C9    ; 4        ; 36           ; 31           ; 5           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 32   ; F10   ; 4        ; 33           ; 31           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 33   ; K8    ; 4        ; 33           ; 31           ; 5           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 34   ; D9    ; 4        ; 36           ; 31           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 35   ; E9    ; 4        ; 36           ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 36   ; F9    ; 4        ; 36           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 37   ; J9    ; 4        ; 33           ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 38   ; G9    ; 4        ; 31           ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 39   ; H8    ; 4        ; 41           ; 31           ; 5           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 4    ; D6    ; 4        ; 46           ; 31           ; 4           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 40   ; H3    ; 5        ; 53           ; 24           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 41   ; G2    ; 5        ; 53           ; 22           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 42   ; H4    ; 5        ; 53           ; 24           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 43   ; F2    ; 5        ; 53           ; 23           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 44   ; J4    ; 5        ; 53           ; 25           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 45   ; F1    ; 5        ; 53           ; 23           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 46   ; J6    ; 5        ; 53           ; 26           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 47   ; K6    ; 5        ; 53           ; 23           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 48   ; E5    ; 4        ; 48           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 49   ; C2    ; 4        ; 52           ; 31           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 5    ; G5    ; 5        ; 53           ; 28           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 50   ; F3    ; 5        ; 53           ; 30           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 51   ; B4    ; 4        ; 52           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 52   ; B5    ; 4        ; 48           ; 31           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 53   ; D1    ; 5        ; 53           ; 30           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 54   ; G7    ; 4        ; 52           ; 31           ; 4           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 55   ; B3    ; 4        ; 52           ; 31           ; 5           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 56   ; G4    ; 5        ; 53           ; 27           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 57   ; K7    ; 4        ; 50           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 58   ; C3    ; 4        ; 50           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 59   ; J7    ; 4        ; 50           ; 31           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 6    ; A5    ; 4        ; 48           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 60   ; F5    ; 5        ; 53           ; 29           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 61   ; E1    ; 5        ; 53           ; 29           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 62   ; E2    ; 5        ; 53           ; 29           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 63   ; G3    ; 5        ; 53           ; 27           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 7    ; C7    ; 4        ; 44           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 8    ; E20   ; 2        ; 0            ; 30           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; 9    ; D19   ; 3        ; 1            ; 31           ; 4           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
-; EO   ; C6    ; 4        ; 48           ; 31           ; 0           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 0    ; F14   ; 3        ; 17           ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 1    ; K16   ; 3        ; 12           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 10   ; C4    ; 4        ; 50           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 11   ; A5    ; 4        ; 48           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 12   ; C5    ; 4        ; 48           ; 31           ; 4           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 13   ; C6    ; 4        ; 48           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 14   ; B5    ; 4        ; 48           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 15   ; E5    ; 4        ; 48           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 16   ; C9    ; 4        ; 36           ; 31           ; 5           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 17   ; F10   ; 4        ; 33           ; 31           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 18   ; G9    ; 4        ; 31           ; 31           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 19   ; K10   ; 4        ; 31           ; 31           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 2    ; E14   ; 3        ; 17           ; 31           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 20   ; B11   ; 4        ; 29           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 21   ; J9    ; 4        ; 33           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 22   ; A11   ; 4        ; 29           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 23   ; D12   ; 9        ; 25           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 24   ; D8    ; 4        ; 41           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 25   ; K7    ; 4        ; 50           ; 31           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 26   ; A7    ; 4        ; 44           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 27   ; D6    ; 4        ; 46           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 28   ; C2    ; 4        ; 52           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 29   ; D5    ; 4        ; 48           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 3    ; C15   ; 3        ; 17           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 30   ; B6    ; 4        ; 46           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 31   ; D9    ; 4        ; 36           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 32   ; K15   ; 3        ; 19           ; 31           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 33   ; A15   ; 3        ; 19           ; 31           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 34   ; E15   ; 3        ; 12           ; 31           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 35   ; K14   ; 3        ; 19           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 36   ; L15   ; 3        ; 19           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 37   ; B14   ; 3        ; 21           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 38   ; M15   ; 3        ; 19           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 39   ; G14   ; 3        ; 19           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 4    ; L16   ; 3        ; 17           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 40   ; A4    ; 4        ; 50           ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 41   ; E8    ; 4        ; 41           ; 31           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 42   ; C8    ; 4        ; 41           ; 31           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 43   ; G8    ; 4        ; 41           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 44   ; C3    ; 4        ; 50           ; 31           ; 4           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 45   ; A8    ; 4        ; 44           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 46   ; F8    ; 4        ; 41           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 47   ; H8    ; 4        ; 41           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 48   ; A12   ; 9        ; 25           ; 31           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 49   ; E13   ; 3        ; 21           ; 31           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 5    ; J15   ; 3        ; 17           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 50   ; D13   ; 3        ; 21           ; 31           ; 1           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 51   ; C13   ; 9        ; 25           ; 31           ; 4           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 52   ; C12   ; 9        ; 25           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 53   ; B12   ; 9        ; 25           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 54   ; B13   ; 9        ; 25           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 55   ; C14   ; 3        ; 21           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 56   ; A6    ; 4        ; 46           ; 31           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 57   ; C7    ; 4        ; 44           ; 31           ; 3           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 58   ; E7    ; 4        ; 44           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 59   ; J7    ; 4        ; 50           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 6    ; D14   ; 3        ; 17           ; 31           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 60   ; F7    ; 4        ; 46           ; 31           ; 1           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 61   ; E6    ; 4        ; 46           ; 31           ; 3           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 62   ; B7    ; 4        ; 46           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 63   ; F6    ; 4        ; 44           ; 31           ; 0           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 7    ; J16   ; 3        ; 12           ; 31           ; 5           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 8    ; B4    ; 4        ; 52           ; 31           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; 9    ; D4    ; 4        ; 50           ; 31           ; 2           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
+; EO   ; E9    ; 4        ; 36           ; 31           ; 0           ; 7                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; LVTTL        ; Off         ; Fitter               ;
 +------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -263,13 +263,13 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 +------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; Slow Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load        ;
 +------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------------+
-; A0   ; A8    ; 4        ; 44           ; 31           ; 5           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A1   ; E7    ; 4        ; 44           ; 31           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A2   ; D2    ; 5        ; 53           ; 30           ; 3           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A3   ; B6    ; 4        ; 46           ; 31           ; 0           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A4   ; B7    ; 4        ; 46           ; 31           ; 5           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; A5   ; E6    ; 4        ; 46           ; 31           ; 3           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
-; GS   ; D7    ; 4        ; 44           ; 31           ; 2           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A0   ; H10   ; 4        ; 33           ; 31           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A1   ; J8    ; 4        ; 33           ; 31           ; 4           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A2   ; K8    ; 4        ; 33           ; 31           ; 5           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A3   ; F9    ; 4        ; 36           ; 31           ; 1           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A4   ; L7    ; 4        ; 36           ; 31           ; 3           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; A5   ; D7    ; 4        ; 44           ; 31           ; 2           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
+; GS   ; B8    ; 4        ; 36           ; 31           ; 4           ; no              ; no                     ; no            ; no             ; no              ; no         ; no            ; no       ; Off          ; LVTTL        ; 24mA             ; Off         ; Fitter               ; Unspecified ;
 +------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+----------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+-------------+
 
 
@@ -279,14 +279,14 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
 ; 1        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
-; 2        ; 3 / 30 ( 10 % )  ; 3.3V          ; --           ;
-; 3        ; 5 / 51 ( 9 % )   ; 3.3V          ; --           ;
-; 4        ; 47 / 52 ( 90 % ) ; 3.3V          ; --           ;
-; 5        ; 18 / 29 ( 62 % ) ; 3.3V          ; --           ;
+; 2        ; 0 / 30 ( 0 % )   ; 3.3V          ; --           ;
+; 3        ; 19 / 51 ( 37 % ) ; 3.3V          ; --           ;
+; 4        ; 48 / 52 ( 92 % ) ; 3.3V          ; --           ;
+; 5        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
 ; 6        ; 0 / 29 ( 0 % )   ; 3.3V          ; --           ;
 ; 7        ; 0 / 52 ( 0 % )   ; 3.3V          ; --           ;
 ; 8        ; 0 / 51 ( 0 % )   ; 3.3V          ; --           ;
-; 9        ; 0 / 6 ( 0 % )    ; 3.3V          ; --           ;
+; 9        ; 6 / 6 ( 100 % )  ; 3.3V          ; --           ;
 ; 11       ; 0 / 6 ( 0 % )    ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -299,18 +299,18 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; A1       ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; A2       ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; A3       ;            ; 4        ; VCCIO4                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
-; A4       ; 339        ; 4        ; 18                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; A5       ; 346        ; 4        ; 6                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; A6       ; 351        ; 4        ; 3                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; A7       ; 355        ; 4        ; 1                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; A8       ; 356        ; 4        ; A0                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A4       ; 339        ; 4        ; 40                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A5       ; 346        ; 4        ; 11                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A6       ; 351        ; 4        ; 56                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A7       ; 355        ; 4        ; 26                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A8       ; 356        ; 4        ; 45                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; A9       ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; A10      ;            ; 4        ; VCCIO4                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
-; A11      ; 389        ; 4        ; GND+                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; A12      ; 395        ; 9        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; A11      ; 389        ; 4        ; 22                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; A12      ; 395        ; 9        ; 48                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; A13      ;            ; 3        ; VCCIO3                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
 ; A14      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; A15      ; 416        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; A15      ; 416        ; 3        ; 33                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; A16      ; 429        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; A17      ; 436        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; A18      ; 444        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -363,107 +363,107 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; AB21     ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; AB22     ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; B1       ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; B2       ; 332        ; 4        ; 22                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; B3       ; 331        ; 4        ; 55                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; B4       ; 335        ; 4        ; 51                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; B5       ; 345        ; 4        ; 52                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; B6       ; 353        ; 4        ; A3                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; B7       ; 350        ; 4        ; A4                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; B8       ; 367        ; 4        ; 25                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B2       ; 332        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; B3       ; 331        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; B4       ; 335        ; 4        ; 8                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B5       ; 345        ; 4        ; 14                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B6       ; 353        ; 4        ; 30                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B7       ; 350        ; 4        ; 62                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B8       ; 367        ; 4        ; GS                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; B9       ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; B10      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; B11      ; 391        ; 4        ; GND+                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; B12      ; 394        ; 9        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; B13      ; 393        ; 9        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; B14      ; 406        ; 3        ; GND+                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; B11      ; 391        ; 4        ; 20                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B12      ; 394        ; 9        ; 53                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B13      ; 393        ; 9        ; 54                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B14      ; 406        ; 3        ; 37                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; B15      ; 428        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B16      ; 432        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B17      ; 438        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B18      ; 445        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B19      ; 451        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B20      ; 455        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; B21      ; 456        ; 3        ; 10                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; B21      ; 456        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; B22      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; C1       ;            ; 5        ; VCCIO5                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
-; C2       ; 334        ; 4        ; 49                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C3       ; 336        ; 4        ; 58                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C4       ; 337        ; 4        ; 16                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C5       ; 343        ; 4        ; 20                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C6       ; 347        ; 4        ; EO                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C7       ; 358        ; 4        ; 7                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C8       ; 364        ; 4        ; 30                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; C9       ; 368        ; 4        ; 31                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C2       ; 334        ; 4        ; 28                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C3       ; 336        ; 4        ; 44                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C4       ; 337        ; 4        ; 10                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C5       ; 343        ; 4        ; 12                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C6       ; 347        ; 4        ; 13                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C7       ; 358        ; 4        ; 57                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C8       ; 364        ; 4        ; 42                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C9       ; 368        ; 4        ; 16                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; C10      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; C11      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; C12      ; 397        ; 9        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C13      ; 392        ; 9        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C14      ; 407        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C15      ; 417        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; C12      ; 397        ; 9        ; 52                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C13      ; 392        ; 9        ; 51                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C14      ; 407        ; 3        ; 55                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C15      ; 417        ; 3        ; 3                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; C16      ; 433        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C17      ; 440        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C18      ; 441        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C19      ; 452        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; C20      ; 457        ; 3        ; 15                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; C20      ; 457        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C21      ; 453        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; C22      ;            ; 2        ; VCCIO2                    ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
-; D1       ; 329        ; 5        ; 53                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; D2       ; 328        ; 5        ; A2                        ; output ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; D3       ; 333        ; 4        ; 17                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D4       ; 338        ; 4        ; 19                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D5       ; 344        ; 4        ; 21                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D6       ; 349        ; 4        ; 4                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D7       ; 357        ; 4        ; GS                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D8       ; 366        ; 4        ; 27                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D9       ; 369        ; 4        ; 34                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D1       ; 329        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; D2       ; 328        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; D3       ; 333        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; D4       ; 338        ; 4        ; 9                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D5       ; 344        ; 4        ; 29                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D6       ; 349        ; 4        ; 27                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D7       ; 357        ; 4        ; A5                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D8       ; 366        ; 4        ; 24                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D9       ; 369        ; 4        ; 31                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; D10      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; D11      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; D12      ; 396        ; 9        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; D13      ; 409        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; D14      ; 419        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; D12      ; 396        ; 9        ; 23                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D13      ; 409        ; 3        ; 50                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; D14      ; 419        ; 3        ; 6                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; D15      ; 425        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D16      ; 434        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D17      ; 442        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; D18      ; 446        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; D19      ; 454        ; 3        ; 9                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D20      ; 458        ; 3        ; 11                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; D21      ; 1          ; 2        ; 12                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; D22      ; 0          ; 2        ; 14                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; E1       ; 324        ; 5        ; 61                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; E2       ; 325        ; 5        ; 62                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; D19      ; 454        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; D20      ; 458        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; D21      ; 1          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; D22      ; 0          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; E1       ; 324        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; E2       ; 325        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; E3       ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; E4       ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; E5       ; 348        ; 4        ; 48                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; E6       ; 352        ; 4        ; A5                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; E7       ; 360        ; 4        ; A1                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; E8       ; 363        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; E9       ; 371        ; 4        ; 35                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E5       ; 348        ; 4        ; 15                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E6       ; 352        ; 4        ; 61                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E7       ; 360        ; 4        ; 58                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E8       ; 363        ; 4        ; 41                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E9       ; 371        ; 4        ; EO                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; E10      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; E11      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
 ; E12      ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; E13      ; 408        ; 3        ; GND+                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; E14      ; 421        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; E15      ; 426        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; E13      ; 408        ; 3        ; 49                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E14      ; 421        ; 3        ; 2                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; E15      ; 426        ; 3        ; 34                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; E16      ; 430        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; E17      ; 437        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; E18      ; 443        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; E19      ; 2          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; E20      ; 3          ; 2        ; 8                         ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; E20      ; 3          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; E21      ; 4          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; E22      ; 5          ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; F1       ; 299        ; 5        ; 45                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; F2       ; 300        ; 5        ; 43                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; F3       ; 326        ; 5        ; 50                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; F4       ; 327        ; 5        ; 23                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; F5       ; 322        ; 5        ; 60                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; F6       ; 359        ; 4        ; 0                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; F7       ; 354        ; 4        ; 2                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; F8       ; 365        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; F9       ; 372        ; 4        ; 36                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; F10      ; 376        ; 4        ; 32                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; F1       ; 299        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; F2       ; 300        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; F3       ; 326        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; F4       ; 327        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; F5       ; 322        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; F6       ; 359        ; 4        ; 63                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; F7       ; 354        ; 4        ; 60                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; F8       ; 365        ; 4        ; 46                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; F9       ; 372        ; 4        ; A3                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; F10      ; 376        ; 4        ; 17                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; F11      ;            ; 1        ; VCCG_PLL5                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; F12      ;            ;          ; GNDA_PLL5                 ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; F13      ;            ; 9        ; VCC_PLL5_OUTA             ; power  ;              ; 3.3V    ; --         ; --          ;                 ;
-; F14      ; 420        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; F14      ; 420        ; 3        ; 0                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; F15      ; 427        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; F16      ; 435        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; F17      ; 439        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
@@ -473,19 +473,19 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; F21      ; 29         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; F22      ; 30         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; G1       ; 296        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; G2       ; 295        ; 5        ; 41                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; G3       ; 313        ; 5        ; 63                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; G4       ; 314        ; 5        ; 56                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; G5       ; 318        ; 5        ; 5                         ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; G2       ; 295        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; G3       ; 313        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; G4       ; 314        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; G5       ; 318        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; G6       ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; G7       ; 330        ; 4        ; 54                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; G8       ; 361        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; G9       ; 384        ; 4        ; 38                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; G7       ; 330        ; 4        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; G8       ; 361        ; 4        ; 43                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; G9       ; 384        ; 4        ; 18                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; G10      ; 380        ; 4        ; #TMS                      ; input  ;              ;         ; --         ; --          ;                 ;
 ; G11      ;            ;          ; GNDG_PLL5                 ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; G12      ;            ;          ; TEMPDIODEp                ;        ;              ;         ; --         ; --          ;                 ;
 ; G13      ;            ;          ; VCCA_PLL5                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
-; G14      ; 412        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; G14      ; 412        ; 3        ; 39                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; G15      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; G16      ; 431        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; G17      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
@@ -496,14 +496,14 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; G22      ; 33         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; H1       ; 290        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; H2       ; 291        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; H3       ; 301        ; 5        ; 40                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; H4       ; 302        ; 5        ; 42                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; H3       ; 301        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; H4       ; 302        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; H5       ; 317        ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; H6       ; 342        ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; H7       ; 373        ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; H8       ; 362        ; 4        ; 39                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; H8       ; 362        ; 4        ; 47                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; H9       ;            ;          ; NC                        ;        ;              ;         ; --         ; --          ;                 ;
-; H10      ; 379        ; 4        ; 24                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; H10      ; 379        ; 4        ; A0                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; H11      ; 387        ; 4        ; #TDO                      ; output ;              ;         ; --         ; --          ;                 ;
 ; H12      ;            ;          ; TEMPDIODEn                ;        ;              ;         ; --         ; --          ;                 ;
 ; H13      ; 403        ; 3        ; ^nCONFIG                  ;        ;              ;         ; --         ; --          ;                 ;
@@ -519,19 +519,19 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; J1       ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; J2       ; 288        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; J3       ; 289        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; J4       ; 305        ; 5        ; 44                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; J4       ; 305        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; J5       ; 292        ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; J6       ; 309        ; 5        ; 46                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
+; J6       ; 309        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; J7       ; 340        ; 4        ; 59                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; J8       ; 374        ; 4        ; 26                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; J9       ; 378        ; 4        ; 37                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; J8       ; 374        ; 4        ; A1                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; J9       ; 378        ; 4        ; 21                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; J10      ; 381        ; 4        ; #TRST                     ; input  ;              ;         ; --         ; --          ;                 ;
 ; J11      ; 386        ; 4        ; #TDI                      ; input  ;              ;         ; --         ; --          ;                 ;
 ; J12      ; 402        ; 3        ; ^nSTATUS                  ;        ;              ;         ; --         ; --          ;                 ;
 ; J13      ; 404        ; 3        ; ^DCLK                     ;        ;              ;         ; --         ; --          ;                 ;
 ; J14      ; 448        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; J15      ; 418        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; J16      ; 424        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; J15      ; 418        ; 3        ; 5                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; J16      ; 424        ; 3        ; 7                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; J17      ; 14         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; J18      ; 37         ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; J19      ; 20         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
@@ -543,17 +543,17 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; K3       ; 285        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; K4       ;            ;          ; VCCA_PLL4                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; K5       ;            ; 1        ; VCCG_PLL4                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
-; K6       ; 297        ; 5        ; 47                        ; input  ; LVTTL        ;         ; Row I/O    ; Off         ; N               ;
-; K7       ; 341        ; 4        ; 57                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
-; K8       ; 375        ; 4        ; 33                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; K6       ; 297        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
+; K7       ; 341        ; 4        ; 25                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; K8       ; 375        ; 4        ; A2                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; K9       ; 382        ; 4        ; #TCK                      ; input  ;              ;         ; --         ; --          ;                 ;
-; K10      ; 383        ; 4        ; 29                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; K10      ; 383        ; 4        ; 19                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; K11      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; K12      ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; K13      ; 405        ; 3        ; ^CONF_DONE                ;        ;              ;         ; --         ; --          ;                 ;
-; K14      ; 411        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; K15      ; 413        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; K16      ; 423        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; K14      ; 411        ; 3        ; 35                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; K15      ; 413        ; 3        ; 32                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; K16      ; 423        ; 3        ; 1                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; K17      ; 32         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; K18      ;            ; 1        ; VCCG_PLL1                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; K19      ;            ;          ; VCCA_PLL1                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
@@ -566,7 +566,7 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; L4       ;            ;          ; GNDA_PLL4                 ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; L5       ;            ;          ; GNDG_PLL4                 ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; L6       ; 293        ; 5        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
-; L7       ; 370        ; 4        ; 28                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; L7       ; 370        ; 4        ; A4                        ; output ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; L8       ; 377        ; 4        ; +~DATA0~ / RESERVED_INPUT ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; L9       ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; L10      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
@@ -574,8 +574,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; L12      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; L13      ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; L14      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
-; L15      ; 415        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; L16      ; 422        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
+; L15      ; 415        ; 3        ; 36                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; L16      ; 422        ; 3        ; 4                         ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
 ; L17      ; 35         ; 2        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; L18      ;            ;          ; GNDG_PLL1                 ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; L19      ;            ;          ; GNDA_PLL1                 ; gnd    ;              ;         ; --         ; --          ;                 ;
@@ -596,8 +596,8 @@ The pin-out file can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_
 ; M12      ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; M13      ;            ;          ; GND                       ; gnd    ;              ;         ; --         ; --          ;                 ;
 ; M14      ;            ;          ; VCCINT                    ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
-; M15      ; 414        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
-; M16      ; 459        ; 3        ; 13                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; M15      ; 414        ; 3        ; 38                        ; input  ; LVTTL        ;         ; Column I/O ; Off         ; N               ;
+; M16      ; 459        ; 3        ; GND*                      ;        ;              ;         ; Column I/O ; --          ;                 ;
 ; M17      ; 66         ; 1        ; GND*                      ;        ;              ;         ; Row I/O    ; --          ;                 ;
 ; M18      ;            ;          ; VCCA_PLL2                 ; power  ;              ; 1.5V    ; --         ; --          ;                 ;
 ; M19      ;            ;          ; GNDA_PLL2                 ; gnd    ;              ;         ; --         ; --          ;                 ;
@@ -829,18 +829,18 @@ Note: User assignments will override these defaults. The user specified values a
 +-----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
 ; Compilation Hierarchy Node  ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name                  ;
 +-----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
-; |encoder_64-6               ; 69 (4)      ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 72   ; 0            ; 69 (4)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6                        ;
+; |encoder_64-6               ; 97 (4)      ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 72   ; 0            ; 97 (4)       ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6                        ;
 ;    |encoder_8-3:E1|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E1         ;
 ;    |encoder_8-3:E2|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E2         ;
-;    |encoder_8-3:E3|         ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E3         ;
+;    |encoder_8-3:E3|         ; 2 (2)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E3         ;
 ;    |encoder_8-3:E4|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E4         ;
-;    |encoder_8-3:E5|         ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E5         ;
-;    |encoder_8-3:E6|         ; 5 (5)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E6         ;
-;    |encoder_8-3:E7|         ; 5 (5)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E7         ;
-;    |multiplexer_8-1:inst11| ; 12 (12)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst11 ;
-;    |multiplexer_8-1:inst12| ; 15 (15)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst12 ;
-;    |multiplexer_8-1:inst13| ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst13 ;
-;    |multiplexer_8-1:inst14| ; 7 (7)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst14 ;
+;    |encoder_8-3:E5|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E5         ;
+;    |encoder_8-3:E6|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E6         ;
+;    |encoder_8-3:E7|         ; 3 (3)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 3 (3)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|encoder_8-3:E7         ;
+;    |multiplexer_8-1:inst11| ; 27 (27)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 27 (27)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst11 ;
+;    |multiplexer_8-1:inst12| ; 29 (29)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 29 (29)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst12 ;
+;    |multiplexer_8-1:inst13| ; 7 (7)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst13 ;
+;    |multiplexer_8-1:inst14| ; 10 (10)     ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; 10 (10)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |encoder_64-6|multiplexer_8-1:inst14 ;
 +-----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+--------------------------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -850,55 +850,63 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------------+---------------+-----------------------+-------------------------+----------------------------------------+---------------------------------+--------------------------------+-----+------+----------------------------+
 ; Name ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; Core to Output Register ; Clock Enable to Output Enable Register ; Clock Enable to Output Register ; Clock Enable to Input Register ; TCO ; TCOE ; Falling Edge Output Enable ;
 +------+----------+---------------+---------------+-----------------------+-------------------------+----------------------------------------+---------------------------------+--------------------------------+-----+------+----------------------------+
-; 47   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 45   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 43   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 41   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 42   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 44   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 46   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; EO   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 62   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 63   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 61   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 59   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 57   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 58   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 60   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 62   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; EO   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 59   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 58   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 57   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 56   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 50   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 52   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 48   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 53   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 51   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 54   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 55   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 53   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 52   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 51   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 50   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 49   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 48   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 46   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 47   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 45   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 44   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 43   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 42   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 41   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 40   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 34   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 36   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 32   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 37   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 35   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 38   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 39   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 37   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 36   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 35   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 34   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 33   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 26   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 28   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 24   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 29   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 27   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 32   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 30   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 31   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 29   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 28   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 27   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 26   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 25   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 23   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 24   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 22   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 23   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 21   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 20   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 19   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 18   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 16   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 17   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 16   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 14   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 15   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 13   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 12   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 11   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 10   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 9    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
+; 8    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 7    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 5    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 3    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
@@ -906,14 +914,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 2    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 4    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 6    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 10   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 12   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 8    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 13   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 11   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 14   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 15   ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
-; 9    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; 0    ; Input    ; ON            ; ON            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; --   ; --                         ;
 ; A0   ; Output   ; --            ; --            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; OFF  ; OFF                        ;
 ; A1   ; Output   ; --            ; --            ; --                    ; --                      ; --                                     ; --                              ; --                             ; --  ; OFF  ; OFF                        ;
@@ -925,252 +925,298 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------------+---------------+-----------------------+-------------------------+----------------------------------------+---------------------------------+--------------------------------+-----+------+----------------------------+
 
 
-+-----------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                        ;
-+-----------------------------------------+-------------------+---------+
-; Source Pin / Fanout                     ; Pad To Core Index ; Setting ;
-+-----------------------------------------+-------------------+---------+
-; 47                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~606 ; 0                 ; ON      ;
-;      - encoder_8-3:E5|inst36~2          ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst24~36 ; 0                 ; ON      ;
-; 45                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~606 ; 1                 ; ON      ;
-;      - encoder_8-3:E5|inst36~2          ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst24~36 ; 1                 ; ON      ;
-; 43                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~605 ; 1                 ; ON      ;
-;      - encoder_8-3:E5|inst25~28         ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst24~35 ; 1                 ; ON      ;
-; 41                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~605 ; 1                 ; ON      ;
-;      - encoder_8-3:E5|inst25~28         ; 1                 ; ON      ;
-; 42                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~605 ; 0                 ; ON      ;
-;      - encoder_8-3:E5|inst25~28         ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst24~35 ; 0                 ; ON      ;
-; 44                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~605 ; 1                 ; ON      ;
-;      - encoder_8-3:E5|inst36~2          ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst24~35 ; 1                 ; ON      ;
-; 46                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~606 ; 1                 ; ON      ;
-;      - encoder_8-3:E5|inst36~2          ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst24~36 ; 1                 ; ON      ;
-; 63                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~608 ; 0                 ; ON      ;
-;      - encoder_8-3:E7|inst36~2          ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst26~33 ; 0                 ; ON      ;
-; 61                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~608 ; 1                 ; ON      ;
-;      - encoder_8-3:E7|inst36~2          ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst26~32 ; 1                 ; ON      ;
-; 59                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~607 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst26~31 ; 1                 ; ON      ;
-; 57                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~607 ; 0                 ; ON      ;
-;      - encoder_8-3:E7|inst25~27         ; 0                 ; ON      ;
-;      - encoder_8-3:E7|inst25~28         ; 0                 ; ON      ;
-; 58                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~607 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst26~31 ; 1                 ; ON      ;
-; 60                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~607 ; 0                 ; ON      ;
-;      - encoder_8-3:E7|inst36~2          ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst26~32 ; 0                 ; ON      ;
-; 62                                      ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~608 ; 0                 ; ON      ;
-;      - encoder_8-3:E7|inst36~2          ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst26~33 ; 0                 ; ON      ;
-; EO                                      ;                   ;         ;
-;      - encoder_8-3:E7|inst25            ; 1                 ; ON      ;
-;      - encoder_8-3:E6|inst24~65         ; 1                 ; ON      ;
-;      - encoder_8-3:E7|inst24~100        ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~483 ; 1                 ; ON      ;
-;      - encoder_8-3:E6|inst25            ; 1                 ; ON      ;
-; 56                                      ;                   ;         ;
-;      - encoder_8-3:E7|inst25~27         ; 0                 ; ON      ;
-;      - encoder_8-3:E7|inst25~28         ; 0                 ; ON      ;
-; 50                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~51         ; 0                 ; ON      ;
-; 52                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~51         ; 0                 ; ON      ;
-; 48                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~51         ; 1                 ; ON      ;
-; 53                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~51         ; 0                 ; ON      ;
-; 51                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~52         ; 1                 ; ON      ;
-; 54                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~52         ; 1                 ; ON      ;
-; 55                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~52         ; 0                 ; ON      ;
-; 49                                      ;                   ;         ;
-;      - encoder_8-3:E6|inst25~52         ; 1                 ; ON      ;
-; 40                                      ;                   ;         ;
-;      - encoder_8-3:E5|inst25~28         ; 1                 ; ON      ;
-; 34                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~55         ; 0                 ; ON      ;
-; 36                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~55         ; 0                 ; ON      ;
-; 32                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~55         ; 0                 ; ON      ;
-; 37                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~55         ; 1                 ; ON      ;
-; 35                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~56         ; 1                 ; ON      ;
-; 38                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~56         ; 1                 ; ON      ;
-; 39                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~57         ; 1                 ; ON      ;
-; 33                                      ;                   ;         ;
-;      - encoder_8-3:E4|inst25~57         ; 0                 ; ON      ;
-; 26                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~51         ; 1                 ; ON      ;
-; 28                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~51         ; 1                 ; ON      ;
-; 24                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~51         ; 1                 ; ON      ;
-; 29                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~51         ; 1                 ; ON      ;
-; 27                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~52         ; 0                 ; ON      ;
-; 30                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~52         ; 0                 ; ON      ;
-; 31                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~52         ; 0                 ; ON      ;
-; 25                                      ;                   ;         ;
-;      - encoder_8-3:E3|inst25~52         ; 1                 ; ON      ;
-; 23                                      ;                   ;         ;
-;      - multiplexer_8-1:inst12|inst21~32 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst9~614 ; 0                 ; ON      ;
-; 22                                      ;                   ;         ;
-;      - multiplexer_8-1:inst12|inst21~32 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst21~78 ; 1                 ; ON      ;
-; 21                                      ;                   ;         ;
-;      - multiplexer_8-1:inst12|inst21~33 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst21~78 ; 0                 ; ON      ;
-; 20                                      ;                   ;         ;
-;      - multiplexer_8-1:inst12|inst21~33 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst21~78 ; 1                 ; ON      ;
-; 19                                      ;                   ;         ;
-;      - encoder_8-3:E2|inst25~28         ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst21~77 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst21~34 ; 0                 ; ON      ;
-; 18                                      ;                   ;         ;
-;      - encoder_8-3:E2|inst25~28         ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst21~77 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst21~34 ; 0                 ; ON      ;
-; 16                                      ;                   ;         ;
-;      - encoder_8-3:E2|inst25~28         ; 0                 ; ON      ;
-; 17                                      ;                   ;         ;
-;      - encoder_8-3:E2|inst25~28         ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst11|inst21~77 ; 0                 ; ON      ;
-; 7                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~611 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~486 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~306 ; 1                 ; ON      ;
-; 5                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~611 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~485 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~306 ; 1                 ; ON      ;
-; 3                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~610 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~485 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~309 ; 0                 ; ON      ;
-; 1                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~610 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~309 ; 1                 ; ON      ;
-; 2                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~610 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~485 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~309 ; 0                 ; ON      ;
-; 4                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~610 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~485 ; 0                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~306 ; 0                 ; ON      ;
-; 6                                       ;                   ;         ;
-;      - multiplexer_8-1:inst11|inst9~611 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst12|inst9~486 ; 1                 ; ON      ;
-;      - multiplexer_8-1:inst14|inst9~306 ; 1                 ; ON      ;
-; 10                                      ;                   ;         ;
-;      - encoder_8-3:E1|inst25~48         ; 0                 ; ON      ;
-; 12                                      ;                   ;         ;
-;      - encoder_8-3:E1|inst25~48         ; 1                 ; ON      ;
-; 8                                       ;                   ;         ;
-;      - encoder_8-3:E1|inst25~48         ; 1                 ; ON      ;
-; 13                                      ;                   ;         ;
-;      - encoder_8-3:E1|inst25~48         ; 0                 ; ON      ;
-; 11                                      ;                   ;         ;
-;      - encoder_8-3:E1|inst25~49         ; 1                 ; ON      ;
-; 14                                      ;                   ;         ;
-;      - encoder_8-3:E1|inst25~49         ; 1                 ; ON      ;
-; 15                                      ;                   ;         ;
-;      - encoder_8-3:E1|inst25~50         ; 0                 ; ON      ;
-; 9                                       ;                   ;         ;
-;      - encoder_8-3:E1|inst25~50         ; 1                 ; ON      ;
-; 0                                       ;                   ;         ;
-;      - multiplexer_8-1:inst14|inst9~309 ; 1                 ; ON      ;
-+-----------------------------------------+-------------------+---------+
++------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                         ;
++------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                      ; Pad To Core Index ; Setting ;
++------------------------------------------+-------------------+---------+
+; EO                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst25             ; 1                 ; ON      ;
+;      - inst~9                            ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst9~1533 ; 1                 ; ON      ;
+;      - encoder_8-3:E7|inst25             ; 1                 ; ON      ;
+;      - encoder_8-3:E5|inst24             ; 1                 ; ON      ;
+;      - inst3                             ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~125  ; 1                 ; ON      ;
+; 62                                       ;                   ;         ;
+;      - encoder_8-3:E7|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1355 ; 1                 ; ON      ;
+; 63                                       ;                   ;         ;
+;      - encoder_8-3:E7|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1355 ; 0                 ; ON      ;
+; 61                                       ;                   ;         ;
+;      - encoder_8-3:E7|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst26~32  ; 1                 ; ON      ;
+; 60                                       ;                   ;         ;
+;      - encoder_8-3:E7|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~51  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst26~32  ; 1                 ; ON      ;
+; 59                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst26~31  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~51  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst26~32  ; 0                 ; ON      ;
+; 58                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst26~31  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~51  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst26~32  ; 0                 ; ON      ;
+; 57                                       ;                   ;         ;
+;      - encoder_8-3:E7|inst25~26          ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst26~51  ; 1                 ; ON      ;
+; 56                                       ;                   ;         ;
+;      - encoder_8-3:E7|inst25~26          ; 1                 ; ON      ;
+; 54                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst25~33  ; 0                 ; ON      ;
+; 55                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst25~33  ; 1                 ; ON      ;
+; 53                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst25~32  ; 0                 ; ON      ;
+; 52                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~51  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst25~32  ; 0                 ; ON      ;
+; 51                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst25~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~51  ; 1                 ; ON      ;
+; 50                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst25~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~51  ; 1                 ; ON      ;
+; 49                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst25~28          ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst25~51  ; 1                 ; ON      ;
+; 48                                       ;                   ;         ;
+;      - encoder_8-3:E6|inst25~28          ; 0                 ; ON      ;
+; 46                                       ;                   ;         ;
+;      - encoder_8-3:E5|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst24~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst24~32  ; 0                 ; ON      ;
+; 47                                       ;                   ;         ;
+;      - encoder_8-3:E5|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst9~1538 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst24~32  ; 0                 ; ON      ;
+; 45                                       ;                   ;         ;
+;      - encoder_8-3:E5|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst24~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst24~33  ; 0                 ; ON      ;
+; 44                                       ;                   ;         ;
+;      - encoder_8-3:E5|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst24~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst24~33  ; 0                 ; ON      ;
+; 43                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst24~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst24~51  ; 1                 ; ON      ;
+; 42                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst24~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst24~51  ; 1                 ; ON      ;
+; 41                                       ;                   ;         ;
+;      - encoder_8-3:E5|inst25~28          ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst24~51  ; 0                 ; ON      ;
+; 40                                       ;                   ;         ;
+;      - encoder_8-3:E5|inst25~28          ; 1                 ; ON      ;
+; 38                                       ;                   ;         ;
+;      - encoder_8-3:E4|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst23~33  ; 0                 ; ON      ;
+; 39                                       ;                   ;         ;
+;      - encoder_8-3:E4|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst23~33  ; 0                 ; ON      ;
+; 37                                       ;                   ;         ;
+;      - encoder_8-3:E4|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst23~32  ; 1                 ; ON      ;
+; 36                                       ;                   ;         ;
+;      - encoder_8-3:E4|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~51  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst23~32  ; 1                 ; ON      ;
+; 35                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst23~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~51  ; 1                 ; ON      ;
+; 34                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst23~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~51  ; 1                 ; ON      ;
+; 33                                       ;                   ;         ;
+;      - encoder_8-3:E4|inst25~28          ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst23~51  ; 0                 ; ON      ;
+; 32                                       ;                   ;         ;
+;      - encoder_8-3:E4|inst25~28          ; 0                 ; ON      ;
+; 30                                       ;                   ;         ;
+;      - encoder_8-3:E3|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst22~33  ; 1                 ; ON      ;
+; 31                                       ;                   ;         ;
+;      - encoder_8-3:E3|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst22~33  ; 1                 ; ON      ;
+; 29                                       ;                   ;         ;
+;      - encoder_8-3:E3|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst22~32  ; 1                 ; ON      ;
+; 28                                       ;                   ;         ;
+;      - encoder_8-3:E3|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~51  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst22~32  ; 0                 ; ON      ;
+; 27                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst22~31  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~51  ; 0                 ; ON      ;
+; 26                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst22~31  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~51  ; 0                 ; ON      ;
+; 25                                       ;                   ;         ;
+;      - encoder_8-3:E3|inst25~28          ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst22~51  ; 1                 ; ON      ;
+; 24                                       ;                   ;         ;
+;      - encoder_8-3:E3|inst25~28          ; 1                 ; ON      ;
+; 22                                       ;                   ;         ;
+;      - encoder_8-3:E2|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst21~33  ; 0                 ; ON      ;
+; 23                                       ;                   ;         ;
+;      - encoder_8-3:E2|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst21~33  ; 1                 ; ON      ;
+; 21                                       ;                   ;         ;
+;      - encoder_8-3:E2|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst21~32  ; 1                 ; ON      ;
+; 20                                       ;                   ;         ;
+;      - encoder_8-3:E2|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~51  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst21~32  ; 0                 ; ON      ;
+; 19                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst21~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~51  ; 1                 ; ON      ;
+; 18                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst21~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~51  ; 1                 ; ON      ;
+; 17                                       ;                   ;         ;
+;      - encoder_8-3:E2|inst25~28          ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst21~51  ; 0                 ; ON      ;
+; 16                                       ;                   ;         ;
+;      - encoder_8-3:E2|inst25~28          ; 1                 ; ON      ;
+; 14                                       ;                   ;         ;
+;      - encoder_8-3:E1|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1354 ; 0                 ; ON      ;
+; 15                                       ;                   ;         ;
+;      - encoder_8-3:E1|inst36~2           ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~52  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1354 ; 0                 ; ON      ;
+; 13                                       ;                   ;         ;
+;      - encoder_8-3:E1|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~52  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst20~32  ; 1                 ; ON      ;
+; 12                                       ;                   ;         ;
+;      - encoder_8-3:E1|inst36~2           ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~51  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst20~32  ; 1                 ; ON      ;
+; 11                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst20~31  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~51  ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst20~32  ; 1                 ; ON      ;
+; 10                                       ;                   ;         ;
+;      - multiplexer_8-1:inst12|inst20~31  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~51  ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst20~32  ; 0                 ; ON      ;
+; 9                                        ;                   ;         ;
+;      - encoder_8-3:E1|inst25~26          ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst11|inst20~51  ; 1                 ; ON      ;
+; 8                                        ;                   ;         ;
+;      - encoder_8-3:E1|inst25~26          ; 0                 ; ON      ;
+; 7                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1530 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1352 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~119  ; 0                 ; ON      ;
+; 5                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1530 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1351 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~119  ; 0                 ; ON      ;
+; 3                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1529 ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~118  ; 1                 ; ON      ;
+; 1                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1529 ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~122  ; 1                 ; ON      ;
+; 2                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1529 ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~118  ; 1                 ; ON      ;
+; 4                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1529 ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1351 ; 1                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~119  ; 1                 ; ON      ;
+; 6                                        ;                   ;         ;
+;      - multiplexer_8-1:inst11|inst9~1530 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst12|inst9~1352 ; 0                 ; ON      ;
+;      - multiplexer_8-1:inst14|inst9~119  ; 0                 ; ON      ;
+; 0                                        ;                   ;         ;
+;      - multiplexer_8-1:inst14|inst9~122  ; 1                 ; ON      ;
++------------------------------------------+-------------------+---------+
 
 
-+--------------------------------------------+
-; Non-Global High Fan-Out Signals            ;
-+----------------------------------+---------+
-; Name                             ; Fan-Out ;
-+----------------------------------+---------+
-; EO                               ; 5       ;
-; A3OR                             ; 5       ;
-; A5OR                             ; 5       ;
-; A4OR                             ; 5       ;
-; multiplexer_8-1:inst14|inst9~305 ; 4       ;
-; multiplexer_8-1:inst12|inst21~33 ; 4       ;
-; multiplexer_8-1:inst12|inst21~32 ; 4       ;
-; encoder_8-3:E5|inst36~2          ; 4       ;
-; multiplexer_8-1:inst12|inst26~31 ; 4       ;
-; encoder_8-3:E7|inst36~2          ; 4       ;
-; 6                                ; 3       ;
-; 4                                ; 3       ;
-; 2                                ; 3       ;
-; 3                                ; 3       ;
-; 5                                ; 3       ;
-; 7                                ; 3       ;
-; 18                               ; 3       ;
-; 19                               ; 3       ;
-; 62                               ; 3       ;
-; 60                               ; 3       ;
-; 57                               ; 3       ;
-; 61                               ; 3       ;
-; 63                               ; 3       ;
-; 46                               ; 3       ;
-; 44                               ; 3       ;
-; 42                               ; 3       ;
-; 43                               ; 3       ;
-; 45                               ; 3       ;
-; 47                               ; 3       ;
-; multiplexer_8-1:inst13|inst21~3  ; 3       ;
-; multiplexer_8-1:inst11|inst9~612 ; 3       ;
-; multiplexer_8-1:inst12|inst9~484 ; 3       ;
-; multiplexer_8-1:inst12|inst9~483 ; 3       ;
-; encoder_8-3:E7|inst24~100        ; 3       ;
-; encoder_8-3:E2|inst24            ; 3       ;
-; encoder_8-3:E3|inst24~69         ; 3       ;
-; encoder_8-3:E4|inst25~57         ; 3       ;
-; encoder_8-3:E5|inst25            ; 3       ;
-; encoder_8-3:E5|inst25~28         ; 3       ;
-; encoder_8-3:E6|inst25~52         ; 3       ;
-; encoder_8-3:E6|inst25~51         ; 3       ;
-; 1                                ; 2       ;
-; 17                               ; 2       ;
-; 20                               ; 2       ;
-; 21                               ; 2       ;
-; 22                               ; 2       ;
-; 23                               ; 2       ;
-; 56                               ; 2       ;
-; 58                               ; 2       ;
-; 59                               ; 2       ;
-+----------------------------------+---------+
++------------------------------------+
+; Non-Global High Fan-Out Signals    ;
++--------------------------+---------+
+; Name                     ; Fan-Out ;
++--------------------------+---------+
+; inst                     ; 14      ;
+; inst2~10                 ; 10      ;
+; EO                       ; 7       ;
+; encoder_8-3:E3|inst25~28 ; 6       ;
+; encoder_8-3:E4|inst25    ; 6       ;
+; encoder_8-3:E7|inst25~26 ; 6       ;
+; inst3                    ; 5       ;
+; encoder_8-3:E1|inst25~26 ; 5       ;
+; encoder_8-3:E2|inst25~28 ; 5       ;
+; encoder_8-3:E5|inst25~28 ; 5       ;
+; encoder_8-3:E6|inst25    ; 5       ;
+; encoder_8-3:E2|inst25    ; 4       ;
+; encoder_8-3:E4|inst25~28 ; 4       ;
+; encoder_8-3:E6|inst25~28 ; 4       ;
+; 6                        ; 3       ;
+; 4                        ; 3       ;
+; 5                        ; 3       ;
+; 7                        ; 3       ;
+; 10                       ; 3       ;
+; 11                       ; 3       ;
+; 12                       ; 3       ;
+; 13                       ; 3       ;
+; 15                       ; 3       ;
+; 14                       ; 3       ;
+; 20                       ; 3       ;
+; 21                       ; 3       ;
+; 23                       ; 3       ;
+; 22                       ; 3       ;
+; 28                       ; 3       ;
+; 29                       ; 3       ;
+; 31                       ; 3       ;
+; 30                       ; 3       ;
+; 36                       ; 3       ;
+; 37                       ; 3       ;
+; 39                       ; 3       ;
+; 38                       ; 3       ;
+; 44                       ; 3       ;
+; 45                       ; 3       ;
+; 47                       ; 3       ;
+; 46                       ; 3       ;
+; 52                       ; 3       ;
+; 53                       ; 3       ;
+; 55                       ; 3       ;
+; 54                       ; 3       ;
+; 58                       ; 3       ;
+; 59                       ; 3       ;
+; 60                       ; 3       ;
+; 61                       ; 3       ;
+; 63                       ; 3       ;
+; 62                       ; 3       ;
++--------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -1178,22 +1224,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+-----------------------+
 ; Interconnect Resource Type  ; Usage                 ;
 +-----------------------------+-----------------------+
-; C16 interconnects           ; 4 / 2,286 ( < 1 % )   ;
-; C4 interconnects            ; 54 / 31,320 ( < 1 % ) ;
-; C8 interconnects            ; 26 / 7,272 ( < 1 % )  ;
+; C16 interconnects           ; 17 / 2,286 ( < 1 % )  ;
+; C4 interconnects            ; 32 / 31,320 ( < 1 % ) ;
+; C8 interconnects            ; 31 / 7,272 ( < 1 % )  ;
 ; DIFFIOCLKs                  ; 0 / 16 ( 0 % )        ;
 ; DQS bus muxes               ; 0 / 56 ( 0 % )        ;
 ; DQS-32 I/O buses            ; 0 / 4 ( 0 % )         ;
 ; DQS-8 I/O buses             ; 0 / 16 ( 0 % )        ;
-; Direct links                ; 11 / 44,740 ( < 1 % ) ;
+; Direct links                ; 8 / 44,740 ( < 1 % )  ;
 ; Fast regional clocks        ; 0 / 8 ( 0 % )         ;
 ; Global clocks               ; 0 / 16 ( 0 % )        ;
 ; I/O buses                   ; 0 / 208 ( 0 % )       ;
-; LUT chains                  ; 6 / 9,513 ( < 1 % )   ;
-; Local routing interconnects ; 30 / 10,570 ( < 1 % ) ;
-; R24 interconnects           ; 2 / 2,280 ( < 1 % )   ;
-; R4 interconnects            ; 38 / 62,520 ( < 1 % ) ;
-; R8 interconnects            ; 25 / 10,410 ( < 1 % ) ;
+; LUT chains                  ; 9 / 9,513 ( < 1 % )   ;
+; Local routing interconnects ; 50 / 10,570 ( < 1 % ) ;
+; R24 interconnects           ; 3 / 2,280 ( < 1 % )   ;
+; R4 interconnects            ; 49 / 62,520 ( < 1 % ) ;
+; R8 interconnects            ; 53 / 10,410 ( < 1 % ) ;
 ; Regional clocks             ; 0 / 16 ( 0 % )        ;
 +-----------------------------+-----------------------+
 
@@ -1201,53 +1247,53 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------+
 ; LAB Logic Elements                                                        ;
 +--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 6.90) ; Number of LABs  (Total = 10) ;
+; Number of Logic Elements  (Average = 7.46) ; Number of LABs  (Total = 13) ;
 +--------------------------------------------+------------------------------+
-; 1                                          ; 1                            ;
+; 1                                          ; 2                            ;
 ; 2                                          ; 0                            ;
-; 3                                          ; 2                            ;
+; 3                                          ; 0                            ;
 ; 4                                          ; 0                            ;
 ; 5                                          ; 0                            ;
-; 6                                          ; 2                            ;
-; 7                                          ; 0                            ;
-; 8                                          ; 0                            ;
+; 6                                          ; 1                            ;
+; 7                                          ; 3                            ;
+; 8                                          ; 1                            ;
 ; 9                                          ; 0                            ;
-; 10                                         ; 5                            ;
+; 10                                         ; 6                            ;
 +--------------------------------------------+------------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +---------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 6.90) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced  (Average = 7.46) ; Number of LABs  (Total = 13) ;
 +---------------------------------------------+------------------------------+
 ; 0                                           ; 0                            ;
-; 1                                           ; 1                            ;
+; 1                                           ; 2                            ;
 ; 2                                           ; 0                            ;
-; 3                                           ; 2                            ;
+; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 2                            ;
-; 7                                           ; 0                            ;
-; 8                                           ; 0                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 3                            ;
+; 8                                           ; 1                            ;
 ; 9                                           ; 0                            ;
-; 10                                          ; 5                            ;
+; 10                                          ; 6                            ;
 +---------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 4.40) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced Out  (Average = 4.00) ; Number of LABs  (Total = 13) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
 ; 1                                               ; 2                            ;
 ; 2                                               ; 0                            ;
-; 3                                               ; 1                            ;
-; 4                                               ; 3                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 2                            ;
-; 7                                               ; 1                            ;
+; 3                                               ; 0                            ;
+; 4                                               ; 8                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 0                            ;
 ; 8                                               ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
@@ -1255,26 +1301,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.60) ; Number of LABs  (Total = 10) ;
+; Number of Distinct Inputs  (Average = 10.23) ; Number of LABs  (Total = 13) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
+; 2                                            ; 2                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 1                            ;
+; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
-; 8                                            ; 2                            ;
+; 8                                            ; 4                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 0                            ;
 ; 13                                           ; 1                            ;
 ; 14                                           ; 1                            ;
 ; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 2                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 0                            ;
 ; 18                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
@@ -1285,7 +1331,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Fitter
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Thu Nov 17 18:28:57 2022
+    Info: Processing started: Sat Nov 19 17:50:24 2022
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off encoder_64_6 -c encoder_64_6
 Info: Auto device selection -- successful I/O standard check for EP1S10F484C5
 Info: Auto device selection -- successful PCI I/O clamp diode check for EP1S10F484C5
@@ -1301,55 +1347,63 @@ Info: No exact pin location assignment(s) for 72 pins of 72 total pins
     Info: Pin A3 not assigned to an exact location on the device
     Info: Pin A4 not assigned to an exact location on the device
     Info: Pin A5 not assigned to an exact location on the device
-    Info: Pin 47 not assigned to an exact location on the device
-    Info: Pin 45 not assigned to an exact location on the device
-    Info: Pin 43 not assigned to an exact location on the device
-    Info: Pin 41 not assigned to an exact location on the device
-    Info: Pin 42 not assigned to an exact location on the device
-    Info: Pin 44 not assigned to an exact location on the device
-    Info: Pin 46 not assigned to an exact location on the device
+    Info: Pin EO not assigned to an exact location on the device
+    Info: Pin 62 not assigned to an exact location on the device
     Info: Pin 63 not assigned to an exact location on the device
     Info: Pin 61 not assigned to an exact location on the device
-    Info: Pin 59 not assigned to an exact location on the device
-    Info: Pin 57 not assigned to an exact location on the device
-    Info: Pin 58 not assigned to an exact location on the device
     Info: Pin 60 not assigned to an exact location on the device
-    Info: Pin 62 not assigned to an exact location on the device
-    Info: Pin EO not assigned to an exact location on the device
+    Info: Pin 59 not assigned to an exact location on the device
+    Info: Pin 58 not assigned to an exact location on the device
+    Info: Pin 57 not assigned to an exact location on the device
     Info: Pin 56 not assigned to an exact location on the device
-    Info: Pin 50 not assigned to an exact location on the device
-    Info: Pin 52 not assigned to an exact location on the device
-    Info: Pin 48 not assigned to an exact location on the device
-    Info: Pin 53 not assigned to an exact location on the device
-    Info: Pin 51 not assigned to an exact location on the device
     Info: Pin 54 not assigned to an exact location on the device
     Info: Pin 55 not assigned to an exact location on the device
+    Info: Pin 53 not assigned to an exact location on the device
+    Info: Pin 52 not assigned to an exact location on the device
+    Info: Pin 51 not assigned to an exact location on the device
+    Info: Pin 50 not assigned to an exact location on the device
     Info: Pin 49 not assigned to an exact location on the device
+    Info: Pin 48 not assigned to an exact location on the device
+    Info: Pin 46 not assigned to an exact location on the device
+    Info: Pin 47 not assigned to an exact location on the device
+    Info: Pin 45 not assigned to an exact location on the device
+    Info: Pin 44 not assigned to an exact location on the device
+    Info: Pin 43 not assigned to an exact location on the device
+    Info: Pin 42 not assigned to an exact location on the device
+    Info: Pin 41 not assigned to an exact location on the device
     Info: Pin 40 not assigned to an exact location on the device
-    Info: Pin 34 not assigned to an exact location on the device
-    Info: Pin 36 not assigned to an exact location on the device
-    Info: Pin 32 not assigned to an exact location on the device
-    Info: Pin 37 not assigned to an exact location on the device
-    Info: Pin 35 not assigned to an exact location on the device
     Info: Pin 38 not assigned to an exact location on the device
     Info: Pin 39 not assigned to an exact location on the device
+    Info: Pin 37 not assigned to an exact location on the device
+    Info: Pin 36 not assigned to an exact location on the device
+    Info: Pin 35 not assigned to an exact location on the device
+    Info: Pin 34 not assigned to an exact location on the device
     Info: Pin 33 not assigned to an exact location on the device
-    Info: Pin 26 not assigned to an exact location on the device
-    Info: Pin 28 not assigned to an exact location on the device
-    Info: Pin 24 not assigned to an exact location on the device
-    Info: Pin 29 not assigned to an exact location on the device
-    Info: Pin 27 not assigned to an exact location on the device
+    Info: Pin 32 not assigned to an exact location on the device
     Info: Pin 30 not assigned to an exact location on the device
     Info: Pin 31 not assigned to an exact location on the device
+    Info: Pin 29 not assigned to an exact location on the device
+    Info: Pin 28 not assigned to an exact location on the device
+    Info: Pin 27 not assigned to an exact location on the device
+    Info: Pin 26 not assigned to an exact location on the device
     Info: Pin 25 not assigned to an exact location on the device
-    Info: Pin 23 not assigned to an exact location on the device
+    Info: Pin 24 not assigned to an exact location on the device
     Info: Pin 22 not assigned to an exact location on the device
+    Info: Pin 23 not assigned to an exact location on the device
     Info: Pin 21 not assigned to an exact location on the device
     Info: Pin 20 not assigned to an exact location on the device
     Info: Pin 19 not assigned to an exact location on the device
     Info: Pin 18 not assigned to an exact location on the device
-    Info: Pin 16 not assigned to an exact location on the device
     Info: Pin 17 not assigned to an exact location on the device
+    Info: Pin 16 not assigned to an exact location on the device
+    Info: Pin 14 not assigned to an exact location on the device
+    Info: Pin 15 not assigned to an exact location on the device
+    Info: Pin 13 not assigned to an exact location on the device
+    Info: Pin 12 not assigned to an exact location on the device
+    Info: Pin 11 not assigned to an exact location on the device
+    Info: Pin 10 not assigned to an exact location on the device
+    Info: Pin 9 not assigned to an exact location on the device
+    Info: Pin 8 not assigned to an exact location on the device
     Info: Pin 7 not assigned to an exact location on the device
     Info: Pin 5 not assigned to an exact location on the device
     Info: Pin 3 not assigned to an exact location on the device
@@ -1357,14 +1411,6 @@ Info: No exact pin location assignment(s) for 72 pins of 72 total pins
     Info: Pin 2 not assigned to an exact location on the device
     Info: Pin 4 not assigned to an exact location on the device
     Info: Pin 6 not assigned to an exact location on the device
-    Info: Pin 10 not assigned to an exact location on the device
-    Info: Pin 12 not assigned to an exact location on the device
-    Info: Pin 8 not assigned to an exact location on the device
-    Info: Pin 13 not assigned to an exact location on the device
-    Info: Pin 11 not assigned to an exact location on the device
-    Info: Pin 14 not assigned to an exact location on the device
-    Info: Pin 15 not assigned to an exact location on the device
-    Info: Pin 9 not assigned to an exact location on the device
     Info: Pin 0 not assigned to an exact location on the device
 Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
     Info: Assuming a global fmax requirement of 1 MHz
@@ -1415,7 +1461,7 @@ Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
 Info: Completed Auto Delay Chain Operation
 Info: Quartus II Fitter was successful. 0 errors, 0 warnings
-    Info: Processing ended: Thu Nov 17 18:28:59 2022
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sat Nov 19 17:50:27 2022
+    Info: Elapsed time: 00:00:03
 
 
