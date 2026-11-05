@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Debug in TD",
+            "type": "shell",
+            "command": "D:\\Desktop\\NF\\GitNout\\Architecture\\DOSBox\\DOSBox.exe",
+            "args": [
+                "-c", "mount c \"D:\\Desktop\\NF\\GitNout\\Architecture\\C\"",
+                "-c", "mount d \"${workspaceFolder}\"",              
+                "-c", "d:",
+                "-c", "set PATH=%PATH%;c:\\TCC\\TC",
+                "-c", "c:\\TCC\\TC\\tcc -B -mt -nd:\\build d:\\Lab4_4MT.c",
+                "-c", "c:\\TCC\\TC\\tcc -B -ms -nd:\\build d:\\Lab4_4MS.c",
+                "-c", "c:\\TCC\\TC\\tcc -B -mc -nd:\\build d:\\Lab4_4MC.c",
+                "-c", "c:\\TCC\\TC\\tcc -B -ml -nd:\\build d:\\Lab4_4ML.c",
+
+                "-c", "cd build",
+
+                "-c", "Lab4_4MT",
+                "-c", "Lab4_4MS",
+                "-c", "Lab4_4MC",
+                "-c", "Lab4_4ML",
+                       
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 *.patch
 *.diff
-
+Architecture/C/TCC/SAMPLES
+Architecture/C/NTA
 changes.txt
 Diff.txt
