@@ -1,0 +1,727 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B7L6 is multiplexer_4-1:inst6|inst5~61
+--operation mode is normal
+
+B7L6 = E & A4;
+
+
+--B4L5 is multiplexer_4-1:inst3|inst4~24
+--operation mode is normal
+
+B4L5 = A1 & (A0) # !A1 & (A0 & D25 # !A0 & (D24));
+
+
+--B4L6 is multiplexer_4-1:inst3|inst4~25
+--operation mode is normal
+
+B4L6 = A1 & (B4L5 & (D27) # !B4L5 & D26) # !A1 & (B4L5);
+
+
+--B4L3 is multiplexer_4-1:inst3|inst3~24
+--operation mode is normal
+
+B4L3 = A1 & (A0) # !A1 & (A0 & D21 # !A0 & (D20));
+
+
+--B4L4 is multiplexer_4-1:inst3|inst3~25
+--operation mode is normal
+
+B4L4 = A1 & (B4L3 & (D23) # !B4L3 & D22) # !A1 & (B4L3);
+
+
+--B4L9 is multiplexer_4-1:inst3|inst~10
+--operation mode is normal
+
+B4L9 = A2 & (B4L4 & !A3) # !A2 & B4L6 & (A3);
+
+
+--B4L7 is multiplexer_4-1:inst3|inst5~24
+--operation mode is normal
+
+B4L7 = A0 & (A1) # !A0 & (A1 & D30 # !A1 & (D28));
+
+
+--B4L8 is multiplexer_4-1:inst3|inst5~25
+--operation mode is normal
+
+B4L8 = A0 & (B4L7 & (D31) # !B4L7 & D29) # !A0 & (B4L7);
+
+
+--B4L1 is multiplexer_4-1:inst3|inst2~24
+--operation mode is normal
+
+B4L1 = A0 & (A1) # !A0 & (A1 & D18 # !A1 & (D16));
+
+
+--B4L2 is multiplexer_4-1:inst3|inst2~25
+--operation mode is normal
+
+B4L2 = A0 & (B4L1 & (D19) # !B4L1 & D17) # !A0 & (B4L1);
+
+
+--B4L01 is multiplexer_4-1:inst3|inst~11
+--operation mode is normal
+
+B4L01 = A2 & B4L8 & A3 # !A2 & (!A3 & B4L2);
+
+
+--B7_inst3 is multiplexer_4-1:inst6|inst3
+--operation mode is normal
+
+B7_inst3 = B7L6 & !A5 & (B4L9 # B4L01);
+
+
+--B7L4 is multiplexer_4-1:inst6|inst4~60
+--operation mode is normal
+
+B7L4 = E & (!A4);
+
+
+--B5L5 is multiplexer_4-1:inst4|inst4~24
+--operation mode is normal
+
+B5L5 = A1 & (A0) # !A1 & (A0 & D41 # !A0 & (D40));
+
+
+--B5L6 is multiplexer_4-1:inst4|inst4~25
+--operation mode is normal
+
+B5L6 = A1 & (B5L5 & (D43) # !B5L5 & D42) # !A1 & (B5L5);
+
+
+--B5L3 is multiplexer_4-1:inst4|inst3~24
+--operation mode is normal
+
+B5L3 = A1 & (A0) # !A1 & (A0 & D37 # !A0 & (D36));
+
+
+--B5L4 is multiplexer_4-1:inst4|inst3~25
+--operation mode is normal
+
+B5L4 = A1 & (B5L3 & (D39) # !B5L3 & D38) # !A1 & (B5L3);
+
+
+--B5L9 is multiplexer_4-1:inst4|inst~10
+--operation mode is normal
+
+B5L9 = A2 & (B5L4 & !A3) # !A2 & B5L6 & (A3);
+
+
+--B5L7 is multiplexer_4-1:inst4|inst5~24
+--operation mode is normal
+
+B5L7 = A0 & (A1) # !A0 & (A1 & D46 # !A1 & (D44));
+
+
+--B5L8 is multiplexer_4-1:inst4|inst5~25
+--operation mode is normal
+
+B5L8 = A0 & (B5L7 & (D47) # !B5L7 & D45) # !A0 & (B5L7);
+
+
+--B5L1 is multiplexer_4-1:inst4|inst2~24
+--operation mode is normal
+
+B5L1 = A0 & (A1) # !A0 & (A1 & D34 # !A1 & (D32));
+
+
+--B5L2 is multiplexer_4-1:inst4|inst2~25
+--operation mode is normal
+
+B5L2 = A0 & (B5L1 & (D35) # !B5L1 & D33) # !A0 & (B5L1);
+
+
+--B5L01 is multiplexer_4-1:inst4|inst~11
+--operation mode is normal
+
+B5L01 = A2 & B5L8 & A3 # !A2 & (!A3 & B5L2);
+
+
+--B7_inst4 is multiplexer_4-1:inst6|inst4
+--operation mode is normal
+
+B7_inst4 = A5 & B7L4 & (B5L9 # B5L01);
+
+
+--B6L5 is multiplexer_4-1:inst5|inst4~24
+--operation mode is normal
+
+B6L5 = A1 & (A0) # !A1 & (A0 & D57 # !A0 & (D56));
+
+
+--B6L6 is multiplexer_4-1:inst5|inst4~25
+--operation mode is normal
+
+B6L6 = A1 & (B6L5 & (D59) # !B6L5 & D58) # !A1 & (B6L5);
+
+
+--B6L3 is multiplexer_4-1:inst5|inst3~24
+--operation mode is normal
+
+B6L3 = A1 & (A0) # !A1 & (A0 & D53 # !A0 & (D52));
+
+
+--B6L4 is multiplexer_4-1:inst5|inst3~25
+--operation mode is normal
+
+B6L4 = A1 & (B6L3 & (D55) # !B6L3 & D54) # !A1 & (B6L3);
+
+
+--B6L9 is multiplexer_4-1:inst5|inst~10
+--operation mode is normal
+
+B6L9 = A2 & (B6L4 & !A3) # !A2 & B6L6 & (A3);
+
+
+--B6L7 is multiplexer_4-1:inst5|inst5~24
+--operation mode is normal
+
+B6L7 = A0 & (A1) # !A0 & (A1 & D62 # !A1 & (D60));
+
+
+--B6L8 is multiplexer_4-1:inst5|inst5~25
+--operation mode is normal
+
+B6L8 = A0 & (B6L7 & (D63) # !B6L7 & D61) # !A0 & (B6L7);
+
+
+--B6L1 is multiplexer_4-1:inst5|inst2~24
+--operation mode is normal
+
+B6L1 = A0 & (A1) # !A0 & (A1 & D50 # !A1 & (D48));
+
+
+--B6L2 is multiplexer_4-1:inst5|inst2~25
+--operation mode is normal
+
+B6L2 = A0 & (B6L1 & (D51) # !B6L1 & D49) # !A0 & (B6L1);
+
+
+--B6L01 is multiplexer_4-1:inst5|inst~11
+--operation mode is normal
+
+B6L01 = A2 & B6L8 & A3 # !A2 & (!A3 & B6L2);
+
+
+--B7_inst5 is multiplexer_4-1:inst6|inst5
+--operation mode is normal
+
+B7_inst5 = B7L6 & A5 & (B6L9 # B6L01);
+
+
+--B3L5 is multiplexer_4-1:inst2|inst4~25
+--operation mode is normal
+
+B3L5 = A1 & (A0) # !A1 & (A0 & D9 # !A0 & (D8));
+
+
+--B3L6 is multiplexer_4-1:inst2|inst4~26
+--operation mode is normal
+
+B3L6 = A1 & (B3L5 & (D11) # !B3L5 & D10) # !A1 & (B3L5);
+
+
+--B3L3 is multiplexer_4-1:inst2|inst3~25
+--operation mode is normal
+
+B3L3 = A1 & (A0) # !A1 & (A0 & D5 # !A0 & (D4));
+
+
+--B3L4 is multiplexer_4-1:inst2|inst3~26
+--operation mode is normal
+
+B3L4 = A1 & (B3L3 & (D7) # !B3L3 & D6) # !A1 & (B3L3);
+
+
+--B3L9 is multiplexer_4-1:inst2|inst~10
+--operation mode is normal
+
+B3L9 = A2 & (B3L4 & !A3) # !A2 & B3L6 & (A3);
+
+
+--B3L7 is multiplexer_4-1:inst2|inst5~25
+--operation mode is normal
+
+B3L7 = A0 & (A1) # !A0 & (A1 & D14 # !A1 & (D12));
+
+
+--B3L8 is multiplexer_4-1:inst2|inst5~26
+--operation mode is normal
+
+B3L8 = A0 & (B3L7 & (D15) # !B3L7 & D13) # !A0 & (B3L7);
+
+
+--B3L1 is multiplexer_4-1:inst2|inst2~25
+--operation mode is normal
+
+B3L1 = A0 & (A1) # !A0 & (A1 & D2 # !A1 & (D0));
+
+
+--B3L2 is multiplexer_4-1:inst2|inst2~26
+--operation mode is normal
+
+B3L2 = A0 & (B3L1 & (D3) # !B3L1 & D1) # !A0 & (B3L1);
+
+
+--B3L01 is multiplexer_4-1:inst2|inst~11
+--operation mode is normal
+
+B3L01 = A2 & B3L8 & A3 # !A2 & (!A3 & B3L2);
+
+
+--B7_inst2 is multiplexer_4-1:inst6|inst2
+--operation mode is normal
+
+B7_inst2 = B7L4 & !A5 & (B3L9 # B3L01);
+
+
+--B7L7 is multiplexer_4-1:inst6|inst~187
+--operation mode is normal
+
+B7L7 = B7_inst3 # B7_inst4 # B7_inst5 # B7_inst2;
+
+
+--E is E
+--operation mode is input
+
+E = INPUT();
+
+
+--A4 is A4
+--operation mode is input
+
+A4 = INPUT();
+
+
+--D26 is D26
+--operation mode is input
+
+D26 = INPUT();
+
+
+--A1 is A1
+--operation mode is input
+
+A1 = INPUT();
+
+
+--D25 is D25
+--operation mode is input
+
+D25 = INPUT();
+
+
+--A0 is A0
+--operation mode is input
+
+A0 = INPUT();
+
+
+--D24 is D24
+--operation mode is input
+
+D24 = INPUT();
+
+
+--D27 is D27
+--operation mode is input
+
+D27 = INPUT();
+
+
+--D22 is D22
+--operation mode is input
+
+D22 = INPUT();
+
+
+--D21 is D21
+--operation mode is input
+
+D21 = INPUT();
+
+
+--D20 is D20
+--operation mode is input
+
+D20 = INPUT();
+
+
+--D23 is D23
+--operation mode is input
+
+D23 = INPUT();
+
+
+--A2 is A2
+--operation mode is input
+
+A2 = INPUT();
+
+
+--A3 is A3
+--operation mode is input
+
+A3 = INPUT();
+
+
+--D29 is D29
+--operation mode is input
+
+D29 = INPUT();
+
+
+--D30 is D30
+--operation mode is input
+
+D30 = INPUT();
+
+
+--D28 is D28
+--operation mode is input
+
+D28 = INPUT();
+
+
+--D31 is D31
+--operation mode is input
+
+D31 = INPUT();
+
+
+--D17 is D17
+--operation mode is input
+
+D17 = INPUT();
+
+
+--D18 is D18
+--operation mode is input
+
+D18 = INPUT();
+
+
+--D16 is D16
+--operation mode is input
+
+D16 = INPUT();
+
+
+--D19 is D19
+--operation mode is input
+
+D19 = INPUT();
+
+
+--A5 is A5
+--operation mode is input
+
+A5 = INPUT();
+
+
+--D42 is D42
+--operation mode is input
+
+D42 = INPUT();
+
+
+--D41 is D41
+--operation mode is input
+
+D41 = INPUT();
+
+
+--D40 is D40
+--operation mode is input
+
+D40 = INPUT();
+
+
+--D43 is D43
+--operation mode is input
+
+D43 = INPUT();
+
+
+--D38 is D38
+--operation mode is input
+
+D38 = INPUT();
+
+
+--D37 is D37
+--operation mode is input
+
+D37 = INPUT();
+
+
+--D36 is D36
+--operation mode is input
+
+D36 = INPUT();
+
+
+--D39 is D39
+--operation mode is input
+
+D39 = INPUT();
+
+
+--D45 is D45
+--operation mode is input
+
+D45 = INPUT();
+
+
+--D46 is D46
+--operation mode is input
+
+D46 = INPUT();
+
+
+--D44 is D44
+--operation mode is input
+
+D44 = INPUT();
+
+
+--D47 is D47
+--operation mode is input
+
+D47 = INPUT();
+
+
+--D33 is D33
+--operation mode is input
+
+D33 = INPUT();
+
+
+--D34 is D34
+--operation mode is input
+
+D34 = INPUT();
+
+
+--D32 is D32
+--operation mode is input
+
+D32 = INPUT();
+
+
+--D35 is D35
+--operation mode is input
+
+D35 = INPUT();
+
+
+--D58 is D58
+--operation mode is input
+
+D58 = INPUT();
+
+
+--D57 is D57
+--operation mode is input
+
+D57 = INPUT();
+
+
+--D56 is D56
+--operation mode is input
+
+D56 = INPUT();
+
+
+--D59 is D59
+--operation mode is input
+
+D59 = INPUT();
+
+
+--D54 is D54
+--operation mode is input
+
+D54 = INPUT();
+
+
+--D53 is D53
+--operation mode is input
+
+D53 = INPUT();
+
+
+--D52 is D52
+--operation mode is input
+
+D52 = INPUT();
+
+
+--D55 is D55
+--operation mode is input
+
+D55 = INPUT();
+
+
+--D61 is D61
+--operation mode is input
+
+D61 = INPUT();
+
+
+--D62 is D62
+--operation mode is input
+
+D62 = INPUT();
+
+
+--D60 is D60
+--operation mode is input
+
+D60 = INPUT();
+
+
+--D63 is D63
+--operation mode is input
+
+D63 = INPUT();
+
+
+--D49 is D49
+--operation mode is input
+
+D49 = INPUT();
+
+
+--D50 is D50
+--operation mode is input
+
+D50 = INPUT();
+
+
+--D48 is D48
+--operation mode is input
+
+D48 = INPUT();
+
+
+--D51 is D51
+--operation mode is input
+
+D51 = INPUT();
+
+
+--D10 is D10
+--operation mode is input
+
+D10 = INPUT();
+
+
+--D9 is D9
+--operation mode is input
+
+D9 = INPUT();
+
+
+--D8 is D8
+--operation mode is input
+
+D8 = INPUT();
+
+
+--D11 is D11
+--operation mode is input
+
+D11 = INPUT();
+
+
+--D6 is D6
+--operation mode is input
+
+D6 = INPUT();
+
+
+--D5 is D5
+--operation mode is input
+
+D5 = INPUT();
+
+
+--D4 is D4
+--operation mode is input
+
+D4 = INPUT();
+
+
+--D7 is D7
+--operation mode is input
+
+D7 = INPUT();
+
+
+--D13 is D13
+--operation mode is input
+
+D13 = INPUT();
+
+
+--D14 is D14
+--operation mode is input
+
+D14 = INPUT();
+
+
+--D12 is D12
+--operation mode is input
+
+D12 = INPUT();
+
+
+--D15 is D15
+--operation mode is input
+
+D15 = INPUT();
+
+
+--D1 is D1
+--operation mode is input
+
+D1 = INPUT();
+
+
+--D2 is D2
+--operation mode is input
+
+D2 = INPUT();
+
+
+--D0 is D0
+--operation mode is input
+
+D0 = INPUT();
+
+
+--D3 is D3
+--operation mode is input
+
+D3 = INPUT();
+
+
+--f is f
+--operation mode is output
+
+f = OUTPUT(B7L7);
+
+
