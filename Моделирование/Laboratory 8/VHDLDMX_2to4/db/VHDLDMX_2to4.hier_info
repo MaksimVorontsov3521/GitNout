@@ -1,0 +1,23 @@
+|dmx_1to4
+X => Mux~0.IN3
+X => Mux~1.IN3
+X => Mux~2.IN3
+X => Mux~3.IN3
+a[0] => Mux~0.IN5
+a[0] => Mux~1.IN5
+a[0] => Mux~2.IN5
+a[0] => Mux~3.IN5
+a[1] => Mux~0.IN4
+a[1] => Mux~1.IN4
+a[1] => Mux~2.IN4
+a[1] => Mux~3.IN4
+E => F~0.OUTPUTSELECT
+E => F~1.OUTPUTSELECT
+E => F~2.OUTPUTSELECT
+E => F~3.OUTPUTSELECT
+F[0] <= F~3.DB_MAX_OUTPUT_PORT_TYPE
+F[1] <= F~2.DB_MAX_OUTPUT_PORT_TYPE
+F[2] <= F~1.DB_MAX_OUTPUT_PORT_TYPE
+F[3] <= F~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

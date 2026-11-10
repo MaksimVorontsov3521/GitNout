@@ -1,0 +1,82 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+mux64_1
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+mux64_1.vhd
+1669309083
+4
+# storage
+db|VHDLmultiplexer64to1.(0).cnf
+db|VHDLmultiplexer64to1.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
+mux4_1
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+mux4_1.vhd
+1669309084
+4
+# storage
+db|VHDLmultiplexer64to1.(1).cnf
+db|VHDLmultiplexer64to1.(1).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+mux4_1:\GEN_LEVEL1:0:U_L1
+mux4_1:\GEN_LEVEL1:1:U_L1
+mux4_1:\GEN_LEVEL1:2:U_L1
+mux4_1:\GEN_LEVEL1:3:U_L1
+mux4_1:\GEN_LEVEL1:4:U_L1
+mux4_1:\GEN_LEVEL1:5:U_L1
+mux4_1:\GEN_LEVEL1:6:U_L1
+mux4_1:\GEN_LEVEL1:7:U_L1
+mux4_1:\GEN_LEVEL1:8:U_L1
+mux4_1:\GEN_LEVEL1:9:U_L1
+mux4_1:\GEN_LEVEL1:10:U_L1
+mux4_1:\GEN_LEVEL1:11:U_L1
+mux4_1:\GEN_LEVEL1:12:U_L1
+mux4_1:\GEN_LEVEL1:13:U_L1
+mux4_1:\GEN_LEVEL1:14:U_L1
+mux4_1:\GEN_LEVEL1:15:U_L1
+mux4_1:\GEN_LEVEL2:0:U_L2
+mux4_1:\GEN_LEVEL2:1:U_L2
+mux4_1:\GEN_LEVEL2:2:U_L2
+mux4_1:\GEN_LEVEL2:3:U_L2
+mux4_1:U_L3
+}
+# end
+# complete
+
