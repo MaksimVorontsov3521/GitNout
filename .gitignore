@@ -1,5 +1,7 @@
 *.patch
 *.diff
+*.OBJ
+*.EXE
 Architecture/C/TCC/SAMPLES
 Architecture/C/NTA
 changes.txt
