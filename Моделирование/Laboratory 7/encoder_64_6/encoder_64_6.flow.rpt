@@ -1,5 +1,5 @@
 Flow report for encoder_64_6
-Sat Nov 19 17:50:30 2022
+Thu Nov 24 16:44:02 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +--------------------------+------------------------------------------+
-; Flow Status              ; Successful - Sat Nov 19 17:50:30 2022    ;
+; Flow Status              ; Successful - Thu Nov 24 16:44:02 2022    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; encoder_64_6                             ;
 ; Top-level Entity Name    ; encoder_64-6                             ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/19/2022 17:50:23 ;
+; Start date & time ; 11/24/2022 16:43:54 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; encoder_64_6        ;
 +-------------------+---------------------+
@@ -70,8 +70,8 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:01     ;
-; Fitter               ; 00:00:03     ;
+; Analysis & Synthesis ; 00:00:02     ;
+; Fitter               ; 00:00:02     ;
 ; Assembler            ; 00:00:01     ;
 ; Timing Analyzer      ; 00:00:01     ;
 ; Total                ; 00:00:06     ;

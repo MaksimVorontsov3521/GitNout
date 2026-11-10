@@ -1,5 +1,5 @@
 Timing Analyzer report for encoder_64_6
-Sat Nov 19 17:50:30 2022
+Thu Nov 24 16:44:02 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -283,7 +283,7 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Timing Analyzer
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Nov 19 17:50:29 2022
+    Info: Processing started: Thu Nov 24 16:44:01 2022
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off encoder_64_6 -c encoder_64_6 --timing_analysis_only
 Info: Longest tpd from source pin "55" to destination pin "GS" is 16.955 ns
     Info: 1: + IC(0.000 ns) + CELL(1.087 ns) = 1.087 ns; Loc. = PIN_C14; Fanout = 3; PIN Node = '55'
@@ -301,7 +301,7 @@ Info: Longest tpd from source pin "55" to destination pin "GS" is 16.955 ns
     Info: Total cell delay = 5.945 ns ( 35.06 % )
     Info: Total interconnect delay = 11.010 ns ( 64.94 % )
 Info: Quartus II Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Nov 19 17:50:30 2022
+    Info: Processing ended: Thu Nov 24 16:44:02 2022
     Info: Elapsed time: 00:00:01
 
 

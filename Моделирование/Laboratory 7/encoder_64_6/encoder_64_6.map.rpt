@@ -1,5 +1,5 @@
 Analysis & Synthesis report for encoder_64_6
-Sat Nov 19 17:50:24 2022
+Thu Nov 24 16:43:55 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat Nov 19 17:50:24 2022    ;
+; Analysis & Synthesis Status ; Successful - Thu Nov 24 16:43:55 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; encoder_64_6                             ;
 ; Top-level Entity Name       ; encoder_64-6                             ;
@@ -194,7 +194,7 @@ The equations can be found in C:/altera/Laboratory 7/encoder_64_6/encoder_64_6.m
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sat Nov 19 17:50:23 2022
+    Info: Processing started: Thu Nov 24 16:43:53 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off encoder_64_6 -c encoder_64_6
 Info: Found 1 design units, including 1 entities, in source file multiplexer_4-1.bdf
     Info: Found entity 1: multiplexer_4-1
@@ -212,7 +212,7 @@ Info: Implemented 169 device resources after synthesis - the final resource coun
     Info: Implemented 7 output pins
     Info: Implemented 97 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sat Nov 19 17:50:24 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Thu Nov 24 16:43:55 2022
+    Info: Elapsed time: 00:00:02
 
 
