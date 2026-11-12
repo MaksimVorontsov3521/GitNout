@@ -1,8 +1,4 @@
 |dmx_1to4
-X => Mux~0.IN3
-X => Mux~1.IN3
-X => Mux~2.IN3
-X => Mux~3.IN3
 a[0] => Mux~0.IN5
 a[0] => Mux~1.IN5
 a[0] => Mux~2.IN5

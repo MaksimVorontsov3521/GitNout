@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VHDLDMX_2to4
-Thu Nov 24 20:02:38 2022
+Sat Nov 26 14:29:54 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -40,13 +40,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu Nov 24 20:02:38 2022    ;
+; Analysis & Synthesis Status ; Successful - Sat Nov 26 14:29:54 2022    ;
 ; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name               ; VHDLDMX_2to4                             ;
 ; Top-level Entity Name       ; dmx_1to4                                 ;
 ; Family                      ; Stratix                                  ;
 ; Total logic elements        ; 4                                        ;
-; Total pins                  ; 8                                        ;
+; Total pins                  ; 7                                        ;
 ; Total virtual pins          ; 0                                        ;
 ; Total memory bits           ; 0                                        ;
 ; DSP block 9-bit elements    ; 0                                        ;
@@ -113,13 +113,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------+--------------+---------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                  ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                     ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------+
-; dmx_1to4.vhd                     ; yes             ; User VHDL File  ; C:/altera/Laboratory 8/VHDLDMX_2to4/dmx_1to4.vhd ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+
+; dmx_1to4.vhd                     ; yes             ; User VHDL File  ; C:/altera/quartus50/Laboratory 8/VHDLDMX_2to4/dmx_1to4.vhd ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+
 
 
 +---------------------------------------------+
@@ -129,18 +129,18 @@ applicable agreement for further details.
 +---------------------------------+-----------+
 ; Total logic elements            ; 4         ;
 ; Total combinational functions   ; 4         ;
-;     -- Total 4-input functions  ; 4         ;
-;     -- Total 3-input functions  ; 0         ;
+;     -- Total 4-input functions  ; 0         ;
+;     -- Total 3-input functions  ; 4         ;
 ;     -- Total 2-input functions  ; 0         ;
 ;     -- Total 1-input functions  ; 0         ;
 ;     -- Total 0-input functions  ; 0         ;
 ; Combinational cells for routing ; 0         ;
 ; Total registers                 ; 0         ;
-; I/O pins                        ; 8         ;
-; Maximum fan-out node            ; X         ;
+; I/O pins                        ; 7         ;
+; Maximum fan-out node            ; a[1]      ;
 ; Maximum fan-out                 ; 4         ;
-; Total fan-out                   ; 20        ;
-; Average fan-out                 ; 1.67      ;
+; Total fan-out                   ; 16        ;
+; Average fan-out                 ; 1.45      ;
 +---------------------------------+-----------+
 
 
@@ -149,7 +149,7 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name ;
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
-; |dmx_1to4                  ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 8    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |dmx_1to4           ;
+; |dmx_1to4                  ; 4 (4)       ; 0            ; 0           ; 0            ; 0       ; 0         ; 0         ; 7    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |dmx_1to4           ;
 +----------------------------+-------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+--------------+-------------------+------------------+-----------------+---------------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -172,7 +172,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------+
 ; Analysis & Synthesis Equations ;
 +--------------------------------+
-The equations can be found in C:/altera/Laboratory 8/VHDLDMX_2to4/VHDLDMX_2to4.map.eqn.
+The equations can be found in C:/altera/quartus50/Laboratory 8/VHDLDMX_2to4/VHDLDMX_2to4.map.eqn.
 
 
 +-------------------------------+
@@ -181,19 +181,19 @@ The equations can be found in C:/altera/Laboratory 8/VHDLDMX_2to4/VHDLDMX_2to4.m
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Thu Nov 24 20:02:38 2022
+    Info: Processing started: Sat Nov 26 14:29:54 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VHDLDMX_2to4 -c VHDLDMX_2to4
 Info: Found 2 design units, including 1 entities, in source file dmx_1to4.vhd
     Info: Found design unit 1: dmx_1to4-Behavioral
     Info: Found entity 1: dmx_1to4
 Info: Elaborating entity "dmx_1to4" for the top level hierarchy
-Info: VHDL Case Statement information at dmx_1to4.vhd(27): OTHERS choice is never selected
-Info: Implemented 12 device resources after synthesis - the final resource count might be different
-    Info: Implemented 4 input pins
+Info: VHDL Case Statement information at dmx_1to4.vhd(26): OTHERS choice is never selected
+Info: Implemented 11 device resources after synthesis - the final resource count might be different
+    Info: Implemented 3 input pins
     Info: Implemented 4 output pins
     Info: Implemented 4 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 0 warnings
-    Info: Processing ended: Thu Nov 24 20:02:38 2022
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Sat Nov 26 14:29:54 2022
+    Info: Elapsed time: 00:00:01
 
 

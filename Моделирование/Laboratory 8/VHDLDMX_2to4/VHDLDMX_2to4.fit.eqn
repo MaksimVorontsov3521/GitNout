@@ -11,73 +11,67 @@
 -- programming logic devices manufactured by Altera and sold by 
 -- Altera or its authorized distributors.  Please refer to the 
 -- applicable agreement for further details.
---A1L01 is F~49 at LC_X52_Y1_N4
+--A1L01 is F~40 at LC_X7_Y1_N6
 --operation mode is normal
 
-A1L01 = !a[1] & E & X & !a[0];
+A1L01 = a[0] # a[1] # !E;
 
 
---A1L11 is F~50 at LC_X52_Y1_N5
+--A1L11 is F~41 at LC_X7_Y1_N4
 --operation mode is normal
 
-A1L11 = !a[1] & E & X & a[0];
+A1L11 = a[0] & !a[1] & E;
 
 
---A1L21 is F~51 at LC_X52_Y1_N2
+--A1L21 is F~42 at LC_X7_Y1_N5
 --operation mode is normal
 
-A1L21 = a[1] & E & X & !a[0];
+A1L21 = !a[0] & a[1] & E;
 
 
---A1L31 is F~52 at LC_X52_Y1_N6
+--A1L31 is F~43 at LC_X7_Y1_N2
 --operation mode is normal
 
-A1L31 = a[1] & E & X & a[0];
+A1L31 = a[0] & a[1] & E;
 
 
---X is X at PIN_T7
---operation mode is input
-
-X = INPUT();
-
-
---E is E at PIN_AA2
---operation mode is input
-
-E = INPUT();
-
-
---a[1] is a[1] at PIN_V4
+--a[1] is a[1] at PIN_V18
 --operation mode is input
 
 a[1] = INPUT();
 
 
---a[0] is a[0] at PIN_V3
+--a[0] is a[0] at PIN_V17
 --operation mode is input
 
 a[0] = INPUT();
 
 
---F[0] is F[0] at PIN_W3
+--E is E at PIN_Y16
+--operation mode is input
+
+E = INPUT();
+
+
+--F[0] is F[0] at PIN_U16
 --operation mode is output
 
-F[0] = OUTPUT(A1L01);
+F[0] = OUTPUT(!A1L01);
 
 
---F[1] is F[1] at PIN_AA3
+--F[1] is F[1] at PIN_T16
 --operation mode is output
 
 F[1] = OUTPUT(A1L11);
 
 
---F[2] is F[2] at PIN_Y3
+--F[2] is F[2] at PIN_V16
 --operation mode is output
 
 F[2] = OUTPUT(A1L21);
 
 
---F[3] is F[3] at PIN_W4
+--F[3] is F[3] at PIN_U17
 --operation mode is output
 
 F[3] = OUTPUT(A1L31);
