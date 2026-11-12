@@ -1,0 +1,43 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+CMP_2bit
+# case_insensitive
+# source_file
+CMP_2bit.bdf
+1669503065
+23
+# storage
+db|CMP_4bit.(1).cnf
+db|CMP_4bit.(1).cnf
+# hierarchies {
+CMP_2bit:inst1
+CMP_2bit:inst
+}
+# end
+# entity
+CMP_4bit
+# case_insensitive
+# source_file
+CMP_4bit.bdf
+1669504490
+23
+# storage
+db|CMP_4bit.(0).cnf
+db|CMP_4bit.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

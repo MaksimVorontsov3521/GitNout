@@ -1,0 +1,138 @@
+|CMP_8BIT
+XLY <= CMP_2bit:inst2.XLY
+Y7 => CMP_2bit:inst2.Y1
+X7 => CMP_2bit:inst2.X1
+Y6 => CMP_2bit:inst2.Y0
+X6 => CMP_2bit:inst2.X0
+Y5 => CMP_6BIT:inst.Y5
+X5 => CMP_6BIT:inst.X5
+Y4 => CMP_6BIT:inst.Y4
+X4 => CMP_6BIT:inst.X4
+Y3 => CMP_6BIT:inst.Y3
+X3 => CMP_6BIT:inst.X3
+Y2 => CMP_6BIT:inst.Y2
+X2 => CMP_6BIT:inst.X2
+Y1 => CMP_6BIT:inst.Y1
+X1 => CMP_6BIT:inst.X1
+Y0 => CMP_6BIT:inst.Y0
+X0 => CMP_6BIT:inst.X0
+XMY <= CMP_2bit:inst2.XMY
+XEY <= CMP_2bit:inst2.XEY
+
+
+|CMP_8BIT|CMP_2bit:inst2
+XLY <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+Y1 => inst24.IN0
+Y1 => inst22.IN0
+Y1 => inst26.IN0
+X1 => inst.IN0
+X1 => inst22.IN1
+X1 => inst23.IN0
+Y0 => inst27.IN1
+Y0 => inst30.IN0
+Y0 => inst34.IN0
+X0 => inst29.IN0
+X0 => inst30.IN1
+X0 => inst32.IN2
+XLY0 => inst28.IN0
+XEY <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+XEY0 => inst35.IN2
+XMY <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+XMY0 => inst33.IN2
+
+
+|CMP_8BIT|CMP_6BIT:inst
+XLY <= CMP_2bit:inst.XLY
+Y5 => CMP_2bit:inst.Y1
+X5 => CMP_2bit:inst.X1
+Y4 => CMP_2bit:inst.Y0
+X4 => CMP_2bit:inst.X0
+Y3 => CMP_4bit:inst1.Y3
+X3 => CMP_4bit:inst1.X3
+Y2 => CMP_4bit:inst1.Y2
+X2 => CMP_4bit:inst1.X2
+Y1 => CMP_4bit:inst1.Y1
+X1 => CMP_4bit:inst1.X1
+Y0 => CMP_4bit:inst1.Y0
+X0 => CMP_4bit:inst1.X0
+XMY <= CMP_2bit:inst.XMY
+XEY <= CMP_2bit:inst.XEY
+
+
+|CMP_8BIT|CMP_6BIT:inst|CMP_2bit:inst
+XLY <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+Y1 => inst24.IN0
+Y1 => inst22.IN0
+Y1 => inst26.IN0
+X1 => inst.IN0
+X1 => inst22.IN1
+X1 => inst23.IN0
+Y0 => inst27.IN1
+Y0 => inst30.IN0
+Y0 => inst34.IN0
+X0 => inst29.IN0
+X0 => inst30.IN1
+X0 => inst32.IN2
+XLY0 => inst28.IN0
+XEY <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+XEY0 => inst35.IN2
+XMY <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+XMY0 => inst33.IN2
+
+
+|CMP_8BIT|CMP_6BIT:inst|CMP_4bit:inst1
+XLY <= CMP_2bit:inst1.XLY
+Y3 => CMP_2bit:inst1.Y1
+X3 => CMP_2bit:inst1.X1
+Y2 => CMP_2bit:inst1.Y0
+X2 => CMP_2bit:inst1.X0
+Y1 => CMP_2bit:inst.Y1
+X1 => CMP_2bit:inst.X1
+Y0 => CMP_2bit:inst.Y0
+X0 => CMP_2bit:inst.X0
+XMY <= CMP_2bit:inst1.XMY
+XEY <= CMP_2bit:inst1.XEY
+
+
+|CMP_8BIT|CMP_6BIT:inst|CMP_4bit:inst1|CMP_2bit:inst1
+XLY <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+Y1 => inst24.IN0
+Y1 => inst22.IN0
+Y1 => inst26.IN0
+X1 => inst.IN0
+X1 => inst22.IN1
+X1 => inst23.IN0
+Y0 => inst27.IN1
+Y0 => inst30.IN0
+Y0 => inst34.IN0
+X0 => inst29.IN0
+X0 => inst30.IN1
+X0 => inst32.IN2
+XLY0 => inst28.IN0
+XEY <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+XEY0 => inst35.IN2
+XMY <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+XMY0 => inst33.IN2
+
+
+|CMP_8BIT|CMP_6BIT:inst|CMP_4bit:inst1|CMP_2bit:inst
+XLY <= inst17.DB_MAX_OUTPUT_PORT_TYPE
+Y1 => inst24.IN0
+Y1 => inst22.IN0
+Y1 => inst26.IN0
+X1 => inst.IN0
+X1 => inst22.IN1
+X1 => inst23.IN0
+Y0 => inst27.IN1
+Y0 => inst30.IN0
+Y0 => inst34.IN0
+X0 => inst29.IN0
+X0 => inst30.IN1
+X0 => inst32.IN2
+XLY0 => inst28.IN0
+XEY <= inst18.DB_MAX_OUTPUT_PORT_TYPE
+XEY0 => inst35.IN2
+XMY <= inst19.DB_MAX_OUTPUT_PORT_TYPE
+XMY0 => inst33.IN2
+
+

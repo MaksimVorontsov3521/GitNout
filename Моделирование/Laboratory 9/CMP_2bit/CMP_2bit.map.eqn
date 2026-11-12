@@ -1,0 +1,109 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L1 is inst17~131
+--operation mode is normal
+
+A1L1 = X1 & (X0 # !Y1 # !Y0) # !X1 & !Y1 & (X0 # !Y0);
+
+
+--A1L5 is inst28~34
+--operation mode is normal
+
+A1L5 = Y1 & X1 & (Y0 $ !X0) # !Y1 & !X1 & (Y0 $ !X0);
+
+
+--A1L2 is inst17~132
+--operation mode is normal
+
+A1L2 = A1L1 & (!A1L5 # !XLY0);
+
+
+--inst35 is inst35
+--operation mode is normal
+
+inst35 = A1L5 & XEY0;
+
+
+--A1L3 is inst19~131
+--operation mode is normal
+
+A1L3 = Y1 & (Y0 # !X1 # !X0) # !Y1 & !X1 & (Y0 # !X0);
+
+
+--A1L4 is inst19~132
+--operation mode is normal
+
+A1L4 = A1L3 & (!XMY0 # !A1L5);
+
+
+--X1 is X1
+--operation mode is input
+
+X1 = INPUT();
+
+
+--X0 is X0
+--operation mode is input
+
+X0 = INPUT();
+
+
+--Y0 is Y0
+--operation mode is input
+
+Y0 = INPUT();
+
+
+--Y1 is Y1
+--operation mode is input
+
+Y1 = INPUT();
+
+
+--XLY0 is XLY0
+--operation mode is input
+
+XLY0 = INPUT();
+
+
+--XEY0 is XEY0
+--operation mode is input
+
+XEY0 = INPUT();
+
+
+--XMY0 is XMY0
+--operation mode is input
+
+XMY0 = INPUT();
+
+
+--XLY is XLY
+--operation mode is output
+
+XLY = OUTPUT(!A1L2);
+
+
+--XEY is XEY
+--operation mode is output
+
+XEY = OUTPUT(inst35);
+
+
+--XMY is XMY
+--operation mode is output
+
+XMY = OUTPUT(!A1L4);
+
+

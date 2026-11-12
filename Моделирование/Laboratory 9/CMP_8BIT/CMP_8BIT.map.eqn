@@ -1,0 +1,247 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1L1 is CMP_2bit:inst2|inst17~18
+--operation mode is normal
+
+C1L1 = X7 & (X6 # !Y7 # !Y6) # !X7 & !Y7 & (X6 # !Y6);
+
+
+--C1L5 is CMP_2bit:inst2|inst28~399
+--operation mode is normal
+
+C1L5 = Y5 & X5 & (Y4 $ !X4) # !Y5 & !X5 & (Y4 $ !X4);
+
+
+--C1L71 is CMP_2bit:inst2|inst35~32
+--operation mode is normal
+
+C1L71 = C1L5 & (X3 $ !Y3);
+
+
+--C1L6 is CMP_2bit:inst2|inst28~400
+--operation mode is normal
+
+C1L6 = Y2 & (Y1 & !X1 # !X2) # !Y2 & Y1 & !X1 & !X2;
+
+
+--C1L81 is CMP_2bit:inst2|inst35~33
+--operation mode is normal
+
+C1L81 = Y2 & X2 & (Y1 $ !X1) # !Y2 & !X2 & (Y1 $ !X1);
+
+
+--C1L7 is CMP_2bit:inst2|inst28~401
+--operation mode is normal
+
+C1L7 = Y0 & (!X0);
+
+
+--C1L8 is CMP_2bit:inst2|inst28~402
+--operation mode is normal
+
+C1L8 = C1L71 & (C1L6 # C1L81 & C1L7);
+
+
+--C1L9 is CMP_2bit:inst2|inst28~403
+--operation mode is normal
+
+C1L9 = Y5 & (Y4 & !X4 # !X5) # !Y5 & Y4 & !X4 & !X5;
+
+
+--C1L01 is CMP_2bit:inst2|inst28~404
+--operation mode is normal
+
+C1L01 = C1L9 # C1L5 & Y3 & !X3;
+
+
+--C1L91 is CMP_2bit:inst2|inst35~34
+--operation mode is normal
+
+C1L91 = Y7 & X7 & (X6 $ !Y6) # !Y7 & !X7 & (X6 $ !Y6);
+
+
+--C1L2 is CMP_2bit:inst2|inst17~19
+--operation mode is normal
+
+C1L2 = C1L1 & (!C1L8 & !C1L01 # !C1L91);
+
+
+--C1L3 is CMP_2bit:inst2|inst19~18
+--operation mode is normal
+
+C1L3 = Y7 & (Y6 # !X7 # !X6) # !Y7 & !X7 & (Y6 # !X6);
+
+
+--C1L11 is CMP_2bit:inst2|inst33~397
+--operation mode is normal
+
+C1L11 = X2 & (X1 & !Y1 # !Y2) # !X2 & X1 & !Y1 & !Y2;
+
+
+--C1L21 is CMP_2bit:inst2|inst33~398
+--operation mode is normal
+
+C1L21 = X0 & (!Y0);
+
+
+--C1L31 is CMP_2bit:inst2|inst33~399
+--operation mode is normal
+
+C1L31 = C1L71 & (C1L11 # C1L81 & C1L21);
+
+
+--C1L41 is CMP_2bit:inst2|inst33~400
+--operation mode is normal
+
+C1L41 = X5 & (X4 & !Y4 # !Y5) # !X5 & X4 & !Y4 & !Y5;
+
+
+--C1L51 is CMP_2bit:inst2|inst33~401
+--operation mode is normal
+
+C1L51 = C1L41 # C1L5 & X3 & !Y3;
+
+
+--C1L4 is CMP_2bit:inst2|inst19~19
+--operation mode is normal
+
+C1L4 = C1L3 & (!C1L31 & !C1L51 # !C1L91);
+
+
+--C3_inst30 is CMP_6BIT:inst|CMP_4bit:inst1|CMP_2bit:inst|inst30
+--operation mode is normal
+
+C3_inst30 = X0 $ Y0;
+
+
+--C1_inst35 is CMP_2bit:inst2|inst35
+--operation mode is normal
+
+C1_inst35 = C1L81 & C1L71 & C1L91 & !C3_inst30;
+
+
+--X7 is X7
+--operation mode is input
+
+X7 = INPUT();
+
+
+--X6 is X6
+--operation mode is input
+
+X6 = INPUT();
+
+
+--Y6 is Y6
+--operation mode is input
+
+Y6 = INPUT();
+
+
+--Y7 is Y7
+--operation mode is input
+
+Y7 = INPUT();
+
+
+--Y5 is Y5
+--operation mode is input
+
+Y5 = INPUT();
+
+
+--Y4 is Y4
+--operation mode is input
+
+Y4 = INPUT();
+
+
+--X4 is X4
+--operation mode is input
+
+X4 = INPUT();
+
+
+--X5 is X5
+--operation mode is input
+
+X5 = INPUT();
+
+
+--X3 is X3
+--operation mode is input
+
+X3 = INPUT();
+
+
+--Y3 is Y3
+--operation mode is input
+
+Y3 = INPUT();
+
+
+--Y2 is Y2
+--operation mode is input
+
+Y2 = INPUT();
+
+
+--Y1 is Y1
+--operation mode is input
+
+Y1 = INPUT();
+
+
+--X1 is X1
+--operation mode is input
+
+X1 = INPUT();
+
+
+--X2 is X2
+--operation mode is input
+
+X2 = INPUT();
+
+
+--Y0 is Y0
+--operation mode is input
+
+Y0 = INPUT();
+
+
+--X0 is X0
+--operation mode is input
+
+X0 = INPUT();
+
+
+--XLY is XLY
+--operation mode is output
+
+XLY = OUTPUT(!C1L2);
+
+
+--XMY is XMY
+--operation mode is output
+
+XMY = OUTPUT(!C1L4);
+
+
+--XEY is XEY
+--operation mode is output
+
+XEY = OUTPUT(C1_inst35);
+
+

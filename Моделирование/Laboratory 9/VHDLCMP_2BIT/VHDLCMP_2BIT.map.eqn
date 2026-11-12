@@ -1,0 +1,91 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L1 is LessThan~99
+--operation mode is normal
+
+A1L1 = X[1] & (X[0] & !Y[0] # !Y[1]) # !X[1] & X[0] & !Y[0] & !Y[1];
+
+
+--A1L01 is XLY~63
+--operation mode is normal
+
+A1L01 = Y[1] & (Y[0] & !X[0] # !X[1]) # !Y[1] & Y[0] & !X[0] & !X[1];
+
+
+--A1L7 is XEY~9
+--operation mode is normal
+
+A1L7 = Y[1] & (X[0] $ Y[0] # !X[1]) # !Y[1] & (X[1] # X[0] $ Y[0]);
+
+
+--XMY0 is XMY0
+--operation mode is input
+
+XMY0 = INPUT();
+
+
+--XLY0 is XLY0
+--operation mode is input
+
+XLY0 = INPUT();
+
+
+--XEY0 is XEY0
+--operation mode is input
+
+XEY0 = INPUT();
+
+
+--X[1] is X[1]
+--operation mode is input
+
+X[1] = INPUT();
+
+
+--X[0] is X[0]
+--operation mode is input
+
+X[0] = INPUT();
+
+
+--Y[0] is Y[0]
+--operation mode is input
+
+Y[0] = INPUT();
+
+
+--Y[1] is Y[1]
+--operation mode is input
+
+Y[1] = INPUT();
+
+
+--XMY is XMY
+--operation mode is output
+
+XMY = OUTPUT(A1L1);
+
+
+--XLY is XLY
+--operation mode is output
+
+XLY = OUTPUT(A1L01);
+
+
+--XEY is XEY
+--operation mode is output
+
+XEY = OUTPUT(!A1L7);
+
+

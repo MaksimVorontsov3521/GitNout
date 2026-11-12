@@ -1,0 +1,73 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+CMP_6BIT
+# case_insensitive
+# source_file
+CMP_6BIT.bdf
+1669506773
+23
+# storage
+db|CMP_8BIT.(0).cnf
+db|CMP_8BIT.(0).cnf
+# hierarchies {
+CMP_6BIT:inst
+}
+# end
+# entity
+CMP_2bit
+# case_insensitive
+# source_file
+CMP_2bit.bdf
+1669503065
+23
+# storage
+db|CMP_8BIT.(1).cnf
+db|CMP_8BIT.(1).cnf
+# hierarchies {
+CMP_2bit:inst2
+CMP_6BIT:inst|CMP_2bit:inst
+CMP_6BIT:inst|CMP_4bit:inst1|CMP_2bit:inst1
+CMP_6BIT:inst|CMP_4bit:inst1|CMP_2bit:inst
+}
+# end
+# entity
+CMP_4bit
+# case_insensitive
+# source_file
+CMP_4bit.bdf
+1669504490
+23
+# storage
+db|CMP_8BIT.(2).cnf
+db|CMP_8BIT.(2).cnf
+# hierarchies {
+CMP_6BIT:inst|CMP_4bit:inst1
+}
+# end
+# entity
+CMP_8BIT
+# case_insensitive
+# source_file
+CMP_8BIT.bdf
+1669507200
+23
+# storage
+db|CMP_8BIT.(3).cnf
+db|CMP_8BIT.(3).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+

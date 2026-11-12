@@ -1,0 +1,17 @@
+|VHDLCMP_2BIT
+X[0] => LessThan~0.IN2
+X[0] => LessThan~1.IN2
+X[1] => LessThan~0.IN1
+X[1] => LessThan~1.IN1
+Y[0] => LessThan~0.IN4
+Y[0] => LessThan~1.IN4
+Y[1] => LessThan~0.IN3
+Y[1] => LessThan~1.IN3
+XMY0 => ~NO_FANOUT~
+XLY0 => ~NO_FANOUT~
+XEY0 => ~NO_FANOUT~
+XMY <= LessThan~0.DB_MAX_OUTPUT_PORT_TYPE
+XLY <= XLY~0.DB_MAX_OUTPUT_PORT_TYPE
+XEY <= XEY~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
