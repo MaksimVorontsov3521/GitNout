@@ -1,0 +1,56 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is multiplexer_4-1:inst|inst~14 at LC_X1_Y30_N0
+--operation mode is normal
+
+B1L1 = Cin $ B $ A;
+
+
+--B2L1 is multiplexer_4-1:inst4|inst~66 at LC_X1_Y30_N4
+--operation mode is normal
+
+B2L1 = Cin & (B # A) # !Cin & B & A;
+
+
+--B is B at PIN_B21
+--operation mode is input
+
+B = INPUT();
+
+
+--Cin is Cin at PIN_M16
+--operation mode is input
+
+Cin = INPUT();
+
+
+--A is A at PIN_C20
+--operation mode is input
+
+A = INPUT();
+
+
+--Sum is Sum at PIN_D22
+--operation mode is output
+
+Sum = OUTPUT(B1L1);
+
+
+--Count is Count at PIN_D20
+--operation mode is output
+
+Count = OUTPUT(B2L1);
+
+
+

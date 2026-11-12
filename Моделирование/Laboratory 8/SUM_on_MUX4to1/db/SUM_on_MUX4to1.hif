@@ -1,0 +1,43 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+multiplexer_4-1
+# case_insensitive
+# source_file
+multiplexer_4-1.bdf
+1669294033
+23
+# storage
+db|SUM_on_MUX4to1.(1).cnf
+db|SUM_on_MUX4to1.(1).cnf
+# hierarchies {
+multiplexer_4-1:inst
+multiplexer_4-1:inst4
+}
+# end
+# entity
+SUM_on_MUX4to1
+# case_insensitive
+# source_file
+SUM_on_MUX4to1.bdf
+1669398911
+23
+# storage
+db|SUM_on_MUX4to1.(0).cnf
+db|SUM_on_MUX4to1.(0).cnf
+# hierarchies {
+|
+}
+# end
+# complete
+
