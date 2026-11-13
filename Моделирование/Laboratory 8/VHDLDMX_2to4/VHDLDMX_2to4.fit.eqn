@@ -1,0 +1,80 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L01 is F~40 at LC_X7_Y1_N6
+--operation mode is normal
+
+A1L01 = a[0] # a[1] # !E;
+
+
+--A1L11 is F~41 at LC_X7_Y1_N4
+--operation mode is normal
+
+A1L11 = a[0] & !a[1] & E;
+
+
+--A1L21 is F~42 at LC_X7_Y1_N5
+--operation mode is normal
+
+A1L21 = !a[0] & a[1] & E;
+
+
+--A1L31 is F~43 at LC_X7_Y1_N2
+--operation mode is normal
+
+A1L31 = a[0] & a[1] & E;
+
+
+--a[1] is a[1] at PIN_V18
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--a[0] is a[0] at PIN_V17
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--E is E at PIN_Y16
+--operation mode is input
+
+E = INPUT();
+
+
+--F[0] is F[0] at PIN_U16
+--operation mode is output
+
+F[0] = OUTPUT(!A1L01);
+
+
+--F[1] is F[1] at PIN_T16
+--operation mode is output
+
+F[1] = OUTPUT(A1L11);
+
+
+--F[2] is F[2] at PIN_V16
+--operation mode is output
+
+F[2] = OUTPUT(A1L21);
+
+
+--F[3] is F[3] at PIN_U17
+--operation mode is output
+
+F[3] = OUTPUT(A1L31);
+
+
+

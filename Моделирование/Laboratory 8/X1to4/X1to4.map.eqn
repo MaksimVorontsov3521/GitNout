@@ -1,0 +1,49 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L1 is multiplexer_4-1:inst|inst~3
+--operation mode is normal
+
+B1L1 = x4 & (x3 # x1 & !x2) # !x4 & (x1 & !x2);
+
+
+--x4 is x4
+--operation mode is input
+
+x4 = INPUT();
+
+
+--x3 is x3
+--operation mode is input
+
+x3 = INPUT();
+
+
+--x1 is x1
+--operation mode is input
+
+x1 = INPUT();
+
+
+--x2 is x2
+--operation mode is input
+
+x2 = INPUT();
+
+
+--F is F
+--operation mode is output
+
+F = OUTPUT(B1L1);
+
+
