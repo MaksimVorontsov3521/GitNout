@@ -1,0 +1,5 @@
+|Block2
+notout <= inst.DB_MAX_OUTPUT_PORT_TYPE
+notin => inst.IN0
+
+

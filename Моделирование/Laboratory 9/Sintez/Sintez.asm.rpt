@@ -1,5 +1,5 @@
 Assembler report for Sintez
-Sun Nov 27 02:44:18 2022
+Sun Nov 27 10:04:39 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Nov 27 02:44:18 2022 ;
+; Assembler Status      ; Successful - Sun Nov 27 10:04:39 2022 ;
 ; Revision Name         ; Sintez                                ;
 ; Top-level Entity Name ; CMP_2BIT                              ;
 ; Family                ; Stratix                               ;
@@ -116,10 +116,10 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
-    Info: Processing started: Sun Nov 27 02:44:17 2022
+    Info: Processing started: Sun Nov 27 10:04:34 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Sintez -c Sintez
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Processing ended: Sun Nov 27 02:44:18 2022
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sun Nov 27 10:04:39 2022
+    Info: Elapsed time: 00:00:05
 
 

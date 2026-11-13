@@ -1,5 +1,5 @@
 Flow report for VHDLCMP_4BIT
-Sun Nov 27 02:36:06 2022
+Sun Nov 27 10:14:21 2022
 Version 5.0 Build 148 04/26/2005 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------+
 ; Flow Summary                                                        ;
 +--------------------------+------------------------------------------+
-; Flow Status              ; Successful - Sun Nov 27 02:36:06 2022    ;
+; Flow Status              ; Successful - Sun Nov 27 10:14:21 2022    ;
 ; Quartus II Version       ; 5.0 Build 148 04/26/2005 SJ Full Version ;
 ; Revision Name            ; VHDLCMP_4BIT                             ;
 ; Top-level Entity Name    ; VHDLCMP_4BIT                             ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/27/2022 02:35:59 ;
+; Start date & time ; 11/27/2022 10:13:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VHDLCMP_4BIT        ;
 +-------------------+---------------------+
@@ -70,11 +70,11 @@ applicable agreement for further details.
 +----------------------+--------------+
 ; Module Name          ; Elapsed Time ;
 +----------------------+--------------+
-; Analysis & Synthesis ; 00:00:01     ;
-; Fitter               ; 00:00:02     ;
-; Assembler            ; 00:00:01     ;
+; Analysis & Synthesis ; 00:00:03     ;
+; Fitter               ; 00:00:11     ;
+; Assembler            ; 00:00:06     ;
 ; Timing Analyzer      ; 00:00:01     ;
-; Total                ; 00:00:05     ;
+; Total                ; 00:00:21     ;
 +----------------------+--------------+
 
 

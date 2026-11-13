@@ -1,0 +1,42 @@
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+35
+1901
+OFF
+OFF
+OFF
+OFF
+OFF
+FV_OFF
+VRSM_ON
+VHSM_ON
+0
+# entity
+2args
+# case_insensitive
+# source_file
+2args.bdf
+1669533925
+23
+# storage
+db|2args.(0).cnf
+db|2args.(0).cnf
+# hierarchies {
+|
+}
+# end
+# entity
+multiplexer_4-1
+# case_insensitive
+# source_file
+multiplexer_4-1.bdf
+1794546011
+23
+# storage
+db|2args.(1).cnf
+db|2args.(1).cnf
+# hierarchies {
+multiplexer_4-1:inst3
+}
+# end
+# complete
+

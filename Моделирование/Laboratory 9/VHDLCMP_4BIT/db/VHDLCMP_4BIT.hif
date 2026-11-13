@@ -11,6 +11,30 @@ VRSM_ON
 VHSM_ON
 0
 # entity
+VHDLCMP_4BIT
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+VHDLCMP_4BIT.vhd
+1794546012
+4
+# storage
+db|VHDLCMP_4BIT.(0).cnf
+db|VHDLCMP_4BIT.(0).cnf
+# internal_option {
+ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
+ON
+AUTO_RESOURCE_SHARING
+OFF
+}
+# hierarchies {
+|
+}
+# end
+# entity
 VHDLCMP_2BIT
 # logic_option {
 AUTO_RAM_RECOGNITION
@@ -19,7 +43,7 @@ ON
 # case_insensitive
 # source_file
 VHDLCMP_2BIT.vhd
-1669505263
+1794546012
 4
 # storage
 db|VHDLCMP_4BIT.(1).cnf
@@ -33,30 +57,6 @@ OFF
 # hierarchies {
 VHDLCMP_2BIT:U1
 VHDLCMP_2BIT:U2
-}
-# end
-# entity
-VHDLCMP_4BIT
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-VHDLCMP_4BIT.vhd
-1669505759
-4
-# storage
-db|VHDLCMP_4BIT.(0).cnf
-db|VHDLCMP_4BIT.(0).cnf
-# internal_option {
-ADD_PASS_THROUGH_LOGIC_TO_INFERRED_RAMS
-ON
-AUTO_RESOURCE_SHARING
-OFF
-}
-# hierarchies {
-|
 }
 # end
 # complete

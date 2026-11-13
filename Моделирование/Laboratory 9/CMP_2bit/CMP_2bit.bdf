@@ -69,7 +69,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -632 176 -464 192)
+	(rect -640 176 -472 192)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "Y0" (rect 5 0 19 12)(font "Arial" ))
 	(pt 168 8)
@@ -85,7 +85,7 @@ applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -632 280 -464 296)
+	(rect -640 280 -472 296)
 	(text "INPUT" (rect 133 0 161 10)(font "Arial" (font_size 6)))
 	(text "XLY0" (rect 5 0 30 12)(font "Arial" ))
 	(pt 168 8)
@@ -890,14 +890,6 @@ applicable agreement for further details.
 	(pt -344 216)
 )
 (connector
-	(pt -464 184)
-	(pt -368 184)
-)
-(connector
-	(pt -368 184)
-	(pt 0 184)
-)
-(connector
 	(pt -280 224)
 	(pt -264 224)
 )
@@ -928,10 +920,6 @@ applicable agreement for further details.
 (connector
 	(pt 104 296)
 	(pt 56 296)
-)
-(connector
-	(pt -464 288)
-	(pt -8 288)
 )
 (connector
 	(pt 368 136)
@@ -1094,6 +1082,18 @@ applicable agreement for further details.
 	(pt -120 432)
 	(pt -120 488)
 	(color 255 0 0)
+)
+(connector
+	(pt -368 184)
+	(pt 0 184)
+)
+(connector
+	(pt -472 184)
+	(pt -368 184)
+)
+(connector
+	(pt -472 288)
+	(pt -8 288)
 )
 (junction (pt -416 56))
 (junction (pt -192 48))

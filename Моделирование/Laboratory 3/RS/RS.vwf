@@ -24,7 +24,18 @@ HEADER
 {
 	VERSION = 1;
 	TIME_UNIT = ns;
-	SIMULATION_TIME = 0.0;
+	PRINT_OPTIONS = "Print_options_version 6\
+range_start 0ps\
+range_end 200.0ns\
+width 1\
+names_percentage 25\
+comments 1\
+grid_lines 1\
+time_bars 1\
+name_every_page 0\
+expand_groups 0\
+print_all 1";
+	SIMULATION_TIME = 200.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
@@ -75,7 +86,9 @@ TRANSITION_LIST("Q")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 200.0;
+		LEVEL 1 FOR 58.478;
+		LEVEL 0 FOR 49.817;
+		LEVEL 1 FOR 91.705;
 	}
 }
 
@@ -84,7 +97,9 @@ TRANSITION_LIST("QB")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL X FOR 200.0;
+		LEVEL 0 FOR 58.481;
+		LEVEL 1 FOR 50.212;
+		LEVEL 0 FOR 91.307;
 	}
 }
 
@@ -149,7 +164,7 @@ DISPLAY_LINE
 
 TIME_BAR
 {
-	TIME = 25500;
+	TIME = 0;
 	MASTER = TRUE;
 }
 ;

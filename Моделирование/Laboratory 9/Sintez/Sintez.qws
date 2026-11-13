@@ -14,19 +14,19 @@ ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0]
 DocPathName=CMP_2BIT.vhd
 DocumentCLSID={ca385d57-a4c7-11d1-a098-0020affa43f2}
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPMPPPPPPPCOPPPPPPAAAAAAAAAAAAAAAAMIEAAAAAJGBAAAAA
+WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPMPPPPPPPCOPPPPPPAAAAAAAAAAAAAAAAEFEAAAAAJGBAAAAA
 IsActiveChildFrame=True
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-0.ViewFrame-0.StateMap]
 AFC_IN_REPORT=False
-[ProjectWorkspace.Frames.ChildFrames.Document-3]
+[ProjectWorkspace.Frames.ChildFrames.Document-4]
 ptn_Child1=ViewFrame-0
-[ProjectWorkspace.Frames.ChildFrames.Document-3.ViewFrame-0]
+[ProjectWorkspace.Frames.ChildFrames.Document-4.ViewFrame-0]
 DocPathName=../../quartus50/bin/Technology_Viewer.qrui
 DocumentCLSID={83708a55-a6bf-42c2-a7d6-2c58f5a106bb}
-WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPMPPPPPPPCOPPPPPPCEAAAAAAHFAAAAAACNEAAAAAEMBAAAAA
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPMPPPPPPPCOPPPPPPCEAAAAAAHFAAAAAAILDAAAAADDBAAAAA
 IsActiveChildFrame=False
 ptn_Child1=StateMap
-[ProjectWorkspace.Frames.ChildFrames.Document-3.ViewFrame-0.StateMap]
+[ProjectWorkspace.Frames.ChildFrames.Document-4.ViewFrame-0.StateMap]
 AFC_CMP_AP_NAME=Sintez
 AFC_PROJ_DB_PATH=C:/altera/Laboratory 9/Sintez/db/Sintez.quartus_db
