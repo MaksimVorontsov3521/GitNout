@@ -1,0 +1,17 @@
+=== Lab6 step 1: software interrupt INT 0xF0 as a subroutine call ===
+
+IVT[0xF0] before install : 0000:0000
+IVT[0xF0] after  install : 01A3:02C3
+
+--- results of the subroutine (PP) ---
+entries into the handler   : 2
+(a) shared memory : A=1234 B=0007 -> SUM=123B PROD=7F6C
+(b) registers     : AX=00A5 BX=001C -> SUM=00C1
+    handler really read : AX=00A5 BX=001C
+
+FLAGS before INT  = 7246
+FLAGS after return= 7246   (IF/TF restored by IRET)
+
+IVT[0xF0] restored         : 0000:0000
+
+Press any key...

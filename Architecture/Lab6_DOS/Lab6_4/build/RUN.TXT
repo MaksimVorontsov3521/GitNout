@@ -1,0 +1,48 @@
+=== Lab6 step 4: stack fill of an EXCEPTION + skipping the faulting DIV ===
+
+Dividend = 24680 (0x6068), Divisor = 0 -> DIV BX raises int 00h
+
+--- 1) STACK FILL (snapshot taken inside the handler) ---
+SS = 038E   BP(frame) = FFDE   SP inside PP = FFDE
+SP before INT = FFF6  ->  stack grew by 24 bytes = 12 words
+
+SLOT           VALUE    WHO PUSHED IT
+[bp+0 ] BP     0000h     prologue
+[bp+2 ] DI     0A66h     prologue
+[bp+4 ] SI     0A5Ah     prologue
+[bp+6 ] DS     038Eh     prologue
+[bp+8 ] ES     01A3h     prologue
+[bp+10] DX     0000h     prologue
+[bp+12] CX     0000h     prologue
+[bp+14] BX     0000h     prologue
+[bp+16] AX     6068h     prologue
+[bp+18] IP     0430h     PROCESSOR
+[bp+20] CS     01A3h     PROCESSOR
+[bp+22] FLAGS  7286h     PROCESSOR
+
+   9 words (BP..AX) are pushed by the COMPILER prologue,
+   3 words (IP, CS, FLAGS) are pushed by THE PROCESSOR.
+   Hence IP lives at bp+18 = 24 bytes above BP.  That is why
+   the assignment says:  add [bp+18], 2
+
+--- 2) RETURN ADDRESS AND FLAGS ---
+IP in frame before 'add' : 0430  (points AT the DIV instruction)
+IP in frame after  'add' : 0432  (points AFTER it, DIV +2 bytes)
+CS in frame              : 01A3
+FLAGS=7286  CF=0 PF=1 AF=0 ZF=0 SF=1 TF=0 IF=1
+
+   NB: TF and IF were cleared BY THE CPU at the moment of the
+       exception; the copy in the frame shows their OLD values.
+
+--- 3) RESULT SUPPLIED BY THE HANDLER THROUGH THE FRAME ---
+24680 / 7 = 3525  remainder 5
+entries into PP = 1  (DIV was NOT re-executed: IP was moved)
+
+--- 4) COMPARISON WITH STEP 3 ---
+   step 3: IP untouched -> processor RE-EXECUTED DIV, PP fixed BX;
+   step 4: add [bp+18],2 -> DIV SKIPPED, PP wrote AX and DX.
+   Both push the same 3 words (FLAGS, CS, IP): exception and
+   software INT fill the stack identically; only the SOURCE of
+   the event differs (internal fault vs the INT instruction).
+
+Press any key...

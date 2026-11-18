@@ -1,0 +1,21 @@
+=== Lab6 step 3: subroutine called via an EXCEPTION (divide by zero) ===
+
+IVT[00h] before install : 01A3:01A0
+IVT[00h] after  install : 01A3:02C3
+
+Dividend = 24680 (0x6068),  Divisor = 0  -> DIV by zero
+
+IVT[00h] restored       : 01A3:01A0
+
+--- results of the subroutine (PP) ---
+entries into the handler : 1
+handler saw             : AX=6068 DX=0000 BX=0000
+handler fixed           : BX := 0001 (record written into [bp+14])
+
+RESULT  24680 / 0 (fixed to 1) = 24680  remainder 0
+
+NB: the DIV instruction was executed TWICE - the exception
+    mechanism re-executes the faulting instruction unless IP
+    ([bp+18]) is advanced by the handler.
+
+Press any key...

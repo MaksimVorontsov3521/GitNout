@@ -1,0 +1,56 @@
+
+=== Lab6 steps 3+4 (ASM): exception int 00h + skipping the faulting DIV ===
+IVT[00h] is the Divide Error vector (one of the first ten):
+  old vector 00h = F000:1060
+  00h DIVIDE ERROR, 01h TRAP, 02h NMI, 03h BREAKPOINT, 04h INTO,
+  05h BOUND, 06h INVALID OPCODE, 07h DEVICE NOT AVAILABLE,
+  08h DOUBLE FAULT, 09h COPROCESSOR SEGMENT OVERRUN
+
+  new vector 00h = 0193:03E6
+
+--- 1) raise the exception: DIV with a zero divisor ---
+  Dividend = 6068,  Divisor = 0000
+  vector 00h restored = F000:1060
+
+--- 2) STACK FILL of the exception (snapshot inside the PP) ---
+  SP before the exception = FFFE  ->  FFF8  = 6 bytes  = 3 words
+  frame address  SS:BP = 0193:FFE6
+  [bp+0 ] BP    = 091C   <- compiler prologue (push ax..bp)
+  [bp+2 ] DI    = FFFE   <- compiler prologue (push ax..bp)
+  [bp+4 ] SI    = 0100   <- compiler prologue (push ax..bp)
+  [bp+6 ] DS    = 0193   <- compiler prologue (push ax..bp)
+  [bp+8 ] ES    = 0000   <- compiler prologue (push ax..bp)
+  [bp+10] DX    = 0000   <- compiler prologue (push ax..bp)
+  [bp+12] CX    = 00FF   <- compiler prologue (push ax..bp)
+  [bp+14] BX    = 0000   <- compiler prologue (push ax..bp)
+  [bp+16] AX    = 6068   <- compiler prologue (push ax..bp)
+  [bp+18] IP    = 01C1   <- PROCESSOR (INT / exception)
+  [bp+20] CS    = 0193   <- PROCESSOR (INT / exception)
+  [bp+22] FLAGS = 7246   <- PROCESSOR (INT / exception)
+  9 prologue words = 18 bytes, so the processor-pushed IP sits at bp+18.
+  That is exactly why the assignment writes:  add [bp+18], 2
+
+
+--- 3) return address before / after "add word ptr [bp+18], 2" ---
+  IP in frame before add = 01C1   <- points AT the DIV opcode (F7 F3)
+  IP in frame after  add = 01C3   <- points AFTER the DIV: the faulting command is SKIPPED
+  IP advanced by 2 bytes  (= length of DIV BX: F7 F3)
+  CS in frame            = 0193
+  FLAGS in frame (old)   = 7246  CF=0 PF=1 AF=0 ZF=1 SF=0 TF=0 IF=1   (bits 0,2,4,6,7,8,9)
+  TF and IF were cleared by the CPU entering the PP; the frame keeps
+  their PREVIOUS values, and IRET restores them.
+
+
+--- 4) result supplied by the PP THROUGH the frame ---
+  quotient  = 3525,  remainder = 5
+  frame slots written by PP: [bp+16] AX = 0DC5:0005
+  entries into PP = 1   (DIV was NOT re-executed: IP was moved)
+
+--- 5) comparison with the C version of step 3 ---
+  step 3 (C) : IP untouched -> CPU RE-EXECUTED DIV, PP fixed BX=1;
+  step 4 here : add [bp+18],2 -> DIV SKIPPED, PP wrote AX and DX.
+  Exception and software INT fill the stack IDENTICALLY (FLAGS,CS,IP);
+  only the SOURCE differs: internal CPU fault vs the INT instruction.
+
+
+>>> Press any key to finish... 

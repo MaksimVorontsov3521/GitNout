@@ -1,0 +1,52 @@
+
+=== Lab6 step 2 (ASM): stack fill of a software interrupt ===
+IVT: 256 vectors x 4 bytes = 0000:0000..0000:03FF (first 1 KB)
+  vector 0F0h, old = 0000:0000
+  vector 0F0h, new = 0193:04A4
+  new vector installed by direct IVT write under CLI/STI
+
+--- 1) INT 0F0h as a subroutine call: params in AX,BX,CX,SI ---
+
+--- 2) STACK FILL at the handler entry ---
+  SP before INT = FFFE  ->  FFF8  = 6  = 3 words of stack
+
+  frame contents:
+    [SP+0] IP    = 01AA   <- pushed by THE PROCESSOR  = return address (ok)
+    [SP+2] CS    = 0193   <- pushed by THE PROCESSOR  = return address (ok)
+    [SP+4] FLAGS = 7293   <- pushed by THE PROCESSOR   (old flags, saved before the interrupt)
+
+  SP after IRET  = FFFE  = SP before INT: stack balanced
+
+--- 3) data processed INSIDE the handler (PP) ---
+  SUM(array + AX + BX) = 42B3
+  array elements       = 4
+  handler really read: AX=1234, BX=0078
+  entries into PP      = 1
+
+--- 4) TF and IF are cleared by the CPU at the interrupt ---
+  FLAGS before INT : 7293  CF=1 PF=0 AF=1 ZF=0 SF=1 TF=0 IF=1   (bits 0,2,4,6,7,8,9)
+  FLAGS inside PP  : 7093  CF=1 PF=0 AF=1 ZF=0 SF=1 TF=0 IF=0   (bits 0,2,4,6,7,8,9)
+  FLAGS after IRET : 7293  CF=1 PF=0 AF=1 ZF=0 SF=1 TF=0 IF=1   (bits 0,2,4,6,7,8,9)
+  expected: TF=0 and IF=0 INSIDE the PP, restored after IRET
+
+--- 5) CALL vs INT: words added to the stack ---
+    CALL NEAR -> words = 1   (IP only), saved return IP = 038C
+    INT  0F0h -> words = 3   (IP, CS, FLAGS) = 01AA:0193:7293
+    CALL FAR  -> words = 2   (IP, CS; FLAGS NOT saved) = 039E:0193
+  Conclusion: an interrupt is an INDIRECT far transfer through a
+  IVT vector, and it saves FLAGS as well - therefore the handler returns
+  with IRET (3 words), not RET (1..2 words).
+
+  vector 0F0h restored = 0000:0000
+
+--- 6) allowed / forbidden vectors ---
+    00h..07h  CPU exceptions        - forbidden for an app
+    08h..0Fh  hardware IRQ (8259)   - reserved
+    10h..1Ah  BIOS                  - reserved
+    20h..3Fh  DOS                   - reserved
+    40h..6Fh  DOS/BIOS tables       - reserved
+    70h..77h  IRQ (second 8259)     - reserved
+    78h..B7h  local / user          - ALLOWED
+    B8h..FFh  user-definable        - ALLOWED (we used 0F0h)
+
+>>> Press any key to finish... 

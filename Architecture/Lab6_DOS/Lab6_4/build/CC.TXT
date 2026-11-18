@@ -1,0 +1,22 @@
+Turbo C  Version 2.01  Copyright (c) 1987, 1988 Borland International
+d:\lab6.c:
+Warning d:\lab6.c 136: Parameter 'wAX' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wBX' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wCX' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wDX' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wES' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wDS' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wSI' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wDI' is never used in function isr_div0
+Warning d:\lab6.c 136: Parameter 'wBP' is never used in function isr_div0
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   D:\BUILD\lab6.ASM
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  266k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+
+	Available memory 410388
