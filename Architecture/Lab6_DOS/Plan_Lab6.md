@@ -59,7 +59,7 @@
 
 - [x] **Шаг 0.** Прочитать задание (`A6.txt`), изучить примеры `Lab2`, `Lab3`, `Lab4_TASM`, `Lab5_DOS`, подтвердить пути TASM/TCC/DOSBox.
 - [x] **Шаг 1.** Создать `Lab6_1`…`Lab6_5`: `.vscode\` (4 файла), `build\`, `ЗАДАНИЕ.txt`.
-- [x] **Шаг 2.** `Lab6_1\Lab6.c` — программное прерывание 0F0h: `getvect` → `setvect` → `geninterrupt(0xF0)` → параметры память+регистры → обработка в ПП → `iret` → вывод результата → восстановление вектора. Контроль IVT через `peek(0, 0xF0*4)`.
+- [x] **Шаг 2.** `Lab6_1\Lab6.c` — программное прерывание 0F0h: `getvect` → `setvect` → `geninterrupt(0xF0)` → параметры память+регистры → обработка в ПП → `iret` → вывод результата → восстановление вектора. Контроль IVT через `rdw(0, 0xF0*4)` (собственный inline-asm helper: `peek`/`poke`/`MK_FP` в ANSI-режиме TCC скрыты в `DOS.H` под `#if !__STDC__`).
 - [x] **Шаг 3.** `Lab6_2\lab6_2.asm` — анализ стека при `int 0F0h`: дамп `[SP]=IP`, `[SP+2]=CS`, `[SP+4]=FLAGS`; дельта SP; проверка баланса стека; разбор TF/IF (до / внутри ПП / после IRET); сравнение с `CALL NEAR` (1 слово) и `CALL FAR` (2 слова); список разрешённых/запрещённых векторов.
 - [x] **Шаг 4.** `Lab6_3\Lab6.c` — особый случай `int 00h`: `div bx` при `bx=0`; ПП исправляет делитель в кадре (`[bp+14]`), IP **не** трогает → ЦП повторно исполняет `DIV`, уже с `BX=1`.
 - [x] **Шаг 5.** `Lab6_4\Lab6.c` — дамп 12 слов кадра с подписями и указанием источника (пролог/ЦП); ПП выдаёт результат через слоты `[bp+16]`/`[bp+10]` и пропускает команду: `asm add word ptr [bp+18], 2`.
@@ -105,11 +105,17 @@
 
 ## 8. Как смотреть результат программы автономно (без человека у клавиатуры)
 
-Реализовано в `autotest.ps1`; вызывается из VS Code третьей задачей или напрямую:
+Реализовано в `autotest.ps1` (привязан к Lab6). Общий вариант для **любой** лабораторной —
+`Architecture\dosbox_autotest.ps1`, полная инструкция по нему —
+`Architecture\HOWTO_for_AI.md`. Вызывается из VS Code третьей задачей или напрямую:
 
 ```
 powershell -NoProfile -ExecutionPolicy Bypass -File autotest.ps1            # все пять
 powershell -NoProfile -ExecutionPolicy Bypass -File autotest.ps1 -Only Lab6_3
+
+# общий скрипт: любая лабораторная, язык и исходник определяются сами
+powershell -NoProfile -ExecutionPolicy Bypass -File ..\dosbox_autotest.ps1 -Root . -Scan
+powershell -NoProfile -ExecutionPolicy Bypass -File ..\dosbox_autotest.ps1 -Root . -Dir Lab6_3
 ```
 
 Три условия, без которых перехват не работает (каждое проверено опытным прогоном):

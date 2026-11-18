@@ -1,0 +1,14 @@
+Turbo C  Version 2.01  Copyright (c) 1987, 1988 Borland International
+d:\lab5.c:
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   D:\BUILD\lab5.ASM
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  277k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+Warning: no stack
+
+	Available memory 435368
