@@ -1,0 +1,8 @@
+|parity2
+x0 => t.IN0
+x1 => t.IN1
+c => ech_sig~0.IN0
+Ech <= ech_sig~0.DB_MAX_OUTPUT_PORT_TYPE
+En <= ech_sig~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

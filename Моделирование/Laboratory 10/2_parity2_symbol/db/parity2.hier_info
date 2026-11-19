@@ -1,0 +1,8 @@
+|parity2
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+

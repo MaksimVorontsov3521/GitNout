@@ -1,0 +1,46 @@
+|eo8
+EVEN <= parity2:U4.En
+X0 => parity2:U1.x0
+X1 => parity2:U1.x1
+X2 => parity2:U1.c
+X3 => parity2:U2.x0
+X4 => parity2:U2.x1
+X5 => parity2:U2.c
+X6 => parity2:U3.x0
+X7 => parity2:U3.x1
+X8 => parity2:U3.c
+ODD <= parity2:U4.Ech
+
+
+|eo8|parity2:U4
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eo8|parity2:U1
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eo8|parity2:U2
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|eo8|parity2:U3
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+

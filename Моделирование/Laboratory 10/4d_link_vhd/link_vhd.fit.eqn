@@ -1,0 +1,242 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_Y[0] is dtm:ch|Y[0] at LC_X5_Y30_N2
+--operation mode is normal
+
+B1_Y[0] = ERR[0] $ X[0];
+
+
+--B1_Y[1] is dtm:ch|Y[1] at LC_X5_Y1_N5
+--operation mode is normal
+
+B1_Y[1] = X[1] $ (ERR[1]);
+
+
+--B1_Y[2] is dtm:ch|Y[2] at LC_X5_Y1_N0
+--operation mode is normal
+
+B1_Y[2] = X[2] $ ERR[2];
+
+
+--B1_Y[3] is dtm:ch|Y[3] at LC_X5_Y1_N6
+--operation mode is normal
+
+B1_Y[3] = ERR[3] $ (X[3]);
+
+
+--B1_Y[4] is dtm:ch|Y[4] at LC_X5_Y1_N4
+--operation mode is normal
+
+B1_Y[4] = X[4] $ ERR[4];
+
+
+--B1_Y[5] is dtm:ch|Y[5] at LC_X5_Y1_N1
+--operation mode is normal
+
+B1_Y[5] = X[5] $ (ERR[5]);
+
+
+--B1_Y[6] is dtm:ch|Y[6] at LC_X5_Y1_N9
+--operation mode is normal
+
+B1_Y[6] = X[6] $ (ERR[6]);
+
+
+--B1_Y[7] is dtm:ch|Y[7] at LC_X5_Y1_N8
+--operation mode is normal
+
+B1_Y[7] = X[7] $ (ERR[7]);
+
+
+--C1L1 is eo8:rx|ODD~54 at LC_X5_Y1_N7
+--operation mode is normal
+
+C1L1 = ERR[2] $ ERR[0] $ ERR[1] $ ERR[3];
+
+
+--C1L2 is eo8:rx|ODD~55 at LC_X5_Y1_N2
+--operation mode is normal
+
+C1L2 = ERR[6] $ ERR[4] $ ERR[5] $ ERR[7];
+
+
+--C1L3 is eo8:rx|ODD~56 at LC_X5_Y1_N3
+--operation mode is normal
+
+C1L3 = ERR[8] $ C1L1 $ C1L2;
+
+
+--X[0] is X[0] at PIN_A18
+--operation mode is input
+
+X[0] = INPUT();
+
+
+--ERR[0] is ERR[0] at PIN_C18
+--operation mode is input
+
+ERR[0] = INPUT();
+
+
+--X[1] is X[1] at PIN_AA17
+--operation mode is input
+
+X[1] = INPUT();
+
+
+--ERR[1] is ERR[1] at PIN_V16
+--operation mode is input
+
+ERR[1] = INPUT();
+
+
+--X[2] is X[2] at PIN_V18
+--operation mode is input
+
+X[2] = INPUT();
+
+
+--ERR[2] is ERR[2] at PIN_W18
+--operation mode is input
+
+ERR[2] = INPUT();
+
+
+--X[3] is X[3] at PIN_T16
+--operation mode is input
+
+X[3] = INPUT();
+
+
+--ERR[3] is ERR[3] at PIN_W16
+--operation mode is input
+
+ERR[3] = INPUT();
+
+
+--X[4] is X[4] at PIN_AB19
+--operation mode is input
+
+X[4] = INPUT();
+
+
+--ERR[4] is ERR[4] at PIN_AA18
+--operation mode is input
+
+ERR[4] = INPUT();
+
+
+--X[5] is X[5] at PIN_U16
+--operation mode is input
+
+X[5] = INPUT();
+
+
+--ERR[5] is ERR[5] at PIN_W17
+--operation mode is input
+
+ERR[5] = INPUT();
+
+
+--X[6] is X[6] at PIN_AB18
+--operation mode is input
+
+X[6] = INPUT();
+
+
+--ERR[6] is ERR[6] at PIN_Y21
+--operation mode is input
+
+ERR[6] = INPUT();
+
+
+--X[7] is X[7] at PIN_N13
+--operation mode is input
+
+X[7] = INPUT();
+
+
+--ERR[7] is ERR[7] at PIN_Y17
+--operation mode is input
+
+ERR[7] = INPUT();
+
+
+--ERR[8] is ERR[8] at PIN_Y19
+--operation mode is input
+
+ERR[8] = INPUT();
+
+
+--Outp[0] is Outp[0] at PIN_D17
+--operation mode is output
+
+Outp[0] = OUTPUT(B1_Y[0]);
+
+
+--Outp[1] is Outp[1] at PIN_Y16
+--operation mode is output
+
+Outp[1] = OUTPUT(B1_Y[1]);
+
+
+--Outp[2] is Outp[2] at PIN_AB16
+--operation mode is output
+
+Outp[2] = OUTPUT(B1_Y[2]);
+
+
+--Outp[3] is Outp[3] at PIN_AB17
+--operation mode is output
+
+Outp[3] = OUTPUT(B1_Y[3]);
+
+
+--Outp[4] is Outp[4] at PIN_AA19
+--operation mode is output
+
+Outp[4] = OUTPUT(B1_Y[4]);
+
+
+--Outp[5] is Outp[5] at PIN_Y18
+--operation mode is output
+
+Outp[5] = OUTPUT(B1_Y[5]);
+
+
+--Outp[6] is Outp[6] at PIN_V17
+--operation mode is output
+
+Outp[6] = OUTPUT(B1_Y[6]);
+
+
+--Outp[7] is Outp[7] at PIN_U17
+--operation mode is output
+
+Outp[7] = OUTPUT(B1_Y[7]);
+
+
+--ERROR is ERROR at PIN_Y20
+--operation mode is output
+
+ERROR = OUTPUT(C1L3);
+
+
+--OK is OK at PIN_AA20
+--operation mode is output
+
+OK = OUTPUT(!C1L3);
+
+
+

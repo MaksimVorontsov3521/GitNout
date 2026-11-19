@@ -1,0 +1,36 @@
+﻿ЗАДАНИЕ 1. Ячейка чётности / нечётности (графическая схема)
+======================================================================
+
+СХЕМА:  parity2.bdf
+        x0 ---|\
+        x1 ---| XOR (u1) --- t ---|\
+        c  ----------------------| XOR (u2) --- Ech
+                                 |
+        Ech --------------------| NOT (u3) --- En
+
+   Eч = x0 XOR x1 XOR c        Eн = НЕ Eч
+
+ЧТО ДЕЛАТЬ В QUARTUS:
+  1. File -> Open Project -> parity2.qpf   (не .bdf открывать!)
+  2. Processing -> Start Analysis & Synthesis        - проверить, что схема читается
+  3. File -> New -> Waveform Editor -> parity2.vwf   - там уже готов перебор
+  4. Processing -> Generate Functional Simulation Netlist
+  5. Tools -> Run Simulation Tool -> Functional Simulation
+
+ТАБЛИЦА (получена из отчёта Quartus, parity2.sim.vwf):
+   c x1 x0 | Ech En
+   0  0  0 |  0  1
+   0  0  1 |  1  0
+   0  1  0 |  1  0
+   0  1  1 |  0  1
+   1  0  0 |  1  0
+   1  0  1 |  0  1
+   1  1  0 |  0  1
+   1  1  1 |  1  0
+Группа X = (c, x1, x0), Radix Binary, Count Value 0..7, шаг 100 нс, End Time 1 мкс.
+
+СМЫСЛ: Eч = 1, когда на трёх входах НЕЧЁТНОЕ число единиц. Вход c - свёртка:
+такие ячейки каскадируют в пирамиду (задание 3). При c = 0 формулы совпадают
+с главой методички: Eч = x0 XOR x1, Eн = НЕ(x0 XOR x1).
+
+РЕСУРСЫ: 1 логический элемент, 5 выводов, регистров нет.

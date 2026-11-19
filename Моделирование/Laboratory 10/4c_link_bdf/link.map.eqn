@@ -1,0 +1,241 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_x7 is dtm:U_ch|x7
+--operation mode is normal
+
+B1_x7 = X7 $ ERR7;
+
+
+--B1_x6 is dtm:U_ch|x6
+--operation mode is normal
+
+B1_x6 = X6 $ ERR6;
+
+
+--B1_x5 is dtm:U_ch|x5
+--operation mode is normal
+
+B1_x5 = X5 $ ERR5;
+
+
+--B1_x4 is dtm:U_ch|x4
+--operation mode is normal
+
+B1_x4 = X4 $ ERR4;
+
+
+--B1_x3 is dtm:U_ch|x3
+--operation mode is normal
+
+B1_x3 = X3 $ ERR3;
+
+
+--B1_x2 is dtm:U_ch|x2
+--operation mode is normal
+
+B1_x2 = X2 $ ERR2;
+
+
+--B1_x1 is dtm:U_ch|x1
+--operation mode is normal
+
+B1_x1 = X1 $ ERR1;
+
+
+--B1_x0 is dtm:U_ch|x0
+--operation mode is normal
+
+B1_x0 = X0 $ ERR0;
+
+
+--D4L1 is eo8:U_rx|parity2:U4|u2~54
+--operation mode is normal
+
+D4L1 = ERR7 $ ERR6 $ ERR5 $ ERR4;
+
+
+--D4L2 is eo8:U_rx|parity2:U4|u2~55
+--operation mode is normal
+
+D4L2 = ERR3 $ ERR2 $ ERR1 $ ERR0;
+
+
+--D4L3 is eo8:U_rx|parity2:U4|u2~56
+--operation mode is normal
+
+D4L3 = D4L1 $ D4L2 $ ERR8;
+
+
+--X7 is X7
+--operation mode is input
+
+X7 = INPUT();
+
+
+--ERR7 is ERR7
+--operation mode is input
+
+ERR7 = INPUT();
+
+
+--X6 is X6
+--operation mode is input
+
+X6 = INPUT();
+
+
+--ERR6 is ERR6
+--operation mode is input
+
+ERR6 = INPUT();
+
+
+--X5 is X5
+--operation mode is input
+
+X5 = INPUT();
+
+
+--ERR5 is ERR5
+--operation mode is input
+
+ERR5 = INPUT();
+
+
+--X4 is X4
+--operation mode is input
+
+X4 = INPUT();
+
+
+--ERR4 is ERR4
+--operation mode is input
+
+ERR4 = INPUT();
+
+
+--X3 is X3
+--operation mode is input
+
+X3 = INPUT();
+
+
+--ERR3 is ERR3
+--operation mode is input
+
+ERR3 = INPUT();
+
+
+--X2 is X2
+--operation mode is input
+
+X2 = INPUT();
+
+
+--ERR2 is ERR2
+--operation mode is input
+
+ERR2 = INPUT();
+
+
+--X1 is X1
+--operation mode is input
+
+X1 = INPUT();
+
+
+--ERR1 is ERR1
+--operation mode is input
+
+ERR1 = INPUT();
+
+
+--X0 is X0
+--operation mode is input
+
+X0 = INPUT();
+
+
+--ERR0 is ERR0
+--operation mode is input
+
+ERR0 = INPUT();
+
+
+--ERR8 is ERR8
+--operation mode is input
+
+ERR8 = INPUT();
+
+
+--Out7 is Out7
+--operation mode is output
+
+Out7 = OUTPUT(B1_x7);
+
+
+--Out6 is Out6
+--operation mode is output
+
+Out6 = OUTPUT(B1_x6);
+
+
+--Out5 is Out5
+--operation mode is output
+
+Out5 = OUTPUT(B1_x5);
+
+
+--Out4 is Out4
+--operation mode is output
+
+Out4 = OUTPUT(B1_x4);
+
+
+--Out3 is Out3
+--operation mode is output
+
+Out3 = OUTPUT(B1_x3);
+
+
+--Out2 is Out2
+--operation mode is output
+
+Out2 = OUTPUT(B1_x2);
+
+
+--Out1 is Out1
+--operation mode is output
+
+Out1 = OUTPUT(B1_x1);
+
+
+--Out0 is Out0
+--operation mode is output
+
+Out0 = OUTPUT(B1_x0);
+
+
+--ERROR is ERROR
+--operation mode is output
+
+ERROR = OUTPUT(D4L3);
+
+
+--OK is OK
+--operation mode is output
+
+OK = OUTPUT(!D4L3);
+
+

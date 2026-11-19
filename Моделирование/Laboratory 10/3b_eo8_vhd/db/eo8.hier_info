@@ -1,0 +1,14 @@
+|eo8
+X[0] => p~7.IN0
+X[1] => p~6.IN0
+X[2] => p~5.IN0
+X[3] => p~4.IN0
+X[4] => p~3.IN0
+X[5] => p~2.IN0
+X[6] => p~1.IN0
+X[7] => p~0.IN1
+X[8] => p~0.IN0
+EVEN <= p~7.DB_MAX_OUTPUT_PORT_TYPE
+ODD <= p~7.DB_MAX_OUTPUT_PORT_TYPE
+
+

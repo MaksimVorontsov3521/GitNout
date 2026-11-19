@@ -1,0 +1,16 @@
+|majority
+M <= o1.DB_MAX_OUTPUT_PORT_TYPE
+X1 => g1.IN0
+X1 => g2.IN0
+X1 => v2.IN0
+X2 => g1.IN1
+X2 => g3.IN0
+X2 => v1.IN0
+X3 => g3.IN1
+X3 => g2.IN1
+X3 => v1.IN1
+X3 => v2.IN1
+a1 <= v1.DB_MAX_OUTPUT_PORT_TYPE
+a0 <= v2.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,160 @@
+|link
+Out7 <= dtm:U_ch.Y7
+X7 => eo8:U_tx.X7
+X7 => dtm:U_ch.W7
+X6 => eo8:U_tx.X6
+X6 => dtm:U_ch.W6
+X5 => eo8:U_tx.X5
+X5 => dtm:U_ch.W5
+X4 => eo8:U_tx.X4
+X4 => dtm:U_ch.W4
+X3 => eo8:U_tx.X3
+X3 => dtm:U_ch.W3
+X2 => eo8:U_tx.X2
+X2 => dtm:U_ch.W2
+X1 => eo8:U_tx.X1
+X1 => dtm:U_ch.W1
+X0 => eo8:U_tx.X0
+X0 => dtm:U_ch.W0
+ERR8 => dtm:U_ch.ERR8
+ERR7 => dtm:U_ch.ERR7
+ERR6 => dtm:U_ch.ERR6
+ERR5 => dtm:U_ch.ERR5
+ERR4 => dtm:U_ch.ERR4
+ERR3 => dtm:U_ch.ERR3
+ERR2 => dtm:U_ch.ERR2
+ERR1 => dtm:U_ch.ERR1
+ERR0 => dtm:U_ch.ERR0
+Out6 <= dtm:U_ch.Y6
+Out5 <= dtm:U_ch.Y5
+Out4 <= dtm:U_ch.Y4
+Out3 <= dtm:U_ch.Y3
+Out2 <= dtm:U_ch.Y2
+Out1 <= dtm:U_ch.Y1
+Out0 <= dtm:U_ch.Y0
+ERROR <= eo8:U_rx.EVEN
+OK <= eo8:U_rx.ODD
+
+
+|link|dtm:U_ch
+Y8 <= x8.DB_MAX_OUTPUT_PORT_TYPE
+W8 => x8.IN0
+ERR8 => x8.IN1
+Y7 <= x7.DB_MAX_OUTPUT_PORT_TYPE
+W7 => x7.IN0
+ERR7 => x7.IN1
+Y6 <= x6.DB_MAX_OUTPUT_PORT_TYPE
+W6 => x6.IN0
+ERR6 => x6.IN1
+Y5 <= x5.DB_MAX_OUTPUT_PORT_TYPE
+W5 => x5.IN0
+ERR5 => x5.IN1
+Y4 <= x4.DB_MAX_OUTPUT_PORT_TYPE
+W4 => x4.IN0
+ERR4 => x4.IN1
+Y3 <= x3.DB_MAX_OUTPUT_PORT_TYPE
+W3 => x3.IN0
+ERR3 => x3.IN1
+Y2 <= x2.DB_MAX_OUTPUT_PORT_TYPE
+W2 => x2.IN0
+ERR2 => x2.IN1
+Y1 <= x1.DB_MAX_OUTPUT_PORT_TYPE
+W1 => x1.IN0
+ERR1 => x1.IN1
+Y0 <= x0.DB_MAX_OUTPUT_PORT_TYPE
+W0 => x0.IN0
+ERR0 => x0.IN1
+
+
+|link|eo8:U_tx
+EVEN <= parity2:U4.En
+X0 => parity2:U1.x0
+X1 => parity2:U1.x1
+X2 => parity2:U1.c
+X3 => parity2:U2.x0
+X4 => parity2:U2.x1
+X5 => parity2:U2.c
+X6 => parity2:U3.x0
+X7 => parity2:U3.x1
+X8 => parity2:U3.c
+ODD <= parity2:U4.Ech
+
+
+|link|eo8:U_tx|parity2:U4
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_tx|parity2:U1
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_tx|parity2:U2
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_tx|parity2:U3
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_rx
+EVEN <= parity2:U4.En
+X0 => parity2:U1.x0
+X1 => parity2:U1.x1
+X2 => parity2:U1.c
+X3 => parity2:U2.x0
+X4 => parity2:U2.x1
+X5 => parity2:U2.c
+X6 => parity2:U3.x0
+X7 => parity2:U3.x1
+X8 => parity2:U3.c
+ODD <= parity2:U4.Ech
+
+
+|link|eo8:U_rx|parity2:U4
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_rx|parity2:U1
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_rx|parity2:U2
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|link|eo8:U_rx|parity2:U3
+Ech <= u2.DB_MAX_OUTPUT_PORT_TYPE
+x0 => u1.IN0
+x1 => u1.IN1
+c => u2.IN1
+En <= u3.DB_MAX_OUTPUT_PORT_TYPE
+
+

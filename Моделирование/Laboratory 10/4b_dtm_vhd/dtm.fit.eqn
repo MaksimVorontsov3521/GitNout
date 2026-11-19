@@ -1,0 +1,230 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L13 is Y~0 at LC_X1_Y9_N0
+--operation mode is normal
+
+A1L13 = W[0] $ (ERR[0]);
+
+
+--A1L23 is Y~1 at LC_X33_Y1_N2
+--operation mode is normal
+
+A1L23 = W[1] $ (ERR[1]);
+
+
+--A1L33 is Y~2 at LC_X52_Y23_N4
+--operation mode is normal
+
+A1L33 = W[2] $ ERR[2];
+
+
+--A1L43 is Y~3 at LC_X1_Y1_N2
+--operation mode is normal
+
+A1L43 = W[3] $ ERR[3];
+
+
+--A1L53 is Y~4 at LC_X50_Y1_N2
+--operation mode is normal
+
+A1L53 = W[4] $ ERR[4];
+
+
+--A1L63 is Y~5 at LC_X9_Y1_N2
+--operation mode is normal
+
+A1L63 = W[5] $ ERR[5];
+
+
+--A1L73 is Y~6 at LC_X1_Y6_N0
+--operation mode is normal
+
+A1L73 = W[6] $ (ERR[6]);
+
+
+--A1L83 is Y~7 at LC_X41_Y30_N2
+--operation mode is normal
+
+A1L83 = ERR[7] $ (W[7]);
+
+
+--A1L93 is Y~8 at LC_X1_Y22_N0
+--operation mode is normal
+
+A1L93 = W[8] $ (ERR[8]);
+
+
+--W[0] is W[0] at PIN_T22
+--operation mode is input
+
+W[0] = INPUT();
+
+
+--ERR[0] is ERR[0] at PIN_M17
+--operation mode is input
+
+ERR[0] = INPUT();
+
+
+--W[1] is W[1] at PIN_P9
+--operation mode is input
+
+W[1] = INPUT();
+
+
+--ERR[1] is ERR[1] at PIN_T10
+--operation mode is input
+
+ERR[1] = INPUT();
+
+
+--W[2] is W[2] at PIN_F2
+--operation mode is input
+
+W[2] = INPUT();
+
+
+--ERR[2] is ERR[2] at PIN_K6
+--operation mode is input
+
+ERR[2] = INPUT();
+
+
+--W[3] is W[3] at PIN_AA21
+--operation mode is input
+
+W[3] = INPUT();
+
+
+--ERR[3] is ERR[3] at PIN_Y21
+--operation mode is input
+
+ERR[3] = INPUT();
+
+
+--W[4] is W[4] at PIN_P7
+--operation mode is input
+
+W[4] = INPUT();
+
+
+--ERR[4] is ERR[4] at PIN_Y2
+--operation mode is input
+
+ERR[4] = INPUT();
+
+
+--W[5] is W[5] at PIN_Y15
+--operation mode is input
+
+W[5] = INPUT();
+
+
+--ERR[5] is ERR[5] at PIN_N13
+--operation mode is input
+
+ERR[5] = INPUT();
+
+
+--W[6] is W[6] at PIN_T19
+--operation mode is input
+
+W[6] = INPUT();
+
+
+--ERR[6] is ERR[6] at PIN_V22
+--operation mode is input
+
+ERR[6] = INPUT();
+
+
+--W[7] is W[7] at PIN_D8
+--operation mode is input
+
+W[7] = INPUT();
+
+
+--ERR[7] is ERR[7] at PIN_C8
+--operation mode is input
+
+ERR[7] = INPUT();
+
+
+--W[8] is W[8] at PIN_G22
+--operation mode is input
+
+W[8] = INPUT();
+
+
+--ERR[8] is ERR[8] at PIN_L17
+--operation mode is input
+
+ERR[8] = INPUT();
+
+
+--Y[0] is Y[0] at PIN_T21
+--operation mode is output
+
+Y[0] = OUTPUT(A1L13);
+
+
+--Y[1] is Y[1] at PIN_P10
+--operation mode is output
+
+Y[1] = OUTPUT(A1L23);
+
+
+--Y[2] is Y[2] at PIN_F1
+--operation mode is output
+
+Y[2] = OUTPUT(A1L33);
+
+
+--Y[3] is Y[3] at PIN_Y20
+--operation mode is output
+
+Y[3] = OUTPUT(A1L43);
+
+
+--Y[4] is Y[4] at PIN_AA4
+--operation mode is output
+
+Y[4] = OUTPUT(A1L53);
+
+
+--Y[5] is Y[5] at PIN_AA16
+--operation mode is output
+
+Y[5] = OUTPUT(A1L63);
+
+
+--Y[6] is Y[6] at PIN_V21
+--operation mode is output
+
+Y[6] = OUTPUT(A1L73);
+
+
+--Y[7] is Y[7] at PIN_G8
+--operation mode is output
+
+Y[7] = OUTPUT(A1L83);
+
+
+--Y[8] is Y[8] at PIN_G21
+--operation mode is output
+
+Y[8] = OUTPUT(A1L93);
+
+
+
