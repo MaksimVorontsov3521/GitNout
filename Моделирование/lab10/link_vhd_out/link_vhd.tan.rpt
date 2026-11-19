@@ -1,0 +1,147 @@
+Timing Analyzer report for link_vhd
+Fri Dec 02 22:36:59 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. tpd
+  5. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                    ;
++------------------------------+-------+---------------+-------------+--------+-------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From   ; To    ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+--------+-------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 10.302 ns   ; ERR[0] ; ERROR ;            ;          ; 0            ;
+; Total number of failed paths ;       ;               ;             ;        ;       ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+--------+-------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1S10F484C5       ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; Off                ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++----------------------------------------------------------------+
+; tpd                                                            ;
++-------+-------------------+-----------------+--------+---------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To      ;
++-------+-------------------+-----------------+--------+---------+
+; N/A   ; None              ; 10.302 ns       ; ERR[0] ; OK      ;
+; N/A   ; None              ; 10.302 ns       ; ERR[0] ; ERROR   ;
+; N/A   ; None              ; 9.685 ns        ; ERR[2] ; OK      ;
+; N/A   ; None              ; 9.685 ns        ; ERR[2] ; ERROR   ;
+; N/A   ; None              ; 9.411 ns        ; ERR[1] ; OK      ;
+; N/A   ; None              ; 9.411 ns        ; ERR[1] ; ERROR   ;
+; N/A   ; None              ; 9.406 ns        ; ERR[6] ; OK      ;
+; N/A   ; None              ; 9.406 ns        ; ERR[6] ; ERROR   ;
+; N/A   ; None              ; 9.366 ns        ; ERR[3] ; OK      ;
+; N/A   ; None              ; 9.366 ns        ; ERR[3] ; ERROR   ;
+; N/A   ; None              ; 9.181 ns        ; ERR[4] ; OK      ;
+; N/A   ; None              ; 9.181 ns        ; ERR[4] ; ERROR   ;
+; N/A   ; None              ; 9.103 ns        ; X[1]   ; Outp[1] ;
+; N/A   ; None              ; 9.049 ns        ; ERR[8] ; OK      ;
+; N/A   ; None              ; 9.049 ns        ; ERR[8] ; ERROR   ;
+; N/A   ; None              ; 9.034 ns        ; X[7]   ; Outp[7] ;
+; N/A   ; None              ; 8.937 ns        ; ERR[5] ; OK      ;
+; N/A   ; None              ; 8.937 ns        ; ERR[5] ; ERROR   ;
+; N/A   ; None              ; 8.934 ns        ; X[4]   ; Outp[4] ;
+; N/A   ; None              ; 8.911 ns        ; ERR[3] ; Outp[3] ;
+; N/A   ; None              ; 8.878 ns        ; X[6]   ; Outp[6] ;
+; N/A   ; None              ; 8.862 ns        ; ERR[7] ; OK      ;
+; N/A   ; None              ; 8.862 ns        ; ERR[7] ; ERROR   ;
+; N/A   ; None              ; 8.860 ns        ; ERR[1] ; Outp[1] ;
+; N/A   ; None              ; 8.851 ns        ; ERR[6] ; Outp[6] ;
+; N/A   ; None              ; 8.840 ns        ; ERR[2] ; Outp[2] ;
+; N/A   ; None              ; 8.770 ns        ; X[5]   ; Outp[5] ;
+; N/A   ; None              ; 8.751 ns        ; ERR[4] ; Outp[4] ;
+; N/A   ; None              ; 8.672 ns        ; X[2]   ; Outp[2] ;
+; N/A   ; None              ; 8.610 ns        ; ERR[0] ; Outp[0] ;
+; N/A   ; None              ; 8.609 ns        ; ERR[7] ; Outp[7] ;
+; N/A   ; None              ; 8.488 ns        ; X[0]   ; Outp[0] ;
+; N/A   ; None              ; 8.480 ns        ; ERR[5] ; Outp[5] ;
+; N/A   ; None              ; 8.479 ns        ; X[3]   ; Outp[3] ;
++-------+-------------------+-----------------+--------+---------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Fri Dec 02 22:36:58 2022
+Info: Command: quartus_tan link_vhd
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Info: Longest tpd from source pin "ERR[0]" to destination pin "OK" is 10.302 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.087 ns) = 1.087 ns; Loc. = PIN_C18; Fanout = 2; PIN Node = 'ERR[0]'
+    Info: 2: + IC(4.654 ns) + CELL(0.280 ns) = 6.021 ns; Loc. = LC_X5_Y1_N7; Fanout = 1; COMB Node = 'eo8:rx|ODD~54'
+    Info: 3: + IC(0.328 ns) + CELL(0.183 ns) = 6.532 ns; Loc. = LC_X5_Y1_N3; Fanout = 2; COMB Node = 'eo8:rx|ODD~56'
+    Info: 4: + IC(1.366 ns) + CELL(2.404 ns) = 10.302 ns; Loc. = PIN_AA20; Fanout = 0; PIN Node = 'OK'
+    Info: Total cell delay = 3.954 ns ( 38.38 % )
+    Info: Total interconnect delay = 6.348 ns ( 61.62 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Processing ended: Fri Dec 02 22:36:59 2022
+    Info: Elapsed time: 00:00:01
+
+

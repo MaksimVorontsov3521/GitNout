@@ -1,0 +1,288 @@
+{
+ "NAND2|in:IN1:0,16;in:IN2:0,32;out:OUT:64,24|64x48": {
+  "name": "NAND2",
+  "ports": [
+   "in:IN2:0,32",
+   "in:IN1:0,16",
+   "out:OUT:64,24"
+  ],
+  "size": "64x48",
+  "count": 8,
+  "src": [
+   "lab3_D.bdf",
+   "lab3_RS_trigger.bdf",
+   "lab9_cmp2bit_child.bdf",
+   "lab9_CMP_2bit.bdf"
+  ]
+ },
+ "RS-trigger|in:R:0,48;in:S:0,32;out:Q:96,32;out:QB:96,48|96x96": {
+  "name": "RS-trigger",
+  "ports": [
+   "in:S:0,32",
+   "in:R:0,48",
+   "out:Q:96,32",
+   "out:QB:96,48"
+  ],
+  "size": "96x96",
+  "count": 1,
+  "src": [
+   "lab3_D.bdf"
+  ]
+ },
+ "NOT|in:IN:0,16;out:OUT:48,16|48x32": {
+  "name": "NOT",
+  "ports": [
+   "in:IN:0,16",
+   "out:OUT:48,16"
+  ],
+  "size": "48x32",
+  "count": 22,
+  "src": [
+   "lab6_dec38.bdf",
+   "lab9_cmp2bit_child.bdf",
+   "lab9_CMP_2bit.bdf",
+   "lib_74138.bdf"
+  ]
+ },
+ "NAND3|in:IN1:0,16;in:IN2:0,24;in:IN3:0,32;out:OUT:64,24|64x48": {
+  "name": "NAND3",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,24",
+   "in:IN3:0,32",
+   "out:OUT:64,24"
+  ],
+  "size": "64x48",
+  "count": 22,
+  "src": [
+   "lab6_dec38.bdf",
+   "lab9_cmp2bit_child.bdf",
+   "lab9_CMP_2bit.bdf"
+  ]
+ },
+ "AND4|in:IN1:0,16;in:IN2:0,32;in:IN3:0,48;in:IN4:0,64;out:OUT:64,40|64x80": {
+  "name": "AND4",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,32",
+   "in:IN3:0,48",
+   "in:IN4:0,64",
+   "out:OUT:64,40"
+  ],
+  "size": "64x80",
+  "count": 8,
+  "src": [
+   "lab6_dec38_en_child.bdf"
+  ]
+ },
+ "NOT|in:IN:16,0;out:OUT:16,48|32x48": {
+  "name": "NOT",
+  "ports": [
+   "in:IN:16,0",
+   "out:OUT:16,48"
+  ],
+  "size": "32x48",
+  "count": 5,
+  "src": [
+   "lab6_dec38_en_child.bdf",
+   "lab9_cmp2bit_child.bdf",
+   "lab9_CMP_2bit.bdf"
+  ]
+ },
+ "decoder_3-8_en|in:A0:0,48;in:A1:0,64;in:A2:0,80;in:EN:0,32;out:Q0:96,32;out:Q1:96,48;out:Q2:96,64;out:Q3:96,80;out:Q4:96,96;out:Q5:96,112;out:Q6:96,128;out:Q7:96,144|96x192": {
+  "name": "decoder_3-8_en",
+  "ports": [
+   "in:EN:0,32",
+   "in:A0:0,48",
+   "in:A1:0,64",
+   "in:A2:0,80",
+   "out:Q0:96,32",
+   "out:Q1:96,48",
+   "out:Q2:96,64",
+   "out:Q3:96,80",
+   "out:Q4:96,96",
+   "out:Q5:96,112",
+   "out:Q6:96,128",
+   "out:Q7:96,144"
+  ],
+  "size": "96x192",
+  "count": 9,
+  "src": [
+   "lab6_dec664.bdf"
+  ]
+ },
+ "OR4|in:IN1:0,16;in:IN2:0,32;in:IN3:0,48;in:IN4:0,64;out:OUT:64,40|64x80": {
+  "name": "OR4",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN3:0,48",
+   "in:IN4:0,64",
+   "in:IN2:0,32",
+   "out:OUT:64,40"
+  ],
+  "size": "64x80",
+  "count": 2,
+  "src": [
+   "lab7_mux41.bdf",
+   "lab8_mux41_child.bdf"
+  ]
+ },
+ "NOT|in:IN:16,48;out:OUT:16,0|32x48": {
+  "name": "NOT",
+  "ports": [
+   "in:IN:16,48",
+   "out:OUT:16,0"
+  ],
+  "size": "32x48",
+  "count": 4,
+  "src": [
+   "lab7_mux41.bdf",
+   "lab8_mux41_child.bdf"
+  ]
+ },
+ "AND3|in:IN1:0,16;in:IN2:0,24;in:IN3:0,32;out:OUT:64,24|64x48": {
+  "name": "AND3",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,24",
+   "in:IN3:0,32",
+   "out:OUT:64,24"
+  ],
+  "size": "64x48",
+  "count": 7,
+  "src": [
+   "lab7_mux41.bdf",
+   "lab8_mux41_child.bdf"
+  ]
+ },
+ "AND2|in:IN1:0,16;in:IN2:0,32;out:OUT:64,24|64x48": {
+  "name": "AND2",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,32",
+   "out:OUT:64,24"
+  ],
+  "size": "64x48",
+  "count": 5,
+  "src": [
+   "lab7_mux41.bdf",
+   "lab8_mux41_child.bdf"
+  ]
+ },
+ "multiplexer_4-1|in:A:0,112;in:B:0,128;in:D0:0,32;in:D1:0,48;in:D2:0,64;in:D3:0,80;in:E:0,96;out:F:96,32|96x160": {
+  "name": "multiplexer_4-1",
+  "ports": [
+   "in:D0:0,32",
+   "in:D1:0,48",
+   "in:D2:0,64",
+   "in:D3:0,80",
+   "in:E:0,96",
+   "in:A:0,112",
+   "in:B:0,128",
+   "out:F:96,32"
+  ],
+  "size": "96x160",
+  "count": 21,
+  "src": [
+   "lab8_mux641.bdf"
+  ]
+ },
+ "XOR|in:IN1:0,16;in:IN2:0,32;out:OUT:64,24|64x48": {
+  "name": "XOR",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,32",
+   "out:OUT:64,24"
+  ],
+  "size": "64x48",
+  "count": 4,
+  "src": [
+   "lab9_cmp2bit_child.bdf",
+   "lab9_CMP_2bit.bdf"
+  ]
+ },
+ "CMP_2bit|in:X0:0,80;in:X1:0,48;in:XEY0:0,128;in:XLY0:0,96;in:XMY0:0,112;in:Y0:0,64;in:Y1:0,32;out:XEY:112,64;out:XLY:112,32;out:XMY:112,48|112x160": {
+  "name": "CMP_2bit",
+  "ports": [
+   "in:Y1:0,32",
+   "in:X1:0,48",
+   "in:Y0:0,64",
+   "in:X0:0,80",
+   "in:XLY0:0,96",
+   "in:XMY0:0,112",
+   "in:XEY0:0,128",
+   "out:XLY:112,32",
+   "out:XMY:112,48",
+   "out:XEY:112,64"
+  ],
+  "size": "112x160",
+  "count": 2,
+  "src": [
+   "lab9_cmp4bit.bdf"
+  ]
+ },
+ "VCC|out:1:16,0|32x16": {
+  "name": "VCC",
+  "ports": [
+   "out:1:16,0"
+  ],
+  "size": "32x16",
+  "count": 1,
+  "src": [
+   "lab9_cmp4bit.bdf"
+  ]
+ },
+ "GND|out:1:16,0|32x32": {
+  "name": "GND",
+  "ports": [
+   "out:1:16,0"
+  ],
+  "size": "32x32",
+  "count": 1,
+  "src": [
+   "lab9_cmp4bit.bdf"
+  ]
+ },
+ "BAND3|in:IN1:0,16;in:IN2:0,24;in:IN3:0,32;out:OUT:64,24|64x40": {
+  "name": "BAND3",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN3:0,32",
+   "in:IN2:0,24",
+   "out:OUT:64,24"
+  ],
+  "size": "64x40",
+  "count": 1,
+  "src": [
+   "lib_74138.bdf"
+  ]
+ },
+ "NAND4|in:IN1:0,16;in:IN2:0,32;in:IN3:0,48;in:IN4:0,64;out:OUT:64,40|64x72": {
+  "name": "NAND4",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,32",
+   "in:IN3:0,48",
+   "in:IN4:0,64",
+   "out:OUT:64,40"
+  ],
+  "size": "64x72",
+  "count": 8,
+  "src": [
+   "lib_74138.bdf"
+  ]
+ },
+ "XOR|in:IN1:0,16;in:IN2:0,32;out:OUT:64,24|64x40": {
+  "name": "XOR",
+  "ports": [
+   "in:IN1:0,16",
+   "in:IN2:0,32",
+   "out:OUT:64,24"
+  ],
+  "size": "64x40",
+  "count": 1,
+  "src": [
+   "lib_7486.bdf"
+  ]
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "entity": "parity2",
+ "family": "Stratix",
+ "top": "parity2",
+ "period": 100,
+ "inputs": [
+  "c",
+  "x1",
+  "x0"
+ ],
+ "outputs": [
+  "Ech",
+  "En"
+ ],
+ "groups": [
+  {
+   "name": "X",
+   "members": [
+    "c",
+    "x1",
+    "x0"
+   ],
+   "radix": "Unsigned"
+  }
+ ],
+ "instances": [
+  {
+   "id": "u1",
+   "type": "XOR"
+  },
+  {
+   "id": "u2",
+   "type": "XOR"
+  },
+  {
+   "id": "u3",
+   "type": "NOT"
+  }
+ ],
+ "connect": [
+  [
+   "x0",
+   "u1.IN1"
+  ],
+  [
+   "x1",
+   "u1.IN2"
+  ],
+  [
+   "u1.OUT",
+   "u2.IN1"
+  ],
+  [
+   "c",
+   "u2.IN2"
+  ],
+  [
+   "u2.OUT",
+   "Ech"
+  ],
+  [
+   "u2.OUT",
+   "u3.IN"
+  ],
+  [
+   "u3.OUT",
+   "En"
+  ]
+ ],
+ "expect": {
+  "Ech": [
+   0,
+   1,
+   1,
+   0,
+   1,
+   0,
+   0,
+   1
+  ],
+  "En": [
+   1,
+   0,
+   0,
+   1,
+   0,
+   1,
+   1,
+   0
+  ]
+ },
+ "simulationMode": "FUNCTIONAL"
+}

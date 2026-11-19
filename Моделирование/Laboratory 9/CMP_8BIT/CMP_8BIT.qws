@@ -32,8 +32,8 @@ ptn_Child1=ViewFrame-0
 [ProjectWorkspace.Frames.ChildFrames.Document-2.ViewFrame-0]
 DocPathName=CMP_8BIT.vwf
 DocumentCLSID={4a9ed22a-e60b-11d1-a0bd-0020affa43f2}
-WindowPlacement=MCAAAAAACAAAAAAADAAAAAAAPPPPPPPPPPPPPPPPMPPPPPPPCOPPPPPPIFAAAAAAEHAAAAAAHMEAAAAABOBAAAAA
-IsActiveChildFrame=True
+WindowPlacement=MCAAAAAAAAAAAAAABAAAAAAAPPPPPPPPPPPPPPPPMPPPPPPPCOPPPPPPIFAAAAAAEHAAAAAAHMEAAAAABOBAAAAA
+IsActiveChildFrame=False
 ptn_Child1=StateMap
 [ProjectWorkspace.Frames.ChildFrames.Document-2.ViewFrame-0.StateMap]
 AFC_SIM_AP_NAME=CMP_8BIT

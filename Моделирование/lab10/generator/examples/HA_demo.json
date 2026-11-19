@@ -1,0 +1,63 @@
+{
+ "entity": "HA_demo",
+ "family": "Stratix",
+ "top": "HA_demo",
+ "inputs": [
+  "A",
+  "B"
+ ],
+ "outputs": [
+  "SUM",
+  "CAR"
+ ],
+ "instances": [
+  {
+   "id": "u1",
+   "type": "XOR"
+  },
+  {
+   "id": "u2",
+   "type": "AND2"
+  }
+ ],
+ "connect": [
+  [
+   "A",
+   "u1.IN1"
+  ],
+  [
+   "B",
+   "u1.IN2"
+  ],
+  [
+   "A",
+   "u2.IN1"
+  ],
+  [
+   "B",
+   "u2.IN2"
+  ],
+  [
+   "u1.OUT",
+   "SUM"
+  ],
+  [
+   "u2.OUT",
+   "CAR"
+  ]
+ ],
+ "expect": {
+  "SUM": [
+   0,
+   1,
+   1,
+   0
+  ],
+  "CAR": [
+   0,
+   0,
+   0,
+   1
+  ]
+ }
+}

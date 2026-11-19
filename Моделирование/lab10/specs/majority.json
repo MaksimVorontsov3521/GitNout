@@ -1,0 +1,152 @@
+{
+ "entity": "majority",
+ "family": "Stratix",
+ "top": "majority",
+ "period": 100,
+ "simulationMode": "FUNCTIONAL",
+ "inputs": [
+  "X1",
+  "X2",
+  "X3"
+ ],
+ "outputs": [
+  "M",
+  "a1",
+  "a0"
+ ],
+ "groups": [
+  {
+   "name": "X",
+   "members": [
+    "X1",
+    "X2",
+    "X3"
+   ],
+   "radix": "Unsigned"
+  }
+ ],
+ "instances": [
+  {
+   "id": "g1",
+   "type": "AND2"
+  },
+  {
+   "id": "g2",
+   "type": "AND2"
+  },
+  {
+   "id": "g3",
+   "type": "AND2"
+  },
+  {
+   "id": "o1",
+   "type": "OR3"
+  },
+  {
+   "id": "v1",
+   "type": "XOR"
+  },
+  {
+   "id": "v2",
+   "type": "XOR"
+  }
+ ],
+ "connect": [
+  [
+   "X1",
+   "g1.IN1"
+  ],
+  [
+   "X2",
+   "g1.IN2"
+  ],
+  [
+   "X1",
+   "g2.IN1"
+  ],
+  [
+   "X3",
+   "g2.IN2"
+  ],
+  [
+   "X2",
+   "g3.IN1"
+  ],
+  [
+   "X3",
+   "g3.IN2"
+  ],
+  [
+   "g1.OUT",
+   "o1.IN1"
+  ],
+  [
+   "g2.OUT",
+   "o1.IN2"
+  ],
+  [
+   "g3.OUT",
+   "o1.IN3"
+  ],
+  [
+   "o1.OUT",
+   "M"
+  ],
+  [
+   "X2",
+   "v1.IN1"
+  ],
+  [
+   "X3",
+   "v1.IN2"
+  ],
+  [
+   "v1.OUT",
+   "a1"
+  ],
+  [
+   "X1",
+   "v2.IN1"
+  ],
+  [
+   "X3",
+   "v2.IN2"
+  ],
+  [
+   "v2.OUT",
+   "a0"
+  ]
+ ],
+ "expect": {
+  "M": [
+   0,
+   0,
+   0,
+   1,
+   0,
+   1,
+   1,
+   1
+  ],
+  "a1": [
+   0,
+   1,
+   1,
+   0,
+   0,
+   1,
+   1,
+   0
+  ],
+  "a0": [
+   0,
+   1,
+   0,
+   1,
+   1,
+   0,
+   1,
+   0
+  ]
+ }
+}

@@ -1,0 +1,2978 @@
+{
+ "NAND2": {
+  "name": "NAND2",
+  "w": 64,
+  "h": 48,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab3_D.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "RS-trigger": {
+  "name": "RS-trigger",
+  "w": 96,
+  "h": 96,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab3_D.bdf",
+  "ports": [
+   {
+    "label": "S",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "R",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 96,
+    "dy": 32
+   },
+   {
+    "label": "QB",
+    "dir": "output",
+    "dx": 96,
+    "dy": 48
+   }
+  ]
+ },
+ "NOT": {
+  "name": "NOT",
+  "w": 48,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab6_dec38.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 48,
+    "dy": 16
+   }
+  ]
+ },
+ "NAND3": {
+  "name": "NAND3",
+  "w": 64,
+  "h": 48,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab6_dec38.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "AND4": {
+  "name": "AND4",
+  "w": 64,
+  "h": 80,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab6_dec38_en_child.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 40
+   }
+  ]
+ },
+ "decoder_3-8_en": {
+  "name": "decoder_3-8_en",
+  "w": 96,
+  "h": 192,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab6_dec664.bdf",
+  "ports": [
+   {
+    "label": "EN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "A0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "A1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "A2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "Q0",
+    "dir": "output",
+    "dx": 96,
+    "dy": 32
+   },
+   {
+    "label": "Q1",
+    "dir": "output",
+    "dx": 96,
+    "dy": 48
+   },
+   {
+    "label": "Q2",
+    "dir": "output",
+    "dx": 96,
+    "dy": 64
+   },
+   {
+    "label": "Q3",
+    "dir": "output",
+    "dx": 96,
+    "dy": 80
+   },
+   {
+    "label": "Q4",
+    "dir": "output",
+    "dx": 96,
+    "dy": 96
+   },
+   {
+    "label": "Q5",
+    "dir": "output",
+    "dx": 96,
+    "dy": 112
+   },
+   {
+    "label": "Q6",
+    "dir": "output",
+    "dx": 96,
+    "dy": 128
+   },
+   {
+    "label": "Q7",
+    "dir": "output",
+    "dx": 96,
+    "dy": 144
+   }
+  ]
+ },
+ "OR4": {
+  "name": "OR4",
+  "w": 64,
+  "h": 80,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab7_mux41.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 40
+   }
+  ]
+ },
+ "AND3": {
+  "name": "AND3",
+  "w": 64,
+  "h": 48,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab7_mux41.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "AND2": {
+  "name": "AND2",
+  "w": 64,
+  "h": 48,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab7_mux41.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "multiplexer_4-1": {
+  "name": "multiplexer_4-1",
+  "w": 96,
+  "h": 160,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab8_mux641.bdf",
+  "ports": [
+   {
+    "label": "D0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "D1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "D2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "D3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "E",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "A",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "B",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "F",
+    "dir": "output",
+    "dx": 96,
+    "dy": 32
+   }
+  ]
+ },
+ "XOR": {
+  "name": "XOR",
+  "w": 64,
+  "h": 48,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab9_cmp2bit_child.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "CMP_2bit": {
+  "name": "CMP_2bit",
+  "w": 112,
+  "h": 160,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab9_cmp4bit.bdf",
+  "ports": [
+   {
+    "label": "Y1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "X1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "Y0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "X0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "XLY0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "XMY0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "XEY0",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "XLY",
+    "dir": "output",
+    "dx": 112,
+    "dy": 32
+   },
+   {
+    "label": "XMY",
+    "dir": "output",
+    "dx": 112,
+    "dy": 48
+   },
+   {
+    "label": "XEY",
+    "dir": "output",
+    "dx": 112,
+    "dy": 64
+   }
+  ]
+ },
+ "VCC": {
+  "name": "VCC",
+  "w": 32,
+  "h": 16,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab9_cmp4bit.bdf",
+  "ports": [
+   {
+    "label": "1",
+    "dir": "output",
+    "dx": 16,
+    "dy": 0
+   }
+  ]
+ },
+ "GND": {
+  "name": "GND",
+  "w": 32,
+  "h": 32,
+  "orient": "v",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lab9_cmp4bit.bdf",
+  "ports": [
+   {
+    "label": "1",
+    "dir": "output",
+    "dx": 16,
+    "dy": 0
+   }
+  ]
+ },
+ "BAND3": {
+  "name": "BAND3",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lib_74138.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "NAND4": {
+  "name": "NAND4",
+  "w": 64,
+  "h": 72,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\lib_74138.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 40
+   }
+  ]
+ },
+ "SOFT": {
+  "name": "SOFT",
+  "w": 48,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\161mux.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 48,
+    "dy": 16
+   }
+  ]
+ },
+ "BAND2": {
+  "name": "BAND2",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\16cudslr.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "OR3": {
+  "name": "OR3",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\16cudslr.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "DFF": {
+  "name": "DFF",
+  "w": 64,
+  "h": 80,
+  "orient": "v",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\16cudslr.bdf",
+  "ports": [
+   {
+    "label": "CLRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 80
+   },
+   {
+    "label": "CLK",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "D",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "PRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 0
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "NOR2": {
+  "name": "NOR2",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\1a2nor2.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "OR2": {
+  "name": "OR2",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\21mux.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "NOR4": {
+  "name": "NOR4",
+  "w": 64,
+  "h": 72,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\4a2nor4.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 40
+   }
+  ]
+ },
+ "BNOR2": {
+  "name": "BNOR2",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\4count.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "BAND6": {
+  "name": "BAND6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\4count.bdf",
+  "ports": [
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "AND6": {
+  "name": "AND6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\4count.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "JKFF": {
+  "name": "JKFF",
+  "w": 64,
+  "h": 80,
+  "orient": "v",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74107.bdf",
+  "ports": [
+   {
+    "label": "PRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 0
+   },
+   {
+    "label": "CLRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 80
+   },
+   {
+    "label": "K",
+    "dir": "input",
+    "dx": 0,
+    "dy": 56
+   },
+   {
+    "label": "J",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "CLK",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "AND12": {
+  "name": "AND12",
+  "w": 64,
+  "h": 200,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74133.bdf",
+  "ports": [
+   {
+    "label": "IN11",
+    "dir": "input",
+    "dx": 0,
+    "dy": 176
+   },
+   {
+    "label": "IN10",
+    "dir": "input",
+    "dx": 0,
+    "dy": 160
+   },
+   {
+    "label": "IN9",
+    "dir": "input",
+    "dx": 0,
+    "dy": 144
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN12",
+    "dir": "input",
+    "dx": 0,
+    "dy": 192
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 104
+   }
+  ]
+ },
+ "NAND12": {
+  "name": "NAND12",
+  "w": 64,
+  "h": 200,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74134.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "IN9",
+    "dir": "input",
+    "dx": 0,
+    "dy": 144
+   },
+   {
+    "label": "IN10",
+    "dir": "input",
+    "dx": 0,
+    "dy": 160
+   },
+   {
+    "label": "IN11",
+    "dir": "input",
+    "dx": 0,
+    "dy": 176
+   },
+   {
+    "label": "IN12",
+    "dir": "input",
+    "dx": 0,
+    "dy": 192
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 104
+   }
+  ]
+ },
+ "TRI": {
+  "name": "TRI",
+  "w": 48,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74134.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OE",
+    "dir": "input",
+    "dx": 24,
+    "dy": 0
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 48,
+    "dy": 16
+   }
+  ]
+ },
+ "LATCH": {
+  "name": "LATCH",
+  "w": 64,
+  "h": 80,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74137.bdf",
+  "ports": [
+   {
+    "label": "D",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "ENA",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 64,
+    "dy": 32
+   }
+  ]
+ },
+ "NOR3": {
+  "name": "NOR3",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74143.bdf",
+  "ports": [
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "XNOR": {
+  "name": "XNOR",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74143.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "NOR6": {
+  "name": "NOR6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74147.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "NAND8": {
+  "name": "NAND8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74148.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "NAND6": {
+  "name": "NAND6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74154.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "BOR2": {
+  "name": "BOR2",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74167.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "enadff": {
+  "name": "enadff",
+  "w": 64,
+  "h": 80,
+  "orient": "v",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74167.bdf",
+  "ports": [
+   {
+    "label": "ENA",
+    "dir": "input",
+    "dx": 0,
+    "dy": 56
+   },
+   {
+    "label": "D",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "PRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 0
+   },
+   {
+    "label": "CLRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 80
+   },
+   {
+    "label": "CLK",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "OR8": {
+  "name": "OR8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74172.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "NOR8": {
+  "name": "NOR8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74184.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "OR6": {
+  "name": "OR6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74185.bdf",
+  "ports": [
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "OR12": {
+  "name": "OR12",
+  "w": 64,
+  "h": 200,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74185.bdf",
+  "ports": [
+   {
+    "label": "IN9",
+    "dir": "input",
+    "dx": 0,
+    "dy": 144
+   },
+   {
+    "label": "IN10",
+    "dir": "input",
+    "dx": 0,
+    "dy": 160
+   },
+   {
+    "label": "IN11",
+    "dir": "input",
+    "dx": 0,
+    "dy": 176
+   },
+   {
+    "label": "IN12",
+    "dir": "input",
+    "dx": 0,
+    "dy": 192
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 104
+   }
+  ]
+ },
+ "TFF": {
+  "name": "TFF",
+  "w": 64,
+  "h": 80,
+  "orient": "v",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74192.bdf",
+  "ports": [
+   {
+    "label": "PRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 0
+   },
+   {
+    "label": "CLRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 80
+   },
+   {
+    "label": "T",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "CLK",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "EXP": {
+  "name": "EXP",
+  "w": 48,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74259.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 48,
+    "dy": 16
+   }
+  ]
+ },
+ "LCELL": {
+  "name": "LCELL",
+  "w": 48,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74259.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 48,
+    "dy": 16
+   }
+  ]
+ },
+ "AND8": {
+  "name": "AND8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74284.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "BAND8": {
+  "name": "BAND8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74284.bdf",
+  "ports": [
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "BNAND4": {
+  "name": "BNAND4",
+  "w": 64,
+  "h": 72,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74294.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 40
+   }
+  ]
+ },
+ "BAND4": {
+  "name": "BAND4",
+  "w": 64,
+  "h": 72,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74294.bdf",
+  "ports": [
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 40
+   }
+  ]
+ },
+ "DFFE": {
+  "name": "DFFE",
+  "w": 64,
+  "h": 80,
+  "orient": "v",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74377.bdf",
+  "ports": [
+   {
+    "label": "PRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 0
+   },
+   {
+    "label": "CLRN",
+    "dir": "input",
+    "dx": 32,
+    "dy": 80
+   },
+   {
+    "label": "D",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "CLK",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "ENA",
+    "dir": "input",
+    "dx": 0,
+    "dy": 56
+   },
+   {
+    "label": "Q",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "BNAND2": {
+  "name": "BNAND2",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\74589.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "BNAND6": {
+  "name": "BNAND6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bnand5.bdf",
+  "ports": [
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "BNOR6": {
+  "name": "BNOR6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bnor5.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "BNOR8": {
+  "name": "BNOR8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bnor7.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "BNOR12": {
+  "name": "BNOR12",
+  "w": 64,
+  "h": 200,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bnor9.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "IN9",
+    "dir": "input",
+    "dx": 0,
+    "dy": 144
+   },
+   {
+    "label": "IN10",
+    "dir": "input",
+    "dx": 0,
+    "dy": 160
+   },
+   {
+    "label": "IN11",
+    "dir": "input",
+    "dx": 0,
+    "dy": 176
+   },
+   {
+    "label": "IN12",
+    "dir": "input",
+    "dx": 0,
+    "dy": 192
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 104
+   }
+  ]
+ },
+ "BOR12": {
+  "name": "BOR12",
+  "w": 64,
+  "h": 200,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bor13.bdf",
+  "ports": [
+   {
+    "label": "IN9",
+    "dir": "input",
+    "dx": 0,
+    "dy": 144
+   },
+   {
+    "label": "IN10",
+    "dir": "input",
+    "dx": 0,
+    "dy": 160
+   },
+   {
+    "label": "IN11",
+    "dir": "input",
+    "dx": 0,
+    "dy": 176
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN12",
+    "dir": "input",
+    "dx": 0,
+    "dy": 192
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 104
+   }
+  ]
+ },
+ "BOR6": {
+  "name": "BOR6",
+  "w": 64,
+  "h": 104,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bor5.bdf",
+  "ports": [
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 56
+   }
+  ]
+ },
+ "BOR8": {
+  "name": "BOR8",
+  "w": 64,
+  "h": 136,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\bor7.bdf",
+  "ports": [
+   {
+    "label": "IN1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "IN2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "IN3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 48
+   },
+   {
+    "label": "IN4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 64
+   },
+   {
+    "label": "IN5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 80
+   },
+   {
+    "label": "IN6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 96
+   },
+   {
+    "label": "IN7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 112
+   },
+   {
+    "label": "IN8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 128
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 64,
+    "dy": 72
+   }
+  ]
+ },
+ "CASCADE": {
+  "name": "CASCADE",
+  "w": 56,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\f74151.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 56,
+    "dy": 16
+   }
+  ]
+ },
+ "CARRY": {
+  "name": "CARRY",
+  "w": 48,
+  "h": 32,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\f74161.bdf",
+  "ports": [
+   {
+    "label": "IN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "OUT",
+    "dir": "output",
+    "dx": 48,
+    "dy": 16
+   }
+  ]
+ },
+ "inhb": {
+  "name": "inhb",
+  "w": 64,
+  "h": 40,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\f74191.bdf",
+  "ports": [
+   {
+    "label": "2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 16
+   },
+   {
+    "label": "3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 32
+   },
+   {
+    "label": "1",
+    "dir": "output",
+    "dx": 64,
+    "dy": 24
+   }
+  ]
+ },
+ "8fadd": {
+  "name": "8fadd",
+  "w": 112,
+  "h": 304,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\mult4.bdf",
+  "ports": [
+   {
+    "label": "A1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "CIN",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "A3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 104
+   },
+   {
+    "label": "B2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 88
+   },
+   {
+    "label": "A2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 72
+   },
+   {
+    "label": "B1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 56
+   },
+   {
+    "label": "A5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 168
+   },
+   {
+    "label": "B4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 152
+   },
+   {
+    "label": "A4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 136
+   },
+   {
+    "label": "B3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 120
+   },
+   {
+    "label": "A7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 232
+   },
+   {
+    "label": "B6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 216
+   },
+   {
+    "label": "A6",
+    "dir": "input",
+    "dx": 0,
+    "dy": 200
+   },
+   {
+    "label": "B5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 184
+   },
+   {
+    "label": "B8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 280
+   },
+   {
+    "label": "A8",
+    "dir": "input",
+    "dx": 0,
+    "dy": 264
+   },
+   {
+    "label": "B7",
+    "dir": "input",
+    "dx": 0,
+    "dy": 248
+   },
+   {
+    "label": "SUM2",
+    "dir": "output",
+    "dx": 112,
+    "dy": 104
+   },
+   {
+    "label": "SUM1",
+    "dir": "output",
+    "dx": 112,
+    "dy": 88
+   },
+   {
+    "label": "SUM6",
+    "dir": "output",
+    "dx": 112,
+    "dy": 168
+   },
+   {
+    "label": "SUM5",
+    "dir": "output",
+    "dx": 112,
+    "dy": 152
+   },
+   {
+    "label": "SUM4",
+    "dir": "output",
+    "dx": 112,
+    "dy": 136
+   },
+   {
+    "label": "SUM3",
+    "dir": "output",
+    "dx": 112,
+    "dy": 120
+   },
+   {
+    "label": "COUT",
+    "dir": "output",
+    "dx": 112,
+    "dy": 216
+   },
+   {
+    "label": "SUM8",
+    "dir": "output",
+    "dx": 112,
+    "dy": 200
+   },
+   {
+    "label": "SUM7",
+    "dir": "output",
+    "dx": 112,
+    "dy": 184
+   }
+  ]
+ },
+ "mult24": {
+  "name": "mult24",
+  "w": 120,
+  "h": 176,
+  "orient": "h",
+  "tier": "labs",
+  "src": "D:\\Desktop\\NF\\dshagent\\ref\\mp2\\mult4.bdf",
+  "ports": [
+   {
+    "label": "A1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 24
+   },
+   {
+    "label": "A2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 40
+   },
+   {
+    "label": "A3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 56
+   },
+   {
+    "label": "A4",
+    "dir": "input",
+    "dx": 0,
+    "dy": 72
+   },
+   {
+    "label": "A5",
+    "dir": "input",
+    "dx": 0,
+    "dy": 88
+   },
+   {
+    "label": "B1",
+    "dir": "input",
+    "dx": 0,
+    "dy": 104
+   },
+   {
+    "label": "B2",
+    "dir": "input",
+    "dx": 0,
+    "dy": 120
+   },
+   {
+    "label": "B3",
+    "dir": "input",
+    "dx": 0,
+    "dy": 136
+   },
+   {
+    "label": "G",
+    "dir": "input",
+    "dx": 0,
+    "dy": 152
+   },
+   {
+    "label": "Y7",
+    "dir": "output",
+    "dx": 120,
+    "dy": 136
+   },
+   {
+    "label": "Y6",
+    "dir": "output",
+    "dx": 120,
+    "dy": 120
+   },
+   {
+    "label": "Y5",
+    "dir": "output",
+    "dx": 120,
+    "dy": 104
+   },
+   {
+    "label": "Y4",
+    "dir": "output",
+    "dx": 120,
+    "dy": 88
+   },
+   {
+    "label": "Y3",
+    "dir": "output",
+    "dx": 120,
+    "dy": 72
+   },
+   {
+    "label": "Y2",
+    "dir": "output",
+    "dx": 120,
+    "dy": 56
+   },
+   {
+    "label": "Y1",
+    "dir": "output",
+    "dx": 120,
+    "dy": 40
+   }
+  ]
+ }
+}
