@@ -1,0 +1,7 @@
+{
+ "rows": 4112,
+ "fails": 0,
+ "note": [
+  "bit-order invariant OUT_DATA(i)==model D_i corrected: true,true,true,true  (OUT_DATA(0)=D0, (3)=D3)"
+ ]
+}

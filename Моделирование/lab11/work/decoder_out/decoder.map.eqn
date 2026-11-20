@@ -1,0 +1,157 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L52 is T3~88
+--operation mode is normal
+
+A1L52 = IN[1] $ IN[2] $ IN[6] $ IN[5];
+
+
+--A1L42 is S3~69
+--operation mode is normal
+
+A1L42 = IN[1] $ IN[3] $ IN[5] $ IN[7];
+
+
+--A1L62 is W3~28
+--operation mode is normal
+
+A1L62 = IN[1] $ IN[3] $ IN[4] $ IN[2];
+
+
+--A1L32 is Q7~17
+--operation mode is normal
+
+A1L32 = IN[6] $ IN[5] $ IN[7] $ IN[0];
+
+
+--A1L6 is F1~32
+--operation mode is normal
+
+A1L6 = A1L62 & (!A1L32) # !A1L62 & A1L32 & (A1L52 # A1L42);
+
+
+--A1L7 is F2~17
+--operation mode is normal
+
+A1L7 = A1L62 & A1L32 # !A1L62 & !A1L32 & (A1L52 # A1L42);
+
+
+--C3 is C3
+--operation mode is normal
+
+C3 = IN[1] $ (A1L62 & A1L52 & A1L42);
+
+
+--C2 is C2
+--operation mode is normal
+
+C2 = IN[2] $ (!A1L42 & A1L62 & A1L52);
+
+
+--C1 is C1
+--operation mode is normal
+
+C1 = IN[3] $ (!A1L52 & A1L62 & A1L42);
+
+
+--C0 is C0
+--operation mode is normal
+
+C0 = IN[5] $ (A1L62 # !A1L42 # !A1L52);
+
+
+--IN[1] is IN[1]
+--operation mode is input
+
+IN[1] = INPUT();
+
+
+--IN[2] is IN[2]
+--operation mode is input
+
+IN[2] = INPUT();
+
+
+--IN[6] is IN[6]
+--operation mode is input
+
+IN[6] = INPUT();
+
+
+--IN[5] is IN[5]
+--operation mode is input
+
+IN[5] = INPUT();
+
+
+--IN[3] is IN[3]
+--operation mode is input
+
+IN[3] = INPUT();
+
+
+--IN[7] is IN[7]
+--operation mode is input
+
+IN[7] = INPUT();
+
+
+--IN[4] is IN[4]
+--operation mode is input
+
+IN[4] = INPUT();
+
+
+--IN[0] is IN[0]
+--operation mode is input
+
+IN[0] = INPUT();
+
+
+--ONE_ERR is ONE_ERR
+--operation mode is output
+
+ONE_ERR = OUTPUT(A1L6);
+
+
+--DBL_ERR is DBL_ERR
+--operation mode is output
+
+DBL_ERR = OUTPUT(A1L7);
+
+
+--OUT_DATA[3] is OUT_DATA[3]
+--operation mode is output
+
+OUT_DATA[3] = OUTPUT(C3);
+
+
+--OUT_DATA[2] is OUT_DATA[2]
+--operation mode is output
+
+OUT_DATA[2] = OUTPUT(C2);
+
+
+--OUT_DATA[1] is OUT_DATA[1]
+--operation mode is output
+
+OUT_DATA[1] = OUTPUT(C1);
+
+
+--OUT_DATA[0] is OUT_DATA[0]
+--operation mode is output
+
+OUT_DATA[0] = OUTPUT(!C0);
+
+

@@ -1,0 +1,46 @@
+﻿ЗАДАНИЕ 1. Кодер Хемминга (8,4) изменённый - графическая схема
+=================================================================
+
+ФАЙЛЫ В ПАПКЕ (всё вместе, порознь не работает: Quartus ищет дети и символы только
+в каталоге проекта):
+   encoder.bdf      - лист: 12 двухвходовых XOR. K1=XOR(D0,D1,D3), K2=XOR(D0,D2,D3),
+                      K3=XOR(D1,D2,D3); K собран каскадом XOR по формуле плана
+                      K = K1^K2^D0^K3^D1^D2^D3
+   encoder.bsf      - символ этого блока (шапкой идёт в задании 2)
+   encoder.qsf/.qpf - BDF_FILE encoder.bdf, TOP_LEVEL_ENTITY = encoder
+   encoder.vwf      - воздействие: перебор всех 16 информационных слов, шаг 40 нс
+   encoder.sim.vwf  - ответ функциональной симуляции, полученный в гостевой ОС
+   encoder.map.rpt / .fit.rpt / .tan.rpt / .asm.rpt / .flow.rpt / .sim.rpt - отчёты
+   encoder.map.eqn / .fit.eqn - уравнения, которые Quartus реально синтезировал
+   encoder.pin      - распределение выводов корпуса
+   encoder_sheet.png - лист, отрисованный из геометрии .bdf (не перерисовка по памяти)
+   encoder_wave.png  - волны симуляции
+   sym_encoder.png   - вид символа в Symbol Tool
+
+ЛОГИКА: K1 = D0^D1^D3, K2 = D0^D2^D3, K3 = D1^D2^D3, K - общая чётность слова.
+   Порядок бит на выходе: позиции 1..8 = IN7..IN0 = K1 K2 D0 K3 D1 D2 D3 K.
+
+ЧТО ДЕЛАТЬ: открыть encoder.qpf -> Start Analysis & Synthesis ->
+Generate Functional Simulation Netlist -> Run Simulation Tool -> Functional.
+Или из командной строки: quartus_map encoder; quartus_map encoder
+--generate_functional_sim_netlist; quartus_sim encoder; quartus_fit encoder.
+
+КОНТРОЛЬ ПО ТАБЛИЦЕ 16.2 МЕТОДИЧКИ: все 16 слов сверены, расхождений нет.
+   Пример методички D = 1101 -> K1K2K3K = 0100, кодовое слово 01100110 - совпадает.
+   Полный список 16 слов: lab11/evidence/theory.json.
+
+РЕСУРСЫ И ВРЕМЕНА (гостевая Quartus II 5.0):
+   устройство: EP1S10F484C5 (семейство Stratix)
+   логических элементов: 4 / 10,570 ( < 1 % )
+   выводов: 8 / 336 ( 2 % )
+   худший tpd: 8.581 ns  (D3 -> K3)
+   quartus_map / quartus_fit / quartus_asm / quartus_tan - коды возврата 0, ошибок нет
+
+КОНТРОЛЬ: функциональная симуляция - 16 строк, проверено 4 сигналов,
+   расхождений 0 -> PASS.
+
+ПРИМЕЧАНИЕ О СИНТЕЗЕ: Quartus свёл K к D0^D1^D2 (encoder.map.eqn:
+   A1L21 = D1 $ D0 $ D2; K = OUTPUT(A1L21)). Это не расхождение с планом, а свойство
+   кода: K есть общая чётность слова, а суммы K1^K2^K3 уже дают D0^D1^D2^D3 трижды,
+   поэтому K = D0^D1^D2 и каждое кодовое слово имеет чётный вес. Отсюда d_min = 4,
+   E_обн = 3, E_испр = 1.

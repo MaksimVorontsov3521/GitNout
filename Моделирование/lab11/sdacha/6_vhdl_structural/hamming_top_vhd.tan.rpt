@@ -1,0 +1,201 @@
+Timing Analyzer report for hamming_top_vhd
+Sun Dec 04 07:26:43 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. tpd
+  5. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                        ;
++------------------------------+-------+---------------+-------------+------+-------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time ; From ; To          ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+-------------+------+-------------+------------+----------+--------------+
+; Worst-case tpd               ; N/A   ; None          ; 10.836 ns   ; D0   ; OUT_DATA[0] ;            ;          ; 0            ;
+; Total number of failed paths ;       ;               ;             ;      ;             ;            ;          ; 0            ;
++------------------------------+-------+---------------+-------------+------+-------------+------------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                ; Setting            ; From ; To ; Entity Name ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                           ; EP1S10F484C5       ;      ;    ;             ;
+; Timing Models                                         ; Final              ;      ;    ;             ;
+; Number of source nodes to report per destination node ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                 ; 10                 ;      ;    ;             ;
+; Number of paths to report                             ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                          ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                            ; Off                ;      ;    ;             ;
+; Default hold multicycle                               ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains             ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                        ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                      ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                 ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements               ; Off                ;      ;    ;             ;
+; Enable Recovery/Removal analysis                      ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                  ; Off                ;      ;    ;             ;
++-------------------------------------------------------+--------------------+------+----+-------------+
+
+
++---------------------------------------------------------------------------+
+; tpd                                                                       ;
++-------+-------------------+-----------------+---------------+-------------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From          ; To          ;
++-------+-------------------+-----------------+---------------+-------------+
+; N/A   ; None              ; 10.836 ns       ; D0            ; OUT_DATA[0] ;
+; N/A   ; None              ; 10.720 ns       ; D3            ; RX[6]       ;
+; N/A   ; None              ; 10.528 ns       ; D3            ; OUT_DATA[3] ;
+; N/A   ; None              ; 10.420 ns       ; D2            ; OUT_DATA[2] ;
+; N/A   ; None              ; 10.383 ns       ; ERROR_MASK[6] ; OUT_DATA[0] ;
+; N/A   ; None              ; 10.309 ns       ; D0            ; RX[6]       ;
+; N/A   ; None              ; 10.275 ns       ; ERROR_MASK[5] ; OUT_DATA[0] ;
+; N/A   ; None              ; 10.250 ns       ; ERROR_MASK[2] ; OUT_DATA[0] ;
+; N/A   ; None              ; 10.238 ns       ; ERROR_MASK[1] ; OUT_DATA[0] ;
+; N/A   ; None              ; 10.233 ns       ; ERROR_MASK[6] ; OUT_DATA[3] ;
+; N/A   ; None              ; 10.212 ns       ; ERROR_MASK[6] ; ONE_ERR     ;
+; N/A   ; None              ; 10.207 ns       ; ERROR_MASK[6] ; OUT_DATA[2] ;
+; N/A   ; None              ; 10.173 ns       ; ERROR_MASK[3] ; OUT_DATA[0] ;
+; N/A   ; None              ; 10.137 ns       ; ERROR_MASK[5] ; OUT_DATA[3] ;
+; N/A   ; None              ; 10.108 ns       ; ERROR_MASK[5] ; ONE_ERR     ;
+; N/A   ; None              ; 10.100 ns       ; ERROR_MASK[1] ; OUT_DATA[3] ;
+; N/A   ; None              ; 10.099 ns       ; ERROR_MASK[2] ; OUT_DATA[3] ;
+; N/A   ; None              ; 10.092 ns       ; ERROR_MASK[2] ; OUT_DATA[2] ;
+; N/A   ; None              ; 10.079 ns       ; ERROR_MASK[2] ; ONE_ERR     ;
+; N/A   ; None              ; 10.071 ns       ; ERROR_MASK[1] ; ONE_ERR     ;
+; N/A   ; None              ; 10.049 ns       ; ERROR_MASK[5] ; OUT_DATA[2] ;
+; N/A   ; None              ; 10.035 ns       ; ERROR_MASK[3] ; OUT_DATA[3] ;
+; N/A   ; None              ; 10.011 ns       ; ERROR_MASK[1] ; OUT_DATA[2] ;
+; N/A   ; None              ; 10.011 ns       ; D2            ; RX[6]       ;
+; N/A   ; None              ; 10.006 ns       ; ERROR_MASK[3] ; ONE_ERR     ;
+; N/A   ; None              ; 9.989 ns        ; ERROR_MASK[6] ; DBL_ERR     ;
+; N/A   ; None              ; 9.989 ns        ; ERROR_MASK[6] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.917 ns        ; ERROR_MASK[4] ; OUT_DATA[0] ;
+; N/A   ; None              ; 9.896 ns        ; ERROR_MASK[5] ; DBL_ERR     ;
+; N/A   ; None              ; 9.881 ns        ; ERROR_MASK[5] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.859 ns        ; ERROR_MASK[1] ; DBL_ERR     ;
+; N/A   ; None              ; 9.855 ns        ; ERROR_MASK[2] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.854 ns        ; D3            ; RX[7]       ;
+; N/A   ; None              ; 9.852 ns        ; ERROR_MASK[2] ; DBL_ERR     ;
+; N/A   ; None              ; 9.850 ns        ; ERROR_MASK[7] ; OUT_DATA[0] ;
+; N/A   ; None              ; 9.844 ns        ; ERROR_MASK[1] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.794 ns        ; ERROR_MASK[3] ; DBL_ERR     ;
+; N/A   ; None              ; 9.785 ns        ; D1            ; CODE[7]     ;
+; N/A   ; None              ; 9.782 ns        ; D3            ; CODE[7]     ;
+; N/A   ; None              ; 9.779 ns        ; ERROR_MASK[3] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.778 ns        ; D1            ; RX[0]       ;
+; N/A   ; None              ; 9.775 ns        ; D1            ; CODE[0]     ;
+; N/A   ; None              ; 9.766 ns        ; ERROR_MASK[4] ; OUT_DATA[3] ;
+; N/A   ; None              ; 9.759 ns        ; D1            ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.746 ns        ; ERROR_MASK[4] ; ONE_ERR     ;
+; N/A   ; None              ; 9.740 ns        ; ERROR_MASK[4] ; OUT_DATA[2] ;
+; N/A   ; None              ; 9.712 ns        ; ERROR_MASK[7] ; OUT_DATA[3] ;
+; N/A   ; None              ; 9.683 ns        ; ERROR_MASK[7] ; ONE_ERR     ;
+; N/A   ; None              ; 9.650 ns        ; D3            ; RX[1]       ;
+; N/A   ; None              ; 9.643 ns        ; ERROR_MASK[3] ; OUT_DATA[2] ;
+; N/A   ; None              ; 9.591 ns        ; D0            ; CODE[7]     ;
+; N/A   ; None              ; 9.562 ns        ; D0            ; CODE[0]     ;
+; N/A   ; None              ; 9.561 ns        ; D0            ; RX[0]       ;
+; N/A   ; None              ; 9.550 ns        ; D3            ; RX[4]       ;
+; N/A   ; None              ; 9.534 ns        ; D2            ; CODE[0]     ;
+; N/A   ; None              ; 9.533 ns        ; D2            ; RX[0]       ;
+; N/A   ; None              ; 9.522 ns        ; ERROR_MASK[4] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.519 ns        ; ERROR_MASK[4] ; DBL_ERR     ;
+; N/A   ; None              ; 9.472 ns        ; D1            ; RX[4]       ;
+; N/A   ; None              ; 9.471 ns        ; ERROR_MASK[7] ; DBL_ERR     ;
+; N/A   ; None              ; 9.464 ns        ; D1            ; RX[7]       ;
+; N/A   ; None              ; 9.456 ns        ; ERROR_MASK[7] ; OUT_DATA[1] ;
+; N/A   ; None              ; 9.440 ns        ; ERROR_MASK[6] ; RX[6]       ;
+; N/A   ; None              ; 9.396 ns        ; ERROR_MASK[0] ; ONE_ERR     ;
+; N/A   ; None              ; 9.383 ns        ; ERROR_MASK[0] ; RX[0]       ;
+; N/A   ; None              ; 9.331 ns        ; D1            ; CODE[4]     ;
+; N/A   ; None              ; 9.329 ns        ; D3            ; CODE[4]     ;
+; N/A   ; None              ; 9.328 ns        ; D3            ; CODE[6]     ;
+; N/A   ; None              ; 9.265 ns        ; ERROR_MASK[7] ; OUT_DATA[2] ;
+; N/A   ; None              ; 9.251 ns        ; D0            ; RX[7]       ;
+; N/A   ; None              ; 9.228 ns        ; D0            ; RX[5]       ;
+; N/A   ; None              ; 9.228 ns        ; D2            ; RX[4]       ;
+; N/A   ; None              ; 9.220 ns        ; D0            ; CODE[6]     ;
+; N/A   ; None              ; 9.180 ns        ; D2            ; RX[2]       ;
+; N/A   ; None              ; 9.119 ns        ; ERROR_MASK[1] ; RX[1]       ;
+; N/A   ; None              ; 9.105 ns        ; ERROR_MASK[0] ; DBL_ERR     ;
+; N/A   ; None              ; 9.093 ns        ; ERROR_MASK[4] ; RX[4]       ;
+; N/A   ; None              ; 9.014 ns        ; ERROR_MASK[7] ; RX[7]       ;
+; N/A   ; None              ; 8.932 ns        ; D2            ; CODE[4]     ;
+; N/A   ; None              ; 8.931 ns        ; D2            ; CODE[6]     ;
+; N/A   ; None              ; 8.885 ns        ; D1            ; RX[3]       ;
+; N/A   ; None              ; 8.852 ns        ; ERROR_MASK[2] ; RX[2]       ;
+; N/A   ; None              ; 8.572 ns        ; ERROR_MASK[3] ; RX[3]       ;
+; N/A   ; None              ; 8.522 ns        ; ERROR_MASK[5] ; RX[5]       ;
+; N/A   ; None              ; 7.904 ns        ; D0            ; CODE[5]     ;
+; N/A   ; None              ; 7.722 ns        ; D3            ; CODE[1]     ;
+; N/A   ; None              ; 7.713 ns        ; D2            ; CODE[2]     ;
+; N/A   ; None              ; 7.636 ns        ; D1            ; CODE[3]     ;
++-------+-------------------+-----------------+---------------+-------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 04 07:26:43 2022
+Info: Command: quartus_tan hamming_top_vhd
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Info: Longest tpd from source pin "D0" to destination pin "OUT_DATA[0]" is 10.836 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.087 ns) = 1.087 ns; Loc. = PIN_AB7; Fanout = 8; PIN Node = 'D0'
+    Info: 2: + IC(4.333 ns) + CELL(0.280 ns) = 5.700 ns; Loc. = LC_X33_Y1_N4; Fanout = 2; COMB Node = 'error_injector:U2|DATA_OUT[5]'
+    Info: 3: + IC(0.863 ns) + CELL(0.075 ns) = 6.638 ns; Loc. = LC_X35_Y1_N1; Fanout = 1; COMB Node = 'decoder:U3|OUT_DATA[0]~402'
+    Info: 4: + IC(1.794 ns) + CELL(2.404 ns) = 10.836 ns; Loc. = PIN_M7; Fanout = 0; PIN Node = 'OUT_DATA[0]'
+    Info: Total cell delay = 3.846 ns ( 35.49 % )
+    Info: Total interconnect delay = 6.990 ns ( 64.51 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sun Dec 04 07:26:43 2022
+    Info: Elapsed time: 00:00:00
+
+

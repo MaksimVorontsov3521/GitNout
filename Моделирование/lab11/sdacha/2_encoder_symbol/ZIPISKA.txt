@@ -1,0 +1,20 @@
+﻿ЗАДАНИЕ 2. Символ кодера: Project -> Create Symbol Files
+=================================================================
+
+ФАЙЛЫ В ПАПКЕ:
+   encoder.bsf      - символ, созданный Quartus из encoder.bdf (шаг 2 плана)
+   sym_encoder.png  - его вид в Symbol Tool, раздел Project: слева входы D0, D1, D2, D3,
+                      справа выходы K1, K2, K3, K
+   остальные файлы  - тот же проект, чтобы символ можно было пересоздать: quartus_map
+                      создаёт .bsf вместе с прочими артефактами
+
+КАК ПЕРЕСОЗДАТЬ СИМВОЛ ВРУЧНУЮ:
+   Project -> Create/Update -> Create Symbol Files for Current Project
+   либо из команды quartus_map encoder - файл encoder.bsf появляется сам.
+
+ЗАЧЕМ НУЖЕН СИМВОЛ: он потреблён папкой 4_injector_and_top, где encoder.bdf стоит
+   блоком U_enc именно через этот .bsf. Иерархия развернута без ошибок, что записано
+   в hamming_top.map.rpt: Elaborating entity encoder for hierarchy encoder:U_enc.
+
+ПРОВЕРКА: КОНТРОЛЬ: функциональная симуляция - 16 строк, проверено 4 сигналов,
+   расхождений 0 -> PASS.

@@ -1,0 +1,6 @@
+megafunctions
+others
+primitives
+sim
+software
+vhdl

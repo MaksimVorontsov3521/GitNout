@@ -1,0 +1,206 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--XI7 is XI7 at LC_X41_Y1_N2
+--operation mode is normal
+
+XI7 = ERROR_MASK[7] $ (DATA_IN[7]);
+
+
+--XI6 is XI6 at LC_X52_Y9_N4
+--operation mode is normal
+
+XI6 = ERROR_MASK[6] $ DATA_IN[6];
+
+
+--XI5 is XI5 at LC_X5_Y30_N2
+--operation mode is normal
+
+XI5 = ERROR_MASK[5] $ DATA_IN[5];
+
+
+--XI4 is XI4 at LC_X1_Y21_N0
+--operation mode is normal
+
+XI4 = DATA_IN[4] $ (ERROR_MASK[4]);
+
+
+--XI3 is XI3 at LC_X1_Y10_N0
+--operation mode is normal
+
+XI3 = DATA_IN[3] $ (ERROR_MASK[3]);
+
+
+--XI2 is XI2 at LC_X48_Y1_N2
+--operation mode is normal
+
+XI2 = DATA_IN[2] $ (ERROR_MASK[2]);
+
+
+--XI1 is XI1 at LC_X1_Y23_N0
+--operation mode is normal
+
+XI1 = DATA_IN[1] $ (ERROR_MASK[1]);
+
+
+--XI0 is XI0 at LC_X33_Y30_N2
+--operation mode is normal
+
+XI0 = ERROR_MASK[0] $ DATA_IN[0];
+
+
+--DATA_IN[7] is DATA_IN[7] at PIN_U8
+--operation mode is input
+
+DATA_IN[7] = INPUT();
+
+
+--ERROR_MASK[7] is ERROR_MASK[7] at PIN_W9
+--operation mode is input
+
+ERROR_MASK[7] = INPUT();
+
+
+--DATA_IN[6] is DATA_IN[6] at PIN_T2
+--operation mode is input
+
+DATA_IN[6] = INPUT();
+
+
+--ERROR_MASK[6] is ERROR_MASK[6] at PIN_T1
+--operation mode is input
+
+ERROR_MASK[6] = INPUT();
+
+
+--DATA_IN[5] is DATA_IN[5] at PIN_D18
+--operation mode is input
+
+DATA_IN[5] = INPUT();
+
+
+--ERROR_MASK[5] is ERROR_MASK[5] at PIN_B18
+--operation mode is input
+
+ERROR_MASK[5] = INPUT();
+
+
+--DATA_IN[4] is DATA_IN[4] at PIN_H22
+--operation mode is input
+
+DATA_IN[4] = INPUT();
+
+
+--ERROR_MASK[4] is ERROR_MASK[4] at PIN_J20
+--operation mode is input
+
+ERROR_MASK[4] = INPUT();
+
+
+--DATA_IN[3] is DATA_IN[3] at PIN_P21
+--operation mode is input
+
+DATA_IN[3] = INPUT();
+
+
+--ERROR_MASK[3] is ERROR_MASK[3] at PIN_R21
+--operation mode is input
+
+ERROR_MASK[3] = INPUT();
+
+
+--DATA_IN[2] is DATA_IN[2] at PIN_AB5
+--operation mode is input
+
+DATA_IN[2] = INPUT();
+
+
+--ERROR_MASK[2] is ERROR_MASK[2] at PIN_AA5
+--operation mode is input
+
+ERROR_MASK[2] = INPUT();
+
+
+--DATA_IN[1] is DATA_IN[1] at PIN_F22
+--operation mode is input
+
+DATA_IN[1] = INPUT();
+
+
+--ERROR_MASK[1] is ERROR_MASK[1] at PIN_F21
+--operation mode is input
+
+ERROR_MASK[1] = INPUT();
+
+
+--DATA_IN[0] is DATA_IN[0] at PIN_J9
+--operation mode is input
+
+DATA_IN[0] = INPUT();
+
+
+--ERROR_MASK[0] is ERROR_MASK[0] at PIN_J8
+--operation mode is input
+
+ERROR_MASK[0] = INPUT();
+
+
+--DATA_OUT[7] is DATA_OUT[7] at PIN_T8
+--operation mode is output
+
+DATA_OUT[7] = OUTPUT(XI7);
+
+
+--DATA_OUT[6] is DATA_OUT[6] at PIN_M6
+--operation mode is output
+
+DATA_OUT[6] = OUTPUT(XI6);
+
+
+--DATA_OUT[5] is DATA_OUT[5] at PIN_D17
+--operation mode is output
+
+DATA_OUT[5] = OUTPUT(XI5);
+
+
+--DATA_OUT[4] is DATA_OUT[4] at PIN_H21
+--operation mode is output
+
+DATA_OUT[4] = OUTPUT(XI4);
+
+
+--DATA_OUT[3] is DATA_OUT[3] at PIN_P20
+--operation mode is output
+
+DATA_OUT[3] = OUTPUT(XI3);
+
+
+--DATA_OUT[2] is DATA_OUT[2] at PIN_Y5
+--operation mode is output
+
+DATA_OUT[2] = OUTPUT(XI2);
+
+
+--DATA_OUT[1] is DATA_OUT[1] at PIN_K17
+--operation mode is output
+
+DATA_OUT[1] = OUTPUT(XI1);
+
+
+--DATA_OUT[0] is DATA_OUT[0] at PIN_K8
+--operation mode is output
+
+DATA_OUT[0] = OUTPUT(XI0);
+
+
+

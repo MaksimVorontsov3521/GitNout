@@ -1,0 +1,349 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1L4 is encoder:U1|K~7
+--operation mode is normal
+
+B1L4 = D0 $ D2 $ D1;
+
+
+--B1_K3 is encoder:U1|K3
+--operation mode is normal
+
+B1_K3 = D2 $ D1 $ D3;
+
+
+--B1_K2 is encoder:U1|K2
+--operation mode is normal
+
+B1_K2 = D0 $ D2 $ D3;
+
+
+--B1_K1 is encoder:U1|K1
+--operation mode is normal
+
+B1_K1 = D0 $ D1 $ D3;
+
+
+--C1_DATA_OUT[0] is error_injector:U2|DATA_OUT[0]
+--operation mode is normal
+
+C1_DATA_OUT[0] = D0 $ D2 $ D1 $ ERROR_MASK[0];
+
+
+--C1_DATA_OUT[1] is error_injector:U2|DATA_OUT[1]
+--operation mode is normal
+
+C1_DATA_OUT[1] = D3 $ ERROR_MASK[1];
+
+
+--C1_DATA_OUT[2] is error_injector:U2|DATA_OUT[2]
+--operation mode is normal
+
+C1_DATA_OUT[2] = D2 $ ERROR_MASK[2];
+
+
+--C1_DATA_OUT[3] is error_injector:U2|DATA_OUT[3]
+--operation mode is normal
+
+C1_DATA_OUT[3] = D1 $ ERROR_MASK[3];
+
+
+--C1_DATA_OUT[4] is error_injector:U2|DATA_OUT[4]
+--operation mode is normal
+
+C1_DATA_OUT[4] = D2 $ D1 $ D3 $ ERROR_MASK[4];
+
+
+--C1_DATA_OUT[5] is error_injector:U2|DATA_OUT[5]
+--operation mode is normal
+
+C1_DATA_OUT[5] = D0 $ ERROR_MASK[5];
+
+
+--C1_DATA_OUT[6] is error_injector:U2|DATA_OUT[6]
+--operation mode is normal
+
+C1_DATA_OUT[6] = D0 $ D2 $ D3 $ ERROR_MASK[6];
+
+
+--C1_DATA_OUT[7] is error_injector:U2|DATA_OUT[7]
+--operation mode is normal
+
+C1_DATA_OUT[7] = D0 $ D1 $ D3 $ ERROR_MASK[7];
+
+
+--D1L01 is decoder:U3|P3~25
+--operation mode is normal
+
+D1L01 = ERROR_MASK[1] $ ERROR_MASK[2] $ ERROR_MASK[3] $ ERROR_MASK[4];
+
+
+--D1L8 is decoder:U3|P1~34
+--operation mode is normal
+
+D1L8 = ERROR_MASK[1] $ ERROR_MASK[3] $ ERROR_MASK[5] $ ERROR_MASK[7];
+
+
+--D1L9 is decoder:U3|P2~15
+--operation mode is normal
+
+D1L9 = ERROR_MASK[1] $ ERROR_MASK[2] $ ERROR_MASK[5] $ ERROR_MASK[6];
+
+
+--D1L4 is decoder:U3|OUT_DATA[0]~402
+--operation mode is normal
+
+D1L4 = C1_DATA_OUT[5] $ (!D1L01 & D1L8 & D1L9);
+
+
+--D1L5 is decoder:U3|OUT_DATA[1]~403
+--operation mode is normal
+
+D1L5 = C1_DATA_OUT[3] $ (!D1L9 & D1L01 & D1L8);
+
+
+--D1L6 is decoder:U3|OUT_DATA[2]~404
+--operation mode is normal
+
+D1L6 = C1_DATA_OUT[2] $ (!D1L8 & D1L01 & D1L9);
+
+
+--D1L7 is decoder:U3|OUT_DATA[3]~405
+--operation mode is normal
+
+D1L7 = C1_DATA_OUT[1] $ (D1L01 & D1L8 & D1L9);
+
+
+--D1L2 is decoder:U3|KP~26
+--operation mode is normal
+
+D1L2 = ERROR_MASK[0] $ ERROR_MASK[5] $ ERROR_MASK[6] $ ERROR_MASK[7];
+
+
+--D1L3 is decoder:U3|ONE_ERR~33
+--operation mode is normal
+
+D1L3 = D1L01 & (!D1L2) # !D1L01 & D1L2 & (D1L8 # D1L9);
+
+
+--D1L1 is decoder:U3|DBL_ERR~24
+--operation mode is normal
+
+D1L1 = D1L01 & D1L2 # !D1L01 & !D1L2 & (D1L8 # D1L9);
+
+
+--D0 is D0
+--operation mode is input
+
+D0 = INPUT();
+
+
+--D2 is D2
+--operation mode is input
+
+D2 = INPUT();
+
+
+--D1 is D1
+--operation mode is input
+
+D1 = INPUT();
+
+
+--D3 is D3
+--operation mode is input
+
+D3 = INPUT();
+
+
+--ERROR_MASK[0] is ERROR_MASK[0]
+--operation mode is input
+
+ERROR_MASK[0] = INPUT();
+
+
+--ERROR_MASK[1] is ERROR_MASK[1]
+--operation mode is input
+
+ERROR_MASK[1] = INPUT();
+
+
+--ERROR_MASK[2] is ERROR_MASK[2]
+--operation mode is input
+
+ERROR_MASK[2] = INPUT();
+
+
+--ERROR_MASK[3] is ERROR_MASK[3]
+--operation mode is input
+
+ERROR_MASK[3] = INPUT();
+
+
+--ERROR_MASK[4] is ERROR_MASK[4]
+--operation mode is input
+
+ERROR_MASK[4] = INPUT();
+
+
+--ERROR_MASK[5] is ERROR_MASK[5]
+--operation mode is input
+
+ERROR_MASK[5] = INPUT();
+
+
+--ERROR_MASK[6] is ERROR_MASK[6]
+--operation mode is input
+
+ERROR_MASK[6] = INPUT();
+
+
+--ERROR_MASK[7] is ERROR_MASK[7]
+--operation mode is input
+
+ERROR_MASK[7] = INPUT();
+
+
+--CODE[0] is CODE[0]
+--operation mode is output
+
+CODE[0] = OUTPUT(B1L4);
+
+
+--CODE[1] is CODE[1]
+--operation mode is output
+
+CODE[1] = OUTPUT(D3);
+
+
+--CODE[2] is CODE[2]
+--operation mode is output
+
+CODE[2] = OUTPUT(D2);
+
+
+--CODE[3] is CODE[3]
+--operation mode is output
+
+CODE[3] = OUTPUT(D1);
+
+
+--CODE[4] is CODE[4]
+--operation mode is output
+
+CODE[4] = OUTPUT(B1_K3);
+
+
+--CODE[5] is CODE[5]
+--operation mode is output
+
+CODE[5] = OUTPUT(D0);
+
+
+--CODE[6] is CODE[6]
+--operation mode is output
+
+CODE[6] = OUTPUT(B1_K2);
+
+
+--CODE[7] is CODE[7]
+--operation mode is output
+
+CODE[7] = OUTPUT(B1_K1);
+
+
+--RX[0] is RX[0]
+--operation mode is output
+
+RX[0] = OUTPUT(C1_DATA_OUT[0]);
+
+
+--RX[1] is RX[1]
+--operation mode is output
+
+RX[1] = OUTPUT(C1_DATA_OUT[1]);
+
+
+--RX[2] is RX[2]
+--operation mode is output
+
+RX[2] = OUTPUT(C1_DATA_OUT[2]);
+
+
+--RX[3] is RX[3]
+--operation mode is output
+
+RX[3] = OUTPUT(C1_DATA_OUT[3]);
+
+
+--RX[4] is RX[4]
+--operation mode is output
+
+RX[4] = OUTPUT(C1_DATA_OUT[4]);
+
+
+--RX[5] is RX[5]
+--operation mode is output
+
+RX[5] = OUTPUT(C1_DATA_OUT[5]);
+
+
+--RX[6] is RX[6]
+--operation mode is output
+
+RX[6] = OUTPUT(C1_DATA_OUT[6]);
+
+
+--RX[7] is RX[7]
+--operation mode is output
+
+RX[7] = OUTPUT(C1_DATA_OUT[7]);
+
+
+--OUT_DATA[0] is OUT_DATA[0]
+--operation mode is output
+
+OUT_DATA[0] = OUTPUT(D1L4);
+
+
+--OUT_DATA[1] is OUT_DATA[1]
+--operation mode is output
+
+OUT_DATA[1] = OUTPUT(D1L5);
+
+
+--OUT_DATA[2] is OUT_DATA[2]
+--operation mode is output
+
+OUT_DATA[2] = OUTPUT(D1L6);
+
+
+--OUT_DATA[3] is OUT_DATA[3]
+--operation mode is output
+
+OUT_DATA[3] = OUTPUT(D1L7);
+
+
+--ONE_ERR is ONE_ERR
+--operation mode is output
+
+ONE_ERR = OUTPUT(D1L3);
+
+
+--DBL_ERR is DBL_ERR
+--operation mode is output
+
+DBL_ERR = OUTPUT(D1L1);
+
+

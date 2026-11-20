@@ -1,0 +1,79 @@
+{
+ "verdicts": {
+  "decoder_3-8_en": {
+   "entity": "decoder_3-8_en",
+   "pass": true,
+   "rows": 16,
+   "mismatches": 0,
+   "signals": 8,
+   "sim_bytes": 6343,
+   "first": []
+  },
+  "encoder": {
+   "entity": "encoder",
+   "pass": true,
+   "rows": 16,
+   "mismatches": 0,
+   "signals": 4,
+   "sim_bytes": 5260,
+   "first": []
+  },
+  "error_injector": {
+   "entity": "error_injector",
+   "pass": true,
+   "rows": 8,
+   "mismatches": 0,
+   "signals": 8,
+   "sim_bytes": 12673,
+   "first": []
+  },
+  "decoder": {
+   "entity": "decoder",
+   "pass": true,
+   "rows": 24,
+   "mismatches": 0,
+   "signals": 6,
+   "sim_bytes": 9533,
+   "first": []
+  },
+  "hamming_top": {
+   "entity": "hamming_top",
+   "pass": true,
+   "rows": 24,
+   "mismatches": 0,
+   "signals": 22,
+   "sim_bytes": 19553,
+   "first": []
+  },
+  "encoder_vhd": {
+   "entity": "encoder",
+   "pass": true,
+   "rows": 16,
+   "mismatches": 0,
+   "signals": 4,
+   "sim_bytes": 5260,
+   "first": []
+  },
+  "decoder_vhd": {
+   "entity": "decoder",
+   "pass": true,
+   "rows": 24,
+   "mismatches": 0,
+   "signals": 6,
+   "sim_bytes": 9703,
+   "first": []
+  },
+  "hamming_top_vhd": {
+   "entity": "hamming_top_vhd",
+   "pass": true,
+   "rows": 24,
+   "mismatches": 0,
+   "signals": 22,
+   "sim_bytes": 19553,
+   "first": []
+  }
+ },
+ "allPass": true,
+ "guest_log": "r202611200226_decoder_3-8_en-encoder-error_injector-decoder-hamming_top-en.log",
+ "at": "2026-11-20T02:27:49.463Z"
+}

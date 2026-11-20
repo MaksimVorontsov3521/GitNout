@@ -1,0 +1,205 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--XI7 is XI7
+--operation mode is normal
+
+XI7 = DATA_IN[7] $ ERROR_MASK[7];
+
+
+--XI6 is XI6
+--operation mode is normal
+
+XI6 = DATA_IN[6] $ ERROR_MASK[6];
+
+
+--XI5 is XI5
+--operation mode is normal
+
+XI5 = DATA_IN[5] $ ERROR_MASK[5];
+
+
+--XI4 is XI4
+--operation mode is normal
+
+XI4 = DATA_IN[4] $ ERROR_MASK[4];
+
+
+--XI3 is XI3
+--operation mode is normal
+
+XI3 = DATA_IN[3] $ ERROR_MASK[3];
+
+
+--XI2 is XI2
+--operation mode is normal
+
+XI2 = DATA_IN[2] $ ERROR_MASK[2];
+
+
+--XI1 is XI1
+--operation mode is normal
+
+XI1 = DATA_IN[1] $ ERROR_MASK[1];
+
+
+--XI0 is XI0
+--operation mode is normal
+
+XI0 = DATA_IN[0] $ ERROR_MASK[0];
+
+
+--DATA_IN[7] is DATA_IN[7]
+--operation mode is input
+
+DATA_IN[7] = INPUT();
+
+
+--ERROR_MASK[7] is ERROR_MASK[7]
+--operation mode is input
+
+ERROR_MASK[7] = INPUT();
+
+
+--DATA_IN[6] is DATA_IN[6]
+--operation mode is input
+
+DATA_IN[6] = INPUT();
+
+
+--ERROR_MASK[6] is ERROR_MASK[6]
+--operation mode is input
+
+ERROR_MASK[6] = INPUT();
+
+
+--DATA_IN[5] is DATA_IN[5]
+--operation mode is input
+
+DATA_IN[5] = INPUT();
+
+
+--ERROR_MASK[5] is ERROR_MASK[5]
+--operation mode is input
+
+ERROR_MASK[5] = INPUT();
+
+
+--DATA_IN[4] is DATA_IN[4]
+--operation mode is input
+
+DATA_IN[4] = INPUT();
+
+
+--ERROR_MASK[4] is ERROR_MASK[4]
+--operation mode is input
+
+ERROR_MASK[4] = INPUT();
+
+
+--DATA_IN[3] is DATA_IN[3]
+--operation mode is input
+
+DATA_IN[3] = INPUT();
+
+
+--ERROR_MASK[3] is ERROR_MASK[3]
+--operation mode is input
+
+ERROR_MASK[3] = INPUT();
+
+
+--DATA_IN[2] is DATA_IN[2]
+--operation mode is input
+
+DATA_IN[2] = INPUT();
+
+
+--ERROR_MASK[2] is ERROR_MASK[2]
+--operation mode is input
+
+ERROR_MASK[2] = INPUT();
+
+
+--DATA_IN[1] is DATA_IN[1]
+--operation mode is input
+
+DATA_IN[1] = INPUT();
+
+
+--ERROR_MASK[1] is ERROR_MASK[1]
+--operation mode is input
+
+ERROR_MASK[1] = INPUT();
+
+
+--DATA_IN[0] is DATA_IN[0]
+--operation mode is input
+
+DATA_IN[0] = INPUT();
+
+
+--ERROR_MASK[0] is ERROR_MASK[0]
+--operation mode is input
+
+ERROR_MASK[0] = INPUT();
+
+
+--DATA_OUT[7] is DATA_OUT[7]
+--operation mode is output
+
+DATA_OUT[7] = OUTPUT(XI7);
+
+
+--DATA_OUT[6] is DATA_OUT[6]
+--operation mode is output
+
+DATA_OUT[6] = OUTPUT(XI6);
+
+
+--DATA_OUT[5] is DATA_OUT[5]
+--operation mode is output
+
+DATA_OUT[5] = OUTPUT(XI5);
+
+
+--DATA_OUT[4] is DATA_OUT[4]
+--operation mode is output
+
+DATA_OUT[4] = OUTPUT(XI4);
+
+
+--DATA_OUT[3] is DATA_OUT[3]
+--operation mode is output
+
+DATA_OUT[3] = OUTPUT(XI3);
+
+
+--DATA_OUT[2] is DATA_OUT[2]
+--operation mode is output
+
+DATA_OUT[2] = OUTPUT(XI2);
+
+
+--DATA_OUT[1] is DATA_OUT[1]
+--operation mode is output
+
+DATA_OUT[1] = OUTPUT(XI1);
+
+
+--DATA_OUT[0] is DATA_OUT[0]
+--operation mode is output
+
+DATA_OUT[0] = OUTPUT(XI0);
+
+

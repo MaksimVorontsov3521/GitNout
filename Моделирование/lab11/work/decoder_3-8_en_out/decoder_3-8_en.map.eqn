@@ -1,0 +1,133 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--G0 is G0
+--operation mode is normal
+
+G0 = EN & !A0 & !A1 & !A2;
+
+
+--G1 is G1
+--operation mode is normal
+
+G1 = EN & A0 & !A1 & !A2;
+
+
+--G2 is G2
+--operation mode is normal
+
+G2 = EN & A1 & !A0 & !A2;
+
+
+--G3 is G3
+--operation mode is normal
+
+G3 = EN & A0 & A1 & !A2;
+
+
+--G4 is G4
+--operation mode is normal
+
+G4 = EN & A2 & !A0 & !A1;
+
+
+--G5 is G5
+--operation mode is normal
+
+G5 = EN & A0 & A2 & !A1;
+
+
+--G6 is G6
+--operation mode is normal
+
+G6 = EN & A1 & A2 & !A0;
+
+
+--G7 is G7
+--operation mode is normal
+
+G7 = EN & A0 & A1 & A2;
+
+
+--EN is EN
+--operation mode is input
+
+EN = INPUT();
+
+
+--A0 is A0
+--operation mode is input
+
+A0 = INPUT();
+
+
+--A1 is A1
+--operation mode is input
+
+A1 = INPUT();
+
+
+--A2 is A2
+--operation mode is input
+
+A2 = INPUT();
+
+
+--Q0 is Q0
+--operation mode is output
+
+Q0 = OUTPUT(G0);
+
+
+--Q1 is Q1
+--operation mode is output
+
+Q1 = OUTPUT(G1);
+
+
+--Q2 is Q2
+--operation mode is output
+
+Q2 = OUTPUT(G2);
+
+
+--Q3 is Q3
+--operation mode is output
+
+Q3 = OUTPUT(G3);
+
+
+--Q4 is Q4
+--operation mode is output
+
+Q4 = OUTPUT(G4);
+
+
+--Q5 is Q5
+--operation mode is output
+
+Q5 = OUTPUT(G5);
+
+
+--Q6 is Q6
+--operation mode is output
+
+Q6 = OUTPUT(G6);
+
+
+--Q7 is Q7
+--operation mode is output
+
+Q7 = OUTPUT(G7);
+
+

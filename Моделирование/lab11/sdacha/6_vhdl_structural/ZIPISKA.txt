@@ -1,0 +1,33 @@
+﻿ЗАДАНИЕ 6. Структурная VHDL-модель: кодер -> канал -> декодер
+=================================================================
+
+ФАЙЛЫ В ПАПКЕ:
+   hamming_top_vhd.vhd - структурная модель: компоненты encoder, error_injector,
+      decoder; CW <= K1 & K2 & D0 & K3 & D1 & D2 & D3 & K; U2 питается CW и пишет RW;
+      U3 на входе RW; CODE <= CW и RX <= RW выведены наружу для наблюдения
+   encoder.vhd, error_injector.vhd, decoder.vhd - дети, обязательны в папке
+   hamming_top_vhd.qsf - четыре VHDL_FILE, TOP_LEVEL_ENTITY = hamming_top_vhd
+   hamming_top_vhd.vwf - то же воздействие, что у hamming_top.bdf (24 строки)
+   hamming_top_vhd.sim.vwf - ответ гостевой симуляции
+   hamming_top_vhd_scen.png - окно восьми сценариев
+
+ЧТО ДЕЛАТЬ: quartus_map hamming_top_vhd; quartus_map hamming_top_vhd
+   --generate_functional_sim_netlist; quartus_sim hamming_top_vhd;
+   quartus_fit hamming_top_vhd; quartus_tan hamming_top_vhd.
+
+РЕСУРСЫ И ВРЕМЕНА (гостевая Quartus II 5.0):
+   устройство: EP1S10F484C5 (семейство Stratix)
+   логических элементов: 22 / 10,570 ( < 1 % )
+   выводов: 34 / 336 ( 10 % )
+   худший tpd: 10.836 ns  (D0 -> OUT_DATA[0])
+   quartus_map / quartus_fit / quartus_asm / quartus_tan - коды возврата 0, ошибок нет
+
+КОНТРОЛЬ: функциональная симуляция - 24 строк, проверено 22 сигналов,
+   расхождений 0 -> PASS.
+
+СРАВНЕНИЕ СХЕМЫ И VHDL: hamming_top.bdf и hamming_top_vhd.vhd дают одинаковые ресурсы
+   (22 элемента, 34 вывода) и пословно одинаковый ответ симуляции на всех 24 строках.
+   Значения RX в окне восьми сценариев совпадают полностью:
+      01100110 01000110 11100110 01110111 01100111 11000110 01100100 10000110
+   Разница только в задержке: 10.622 ns нс у схемы против 10.836 ns нс у VHDL -
+   следствие иного порядка трассировки, а не иной логики.

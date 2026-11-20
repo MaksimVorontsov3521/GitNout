@@ -1,0 +1,44 @@
+﻿ЗАДАНИЕ 4. Преобразователь данных и структурный верхний уровень
+=================================================================
+
+ФАЙЛЫ В ПАПКЕ (четыре уровня иерархии - всё вместе, порознь не собирается):
+   error_injector.bdf  - преобразователь данных: DATA_OUT[i] = DATA_IN[i] XOR ERROR_MASK[i],
+                          8 двухвходовых XOR, три шины по 8 бит (шаг 4 плана)
+   hamming_top.bdf     - верхний уровень: блоки U_enc (encoder), U_ch (error_injector),
+                          U_dec (decoder), соединённые шинами
+   encoder.bdf/.bsf, decoder.bdf/.bsf, decoder_3-8_en.bdf/.bsf, error_injector.bsf
+                          - дети, обязательные в той же папке
+   ERROR_MASK[7..0]    - маска ошибки канала: ERROR_MASK7 = позиция 1 ... позиция 8
+   CODE[7..0]          - кодовое слово ДО канала (позиции 1..8 = IN7..IN0)
+   RX[7..0]            - слово ПОСЛЕ канала, то, что видит декодер
+   OUT_DATA[3..0], ONE_ERR, DBL_ERR - результат декодера
+   *_sheet.png         - листы, отрисованные из геометрии .bdf
+   hamming_top_wave.png - полная трасса (16 слов + 8 сценариев)
+   hamming_top_scen.png - окно восьми сценариев, шины в двоичном виде
+
+СХЕМА: D0..D3 -> U_enc -> CODE -> U_ch (XOR с ERROR_MASK) -> RX -> U_dec -> OUT_DATA.
+   Кодек на канале: CW = K1 K2 D0 K3 D1 D2 D3 K, то есть CW(7) = K1 (позиция 1),
+   CW(0) = K (позиция 8).
+
+ЧТО ДЕЛАТЬ: quartus_map hamming_top; quartus_map hamming_top
+   --generate_functional_sim_netlist; quartus_sim hamming_top; quartus_fit hamming_top;
+   quartus_asm hamming_top; quartus_tan hamming_top.
+
+РЕСУРСЫ И ВРЕМЕНА (гостевая Quartus II 5.0):
+   устройство: EP1S10F484C5 (семейство Stratix)
+   логических элементов: 22 / 10,570 ( < 1 % )
+   выводов: 34 / 336 ( 10 % )
+   худший tpd: 10.622 ns  (D0 -> OUT_DATA[0])
+   quartus_map / quartus_fit / quartus_asm / quartus_tan - коды возврата 0, ошибок нет
+
+КОНТРОЛЬ: функциональная симуляция - 24 строк, проверено 22 сигналов,
+   расхождений 0 -> PASS.
+   Иерархия подтверждена отчётом синтеза: Elaborating entity ... for hierarchy
+   encoder:U_enc, error_injector:U_ch, decoder:U_dec, decoder_3-8_en:U1.
+
+О РЕЖИМЕ ШИН: листы используют подлинный синтаксис шин Quartus II 5.0 - один узел
+   вывода IN[7..0], магистраль с пометкой (bus), отводы через (junction), подписи бит
+   на ветвях в Courier New 10 жирным, как в образцовом файле методички 2x8mux.bdf.
+   Предупреждение No superset bus at connection - штатное сообщение Quartus для
+   сборки, разобранной на биты внутри одного листа; это не ошибка, и на функцию оно
+   не влияет: все 24 строки совпали с моделью.
