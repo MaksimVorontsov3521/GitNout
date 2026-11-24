@@ -1,0 +1,1114 @@
+; Доказательная база по Lab7: протоколы автономных зондов (dosbox_autotest.ps1).
+; Зонды НЕ являются пунктами задания: они фиксируют границы инструмента,
+; найденные опытным путём до написания программ Lab7_1..Lab7_5.
+;
+; 1) TCC порождает ASM без .386 -> eax/cr0 в inline asm не собираются
+;    (зонд P1: Undefined symbol: eax).
+; 2) .386 в модуле ломает tlink /t -> требуется tlink /3 (зонды P4a/P4b).
+; 3) CR0 читается машинным кодом под .286, но DOSBox отдаёт CR0=0000:0000,
+;    поэтому бит NE из-emulyatora ne poluchit (зонд P4c, P5).
+; 4) GLAVNOE: DOSBox 0.74-3 NE dostavlyaet nemaskirovannye iskuchenija x87.
+;    Zond P5: CW=037B (maska bita 2 snyata), 1.0/0.0, FWAIT ->
+;    SW=3904 (ZE=1), no schetchiki ISR(75h)=0 i ISR(16h)=0, ES(bit7)=0.
+;    Vektor 75h do ustanovki = 0000:0000 (nichego v DOS tam net).
+;    Vyvod: reagirovat na FLAG po FSTSW, a svoj obrabotchik vyzyvat
+;    programmno (int 75h). Na realnom ZD dostavka avtomaticheskaja.
+; 5) Baza FPU v TCC (zond P2): FINIT -> CW=037F, SW=0000;
+;    zagolovok FSAVE = 14 bajt (386); 16.02f = 41 80 28 F6 (little-endian
+;    F6 28 80 41); 0.0/0.0 -> SW=3901 (IE=1, TOP=7); ST(0) posle 1/0 =
+;    7FFF 8000 0000 0000 0000 (x87 Infinity s javnym starshim bitom).
+; 6) Pechat hex: cifry 30h..39h (oshibka 48h/57h daвала HHHH, zond P4c).
+---------- _probe7\P1\probe.c ----------
+/*==============================================================
+  ZOND 1: bazovye Vozmoznosti FPU v DOSBox + TCC
+  Ne chast zadanija - proverka, chto realno rabotaet:
+    1) sobirajutsja li FPU-komandy v inline asm TCC
+    2) kakoe znachenie bita NE v CR0 (opredeljaet vektor 75h ili 16h)
+    3) kakoj razmer zagolovka daet FSAVE (94 ili 108 bajt)
+    4) korrektno li fld/fadd/fstp dla float/double
+    5) chto dajot 0.0/0.0 (NaN) i kakoj status slovo
+  Vremennyj fail, udaljaetsja posle zamerov.
+==============================================================*/
+#include <stdio.h>
+#include <dos.h>
+#include <conio.h>
+
+static unsigned char fbuf[120];     /* bufer FSAVE */
+static unsigned      cw = 0, sw = 0, tw = 0;
+static float         a = 16.02f, b = 3.5f, c = 0.0f, ssum = 0.0f;
+static double        d1 = 16.02, d2 = 3.5, dsum = 0.0;
+static unsigned long cr0v = 0;
+
+/* ---------- pechat ---------- */
+static void phex16(unsigned v) { printf("%04X", v); }
+static void phex32(unsigned long v) { printf("%08lX", v); }
+
+static void dumpb(unsigned char *p, int n, char *lbl)
+{
+    int i;
+    printf("%s", lbl);
+    for (i = 0; i < n; i++) printf("%02X ", p[i]);
+    puts("");
+}
+
+void main(void)
+{
+    clrscr();
+    puts("=== ZOND 1: FPU capabilities in DOSBox (TCC inline asm) ===");
+    puts("");
+
+    /* ---- 1. CR0 i bit NE ---- */
+    asm mov  eax, cr0
+    asm mov  cr0v, eax
+    printf("CR0              = "); phex32(cr0v);
+    printf("   bit NE (16) = "); printf("%d", (cr0v >> 16) & 1UL);
+    puts("");
+    puts("  NE=0 -> unmasked FPU exception goes to INT 75h (IRQ13)");
+    puts("  NE=1 -> it goes to INT 16h");
+    puts("");
+
+    /* ---- 2. FINIT + FSTCW/FSTSW do nachala ---- */
+    asm finit
+    asm fstcw cw
+    asm fstsw sw
+    printf("after FINIT: CW = "); phex16(cw);
+    printf("   SW = "); phex16(sw); puts("");
+
+    /* ---- 3. fld/fadd/fstp dla float (3 chisla) ---- */
+    asm finit
+    asm fld  a
+    asm fld  b
+    asm fadd
+    asm fld  c
+    asm fadd
+    asm fstp ssum
+    printf("float  16.02 + 3.5 + 0.0 = "); printf("%.10f", ssum); puts("");
+    printf("          expected exact  = 19.52"); puts("");
+
+    /* ---- 4. to zhe dla double ---- */
+    asm finit
+    asm fld  d1
+    asm fld  d2
+    asm fadd
+    asm fld  d2
+    asm fadd
+    asm fstp dsum
+    printf("double 16.02 + 3.5 + 3.5 = "); printf("%.15lf", dsum); puts("");
+
+    /* ---- 5. FSAVE: razmer zagolovka i soderzhimoe ST ---- */
+    asm finit
+    asm fld  a
+    asm fld  b
+    asm fld  c
+    asm fsave fbuf
+    dumpb(fbuf, 20, "FSAVE first 20 bytes: ");
+    printf("  ST(0) raw (10 bytes) = "); dumpb(fbuf+14, 10, "");
+    printf("  ST(1) raw (10 bytes) = "); dumpb(fbuf+24, 10, "");
+    printf("  ST(2) raw (10 bytes) = "); dumpb(fbuf+34, 10, "");
+
+    /* ---- 6. NaN: 0.0 / 0.0 ---- */
+    asm finit
+    asm fldz
+    asm fldz
+    asm fdiv
+    asm fstsw sw
+    asm fstp ssum
+    printf("0.0/0.0 -> SW = "); phex16(sw); puts("");
+    printf("  bit0 IE (invalid) = "); printf("%d", sw & 1); puts("");
+    printf("  bit2 ZE (div0)    = "); printf("%d", (sw >> 2) & 1); puts("");
+    printf("  bit7 ES (summary) = "); printf("%d", (sw >> 7) & 1); puts("");
+    printf("  TOP (bits 13-11)  = "); printf("%d", (sw >> 11) & 7); puts("");
+
+    /* ---- 7. peremennoe 16.02 kak IEEE754 single ---- */
+    {
+        unsigned long *pa = (unsigned long *) &a;
+        printf("16.02f bits = "); phex32(*pa); puts("");
+        printf("  sign/exp/mant: S=%d  E=%d  M=%06lX",
+               (int)((*pa >> 31) & 1), (int)((*pa >> 23) & 0xFF), (unsigned long)(*pa & 0x7FFFFF));
+        puts("");
+    }
+    puts("");
+    puts("Press any key...");
+#ifndef NOWAIT
+    getch();
+#endif
+}
+
+---------- _probe7\P1\build\cc.txt ----------
+Turbo C  Version 2.01  Copyright (c) 1987, 1988 Borland International
+d:\probe.c:
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   D:\BUILD\probe.ASM
+**Error** D:\BUILD\probe.ASM(180) Undefined symbol: eax
+*Warning* D:\BUILD\probe.ASM(180) Argument needs type override
+**Error** D:\BUILD\probe.ASM(182) Undefined symbol: eax
+Error messages:    2
+Warning messages:  1
+Passes:            1
+Remaining memory:  268k
+
+
+	Available memory 411454
+
+---------- _probe7\P1\build\run.txt ----------
+Illegal command: probe.
+
+---------- _probe7\P2\probe.c ----------
+/* ZOND 2: bazovye FPU-komandy v TCC inline asm (bez 386-registrov)
+   Vopros: kakie memoniki prinimaet TASM v pipeline TCC bez .386?
+   Proveryaem: finit fld fadd fstp fstsw fstcw fldcw fsave fnclex fincstp fsqrt */
+#include <stdio.h>
+#include <dos.h>
+#include <conio.h>
+
+static unsigned char fbuf[128];
+static unsigned cw=0, sw=0, cw2=0;
+static float  f1=16.02f, f2=3.5f, f3=0.0f, fsum=0.0f;
+static double d1=16.02, dsum=0.0;
+
+static void pw(unsigned v){ printf("%04X", v); }
+static void pd(unsigned v){ printf("%u", v); }
+static void hd(unsigned char *p,int n){ int i; for(i=0;i<n;i++) printf("%02X ",p[i]); puts(""); }
+
+void main(void)
+{
+    clrscr();
+    puts("=== ZOND 2: FPU basics under TCC inline asm ===");
+
+    asm finit
+    asm fstcw cw
+    asm fstsw  sw
+    printf("FINIT -> CW="); pw(cw); printf("  SW="); pw(sw); puts("");
+
+    asm finit
+    asm fld f1
+    asm fld f2
+    asm fadd
+    asm fld f3
+    asm fadd
+    asm fstp fsum
+    printf("float  16.02+3.5+0.0 = "); printf("%.10f", fsum); puts("");
+
+    asm finit
+    asm fld d1
+    asm fld d1
+    asm fadd
+    asm fstp dsum
+    printf("double 16.02*2       = "); printf("%.15lf", dsum); puts("");
+
+    asm finit
+    asm fld f1
+    asm fld f2
+    asm fld f3
+    asm fsave fbuf
+    printf("FSAVE header(14): "); hd(fbuf,14);
+    printf("  ST(0)= "); hd(fbuf+14,10);
+    printf("  ST(1)= "); hd(fbuf+24,10);
+    printf("  ST(2)= "); hd(fbuf+34,10);
+    printf("  control= "); pw(fbuf[0]|(fbuf[1]<<8)); puts("");
+    printf("  status = "); pw(fbuf[2]|(fbuf[3]<<8)); puts("");
+    printf("  tag    = "); pw(fbuf[4]|(fbuf[5]<<8)); puts("");
+
+    asm finit
+    asm mov  ax, 003Fh
+    asm mov  cw2, ax
+    asm fldcw cw2
+    asm fstcw cw
+    printf("FLDCW 003Fh -> CW="); pw(cw); puts("");
+    asm fnclex
+    asm fincstp
+    asm fld f1
+    asm fsqrt
+    asm fstp fsum
+    printf("sqrt(16.02f) = "); printf("%.10f", fsum); puts("");
+
+    asm finit
+    asm fldz
+    asm fldz
+    asm fdiv
+    asm fstsw sw
+    asm fstp fsum
+    printf("0.0/0.0 -> SW="); pw(sw);
+    printf("  IE(bit0)="); pd(sw & 1);
+    printf("  ZE(bit2)="); pd((sw>>2)&1);
+    printf("  ES(bit7)="); pd((sw>>7)&1);
+    printf("  TOP(13-11)="); pd((sw>>11)&7); puts("");
+
+    asm finit
+    asm fld f3
+    asm fchs
+    asm fsqrt
+    asm fstsw sw
+    asm fstp fsum
+    printf("sqrt(-0.0) -> SW="); pw(sw); printf("  IE="); pd(sw&1); puts("");
+
+    printf("16.02f  bytes: "); hd((unsigned char*)&f1,4);
+    printf("16.02   bytes: "); hd((unsigned char*)&d1,8);
+    puts("");
+    puts("Press any key...");
+#ifndef NOWAIT
+    getch();
+#endif
+}
+
+---------- _probe7\P2\build\cc.txt ----------
+Turbo C  Version 2.01  Copyright (c) 1987, 1988 Borland International
+d:\probe.c:
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   D:\BUILD\probe.ASM
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  269k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+
+	Available memory 411558
+
+---------- _probe7\P2\build\run.txt ----------
+=== ZOND 2: FPU basics under TCC inline asm ===
+FINIT -> CW=037F  SW=0000
+float  16.02+3.5+0.0 = 19.5200004578
+double 16.02*2       = 32.039999999999999
+FSAVE header(14): 7F 03 00 29 FF 03 00 00 00 00 00 00 00 00 
+  ST(0)= 00 00 00 00 00 00 00 00 00 00 
+  ST(1)= 00 00 00 00 00 00 00 E0 00 40 
+  ST(2)= 00 00 00 00 00 F6 28 80 03 40 
+  control= 037F
+  status = 2900
+  tag    = 03FF
+FLDCW 003Fh -> CW=003F
+sqrt(16.02f) = 4.0024989696
+0.0/0.0 -> SW=3901  IE(bit0)=1  ZE(bit2)=0  ES(bit7)=0  TOP(13-11)=7
+sqrt(-0.0) -> SW=3800  IE=0
+16.02f  bytes: F6 28 80 41 
+16.02   bytes: 85 EB 51 B8 1E 05 30 40 
+
+Press any key...
+
+---------- _probe7\P3\probe.asm ----------
+; ZOND 3: .386 v TASM, chtenie CR0 (bit NE), arhitektura FPU v .COM
+; Voprosy: prinimaet li TASM .386 + eax/CR0; kakoj NE v DOSBox;
+;          kakoj razmer FSAVE-zagolovka (14 dlja 386, 26 dlja 287).
+.386
+.MODEL TINY
+.CODE
+ORG 100h
+START:
+       lea  dx, MsgTitle
+       mov  ah, 09h
+       int  21h
+
+       ; ---- CR0 / NE ----
+       mov  eax, cr0
+       mov  CR0v, eax
+       shr  eax, 16
+       and  eax, 1
+       mov  NEv, ax
+       lea  dx, MsgCR0
+       mov  ah, 09h
+       int  21h
+       mov  eax, CR0v
+       call Phex32
+       lea  dx, MsgNE
+       mov  ah, 09h
+       int  21h
+       mov  ax, NEv
+       call Pdec16
+       lea  dx, MsgNE2
+       mov  ah, 09h
+       int  21h
+
+       ; ---- FPU: FINIT / FSTCW / FSTSW ----
+       finit
+       fstcw CWv
+       fstsw SWv
+       lea  dx, MsgCW
+       mov  ah, 09h
+       int  21h
+       mov  ax, CWv
+       call Phex16
+       lea  dx, MsgSW
+       mov  ah, 09h
+       int  21h
+       mov  ax, SWv
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- NaN: 0.0 / 0.0 (maskirovannoe) ----
+       finit
+       fldz
+       fldz
+       fdiv
+       fstsw SWv
+       lea  dx, MsgNaN
+       mov  ah, 09h
+       int  21h
+       mov  ax, SWv
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- FSAVE: razmer zagolovka ----
+       finit
+       fld1
+       fsave FB
+       lea  dx, MsgHdr
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr FB+2
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+       lea  dx, MsgEnd
+       mov  ah, 09h
+       int  21h
+
+IFNDEF NOWAIT            ; /dNOWAIT: progon bez ozhidaniya klavishi
+       mov  ah, 00h
+       int  16h
+ENDIF
+       mov  ax, 4C00h
+       int  21h
+
+; ---------------- procedures ----------------
+Phex16 PROC
+       push ax
+       push bx
+       push cx
+       push dx
+       mov  cx, 4
+L_p1:
+       rol  ax, 4
+       push ax
+       mov  dl, al
+       and  dl, 0Fh
+       add  dl, 48h
+       cmp  dl, 57h
+       jbe  L_p2
+       add  dl, 7
+L_p2:
+       mov  ah, 02h
+       int  21h
+       pop  ax
+       loop L_p1
+       pop  dx
+       pop  cx
+       pop  bx
+       pop  ax
+       ret
+Phex16 ENDP
+
+Phex32 PROC
+       push ax
+       push bx
+       push cx
+       push dx
+       push si
+       mov  bx, dx
+       mov  si, ax
+       mov  ax, bx
+       call Phex16
+       mov  ax, si
+       call Phex16
+       pop  si
+       pop  dx
+       pop  cx
+       pop  bx
+       pop  ax
+       ret
+Phex32 ENDP
+
+Pdec16 PROC
+       push bx
+       push cx
+       push dx
+       push si
+       mov  bx, offset Buf + 6
+       mov  byte ptr [bx], 36h
+       mov  si, 10
+L_d1:
+       xor  dx, dx
+       div  si
+       add  dl, 48h
+       dec  bx
+       mov  [bx], dl
+       test ax, ax
+       jnz  L_d1
+       lea  dx, [bx]
+       mov  ah, 09h
+       int  21h
+       pop  si
+       pop  dx
+       pop  cx
+       pop  bx
+       ret
+Pdec16 ENDP
+
+.DATA
+CR0v    DD  ?
+NEv     DW  ?
+CWv     DW  ?
+SWv     DW  ?
+FB      DB  120 DUP(?)
+Buf     DB  7 DUP(?)
+MsgCr   DB  13,10,'$'
+MsgTitle DB  '=== ZOND 3: .386 + CR0/NE + FPU (TASM .COM) ===','$'
+MsgCR0 DB  '  CR0 = ','$'
+MsgNE DB  '   -> bit NE (16) = ','$'
+MsgNE2 DB  '   (NE=0: iskluchenie FPU idet na INT 75h; NE=1: na INT 16h)','$'
+MsgCW DB  '  after FINIT: CW=','$'
+MsgSW DB  '  SW=','$'
+MsgNaN DB  '  0.0/0.0 -> SW = ','$'
+MsgHdr DB  '  FSAVE status word = ','$'
+MsgEnd DB  '  zond 3 zavershen','$'
+END START
+
+---------- _probe7\P3\build\cc.txt ----------
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   ..\probe.asm  to  probe.OBJ
+**Error** ..\probe.asm(14) Illegal instruction for currently selected processor(s)
+**Error** ..\probe.asm(142) Offset or pointer is 32-bit
+Error messages:    2
+Warning messages:  None
+Passes:            1
+Remaining memory:  461k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+probe.obj : unable to open file
+
+---------- _probe7\P3\build\run.txt ----------
+Illegal command: probe.
+
+---------- _probe7b\P4a\probe.asm ----------
+; ZOND P4a: proverka granits TASM 4.1 (.386P / offset / db-kod)
+.386P
+.MODEL TINY
+.CODE
+ORG 100h
+START:
+       lea  dx, MsgT
+       mov  ah, 09h
+       int  21h
+       mov  eax, cr0
+       mov  CR0v, eax
+       shr  eax, 16
+       and  eax, 1
+       mov  NEv, ax
+       lea  dx, MsgR
+       mov  ah, 09h
+       int  21h
+       mov  ax, NEv
+       call Phex16
+       lea  dx, MsgOk
+       mov  ah, 09h
+       int  21h
+       mov  ax, 4C00h
+       int  21h
+Phex16 PROC
+       push ax
+       push bx
+       push cx
+       push dx
+       mov  cx, 4
+L_p1:
+       rol  ax, 4
+       push ax
+       mov  dl, al
+       and  dl, 0Fh
+       add  dl, 48h
+       cmp  dl, 57h
+       jbe  L_p2
+       add  dl, 7
+L_p2:
+       mov  ah, 02h
+       int  21h
+       pop  ax
+       loop L_p1
+       pop  dx
+       pop  cx
+       pop  bx
+       pop  ax
+       ret
+Phex16 ENDP
+.DATA
+CR0v DD ?
+NEv  DW ?
+MsgT DB  '=== P4a: .386P + mov eax,cr0 ===','$'
+MsgR DB  '  NE = ','$'
+MsgOk DB  '   (SBORILAS: .386P daet CR0)','$'
+END START
+
+---------- _probe7b\P4a\build\cc.txt ----------
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   ..\probe.asm  to  probe.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  464k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+32-bit record encountered in module ..\PROBE.ASM : use "/3" option
+
+---------- _probe7b\P4a\build\run.txt ----------
+Illegal command: probe.
+
+---------- _probe7b\P4b\probe.asm ----------
+; ZOND P4b: proverka granits TASM 4.1 (.386P / offset / db-kod)
+.386
+.MODEL TINY
+.CODE
+ORG 100h
+START:
+       lea  dx, MsgT
+       mov  ah, 09h
+       int  21h
+       mov  ax, 12345
+       call Pdec16
+       lea  dx, MsgOk
+       mov  ah, 09h
+       int  21h
+       mov  ax, 4C00h
+       int  21h
+Pdec16 PROC
+       push bx
+       push cx
+       push dx
+       push si
+       lea  bx, Buf + 6
+       mov  byte ptr [bx], 36h
+       mov  si, 10
+L_d1:
+       xor  dx, dx
+       div  si
+       add  dl, 48h
+       dec  bx
+       mov  [bx], dl
+       test ax, ax
+       jnz  L_d1
+       lea  dx, [bx]
+       mov  ah, 09h
+       int  21h
+       pop  si
+       pop  dx
+       pop  cx
+       pop  bx
+       ret
+Pdec16 ENDP
+.DATA
+Buf  DB 7 DUP(?)
+MsgT DB  '=== P4b: .386 + lea bx, Buf+6 ===','$'
+MsgOk DB  '   (12345 ozhidano; SBORILAS: lea reshaet offset)','$'
+END START
+
+---------- _probe7b\P4b\build\cc.txt ----------
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   ..\probe.asm  to  probe.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  465k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+32-bit record encountered in module ..\PROBE.ASM : use "/3" option
+
+---------- _probe7b\P4b\build\run.txt ----------
+Illegal command: probe.
+
+---------- _probe7b\P4c\probe.asm ----------
+; ZOND P4c: proverka granits TASM 4.1 (.386P / offset / db-kod)
+.286
+.MODEL TINY
+.CODE
+ORG 100h
+START:
+       lea  dx, MsgT
+       mov  ah, 09h
+       int  21h
+       ; MOV EAX,CR0 = 0F 20 C0 ; MOV [mem],EAX = 66 A3 lo hi
+       db   0Fh, 20h, 0C0h
+       db   66h, 0A3h
+       dw   offset CR0v
+       mov  ax, word ptr CR0v + 2
+       and  ax, 1
+       mov  NEv, ax
+       lea  dx, MsgR
+       mov  ah, 09h
+       int  21h
+       mov  ax, NEv
+       call Phex16
+       lea  dx, MsgHi
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr CR0v + 2
+       call Phex16
+       lea  dx, MsgLo
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr CR0v
+       call Phex16
+       lea  dx, MsgOk
+       mov  ah, 09h
+       int  21h
+       mov  ax, 4C00h
+       int  21h
+Phex16 PROC
+       push ax
+       push bx
+       push cx
+       push dx
+       mov  cx, 4
+L_p1:
+       rol  ax, 4
+       push ax
+       mov  dl, al
+       and  dl, 0Fh
+       add  dl, 48h
+       cmp  dl, 57h
+       jbe  L_p2
+       add  dl, 7
+L_p2:
+       mov  ah, 02h
+       int  21h
+       pop  ax
+       loop L_p1
+       pop  dx
+       pop  cx
+       pop  bx
+       pop  ax
+       ret
+Phex16 ENDP
+.DATA
+CR0v DW 0, 0
+NEv  DW ?
+MsgT DB  '=== P4c: .286 + machine code dla MOV EAX,CR0 ===','$'
+MsgR DB  '  NE = ','$'
+MsgHi DB  '   CR0 hi = ','$'
+MsgLo DB  '   CR0 lo = ','$'
+MsgOk DB  '   (SBORILAS: db-kod raotaet i bez .386)','$'
+END START
+
+---------- _probe7b\P4c\build\cc.txt ----------
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   ..\probe.asm  to  probe.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  464k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+
+---------- _probe7b\P4c\build\run.txt ----------
+=== P4c: .286 + machine code dla MOV EAX,CR0 ===  NE = HHHH   CR0 hi = HHHH   CR0 lo = HHHH   (SBORILAS: db-kod raotaet i bez .386)
+---------- _probe7c\P5\probe.asm ----------
+; ZOND P5: glavnij vopros - nemaskirovannoe iskuchenie FPU v DOSBox.
+; Esli v slove upravleniya snyat masku bita 2 (delenie na nul),
+; na kakoj vektor prihodit iskuchenie: 75h (NE=0), 16h (NE=1) ili net?
+; CR0 chitaem mashinnym kodom (db), chtoby ne trebovalsja .386P.
+.286
+.MODEL TINY
+.CODE
+ORG 100h
+START:
+       lea  dx, MsgT
+       mov  ah, 09h
+       int  21h
+       mov  ax, 0FFFFh
+       call Phex16
+       lea  dx, MsgSelf
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 1. CR0 / NE mashinnym kodom ----
+       db   0Fh, 20h, 0C0h
+       db   66h, 0A3h
+       dw   offset CR0v
+       mov  ax, word ptr CR0v + 2
+       and  ax, 1
+       mov  NEv, ax
+       lea  dx, MsgCR0
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr CR0v + 2
+       call Phex16
+       lea  dx, MsgSep
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr CR0v
+       call Phex16
+       lea  dx, MsgNE
+       mov  ah, 09h
+       int  21h
+       mov  ax, NEv
+       call Pdec16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 2. sostojanie FPU do opyta ----
+       finit
+       fstcw CWv
+       fstsw SWv
+       lea  dx, MsgCW
+       mov  ah, 09h
+       int  21h
+       mov  ax, CWv
+       call Phex16
+       lea  dx, MsgSW0
+       mov  ah, 09h
+       int  21h
+       mov  ax, SWv
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 3. sohranit vektora 75h i 16h, postavit svoi ----
+       xor  ax, ax
+       mov  es, ax
+       mov  ax, es:[75h*4]
+       mov  O75Ofs, ax
+       mov  ax, es:[75h*4+2]
+       mov  O75Seg, ax
+       mov  ax, es:[16h*4]
+       mov  O16Ofs, ax
+       mov  ax, es:[16h*4+2]
+       mov  O16Seg, ax
+       cli
+       mov  word ptr es:[75h*4],   offset ISR75
+       mov  word ptr es:[75h*4+2], cs
+       mov  word ptr es:[16h*4],   offset ISR16
+       mov  word ptr es:[16h*4+2], cs
+       sti
+       lea  dx, MsgVect
+       mov  ah, 09h
+       int  21h
+       mov  ax, O75Seg
+       call Phex16
+       lea  dx, MsgSep
+       mov  ah, 09h
+       int  21h
+       mov  ax, O75Ofs
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 4. snyat masku delenia na nul (bit 2 CW -> 0) ----
+       finit
+       fstcw CWv
+       and  word ptr CWv, 0FFFBh
+       fldcw CWv
+       lea  dx, MsgUnmask
+       mov  ah, 09h
+       int  21h
+       mov  ax, CWv
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 5. PROVOCIRUEM: 1.0 / 0.0 ----
+       mov  word ptr H75, 0
+       mov  word ptr H16, 0
+       fld1
+       fldz
+       fdiv
+       fwait
+       fstsw SWv
+
+       ; ---- 6. CHTO SLUCILOSJ ----
+       lea  dx, MsgRes
+       mov  ah, 09h
+       int  21h
+       lea  dx, MsgH75
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr H75
+       call Pdec16
+       lea  dx, MsgH16
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr H16
+       call Pdec16
+       lea  dx, MsgSWres
+       mov  ah, 09h
+       int  21h
+       mov  ax, SWv
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+       lea  dx, MsgZE
+       mov  ah, 09h
+       int  21h
+       mov  ax, SWv
+       shr  ax, 2
+       and  ax, 1
+       call Pdec16
+       lea  dx, MsgES
+       mov  ah, 09h
+       int  21h
+       mov  ax, SWv
+       shr  ax, 7
+       and  ax, 1
+       call Pdec16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 7. vechina ST(0) posle delenia ----
+       fsave FB
+       lea  dx, MsgST
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr FB+22
+       call Phex16
+       lea  dx, MsgMant
+       mov  ah, 09h
+       int  21h
+       mov  ax, word ptr FB+20
+       call Phex16
+       mov  ax, word ptr FB+18
+       call Phex16
+       lea  dx, MsgCr
+       mov  ah, 09h
+       int  21h
+
+       ; ---- 8. vosstanovit masku i vektora ----
+       finit
+       cli
+       xor  ax, ax
+       mov  es, ax
+       mov  ax, O75Ofs
+       mov  word ptr es:[75h*4],   ax
+       mov  ax, O75Seg
+       mov  word ptr es:[75h*4+2], ax
+       mov  ax, O16Ofs
+       mov  word ptr es:[16h*4],   ax
+       mov  ax, O16Seg
+       mov  word ptr es:[16h*4+2], ax
+       sti
+       lea  dx, MsgDone
+       mov  ah, 09h
+       int  21h
+
+IFNDEF NOWAIT
+       mov  ah, 00h
+       int  16h
+ENDIF
+       mov  ax, 4C00h
+       int  21h
+
+; ===== OBSLUDCHIKI: NE pechtajut (int 21h nereenterebelen) =====
+ISR75  PROC
+       push ax
+       push dx
+       inc  word ptr H75
+       fstsw SW75
+       fclex
+       mov  al, 20h
+       out  20h, al
+       pop  dx
+       pop  ax
+       iret
+ISR75  ENDP
+
+ISR16  PROC
+       push ax
+       push dx
+       inc  word ptr H16
+       fstsw SW16
+       fldcw CWMASK
+       fclex
+       pop  dx
+       pop  ax
+       iret
+ISR16  ENDP
+
+Phex16 PROC
+       push ax
+       push bx
+       push cx
+       push dx
+       mov  cx, 4
+L_p1:
+       rol  ax, 4
+       push ax
+       mov  dl, al
+       and  dl, 0Fh
+       add  dl, 30h
+       cmp  dl, 39h
+       jbe  L_p2
+       add  dl, 7
+L_p2:
+       mov  ah, 02h
+       int  21h
+       pop  ax
+       loop L_p1
+       pop  dx
+       pop  cx
+       pop  bx
+       pop  ax
+       ret
+Phex16 ENDP
+
+Pdec16 PROC
+       push bx
+       push cx
+       push dx
+       push si
+       lea  bx, Buf + 6
+       mov  byte ptr [bx], 24h
+       mov  si, 10
+L_d1:
+       xor  dx, dx
+       div  si
+       add  dl, 30h
+       dec  bx
+       mov  [bx], dl
+       test ax, ax
+       jnz  L_d1
+       lea  dx, [bx]
+       mov  ah, 09h
+       int  21h
+       pop  si
+       pop  dx
+       pop  cx
+       pop  bx
+       ret
+Pdec16 ENDP
+
+.DATA
+CWMASK DW 037Fh
+CR0v   DD  ?
+NEv    DW  ?
+CWv    DW  ?
+SWv    DW  ?
+SW75   DW  ?
+SW16   DW  ?
+H75    DW  ?
+H16    DW  ?
+O75Ofs DW  ?
+O75Seg DW  ?
+O16Ofs DW  ?
+O16Seg DW  ?
+FB     DB  120 DUP(?)
+Buf    DB  7 DUP(?)
+MsgCr DB  '','$'
+MsgSep DB  ':','$'
+MsgSelf DB  '   <- samoProverka, ozhidano FFFF','$'
+MsgT DB  '=== ZOND P5: nemaskirovannoe iskuchenie FPU v DOSBox ===','$'
+MsgCR0 DB  '  CR0 hi:lo = ','$'
+MsgNE DB  '   NE = ','$'
+MsgCW DB  '  CW posle FINIT = ','$'
+MsgSW0 DB  '   SW = ','$'
+MsgVect DB  '  vektor 75h DO ustanovki = ','$'
+MsgUnmask DB  '  snyali masku, novyj CW = ','$'
+MsgRes DB  '  --- posle 1.0/0.0 i FWAIT ---','$'
+MsgH75 DB  '  vhodov v ISR(75h) = ','$'
+MsgH16 DB  '   vhodov v ISR(16h) = ','$'
+MsgSWres DB  '  SW = ','$'
+MsgZE DB  '   ZE(bit2) = ','$'
+MsgES DB  '   ES(bit7) = ','$'
+MsgST DB  '  ST(0): exp/znak = ','$'
+MsgMant DB  '   mantiss = ','$'
+MsgDone DB  '  maska i vektora vosstanovleny; zond P5 zavershen','$'
+END START
+
+---------- _probe7c\P5\build\cc.txt ----------
+Turbo Assembler  Version 4.1  Copyright (c) 1988, 1996 Borland International
+
+Assembling file:   ..\probe.asm  to  probe.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  456k
+
+Turbo Link  Version 2.0  Copyright (c) 1987, 1988 Borland International
+
+---------- _probe7c\P5\build\run.txt ----------
+=== ZOND P5: nemaskirovannoe iskuchenie FPU v DOSBox ===FFFF   <- samoProverka, ozhidano FFFF  CR0 hi:lo = 0000:0000   NE = 0  CW posle FINIT = 037F   SW = 0000  vektor 75h DO ustanovki = 0000:0000  snyali masku, novyj CW = 037B  --- posle 1.0/0.0 i FWAIT ---  vhodov v ISR(75h) = 0   vhodov v ISR(16h) = 0  SW = 3904   ZE(bit2) = 1   ES(bit7) = 0  ST(0): exp/znak = 7FFF   mantiss = 80000000  maska i vektora vosstanovleny; zond P5 zavershen
+; --- dopolnitelnye zondy i granicy, zafiksirovanye vtoroj seriej (24.11) ---
+;
+; 7) TASM 4.1 KODIRUET plavajushhie konstanty S OBMENOM NIBBLOV V KAJDOM BAJTE.
+;    Zondy O/Q: DD 16.02 -> 6F 82 08 14 vmesto izmerennogo F6 28 80 41;
+;    DQ 16.02 -> 58 BE 15 8B E1 50 03 04; DT 16.02 -> 6F 82 C5 F8 2C 5F 82 08 30 04.
+;    Direktiva .387 ne pomogaet (te ze bajty), .386 lomaet tlink /t.
+;    Vyvod: v ASM-dannyh NE DOLZHNO byt plavajushchih konstant; vse velichiny
+;    sobirajutsja iz CELIH cherez FILD/FLDZ/FLDCW, a osobye 80-bitnye shablony
+;    zadajutsja POBAJTNO cherez DB (Lab7_3: DenT/BigT/Nant).
+; 8) Vstroennyj asm v TCC 2.01 NEPRIMENIM: kompiljator emitirujut kazhduju stroku
+;    kak '  { instr }', TASM 4.1 operaet skobki (Unknown character, 2 oshibki na
+;    stroku). Zondy A/B/C/E/F/G - vse BUILD_ERRORS>0; chistyj C rabotaet.
+;    Sledstvie: pobitovo procat' CW/SW iz C nelzja - tolko otdelnyj ASM (Lab7_3).
+; 9) TCC 2.01: kljucha -8 net ('Incorrect command line option: -8'), fajla 8087.h
+;    v INCLUDE net (27 zagolovkov) -> _status87/_control87 nedostupny.
+;10) Otladka: bez kljucha i s -g daut ODINAKOVYE EXE 6444 B / OBJ 368 B (-g
+;    BESPOLEZEN); -v i -vi daut 9295 B / 541 B s imeniem ishoda vnUTRI EXE. Pojetomu
+;    zadacha TD v .vscode sobiraet cherez '-v', a ne '-g'.
+;11) SAHF perenosit iz AH tolko SF,ZF,AF,PF,CF. Izmerno: C0(bit8)->CF,
+;    C2(bit10)->PF, C3(bit14)->ZF, bity 11..13 (TOP)->AF, bit15 (BUSY)->SF.
+;    Kod sravnenija TCC: FLD prav./FLD lev./FCOMPP/FSTSW AX/SAHF/jbe - ispolzuet
+;    tolko CF i ZF, pojetomu C2 (unordered) NE PROVERJAETSA NIKOGDA. Eto i objasnjaet
+;    izmernennoe v Lab7_2: NaN==NaN daet 1, NaN<1.0 toze daet 1.
+;12) FSAVE REINICIIALIZUJET FPU i SBRAASYVAET slovo upravlenija (CW -> 037F).
+;    Posle KAJDOGO FSAVE nužno povtorit FLDCW, inache sledujushchij eksperiment
+;    nezametno idet pri PC=64. Provereno progonom Lab7_1 (tablica PC davala
+;    odinakovie rezul'taty, poka ne dobavili fldcw posle fsave).
+;13) ZONDY W/V/U (DOSBox 0.74-3, FCOMPP/FTST): kody uslovija KODYRUJTSJA NE KAK U Intel.
+;    W: 2 vs 2 -> 4000 (C3=1); ST0=2 bolshe ST1=1 -> 0000; ST0=1 menshe ST1=2 -> 0100;
+;       FTST 1 vs 0 -> 3800; 0/0 -> 3801. U Intel 8087: bolshe = 4100 (C3=1,C0=1),
+;       menshe = 0000. Umye 4500 (C3,C2,C0) - 'ne sravnivaemye' (NaN).
+;    V: FSTSW AX i FSTSW m16 DAUT ODINAKOVYE slova (3801 oba); FINIT ochishchaet
+;       i flagi, i kody uslovija (SW -> 0000 srazu posle FINIT).
+;    U: FDIV v DOSBox VYSTAVLAET C0 i C1 (1.0/3.0 -> 3B20) - reziduum, chego kniga
+;       ne obeschaet (menjat C0..C3 dolzny tolko FCOM/FTST/FXAM). Sledujushchij 0/0
+;       nasleduet C0=1 (3901). Poetomu v Lab7_3 kody uslovija izmeryajutsja OTEDELNYM
+;       blokom (6b) na FCOMPP/FTST, a ne na fone arifmetiki.
+;14) DOSBox 0.74-3 NE SOOBRAET perepolnenie steqa FPU: 9-i i 10-i FLD ne vzveli SF
+;    (bit 6): SW = 3800 (Lab7_3, sekcija 6). Na realnom 8087 eto osobij sluchaj
+;    1-j gruppy (A7.txt, stroki 86 i 167).
+;15) Opechatka v metodichke: A7.txt imeet 'FDECSTR' - takogo memonika net, pravilno
+;    FDECSTP. Lab7_3 ispolzuet FDECSTP i pechataet izmernyj effect (TOP 6 -> 4 za dva
+;    shaga). FCOMI v DOSBox 0.74-3 ne vstrechaetsja (TASM ego ne sobiraet v .286),
+;    pojetomu sravnenija idut cherez FCOM/FCOMPP + razbor slova sostojanija.
+
+---------- ZONDY W/V/U (ishodniki udaleny posle fiksacii; protokol - nizhe) ----------
+; Vse tri zona sobiralis TASM 4.1 (.286, .MODEL TINY, ORG 100h) + tlink /v /t,
+; zapuskalis v DOSBox 0.74-3 cherez dosbox_autotest.ps1 (-Dir, -TimeoutSec 20).
+; Obshchee ustroistvo: pjat eksperimentov, kazhdyj konchaetsja FSTSW word ptr res+k,
+; zatem cyiklicheskij pechat 4-trehrazjadnyh HEX-slov iz res[] (rol ax,4 / and dl,0Fh
+; / add dl,30h / sravnenie s 39h). Printal cyiklicheskij SCHETCIKOM CX, a NE DX:
+; DX ispolzuetsja kak cifr dla int 21h/02h, pojetomu 'mov ah,02h' rušet starsyju
+; polovinu DX - otdelnyj zond zacesalsja imenno tak (beskonechnyj pechat nulej,
+; STATUS=TIMEOUT, run.txt = 0 bajt).
+;
+; ZOND W: 1) fild 2; fild 2; fcompp   2) fild 1; fild 2; fcompp
+;         3) fild 2; fild 1; fcompp   4) fild 1; ftst
+;         5) fldz; fldz; fdivp; fstsw
+; run.txt:  4000 0000 0100 3800 3801
+; razbor:   eq -> C3=1 (4000);  bolshe -> 0000;  menshe -> C0=1 (0100);
+;           ftst(1) -> 3800 (TOP=7, flagov net);  0/0 -> 3801 (IE=1, TOP=7).
+;
+; ZOND V: 1) fild 1; fild 2; fcompp   2) finit; fstsw
+;         3) fldz; fldz; fdivp; fstsw m16   4) to zhe, no fstsw ax
+; run.txt:  0000 0000 3801 3801
+; razbor:   FSTSW AX i FSTSW v pamyat' DAUT ODINAKOVOE slovo; FINIT ochishchaet
+;           i flagi, i kody uslovija (0000 srazu posle FINIT).
+;
+; ZOND U: 1) fild 2; fild 1; fcompp   2) finit; fstsw
+;         3) fld1; fild 3; fdivp; fstsw   4) 0/0 vrazu posle delenija 1/3
+; run.txt:  0100 0000 3B20 3901
+; razbor:   delenie 1.0/3.0 vystavlyaet C0=1 i C1=1 (3B20) - reziduum uslovija
+;           posle arifmetiki; sledujushchij 0/0 nasleduet C0=1 (3901).

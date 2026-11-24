@@ -1,63 +1,23 @@
-/*==============================================================
-  Лабораторная работа 6, ШАГ 4  (A6.txt, строки 51-53)
-
-  Проанализировать ЗАПОЛНЕНИЕ СТЕКА при особом случае (деление
-  на нуль, вектор 00h) и ПРИ ВЫХОДЕ ИЗ ОБРАБОТЧИКА ПРОПУСТИТЬ
-  КОМАНДУ, ВЫЗЫВАЮЩУЮ ОСОБЫЙ СЛУЧАЙ:   add [bp+18], 2
-
-  Почему именно 2 байта:  DIV BX = F7 /3  -> 2 машинных байта
-  (F7 F3).  Прибавление 2 к IP в кадре переносит выполнение на
-  команду, СЛЕДУЮЩУЮ за DIV, то есть особый случай больше не
-  повторяется (сравните с шагом 3, где IP не менялся и DIV
-  исполнился повторно).
-
-  Структура стекового кадра обработчика void interrupt (TCC):
-      [bp+0 ]=BP   [bp+2 ]=DI   [bp+4 ]=SI   [bp+6 ]=DS   [bp+8 ]=ES
-      [bp+10]=DX   [bp+12]=CX   [bp+14]=BX   [bp+16]=AX   <- 9 слов,
-                       сохраняет ПРОЛОГ КОМПИЛЯТОРА
-      [bp+18]=IP   [bp+20]=CS   [bp+22]=FLAGS <- 3 слова,
-                       их КЛАДЁТ САМ ПРОЦЕССОР при INT/особом случае
-      [bp+24]=параметр FAR CALL (если вызов был FAR)
-
-  Отсюда и [bp+18]: 24 байта пролога смещают IP-слот на bp+18.
-
-  СБОР ДАННЫХ: обработчик НЕ печатает (printf не reentrant-safe в
-  ПП), а только сохраняет кадр в глобальные массивы; вывод - main.
-
-  Сборка:  tcc -B -ms -nd:\build d:\Lab6.c     (задача VS Code)
-  Запуск:  DOSBox, Ctrl+Shift+B в открытой папке Lab6_4
-==============================================================*/
 #include <stdio.h>
 #include <dos.h>
 #include <conio.h>
 
-/* ----- параметры ПП ----- */
-unsigned Dividend  = 0x6068;        /* 24680                              */
-unsigned Divisor   = 0x0000;        /* 0 -> особый случай int 00h         */
-unsigned SafeDiv   = 0x0007;        /* чем ПП заменит нулевой делитель    */
-unsigned Quotient  = 0;             /* частное  (придёт из кадра!)        */
-unsigned Remainder = 0;             /* остаток  (придёт из кадра!)        */
+unsigned Dividend  = 0x6068;
+unsigned Divisor   = 0x0000;
+unsigned SafeDiv   = 0x0007;
+unsigned Quotient  = 0;
+unsigned Remainder = 0;
 
-/* ----- анализ стека ----- */
-#define NWORDS 12                   /* bp+0 .. bp+22                      */
-unsigned Frame[NWORDS];             /* снимок кадра обработчика           */
-unsigned FrSS = 0, FrBP = 0;        /* SS:BP кадра                        */
-unsigned SpMain = 0, SpIsr = 0;     /* SP до INT и внутри ПП             */
-unsigned IpBefore = 0, IpAfter = 0; /* IP в кадре до/после add            */
-unsigned CsIn = 0, FlIn = 0;        /* CS и FLAGS, положенные процессором */
-int      Entries = 0;
-int      DeltaSp = 0;               /* во сколько слов вырос стек          */
+#define NWORDS 12
+unsigned Frame[NWORDS];
+unsigned FrSS = 0, FrBP = 0;
+unsigned SpMain = 0, SpIsr = 0;
+unsigned IpBefore = 0, IpAfter = 0;
+unsigned CsIn = 0, FlIn = 0;
+int Entries = 0;
+int DeltaSp = 0;
 
-
-/*--------------------------------------------------------------
-  Доступ по абсолютному адресу seg:ofs.
-
-  Макросы peek/poke/MK_FP в DOS.H объявлены под условием
-  #if !__STDC__ (DOS.H, строки 238-249), поэтому в ANSI-режиме TCC
-  они НЕвидны, и #undef __STDC__ перед #include <dos.h> не помогает.
-  Читаем и пишем по абсолютному адресу собственным ассемблером.
---------------------------------------------------------------*/
-static unsigned rdw(unsigned seg, unsigned ofs)     /* слово по seg:ofs */
+static unsigned rdw(unsigned seg, unsigned ofs)
 {
     unsigned r;
     asm push ds
@@ -94,10 +54,6 @@ static const char *Who[NWORDS] = {
 
 void interrupt (*old_div0)();
 
-/*--------------------------------------------------------------
-  ПП: снимает кадр, выдаёт результат САМА (команда DIV будет
-  пропущена!) и сдвигает IP в кадре на 2 байта.
-  -------------------------------------------------------------*/
 void interrupt isr_div0(unsigned wBP, unsigned wDI, unsigned wSI,
                         unsigned wDS, unsigned wES, unsigned wDX,
                         unsigned wCX, unsigned wBX, unsigned wAX)
@@ -106,12 +62,12 @@ void interrupt isr_div0(unsigned wBP, unsigned wDI, unsigned wSI,
 
     Entries++;
 
-    /* --- 1. снять адрес кадра и вершину стека --- */
+    // 1. Снять адрес кадра и вершину стека
     asm mov FrSS, ss
     asm mov FrBP, bp
     asm mov SpIsr, sp
 
-    /* --- 2. скопировать весь кадр в массив анализа --- */
+    // 2. Скопировать весь кадр в массив анализа
     for (i = 0; i < NWORDS; i++)
         Frame[i] = rdw(FrSS, FrBP + i * 2);
 
@@ -119,23 +75,19 @@ void interrupt isr_div0(unsigned wBP, unsigned wDI, unsigned wSI,
     CsIn     = Frame[10];
     FlIn     = Frame[11];
 
-    /* --- 3. ОБРАБОТКА ДАННЫХ в ПП ---
-          делитель нулевой, поэтому ПП считает сама и КЛАДЁТ результат
-          прямо в чужие слоты кадра: AX <- частное, DX <- остаток.
-          После IRET main прочитает их как ни в чём не бывало. */
+    // 3. Обработка данных в ПП
     Quotient  = Dividend / SafeDiv;
     Remainder = Dividend % SafeDiv;
 
-    wrw(FrSS, FrBP + 16, Quotient);      /* [bp+16] = AX  */
-    wrw(FrSS, FrBP + 10, Remainder);     /* [bp+10] = DX  */
+    wrw(FrSS, FrBP + 16, Quotient);
+    wrw(FrSS, FrBP + 10, Remainder);
 
-    /* --- 4. ПРОПУСК КОМАНДЫ, ВЫЗВАВШЕЙ ОСОБЫЙ СЛУЧАЙ --- */
-    asm add word ptr [bp+18], 2                /* IP := IP + 2  */
+    // 4. Пропуск команды, вызвавшей особый случай
+    asm add word ptr [bp+18], 2
 
     IpAfter = rdw(FrSS, FrBP + 18);
 }
 
-/* разбор флагов */
 void PrintFlags(unsigned f)
 {
     printf("FLAGS=%04X  CF=%d PF=%d AF=%d ZF=%d SF=%d TF=%d IF=%d\n",
@@ -159,15 +111,13 @@ void main(void)
     setvect(0x00, isr_div0);
     enable();
 
-    /* --- SP до возбуждения особого случая --- */
     asm mov SpMain, sp
 
     asm mov  ax, Dividend
     asm mov  dx, 0
     asm mov  bx, Divisor
-    asm div  bx                     /* особый случай; ПП пропустит её */
+    asm div  bx
 
-    /* выполнение продолжится СРАЗУ здесь (DIV исполнена не была) */
     asm mov  Quotient,  ax
     asm mov  Remainder, dx
 
@@ -175,7 +125,7 @@ void main(void)
     setvect(0x00, old_div0);
     enable();
 
-    /* --- 5. АНАЛИЗ ЗАПОЛНЕНИЯ СТЕКА --- */
+    // 5. Анализ заполнения стека
     DeltaSp = (int)(SpMain - SpIsr);
     puts("--- 1) STACK FILL (snapshot taken inside the handler) ---");
     printf("SS = %04X   BP(frame) = %04X   SP inside PP = %04X\n",
@@ -216,7 +166,7 @@ void main(void)
 
     puts("");
     puts("Press any key...");
-#ifndef NOWAIT                 /* -DNOWAIT: пакетная самопроверка без ожидания клавиши */
+#ifndef NOWAIT
     getch();
 #endif
 }

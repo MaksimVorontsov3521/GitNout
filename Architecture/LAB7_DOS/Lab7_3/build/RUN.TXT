@@ -1,0 +1,180 @@
+=== Lab7 step 3: reading and analysing the FPU control and status words ===
+--- 1) CONTROL WORD: fields as given by A7.txt lines 128-152 ---
+  CW = 037F
+  bits 15..0 (most significant bit first): 0000 0011 0111 1111
+  exception masks, bits 5..0 (0 = unmasked, 1 = masked):
+
+1:0 invalid operation (IE) 
+1:1 denormal operand (DE)  
+1:2 zero divide (ZE)       
+1:3 overflow (OE)          
+1:4 underflow (UE)         
+1:5 precision (PE)         
+   PC=3 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+
+--- 2) PRECISION CONTROL (bits 9..8): the same 1.0/3.0 at every PC ---
+  CW set to 007F
+   PC=0 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+    1.0 / 3.0 -> 3FFD AAAA AB00 0000 0000    = 0.33333334
+   -1.0 / 3.0 -> BFFD AAAA AB00 0000 0000    = -0.33333334
+  CW set to 017F
+   PC=1 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA AAAB    = 0.33333333
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA AAAB    = -0.33333333
+  CW set to 027F
+   PC=2 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA A800    = 0.33333333
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA A800    = -0.33333333
+  CW set to 037F
+   PC=3 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA AAAB    = 0.33333333
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA AAAB    = -0.33333333
+--- 3) ROUNDING CONTROL (bits 11..10), A7.txt lines 142-146 ---
+  CW = 037F
+    mode 00 nearest, ties to even                                       
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA AAAB    = 0.33333333
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA AAAB    = -0.33333333
+  CW = 077F
+    mode 01 down (toward minus infinity)                                
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA AAAA    = 0.33333333
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA AAAA    = -0.33333334
+  CW = 0B7F
+    mode 10 up (toward plus infinity)                                   
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA AAAB    = 0.33333334
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA AAAB    = -0.33333333
+  CW = 0F7F
+    mode 11 truncate (toward zero)                                      
+    1.0 / 3.0 -> 3FFD AAAA AAAA AAAA AAAA    = 0.33333333
+   -1.0 / 3.0 -> BFFD AAAA AAAA AAAA AAAA    = -0.33333333
+--- 4) STATUS WORD: fields as given by A7.txt lines 160-184 ---
+  SW = 0000
+  bits 15..0 (most significant bit first): 0000 0000 0000 0000
+  every bit of the status word:
+
+0:0  invalid operation IE      
+0:1  denormal operand DE       
+0:2  zero divide      ZE       
+0:3  overflow         OE       
+0:4  underflow         UE      
+0:5  precision         PE      
+0:6  stack fault       SF      
+0:7  error summary     ES      
+0:8  condition code    C0      
+0:9  condition code    C1      
+0:10 condition code    C2      
+0:11 top pointer 13..11        
+0:12 top pointer 13..11        
+0:13 top pointer 13..11        
+0:14 condition code    C3      
+0:15 FPU busy        BUSY      
+  class by PRIORITY (A7.txt lines 84-95): no unmasked special case detected
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  proof that TOP lives in bits 13..11 (MEASURED in Lab7_1): SW = 2900
+    bits 13..11 of it give TOP = 5
+  note: Phex16 changes AX, so the value is reloaded before the shift
+--- 5) FSTSW AX vs FSTSW memory (A7.txt lines 157-159) ---
+  FSTSW AX    -> 3B20
+  FSTSW memory-> 3B20
+  identical: YES
+
+  bits 15..0 (most significant bit first): 0011 1011 0010 0000
+  every bit of the status word:
+
+0:0  invalid operation IE      
+0:1  denormal operand DE       
+0:2  zero divide      ZE       
+0:3  overflow         OE       
+0:4  underflow         UE      
+1:5  precision         PE      
+0:6  stack fault       SF      
+0:7  error summary     ES      
+1:8  condition code    C0      
+1:9  condition code    C1      
+0:10 condition code    C2      
+1:11 top pointer 13..11        
+1:12 top pointer 13..11        
+1:13 top pointer 13..11        
+0:14 condition code    C3      
+0:15 FPU busy        BUSY      
+  class by PRIORITY (A7.txt lines 84-95): 6) inexact result (bit 5)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+--- 6) EVERY EXCEPTION FLAG, ONE EXPERIMENT AT A TIME (masks all set) ---
+  0.0 / 0.0                :  SW = 3901
+  0:IE=1   1:DE=0   2:ZE=0   3:OE=0   4:UE=0   5:PE=0   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): 1) invalid operation (bit 0)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  FADD with a denormal operand:  SW = 3922
+  0:IE=0   1:DE=1   2:ZE=0   3:OE=0   4:UE=0   5:PE=1   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): 3) denormalized operand (bit 1)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  1.0 / 0.0                :  SW = 3904
+  0:IE=0   1:DE=0   2:ZE=1   3:OE=0   4:UE=0   5:PE=0   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): 2) zero divide (bit 2)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  2^16383 * 2^16383        :  SW = 3B28
+  0:IE=0   1:DE=0   2:ZE=0   3:OE=1   4:UE=0   5:PE=1   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): 4) overflow (bit 3)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  2^-16445 * 2^-16445      :  SW = 3932
+  0:IE=0   1:DE=1   2:ZE=0   3:OE=0   4:UE=1   5:PE=1   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): 3) denormalized operand (bit 1)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  1.0 / 3.0                :  SW = 3B20
+  0:IE=0   1:DE=0   2:ZE=0   3:OE=0   4:UE=0   5:PE=1   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): 6) inexact result (bit 5)
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  the 10th FLD into 8 registers:  SW = 3800
+  0:IE=0   1:DE=0   2:ZE=0   3:OE=0   4:UE=0   5:PE=0   6:SF=0   7:ES=0 
+  class by PRIORITY (A7.txt lines 84-95): no unmasked special case detected
+   ES (bit 7) = 0: no unmasked case (all masks are set)
+  MEASURED: the 9th and 10th FLD did NOT set SF (bit 6) here.
+  DOSBox 0.74-3 does not report stack overflow at all, so a real
+  8087 must be consulted for the SF behaviour (A7.txt line 167).
+--- 6b) CONDITION CODES C0..C3 (A7.txt lines 181-184) ---
+  only FCOM/FTST/FXAM change C0..C3; arithmetic leaves them unchanged
+  C0 C1 C2 C3 = 0 0 0 1   SW = 4000h    -> meaning: ST(0) equal to ST(1)
+  C0 C1 C2 C3 = 0 0 0 0   SW = 0000h    -> meaning: ST(0) greater than ST(1)
+  C0 C1 C2 C3 = 1 0 0 0   SW = 0100h    -> meaning: ST(0) less than ST(1)
+  C0 C1 C2 C3 = 1 0 1 1   SW = 4501h    -> meaning: UNORDERED (at least one operand is a NaN)
+  Intel 8087 differs: greater = C3=1,C0=1 (4100h), less = 0000h.
+  The table above is the MEASURED DOSBox behaviour, not the book.
+--- 7) FCLEX: clearing the flags ---
+  SW before FCLEX = 3901
+   SW after  FCLEX = 3900
+  Without FCLEX the flag stays set: the next WAIT-form instruction would
+  report the SAME special case again, over and over.
+--- 8) TAG WORD AND STACK ROTATION (A7.txt lines 186-205) ---
+  FSAVE header, bytes 0..1  (control word)      = 037F
+  FSAVE header, bytes 2..3  (status word)      = 2900
+  FSAVE header, bytes 4..5  (tag word)         = 03FF
+  TOP taken from the saved status word:
+  TOP (status bits 13..11) = 5
+
+  tag word decoded:
+  tags R0..R7 (V=valid Z=zero S=special E=empty): E E E E E V V V 
+
+  ST(0) (the last pushed, 3.0) : 4000 C000 0000 0000 0000
+  ST(1)               (2.0)   : 4000 8000 0000 0000 0000
+  ST(2)               (1.0)   : 3FFF 8000 0000 0000 0000
+  rotation without moving data: FINCSTP / FDECSTP change TOP only
+  three values pushed, TOP =  TOP (status bits 13..11) = 5
+
+  after FINCSTP (TOP + 1 mod 8):  TOP (status bits 13..11) = 6
+
+  after two FDECSTP (TOP - 2 mod 8):  TOP (status bits 13..11) = 4
+
+  The data did not move: only the circular pointer changed, so the same
+  physical register is now seen as another logical ST(i).
+--- 9) HOW TO TRACE THE SAME THINGS IN TURBO DEBUGGER (interactive) ---
+  TD cannot be captured by the autotest (it is a full-screen debugger), so
+  this is the manual procedure for the defence:
+    1. Run the "Compile and Debug in TD" task (Ctrl+Shift+B, second task).
+    2. View -> Floating Point: ST(0)..ST(7) as 10-byte values, the tag word
+       and the Control/Status words live there. F2 sets a breakpoint, F7 steps
+       one instruction - watch TOP decrease on FLD and increase on FSTP.
+--- 10) ANSWERS ---
+  1. The control word selects MODES (PC, RC, IC, six masks); the status word
+     reports FACTS (six flags, SF, ES, TOP, four condition codes, BUSY).
+  2. TOP occupies bits 13..11, the condition codes are split: C0,C1,C2 in bits
+     8,9,10 and C3 in bit 14 - that is why FSTSW AX + SAHF maps only C0 and C3
+     onto CF and ZF, and C2 (the unordered indicator) is lost in C code.

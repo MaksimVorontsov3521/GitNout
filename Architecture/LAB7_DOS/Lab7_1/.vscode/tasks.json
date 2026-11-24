@@ -1,0 +1,76 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile and Run (TASM -> DOSBox)",
+            "type": "shell",
+            "command": "D:\\Desktop\\NF\\GitNout\\Architecture\\DOSBox\\DOSBox.exe",
+            "args": [
+                "-c",
+                "mount c \"D:\\Desktop\\NF\\GitNout\\Architecture\\C\"",
+                "-c",
+                "mount d \"${workspaceFolder}\"",
+                "-c",
+                "d:",
+                "-c",
+                "set PATH=%PATH%;c:\\NTA;c:\\TCC\\TC",
+                "-c",
+                "cd build",
+                "-c",
+                "tasm /zi ..\\lab7_1.asm",
+                "-c",
+                "tlink /v /t lab7_1",
+                "-c",
+                "lab7_1"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Compile and Debug in TD (DOSBox)",
+            "type": "shell",
+            "command": "D:\\Desktop\\NF\\GitNout\\Architecture\\DOSBox\\DOSBox.exe",
+            "args": [
+                "-c",
+                "mount c \"D:\\Desktop\\NF\\GitNout\\Architecture\\C\"",
+                "-c",
+                "mount d \"${workspaceFolder}\"",
+                "-c",
+                "d:",
+                "-c",
+                "set PATH=%PATH%;c:\\NTA;c:\\TCC\\TC",
+                "-c",
+                "cd build",
+                "-c",
+                "tasm /zi ..\\lab7_1.asm",
+                "-c",
+                "tlink /v /t lab7_1",
+                "-c",
+                "td lab7_1"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Selftest: capture output (DOSBox -> build\\run.txt)",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-File",
+                "${workspaceFolder}\\..\\autotest.ps1",
+                "-Only",
+                "${workspaceFolder}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "detail": "Перехват вывода программы в build\\run.txt (см. autotest.ps1): сборка + запуск в DOSBox без ожидания клавиши (/dNOWAIT или -DNOWAIT)."
+        }
+    ]
+}

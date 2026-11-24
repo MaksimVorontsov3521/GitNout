@@ -1,0 +1,145 @@
+=== Lab 7 step 4 (ASM): FPU special case - the handler reacts on the status word ===
+  task A7.txt 33-36: unmask one class, provoke it, decode SW, enter the handler.
+--- 1) VECTORS AS FOUND BEFORE ANY CHANGE (int 21h/AH=35h gives ES:BX) ---
+  vector 75h (math coprocessor, IRQ13, the path used when NE=0) = 0000:0000
+  vector 16h (x87 exception,              path used when NE=1) = F000:11E0
+  both values are saved here and restored in section 10: a .COM program that
+  leaves its own address in the vector table breaks the next run of the box.
+--- 2) CR0 BY MACHINE CODE (.286 cannot encode MOV EAX,CR0; .386 breaks tlink /t) ---
+  CR0 hi:lo = 0000:0000   bit 16 of that value, called NE = 0
+  the number above is printed as two 16-bit halves ONLY. It is not used to
+  conclude anything about NE: this emulator returns an undefined CR0 for such
+  a probe (measured twice: 0000:0000h), so the NE bit is not readable here.
+  Per the documentation of a real PC the NE bit is normally 1 (the BIOS sets it).
+--- 3) INSTALL OUR OWN HANDLER (int 21h/AH=25h, DS:DX = handler address) ---
+  set vector 75h -> DS:DX = 0193:0950
+  set vector 16h -> DS:DX = 0193:097F
+  read vector 75h back (AH=35h) = 0193:0950
+  read vector 16h back (AH=35h) = 0193:097F
+  both vectors now point to our handler; each of them has its own counter.
+--- 4) UNMASK EXACTLY ONE CLASS: Z = division by zero (clear CW bit 2) ---
+  control word BEFORE  CW = 037F
+  status word right after FINIT  SW = 0000
+  exception mask bits of CW (A7.txt lines 134-140):
+  P=1   masked   -> the FPU handles it by itself, the program continues
+  U=1   masked   -> the FPU handles it by itself, the program continues
+  O=1   masked   -> the FPU handles it by itself, the program continues
+  Z=1   masked   -> the FPU handles it by itself, the program continues
+  D=1   masked   -> the FPU handles it by itself, the program continues
+  I=1   masked   -> the FPU handles it by itself, the program continues
+  control word AFTER   CW = 037B   (only the Z mask bit became 0)
+  exception mask bits of CW (A7.txt lines 134-140):
+  P=1   masked   -> the FPU handles it by itself, the program continues
+  U=1   masked   -> the FPU handles it by itself, the program continues
+  O=1   masked   -> the FPU handles it by itself, the program continues
+  Z=0   UNMASKED -> this class has to be reported to a software handler
+  D=1   masked   -> the FPU handles it by itself, the program continues
+  I=1   masked   -> the FPU handles it by itself, the program continues
+
+--- 5) PROVOKE THAT CLASS: 1.0 / 0.0, operands built FROM INTEGER constants ---
+  FILD word ptr OneI  -> ST(0) = 1.0
+  FILD word ptr ZeroI -> ST(0) = 0.0, therefore ST(1) = 1.0
+  FDIVP               -> ST(1) := ST(1)/ST(0) = 1.0/0.0, then the stack pops
+  FWAIT               -> synchronisation, so that SW is read afterwards
+  FSTSW SW1           -> the status word of the finished operation
+  no float literals in the data: TASM 4.1 encodes DD/DQ/DT with a decimal
+  value using nibbles swapped inside every byte (measured), so only the
+  integer constants above are safe (A7.txt 194-199 and 218-224 on WAIT).
+--- 6) STATUS WORD DECODED BIT BY BIT (FSTSW, A7.txt lines 154-185) ---
+  status word SW = 3904
+  exception flags of bits 0..5 and the two summary bits 6 and 7:
+  I =0 D =0 Z =1 O =0 U =0 P =0 SF=0 ES=0
+    TOP (bits 13..11) = 7  C0(8) = 1 C1(9) = 0 C2(10) = 0 C3(14) = 0  BUSY(15) = 0
+  priority chain (A7.txt 84-99; a stack fault is a part of invalid, lines 70, 86):
+    I(bit0) > SF(bit6) > Z(bit2) > O(bit3) > U(bit4) > P(bit5) > D(bit1) > none
+  first class by priority = 2 Z  - division by zero (A7.txt lines 72, 88)
+  default FPU response    = +infinity or -infinity (A7.txt line 88)
+  ES (bit 7, error summary) = 0
+  measured, not assumed: the UNMASKED Z flag is set (bit 2 = 1) while the
+  summary bit ES (bit 7) stays 0. A test that looks only at ES would report
+  that nothing happened. The per-class flag in SW is the reliable evidence.
+--- 7) ENTER THE HANDLER: a SOFTWARE int 75h, the very vector used when NE=0 ---
+  handler entries BEFORE our int 75h:  75h = 0   16h = 0
+  both counters read 0 at this moment: the case is FLAGGED in SW but it is
+  NOT VECTORED by DOSBox 0.74-3 (measured). On real 8087/387 hardware the
+  counters would already be 1 here - the CPU would stop the program and route
+  control to the handler by itself. The int 75h below is OUR OWN call.
+
+--- 8) WHAT THE HANDLER RECORDED (main prints it; a handler must not print) ---
+  handler entries AFTER  our int 75h:  75h = 1   16h = 0
+  entries made by our software int 75h: 75h = 1    16h = 0
+  the hardware path added nothing: before our call both counters were 0.
+  SW found inside the handler (its own FSTSW) = 3904
+  the handler decoded that status word and got:
+  I =0 D =0 Z =1 O =0 U =0 P =0 SF=0 ES=0
+  class decoded by the handler = 2 Z  - division by zero (A7.txt lines 72, 88)
+  default FPU response         = +infinity or -infinity (A7.txt line 88)
+  message index stored in a global = 2   (the class code; main uses it to pick the printed text)
+  CW after the handler (it did FLDCW of the saved mask) = 037F   (all six classes masked again)
+  SW after the handler (it did FCLEX)                   = 3900   (all exception flags cleared)
+  FCLEX clears the six exception flags; C0..C3 are condition codes, not flags.
+  FCLEX is mandatory: while a flag stays set the NEXT FPU instruction would be
+  counted as a special case again. The FLDCW done first stops a re-entry:
+  FSTSW is a WAIT-form command (A7.txt 194-199) and with an unmasked flag it
+  would be a second delivery point for the very same condition.
+  EOI (mov al,20h / out 20h,al) matters only for a real IRQ13 arrival.
+  Real hardware, A7.txt 105-110: NE=1 -> the CPU enters vector 16h itself;
+  NE=0 -> INT 75h / IRQ13. In this box only our own call reached vector 75h.
+  ST(0) exponent:sign = 7FFF  mantissa hi..lo     = 8000000000000000   encoding = INFINITY (exponent all ones, mantissa exactly 1.0; A7.txt lines 235 and 247)
+  Compare with A7.txt line 88: the answer of the FPU to division by zero is Inf.
+
+--- 9) SECOND CLASS: unmask I (CW bit 0), take 0.0 / 0.0, decode, call again ---
+  control word BEFORE  CW = 037F
+  control word AFTER   CW = 037E   (only the I mask bit became 0)
+  exception mask bits of CW (A7.txt lines 134-140):
+  P=1   masked   -> the FPU handles it by itself, the program continues
+  U=1   masked   -> the FPU handles it by itself, the program continues
+  O=1   masked   -> the FPU handles it by itself, the program continues
+  Z=1   masked   -> the FPU handles it by itself, the program continues
+  D=1   masked   -> the FPU handles it by itself, the program continues
+  I=0   UNMASKED -> this class has to be reported to a software handler
+  FLDZ / FLDZ -> ST(0) = 0.0 and ST(1) = 0.0; FDIVP -> ST(1) := 0.0/0.0, pop;
+  FWAIT; both operands are zero, so the class here is I - invalid operation.
+  status word SW = 3901
+  exception flags of bits 0..5 and the two summary bits 6 and 7:
+  I =1 D =0 Z =0 O =0 U =0 P =0 SF=0 ES=0
+    TOP (bits 13..11) = 7  C0(8) = 1 C1(9) = 0 C2(10) = 0 C3(14) = 0  BUSY(15) = 0
+  first class by priority = 0 I  - invalid operation (A7.txt lines 70, 86-87)
+  default FPU response    = QNaN for a stack fault, invalid for an SNaN operand (A7.txt 86-87)
+  ES (bit 7, error summary) = 0
+  handler entries BEFORE the second int 75h: 75h = 1   (the one entry there is our own call of section 7)
+  handler entries AFTER  our int 75h:  75h = 2   16h = 0
+  SW found inside the handler (its own FSTSW) = 3901   class decoded by the handler = 0 I  - invalid operation (A7.txt lines 70, 86-87)
+  ST(0) exponent:sign = FFFF  mantissa hi..lo     = C000000000000000   encoding = QNaN (exponent all ones, mantissa MSB set; A7.txt lines 231-232)
+  Compare with A7.txt lines 86-87: the answer to an invalid operation is a NaN.
+
+  priority is the TABLE order (A7.txt 84-99), NOT the order of bits (168-174):
+    class            SW bit    priority rank    provoked in this run
+    I  invalid         0            1            yes - second experience
+    SF stack fault     6            2            no (a part of invalid)
+    Z  zero divide     2            3            yes - first experience
+    O  overflow        3            4            no
+    U  underflow       4            5            no
+    P  precision       5            6            no
+    D  denormal        1            7            no
+  the two orders differ: D is bit 1 but ranks LAST, P is bit 5 yet outranks D,
+  SF is bit 6 but ranks second. Scanning bits upward would pick D before P,
+  which is wrong. Each of the two experiences above set exactly ONE exception
+  flag - it is visible in the printed bit decode - so the chain order changes
+  nothing here; it is what makes the verdict right when flags come in a set.
+--- 10) RESTORE BOTH VECTORS (int 21h/AH=25h) AND READ THEM BACK ---
+  restored vector 75h = 0000:0000 OK: it matches the value saved in section 1
+  restored vector 16h = F000:11E0 OK: it matches the value saved in section 1
+  AH=25h takes the new vector from DS:DX, so DS is briefly the segment of the
+  saved vector (0000h for 75h in this box); DOS only copies DS:DX into the
+  table. CW is loaded back to 037Fh and FCLEX clears the flags afterwards.
+--- 11) WHY IT WORKS THIS WAY ---
+  1. On a real 8087/387 an UNMASKED special case stops the program: the FPU
+     raises its flag, the CPU vectors to INT 16h when NE=1 or to INT 75h /
+     IRQ13 when NE=0, and the handler finds the CAUSE from the status word.
+  2. In DOSBox 0.74-3 the flags accumulate but the interrupt is NOT generated
+     (measured: entry counters 0, ES = 0, old vector 75h = 0000:0000h)
+     so the reaction here is a flag analysis of SW plus a SOFTWARE int 75h
+     into the same handler code, and the program prints that arrival as OURS.
+  3. EOI is needed only on a real hardware arrival; FCLEX is needed always.
+  lab7_4 is over: both vectors restored, CW back to 037Fh, flags cleared.

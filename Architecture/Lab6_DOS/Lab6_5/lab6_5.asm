@@ -1,31 +1,3 @@
-;==============================================================
-;  Лабораторная работа 6, ШАГИ 3 и 4 на чистом ассемблере
-;  (A6.txt, строки 48-53)
-;
-;  3. Выполнить ПП путём создания ОСОБОГО СЛУЧАЯ (деление на нуль),
-;     соответствующего одному из ПЕРВЫХ ДЕСЯТИ векторов (вектор 00h).
-;  4. Проанализировать заполнение стека и при выходе из обработчика
-;     ПРОПУСТИТЬ команду, вызывающую особый случай:
-;                                     add [bp+18], 2
-;
-;  Здесь показано, ОТКУДА берётся 18: это не магия, а следствие
-;  пролога компилятора Borland/Turbo C. Мы воспроизводим его ВРУЧНУЮ:
-;      push ax,bx,cx,dx,es,ds,si,di,bp : mov bp,sp
-;  Тогда кадр обрабатчика выглядит ровно как в шагах 3-4 на Си:
-;      [bp+0 ]=BP  [bp+2 ]=DI  [bp+4 ]=SI  [bp+6 ]=DS  [bp+8 ]=ES
-;      [bp+10]=DX  [bp+12]=CX  [bp+14]=BX  [bp+16]=AX
-;      [bp+18]=IP  [bp+20]=CS  [bp+22]=FLAGS   <- эти 3 кладёт ЦП
-;
-;  ОСОБЫЙ СЛУЧАЙ vs ПРОГРАММНОЕ ПРЕРЫВАНИЕ:
-;     источник события - внутренняя ошибка ЦП (DIV с нулём), а не
-;     команда INT; но заполнение стека ОДИНАКОВОЕ (FLAGS, CS, IP).
-;     По умолчанию ЦП ПОВТОРЯЕТ команду. Чтобы её пропустить -
-;     сдвигаем IP в кадре на длину команды (DIV BX = F7 F3 = 2 байта).
-;
-;  Сборка:  tasm /zi lab6_5.asm  +  tlink /v /t lab6_5   (задача VS Code)
-;  Запуск:  DOSBox, Ctrl+Shift+B в открытой папке Lab6_5
-;==============================================================
-
 .286
 .MODEL TINY
 
@@ -47,9 +19,7 @@ ORG 100h
 START:
        ShowS MsgTitle
 
-;--------------------------------------------------------------
-; 0. СТАРЫЙ ВЕКТОР 00h (IVT = 0000:0000, вектор 00h -> адрес 0)
-;--------------------------------------------------------------
+; 0. Старый вектор 00h
        xor  ax, ax
        mov  es, ax
        mov  ax, es:[00h*4+2]
@@ -68,9 +38,7 @@ START:
        ShowS MsgFirstTen
        ShowC
 
-;--------------------------------------------------------------
-; 1. ЗАПОМНИТЬ СТАРЫЙ ВЕКТОР и УСТАНОВИТЬ НОВЫЙ (аналог setvect)
-;--------------------------------------------------------------
+; 1. Запомнить старый вектор и установить новый
        cli
        mov  word ptr es:[00h*4],     offset ISR_DIV0
        mov  word ptr es:[00h*4+2],   cs
@@ -89,11 +57,7 @@ START:
        call Phex16
        ShowC
 
-;--------------------------------------------------------------
-; 2. ВОЗБУДИТЬ ОСОБЫЙ СЛУЧАЙ: деление на нуль
-;    параметры ПП - в регистрах (AX - делимое, BX - делитель)
-;    и в памяти (Dividend, Divisor, SafeDiv)
-;--------------------------------------------------------------
+; 2. Возбудить особый случай: деление на нуль
        ShowS MsgHead1
        ShowS MsgOper
        mov  ax, Dividend
@@ -103,23 +67,20 @@ START:
        call Phex16
        ShowC
 
-       mov  SpMain, sp           ; вершина стека ДО особого случая
+       mov  SpMain, sp
        mov  ax, Dividend
        xor  dx, dx
        mov  bx, Divisor
-       div  bx                   ; BX=0 -> особый случай, вектор 00h
+       div  bx
 
-       ; ---- выполнение продолжается ЗДЕСЬ: DIV пропущена (IP сдвинут)
        mov  Quotient,  ax
        mov  Remainder, dx
 
-;--------------------------------------------------------------
-; 3. ВОССТАНОВИТЬ СТАРЫЙ ВЕКТОР
-;--------------------------------------------------------------
+; 3. Восстановить старый вектор
        xor  ax, ax
        mov  es, ax
        cli
-       mov  ax, OldOfs              ; память -> память недопустима: через AX
+       mov  ax, OldOfs
        mov  es:[00h*4],   ax
        mov  ax, OldSeg
        mov  es:[00h*4+2], ax
@@ -138,9 +99,7 @@ START:
        call Phex16
        ShowC
 
-;--------------------------------------------------------------
-; 4. АНАЛИЗ ЗАПОЛНЕНИЯ СТЕКА (снят внутри ПП до изменений)
-;--------------------------------------------------------------
+; 4. Анализ заполнения стека
        ShowS MsgHead2
        ShowS MsgSpMain
        mov  ax, SpMain
@@ -148,7 +107,7 @@ START:
        ShowS MsgArrow
        mov  ax, SpIsr
        call Phex16
-       ShowS MsgBytes            ; ShowS ДО вычисления: int 21h/09h меняет AH
+       ShowS MsgBytes
        mov  ax, SpMain
        sub  ax, SpIsr
        call Pdec16
@@ -169,7 +128,6 @@ START:
        call Phex16
        ShowC
 
-       ; --- дамп 12 слов кадра ---
        lea  si, Frame
        lea  bx, NameTbl
        mov  cx, 12
@@ -180,7 +138,6 @@ L_dump:
        int  21h
        mov  ax, [si]
        call Phex16
-       ; кто положил: первые 9 слов - пролог компилятора, последние 3 - ЦП
        mov  ax, 12
        sub  ax, cx
        cmp  ax, 9
@@ -191,7 +148,7 @@ L_whoProlog:
        ShowS MsgWhoProlog
 L_whoDone:
        ShowC
-       add  bx, 2               ; таблица теперь из слов (DW)
+       add  bx, 2
        add  si, 2
        dec  cx
        jnz  L_dump
@@ -199,9 +156,7 @@ L_whoDone:
        ShowS MsgWhy18
        ShowC
 
-;--------------------------------------------------------------
-; 5. АДРЕС ВОЗВРАТА: до и после add [bp+18], 2
-;--------------------------------------------------------------
+; 5. Адрес возврата: до и после add [bp+18], 2
        ShowS MsgHead3
        ShowS MsgIpBefore
        mov  ax, IpBefore
@@ -230,9 +185,7 @@ L_whoDone:
        ShowS MsgIfNote
        ShowC
 
-;--------------------------------------------------------------
-; 6. РЕЗУЛЬТАТ, ВЫДАННЫЙ ПП ЧЕРЕЗ КАДР (слоты AX и DX)
-;--------------------------------------------------------------
+; 6. Результат, выданный ПП через кадр
        ShowS MsgHead4
        ShowS MsgRes
        mov  ax, Quotient
@@ -254,14 +207,12 @@ L_whoDone:
        ShowS MsgEntriesNote
        ShowC
 
-;--------------------------------------------------------------
-; 7. СРАВНЕНИЕ СО ШАГОМ 3 на Си (там IP НЕ сдвигали)
-;--------------------------------------------------------------
+; 7. Сравнение с шагом 3 на Си
        ShowS MsgHead5
        ShowS MsgCompare
        ShowC
        ShowS MsgPause
-IFNDEF NOWAIT            ; /dNOWAIT: пакетная самопроверка без ожидания клавиши
+IFNDEF NOWAIT
        mov  ah, 00h
        int  16h
 ENDIF
@@ -269,14 +220,9 @@ ENDIF
        mov  ah, 4Ch
        int  21h
 
-;==============================================================
-;  ПП - обработчик ОСОБОГО СЛУЧАЯ int 00h (Divide Error)
-;  На входе: [SP]=IP, [SP+2]=CS, [SP+4]=FLAGS  (положил ЦП)
-;==============================================================
 ISR_DIV0 PROC FAR
-       mov  SpIsr, sp            ; вершина стека НА ВХОДЕ в ПП
+       mov  SpIsr, sp
 
-       ; --- пролог в стиле Borland C (9 слов) ---
        push ax
        push bx
        push cx
@@ -286,12 +232,11 @@ ISR_DIV0 PROC FAR
        push si
        push di
        push bp
-       mov  bp, sp               ; теперь IP лежит в [bp+18]
+       mov  bp, sp
 
        mov  FrSS, ss
        mov  FrBP, bp
 
-       ; --- снять кадр ДО каких-либо изменений ---
        lea  si, Frame
        mov  bx, bp
        mov  cx, 12
@@ -312,8 +257,6 @@ L_snap:
 
        inc  Entries
 
-       ; --- ОБРАБОТКА ДАННЫХ: ПП сама считает результат ---
-       ;     (делитель нулевой, поэтому деление повторно не нужно)
        xor  dx, dx
        mov  ax, Dividend
        mov  bx, SafeDiv
@@ -321,25 +264,19 @@ L_snap:
        mov  Quotient,  ax
        mov  Remainder, dx
 
-       ; --- выдать результат вызывающему ЧЕРЕЗ КАДР:
-       ;     [bp+16] = AX, [bp+10] = DX. После IRET и pop ax / pop dx
-       ;     main получит эти значения, хотя DIV не исполнялась.
-       mov  word ptr ss:[bp+16], ax      ; слот AX вызывающего <- частное
-       mov  word ptr ss:[bp+10], dx      ; слот DX вызывающего <- остаток
-       mov  bx, bp                       ; снимаем слоты ПОСЛЕ записи: подпись
-       mov  ax, ss:[bx+16]               ; "written by PP" должна показывать
-       mov  SlotAX, ax                   ; именно записанные значения
+       mov  word ptr ss:[bp+16], ax
+       mov  word ptr ss:[bp+10], dx
+       mov  bx, bp
+       mov  ax, ss:[bx+16]
+       mov  SlotAX, ax
        mov  ax, ss:[bx+10]
        mov  SlotDX, ax
 
-       ; --- ПРОПУСК КОМАНДЫ, ВЫЗВАВШЕЙ ОСОБЫЙ СЛУЧАЙ (строка 53 A6.txt)
-       ;     DIV BX = F7 F3 -> 2 байта
        add  word ptr ss:[bp+18], 2
 
        mov  ax, ss:[bp+18]
        mov  IpAfter, ax
 
-       ; --- эпилог (обратный прологу) и выход ЧЕРЕЗ IRET ---
        pop  bp
        pop  di
        pop  si
@@ -352,9 +289,6 @@ L_snap:
        iret
 ISR_DIV0 ENDP
 
-;==============================================================
-;  PrintHex16: AX в HEX (4 цифры)
-;==============================================================
 Phex16 PROC
        push ax
        push bx
@@ -382,9 +316,6 @@ L_ph2:
        ret
 Phex16 ENDP
 
-;==============================================================
-;  Pdec16: AX как беззнаковое десятичное
-;==============================================================
 Pdec16 PROC
        push bx
        push cx
@@ -411,49 +342,44 @@ L_pd1:
        ret
 Pdec16 ENDP
 
-;==============================================================
-;  Pflags: AX = слово флагов -> HEX + CF PF AF ZF SF TF IF
-;==============================================================
 Pflags PROC
-       ; ИМЯ бита печатается ДО вычисления (ShowS присваивает AH=09h),
-       ; иначе вместо битов выводилось содержимое AH: "PF PF PF...".
        push bx
        push cx
        call Phex16
-       mov  bx, ax               ; Phex16 восстанавливает AX
+       mov  bx, ax
        ShowS MsgNCF
        mov  ax, bx
-       and  ax, 1                ; CF (bit 0)
+       and  ax, 1
        call Pdec16
        ShowS MsgNPF
        mov  ax, bx
        shr  ax, 1
-       shr  ax, 1                ; PF (bit 2)
+       shr  ax, 1
        and  ax, 1
        call Pdec16
        ShowS MsgNAF
        mov  ax, bx
-       shr  ax, 4                ; AF (bit 4)
+       shr  ax, 4
        and  ax, 1
        call Pdec16
        ShowS MsgNZF
        mov  ax, bx
-       shr  ax, 6                ; ZF (bit 6)
+       shr  ax, 6
        and  ax, 1
        call Pdec16
        ShowS MsgNSF
        mov  ax, bx
-       shr  ax, 7                ; SF (bit 7)
+       shr  ax, 7
        and  ax, 1
        call Pdec16
        ShowS MsgNTF
        mov  ax, bx
-       shr  ax, 8                ; TF (bit 8)
+       shr  ax, 8
        and  ax, 1
        call Pdec16
        ShowS MsgNIF
        mov  ax, bx
-       shr  ax, 9                ; IF (bit 9)
+       shr  ax, 9
        and  ax, 1
        call Pdec16
        ShowS MsgBrkC
@@ -462,13 +388,10 @@ Pflags PROC
        ret
 Pflags ENDP
 
-;==============================================================
-;  ДАННЫЕ - ПОСЛЕ кода (обязательно для .COM)
-;==============================================================
 .DATA
-Dividend    DW  24680               ; 0x6068 - делимое
-Divisor     DW  0                   ; 0  -> особый случай
-SafeDiv     DW  7                   ; чем ПП заменит нулевой делитель
+Dividend    DW  24680
+Divisor     DW  0
+SafeDiv     DW  7
 Quotient    DW  ?
 Remainder   DW  ?
 
@@ -492,13 +415,9 @@ NewSeg      DW  ?
 ResOfs      DW  ?
 ResSeg      DW  ?
 
-;  ВАЖНО: именно DW + OFFSET, а не "DD Sl0,..": DD с меткой без OFFSET
-;  порождает 32-битный far-указатель с СЕГМЕНТНОЙ релокацией, и TLINK
-;  для .COM отказывает: "Cannot generate COM file: segment-relocatable
-;  items present in module". В модели TINY все смещения 16-битные.
 NameTbl     DW  offset Sl0, offset Sl1, offset Sl2, offset Sl3
-        DW  offset Sl4, offset Sl5, offset Sl6, offset Sl7
-        DW  offset Sl8, offset Sl9, offset Sl10, offset Sl11
+            DW  offset Sl4, offset Sl5, offset Sl6, offset Sl7
+            DW  offset Sl8, offset Sl9, offset Sl10, offset Sl11
 DecBuf      DB  7 DUP(?)
 
 Sl0   DB  '  [bp+0 ] BP    = $'

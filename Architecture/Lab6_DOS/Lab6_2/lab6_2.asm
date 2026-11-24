@@ -1,26 +1,6 @@
-;==============================================================
-;  Лабораторная работа 6, ШАГ 2  (A6.txt, строка 47)
-;  "Проанализируйте заполнение стека" для программного прерывания.
-;
-;  Чистый ассемблер (TASM, модель TINY -> .COM). Разбирается, как
-;  заполняется стек при:
-;     a) программном прерывании INT 0F0h  -> 3 слова: IP, CS, FLAGS
-;     b) вызове CALL NEAR                 -> 1 слово:  IP
-;     c) вызове CALL FAR                  -> 2 слова:  IP, CS
-;  плюс проверяется "ЧТО НУЖНО ОСОЗНАТЬ": вектор = 32-битная ячейка
-;  IVT, разрешённые/запрещённые вектора, сброс TF и IF, возврат IRET.
-;
-;  ВНИМАНИЕ: обработчик (ПП) НЕ вызывает int 21h - DOS не реентера-
-;  белен; ПП только пишет данные в память, печать - в основном коде.
-;
-;  Сборка:  tasm /zi lab6_2.asm  +  tlink /v /t lab6_2   (задача VS Code)
-;  Запуск:  DOSBox, Ctrl+Shift+B в открытой папке Lab6_2
-;==============================================================
-
-.286                    ; нужны PUSHF/POPF и обращение к [SP]
+MsgHead1.286 
 .MODEL TINY
 
-;---------- макросы вывода (определяем ДО использования) ----------
 ShowS   MACRO msg
        lea  dx, msg
        mov  ah, 09h
@@ -34,19 +14,14 @@ ShowC  MACRO
 ENDM
 
 .CODE
-ORG 100h                        ; COM: PSP занимает 00h..0FFh
+ORG 100h 
 
 START:
-;  в TINY/COM DOS загружает CS = DS = SS одинаково, assume не нужен
 
        ShowS MsgTitle
 
-;--------------------------------------------------------------
-; 0. ВЕКТОР ПРЕРЫВАНИЯ ДО УСТАНОВКИ НАШЕГО ОБРАБОТЧИКА
-;    IVT = 0000:0000, 256 векторов по 4 байта = первые 1000h байт
-;--------------------------------------------------------------
        xor  ax, ax
-       mov  es, ax              ; ES -> 0000 (IVT)
+       mov  es, ax 
        mov  ax, es:[0F0h*4+2]
        mov  OldSeg, ax
        mov  ax, es:[0F0h*4]
@@ -54,17 +29,16 @@ START:
 
        ShowS MsgIvtRange
        ShowS MsgIvtOld
-       mov  ax, OldSeg           ; AX надо ПЕРЕЗАГРУЗИТЬ: ShowS меняет AH (09h)
+       mov  ax, OldSeg
        call Phex16
        ShowS MsgSep
        mov  ax, OldOfs
        call Phex16
        ShowC
 
-;--------------------------------------------------------------
-; 1. УСТАНОВИТЬ НОВЫЙ ВЕКТОР (аналог setvect(0F0h, ISR_F0))
-;    разрешение/запрет прерываний: CLI / STI (аналог disable/enable)
-;--------------------------------------------------------------
+
+; 1. Установить новый вектор
+
        cli
        mov  word ptr es:[0F0h*4],     offset ISR_F0
        mov  word ptr es:[0F0h*4+2],   cs
@@ -85,23 +59,22 @@ START:
        ShowS MsgInstalled
        ShowC
 
-;--------------------------------------------------------------
-; 2. ПАРАМЕТРЫ ПП -> РЕГИСТРЫ И ПАМЯТЬ, ВЫЗОВ ПП ЧЕРЕЗ INT
-;--------------------------------------------------------------
+
+; 2. Параметры ПП -> регистры и память, вызов пп через int
        ShowS MsgHead1
 
-       mov  SpBefore, sp        ; вершина стека ДО прерывания
+       mov  SpBefore, sp        
 
-       pushf                    ; FLAGS до прерывания снимаем СРАЗУ:
-       pop  ax                  ;   если сделать это после загрузки параметров,
-       mov  FlBefore, ax        ;   pop ax затрёт параметр (AX=1234h)
+       pushf                    
+       pop  ax                  
+       mov  FlBefore, ax        
 
-       mov  ax, 1234h           ; 1-й параметр (AX)
-       mov  bx, 0078h           ; 2-й параметр (BX)
-       lea  si, Array           ; 3-й параметр: адрес массива (SI)
-       mov  cx, 4               ; 4-й параметр: число элементов (CX)
+       mov  ax, 1234h           
+       mov  bx, 0078h           
+       lea  si, Array           
+       mov  cx, 4               
 
-       int  0F0h                ; === ПРОГРАММНОЕ ПРЕРЫВАНИЕ = ВЫЗОВ ПП ===
+       int  0F0h                
 
 AfterInt:
        mov  CsExp, cs
@@ -110,9 +83,9 @@ AfterInt:
        pop  ax
        mov  FlAfter, ax
 
-;--------------------------------------------------------------
-; 3. АНАЛИЗ ЗАПОЛНЕНИЯ СТЕКА
-;--------------------------------------------------------------
+
+; 3. Анализ заполнения стека
+
        ShowS MsgHead2
        ShowS MsgSpLbl
        mov  ax, SpBefore
@@ -121,7 +94,7 @@ AfterInt:
        mov  ax, SpIsr
        call Phex16
 
-       ShowS MsgBytes            ; ShowS ПЕРВЫМ, иначе int 21h затирает AX
+       ShowS MsgBytes            
        mov  ax, SpBefore
        sub  ax, SpIsr
        call Pdec16
@@ -173,8 +146,8 @@ L_CsShow:
 
        ShowS MsgBalanced
        mov  ax, sp
-       call Phex16              ; само значение SP после IRET
-       cmp  sp, SpBefore        ; Phex16 сохраняет AX, но SP сравниваем прямо
+       call Phex16              
+       cmp  sp, SpBefore        
        jne  L_BalBad
        ShowS MsgEqSp
        ShowC
@@ -184,9 +157,9 @@ L_BalBad:
        ShowC
 L_BalShow:
 
-;--------------------------------------------------------------
-; 4. РЕЗУЛЬТАТ ОБРАБОТКИ ДАННЫХ ВНУТРИ ПП
-;--------------------------------------------------------------
+
+; 4. Результат обработки данных внутри ПП
+
        ShowS MsgHead3
        ShowS MsgSumLbl
        mov  ax, ResSum
@@ -208,9 +181,9 @@ L_BalShow:
        call Pdec16
        ShowC
 
-;--------------------------------------------------------------
-; 5. ФЛАГИ TF И IF: ПРОЦЕССОР СБРАСЫВАЕТ ИХ ПРИ ВХОДЕ В ПП
-;--------------------------------------------------------------
+
+; 5. Флаги TF и IF: процессор сбрасывает их при входе в GG
+
        ShowS MsgHead4
        ShowS MsgFlBefore
        mov  ax, FlBefore
@@ -224,18 +197,18 @@ L_BalShow:
        ShowS MsgTfIfNote
        ShowC
 
-;--------------------------------------------------------------
-; 6. СРАВНЕНИЕ С ВЫЗОВОМ ПОДПРОГРАММЫ (CALL NEAR / CALL FAR)
-;--------------------------------------------------------------
+
+; 6. Сравнение с вызовом подпрограммы (call near / call far)
+
        ShowS MsgHead5
 
        mov  SpB1, sp
-       call NearSub                    ; кадр NEAR: 1 слово (IP)
+       call NearSub                    
 
        mov  word ptr [FarPtr],     offset FarSub
        mov  word ptr [FarPtr+2],   cs
        mov  SpB2, sp
-       call dword ptr [FarPtr]         ; кадр FAR: 2 слова (CS:IP)
+       call dword ptr [FarPtr]         
 
        ShowS MsgRowNear
        mov  ax, SpB1
@@ -279,15 +252,15 @@ L_BalShow:
        ShowS MsgConclusion
        ShowC
 
-;--------------------------------------------------------------
-; 7. ВОССТАНОВИТЬ СТАРЫЙ ВЕКТОР (аналог setvect(0F0h, old_f0))
-;--------------------------------------------------------------
+
+; 7. Восстановить старый вектор
+
        xor  ax, ax
        mov  es, ax
        cli
-       mov  ax, OldOfs               ; память -> память на 8086 НЕДОПУСТИМА,
-       mov  es:[0F0h*4],   ax         ;   поэтому старый вектор возвращаем
-       mov  ax, OldSeg                ;   через AX
+       mov  ax, OldOfs               
+       mov  es:[0F0h*4],   ax         
+       mov  ax, OldSeg                
        mov  es:[0F0h*4+2], ax
        sti
 
@@ -304,13 +277,13 @@ L_BalShow:
        call Phex16
        ShowC
 
-;--------------------------------------------------------------
-; 8. РАЗРЕШЁННЫЕ И ЗАПРЕЩЁННЫЕ ВЕКТОРА
-;--------------------------------------------------------------
+
+; 8. Разрешённые и запрещённые вектора
+
        ShowS MsgVecHdr
        ShowS MsgVecList
        ShowS MsgPause
-IFNDEF NOWAIT            ; /dNOWAIT: пакетная самопроверка без ожидания клавиши
+IFNDEF NOWAIT            
        mov  ah, 00h
        int  16h
 ENDIF
@@ -318,16 +291,13 @@ ENDIF
        mov  ah, 4Ch
        int  21h
 
-;==============================================================
-;  ПП - обработчик программного прерывания 0F0h (FAR по природе)
-;  На входе:  [SP]=IP, [SP+2]=CS, [SP+4]=FLAGS  (положил ЦП)
-;==============================================================
-ISR_F0 PROC FAR
-       mov  GotAX, ax            ; ПАРАМЕТРЫ регистрируем СРАЗУ: дальше AX
-       mov  GotBX, bx            ;  перезапишется через pushf/pop ax
-       mov  SpIsr, sp            ; вершина стека НА ВХОДЕ в ПП
 
-       ; --- снять 3 слова, положенные ПРОЦЕССОРОМ ---
+ISR_F0 PROC FAR
+       mov  GotAX, ax            
+       mov  GotBX, bx            
+       mov  SpIsr, sp            
+
+       
        mov  bx, sp
        mov  ax, ss:[bx]
        mov  StkIP, ax
@@ -336,12 +306,12 @@ ISR_F0 PROC FAR
        mov  ax, ss:[bx+4]
        mov  StkFL, ax
 
-       ; --- FLAGS ВНУТРИ ПП (ЦП уже обнулил TF и IF) ---
+       
        pushf
        pop  ax
        mov  FlIsr, ax
 
-       ; --- сохранить регистры (пролог в стиле Borland) ---
+       
        push ax
        push bx
        push cx
@@ -352,15 +322,15 @@ ISR_F0 PROC FAR
        push di
        push bp
 
-       inc  Entries              ; GotAX/GotBX сняты на входе
+       inc  Entries              
 
        ; --- ОБРАБОТКА ДАННЫХ в ПП ---
-       ;   сумма: параметр-массив (SI, CX) + параметры AX и BX
+       
        mov  ResCnt, cx
        xor  ax, ax
        add  ax, GotAX
        add  ax, GotBX
-       mov  bx, cx               ; число элементов
+       mov  bx, cx               
        L_IsrLoop:
        add  ax, [si]
        add  si, 2
@@ -368,7 +338,7 @@ ISR_F0 PROC FAR
        jnz  L_IsrLoop
        mov  ResSum, ax
 
-       ; --- восстановить регистры и выйти ЧЕРЕЗ IRET ---
+       
        pop  bp
        pop  di
        pop  si
@@ -378,37 +348,37 @@ ISR_F0 PROC FAR
        pop  cx
        pop  bx
        pop  ax
-       iret                      ; извлекает IP, CS, FLAGS (3 слова)
+       iret                      
 ISR_F0 ENDP
 
-;==============================================================
+
 ;  Подпрограммы для сравнения механизмов возврата
-;==============================================================
+
 NearSub PROC NEAR
-       mov  SpInNear, sp         ; СПЕРВА замер SP (иначе push bx исказит дельту)
-       push bx                   ;        BX бережём: он живёт в main
-       mov  bx, SpInNear         ; SP как индекс прямо нельзя: [sp] - "Illegal
-       mov  ax, ss:[bx]          ;  indexing mode" даже с .386, нужен базовый рег.
-       mov  NearRetIP, ax        ; ЕДИНСТВЕННОЕ слово кадра CALL NEAR
+       mov  SpInNear, sp         
+       push bx                   
+       mov  bx, SpInNear         
+       mov  ax, ss:[bx]          
+       mov  NearRetIP, ax        
        pop  bx
        ret
 NearSub ENDP
 
 FarSub  PROC FAR
-       mov  SpInFar, sp          ; СПЕРВА замер SP: SP внутри = 4 байта ниже
+       mov  SpInFar, sp          
        push bx
        mov  bx, SpInFar
-       mov  ax, ss:[bx]          ; [SP]   = IP
+       mov  ax, ss:[bx]          
        mov  FarRetIP, ax
-       mov  ax, ss:[bx+2]        ; [SP+2] = CS ; FLAGS НЕ сохраняются
+       mov  ax, ss:[bx+2]        
        mov  FarRetCS, ax
        pop  bx
        ret
 FarSub  ENDP
 
-;==============================================================
-;  PrintHex16: AX в HEX (4 цифры)
-;==============================================================
+
+
+
 Phex16 PROC
        push ax
        push bx
@@ -436,9 +406,9 @@ L_ph2:
        ret
 Phex16 ENDP
 
-;==============================================================
-;  Pdec16: AX как беззнаковое десятичное
-;==============================================================
+
+
+
 Pdec16 PROC
        push bx
        push cx
@@ -465,50 +435,47 @@ L_pd1:
        ret
 Pdec16 ENDP
 
-;==============================================================
-;  Pflags: AX = слово флагов -> HEX + разбор CF PF AF ZF SF TF IF
-;==============================================================
-Pflags PROC
-       ; ИМЯ бита выводится ДО вычисления: ShowS вызывает int 21h/09h,
-       ; который присваивает AH=09h, поэтому порядок "сначала ShowS, потом
-       ; mov/and/call Pdec16" - иначе печаталось содержимое AH (0906h = 2310).
+
+
+
+Pflags PROC     
        push bx
        push cx
-       call Phex16               ; само слово флагов в HEX
-       mov  bx, ax               ; Phex16 восстанавливает AX -> образец в BX
+       call Phex16               
+       mov  bx, ax               
        ShowS MsgNCF
        mov  ax, bx
-       and  ax, 1                ; CF (bit 0)
+       and  ax, 1                
        call Pdec16
        ShowS MsgNPF
        mov  ax, bx
        shr  ax, 1
-       shr  ax, 1                ; PF (bit 2)
+       shr  ax, 1                
        and  ax, 1
        call Pdec16
        ShowS MsgNAF
        mov  ax, bx
-       shr  ax, 4                ; AF (bit 4)
+       shr  ax, 4                
        and  ax, 1
        call Pdec16
        ShowS MsgNZF
        mov  ax, bx
-       shr  ax, 6                ; ZF (bit 6)
+       shr  ax, 6                
        and  ax, 1
        call Pdec16
        ShowS MsgNSF
        mov  ax, bx
-       shr  ax, 7                ; SF (bit 7)
+       shr  ax, 7                
        and  ax, 1
        call Pdec16
        ShowS MsgNTF
        mov  ax, bx
-       shr  ax, 8                ; TF (bit 8)
+       shr  ax, 8                
        and  ax, 1
        call Pdec16
        ShowS MsgNIF
        mov  ax, bx
-       shr  ax, 9                ; IF (bit 9)
+       shr  ax, 9                
        and  ax, 1
        call Pdec16
        ShowS MsgBrkC
@@ -517,9 +484,9 @@ Pflags PROC
        ret
 Pflags ENDP
 
-;==============================================================
-;  ДАННЫЕ - ПОСЛЕ кода (обязательно для .COM)
-;==============================================================
+
+
+
 .DATA
 Array       DW  1000h, 2000h, 0003h, 0004h
 

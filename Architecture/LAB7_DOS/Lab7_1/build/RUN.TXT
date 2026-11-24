@@ -1,0 +1,52 @@
+=== Lab7 step 1 (ASM): three numbers in the FPU stack, their sum, mantissa limits ===
+--- 1) INPUT: three numbers in a dialog ---
+  parsed: sign=0  int=16  frac=2  scale=100  value in FPU = 16.02000046
+  parsed: sign=0  int=3  frac=5  scale=10  value in FPU = 3.50000000
+  parsed: sign=1  int=0  frac=125  scale=1000  value in FPU = -0.12500000
+
+
+--- 2) HOW THE FPU REGISTERS ARE USED: a stack of 8 x 80 bits ---
+  control word = 037F
+  status word  = 2900  TOP (status bits 13..11) = 5
+  tag word     = 03FF
+  tags R0..R7 (V=valid Z=zero S=special E=empty): E E E E E V V V 
+  ST(0) = BFFC 8000 0000 0000 0000
+  ST(1) = 4000 E000 0000 0000 0000
+  ST(2) = 4003 8028 F600 0000 0000
+  note: FLD pushes (TOP decreases), FADDP/FDIVP/FSTP pop; FSAVE stores the
+  whole stack and resets it. Header of FSAVE is 14 bytes (386 mode):
+  CW, SW, TAG, opcode offset+sel, operand offset+sel.
+
+
+--- 3) SUMMING (FADD/FADDP) AND THE RESULT ---
+  A + B        = 19.52000046
+  80-bit view: 4003 9C28 F600 0000 0000
+  (A + B) + C  = 19.39500046
+  80-bit view: 4003 9B28 F600 0000 0000
+  status flags I D Z O U P SF ES = 0 0 0 0 0 0 0 0 
+
+
+--- 4) MANTISSA WIDTH: precision control = CW bits 9..8 ---
+  PC=24 bit : CW = 007F
+   PC=0 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+  1.0e8 + 1.0  -> ST(0) = 4019 BEBC 2000 0000 0000
+  (sum - 1.0e8) = 0.00000000
+  1.0e8 + 0.01 -> ST(0) = 4019 BEBC 2000 0000 0000
+  (sum - 1.0e8) = 0.00000000
+  PC=64 bit : CW = 037F
+   PC=3 (00=24, 10=53, 11=64)  RC=0 (00=nearest, 01=down, 10=up, 11=truncate)  IC=0  exception masks = 003F
+  1.0e8 + 1.0  -> ST(0) = 4019 BEBC 2020 0000 0000
+  (sum - 1.0e8) = 1.00000000
+  1.0e8 + 0.01 -> ST(0) = 4019 BEBC 2000 51EB 851F
+  (sum - 1.0e8) = 0.01000000
+
+
+--- 5) THE SAME NUMBER IN THE THREE FORMATS (A7.txt lines 50-66) ---
+  KV (single, 32 bit) bytes: F6 28 80 41 
+  DV (double, 64 bit) bytes: 85 EB 51 B8 1E 05 30 40 
+  VV (temp,   80 bit) bytes: F6 28 5C 8F C2 F5 28 80 03 40 
+  KV value  = 16.02000046
+  DV value  = 16.02000000
+  VV value  = 16.02000000
+  note: KV and DV hide the leading mantissa bit (implicit), VV shows it,
+  so 16.02 is exact only in the 80-bit register; KV loses the digits.

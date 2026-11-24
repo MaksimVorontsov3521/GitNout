@@ -1,0 +1,351 @@
+=== Lab7 shag 5 (C): mehanizm prevrashhenija 16.02 v plavajushhij format ===
+    KV = 32 bita (float), DV = 64 bita (double),
+    VV = 80 bitov (long double / ST(0) u FPU)
+    Sekcii 1-5: vsja arifmetika celochislennaja (96 bit iz 16-bitnyh slov).
+    Plavajushhie literaly - tol'ko kak kontrol' v sekcii 6.
+
+--- 1) ISHODNOE CHISLO 16.02: CELOJA I DROBNAYA CHASTI ---
+  16.02 = 1602/100 = 801/50, to est' celaja 16 + drobnaja 1/50.
+  Drobnaja chast' vedetsja kak para chislitel/50: ostatok vsegda beretsja
+  po modulju 50, pojetomu nikakogo okruglenija zdes' voobshhe net.
+
+  1a) celaja chast' 16 -> dvoinoe, delenie na 2 s ostatkom:
+         16 / 2 =   8  ostatok 0   ->  bit 0  (ves 2^0)
+          8 / 2 =   4  ostatok 0   ->  bit 0  (ves 2^1)
+          4 / 2 =   2  ostatok 0   ->  bit 0  (ves 2^2)
+          2 / 2 =   1  ostatok 0   ->  bit 0  (ves 2^3)
+          1 / 2 =   0  ostatok 1   ->  bit 1  (ves 2^4)
+        bity ot mladshago k starsnemu: 0 0 0 0 1 
+        16 = 10000b    (starsnij bit = 1; v KV/DV on stanet PODRAZUMEVAEMYM)
+
+  1b) drobnaja chast' 1/50 -> dvoinoe, umnozhenie na 2 (36 shagov):
+   no.   mnozhimoe  x2   proizvedenie   bit   ostatok
+   ---- ---------- ---  -------------- ----- ----------
+    1     1/50     x2       2/50         0      2/50
+    2     2/50     x2       4/50         0      4/50
+    3     4/50     x2       8/50         0      8/50
+    4     8/50     x2      16/50         0     16/50
+    5    16/50     x2      32/50         0     32/50
+    6    32/50     x2      64/50         1     14/50
+    7    14/50     x2      28/50         0     28/50
+    8    28/50     x2      56/50         1      6/50
+    9     6/50     x2      12/50         0     12/50
+   10    12/50     x2      24/50         0     24/50
+   11    24/50     x2      48/50         0     48/50
+   12    48/50     x2      96/50         1     46/50
+   13    46/50     x2      92/50         1     42/50
+   14    42/50     x2      84/50         1     34/50
+   15    34/50     x2      68/50         1     18/50
+   16    18/50     x2      36/50         0     36/50
+   17    36/50     x2      72/50         1     22/50
+   18    22/50     x2      44/50         0     44/50
+   19    44/50     x2      88/50         1     38/50
+   20    38/50     x2      76/50         1     26/50
+   21    26/50     x2      52/50         1      2/50
+   22     2/50     x2       4/50         0      4/50
+   23     4/50     x2       8/50         0      8/50
+   24     8/50     x2      16/50         0     16/50
+   25    16/50     x2      32/50         0     32/50
+   26    32/50     x2      64/50         1     14/50
+   27    14/50     x2      28/50         0     28/50
+   28    28/50     x2      56/50         1      6/50
+   29     6/50     x2      12/50         0     12/50
+   30    12/50     x2      24/50         0     24/50
+   31    24/50     x2      48/50         0     48/50
+   32    48/50     x2      96/50         1     46/50
+   33    46/50     x2      92/50         1     42/50
+   34    42/50     x2      84/50         1     34/50
+   35    34/50     x2      68/50         1     18/50
+   36    18/50     x2      36/50         0     36/50
+
+        dvoinye cifry drobi (pervye 32): 0000 0101 0001 1110 1011 1000 0101 0001 
+
+        Ostatki povtarjajutsja, znachit povtarjajutsja i cifry:
+        golovka (bity do perioda) = 1 bit(ov), period = 20 bitov
+        period: (00001010001111010111)
+        0.02 = 0.0(00001010001111010111)(00001010001111010111)...  - beskonechno
+        Proverka po tablice vyshe: ostatok 2/50 voznik posle shaga 1 i
+        voznik snova posle shaga 21. Znachit bity 2..21 povtoryajutsja
+        v bity 22..41, i tak beskonechno (period 20).
+
+  1c) VYVOD: 0.02 v dvoinoj sisteme - BESKONECHNAYA periodicheskaja drob':
+      znamenatel' 50 = 2 x 5^2 soderzhit mnozhitel' 5, kotoryj v dvoinoj
+      sisteme ne skorat'sja. Znachit 16.02 TOCHNO NE PREDSTAVIMO ni v KV,
+      ni v DV, ni v VV: luboj sokhranennyj bitovoj obraz - eto OKRUGLENIE.
+      Dalshe pokazano, kakie bita vyzhivajut i kakaja oshibka ostajetsja.
+
+--- 2) NORMALIZACIJA: sdvig dvoinoj tochki do mantissy v [1,2) ---
+        ishodnoe:  10000.00000101000111101011...
+        tochka svinuta na 4 mesta vlevo:
+                     1.000000000101000111101011...  x 2^4
+        (starsnaja 1 v pole KV/DV bol'she NE pishetsja - ona PODRAZUMEVAEMAYA;
+         v 80-bitnov VV ona, naoborot, IZOBRAZHAETSJA: A7.txt, stroki 65-66)
+
+        znak               S = 0   (chislo polozhitel'noe)
+        istinnyj pjorjadok     e = 4
+        harakteristika      E = e + bias:
+          KV (bias 2^7-1  = 127)  : E =   4 + 127   = 131 = 10000011b = 83h
+          DV (bias 2^10-1 = 1023) : E =   4 + 1023  = 1027 = 10000000011b = 403h
+          VV (bias 2^14-1 = 16383): E =   4 + 16383 = 16387 = 100000000000011b = 4003h
+
+        Smeshchenie nuzhno, chtoby pjorjadki sravnivalis kak bezznakovie
+        celye i chtoby ne vodyt' otdel'nyj bit znaka pjorjadka. Znachenija
+        E=0 i E=max rezervirujutsja pod nuli/denormali i pod Inf/NaN, pojetomu
+        rabochij diapazon e uzhe ne vsja shirina polja.
+
+--- 3) MANTISSA: bity, otdbrosyvaemaja chast', guard/round/sticky ---
+        Normalizovannaja mantissa = 1.[bity nizhe]; starsnaja 1 v pole
+        KV/DV ne hodit, pojetomu pole - eto imenno drob'naja chast'.
+
+        Drob'naja chast' mantissy, bity 1..36 (numeracija s 1):
+        bit   : 0000 0000 0101 0001 1110 1011 1000 0101 0001 
+        tens  : 0000 0000 0111 1111 1112 2222 2222 2333 3333 
+        ones  : 1234 5678 9012 3456 7890 1234 5678 9012 3456 
+        pole KV:
+<=== ==== ==== ==== ==== ==>G Rsss ssss ssss 
+        (<..=> 23 bita pola KV; G bit 24 guard; R bit 25 round;
+         s bity 26.. - sticky: vse, cto ostalos' za round)
+        Pole DV (52 bita) v etom okne ne pomestitsja - sm. 3b.
+        Pole VV (64 bita) nachinaetsja s YVNOGO starsnogo bita - sm. 3c.
+
+  3a) KV: pole 23 bita
+        otschyomnye 23 bita : 0x0028F5   (000.0000.0010.1000.1111.0101)
+        otdbrosyvaetsja     : 11000010100...  [bit 24 guard, bit 25 round, bity 26+ sticky]
+        G=1  R=1  S=1
+        pravilo RC=00: G=0 -> syom;  G=1 i (R|S)=1 -> +1;
+                       G=1, R=0, S=0 (roavno 1/2 ulp) -> +1 tol'ko pri
+                       netchetnom pole
+        priroshchenie = 1,  vykhod za starsnij bit pola = 0
+        itogovoe pole 23 bita: 0x0028F6   (000.0000.0010.1000.1111.0110)
+
+  3b) DV: pole 52 bita
+        otschyomnye 52 bita : 0x0051EB851EB85
+        (bity 1..52): 0000000001010001111010111000010100011110101110000101
+        otdbrosyvaetsja     : 00011110101110...  [bit 53 guard, bit 54 round, bity 55+ sticky]
+        G=0  R=0  S=1  ->  priroshchenie = 0,  vykhod za pole = 0
+        Zdes' otdbrosyvaetsja MENSHE poloviny ulp (G=0), pojetomu DV lezhit
+        SNUZU ot 16.02.
+        itogovoe pole 52 bita: 0x0051EB851EB85
+        (bity 1..52): 0000000001010001111010111000010100011110101110000101
+
+  3c) VV: pole 64 bita (starsnij bit - YVNYJ, eto zhe sb[0])
+        otschyomnye 64 bita : 0x8028F5C28F5C28F5
+        otdbrosyvaetsja     : 1100001010001...  [bit 65 guard, bit 66 round, bity 67+ sticky]
+        G=1  R=1  S=1  ->  priroshchenie = 1,  vykhod za pole = 0
+        itogovoe pole 64 bita: 0x8028F5C28F5C28F6
+
+        Podskazka dlya zashhity: u 1/50 beskonechnyj dvoinoj period, i v njom
+        est' edinitcy, pojetomu S vsegda = 1 vsled za G=1. Sluchaj 'roavno
+        1/2 ulp' (R=0, S=0) byvaet tol'ko u chisel s konechnym dvoinym
+        razlozheniem - 16.02 k nim ne otnositsja. Vykhoda za pole (mantissy
+        2.0) zdes' net ni v odnom formate: ovfl = 0/0/0.
+
+--- 4) SBORKA SLOVA: pola po bitam, HEX, bayty v pjorjadke pamjati ---
+
+  4a) KV (32 bita): S(1) | E(8) | M(23)
+        bit  31      : 0   (znak)
+        bity 30..23  : 1000.0011  = 83h = 131
+        bity 22..0   : 000.0000.0010.1000.1111.0110  = 0x0028F6
+          S EEEEEEEE MMMMMMMMMMMMMMMMMMMMMMM
+          0 10000011 00000000010100011110110
+        slovo tselikom : 0x418028F6
+        bayty (LE)     : F6 28 80 41 
+           byte[0] = bity 7..0    (mladshie 8 bitov mantissy)
+           byte[1] = bity 15..8
+           byte[2] = bity 23..16  (starsnij bit mantissy + 7 bitov E)
+           byte[3] = bity 31..24  (ZNAK + 7 starsnih bitov E)
+
+  4b) DV (64 bita): S(1) | E(11) | M(52)
+        bit  63      : 0   (znak)
+        bity 62..52  : 100.0000.0011  = 403h = 1027
+        bity 51..0   : 0x0051EB851EB85
+          S EEEEEEEEEEE MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+          0 10000000011 0000000001010001111010111000010100011110101110000101
+        slovo tselikom : 0x4030051EB851EB85
+        bayty (LE)     : 85 EB 51 B8 1E 05 30 40 
+           byte[7] = ZNAK + 7 starsnih bitov E (E=403h -> bayt 40h)
+           byte[0] = mladshie 8 bitov 52-bitnogo pola mantissy
+
+  4c) VV (80 bitov): S(1) | E(15) | M(64, starsnij bit IZOBRAZHEN)
+        bit  79      : 0   (znak)
+        bity 78..64  : 100.0000.0000.0011  = 4003h = 16387
+        bity 63..0   : 0x8028F5C28F5C28F6
+        slovo tselikom : 0x40038028F5C28F5C28F6
+        bayty (LE)     : F6 28 5C 8F C2 F5 28 80 03 40 
+           bayty 0..7 - mantissa (byte[7] soderzhit YVNYJ starsnij bit = 1)
+           bayty 8..9 - pjorjadok (znak v bit 7 bayta 9)
+
+        Raznica: v KV/DV starsnaja 1 v pole NE hodit (ekonomija odnogo bita),
+        v VV ona IZOBRAZHEMA - otuda 64 znashhih bita pri 80-bitnovom sleve.
+
+--- 5) OBRATNAYA REKONSTRUKCIYA: iz bitov snova v desjatichnoe, i oshibka ---
+        Formula: V = (-1)^S x (1 + sum M_i x 2^-i) x 2^e   dlya KV/DV,
+                 V = (-1)^S x (M s yvnym bitom) x 2^(E - 16383 - 63) dlya VV.
+        V celikh chislakh: V = SIG / 2^k, gde k = (ves starsnogo bita) - e.
+
+  5a) pervye 12 slagaemyh drobnoj chasti mantissy (tochnye desjatichnye):
+        M_ 1 = 0   x   2^- 1 = 0.5             nol'
+        M_ 2 = 0   x   2^- 2 = 0.25            nol'
+        M_ 3 = 0   x   2^- 3 = 0.125           nol'
+        M_ 4 = 0   x   2^- 4 = 0.0625          nol'
+        M_ 5 = 0   x   2^- 5 = 0.03125         nol'
+        M_ 6 = 0   x   2^- 6 = 0.015625        nol'
+        M_ 7 = 0   x   2^- 7 = 0.0078125       nol'
+        M_ 8 = 0   x   2^- 8 = 0.00390625      nol'
+        M_ 9 = 0   x   2^- 9 = 0.001953125     nol'
+        M_10 = 1   x   2^-10 = 0.0009765625    uchastvuet
+        M_11 = 0   x   2^-11 = 0.00048828125   nol'
+        M_12 = 1   x   2^-12 = 0.000244140625  uchastvuet
+        (podrazumevaemaja 1 davaet 1.000000..., dalshe idut bity pola;
+         pervaja edinitca v pole - eto bit 10, ves 2^-10)
+
+  5b) rekonstrukcija i oshibka po kazhdomu formatu:
+        tochnoe 16.02 = 801/50 = 16.020000000000000000000000
+   KV: SIG = 8399094  / 2^23
+        mantissa v [1,2) = 1.001250028610229492187500
+        x 2^4 (pjorjadok e) = SIG/2^19 ->  V = 16.020000457763671875000000
+        oshibka absolyutnaja V - 16.02 = +0.000000457763671875000000
+        oshibka otnositel'naja         = 0.000000028574511352996254
+        pervaja nenulevaja cifra - na 7-m znake posle tochki,
+        to est' vernyh cifr posle tochki: 6
+        sovpadenie ZAPISI s tochnym 16.02: pervye 9 simvola
+        (sravnivajte zapisi, a ne verit' im: 16.01999... rascxoditsja
+         rano, hotja oshibka v njom mala)
+
+   DV: SIG = 4509229126904709  / 2^52
+        mantissa v [1,2) = 1.001249999999999973354647
+        x 2^4 (pjorjadok e) = SIG/2^48 ->  V = 16.019999999999999573674358
+        oshibka absolyutnaja V - 16.02 = -0.000000000000000426325641
+        oshibka otnositel'naja         = 0.000000000000000026612087
+        pervaja nenulevaja cifra - na 16-m znake posle tochki,
+        to est' vernyh cifr posle tochki: 15
+        sovpadenie ZAPISI s tochnym 16.02: pervye 4 simvola
+        (sravnivajte zapisi, a ne verit' im: 16.01999... rascxoditsja
+         rano, hotja oshibka v njom mala)
+
+   VV: SIG = 9234901251900844278  / 2^63
+        mantissa v [1,2) = 1.001250000000000000026020
+        x 2^4 (pjorjadok e) = SIG/2^59 ->  V = 16.020000000000000000416333
+        oshibka absolyutnaja V - 16.02 = +0.000000000000000000416333
+        oshibka otnositel'naja         = 0.000000000000000000025988
+        pervaja nenulevaja cifra - na 19-m znake posle tochki,
+        to est' vernyh cifr posle tochki: 18
+        sovpadenie ZAPISI s tochnym 16.02: pervye 21 simvola
+        (sravnivajte zapisi, a ne verit' im: 16.01999... rascxoditsja
+         rano, hotja oshibka v njom mala)
+
+        Vyvod: pervaja oshibka posle tochki - na 7-m znake u KV, na 16-m u DV,
+        na 19-m u VV; to est' vernyh cifr posle tochki 6, 15 i 18.
+        Garantirovannaja tochnost' iz A7.txt (stroka 63): 6, 15 i 19 vernyh
+        desjatichnyh cifr. U KV i DV eta cifra - rovno chislo vernyh cifr posle
+        tochki; u VV k nim dobavljajutsja dve cifry celoj chasti (16), to est'
+        na 2 bolshe, chem ukazano vyshe, i garant 19 perekryvaetsja.
+        Chislo okrugljaetsja uzhe na shage 3 (sekciya 3) i bolshe ne menyatsja:
+        rekonstrukcija dajet to zhe samoe, chto lezit v pamjati.
+        Umnozenie na 2^4 vcheno v k = (ves starsnogo bita) - e, pojetomu
+        otdel'nogo 'plavajushhego' shaga net: vse tochno v celikh.
+
+--- 6) SRAVNENIE S REAL'NOST'YU: bayty kompilyatora protiv rascheta ---
+
+        razmery v etom kompilyatore: sizeof float=4  double=8
+        sizeof long double=10
+
+  6a) KV
+        raschet (sekciya 4a) : F6 28 80 41 
+        iz pamjati (float)   : F6 28 80 41 
+        kontrol'nyi progon   : F6 28 80 41 
+        razbor baytov iz pamyati: znak=0  E=83h (131)  M=0028F6h
+        -> e = 131 - 127 = 4,  V = (1 + M/2^23) x 2^4
+        verdit raschet-vs-pamyat'  : OK
+        verdit raschet-vs-kontrol' : OK
+        tot zhe float cherez printf: %.8f -> 16.02000046
+        (sravnit' s oshibkoj iz 5b: v 8 znakax ona uzhe vidna)
+
+  6b) DV
+        raschet (sekciya 4b) : 85 EB 51 B8 1E 05 30 40 
+        iz pamjati (double)  : 85 EB 51 B8 1E 05 30 40 
+        kontrol'nyi progon   : 85 EB 51 B8 1E 05 30 40 
+        razbor baytov iz pamyati: znak=0  E=403h (1027)
+        M = 0051E:B851EB85h -> e = 1027 - 1023 = 4, V = (1 + M/2^52) x 2^4
+        verdit raschet-vs-pamyat'  : OK
+        verdit raschet-vs-kontrol' : OK
+        tot zhe double cherez printf: %.8lf -> 16.02000000
+        (oshibka DV v 8 znakax ne projavljaetsja - no eto NE znachit, chto
+         predstavlenie tochnoe: sm. 5b)
+
+  6c) VV (80 bit, to chto lezit v registre FPU)
+        raschet (sekciya 4c) : F6 28 5C 8F C2 F5 28 80 03 40 
+        iz pamjati, (long double)16.02 : F6 28 5C 8F C2 F5 28 80 03 40 
+        kontrol'nyi progon             : F6 28 5C 8F C2 F5 28 80 03 40 
+        verdit raschet-vs-pamyat'      : OK
+        verdit raschet-vs-kontrol'     : OK
+
+  6d) rashirenie double -> 80 bit (to zhe chislo, no zagruzhennoe v FPU iz DV)
+        iz pamjati (cwiden = cd) : 00 28 5C 8F C2 F5 28 80 03 40 
+        raschet (53 bita -> 64, mladshie 11 bitov = 0):
+           mantissa 64 bita: 0x8028F5C28F5C2800   pjorjadok: 4003h
+        verdit tol'ko po mantisse (bayty 0..7): OK
+        Smysl: DV-chislo, zagruzhennoe v FPU, NE stanovit tochnee - k ego
+        mantisse prosto dobavlyajutsja nuli, i tochnost' 16.02 ogranichena
+        uzhe 53 bitami DV. Nastojashhij 80-bitnyi obraz (6c) ima druguju
+        mantissu: on okrugljaetsja po pravilu 64 bitov, a ne 52, i potomu
+        on tochnee oboikh.
+
+  6e) pochemu v 80-bitnov formate 16.02 lejit TOCHNEE vsego:
+        1) pole mantissy 64 bita protiv 23 (KV) i 52 (DV);
+        2) starsnij bit v nem IZOBRAZHEN, a ne podrazumevaetsja, to est' vse
+           64 bita real'no znashhie (A7.txt, stroki 62-66: 'Neyavnyj bit:
+           opushchen / izobrazhaetsja'), i okruglenie idet po 64, a ne po 52
+           dvoinym cifram;
+        3) pjorjadok 15 bit daet diapazon 10^-4931 .. 10^4932 - sdvig zdes'
+           daleko ot granicy, pojetomu ogranichenie tol'ko na mantissu.
+        Otdel'no: 80-bitnyi format - eto arifmeticheskij format REGISTRA, a ne
+        format xranenija; TCC xranit long double tem zhe obrazom (10 bayt),
+        chto i proveryeno vyshe v 6c.
+
+  6f) slovo upravlenija FPU posle FINIT (inline asm, bez 386-registrov):
+        CW = 037Fh   SW = 0000h
+        bity 11..10 (RC, okruglenie) = 00
+        -> 00 = do blizhajshego, pri ravnyh k chetnomu.
+           Eto rovno to pravilo, chto primenjeno v sekicii 3.
+        bity  9..8  (PC, tochnost')  = 11
+        -> 11 = 64 bita (rasshirennaja tochnost').
+           FPU schitaet s 64-bitnovoj mantissoj, a pola KV/DV okrugljajutsja
+           pri xranenii - otuda i raznica mezhdu 16.02f, 16.02 (double) i
+           80-bitnov ST(0).
+        maski iskluchenij (bity 5..0) = 3Fh -> vse zamaskirovany: FPU
+           obrabatyvaet osobyye sluchai sam; osobennyh situacij eta programma
+           ne provociruet.
+
+--- 7) KRATKYY OTVET (dlya zashhity) ---
+  1. 16.02 = 801/50, a 50 = 2 x 5^2. Dvojnaya drob' konechna tol'ko pri
+     znamenatele vida 2^n; mnozhitel' 5 skorat' nechem. Znachit 0.02 -
+     beskonechnaja periodicheskaja drob' (period 20 bitov), i 16.02 TOCHNO
+     ne predstavimo ni v 32, ni v 64, ni v 80 bitov: luboj bitovoj obraz -
+     eto priblizhenie.
+  2. Mehanizm: 16.02 -> 10000.0000010100011110...b ->
+     1.00000000001010001111...b x 2^4 -> znak 0, harakteristika
+     4+127=131=83h (KV) / 4+1023=1027=403h (DV), mantissa 23/52 bita s
+     okrugleniem do blizhajshego (pri ravnyh - k chetnomu).
+  3. Garantirovannye tochnye desjatichnye cifry: KV 6, DV 15, VV 19
+     (A7.txt, stroka 63). Po etomu chislu: oshibka KV na 7-m znake posle
+     tochki, DV na 16-m, VV na 19-m (25 = ne vidno v 24 znakax) - eto i est'
+     nakoplennaja oshibka razryadnoj setki mantissy.
+  4. Oshibka terjaetsja na DVOH shagah: (a) pri otbrosa 23/52 bitov mantissy
+     (sekciya 3) i (b) pri peresypanii iz 80-bitnova registra v 32/64-bitnovoe
+     slovo pamjati. Pervyj shag neizbezhon (chislo ne predstavimo), vtoroj
+     zavisit ot razryadnosti xraneniya.
+  5. Raschytnye bayty sovpali s pamyat'ju kompilyatora i s kontrol'noj
+     zapis'ju progonov (verdit'y OK v sekicii 6a-6c): IEEE 754 v TCC
+     real'no rabotaet tak,
+     kak opisano v A7.txt, stroki 50-66 i 226-257.
+
+        Tablica parametr formata (A7.txt, stroki 57-66):
+        format  bitov  pole E  smeshchenie  pole M  tochn. cifr  neyavnyj bit
+        KV (C)     32       8          127      23            6  opushchen
+        DV (L)     64      11         1023      52           15  opushchen
+        VV (T)     80      15        16383      64           19  izobrazhaetsja
+        (C - korotkoe, L - dlinnoe, T - temporal'noe veshchestvennoe,
+         A7.txt, stroki 52-55)
+
+=== KONETS Lab7_5 (pod -DNOWAIT vyhod bez ozhidaniya klawishi) ===

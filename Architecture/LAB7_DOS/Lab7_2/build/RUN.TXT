@@ -1,0 +1,170 @@
+=== Lab7 step 2 (C): obtaining NaN in the FPU and reading its bit image ===
+--- 1) WHAT NaN IS, IN BITS (A7.txt lines 226-258) ---
+  A NaN is a value with the EXPONENT FIELD ALL ONES and a NON-ZERO
+  MANTISSA. Two kinds: the quiet bit (MSB of the mantissa) set -> QNaN,
+  cleared -> SNaN. QNaN travels through operations silently; an SNaN used
+  as an operand is a signalling case: it raises Invalid Operation (I) and
+  gets QUIETED (the quiet bit is set) on the way out. The sign bit of a NaN
+  carries no meaning but is preserved, and the rest of the mantissa is a
+  payload - the FPU does not define it, the producer may.
+  Widths in this compiler (measured): sizeof float=4  double=8  long double=10
+  float.h of this toolkit: FLT_MANT_DIG=24, DBL_MANT_DIG=53, LDBL_MANT_DIG=64,
+  so KV=32 bit with 8-bit exponent, DV=64 bit with 11-bit, VV=80 bit with 15.
+--- 2) SIX WAYS TO GET NaN, EACH SHOWN IN ALL THREE FORMATS ---
+  (a) 0.0 / 0.0
+      KV (4B)        : 00 00 C0 FF 
+      KV decode      :   sign=1 exp=FFh mant=400000h  QNaN
+      DV (8B)        : 00 00 00 00 00 00 F8 FF 
+      DV decode      :   sign=1 exp=7FFh mant=80000h_00000000  QNaN
+      VV (10B, ST(0)) : 00 00 00 00 00 00 00 C0 FF FF 
+      VV decode      :      sign=1  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C000000000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+  (b) sqrt(-1.0)
+      KV (4B)        : 00 01 C0 7F 
+      KV decode      :   sign=0 exp=FFh mant=400100h  QNaN
+      DV (8B)        : 00 00 00 00 20 00 F8 7F 
+      DV decode      :   sign=0 exp=7FFh mant=80020h_00000000  QNaN
+      VV (10B, ST(0)) : 00 00 00 00 00 00 01 C0 FF 7F 
+      VV decode      :      sign=0  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C001000000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+      errno after sqrt(-1.0) = 33  (EDOM in math.h = 33)
+  (c) Inf - Inf   (Inf = 1.0/0.0)
+      KV (4B)        : 00 00 C0 FF 
+      KV decode      :   sign=1 exp=FFh mant=400000h  QNaN
+      DV (8B)        : 00 00 00 00 00 00 F8 FF 
+      DV decode      :   sign=1 exp=7FFh mant=80000h_00000000  QNaN
+      VV (10B, ST(0)) : 00 00 00 00 00 00 00 C0 FF FF 
+      VV decode      :      sign=1  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C000000000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+  (d) 0.0 * Inf
+      KV (4B)        : 00 00 C0 FF 
+      KV decode      :   sign=1 exp=FFh mant=400000h  QNaN
+      DV (8B)        : 00 00 00 00 00 00 F8 FF 
+      DV decode      :   sign=1 exp=7FFh mant=80000h_00000000  QNaN
+      VV (10B, ST(0)) : 00 00 00 00 00 00 00 C0 FF FF 
+      VV decode      :      sign=1  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C000000000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+(e) hand-built SNaN 7F800001h used in FADD (SNaN + 1.0)
+      operand SNaN, KV bytes: 01 00 80 7F 
+      operand decode      : sign=0 exp=FFh mant=000001h  SNaN
+      result KV             : 01 00 C0 7F 
+      result decode         : sign=0 exp=FFh mant=400001h  QNaN
+      result VV (ST(0))     : 00 00 00 00 00 01 00 C0 FF 7F 
+      result decode         :      sign=0  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C000010000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+      note: the quiet bit of the RESULT is set - the FPU quieted the
+      SNaN instead of signalling. On real hardware with the I-mask
+      cleared this is exactly the case that raises the interrupt.
+  (f) 0.0L / 0.0L (80-bit arithmetic)
+      KV (4B)        : 00 00 C0 FF 
+      KV decode      :   sign=1 exp=FFh mant=400000h  QNaN
+      DV (8B)        : 00 00 00 00 00 00 F8 FF 
+      DV decode      :   sign=1 exp=7FFh mant=80000h_00000000  QNaN
+      VV (10B, ST(0)) : 00 00 00 00 00 00 00 C0 FF FF 
+      VV decode      :      sign=1  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C000000000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+--- 3) ALL SPECIAL PATTERNS, BUILT AND DECODED BY HAND ---
+  Single (KV), 32 bit = 1 sign + 8 exponent + 23 mantissa bits:
+  +QNaN single    word=7FC00000  bytes: 00 00 C0 7F                         sign=0 exp=FFh mant=400000h  QNaN
+  -QNaN single    word=FFC00000  bytes: 00 00 C0 FF                         sign=1 exp=FFh mant=400000h  QNaN
+  +SNaN single    word=7F800001  bytes: 01 00 80 7F                         sign=0 exp=FFh mant=000001h  SNaN
+  +Inf single     word=7F800000  bytes: 00 00 80 7F                         sign=0 exp=FFh mant=000000h  INFINITY
+  -Inf single     word=FF800000  bytes: 00 00 80 FF                         sign=1 exp=FFh mant=000000h  INFINITY
+  +0 single       word=00000000  bytes: 00 00 00 00                         sign=0 exp=00h mant=000000h  ZERO
+  -0 single       word=80000000  bytes: 00 00 00 80                         sign=1 exp=00h mant=000000h  ZERO
+  min denormal    word=00000001  bytes: 01 00 00 00                         sign=0 exp=00h mant=000001h  DENORMALIZED
+  max denormal    word=007FFFFF  bytes: FF FF 7F 00                         sign=0 exp=00h mant=7FFFFFh  DENORMALIZED
+  min normal      word=00800000  bytes: 00 00 80 00                         sign=0 exp=01h mant=000000h  NORMAL = 1.mant * 2^-126
+  max finite      word=7F7FFFFF  bytes: FF FF 7F 7F                         sign=0 exp=FEh mant=7FFFFFh  NORMAL = 1.mant * 2^127
+
+  Double (DV), 64 bit = 1 sign + 11 exponent + 52 mantissa bits:
+  +QNaN double    word=7FF80000_00000000  bytes: 00 00 00 00 00 00 F8 7F                         sign=0 exp=7FFh mant=80000h_00000000  QNaN
+  -QNaN double    word=FFF80000_00000000  bytes: 00 00 00 00 00 00 F8 FF                         sign=1 exp=7FFh mant=80000h_00000000  QNaN
+  +SNaN double    word=7FF00000_00000001  bytes: 01 00 00 00 00 00 F0 7F                         sign=0 exp=7FFh mant=00000h_00000001  SNaN
+  +Inf double     word=7FF00000_00000000  bytes: 00 00 00 00 00 00 F0 7F                         sign=0 exp=7FFh mant=00000h_00000000  INFINITY
+  -Inf double     word=FFF00000_00000000  bytes: 00 00 00 00 00 00 F0 FF                         sign=1 exp=7FFh mant=00000h_00000000  INFINITY
+  min denormal    word=00000000_00000001  bytes: 01 00 00 00 00 00 00 00                         sign=0 exp=000h mant=00000h_00000001  DENORMALIZED
+  max denormal    word=000FFFFF_FFFFFFFF  bytes: FF FF FF FF FF FF 0F 00                         sign=0 exp=000h mant=FFFFFh_FFFFFFFF  DENORMALIZED
+  min normal      word=00100000_00000000  bytes: 00 00 00 00 00 00 10 00                         sign=0 exp=001h mant=00000h_00000000  NORMAL = 1.mant * 2^-1022
+  max finite      word=7FEFFFFF_FFFFFFFF  bytes: FF FF FF FF FF FF EF 7F                         sign=0 exp=7FEh mant=FFFFFh_FFFFFFFF  NORMAL = 1.mant * 2^1023
+
+  Extended (VV), 80 bit = 1 sign + 15 exponent + 64 mantissa bits,
+  the leading mantissa bit is EXPLICIT here (in KV and DV it is implied):
+  +QNaN extended    bytes:00 00 00 00 00 00 00 C0 FF 7F 
+      sign=0  exp=7FFFh (32767)  J=1  Q=1
+      mantissa, 64 bit (bytes b7..b0): C000000000000000
+      ->  QNaN (quiet: propagates silently, carries a payload)
+  +Inf extended     bytes:00 00 00 00 00 00 00 80 FF 7F 
+      sign=0  exp=7FFFh (32767)  J=1  Q=0
+      mantissa, 64 bit (bytes b7..b0): 8000000000000000
+      ->  INFINITY (exp all ones, mantissa = J only)
+  Compare: both have exp=7FFFh and J=1; they differ ONLY in Q.
+--- 4) HOW THIS COMPILER COMPARES NaN (MEASURED, not assumed) ---
+  n = 0.0/0.0 (a NaN). Results produced by Turbo C 2.01 on DOSBox:
+      n != n  -> 0      n == n  -> 1
+      n <  1.0-> 1      n >  1.0-> 0
+      !(n<1.0)-> 0      inf > 1e300 -> 1
+      printf %f of n renders as: -NAN   <- that is the CRT text, NOT the FPU answer
+  WHY: the emitted assembly of a float comparison (measured, build
+  of a probe) is exactly this:
+      FLD   qword ptr <right>
+      FLD   qword ptr <left>
+      FCOMPP                 ; compare ST(0) with ST(1), pop both
+      FSTSW word ptr FLAGS8087@   ; status word to memory
+      FWAIT
+      mov   ah, byte ptr FLAGS8087@+1  ; HIGH byte of the status word
+      sahf                        ; AH -> CF,PF,AF,ZF,SF
+      jbe   <label>               ; the test actually used
+  AH is bits 15..8 of the status word and SAHF copies AH into SF,ZF,_,AF,
+  _,_,PF,_,CF - so the x87 codes land as C0 (bit 8) -> CF, C2 (bit 10) ->
+  PF, C3 (bit 14) -> ZF, while bits 11..13 (the TOP pointer!) end up in AF
+  and bit 15 (busy) in SF. The mapping is measured, not guessed: the status
+  word 2900h printed by Lab7_1 has TOP=5 in bits 13..11, so C3 cannot be
+  bit 3 and C2 cannot be bit 2. The branches TCC emits use CF and ZF, that
+  is C0 and C3; C1 goes nowhere (bit 9 is not an SAHF flag bit).
+  For an UNORDERED pair the FPU sets C0=C1=C2=C3=1, hence CF=1 and ZF=1,
+  so the below-or-equal branch is taken: this C code reports NaN as EQUAL
+  to itself and as LESS than 1.0 - both measurements above. That is a
+  property of the compiler's flag mapping, NOT of the FPU: the real flags
+  live in the status word, and only Lab7_3 (assembly, FSTSW) reads them.
+--- 5) WHERE TO LOOK AT THE NaN IN TURBO DEBUGGER (manual, for defence) ---
+  TD is interactive, so this part cannot be captured by the autotest; the
+  autotest proves the NUMBERS, TD proves the FPU STATE. Procedure:
+    1. Build with debugging info. MEASURED on this toolkit: tcc -g adds NO
+       debug information (the EXE is byte-for-byte the same size as without
+       the switch), while tcc -v does (the source file name appears inside the
+       EXE: 6444 bytes vs 9295 bytes). The Compile and Debug task therefore
+       uses: tcc -B -ms -v -nd:\build d:\lab7_2.c  then  td lab7_2.
+    2. In TD: Alt+F9 to run to the breakpoint, F2 on the line after the
+       statement that produced the NaN.
+    3. View -> Floating Point (or CPU window, FPU pane). You see ST(0)..ST(7)
+       as 10-byte values - exactly the KV/DV/VV bytes this program printed,
+       plus the tag word: the NaN slot is marked SPECIAL (binary 10), which
+       is how the FPU distinguishes NaN/Inf from ordinary numbers.
+    4. View -> Registers -> FPU (Control and Status words). After 0.0/0.0 the
+       status word has IE (bit 0) set and C0..C3 = 1000b for INVALID; after
+       Inf-Inf and 0*Inf also IE; a QNaN produced silently leaves only IE.
+    5. Watch the stack: FLD pushes (TOP decreases), FSTP/FADDP/FDIVP pop.
+       With 8 slots filled, the 9th FLD raises Stack Fault (SF, bit 6) -
+       try it in the TD command line (Ctrl+F4) with fld st(0) repeated.
+--- 6) ANSWERS ---
+  1. NaN appears whenever an operation has no meaningful numeric result:
+     0/0, Inf-Inf, 0*Inf, sqrt of a negative number, an SNaN operand, and
+     stack over/underflow. Its bits: exponent all ones, mantissa non-zero.
+  2. QNaN (quiet bit set) propagates silently and carries a payload; SNaN
+     signals Invalid Operation and is quieted on the way out - measured here
+     on the hand-built 7F800001h pattern.
+  3. The sign of a NaN is preserved but meaningless. The bit images above
+     agree with the patterns published in A7.txt (lines 226-258); they were
+     NOT compared with real 8087 hardware - only this emulator was measured.
+  4. In this toolkit the FPU flags are reachable from C only through the
+     compiler flag mapping, which loses C2 - so unordered comparisons lie.
+     Reading the status word directly (Lab7_3) is the only honest way.
+  5. DOSBox 0.74-3 does NOT deliver unmasked x87 exceptions (measured in
+     Lab7_4): the flags accumulate in the status word, no interrupt arrives.
