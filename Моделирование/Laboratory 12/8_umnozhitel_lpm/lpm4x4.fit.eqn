@@ -1,0 +1,453 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--H3L1 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~33 at LC_X34_Y1_N0
+--operation mode is arithmetic
+
+H3L1 = D1_decoder_node[1][0] $ D1_decoder_node[0][1];
+
+--H3L2 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~35 at LC_X34_Y1_N0
+--operation mode is arithmetic
+
+H3L2_cout_0 = D1_decoder_node[1][0] & D1_decoder_node[0][1];
+H3L2 = CARRY(H3L2_cout_0);
+
+--H3L3 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~35COUT1_59 at LC_X34_Y1_N0
+--operation mode is arithmetic
+
+H3L3_cout_1 = D1_decoder_node[1][0] & D1_decoder_node[0][1];
+H3L3 = CARRY(H3L3_cout_1);
+
+
+--H9L1 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~42 at LC_X36_Y1_N1
+--operation mode is arithmetic
+
+H9L1 = H3L4 $ D1_decoder_node[2][0];
+
+--H9L2 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~44 at LC_X36_Y1_N1
+--operation mode is arithmetic
+
+H9L2_cout_0 = H3L4 & D1_decoder_node[2][0];
+H9L2 = CARRY(H9L2_cout_0);
+
+--H9L3 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~44COUT1_73 at LC_X36_Y1_N1
+--operation mode is arithmetic
+
+H9L3_cout_1 = H3L4 & D1_decoder_node[2][0];
+H9L3 = CARRY(H9L3_cout_1);
+
+
+--H9L4 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~47 at LC_X36_Y1_N2
+--operation mode is arithmetic
+
+H9L4 = H6L1 $ H3L7 $ H9L2;
+
+--H9L5 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~49 at LC_X36_Y1_N2
+--operation mode is arithmetic
+
+H9L5_cout_0 = H6L1 & !H3L7 & !H9L2 # !H6L1 & (!H9L2 # !H3L7);
+H9L5 = CARRY(H9L5_cout_0);
+
+--H9L6 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~49COUT1_74 at LC_X36_Y1_N2
+--operation mode is arithmetic
+
+H9L6_cout_1 = H6L1 & !H3L7 & !H9L3 # !H6L1 & (!H9L3 # !H3L7);
+H9L6 = CARRY(H9L6_cout_1);
+
+
+--H9L7 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~52 at LC_X36_Y1_N3
+--operation mode is arithmetic
+
+H9L7 = H3L01 $ H6L4 $ !H9L5;
+
+--H9L8 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~54 at LC_X36_Y1_N3
+--operation mode is arithmetic
+
+H9L8_cout_0 = H3L01 & (H6L4 # !H9L5) # !H3L01 & H6L4 & !H9L5;
+H9L8 = CARRY(H9L8_cout_0);
+
+--H9L9 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~54COUT1 at LC_X36_Y1_N3
+--operation mode is arithmetic
+
+H9L9_cout_1 = H3L01 & (H6L4 # !H9L6) # !H3L01 & H6L4 & !H9L6;
+H9L9 = CARRY(H9L9_cout_1);
+
+
+--H9L01 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~57 at LC_X36_Y1_N4
+--operation mode is arithmetic
+
+H9L01 = H6L7 $ H3L31 $ H9L8;
+
+--H9L11 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~59 at LC_X36_Y1_N4
+--operation mode is arithmetic
+
+H9L11 = H9L21;
+
+
+--H9L41 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~62 at LC_X36_Y1_N5
+--operation mode is arithmetic
+
+H9L41_carry_eqn = (!H9L11 & GND) # (H9L11 & VCC);
+H9L41 = H6L01 $ !H9L41_carry_eqn;
+
+--H9L51 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~64 at LC_X36_Y1_N5
+--operation mode is arithmetic
+
+H9L51_cout_0 = H6L01 & !H9L11;
+H9L51 = CARRY(H9L51_cout_0);
+
+--H9L61 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~64COUT1_75 at LC_X36_Y1_N5
+--operation mode is arithmetic
+
+H9L61_cout_1 = H6L01 & !H9L11;
+H9L61 = CARRY(H9L61_cout_1);
+
+
+--H9L71 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~67 at LC_X36_Y1_N6
+--operation mode is normal
+
+H9L71_carry_eqn = (!H9L11 & H9L51) # (H9L11 & H9L61);
+H9L71 = H6L31 $ H9L71_carry_eqn;
+
+
+--D1_decoder_node[0][0] is lpm_mult:U1|multcore:mult_core|decoder_node[0][0] at LC_X35_Y1_N2
+--operation mode is normal
+
+D1_decoder_node[0][0] = LCELL(DATAA[0] & DATAB[0]);
+
+
+--H3L4 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~38 at LC_X34_Y1_N1
+--operation mode is arithmetic
+
+H3L4 = D1_decoder_node[0][2] $ D1_decoder_node[1][1] $ H3L2;
+
+--H3L5 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~40 at LC_X34_Y1_N1
+--operation mode is arithmetic
+
+H3L5_cout_0 = D1_decoder_node[0][2] & !D1_decoder_node[1][1] & !H3L2 # !D1_decoder_node[0][2] & (!H3L2 # !D1_decoder_node[1][1]);
+H3L5 = CARRY(H3L5_cout_0);
+
+--H3L6 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~40COUT1 at LC_X34_Y1_N1
+--operation mode is arithmetic
+
+H3L6_cout_1 = D1_decoder_node[0][2] & !D1_decoder_node[1][1] & !H3L3 # !D1_decoder_node[0][2] & (!H3L3 # !D1_decoder_node[1][1]);
+H3L6 = CARRY(H3L6_cout_1);
+
+
+--H3L7 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~43 at LC_X34_Y1_N2
+--operation mode is arithmetic
+
+H3L7 = D1_decoder_node[1][2] $ D1_decoder_node[0][3] $ !H3L5;
+
+--H3L8 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45 at LC_X34_Y1_N2
+--operation mode is arithmetic
+
+H3L8_cout_0 = D1_decoder_node[1][2] & (D1_decoder_node[0][3] # !H3L5) # !D1_decoder_node[1][2] & D1_decoder_node[0][3] & !H3L5;
+H3L8 = CARRY(H3L8_cout_0);
+
+--H3L9 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45COUT1_60 at LC_X34_Y1_N2
+--operation mode is arithmetic
+
+H3L9_cout_1 = D1_decoder_node[1][2] & (D1_decoder_node[0][3] # !H3L6) # !D1_decoder_node[1][2] & D1_decoder_node[0][3] & !H3L6;
+H3L9 = CARRY(H3L9_cout_1);
+
+
+--H6L1 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~33 at LC_X35_Y1_N5
+--operation mode is arithmetic
+
+H6L1 = D1_decoder_node[3][0] $ D1_decoder_node[2][1];
+
+--H6L2 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~35 at LC_X35_Y1_N5
+--operation mode is arithmetic
+
+H6L2_cout_0 = D1_decoder_node[3][0] & D1_decoder_node[2][1];
+H6L2 = CARRY(H6L2_cout_0);
+
+--H6L3 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~35COUT1_59 at LC_X35_Y1_N5
+--operation mode is arithmetic
+
+H6L3_cout_1 = D1_decoder_node[3][0] & D1_decoder_node[2][1];
+H6L3 = CARRY(H6L3_cout_1);
+
+
+--H3L01 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~48 at LC_X34_Y1_N3
+--operation mode is arithmetic
+
+H3L01 = D1_decoder_node[1][3] $ H3L8;
+
+--H3L11 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~50 at LC_X34_Y1_N3
+--operation mode is arithmetic
+
+H3L11_cout_0 = !H3L8 # !D1_decoder_node[1][3];
+H3L11 = CARRY(H3L11_cout_0);
+
+--H3L21 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~50COUT1_61 at LC_X34_Y1_N3
+--operation mode is arithmetic
+
+H3L21_cout_1 = !H3L9 # !D1_decoder_node[1][3];
+H3L21 = CARRY(H3L21_cout_1);
+
+
+--H6L4 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~38 at LC_X35_Y1_N6
+--operation mode is arithmetic
+
+H6L4 = D1_decoder_node[2][2] $ D1_decoder_node[3][1] $ H6L2;
+
+--H6L5 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~40 at LC_X35_Y1_N6
+--operation mode is arithmetic
+
+H6L5_cout_0 = D1_decoder_node[2][2] & !D1_decoder_node[3][1] & !H6L2 # !D1_decoder_node[2][2] & (!H6L2 # !D1_decoder_node[3][1]);
+H6L5 = CARRY(H6L5_cout_0);
+
+--H6L6 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~40COUT1 at LC_X35_Y1_N6
+--operation mode is arithmetic
+
+H6L6_cout_1 = D1_decoder_node[2][2] & !D1_decoder_node[3][1] & !H6L3 # !D1_decoder_node[2][2] & (!H6L3 # !D1_decoder_node[3][1]);
+H6L6 = CARRY(H6L6_cout_1);
+
+
+--H3L31 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~53 at LC_X34_Y1_N4
+--operation mode is normal
+
+H3L31 = !H3L11;
+
+
+--H6L7 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~43 at LC_X35_Y1_N7
+--operation mode is arithmetic
+
+H6L7 = D1_decoder_node[2][3] $ D1_decoder_node[3][2] $ !H6L5;
+
+--H6L8 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45 at LC_X35_Y1_N7
+--operation mode is arithmetic
+
+H6L8_cout_0 = D1_decoder_node[2][3] & (D1_decoder_node[3][2] # !H6L5) # !D1_decoder_node[2][3] & D1_decoder_node[3][2] & !H6L5;
+H6L8 = CARRY(H6L8_cout_0);
+
+--H6L9 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45COUT1_60 at LC_X35_Y1_N7
+--operation mode is arithmetic
+
+H6L9_cout_1 = D1_decoder_node[2][3] & (D1_decoder_node[3][2] # !H6L6) # !D1_decoder_node[2][3] & D1_decoder_node[3][2] & !H6L6;
+H6L9 = CARRY(H6L9_cout_1);
+
+
+--H6L01 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~48 at LC_X35_Y1_N8
+--operation mode is arithmetic
+
+H6L01 = D1_decoder_node[3][3] $ (H6L8);
+
+--H6L11 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~50 at LC_X35_Y1_N8
+--operation mode is arithmetic
+
+H6L11_cout_0 = !H6L8 # !D1_decoder_node[3][3];
+H6L11 = CARRY(H6L11_cout_0);
+
+--H6L21 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~50COUT1_61 at LC_X35_Y1_N8
+--operation mode is arithmetic
+
+H6L21_cout_1 = !H6L9 # !D1_decoder_node[3][3];
+H6L21 = CARRY(H6L21_cout_1);
+
+
+--H6L31 is lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[1]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~53 at LC_X35_Y1_N9
+--operation mode is normal
+
+H6L31 = !H6L11;
+
+
+--D1_decoder_node[0][1] is lpm_mult:U1|multcore:mult_core|decoder_node[0][1] at LC_X33_Y1_N2
+--operation mode is normal
+
+D1_decoder_node[0][1] = LCELL(DATAB[0] & (DATAA[1]));
+
+
+--D1_decoder_node[1][0] is lpm_mult:U1|multcore:mult_core|decoder_node[1][0] at LC_X34_Y1_N7
+--operation mode is normal
+
+D1_decoder_node[1][0] = LCELL(DATAA[0] & (DATAB[1]));
+
+
+--D1_decoder_node[2][0] is lpm_mult:U1|multcore:mult_core|decoder_node[2][0] at LC_X36_Y1_N0
+--operation mode is normal
+
+D1_decoder_node[2][0] = LCELL(DATAA[0] & DATAB[2]);
+
+
+--D1_decoder_node[0][2] is lpm_mult:U1|multcore:mult_core|decoder_node[0][2] at LC_X34_Y1_N8
+--operation mode is normal
+
+D1_decoder_node[0][2] = LCELL(DATAB[0] & (DATAA[2]));
+
+
+--D1_decoder_node[1][1] is lpm_mult:U1|multcore:mult_core|decoder_node[1][1] at LC_X34_Y1_N6
+--operation mode is normal
+
+D1_decoder_node[1][1] = LCELL(DATAA[1] & (DATAB[1]));
+
+
+--D1_decoder_node[0][3] is lpm_mult:U1|multcore:mult_core|decoder_node[0][3] at LC_X33_Y1_N4
+--operation mode is normal
+
+D1_decoder_node[0][3] = LCELL(DATAB[0] & (DATAA[3]));
+
+
+--D1_decoder_node[1][2] is lpm_mult:U1|multcore:mult_core|decoder_node[1][2] at LC_X34_Y1_N5
+--operation mode is normal
+
+D1_decoder_node[1][2] = LCELL(DATAA[2] & DATAB[1]);
+
+
+--D1_decoder_node[2][1] is lpm_mult:U1|multcore:mult_core|decoder_node[2][1] at LC_X36_Y1_N9
+--operation mode is normal
+
+D1_decoder_node[2][1] = LCELL(DATAA[1] & (DATAB[2]));
+
+
+--D1_decoder_node[3][0] is lpm_mult:U1|multcore:mult_core|decoder_node[3][0] at LC_X35_Y1_N3
+--operation mode is normal
+
+D1_decoder_node[3][0] = LCELL(DATAA[0] & DATAB[3]);
+
+
+--D1_decoder_node[1][3] is lpm_mult:U1|multcore:mult_core|decoder_node[1][3] at LC_X34_Y1_N9
+--operation mode is normal
+
+D1_decoder_node[1][3] = LCELL(DATAB[1] & DATAA[3]);
+
+
+--D1_decoder_node[2][2] is lpm_mult:U1|multcore:mult_core|decoder_node[2][2] at LC_X36_Y1_N7
+--operation mode is normal
+
+D1_decoder_node[2][2] = LCELL(DATAB[2] & (DATAA[2]));
+
+
+--D1_decoder_node[3][1] is lpm_mult:U1|multcore:mult_core|decoder_node[3][1] at LC_X35_Y1_N0
+--operation mode is normal
+
+D1_decoder_node[3][1] = LCELL(DATAA[1] & DATAB[3]);
+
+
+--D1_decoder_node[2][3] is lpm_mult:U1|multcore:mult_core|decoder_node[2][3] at LC_X36_Y1_N8
+--operation mode is normal
+
+D1_decoder_node[2][3] = LCELL(DATAA[3] & (DATAB[2]));
+
+
+--D1_decoder_node[3][2] is lpm_mult:U1|multcore:mult_core|decoder_node[3][2] at LC_X35_Y1_N1
+--operation mode is normal
+
+D1_decoder_node[3][2] = LCELL(DATAA[2] & DATAB[3]);
+
+
+--D1_decoder_node[3][3] is lpm_mult:U1|multcore:mult_core|decoder_node[3][3] at LC_X35_Y1_N4
+--operation mode is normal
+
+D1_decoder_node[3][3] = LCELL(DATAA[3] & (DATAB[3]));
+
+
+--DATAA[0] is DATAA[0] at PIN_U9
+--operation mode is input
+
+DATAA[0] = INPUT();
+
+
+--DATAB[0] is DATAB[0] at PIN_N8
+--operation mode is input
+
+DATAB[0] = INPUT();
+
+
+--DATAA[1] is DATAA[1] at PIN_P10
+--operation mode is input
+
+DATAA[1] = INPUT();
+
+
+--DATAB[1] is DATAB[1] at PIN_T10
+--operation mode is input
+
+DATAB[1] = INPUT();
+
+
+--DATAB[2] is DATAB[2] at PIN_Y9
+--operation mode is input
+
+DATAB[2] = INPUT();
+
+
+--DATAA[2] is DATAA[2] at PIN_AA8
+--operation mode is input
+
+DATAA[2] = INPUT();
+
+
+--DATAA[3] is DATAA[3] at PIN_P9
+--operation mode is input
+
+DATAA[3] = INPUT();
+
+
+--DATAB[3] is DATAB[3] at PIN_R8
+--operation mode is input
+
+DATAB[3] = INPUT();
+
+
+--RESULT[0] is RESULT[0] at PIN_T9
+--operation mode is output
+
+RESULT[0] = OUTPUT(D1_decoder_node[0][0]);
+
+
+--RESULT[1] is RESULT[1] at PIN_M8
+--operation mode is output
+
+RESULT[1] = OUTPUT(H3L1);
+
+
+--RESULT[2] is RESULT[2] at PIN_Y8
+--operation mode is output
+
+RESULT[2] = OUTPUT(H9L1);
+
+
+--RESULT[3] is RESULT[3] at PIN_W8
+--operation mode is output
+
+RESULT[3] = OUTPUT(H9L4);
+
+
+--RESULT[4] is RESULT[4] at PIN_P8
+--operation mode is output
+
+RESULT[4] = OUTPUT(H9L7);
+
+
+--RESULT[5] is RESULT[5] at PIN_V8
+--operation mode is output
+
+RESULT[5] = OUTPUT(H9L01);
+
+
+--RESULT[6] is RESULT[6] at PIN_V9
+--operation mode is output
+
+RESULT[6] = OUTPUT(H9L41);
+
+
+--RESULT[7] is RESULT[7] at PIN_W9
+--operation mode is output
+
+RESULT[7] = OUTPUT(H9L71);
+
+
+

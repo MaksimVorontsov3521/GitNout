@@ -1,0 +1,300 @@
+{
+ "pA": {
+  "verdict": "PASS rows=12 mismatches=0",
+  "errs": [],
+  "le": 32,
+  "pins": 16,
+  "device": "EP1S10F484C5",
+  "worst": {
+   "tpd_ns": 12.631,
+   "from": "DATAA[2]",
+   "to": "RESULT[7]"
+  },
+  "longest": {
+   "from": "DATAA[2]",
+   "to": "RESULT[7]",
+   "tpd_ns": 12.631
+  },
+  "cell": {
+   "ns": 5.609,
+   "pct": 44.41
+  },
+  "ic": {
+   "ns": 7.022,
+   "pct": 55.59
+  },
+  "crit": [
+   {
+    "step": 1,
+    "ic_ns": 0,
+    "cell_ns": 1.087,
+    "total_ns": 1.087,
+    "loc": "PIN_AA8",
+    "fanout": 4,
+    "kind": "PIN",
+    "node": "DATAA[2]"
+   },
+   {
+    "step": 2,
+    "ic_ns": 3.954,
+    "cell_ns": 0.28,
+    "total_ns": 5.321,
+    "loc": "LC_X34_Y1_N5",
+    "fanout": 3,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|decoder_node[1][2]"
+   },
+   {
+    "step": 3,
+    "ic_ns": 0.805,
+    "cell_ns": 0.451,
+    "total_ns": 6.577,
+    "loc": "LC_X34_Y1_N2",
+    "fanout": 2,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45COUT1_60"
+   },
+   {
+    "step": 4,
+    "ic_ns": 0,
+    "cell_ns": 0.365,
+    "total_ns": 6.942,
+    "loc": "LC_X34_Y1_N3",
+    "fanout": 3,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~48"
+   },
+   {
+    "step": 5,
+    "ic_ns": 0.883,
+    "cell_ns": 0.443,
+    "total_ns": 8.268,
+    "loc": "LC_X36_Y1_N3",
+    "fanout": 2,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~54"
+   },
+   {
+    "step": 6,
+    "ic_ns": 0,
+    "cell_ns": 0.13,
+    "total_ns": 8.398,
+    "loc": "LC_X36_Y1_N4",
+    "fanout": 2,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~59"
+   },
+   {
+    "step": 7,
+    "ic_ns": 0,
+    "cell_ns": 0.449,
+    "total_ns": 8.847,
+    "loc": "LC_X36_Y1_N6",
+    "fanout": 1,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~67"
+   },
+   {
+    "step": 8,
+    "ic_ns": 1.38,
+    "cell_ns": 2.404,
+    "total_ns": 12.631,
+    "loc": "PIN_W9",
+    "fanout": 0,
+    "kind": "PIN",
+    "node": "RESULT[7]"
+   }
+  ],
+  "top": [
+   {
+    "tpd_ns": 12.631,
+    "from": "DATAA[2]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.427,
+    "from": "DATAA[2]",
+    "to": "RESULT[5]"
+   },
+   {
+    "tpd_ns": 12.367,
+    "from": "DATAA[2]",
+    "to": "RESULT[6]"
+   },
+   {
+    "tpd_ns": 12.3,
+    "from": "DATAB[1]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.291,
+    "from": "DATAB[0]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.251,
+    "from": "DATAA[0]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.168,
+    "from": "DATAA[1]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.105,
+    "from": "DATAA[3]",
+    "to": "RESULT[7]"
+   }
+  ]
+ },
+ "pC": {
+  "verdict": "PASS rows=12 mismatches=0",
+  "errs": [],
+  "le": 32,
+  "pins": 16,
+  "device": "EP1S10F484C5",
+  "worst": {
+   "tpd_ns": 12.631,
+   "from": "DATAA[2]",
+   "to": "RESULT[7]"
+  },
+  "longest": {
+   "from": "DATAA[2]",
+   "to": "RESULT[7]",
+   "tpd_ns": 12.631
+  },
+  "cell": {
+   "ns": 5.609,
+   "pct": 44.41
+  },
+  "ic": {
+   "ns": 7.022,
+   "pct": 55.59
+  },
+  "crit": [
+   {
+    "step": 1,
+    "ic_ns": 0,
+    "cell_ns": 1.087,
+    "total_ns": 1.087,
+    "loc": "PIN_AA8",
+    "fanout": 4,
+    "kind": "PIN",
+    "node": "DATAA[2]"
+   },
+   {
+    "step": 2,
+    "ic_ns": 3.954,
+    "cell_ns": 0.28,
+    "total_ns": 5.321,
+    "loc": "LC_X34_Y1_N5",
+    "fanout": 3,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|decoder_node[1][2]"
+   },
+   {
+    "step": 3,
+    "ic_ns": 0.805,
+    "cell_ns": 0.451,
+    "total_ns": 6.577,
+    "loc": "LC_X34_Y1_N2",
+    "fanout": 2,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45COUT1_60"
+   },
+   {
+    "step": 4,
+    "ic_ns": 0,
+    "cell_ns": 0.365,
+    "total_ns": 6.942,
+    "loc": "LC_X34_Y1_N3",
+    "fanout": 3,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~48"
+   },
+   {
+    "step": 5,
+    "ic_ns": 0.883,
+    "cell_ns": 0.443,
+    "total_ns": 8.268,
+    "loc": "LC_X36_Y1_N3",
+    "fanout": 2,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~54"
+   },
+   {
+    "step": 6,
+    "ic_ns": 0,
+    "cell_ns": 0.13,
+    "total_ns": 8.398,
+    "loc": "LC_X36_Y1_N4",
+    "fanout": 2,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~59"
+   },
+   {
+    "step": 7,
+    "ic_ns": 0,
+    "cell_ns": 0.449,
+    "total_ns": 8.847,
+    "loc": "LC_X36_Y1_N6",
+    "fanout": 1,
+    "kind": "COMB",
+    "node": "lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~67"
+   },
+   {
+    "step": 8,
+    "ic_ns": 1.38,
+    "cell_ns": 2.404,
+    "total_ns": 12.631,
+    "loc": "PIN_W9",
+    "fanout": 0,
+    "kind": "PIN",
+    "node": "RESULT[7]"
+   }
+  ],
+  "top": [
+   {
+    "tpd_ns": 12.631,
+    "from": "DATAA[2]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.427,
+    "from": "DATAA[2]",
+    "to": "RESULT[5]"
+   },
+   {
+    "tpd_ns": 12.367,
+    "from": "DATAA[2]",
+    "to": "RESULT[6]"
+   },
+   {
+    "tpd_ns": 12.3,
+    "from": "DATAB[1]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.291,
+    "from": "DATAB[0]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.251,
+    "from": "DATAA[0]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.168,
+    "from": "DATAA[1]",
+    "to": "RESULT[7]"
+   },
+   {
+    "tpd_ns": 12.105,
+    "from": "DATAA[3]",
+    "to": "RESULT[7]"
+   }
+  ]
+ }
+}

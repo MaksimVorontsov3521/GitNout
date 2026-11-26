@@ -1,0 +1,848 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B4L8 is 74181:U4|52~51 at LC_X12_Y9_N7
+--operation mode is normal
+
+B4L8 = A[15] & (B[15] & (S[3]) # !B[15] & S[2]);
+
+
+--B4L3 is 74181:U4|45~10 at LC_X12_Y9_N5
+--operation mode is normal
+
+B4L3 = A[14] # B[14] & S[0] # !B[14] & (S[1]);
+
+
+--B4L7 is 74181:U4|51~17 at LC_X12_Y9_N1
+--operation mode is normal
+
+B4L7 = A[15] # B[15] & S[0] # !B[15] & (S[1]);
+
+
+--B4L6 is 74181:U4|48~51 at LC_X12_Y9_N9
+--operation mode is normal
+
+B4L6 = A[14] & (B[14] & S[3] # !B[14] & (S[2]));
+
+
+--B4L2 is 74181:U4|44~10 at LC_X12_Y8_N7
+--operation mode is normal
+
+B4L2 = A[13] # B[13] & S[0] # !B[13] & (S[1]);
+
+
+--B3L8 is 74181:U3|52~51 at LC_X13_Y10_N7
+--operation mode is normal
+
+B3L8 = A[11] & (B[11] & (S[3]) # !B[11] & S[2]);
+
+
+--B3L6 is 74181:U3|48~51 at LC_X13_Y10_N5
+--operation mode is normal
+
+B3L6 = A[10] & (B[10] & (S[3]) # !B[10] & S[2]);
+
+
+--B3L9 is 74181:U3|59~71 at LC_X13_Y10_N1
+--operation mode is normal
+
+B3L9 = !B3L6 & !B3L8;
+
+
+--B2L3 is 74181:U2|45~10 at LC_X18_Y2_N1
+--operation mode is normal
+
+B2L3 = A[6] # B[6] & S[0] # !B[6] & (S[1]);
+
+
+--B2L8 is 74181:U2|52~51 at LC_X18_Y2_N3
+--operation mode is normal
+
+B2L8 = A[7] & (B[7] & S[3] # !B[7] & (S[2]));
+
+
+--B2L7 is 74181:U2|51~17 at LC_X18_Y2_N8
+--operation mode is normal
+
+B2L7 = A[7] # B[7] & S[0] # !B[7] & (S[1]);
+
+
+--B2L6 is 74181:U2|48~51 at LC_X18_Y2_N6
+--operation mode is normal
+
+B2L6 = A[6] & (B[6] & (S[3]) # !B[6] & S[2]);
+
+
+--B2L2 is 74181:U2|44~10 at LC_X17_Y1_N8
+--operation mode is normal
+
+B2L2 = A[5] # B[5] & (S[0]) # !B[5] & S[1];
+
+
+--B2L5 is 74181:U2|47~51 at LC_X17_Y1_N7
+--operation mode is normal
+
+B2L5 = A[5] & (B[5] & S[3] # !B[5] & (S[2]));
+
+
+--B2L1 is 74181:U2|43~10 at LC_X17_Y1_N9
+--operation mode is normal
+
+B2L1 = A[4] # B[4] & (S[0]) # !B[4] & S[1];
+
+
+--B2L9 is 74181:U2|62~3 at LC_X17_Y2_N7
+--operation mode is normal
+
+B2L9 = !B2L5 & !B2L1;
+
+
+--B1L3 is 74181:U1|45~10 at LC_X18_Y2_N5
+--operation mode is normal
+
+B1L3 = A[2] # B[2] & S[0] # !B[2] & (S[1]);
+
+
+--B1L8 is 74181:U1|52~51 at LC_X18_Y2_N0
+--operation mode is normal
+
+B1L8 = A[3] & (B[3] & S[3] # !B[3] & (S[2]));
+
+
+--B1L7 is 74181:U1|51~17 at LC_X18_Y2_N7
+--operation mode is normal
+
+B1L7 = A[3] # B[3] & S[0] # !B[3] & (S[1]);
+
+
+--B1L6 is 74181:U1|48~51 at LC_X18_Y2_N2
+--operation mode is normal
+
+B1L6 = A[2] & (B[2] & (S[3]) # !B[2] & S[2]);
+
+
+--B1L2 is 74181:U1|44~16 at LC_X18_Y1_N7
+--operation mode is normal
+
+B1L2 = A[1] # B[1] & (S[0]) # !B[1] & S[1];
+
+
+--B1L4 is 74181:U1|46~51 at LC_X18_Y2_N9
+--operation mode is normal
+
+B1L4 = A[0] & (B[0] & (S[3]) # !B[0] & S[2]);
+
+
+--B1L1 is 74181:U1|43~20 at LC_X18_Y1_N0
+--operation mode is normal
+
+B1L1 = A[0] # B[0] & S[0] # !B[0] & (S[1]);
+
+
+--B1L5 is 74181:U1|47~51 at LC_X18_Y1_N3
+--operation mode is normal
+
+B1L5 = A[1] & (B[1] & (S[3]) # !B[1] & S[2]);
+
+
+--B1L21 is 74181:U1|78~128 at LC_X18_Y1_N4
+--operation mode is normal
+
+B1L21 = !B1L5 & (CN & !B1L4 # !B1L1);
+
+
+--B1L31 is 74181:U1|78~129 at LC_X18_Y1_N9
+--operation mode is normal
+
+B1L31 = B1L6 # B1L2 & !B1L21;
+
+
+--B1L41 is 74181:U1|78~130 at LC_X17_Y1_N0
+--operation mode is normal
+
+B1L41 = !B1L8 & (!B1L31 # !B1L3) # !B1L7;
+
+
+--B2L4 is 74181:U2|46~51 at LC_X17_Y1_N5
+--operation mode is normal
+
+B2L4 = A[4] & (B[4] & S[3] # !B[4] & (S[2]));
+
+
+--B2L51 is 74181:U2|78~41 at LC_X17_Y2_N9
+--operation mode is normal
+
+B2L51 = B2L6 # B2L2 & !B2L71;
+
+
+--B2L61 is 74181:U2|78~42 at LC_X17_Y2_N3
+--operation mode is normal
+
+B2L61 = !B2L8 & (!B2L3 # !B2L51) # !B2L7;
+
+
+--B3L5 is 74181:U3|47~51 at LC_X18_Y2_N4
+--operation mode is normal
+
+B3L5 = A[9] & (B[9] & (S[3]) # !B[9] & S[2]);
+
+
+--B3L4 is 74181:U3|46~51 at LC_X12_Y7_N2
+--operation mode is normal
+
+B3L4 = A[8] & (B[8] & S[3] # !B[8] & (S[2]));
+
+
+--B3_61 is 74181:U3|61 at LC_X12_Y10_N4
+--operation mode is normal
+
+B3_61 = !B3L5 & !B3L4 & B2L61 & B3L9;
+
+
+--B3L3 is 74181:U3|45~10 at LC_X13_Y10_N0
+--operation mode is normal
+
+B3L3 = A[10] # B[10] & (S[0]) # !B[10] & S[1];
+
+
+--B3L7 is 74181:U3|51~17 at LC_X13_Y10_N6
+--operation mode is normal
+
+B3L7 = A[11] # B[11] & S[0] # !B[11] & (S[1]);
+
+
+--B3L1 is 74181:U3|43~10 at LC_X12_Y7_N5
+--operation mode is normal
+
+B3L1 = A[8] # B[8] & S[0] # !B[8] & (S[1]);
+
+
+--B3L2 is 74181:U3|44~10 at LC_X12_Y7_N4
+--operation mode is normal
+
+B3L2 = A[9] # B[9] & (S[0]) # !B[9] & S[1];
+
+
+--B3L71 is 74181:U3|78~30 at LC_X13_Y10_N8
+--operation mode is normal
+
+B3L71 = B3L6 # B3L2 & (B3L1 # B3L5);
+
+
+--B3L81 is 74181:U3|78~31 at LC_X13_Y10_N4
+--operation mode is normal
+
+B3L81 = !B3L8 & (!B3L3 # !B3L71) # !B3L7;
+
+
+--B4L4 is 74181:U4|46~51 at LC_X12_Y7_N6
+--operation mode is normal
+
+B4L4 = A[12] & (B[12] & (S[3]) # !B[12] & S[2]);
+
+
+--B4L9 is 74181:U4|66~3 at LC_X12_Y10_N3
+--operation mode is normal
+
+B4L9 = !B4L4 & (B3L81 # B3_61);
+
+
+--B4L5 is 74181:U4|47~51 at LC_X12_Y8_N9
+--operation mode is normal
+
+B4L5 = A[13] & (B[13] & S[3] # !B[13] & (S[2]));
+
+
+--B4L1 is 74181:U4|43~10 at LC_X12_Y8_N3
+--operation mode is normal
+
+B4L1 = A[12] # B[12] & S[0] # !B[12] & (S[1]);
+
+
+--B4L61 is 74181:U4|78~32 at LC_X12_Y8_N5
+--operation mode is normal
+
+B4L61 = B4L5 # B4L1 & !B4L9;
+
+
+--B4L71 is 74181:U4|78~33 at LC_X12_Y9_N0
+--operation mode is normal
+
+B4L71 = B4L6 # B4L2 & (B4L61);
+
+
+--B4L81 is 74181:U4|78~34 at LC_X12_Y9_N4
+--operation mode is normal
+
+B4L81 = !B4L8 & (!B4L71 # !B4L3) # !B4L7;
+
+
+--B4L01 is 74181:U4|73~5 at LC_X12_Y8_N0
+--operation mode is normal
+
+B4L01 = B4L9 & !M & (!B4L5);
+
+
+--B4L21 is 74181:U4|77~185 at LC_X12_Y9_N2
+--operation mode is normal
+
+B4L21 = B4L8 $ B4L7;
+
+
+--B4L31 is 74181:U4|77~186 at LC_X12_Y8_N8
+--operation mode is normal
+
+B4L31 = B4L2 & (B4L1 # B4L5);
+
+
+--B4L41 is 74181:U4|77~187 at LC_X12_Y9_N3
+--operation mode is normal
+
+B4L41 = M # B4L3 & (B4L31 # B4L6);
+
+
+--B4L51 is 74181:U4|77~188 at LC_X12_Y9_N8
+--operation mode is normal
+
+B4L51 = B4L21 $ (B4L41 & (B4L6 # !B4L01));
+
+
+--B4L11 is 74181:U4|75~5 at LC_X12_Y8_N6
+--operation mode is normal
+
+B4L11 = !M & (!B4L1 & !B4L5 # !B4L2);
+
+
+--B4_82 is 74181:U4|82 at LC_X12_Y9_N6
+--operation mode is normal
+
+B4_82 = B4L6 $ B4L3 $ (!B4L01 & !B4L11);
+
+
+--B4L22 is 74181:U4|81~107 at LC_X12_Y8_N4
+--operation mode is normal
+
+B4L22 = B4L2 $ B4L5;
+
+
+--B4_81 is 74181:U4|81 at LC_X12_Y8_N2
+--operation mode is normal
+
+B4_81 = B4L22 $ (M # B4L1 & !B4L9);
+
+
+--B4L02 is 74181:U4|80~9 at LC_X12_Y8_N1
+--operation mode is normal
+
+B4L02 = B4L1 $ B4L4;
+
+
+--B4_80 is 74181:U4|80 at LC_X12_Y10_N7
+--operation mode is normal
+
+B4_80 = B4L02 $ (!M & (B3L81 # B3_61));
+
+
+--B3L41 is 74181:U3|74~13 at LC_X13_Y10_N9
+--operation mode is normal
+
+B3L41 = !M & (!B3L6 & !B3L2 # !B3L3);
+
+
+--B3L21 is 74181:U3|73~5 at LC_X12_Y10_N9
+--operation mode is normal
+
+B3L21 = !B3L5 & !M & B2L61 & !B3L4;
+
+
+--B3L11 is 74181:U3|72~71 at LC_X12_Y10_N0
+--operation mode is normal
+
+B3L11 = !B3L5 & (!M & !B3L1);
+
+
+--B3_74 is 74181:U3|74 at LC_X13_Y10_N3
+--operation mode is normal
+
+B3_74 = B3L41 # !B3L6 & (B3L11 # B3L21);
+
+
+--B3_77 is 74181:U3|77 at LC_X13_Y10_N2
+--operation mode is normal
+
+B3_77 = B3_74 $ B3L7 $ !B3L8;
+
+
+--B3L51 is 74181:U3|75~5 at LC_X12_Y10_N5
+--operation mode is normal
+
+B3L51 = !M & (!B3L5 & !B3L1 # !B3L2);
+
+
+--B3_82 is 74181:U3|82 at LC_X12_Y10_N6
+--operation mode is normal
+
+B3_82 = B3L6 $ B3L3 $ (!B3L21 & !B3L51);
+
+
+--B3_79 is 74181:U3|79 at LC_X12_Y10_N1
+--operation mode is normal
+
+B3_79 = !M & (B2L61 & !B3L4 # !B3L1);
+
+
+--B3_81 is 74181:U3|81 at LC_X12_Y10_N2
+--operation mode is normal
+
+B3_81 = B3L5 $ (B3_79 $ !B3L2);
+
+
+--B3_80 is 74181:U3|80 at LC_X12_Y10_N8
+--operation mode is normal
+
+B3_80 = B3L1 $ B3L4 $ (B2L61 & !M);
+
+
+--B2L21 is 74181:U2|77~174 at LC_X17_Y2_N4
+--operation mode is normal
+
+B2L21 = B2L3 & (B2L6 # !B2L9 & B2L41);
+
+
+--B2L31 is 74181:U2|77~175 at LC_X17_Y2_N5
+--operation mode is normal
+
+B2L31 = B2L8 $ B2L7 $ (M # B2L21);
+
+
+--B2L01 is 74181:U2|73~15 at LC_X17_Y2_N0
+--operation mode is normal
+
+B2L01 = !B2L5 & B1L41 & !B2L4;
+
+
+--B2_75 is 74181:U2|75 at LC_X17_Y2_N8
+--operation mode is normal
+
+B2_75 = !M & (B2L9 # B2L01 # !B2L2);
+
+
+--B2_82 is 74181:U2|82 at LC_X17_Y2_N6
+--operation mode is normal
+
+B2_82 = B2L3 $ (B2L6 $ !B2_75);
+
+
+--B2_79 is 74181:U2|79 at LC_X17_Y1_N6
+--operation mode is normal
+
+B2_79 = !M & (!B2L4 & B1L41 # !B2L1);
+
+
+--B2_81 is 74181:U2|81 at LC_X17_Y1_N1
+--operation mode is normal
+
+B2_81 = B2L2 $ (B2L5 $ !B2_79);
+
+
+--B2_80 is 74181:U2|80 at LC_X17_Y1_N4
+--operation mode is normal
+
+B2_80 = B2L1 $ B2L4 $ (!M & B1L41);
+
+
+--B1L01 is 74181:U1|75~337 at LC_X18_Y1_N5
+--operation mode is normal
+
+B1L01 = B1L21 # !B1L2;
+
+
+--B1L9 is 74181:U1|74~287 at LC_X17_Y1_N2
+--operation mode is normal
+
+B1L9 = !M & (!B1L6 & B1L01 # !B1L3);
+
+
+--B1_77 is 74181:U1|77 at LC_X17_Y1_N3
+--operation mode is normal
+
+B1_77 = B1L8 $ (B1L7 $ !B1L9);
+
+
+--B1_82 is 74181:U1|82 at LC_X18_Y1_N6
+--operation mode is normal
+
+B1_82 = B1L6 $ B1L3 $ (M # !B1L01);
+
+
+--B1L51 is 74181:U1|78~131 at LC_X18_Y1_N1
+--operation mode is normal
+
+B1L51 = !B1L4 & CN # !B1L1;
+
+
+--B1_81 is 74181:U1|81 at LC_X18_Y1_N2
+--operation mode is normal
+
+B1_81 = B1L2 $ B1L5 $ (M # !B1L51);
+
+
+--B1L61 is 74181:U1|80~84 at LC_X18_Y1_N8
+--operation mode is normal
+
+B1L61 = B1L1 $ B1L4 $ (!M & CN);
+
+
+--B2L41 is 74181:U2|77~176 at LC_X17_Y2_N2
+--operation mode is normal
+
+B2L41 = B2L2 & (B2L5 # B2L4 # !B1L41);
+
+
+--B2L71 is 74181:U2|78~43 at LC_X17_Y2_N1
+--operation mode is normal
+
+B2L71 = !B2L5 & (B1L41 & !B2L4 # !B2L1);
+
+
+--A[15] is A[15] at PIN_M17
+--operation mode is input
+
+A[15] = INPUT();
+
+
+--S[3] is S[3] at PIN_R15
+--operation mode is input
+
+S[3] = INPUT();
+
+
+--S[2] is S[2] at PIN_T15
+--operation mode is input
+
+S[2] = INPUT();
+
+
+--B[15] is B[15] at PIN_R19
+--operation mode is input
+
+B[15] = INPUT();
+
+
+--A[14] is A[14] at PIN_AB16
+--operation mode is input
+
+A[14] = INPUT();
+
+
+--S[0] is S[0] at PIN_V15
+--operation mode is input
+
+S[0] = INPUT();
+
+
+--S[1] is S[1] at PIN_P16
+--operation mode is input
+
+S[1] = INPUT();
+
+
+--B[14] is B[14] at PIN_T21
+--operation mode is input
+
+B[14] = INPUT();
+
+
+--A[13] is A[13] at PIN_U17
+--operation mode is input
+
+A[13] = INPUT();
+
+
+--B[13] is B[13] at PIN_N17
+--operation mode is input
+
+B[13] = INPUT();
+
+
+--A[11] is A[11] at PIN_M22
+--operation mode is input
+
+A[11] = INPUT();
+
+
+--B[11] is B[11] at PIN_M20
+--operation mode is input
+
+B[11] = INPUT();
+
+
+--A[10] is A[10] at PIN_AA16
+--operation mode is input
+
+A[10] = INPUT();
+
+
+--B[10] is B[10] at PIN_P20
+--operation mode is input
+
+B[10] = INPUT();
+
+
+--A[6] is A[6] at PIN_W12
+--operation mode is input
+
+A[6] = INPUT();
+
+
+--B[6] is B[6] at PIN_AB12
+--operation mode is input
+
+B[6] = INPUT();
+
+
+--A[7] is A[7] at PIN_P15
+--operation mode is input
+
+A[7] = INPUT();
+
+
+--B[7] is B[7] at PIN_AA13
+--operation mode is input
+
+B[7] = INPUT();
+
+
+--A[5] is A[5] at PIN_U14
+--operation mode is input
+
+A[5] = INPUT();
+
+
+--B[5] is B[5] at PIN_W14
+--operation mode is input
+
+B[5] = INPUT();
+
+
+--A[4] is A[4] at PIN_Y15
+--operation mode is input
+
+A[4] = INPUT();
+
+
+--B[4] is B[4] at PIN_N14
+--operation mode is input
+
+B[4] = INPUT();
+
+
+--A[2] is A[2] at PIN_P14
+--operation mode is input
+
+A[2] = INPUT();
+
+
+--B[2] is B[2] at PIN_AA14
+--operation mode is input
+
+B[2] = INPUT();
+
+
+--A[3] is A[3] at PIN_N15
+--operation mode is input
+
+A[3] = INPUT();
+
+
+--B[3] is B[3] at PIN_Y14
+--operation mode is input
+
+B[3] = INPUT();
+
+
+--A[1] is A[1] at PIN_AA12
+--operation mode is input
+
+A[1] = INPUT();
+
+
+--B[1] is B[1] at PIN_V13
+--operation mode is input
+
+B[1] = INPUT();
+
+
+--CN is CN at PIN_AB11
+--operation mode is input
+
+CN = INPUT();
+
+
+--A[0] is A[0] at PIN_T14
+--operation mode is input
+
+A[0] = INPUT();
+
+
+--B[0] is B[0] at PIN_P13
+--operation mode is input
+
+B[0] = INPUT();
+
+
+--A[9] is A[9] at PIN_W16
+--operation mode is input
+
+A[9] = INPUT();
+
+
+--B[9] is B[9] at PIN_N16
+--operation mode is input
+
+B[9] = INPUT();
+
+
+--A[8] is A[8] at PIN_V17
+--operation mode is input
+
+A[8] = INPUT();
+
+
+--B[8] is B[8] at PIN_T16
+--operation mode is input
+
+B[8] = INPUT();
+
+
+--A[12] is A[12] at PIN_AB15
+--operation mode is input
+
+A[12] = INPUT();
+
+
+--B[12] is B[12] at PIN_N13
+--operation mode is input
+
+B[12] = INPUT();
+
+
+--M is M at PIN_AA15
+--operation mode is input
+
+M = INPUT();
+
+
+--CN4 is CN4 at PIN_R20
+--operation mode is output
+
+CN4 = OUTPUT(B4L81);
+
+
+--F[15] is F[15] at PIN_U22
+--operation mode is output
+
+F[15] = OUTPUT(B4L51);
+
+
+--F[14] is F[14] at PIN_T22
+--operation mode is output
+
+F[14] = OUTPUT(B4_82);
+
+
+--F[13] is F[13] at PIN_U21
+--operation mode is output
+
+F[13] = OUTPUT(B4_81);
+
+
+--F[12] is F[12] at PIN_N20
+--operation mode is output
+
+F[12] = OUTPUT(!B4_80);
+
+
+--F[11] is F[11] at PIN_P21
+--operation mode is output
+
+F[11] = OUTPUT(B3_77);
+
+
+--F[10] is F[10] at PIN_N21
+--operation mode is output
+
+F[10] = OUTPUT(B3_82);
+
+
+--F[9] is F[9] at PIN_R22
+--operation mode is output
+
+F[9] = OUTPUT(B3_81);
+
+
+--F[8] is F[8] at PIN_R21
+--operation mode is output
+
+F[8] = OUTPUT(!B3_80);
+
+
+--F[7] is F[7] at PIN_W15
+--operation mode is output
+
+F[7] = OUTPUT(B2L31);
+
+
+--F[6] is F[6] at PIN_U15
+--operation mode is output
+
+F[6] = OUTPUT(B2_82);
+
+
+--F[5] is F[5] at PIN_V14
+--operation mode is output
+
+F[5] = OUTPUT(B2_81);
+
+
+--F[4] is F[4] at PIN_U16
+--operation mode is output
+
+F[4] = OUTPUT(!B2_80);
+
+
+--F[3] is F[3] at PIN_Y16
+--operation mode is output
+
+F[3] = OUTPUT(B1_77);
+
+
+--F[2] is F[2] at PIN_Y13
+--operation mode is output
+
+F[2] = OUTPUT(B1_82);
+
+
+--F[1] is F[1] at PIN_Y12
+--operation mode is output
+
+F[1] = OUTPUT(B1_81);
+
+
+--F[0] is F[0] at PIN_W13
+--operation mode is output
+
+F[0] = OUTPUT(!B1L61);
+
+
+

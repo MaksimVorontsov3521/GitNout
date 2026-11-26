@@ -1,0 +1,105 @@
+{
+ "R": {
+  "add4": {
+   "rows": 8,
+   "checks": 32,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 1
+  },
+  "add8": {
+   "rows": 8,
+   "checks": 64,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 2
+  },
+  "alu4": {
+   "rows": 56,
+   "checks": 448,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 1
+  },
+  "cmp4": {
+   "rows": 14,
+   "checks": 98,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 2,
+   "insts": 7
+  },
+  "alu8": {
+   "rows": 96,
+   "checks": 864,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 2
+  },
+  "alu8la": {
+   "rows": 96,
+   "checks": 864,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 2,
+   "insts": 4
+  },
+  "mult4": {
+   "rows": 12,
+   "checks": 96,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 2,
+   "insts": 20
+  },
+  "fa1": {
+   "rows": 8,
+   "checks": 16,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 5
+  },
+  "mac42": {
+   "rows": 50,
+   "checks": 300,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 23
+  },
+  "mac44": {
+   "rows": 53,
+   "checks": 424,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 2
+  },
+  "mac48a": {
+   "rows": 44,
+   "checks": 528,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 10
+  },
+  "mac48b": {
+   "rows": 44,
+   "checks": 528,
+   "bad": 0,
+   "firstBad": [],
+   "passes": 1,
+   "insts": 10
+  }
+ },
+ "tot": {
+  "rows": 489,
+  "checks": 4262,
+  "bad": 0
+ }
+}

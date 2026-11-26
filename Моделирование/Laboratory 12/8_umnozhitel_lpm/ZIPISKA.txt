@@ -1,0 +1,75 @@
+﻿==========================================================================
+ЗАДАНИЕ 8. Универсальный настраиваемый умножитель LPM_MULT 4x4
+==========================================================================
+
+ФАЙЛЫ В ПАПКЕ (всё вместе, порознь не работает: Quartus ищет дети и символы
+только
+в каталоге проекта):
+   --- проект lpm4x4 ---
+   lpm4x4.vhd        - источник VHDL с мегафункцией
+   lpm4x4.qsf/.qpf     - TOP_LEVEL_ENTITY=lpm4x4
+   lpm4x4.vwf         - воздействие (готовый набор наборов входов)
+   lpm4x4.sim.vwf - ответ функциональной симуляции, полученный в гостевой ОС
+   lpm4x4.map.rpt/.fit.rpt/.tan.rpt/.asm.rpt/.sim.rpt/.flow.rpt,
+   lpm4x4.map.eqn,
+   lpm4x4.fit.eqn, lpm4x4.pin - отчёты синтеза, размещения и временного
+   анализа и
+                          уравнения, которые Quartus реально синтезировал
+   lpm4x4_wf.png - лист и волны, отрисованные из геометрии .bdf/.sim.vwf
+   (не перерисовка по памяти)
+   lpm_probe_verified.json - файлы исчерпывающих проверок, на которые
+   ссылается отчёт
+
+ФУНКЦИЯ: RESULT[7..0] = DATAA[3..0] * DATAB[3..0] (беззнаковое)
+
+ЛОГИКА И ПРИНЦИП РАБОТЫ:
+   Мегафункция LPM_MULT библиотеки LPM. Наружу выведены только DATAA,
+   DATAB, RESULT (остальные порты отключены), параметры: LPM_WIDTHA=4,
+   LPM_WIDTHB=4, LPM_WIDTHP=8, LPM_WIDTHS=4, LPM_REPRESENTATION=UNSIGNED,
+   LPM_PIPELINE=0, плюс LPM_HINT с INPUT_A_IS_CONSTANT=NO,
+   INPUT_B_IS_CONSTANT=NO, USE_EAB=OFF. В MAX+plus II параметры задаются
+   через EDIT PORTS | PARAMETERS; здесь тот же элемент задан GENERIC-ами в
+   VHDL - форма ввода иная, набор тот же. Отчёт синтеза принимает все три
+   параметра подсказки (см. map.rpt), значит мегафункция их прочла. Внутри
+   разворачивается в multcore с опережающим сумматором.
+
+ПРОВЕРКА ПРАВИЛЬНОСТИ:
+   12 наборов, 0 расхождений. Сравнение с матричным (задание 7): LPM
+   быстрее на 1.208 нс и компактнее на 3 LE - см. отчёт раздел 12.1.
+
+   СИМУЛЯЦИЯ: 12 наборов входов, 0 расхождений с расчётом (ответ записал
+   Quartus II в lpm4x4.sim.vwf).
+   РЕСУРСЫ И ЗАДЕРЖКА (lpm4x4, из отчётов quartus_fit / quartus_tan,
+   EP1S10F484C5):
+      элементов логики (LE)  : 32
+      выводов (pins)         : 16
+      худшая задержка tpd    : 12.631 нс  (DATAA[2] -> RESULT[7])
+      доля логики/межсоедин. : 44.41 % / 55.59 %
+      критический путь : DATAA[2] ->
+      lpm_mult:U1|multcore:mult_core|decoder_node[1][2] ->
+      lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|
+      addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~45COUT1_60
+      ->
+      lpm_mult:U1|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|
+      addcore:adder|a_csnbuffer:result_node|cs_buffer[0]~48
+      ->
+      lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|
+      lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|
+      cs_buffer[0]~54
+      ->
+      lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|
+      lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|
+      cs_buffer[0]~59
+      ->
+      lpm_mult:U1|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|
+      lpm_add_sub:adder[0]|addcore:adder|a_csnbuffer:result_node|
+      cs_buffer[0]~67
+      -> RESULT[7]
+
+ЧТО ДЕЛАТЬ В QUARTUS II 5.0: 1. File -> Open Project -> <имя>.qpf (НЕ .bdf
+открывать!) 2. Processing -> Start Analysis & Synthesis - проверить, что схема
+читается 3. Processing -> Generate Functional Simulation Netlist 4. Tools ->
+Run Simulation Tool -> Functional Simulation - получить волны (*.sim.vwf) 5.
+Processing -> Start Timing Analysis - получить задержку (*.tan.rpt) Все файлы
+уже на месте; папку нельзя расформировывать: Quartus ищет детские .bdf,
+символы .bsf и источники VHDL только в каталоге проекта.

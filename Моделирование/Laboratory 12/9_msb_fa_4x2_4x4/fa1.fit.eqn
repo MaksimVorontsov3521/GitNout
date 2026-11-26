@@ -1,0 +1,56 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--A1L6 is X2~13 at LC_X1_Y30_N0
+--operation mode is normal
+
+A1L6 = Y $ Cin $ X;
+
+
+--A1L3 is O1~66 at LC_X1_Y30_N4
+--operation mode is normal
+
+A1L3 = Y & (Cin # X) # !Y & Cin & X;
+
+
+--Cin is Cin at PIN_B21
+--operation mode is input
+
+Cin = INPUT();
+
+
+--Y is Y at PIN_M16
+--operation mode is input
+
+Y = INPUT();
+
+
+--X is X at PIN_C20
+--operation mode is input
+
+X = INPUT();
+
+
+--S is S at PIN_D22
+--operation mode is output
+
+S = OUTPUT(A1L6);
+
+
+--Cout is Cout at PIN_D20
+--operation mode is output
+
+Cout = OUTPUT(A1L3);
+
+
+

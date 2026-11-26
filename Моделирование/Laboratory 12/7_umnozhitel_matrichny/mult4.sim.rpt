@@ -1,0 +1,109 @@
+Simulator report for mult4
+Sat Dec 10 04:19:18 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Simulator INI Usage
+  6. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 360.0 ns     ;
+; Simulation Netlist Size     ; 112 nodes    ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 769          ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------+
+; Simulator Settings                                                 ;
++-------------------------------------------------------+------------+
+; Option                                                ; Setting    ;
++-------------------------------------------------------+------------+
+; Simulation mode                                       ; Functional ;
+; Start time                                            ; 0ns        ;
+; Add pins automatically to simulation output waveforms ; On         ;
+; Check outputs                                         ; Off        ;
+; Report simulation coverage                            ; On         ;
+; Detect setup and hold time violations                 ; Off        ;
+; Detect glitches                                       ; Off        ;
+; Automatically save/load simulation netlist            ; Off        ;
+; Disable timing delays in Timing Simulation            ; Off        ;
+; Generate Signal Activity File                         ; Off        ;
++-------------------------------------------------------+------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sat Dec 10 04:19:18 2022
+Info: Command: quartus_sim mult4
+Info: Simulation coverage is     100.00 %
+Info: Number of transitions in simulation is 769
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sat Dec 10 04:19:18 2022
+    Info: Elapsed time: 00:00:00
+
+

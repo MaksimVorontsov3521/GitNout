@@ -1,0 +1,52 @@
+{
+ "gnPnCnIndependent": true,
+ "cn4Conflicts": 0,
+ "cn4FormsThatFit": [
+  "not GN or (CN and not PN)"
+ ],
+ "permutationResults": {
+  "CX,CY,CZ": {
+   "ok": 512,
+   "bad": 0,
+   "firstBad": null
+  },
+  "CX,CZ,CY": {
+   "ok": 340,
+   "bad": 172,
+   "firstBad": "gn=1100 pn=0000 ci=0: ripple c1..c4=0,0,0,1,1 lookahead=0,0,1,0,1 (CRU out CX=0 CY=0 CZ=1)"
+  },
+  "CY,CX,CZ": {
+   "ok": 336,
+   "bad": 176,
+   "firstBad": "gn=1000 pn=0000 ci=0: ripple c1..c4=0,0,1,1,1 lookahead=0,1,0,1,1 (CRU out CX=0 CY=1 CZ=1)"
+  },
+  "CY,CZ,CX": {
+   "ok": 228,
+   "bad": 284,
+   "firstBad": "gn=1000 pn=0000 ci=0: ripple c1..c4=0,0,1,1,1 lookahead=0,1,1,0,1 (CRU out CX=0 CY=1 CZ=1)"
+  },
+  "CZ,CX,CY": {
+   "ok": 228,
+   "bad": 284,
+   "firstBad": "gn=1000 pn=0000 ci=0: ripple c1..c4=0,0,1,1,1 lookahead=0,1,0,1,1 (CRU out CX=0 CY=1 CZ=1)"
+  },
+  "CZ,CY,CX": {
+   "ok": 292,
+   "bad": 220,
+   "firstBad": "gn=1000 pn=0000 ci=0: ripple c1..c4=0,0,1,1,1 lookahead=0,1,1,0,1 (CRU out CX=0 CY=1 CZ=1)"
+  }
+ },
+ "winners": [
+  "CX,CY,CZ"
+ ],
+ "triples": {
+  "0/0/0": 1,
+  "1/0/0": 0,
+  "1/1/0": 0,
+  "0/1/0": 1,
+  "0/0/1": 1,
+  "1/0/1": 1,
+  "1/1/1": 0,
+  "0/1/1": 1
+ }
+}
