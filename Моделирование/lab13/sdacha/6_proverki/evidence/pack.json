@@ -1,0 +1,3280 @@
+{
+ "generated": "2026-11-27T00:03:09.300Z",
+ "sdacha": "D:/Desktop/NF/lab13/sdacha",
+ "manifest": {
+  "projects": {
+   "ram4": {
+    "name": "ram4",
+    "folder": "1_ram4",
+    "kind": "bdf",
+    "src": [
+     {
+      "file": "ram4.bdf",
+      "bytes": 34489,
+      "sha": "d4ecd28b142a",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4\\ram4.bdf"
+     },
+     {
+      "file": "ram4.qpf",
+      "bytes": 129,
+      "sha": "cedeaddfedf9",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4\\ram4.qpf"
+     },
+     {
+      "file": "ram4.qsf",
+      "bytes": 639,
+      "sha": "edfb83647213",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4\\ram4.qsf"
+     },
+     {
+      "file": "ram4.vwf",
+      "bytes": 2954,
+      "sha": "7659530779b2",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4\\ram4.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "ram4.asm.rpt",
+      "bytes": 7855,
+      "sha": "c640b45e53d6",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.asm.rpt"
+     },
+     {
+      "file": "ram4.fit.eqn",
+      "bytes": 2517,
+      "sha": "579e05796561",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.fit.eqn"
+     },
+     {
+      "file": "ram4.fit.rpt",
+      "bytes": 113986,
+      "sha": "a900a798a44c",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.fit.rpt"
+     },
+     {
+      "file": "ram4.flow.rpt",
+      "bytes": 3511,
+      "sha": "dda6cfd04a27",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.flow.rpt"
+     },
+     {
+      "file": "ram4.map.eqn",
+      "bytes": 2237,
+      "sha": "757512ba7e46",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.map.eqn"
+     },
+     {
+      "file": "ram4.map.rpt",
+      "bytes": 15119,
+      "sha": "17cdf8275c4e",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.map.rpt"
+     },
+     {
+      "file": "ram4.pin",
+      "bytes": 57425,
+      "sha": "7a5be776194a",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.pin"
+     },
+     {
+      "file": "ram4.sim.rpt",
+      "bytes": 4731,
+      "sha": "ee222648b2f9",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.sim.rpt"
+     },
+     {
+      "file": "ram4.sim.vwf",
+      "bytes": 4295,
+      "sha": "99a7f934e7f0",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.sim.vwf"
+     },
+     {
+      "file": "ram4.tan.rpt",
+      "bytes": 15947,
+      "sha": "ed8321c1caf8",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4_out\\ram4.tan.rpt"
+     }
+    ],
+    "missing": []
+   },
+   "ram4beh": {
+    "name": "ram4beh",
+    "folder": "2_ram4beh",
+    "kind": "vhdl",
+    "src": [
+     {
+      "file": "ram4beh.qpf",
+      "bytes": 68,
+      "sha": "de50af6fa0ed",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh\\ram4beh.qpf"
+     },
+     {
+      "file": "ram4beh.qsf",
+      "bytes": 487,
+      "sha": "52064b541fab",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh\\ram4beh.qsf"
+     },
+     {
+      "file": "ram4beh.vhd",
+      "bytes": 3895,
+      "sha": "e10ff38bc6fe",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh\\ram4beh.vhd"
+     },
+     {
+      "file": "ram4beh.vwf",
+      "bytes": 3260,
+      "sha": "5ddacb12d2a2",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh\\ram4beh.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "ram4beh.asm.rpt",
+      "bytes": 7989,
+      "sha": "ac3deac4da48",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.asm.rpt"
+     },
+     {
+      "file": "ram4beh.fit.eqn",
+      "bytes": 2634,
+      "sha": "2e950da524f4",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.fit.eqn"
+     },
+     {
+      "file": "ram4beh.fit.rpt",
+      "bytes": 113888,
+      "sha": "7b5741e6a734",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.fit.rpt"
+     },
+     {
+      "file": "ram4beh.flow.rpt",
+      "bytes": 3526,
+      "sha": "48d851045ea8",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.flow.rpt"
+     },
+     {
+      "file": "ram4beh.map.eqn",
+      "bytes": 2371,
+      "sha": "4b9064cb8c65",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.map.eqn"
+     },
+     {
+      "file": "ram4beh.map.rpt",
+      "bytes": 15006,
+      "sha": "100156dc8976",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.map.rpt"
+     },
+     {
+      "file": "ram4beh.pin",
+      "bytes": 57428,
+      "sha": "276e07d9d38e",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.pin"
+     },
+     {
+      "file": "ram4beh.sim.rpt",
+      "bytes": 4737,
+      "sha": "d7830a99b7aa",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.sim.rpt"
+     },
+     {
+      "file": "ram4beh.sim.vwf",
+      "bytes": 4622,
+      "sha": "723f52753676",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.sim.vwf"
+     },
+     {
+      "file": "ram4beh.tan.rpt",
+      "bytes": 16363,
+      "sha": "4e2dcf202db0",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\ram4beh_out\\ram4beh.tan.rpt"
+     }
+    ],
+    "missing": []
+   },
+   "mem4x8": {
+    "name": "mem4x8",
+    "folder": "3_mem4x8",
+    "kind": "bdf",
+    "src": [
+     {
+      "file": "74155.bdf",
+      "bytes": 27599,
+      "sha": "33ad9041dcb9",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\74155.bdf"
+     },
+     {
+      "file": "74155.bsf",
+      "bytes": 3382,
+      "sha": "573099985458",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\74155.bsf"
+     },
+     {
+      "file": "74244.bdf",
+      "bytes": 20805,
+      "sha": "30ad665be8ef",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\74244.bdf"
+     },
+     {
+      "file": "74244.bsf",
+      "bytes": 4156,
+      "sha": "dfc3152c2658",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\74244.bsf"
+     },
+     {
+      "file": "74374.bdf",
+      "bytes": 32620,
+      "sha": "e26ac781b4e5",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\74374.bdf"
+     },
+     {
+      "file": "74374.bsf",
+      "bytes": 4124,
+      "sha": "d3a9268b7000",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\74374.bsf"
+     },
+     {
+      "file": "mem4x8.bdf",
+      "bytes": 52917,
+      "sha": "136f5679c763",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\mem4x8.bdf"
+     },
+     {
+      "file": "mem4x8.qpf",
+      "bytes": 131,
+      "sha": "d014a267a3bc",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\mem4x8.qpf"
+     },
+     {
+      "file": "mem4x8.qsf",
+      "bytes": 787,
+      "sha": "9ea2f82284fb",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\mem4x8.qsf"
+     },
+     {
+      "file": "mem4x8.vwf",
+      "bytes": 11566,
+      "sha": "28f7ed920ab0",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8\\mem4x8.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "mem4x8.asm.rpt",
+      "bytes": 7939,
+      "sha": "5aba52fbb182",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.asm.rpt"
+     },
+     {
+      "file": "mem4x8.fit.eqn",
+      "bytes": 10914,
+      "sha": "0add0dbbd80d",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.fit.eqn"
+     },
+     {
+      "file": "mem4x8.fit.rpt",
+      "bytes": 135109,
+      "sha": "7b081fc69ebc",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.fit.rpt"
+     },
+     {
+      "file": "mem4x8.flow.rpt",
+      "bytes": 3521,
+      "sha": "c463d7e5c7ea",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.flow.rpt"
+     },
+     {
+      "file": "mem4x8.map.eqn",
+      "bytes": 9550,
+      "sha": "2f8f4201d641",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.map.eqn"
+     },
+     {
+      "file": "mem4x8.map.rpt",
+      "bytes": 17712,
+      "sha": "2a2fcc60f9c3",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.map.rpt"
+     },
+     {
+      "file": "mem4x8.pin",
+      "bytes": 57427,
+      "sha": "a00954a8d499",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.pin"
+     },
+     {
+      "file": "mem4x8.sim.rpt",
+      "bytes": 4735,
+      "sha": "a71ae7e23fab",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.sim.rpt"
+     },
+     {
+      "file": "mem4x8.sim.vwf",
+      "bytes": 15422,
+      "sha": "805db4bd75d9",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.sim.vwf"
+     },
+     {
+      "file": "mem4x8.tan.rpt",
+      "bytes": 45827,
+      "sha": "26952d81ca21",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\mem4x8_out\\mem4x8.tan.rpt"
+     }
+    ],
+    "missing": []
+   },
+   "lpramax": {
+    "name": "lpramax",
+    "folder": "4_lpm_ram_dq",
+    "kind": "ahdl",
+    "src": [
+     {
+      "file": "lpramax.qpf",
+      "bytes": 68,
+      "sha": "ba608ca23c3d",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax\\lpramax.qpf"
+     },
+     {
+      "file": "lpramax.qsf",
+      "bytes": 449,
+      "sha": "80766167962b",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax\\lpramax.qsf"
+     },
+     {
+      "file": "lpramax.tdf",
+      "bytes": 1559,
+      "sha": "6683140a4aa6",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax\\lpramax.tdf"
+     },
+     {
+      "file": "lpramax.vwf",
+      "bytes": 12645,
+      "sha": "97bb41488256",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax\\lpramax.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "lpramax.fit.rpt",
+      "bytes": 7031,
+      "sha": "86b5a573b665",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax_out\\lpramax.fit.rpt"
+     },
+     {
+      "file": "lpramax.flow.rpt",
+      "bytes": 3023,
+      "sha": "367b3f5d688a",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax_out\\lpramax.flow.rpt"
+     },
+     {
+      "file": "lpramax.map.eqn",
+      "bytes": 7189,
+      "sha": "0be0ecc057a8",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax_out\\lpramax.map.eqn"
+     },
+     {
+      "file": "lpramax.map.rpt",
+      "bytes": 18715,
+      "sha": "84fa5bc6120b",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax_out\\lpramax.map.rpt"
+     },
+     {
+      "file": "lpramax.sim.rpt",
+      "bytes": 5040,
+      "sha": "e18e108cabc0",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax_out\\lpramax.sim.rpt"
+     },
+     {
+      "file": "lpramax.sim.vwf",
+      "bytes": 16112,
+      "sha": "cf8ad89f2f07",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramax_out\\lpramax.sim.vwf"
+     }
+    ],
+    "missing": []
+   },
+   "lpramwb": {
+    "name": "lpramwb",
+    "folder": "4_lpm_ram_dq",
+    "kind": "ahdl",
+    "src": [
+     {
+      "file": "lpramwb.qpf",
+      "bytes": 68,
+      "sha": "9c5055efed1d",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb\\lpramwb.qpf"
+     },
+     {
+      "file": "lpramwb.qsf",
+      "bytes": 449,
+      "sha": "53b8f81b19ca",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb\\lpramwb.qsf"
+     },
+     {
+      "file": "lpramwb.tdf",
+      "bytes": 1247,
+      "sha": "1bc636d5d777",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb\\lpramwb.tdf"
+     },
+     {
+      "file": "lpramwb.vwf",
+      "bytes": 11691,
+      "sha": "33818c17cf93",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb\\lpramwb.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "lpramwb.fit.rpt",
+      "bytes": 7031,
+      "sha": "e931d126d8b5",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb_out\\lpramwb.fit.rpt"
+     },
+     {
+      "file": "lpramwb.flow.rpt",
+      "bytes": 3023,
+      "sha": "9ceba3ef7f9d",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb_out\\lpramwb.flow.rpt"
+     },
+     {
+      "file": "lpramwb.map.eqn",
+      "bytes": 7189,
+      "sha": "0be0ecc057a8",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb_out\\lpramwb.map.eqn"
+     },
+     {
+      "file": "lpramwb.map.rpt",
+      "bytes": 18715,
+      "sha": "c6fc2821c920",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb_out\\lpramwb.map.rpt"
+     },
+     {
+      "file": "lpramwb.sim.rpt",
+      "bytes": 7729,
+      "sha": "18e0c573c5ac",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb_out\\lpramwb.sim.rpt"
+     },
+     {
+      "file": "lpramwb.sim.vwf",
+      "bytes": 14869,
+      "sha": "502a4e51b9cf",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramwb_out\\lpramwb.sim.vwf"
+     }
+    ],
+    "missing": []
+   },
+   "lpramfk": {
+    "name": "lpramfk",
+    "folder": "4_lpm_ram_dq",
+    "kind": "ahdl",
+    "src": [
+     {
+      "file": "lpramfk.qpf",
+      "bytes": 68,
+      "sha": "35a4a873cbcf",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk\\lpramfk.qpf"
+     },
+     {
+      "file": "lpramfk.qsf",
+      "bytes": 451,
+      "sha": "1420ecfe49bf",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk\\lpramfk.qsf"
+     },
+     {
+      "file": "lpramfk.tdf",
+      "bytes": 1563,
+      "sha": "74d2837eee26",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk\\lpramfk.tdf"
+     },
+     {
+      "file": "lpramfk.vwf",
+      "bytes": 12645,
+      "sha": "97bb41488256",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk\\lpramfk.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "lpramfk.fit.rpt",
+      "bytes": 7033,
+      "sha": "480823cb8dde",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk_out\\lpramfk.fit.rpt"
+     },
+     {
+      "file": "lpramfk.flow.rpt",
+      "bytes": 3023,
+      "sha": "33017e7602b6",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk_out\\lpramfk.flow.rpt"
+     },
+     {
+      "file": "lpramfk.map.eqn",
+      "bytes": 7189,
+      "sha": "0be0ecc057a8",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk_out\\lpramfk.map.eqn"
+     },
+     {
+      "file": "lpramfk.map.rpt",
+      "bytes": 18715,
+      "sha": "330f8b39439c",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk_out\\lpramfk.map.rpt"
+     },
+     {
+      "file": "lpramfk.sim.rpt",
+      "bytes": 5040,
+      "sha": "dab0472d34e5",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk_out\\lpramfk.sim.rpt"
+     },
+     {
+      "file": "lpramfk.sim.vwf",
+      "bytes": 16112,
+      "sha": "cf8ad89f2f07",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\lpramfk_out\\lpramfk.sim.vwf"
+     }
+    ],
+    "missing": []
+   },
+   "probe_tri": {
+    "name": "probe_tri",
+    "folder": "5_proby_polyarnosti",
+    "kind": "bdf",
+    "src": [
+     {
+      "file": "74244.bdf",
+      "bytes": 20805,
+      "sha": "30ad665be8ef",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri\\74244.bdf"
+     },
+     {
+      "file": "74244.bsf",
+      "bytes": 4156,
+      "sha": "dfc3152c2658",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri\\74244.bsf"
+     },
+     {
+      "file": "probe_tri.bdf",
+      "bytes": 14692,
+      "sha": "e977cb8c6151",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri\\probe_tri.bdf"
+     },
+     {
+      "file": "probe_tri.qpf",
+      "bytes": 134,
+      "sha": "d14bb917f768",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri\\probe_tri.qpf"
+     },
+     {
+      "file": "probe_tri.qsf",
+      "bytes": 697,
+      "sha": "9a2d86fb6e97",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri\\probe_tri.qsf"
+     },
+     {
+      "file": "probe_tri.vwf",
+      "bytes": 6977,
+      "sha": "9ead1ee957fe",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri\\probe_tri.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "probe_tri.asm.rpt",
+      "bytes": 8105,
+      "sha": "2c90541d1d5b",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.asm.rpt"
+     },
+     {
+      "file": "probe_tri.fit.eqn",
+      "bytes": 2478,
+      "sha": "4c95bb53ff5f",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.fit.eqn"
+     },
+     {
+      "file": "probe_tri.fit.rpt",
+      "bytes": 115151,
+      "sha": "cf3192bb4756",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.fit.rpt"
+     },
+     {
+      "file": "probe_tri.flow.rpt",
+      "bytes": 3536,
+      "sha": "31f260d6d9b1",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.flow.rpt"
+     },
+     {
+      "file": "probe_tri.map.eqn",
+      "bytes": 2287,
+      "sha": "2f983bae0d20",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.map.eqn"
+     },
+     {
+      "file": "probe_tri.map.rpt",
+      "bytes": 15489,
+      "sha": "932ec2b8b06c",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.map.rpt"
+     },
+     {
+      "file": "probe_tri.pin",
+      "bytes": 57430,
+      "sha": "9176efc1885b",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.pin"
+     },
+     {
+      "file": "probe_tri.sim.rpt",
+      "bytes": 4741,
+      "sha": "205d6704ccb5",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.sim.rpt"
+     },
+     {
+      "file": "probe_tri.sim.vwf",
+      "bytes": 9420,
+      "sha": "a429f4fce980",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.sim.vwf"
+     },
+     {
+      "file": "probe_tri.tan.rpt",
+      "bytes": 7946,
+      "sha": "ac9f2d7096db",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_tri_out\\probe_tri.tan.rpt"
+     }
+    ],
+    "missing": []
+   },
+   "probe_trioe": {
+    "name": "probe_trioe",
+    "folder": "5_proby_polyarnosti",
+    "kind": "bdf",
+    "src": [
+     {
+      "file": "probe_trioe.bdf",
+      "bytes": 3216,
+      "sha": "4da23ec4df0f",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe\\probe_trioe.bdf"
+     },
+     {
+      "file": "probe_trioe.qpf",
+      "bytes": 136,
+      "sha": "e625c7892a21",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe\\probe_trioe.qpf"
+     },
+     {
+      "file": "probe_trioe.qsf",
+      "bytes": 653,
+      "sha": "7aa6384c1d90",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe\\probe_trioe.qsf"
+     },
+     {
+      "file": "probe_trioe.vwf",
+      "bytes": 1323,
+      "sha": "b1506ff2f0d0",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe\\probe_trioe.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "probe_trioe.asm.rpt",
+      "bytes": 8221,
+      "sha": "3f03c22dfa15",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.asm.rpt"
+     },
+     {
+      "file": "probe_trioe.fit.eqn",
+      "bytes": 1057,
+      "sha": "10a3187b0805",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.fit.eqn"
+     },
+     {
+      "file": "probe_trioe.fit.rpt",
+      "bytes": 104558,
+      "sha": "4f30538c94b8",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.fit.rpt"
+     },
+     {
+      "file": "probe_trioe.flow.rpt",
+      "bytes": 3546,
+      "sha": "436c7b65a834",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.flow.rpt"
+     },
+     {
+      "file": "probe_trioe.map.eqn",
+      "bytes": 1025,
+      "sha": "e35c6da4a3d2",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.map.eqn"
+     },
+     {
+      "file": "probe_trioe.map.rpt",
+      "bytes": 15171,
+      "sha": "1585b6036cd3",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.map.rpt"
+     },
+     {
+      "file": "probe_trioe.pin",
+      "bytes": 57432,
+      "sha": "38966d23cd23",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.pin"
+     },
+     {
+      "file": "probe_trioe.sim.rpt",
+      "bytes": 4744,
+      "sha": "1b487dcf5f08",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.sim.rpt"
+     },
+     {
+      "file": "probe_trioe.sim.vwf",
+      "bytes": 2427,
+      "sha": "bcdc744dff00",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.sim.vwf"
+     },
+     {
+      "file": "probe_trioe.tan.rpt",
+      "bytes": 7078,
+      "sha": "e9208d9c4014",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_trioe_out\\probe_trioe.tan.rpt"
+     }
+    ],
+    "missing": []
+   },
+   "probe_reg": {
+    "name": "probe_reg",
+    "folder": "5_proby_polyarnosti",
+    "kind": "bdf",
+    "src": [
+     {
+      "file": "74374.bdf",
+      "bytes": 32620,
+      "sha": "e26ac781b4e5",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg\\74374.bdf"
+     },
+     {
+      "file": "74374.bsf",
+      "bytes": 4124,
+      "sha": "d3a9268b7000",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg\\74374.bsf"
+     },
+     {
+      "file": "probe_reg.bdf",
+      "bytes": 10846,
+      "sha": "c762d6f4027f",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg\\probe_reg.bdf"
+     },
+     {
+      "file": "probe_reg.qpf",
+      "bytes": 134,
+      "sha": "1d433223f0a9",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg\\probe_reg.qpf"
+     },
+     {
+      "file": "probe_reg.qsf",
+      "bytes": 697,
+      "sha": "000180dbbc96",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg\\probe_reg.qsf"
+     },
+     {
+      "file": "probe_reg.vwf",
+      "bytes": 7612,
+      "sha": "83c5bfabeb28",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg\\probe_reg.vwf"
+     }
+    ],
+    "rpt": [
+     {
+      "file": "probe_reg.asm.rpt",
+      "bytes": 8105,
+      "sha": "42e1d5333b30",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.asm.rpt"
+     },
+     {
+      "file": "probe_reg.fit.eqn",
+      "bytes": 3856,
+      "sha": "dea49e4c20df",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.fit.eqn"
+     },
+     {
+      "file": "probe_reg.fit.rpt",
+      "bytes": 120246,
+      "sha": "422bd097ee1a",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.fit.rpt"
+     },
+     {
+      "file": "probe_reg.flow.rpt",
+      "bytes": 3536,
+      "sha": "8dca16041ff7",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.flow.rpt"
+     },
+     {
+      "file": "probe_reg.map.eqn",
+      "bytes": 3447,
+      "sha": "170055551151",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.map.eqn"
+     },
+     {
+      "file": "probe_reg.map.rpt",
+      "bytes": 15847,
+      "sha": "c61dbc77a8bd",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.map.rpt"
+     },
+     {
+      "file": "probe_reg.pin",
+      "bytes": 57430,
+      "sha": "ea44a3f10f84",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.pin"
+     },
+     {
+      "file": "probe_reg.sim.rpt",
+      "bytes": 4741,
+      "sha": "0763ceb64402",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.sim.rpt"
+     },
+     {
+      "file": "probe_reg.sim.vwf",
+      "bytes": 9848,
+      "sha": "e1e435793ad5",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.sim.vwf"
+     },
+     {
+      "file": "probe_reg.tan.rpt",
+      "bytes": 15590,
+      "sha": "1ce13086a246",
+      "from": "D:\\Desktop\\NF\\lab13\\work\\probe_reg_out\\probe_reg.tan.rpt"
+     }
+    ],
+    "missing": []
+   }
+  },
+  "specs": [
+   {
+    "spec": "ram4.json",
+    "folder": "1_ram4",
+    "rewrites": 0,
+    "absoluteBefore": [],
+    "relativeAfter": [],
+    "unchanged": true,
+    "bytes": 4528,
+    "sha": "2a783c837d68",
+    "srcBytes": 4528
+   },
+   {
+    "spec": "mem4x8.json",
+    "folder": "3_mem4x8",
+    "rewrites": 3,
+    "absoluteBefore": [
+     "D:/Desktop/NF/dshagent/ref/mp2/74155.bdf",
+     "D:/Desktop/NF/dshagent/ref/mp2/74244.bdf",
+     "D:/Desktop/NF/dshagent/ref/mp2/74374.bdf"
+    ],
+    "relativeAfter": [
+     "../lib_maxplus2/74155.bdf",
+     "../lib_maxplus2/74244.bdf",
+     "../lib_maxplus2/74374.bdf"
+    ],
+    "unchanged": false,
+    "bytes": 9892,
+    "sha": "f9fec05168a6",
+    "srcBytes": 9937
+   },
+   {
+    "spec": "lpramax.intent.json",
+    "folder": "4_lpm_ram_dq",
+    "rewrites": 0,
+    "absoluteBefore": [],
+    "relativeAfter": [],
+    "unchanged": true,
+    "bytes": 1063,
+    "sha": "6a31c713b7c5",
+    "srcBytes": 1063
+   },
+   {
+    "spec": "lpramwb.intent.json",
+    "folder": "4_lpm_ram_dq",
+    "rewrites": 0,
+    "absoluteBefore": [],
+    "relativeAfter": [],
+    "unchanged": true,
+    "bytes": 597,
+    "sha": "a6137cd60d65",
+    "srcBytes": 597
+   },
+   {
+    "spec": "lpramfk.intent.json",
+    "folder": "4_lpm_ram_dq",
+    "rewrites": 0,
+    "absoluteBefore": [],
+    "relativeAfter": [],
+    "unchanged": true,
+    "bytes": 1065,
+    "sha": "0ccf8a1d3180",
+    "srcBytes": 1065
+   },
+   {
+    "spec": "probe_tri.json",
+    "folder": "5_proby_polyarnosti",
+    "rewrites": 1,
+    "absoluteBefore": [
+     "D:/Desktop/NF/dshagent/ref/mp2/74244.bdf"
+    ],
+    "relativeAfter": [
+     "../lib_maxplus2/74244.bdf"
+    ],
+    "unchanged": false,
+    "bytes": 2760,
+    "sha": "d444d5320151",
+    "srcBytes": 2775
+   },
+   {
+    "spec": "probe_trioe.json",
+    "folder": "5_proby_polyarnosti",
+    "rewrites": 0,
+    "absoluteBefore": [],
+    "relativeAfter": [],
+    "unchanged": true,
+    "bytes": 631,
+    "sha": "c02e70638cb7",
+    "srcBytes": 631
+   },
+   {
+    "spec": "probe_reg.json",
+    "folder": "5_proby_polyarnosti",
+    "rewrites": 1,
+    "absoluteBefore": [
+     "D:/Desktop/NF/dshagent/ref/mp2/74374.bdf"
+    ],
+    "relativeAfter": [
+     "../lib_maxplus2/74374.bdf"
+    ],
+    "unchanged": false,
+    "bytes": 3672,
+    "sha": "cdc946d5b9ec",
+    "srcBytes": 3687
+   }
+  ],
+  "pngs": {
+   "1_ram4": [
+    {
+     "file": "ram4.png",
+     "bytes": 54786,
+     "sha": "e695c3e2fe60",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\ram4.png"
+    },
+    {
+     "file": "ram4_wf.png",
+     "bytes": 14350,
+     "sha": "9cd503a3e813",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\ram4_wf.png"
+    }
+   ],
+   "2_ram4beh": [
+    {
+     "file": "ram4beh_wf.png",
+     "bytes": 16812,
+     "sha": "a82de06b2a02",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\ram4beh_wf.png"
+    }
+   ],
+   "3_mem4x8": [
+    {
+     "file": "mem4x8.png",
+     "bytes": 103149,
+     "sha": "86a343805b4e",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\mem4x8.png"
+    },
+    {
+     "file": "mem4x8_wf.png",
+     "bytes": 41457,
+     "sha": "a6c3a443868b",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\mem4x8_wf.png"
+    }
+   ],
+   "4_lpm_ram_dq": [
+    {
+     "file": "lpramax_wf.png",
+     "bytes": 59935,
+     "sha": "d426b4827fb7",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\lpramax_wf.png"
+    },
+    {
+     "file": "lpm_ram_dq_symbol.png",
+     "bytes": 10390,
+     "sha": "3662e387fb8b",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\lpm_ram_dq_symbol.png"
+    }
+   ],
+   "lib_maxplus2": [
+    {
+     "file": "lib_74155.png",
+     "bytes": 36599,
+     "sha": "a81c1fa52fc5",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\lib_74155.png"
+    },
+    {
+     "file": "lib_74244.png",
+     "bytes": 26127,
+     "sha": "8be8d1a6cab3",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\lib_74244.png"
+    },
+    {
+     "file": "lib_74374.png",
+     "bytes": 44787,
+     "sha": "f0bf118cdbbc",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\png\\lib_74374.png"
+    }
+   ]
+  },
+  "evidence": {
+   "1_ram4": [
+    {
+     "file": "ram4_gatelevel_crosscheck.json",
+     "bytes": 520,
+     "sha": "810f4ea6f718",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\ram4_gatelevel_crosscheck.json"
+    }
+   ],
+   "2_ram4beh": [
+    {
+     "file": "ram4beh_vs_ram4.json",
+     "bytes": 335,
+     "sha": "3ee23a6da6a2",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\ram4beh_vs_ram4.json"
+    }
+   ],
+   "3_mem4x8": [
+    {
+     "file": "mem4x8_crosscheck.json",
+     "bytes": 4090,
+     "sha": "d183e374fd43",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\mem4x8_crosscheck.json"
+    },
+    {
+     "file": "74155_truth.json",
+     "bytes": 14344,
+     "sha": "1850dbd50fef",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\74155_truth.json"
+    }
+   ],
+   "4_lpm_ram_dq": [
+    {
+     "file": "lpramax_crosscheck.json",
+     "bytes": 2796,
+     "sha": "cf08c8e8fa9b",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\lpramax_crosscheck.json"
+    },
+    {
+     "file": "lpramwb_measured.json",
+     "bytes": 1084,
+     "sha": "116dff9d23d9",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\lpramwb_measured.json"
+    },
+    {
+     "file": "lpm_ram_dq_bsf.json",
+     "bytes": 2534,
+     "sha": "45c21473d770",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\lpm_ram_dq_bsf.json"
+    }
+   ],
+   "5_proby_polyarnosti": [
+    {
+     "file": "polarity_measured.json",
+     "bytes": 7562,
+     "sha": "49ca60fe7e30",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\polarity_measured.json"
+    }
+   ],
+   "6_proverki/evidence": [
+    {
+     "file": "confrontation.json",
+     "bytes": 27875,
+     "sha": "11c83bee8e40",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\confrontation.json"
+    },
+    {
+     "file": "report_facts.json",
+     "bytes": 5358,
+     "sha": "9459f340a000",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\report_facts.json"
+    },
+    {
+     "file": "seqwaves.json",
+     "bytes": 16789,
+     "sha": "98b8087e44a6",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\seqwaves.json"
+    },
+    {
+     "file": "selftest_notes.json",
+     "bytes": 72989,
+     "sha": "f9a3dd01110b",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\selftest_notes.json"
+    },
+    {
+     "file": "render_check.json",
+     "bytes": 3302,
+     "sha": "de0d15778a80",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\render_check.json"
+    },
+    {
+     "file": "render_recheck.json",
+     "bytes": 10785,
+     "sha": "97b472a3ff7d",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\render_recheck.json"
+    },
+    {
+     "file": "audit_corpus_defect.json",
+     "bytes": 2357,
+     "sha": "106a69e628b4",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\audit_corpus_defect.json"
+    },
+    {
+     "file": "agreement_layer.json",
+     "bytes": 7706,
+     "sha": "71caac407806",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\agreement_layer.json"
+    },
+    {
+     "file": "selftest_unit_label.json",
+     "bytes": 3716,
+     "sha": "5ea93a86f9ac",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\selftest_unit_label.json"
+    },
+    {
+     "file": "seqtest_stdout.txt",
+     "bytes": 5355,
+     "sha": "51b285968913",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\seqtest_stdout.txt"
+    },
+    {
+     "file": "bdf_composition.json",
+     "bytes": 2630,
+     "sha": "c98d1e65fb07",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\bdf_composition.json"
+    },
+    {
+     "file": "composition_and_case_defects.json",
+     "bytes": 9152,
+     "sha": "d50d71a1056e",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\composition_and_case_defects.json"
+    },
+    {
+     "file": "structural_regression.json",
+     "bytes": 8056,
+     "sha": "9b4e467b80ca",
+     "from": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\evidence\\structural_regression.json"
+    }
+   ]
+  },
+  "logs": [
+   "a202611262045_lpramax.log",
+   "a202611262045_lpramfk.log",
+   "a202611262047_lpramax.log",
+   "a202611262049_lpramax.log",
+   "a202611262105_lpramax.log",
+   "a202611262107_lpramax.log",
+   "a202611262107_ram4beh.log",
+   "a202611262110_lpramwb.log",
+   "a202611262121_lpramfk.log",
+   "r202611262035_probe_tri.log",
+   "r202611262042_probe_trioe.log",
+   "r202611262045_probe_reg.log",
+   "r202611262105_ram4-mem4x8.log"
+  ],
+  "lib": [
+   "74155.bdf",
+   "74244.bdf",
+   "74374.bdf",
+   "enadff.bdf",
+   "74155.bsf",
+   "74244.bsf",
+   "74374.bsf"
+  ],
+  "ref": [
+   "lpm_ram_dp.bsf",
+   "lpm_ram_dq.bsf",
+   "lpm_ram_dq.inc",
+   "lpm_ram_dq.tdf",
+   "lpm_ram_dq_info.xml",
+   "lpm_rom.bsf",
+   "mega/altram.inc",
+   "mega/altram.tdf",
+   "mega/altsyncram.inc",
+   "mega/lpm_decode.inc",
+   "mega/lpm_mux.inc"
+  ],
+  "corpus": [
+   "VHDLCMP_4BIT/VHDLCMP_4BIT.vwf",
+   "D/D.vwf",
+   "D/db/D.sim.vwf",
+   "VHDL_4_bit_memory/db/VHDL_4_bit_memory.sim.vwf"
+  ],
+  "stack": [
+   {
+    "file": "models.mjs",
+    "bytes": 48784,
+    "sha": "4bff93104146",
+    "rewrites": 4,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "seqcheck.mjs",
+    "bytes": 16514,
+    "sha": "ee03c6a26af3",
+    "rewrites": 1,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "seqvwf.mjs",
+    "bytes": 35815,
+    "sha": "d0f101ca0f40",
+    "rewrites": 4,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "seqwaves.mjs",
+    "bytes": 12374,
+    "sha": "4118eda3e7fd",
+    "rewrites": 2,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "seqtest.mjs",
+    "bytes": 37774,
+    "sha": "7202f69373ea",
+    "rewrites": 8,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "confront.mjs",
+    "bytes": 11984,
+    "sha": "46912c425198",
+    "rewrites": 5,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "sdacha_check.mjs",
+    "bytes": 51912,
+    "sha": "cd749c8771ab",
+    "rewrites": 2,
+    "sameAsAuthoring": false
+   },
+   {
+    "file": "report_data.json",
+    "bytes": 67655,
+    "sha": "111c21f92bce",
+    "rewrites": 0,
+    "pathRewrites": 10,
+    "sameAsAuthoring": false
+   }
+  ],
+  "author": [
+   "lpramax.tdf",
+   "lpramwb.tdf"
+  ],
+  "report": {
+   "copied": true,
+   "bytes": 421565,
+   "sha": "7bdaefaabd83",
+   "src": "C:/Users/User/VirtualBox VMs/Microelectronics/lab13_report.docx",
+   "full": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+   "srcFull": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e"
+  },
+  "reportPy": [
+   "make_report.py",
+   "_preamble.py",
+   "_body1.py",
+   "_body2.py",
+   "_body3.py",
+   "_body5.py",
+   "_body6.py",
+   "_body7.py",
+   "check_report.py",
+   "check_spacing.py",
+   "check_layout.py",
+   "_audit_final.py",
+   "_audit2.py",
+   "_latin_scan.py",
+   "_req_cover.py",
+   "_xref.py",
+   "_ownref.py",
+   "_sectref.py",
+   "_homoglyph.py",
+   "_homoglyph_all.py",
+   "_homoglyph_docx.py",
+   "_agree_system.py",
+   "_agree_neg.py",
+   "_agree_verify.py",
+   "_unit_readback.py",
+   "_struct.py",
+   "_task_verbatim.py",
+   "_text_verify.py",
+   "_adjnoun.py",
+   "_none_check.py",
+   "_yo.py",
+   "_yo2.py",
+   "_yo_usage.py",
+   "_readback.py",
+   "_readback9.py",
+   "_readback_rest.py",
+   "_rb_bulk.py",
+   "_rb2.py",
+   "_rb3.py",
+   "_composition_audit.py",
+   "_prep_case.py",
+   "_prep_discover.py",
+   "_rb_caps.py",
+   "_rb72.py",
+   "_dbg_chain.py",
+   "_para_diff.py",
+   "_listing_ram4beh.txt",
+   "_listing_lpramax.txt"
+  ]
+ },
+ "relocation": {
+  "stackdiff": [
+   "models.mjs: цитата источника стробов PRN/CLRN -> ../lib_maxplus2",
+   "models.mjs: цитата мегафункций -> ../ref_altera/mega",
+   "models.mjs: цитата волны lpramax -> папка сдачи",
+   "models.mjs: цитата волны lpramwb -> папка сдачи",
+   "seqcheck.mjs: импорт парсера '../tools/bdf' -> './tools/bdf' (привезён внутрь сдачи)",
+   "seqvwf.mjs: импорт busMembers '../tools/bdf' -> './tools/bdf'",
+   "seqvwf.mjs: импорт parseVwf '../tools/bdf' -> './tools/bdf'",
+   "seqvwf.mjs: ссылка комментария на корпус -> ../ref_vwf (файл едет в сдаче)",
+   "seqvwf.mjs: вторая ссылка комментария на корпус -> ../ref_vwf",
+   "seqwaves.mjs: WORK (авторское дерево) -> WAVE_ROOT (папки сдачи)",
+   "seqwaves.mjs: путь волны разрешается через WAVE_ROOT вместо '<proj>_out/'",
+   "seqtest.mjs: HOME = родитель каталога (авторское дерево) -> HERE (сама сдача)",
+   "seqtest.mjs: корпус формата '../ref/vwf' -> '../ref_vwf' (папка сдачи)",
+   "seqtest.mjs: второй кандидат корпуса (абсолютный) убран, остался относительный",
+   "seqtest.mjs: волна probe_reg из авторского дерева -> папка сдачи",
+   "seqtest.mjs: волна probe_tri из авторского дерева -> папка сдачи",
+   "seqtest.mjs: волна probe_trioe из авторского дерева -> папка сдачи",
+   "seqtest.mjs: текст причины SKIP приведён к путям сдачи",
+   "seqtest.mjs: спецификация probe_reg.json -> папка сдачи",
+   "confront.mjs: три file:/// импорта авторского дерева и WORK -> относительные URL сдачи",
+   "confront.mjs: loadWave() читает волну из папки сдачи вместо <proj>_out/",
+   "confront.mjs: независимая выборка lpramwb -> папка сдачи",
+   "confront.mjs: пять волн доказательства Z -> папки сдачи",
+   "confront.mjs: результат пишется в ./evidence внутри сдачи",
+   "sdacha_check.mjs: импорт sexpr.mjs -> ./tools/bdf/",
+   "sdacha_check.mjs: импорт simcheck.mjs -> ./tools/bdf/",
+   "report_data.json: 10 поле(ей) с путём авторского дерева (origin/path в z_proof и seqwaves) переписаны на пути сдачи",
+   "make_report.py: корень авторского дерева -> SD (папки сдачи), PNG -> поиск по папкам сдачи",
+   "make_report.py: 10 обращений к каталогу картинок -> _png() (картинки лежат в папках 1..4 и lib_maxplus2) [10 совп., остаток 0]",
+   "make_report.py: листинг VHDL берётся из этой же папки",
+   "make_report.py: листинг AHDL берётся из этой же папки",
+   "make_report.py: готовый отчёт пишется в папку сдачи 0_zadanie_i_otchet",
+   "_preamble.py: тот же перенос корня (это исходная часть сборки)",
+   "_body3.py: обращения к каталогу картинок -> _png() (поиск по папкам сдачи) [2 совп., остаток 0]",
+   "_body5.py: обращения к каталогу картинок -> _png() (поиск по папкам сдачи) [6 совп., остаток 0]",
+   "_body6.py: обращения к каталогу картинок -> _png() (поиск по папкам сдачи) [2 совп., остаток 0]",
+   "check_report.py: путь отчёта -> папка сдачи",
+   "check_spacing.py: путь отчёта -> папка сдачи",
+   "check_layout.py: путь отчёта -> папка сдачи",
+   "_audit_final.py: корень авторского дерева -> SD",
+   "_audit_final.py: проверяемый отчёт берётся из папки сдачи",
+   "_audit_final.py: данные берутся из 6_proverki",
+   "_audit_final.py: корень сбора доказательств -> список папок сдачи",
+   "_audit_final.py: обход папок сдачи вместо os.listdir(EV), маркеры самозаписи дословно",
+   "_audit_final.py: корпус отчётов Quartus берётся обходом сдачи вместо дерева work",
+   "_audit2.py: путь отчёта -> папка сдачи",
+   "_latin_scan.py: путь отчёта -> папка сдачи",
+   "_req_cover.py: корень авторского дерева -> HERE/SD",
+   "_req_cover.py: текст задания берётся из папки сдачи",
+   "_req_cover.py: проверяемый отчёт берётся из папки сдачи",
+   "_xref.py: путь отчёта -> папка сдачи",
+   "_ownref.py: путь отчёта -> папка сдачи",
+   "_sectref.py: путь отчёта -> папка сдачи",
+   "_homoglyph.py: корень поиска -> сдача от расположения скрипта",
+   "_homoglyph.py: пример дефекта переписан кодовой точкой: смешного литерала в комментарии нет, смысл строки тот же",
+   "_homoglyph.py: перечень находок в записках -> ASCII-escape",
+   "_homoglyph.py: перечень находок в отчёте -> ASCII-escape",
+   "_homoglyph_all.py: латинская p посадочного примера задана кодовой точкой (строка 52)",
+   "_homoglyph_all.py: то же в перечне ожидаемых самотеста (строка 54)",
+   "_homoglyph_all.py: корень поиска -> сдача от расположения скрипта",
+   "_homoglyph_all.py: печатный самотест -> ASCII-escape (обратимо, носителя дефекта нет)",
+   "_homoglyph_all.py: перечень групп -> ASCII-escape",
+   "_homoglyph_all.py: сообщение отказа -> ASCII-escape",
+   "_homoglyph_all.py: граница вынесена в mixed_cores(), контекст экранирования \b учитывается",
+   "_homoglyph_all.py: скан вызывает mixed_cores() - ту же функцию, что и самотест",
+   "_homoglyph_all.py: самотест подавления обязан давать True/True (иначе suppression - blanket)",
+   "_homoglyph_docx.py: авторская копия -> доставленный отчёт (в сдаче один документ)",
+   "_homoglyph_docx.py: путь сдачи -> относительный от папки скрипта",
+   "_homoglyph_docx.py: посадочный пример записан кодовыми точками (сравнение равнозначно)",
+   "_agree_system.py: путь отчёта -> папка сдачи",
+   "_agree_verify.py: путь отчёта -> папка сдачи",
+   "_unit_readback.py: путь отчёта -> папка сдачи",
+   "_struct.py: путь отчёта -> папка сдачи",
+   "_task_verbatim.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_text_verify.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_adjnoun.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_none_check.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_yo.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_yo2.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_yo_usage.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_readback.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_readback9.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_readback_rest.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_rb_bulk.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_rb2.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_rb3.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_composition_audit.py: путь отчёта -> папка сдачи",
+   "_composition_audit.py: каталог схем -> сдача от расположения скрипта",
+   "_composition_audit.py: свидетели -> две независимые копии внутри сдачи",
+   "_prep_case.py: путь отчёта -> папка сдачи",
+   "_prep_discover.py: путь отчёта -> папка сдачи",
+   "_rb_caps.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_rb72.py: путь отчёта -> папка сдачи (якорь выведен из REPORT_SRC)",
+   "_para_diff.py: авторский путь -> папка сдачи",
+   "_para_diff.py: доставленный путь + явный отказ работать внутри сдачи",
+   "_pdf_text.py: приватная папка автора -> _render_pin рядом с собой, docx -> ../0_zadanie_i_otchet (строк логики не тронуто: 172)",
+   "_pdf_cmp.py: приватная папка автора -> _render_pin рядом с собой, docx -> ../0_zadanie_i_otchet (строк логики не тронуто: 28)"
+  ],
+  "applied": [
+   {
+    "file": "models.mjs",
+    "rewrites": 4
+   },
+   {
+    "file": "seqcheck.mjs",
+    "rewrites": 1
+   },
+   {
+    "file": "seqvwf.mjs",
+    "rewrites": 4
+   },
+   {
+    "file": "seqwaves.mjs",
+    "rewrites": 2
+   },
+   {
+    "file": "seqtest.mjs",
+    "rewrites": 8
+   },
+   {
+    "file": "confront.mjs",
+    "rewrites": 5
+   },
+   {
+    "file": "sdacha_check.mjs",
+    "rewrites": 2
+   },
+   {
+    "file": "report_data.json",
+    "rewrites": 0
+   }
+  ]
+ },
+ "regenProof": [
+  {
+   "entity": "mem4x8",
+   "spec": "mem4x8.json",
+   "folder": "3_mem4x8",
+   "failed": false,
+   "log": "mem4x8 attempt 0: 1 router / 2 verify errors [net n35: cannot reach the shared trunk from driver 1680,376] [expected nets not formed: B1.2A3,R0.Q7,R1.Q7,R2.Q7,R3.Q7,d6; unexpected nets formed: B1.2A3,R0.Q7,R2.Q7,R3.Q7,d6] | mem4x8: routed on attempt 1 with {\"DENSITY\":16} | mem4x8: sheet=2576x1256 segs=342 junctions=34 levels={\"U1\":1,\"V0\":0,\"G0\":0,\"NR\":1,\"P0\":2,\"K0\":3,\"R0\":4,\"P1\":2,\"K1\":3,\"R1\":4,\"P2\":2,\"K2\":3,\"R2\":4,\"P3\":2,\"K3\":3,\"R3\":4,\"B1\":5}",
+   "guestStamp": "Thu, 26 Nov 2026 21:05:17 GMT",
+   "regenStamp": "Fri, 27 Nov 2026 00:02:59 GMT",
+   "rows": [
+    {
+     "file": "74155.bdf",
+     "bytes": 27599,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74155.bsf",
+     "bytes": 3382,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74244.bdf",
+     "bytes": 20805,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74244.bsf",
+     "bytes": 4156,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74374.bdf",
+     "bytes": 32620,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74374.bsf",
+     "bytes": 4124,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "mem4x8.bdf",
+     "bytes": 52917,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "mem4x8.qpf",
+     "bytes": 131,
+     "verdict": "совпадает с гостевым с точностью до метки времени"
+    },
+    {
+     "file": "mem4x8.qsf",
+     "bytes": 787,
+     "verdict": "совпадает с гостевым с точностью до метки времени"
+    },
+    {
+     "file": "mem4x8.vwf",
+     "bytes": 11566,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    }
+   ]
+  },
+  {
+   "entity": "probe_tri",
+   "spec": "probe_tri.json",
+   "folder": "5_proby_polyarnosti",
+   "failed": false,
+   "log": "probe_tri: sheet=1360x816 segs=56 junctions=0 levels={\"U1\":1}",
+   "guestStamp": "Thu, 26 Nov 2026 20:35:50 GMT",
+   "regenStamp": "Fri, 27 Nov 2026 00:02:59 GMT",
+   "rows": [
+    {
+     "file": "74244.bdf",
+     "bytes": 20805,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74244.bsf",
+     "bytes": 4156,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "probe_tri.bdf",
+     "bytes": 14692,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "probe_tri.qpf",
+     "bytes": 134,
+     "verdict": "совпадает с гостевым с точностью до метки времени"
+    },
+    {
+     "file": "probe_tri.qsf",
+     "bytes": 697,
+     "verdict": "совпадает с гостевым с точностью до метки времени"
+    },
+    {
+     "file": "probe_tri.vwf",
+     "bytes": 6977,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    }
+   ]
+  },
+  {
+   "entity": "probe_reg",
+   "spec": "probe_reg.json",
+   "folder": "5_proby_polyarnosti",
+   "failed": false,
+   "log": "probe_reg: sheet=1424x872 segs=54 junctions=0 levels={\"U1\":1}",
+   "guestStamp": "Thu, 26 Nov 2026 20:45:45 GMT",
+   "regenStamp": "Fri, 27 Nov 2026 00:02:59 GMT",
+   "rows": [
+    {
+     "file": "74374.bdf",
+     "bytes": 32620,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "74374.bsf",
+     "bytes": 4124,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "probe_reg.bdf",
+     "bytes": 10846,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    },
+    {
+     "file": "probe_reg.qpf",
+     "bytes": 134,
+     "verdict": "совпадает с гостевым с точностью до метки времени"
+    },
+    {
+     "file": "probe_reg.qsf",
+     "bytes": 697,
+     "verdict": "совпадает с гостевым с точностью до метки времени"
+    },
+    {
+     "file": "probe_reg.vwf",
+     "bytes": 7612,
+     "verdict": "BYTE-IDENTICAL к тому, что читал гость"
+    }
+   ]
+  }
+ ],
+ "stackRuns": [
+  {
+   "what": "node --check models.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check seqcheck.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check seqvwf.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check seqwaves.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check seqtest.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check confront.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check sdacha_check.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check tools/bdf/simcheck.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check tools/bdf/vwf.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node --check tools/bdf/sexpr.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node confront.mjs",
+   "code": 0,
+   "tail": "mem4x8    phases= 17 mismatches=0+0  retained=[\"11111111\",\"11110000\",\"10100101\",\"01011010\"] / lpramax   phases= 17 mismatches=0  retained=[{\"address\":\"0x000\",\"word_bin_msb\":\"11111111\",\"word_hex\":\"0xFF\"},{\"address\":\"0x155\",\"word_bin_msb\":\"11110000\",\"word_hex\":\"0xF0\"},{\"address\":\"0x2AA\",\"word_bin_msb\":\"10100101\",\"word_hex\":\"0xA5\"},{\"address\":\"0x3FF\",\"word_bin_msb\":\"01011010\",\"word_hex\":\"0x5A\"}] / lp"
+  },
+  {
+   "what": "node seqwaves.mjs",
+   "code": 0,
+   "tail": ""
+  },
+  {
+   "what": "node seqtest.mjs",
+   "code": 0,
+   "tail": "    ok  checkSeq agrees (zero mismatches) on the same wave / RESULT: PASS - 84 assertions"
+  }
+ ],
+ "reportProof": {
+  "toolchain": [
+   {
+    "tool": "node",
+    "ok": true,
+    "exe": "C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node.exe",
+    "version": "v24.21.0"
+   },
+   {
+    "tool": "python",
+    "ok": true,
+    "exe": "C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe",
+    "version": "3.12.14"
+   }
+  ],
+  "runs": [
+   {
+    "what": "python make_report.py",
+    "code": 0,
+    "tail": "STRIPPED CHARACTERS: 0 | SAVED: D:\\Desktop\\NF\\lab13\\sdacha\\0_zadanie_i_otchet\\lab13_report.docx | figures: 10  tables: 15",
+    "keys": [
+     "STRIPPED CHARACTERS: 0",
+     "SAVED: D:\\Desktop\\NF\\lab13\\sdacha\\0_zadanie_i_otchet\\lab13_report.docx",
+     "figures: 10  tables: 15"
+    ],
+    "expect": [
+     {
+      "what": "STRIPPED CHARACTERS: 0 (ни одного вырезанного символа)",
+      "held": true
+     },
+     {
+      "what": "рисунков 10 и таблиц 15",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python check_report.py",
+    "code": 0,
+    "tail": "Normal font: Times New Roman 12.0 pt, line rule: None | zip testzip: OK (no bad entries) | package parts: 27",
+    "keys": [
+     "tables: 15",
+     "Normal font: Times New Roman 12.0 pt, line rule: None",
+     "zip testzip: OK (no bad entries)",
+     "package parts: 27"
+    ],
+    "expect": [
+     {
+      "what": "zip-контейнер целен (no bad entries)",
+      "held": true
+     },
+     {
+      "what": "частей в пакете 27",
+      "held": true
+     },
+     {
+      "what": "базовый стиль Times New Roman 12.0 pt",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python check_spacing.py",
+    "code": 0,
+    "tail": "paragraph line-spacing rules: {'1.5': 176, 'single': 55} | Normal rule: None",
+    "keys": [
+     "paragraph line-spacing rules: {'1.5': 176, 'single': 55}"
+    ],
+    "expect": [
+     {
+      "what": "интервалов 1.5 ровно 176",
+      "held": true
+     },
+     {
+      "what": "одиночных ровно 55",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python check_layout.py",
+    "code": 0,
+    "tail": "figure captions (SEQ Figure): 10 | table captions (SEQ Table): 15 | images immediately followed by a caption: 10 / 10",
+    "keys": [
+     "tables: 15, wider than text area: 0",
+     "columns with unset width: 0",
+     "images immediately followed by a caption: 10 / 10"
+    ],
+    "expect": [
+     {
+      "what": "колонок без ширины 0",
+      "held": true
+     },
+     {
+      "what": "все 10 рисунков со подписью сразу после себя",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _audit2.py",
+    "code": 0,
+    "tail": "  p198  | ...Таблица 14 — Измеренные фазы зонда 74244: стробы инверсны, передача не инверсна |   p202  | ...Таблица 15 — Измеренные фазы зонда TRI: разрешение вывода активно высоким уровнем | === 'list lost empty' phrasing ===",
+    "keys": [
+     "  total: 0"
+    ],
+    "expect": [
+     {
+      "what": "двойных пробелов вне моноширинных 0",
+      "held": true
+     },
+     {
+      "what": "повторов слова 0 (порог снижен до двух символов, ячейки таблиц входят)",
+      "held": true
+     },
+     {
+      "what": "отсутствующего пробела после точки и после запятой 0",
+      "held": true
+     },
+     {
+      "what": "тавтологии «слово - число то же слово» 0",
+      "held": true
+     },
+     {
+      "what": "самотест: все засланые дефекты пойманы",
+      "held": true
+     },
+     {
+      "what": "самотест: правила не дают ложных срабатываний на корректных фразах",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _latin_scan.py",
+    "code": 0,
+    "tail": "   SRAM/DRAM              x1   ['229'] |    vwf/.sim.vwf.          x1   ['230'] |    convert                x1   ['tbl390']",
+    "keys": [
+     "flagged latin tokens: 184"
+    ],
+    "expect": [],
+    "missed": []
+   },
+   {
+    "what": "python _req_cover.py",
+    "code": 0,
+    "tail": "   9.3 Регистр 74374: фронт восходящий, OEN инверсен, питание включается нулём |    9.4 Почему высокое сопротивление считается доказанным |    10. Выводы",
+    "keys": [
+     "requirements: 41 | unmet: 0"
+    ],
+    "expect": [
+     {
+      "what": "требований 41 и непокрытых 0",
+      "held": true
+     },
+     {
+      "what": "самотест точной привязки раздела: все кейсы разобраны верно",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _xref.py",
+    "code": 0,
+    "tail": "duplicate bookmark names: 0  {} | SEQ Figure anchors: 10 | SEQ Table anchors: 15 | VERDICT: ALL CROSS-REFERENCES RESOLVE, NO DUPLICATE BOOKMARKS",
+    "keys": [
+     "SEQ anchors: 2  ['Figure', 'Table']",
+     "caption anchors never referenced by the text: 2  ['Figure', 'Table']",
+     "duplicate bookmark names: 0  {}",
+     "SEQ Figure anchors: 10 | SEQ Table anchors: 15",
+     "VERDICT: ALL CROSS-REFERENCES RESOLVE, NO DUPLICATE BOOKMARKS"
+    ],
+    "expect": [
+     {
+      "what": "якорей SEQ: 10 Figure + 15 Table (всего 25)",
+      "held": true
+     },
+     {
+      "what": "REF-полей на несуществующую закладку: 0",
+      "held": true
+     },
+     {
+      "what": "дублей имён закладок: 0",
+      "held": true
+     },
+     {
+      "what": "вердикт: все перекрёстные ссылки разрешаются",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _ownref.py",
+    "code": 0,
+    "tail": "hand-typed pointers to OUR OWN figure/table: 0 | section-based pointers in prose: 21 | VERDICT: CLEAN - every pointer to our own material goes through a section reference or a SEQ caption; the only literal numbers are external textbook designators",
+    "keys": [
+     "textbook citations (рис. 18.x) in prose, excluded by the regex: 16",
+     "hand-typed pointers to OUR OWN figure/table: 0",
+     "section-based pointers in prose: 21",
+     "VERDICT: CLEAN - every pointer to our own material goes through a section reference or a SEQ caption; the only literal numbers are external textbook designators"
+    ],
+    "expect": [
+     {
+      "what": "собственных подписей через SEQ: 25",
+      "held": true
+     },
+     {
+      "what": "цитат рисунков учебника исключены корректно: 16",
+      "held": true
+     },
+     {
+      "what": "ручных указателей на свои рисунки/таблицы: 0",
+      "held": true
+     },
+     {
+      "what": "указателей через раздел или подпись: 20",
+      "held": false
+     }
+    ],
+    "missed": [
+     "указателей через раздел или подпись: 20"
+    ]
+   },
+   {
+    "what": "УТВЕРЖДЕНИЕ _ownref.py не держится",
+    "code": -1,
+    "tail": "указателей через раздел или подпись: 20"
+   },
+   {
+    "what": "python _sectref.py",
+    "code": 0,
+    "tail": "   1, 2, 3, 3.1, 3.2, 3.3, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 5, 5.1, 5.2, 5.3, 5.4, 6, 6.1, 7, 7.1, 7.2, 7.3, 7.4, 7.5, 8, 8.1, 8.2, 8.3, 8.4, 9, 9.1, 9.2, 9.3, 9.4, 10 | section pointers in prose: 24 | dangling: 0 | VERDICT: ALL SECTION POINTERS RESOLVE",
+    "keys": [
+     "heading numbers present: 37",
+     "section pointers in prose: 24 | dangling: 0",
+     "VERDICT: ALL SECTION POINTERS RESOLVE"
+    ],
+    "expect": [
+     {
+      "what": "номеров заголовков на месте: 37",
+      "held": true
+     },
+     {
+      "what": "21 ссылка «раздел N.M», 0 висячих",
+      "held": false
+     }
+    ],
+    "missed": [
+     "21 ссылка «раздел N.M», 0 висячих"
+    ]
+   },
+   {
+    "what": "УТВЕРЖДЕНИЕ _sectref.py не держится",
+    "code": -1,
+    "tail": "21 ссылка «раздел N.M», 0 висячих"
+   },
+   {
+    "what": "python _audit_final.py",
+    "code": 0,
+    "tail": "tokens: 1361 | classes: {'MEASURED': 1109, 'STRUCTURAL': 223, 'BITSTRING': 29} | MEASURED, proved by derivation: 5  distinct [('0.077', ''), ('0.735', ''), ('7.8', '%')] | MEASURED AND UNTRACED: 0",
+    "keys": [
+     "measured basis: t1=9.366 t2=9.289 t3=10.101 le1=9 le3=36",
+     "derived recomputed independently: ['0.077', '0.735', '7.8', '1.08', '4.0']",
+     "tokens: 1361 | classes: {'MEASURED': 1109, 'STRUCTURAL': 223, 'BITSTRING': 29}",
+     "MEASURED AND UNTRACED: 0"
+    ],
+    "expect": [
+     {
+      "what": "нетрассированных чисел 0",
+      "held": true
+     },
+     {
+      "what": "токенов порядка 1340 (корпус не пуст)",
+      "held": true
+     },
+     {
+      "what": "измеренных чисел порядка 1090 (корпус не пуст)",
+      "held": false
+     },
+     {
+      "what": "производных чисел ровно 5 (0 = круговая валидация корпусом)",
+      "held": true
+     },
+     {
+      "what": "механизм исключения самозаписей напечатан",
+      "held": true
+     },
+     {
+      "what": "базис измерения напечатан (t1,t2,t3,le1,le3)",
+      "held": true
+     }
+    ],
+    "missed": [
+     "измеренных чисел порядка 1090 (корпус не пуст)"
+    ]
+   },
+   {
+    "what": "УТВЕРЖДЕНИЕ _audit_final.py не держится",
+    "code": -1,
+    "tail": "измеренных чисел порядка 1090 (корпус не пуст)"
+   },
+   {
+    "what": "python _homoglyph.py",
+    "code": 0,
+    "tail": "script-mixed tokens in delivered notes: 0 | script-mixed tokens in the DOCX: 0",
+    "keys": [],
+    "expect": [
+     {
+      "what": "смешанных токенов в записках 0",
+      "held": true
+     },
+     {
+      "what": "смешанных токенов в отчёте 0",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _homoglyph_all.py",
+    "code": 1,
+    "why": "Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe -X utf8 _homoglyph_all.py\n  File \"D:\\Desktop\\NF\\lab13\\sdacha\\8_sbornik_otcheta\\_homoglyph_all.py\", li",
+    "tail": "    // Контекст экранирования. r\"\\bпри\" ставит латинскую b рядом с кириллическим |     ^^ | SyntaxError: invalid syntax",
+    "keys": [],
+    "expect": [
+     {
+      "what": "самотест пройден: 4 засланых токена обнаружены",
+      "held": false
+     },
+     {
+      "what": "текстовых файлов пройдено >= 200 (свип не по пустому дереву)",
+      "held": false
+     },
+     {
+      "what": "смешанных токенов по всей сдаче 0",
+      "held": false
+     },
+     {
+      "what": "напечатаны сами шаблоны поиска (классы видны, а не подразумеваются)",
+      "held": false
+     }
+    ],
+    "missed": [
+     "самотест пройден: 4 засланых токена обнаружены",
+     "текстовых файлов пройдено >= 200 (свип не по пустому дереву)",
+     "смешанных токенов по всей сдаче 0",
+     "напечатаны сами шаблоны поиска (классы видны, а не подразумеваются)"
+    ]
+   },
+   {
+    "what": "python _homoglyph_docx.py",
+    "code": 0,
+    "tail": "   contains Cyrillic-altram: False | contains Latin altram: True | delivery docx        paragraphs+cells=745 mixed=0 [] |    contains Cyrillic-altram: False | contains Latin altram: True",
+    "keys": [],
+    "expect": [
+     {
+      "what": "смешанных токенов 0 и список пуст",
+      "held": true
+     },
+     {
+      "what": "кириллического написания имени файла нет, латинское есть",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _agree_system.py",
+    "code": 0,
+    "tail": "   EXEMPT 1024 слов (strict form слова) | ...1024 слов... |    EXEMPT 8192 бит (strict form бита) | ...8192 бит (= 1024 байт)... |    EXEMPT 1024 байт (strict form байта) | ...8192 бит (= 1024 байт)...",
+    "keys": [],
+    "expect": [
+     {
+      "what": "сводка: 104 места, 19 сырых расхождений, 19 объяснено, 0 реальных",
+      "held": false
+     },
+     {
+      "what": "конструкция «всех на расстоянии» объяснена, а не промолчана",
+      "held": true
+     },
+     {
+      "what": "косвенный падеж после предлога объяснён, а не промолчан",
+      "held": true
+     },
+     {
+      "what": "многогрупповое числительное объяснено, а не промолчано",
+      "held": true
+     },
+     {
+      "what": "устаревшая форма 64 комбинаций входов отсутствует в документе",
+      "held": true
+     }
+    ],
+    "missed": [
+     "сводка: 104 места, 19 сырых расхождений, 19 объяснено, 0 реальных"
+    ]
+   },
+   {
+    "what": "УТВЕРЖДЕНИЕ _agree_system.py не держится",
+    "code": -1,
+    "tail": "сводка: 104 места, 19 сырых расхождений, 19 объяснено, 0 реальных"
+   },
+   {
+    "what": "python _agree_neg.py",
+    "code": 0,
+    "tail": "   digit form after на          want=CATCH   got=CATCH   OK |    genitive after на всех       want=EXEMPT  got=EXEMPT  OK | negative test failures: 0",
+    "keys": [],
+    "expect": [
+     {
+      "what": "провалов отрицательного теста 0",
+      "held": true
+     },
+     {
+      "what": "номинативное расхождение 52 сегментов по-прежнему ловится",
+      "held": true
+     },
+     {
+      "what": "номинативное расхождение 64 комбинаций по-прежнему ловится",
+      "held": true
+     },
+     {
+      "what": "форма по цифре после «на» ловится (кейс, добавленный после починки теста)",
+      "held": true
+     },
+     {
+      "what": "вместимость после «на» исключена (кейс, который в первой версии теста был неверным)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _agree_verify.py",
+    "code": 0,
+    "tail": "   '112 сегментов'                    -> True |    '537 переходов'                    -> True | VERDICT: ALL AGREEMENT FIXES LANDED AND NO STALE FORM REMAINS",
+    "keys": [
+     "VERDICT: ALL AGREEMENT FIXES LANDED AND NO STALE FORM REMAINS"
+    ],
+    "expect": [
+     {
+      "what": "вердикт: все правки согласования сели, устаревших форм не осталось",
+      "held": true
+     },
+     {
+      "what": "исправленная форма 52 сегмента присутствует",
+      "held": true
+     },
+     {
+      "what": "исправленная форма 144 перехода присутствует",
+      "held": true
+     },
+     {
+      "what": "форма v3 с запятой отсутствует ОСОЗНАННО (её заменила краткая форма v4)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _unit_readback.py",
+    "code": 0,
+    "tail": "   Там, где перебор возможен, он выполнен полностью. Для 74155 это все 2 в 6-й = 64 комбинации входов (раздел 7.1). Для триггера DV, на котором построено задание 1, и для моделей всей памяти файл lab13/models.mjs содержит самодиагностику, проверяющую модель на всех допустимых наборах входов и сверяющую её со структурным двойником, собранным из девятизначных вентильных примитивов. Единица счёта зде",
+    "keys": [],
+    "expect": [
+     {
+      "what": "устаревшего «утверждений самодиагностики» в отчёте нет",
+      "held": true
+     },
+     {
+      "what": "устаревшей суммы с единицей «утверждений» нет",
+      "held": true
+     },
+     {
+      "what": "новая единица счёта определена в 3.3",
+      "held": true
+     },
+     {
+      "what": "исправленная формулировка 10 присутствует",
+      "held": true
+     },
+     {
+      "what": "отрендеренный 3.3 напечатан для чтения целиком",
+      "held": true
+     },
+     {
+      "what": "отрендеренная 10 напечатана для чтения целиком",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _struct.py",
+    "code": 0,
+    "tail": "   self-test: pretend 9.2 deleted -> missing=['9.2'] -> CAUGHT | self-test: 3 of 3 caught | VERDICT: HEADING TREE MATCHES THE PLAN EXACTLY - 37 sections, none missing, none duplicated",
+    "keys": [
+     "VERDICT: HEADING TREE MATCHES THE PLAN EXACTLY - 37 sections, none missing, none duplicated"
+    ],
+    "expect": [
+     {
+      "what": "план 37 разделов, найдено 37 заголовков",
+      "held": true
+     },
+     {
+      "what": "ни отсутствующих, ни лишних, ни дублей, нумерация монотонна",
+      "held": true
+     },
+     {
+      "what": "соответствия уровня заголовка его номеру: 0 расхождений",
+      "held": true
+     },
+     {
+      "what": "самотест: имитация удаления разделов поймана вся (числа совпадают)",
+      "held": true
+     },
+     {
+      "what": "вердикт по дереву заголовков напечатан",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _task_verbatim.py",
+    "code": 0,
+    "tail": "   drop a library scheme      missing=1 -> CAUGHT |    wrong parameter value      missing=2 -> CAUGHT | self-test: 4 of 4 planted defects caught",
+    "keys": [
+     "VERDICT: ALL SEVEN PARAMETERS, SEVEN PORTS, THREE LIBRARY SCHEMES AND BOTH FIGURE CITATIONS APPEAR VERBATIM"
+    ],
+    "expect": [
+     {
+      "what": "вердикт: параметры, порты, схемы и ссылки присутствуют дословно",
+      "held": true
+     },
+     {
+      "what": "самотест: все засланые мутации пойманы (числа совпадают)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _text_verify.py",
+    "code": 0,
+    "tail": "--- 2 as rendered --- |    Задание написано под систему Altera MAX+plus II: оно требует графический редактор, блоки библиотеки maxplus2 (74155, 74374, 74244) и осциллограф с файлами форматов .scf и .wfm. Замена вызвана не формулировкой задания, а недоступностью самой системы: MAX+plus II не поставляется в современных установках, тогда как Quartus II сохраняет ту же библиотеку maxplus2 и те же элем",
+    "keys": [
+     "VERDICT: ALL TEXT REPAIRS VERIFIED IN THE RENDERED DOCUMENT"
+    ],
+    "expect": [
+     {
+      "what": "устаревших форм 0 и отсутствующих новых 0",
+      "held": true
+     },
+     {
+      "what": "вердикт по всем текстовым правкам напечатан",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _adjnoun.py",
+    "code": 0,
+    "tail": "      ...мент lpm_ram_dq — универсальный настраиваемый носитель данных с одним портом (single-port RAM): он объявлен в библиотеке мегафункц... |    [SINGULAR adj + PLURAL noun] много внутренних |       ...на и так затрагивает. У развёрнутых же схем в нетлисте много внутренних узлов ячеек, которые этой же волной не переключаются. Срав...",
+    "keys": [],
+    "expect": [
+     {
+      "what": "сводка кандидатов напечатана (слой информационный, вердикта нет)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _none_check.py",
+    "code": 0,
+    "tail": "   Значения после синтеза взяты не из документации, а из отчёта анализа и синтеза (lpramax.map.rpt), который печатает таблицу параметров развёрнутой мегафункции. Два замечания по ним обязательны. Первое: параметр LPM_NUMWORDS в задании указан как <none>, и символ сам объясняет, что это значит — «Number of memory words, default is 2^LPM_WIDTHAD», поэтому синтез подставил 2 в 10-й = 1024 слов. Второ",
+    "keys": [],
+    "expect": [
+     {
+      "what": "форма «<none>» употреблена в отчёте",
+      "held": true
+     },
+     {
+      "what": "форма «не задан» употреблена",
+      "held": true
+     },
+     {
+      "what": "синтез описан глаголом «подставил»",
+      "held": true
+     },
+     {
+      "what": "цитата формулировки значения LPM_FILE напечатана целиком",
+      "held": true
+     },
+     {
+      "what": "цитата формулировки значения LPM_NUMWORDS напечатана целиком",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _yo.py",
+    "code": 0,
+    "tail": "words occurring BOTH with ё and with е (pure inconsistency): 0",
+    "keys": [],
+    "expect": [
+     {
+      "what": "сводка прежнего критерия напечатана (число не утверждается: слой заменён)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _yo2.py",
+    "code": 0,
+    "tail": "   разрешены        expect=False got=False OK    short plural of разрешить |    все              expect=False got=False OK    все has no ё; всё does | self-test: 10 of 10 correct",
+    "keys": [],
+    "expect": [
+     {
+      "what": "дефектов ё 0 по новому критерию",
+      "held": true
+     },
+     {
+      "what": "самотест вызывает ту же функцию, что и скан: все кейсы верны",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _yo_usage.py",
+    "code": 0,
+    "tail": "   stem нем        ё: —                            е: верхнем×1, временем×1, немедленно×1, нему×1, прежнему×2, уровнем×12 |    stem всем       ё: —                            е: всем×8 |    stem этот       ё: —                            е: этот×8",
+    "keys": [
+     "distinct words containing ё: 104 | total ё-tokens: 270"
+    ],
+    "expect": [
+     {
+      "what": "размер конвенции: 104 слова с ё, 273 вхождения",
+      "held": false
+     }
+    ],
+    "missed": [
+     "размер конвенции: 104 слова с ё, 273 вхождения"
+    ]
+   },
+   {
+    "what": "УТВЕРЖДЕНИЕ _yo_usage.py не держится",
+    "code": -1,
+    "tail": "размер конвенции: 104 слова с ё, 273 вхождения"
+   },
+   {
+    "what": "python _readback.py",
+    "code": 0,
+    "tail": "   узлах              forms used: {1: ['23'], 2: ['29']} |    это                forms used: {0: ['1'], 1: ['4', '74244'], 2: ['74155', '74155']} | nouns with more than one agreement form: 13",
+    "keys": [],
+    "expect": [
+     {
+      "what": "заголовки разделов найдены и перечислены (не пустой список)",
+      "held": true
+     },
+     {
+      "what": "дамп раздела 4.2 напечатан с числом абзацев",
+      "held": true
+     },
+     {
+      "what": "сводка по формам согласования существительных напечатана",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _readback9.py",
+    "code": 0,
+    "tail": "   Второй слой (раздел 3.2) независимо насчитал 112 сегментов Z и подтвердил то же самое, а 64 сегмента X в волнах задания 4 оказались предсказаны моделью, то есть ни один X не остался необъяснённым (0). | [Собственные схемы работы, построенные] ABSENT | [64 комбинации шести входов] ABSENT",
+    "keys": [],
+    "expect": [
+     {
+      "what": "исправленная форма «144 перехода» найдена в отрендеренном тексте",
+      "held": true
+     },
+     {
+      "what": "исправленная форма «2 пути tpd» найдена",
+      "held": true
+     },
+     {
+      "what": "верная форма «112 сегментов» сохранилась",
+      "held": false
+     },
+     {
+      "what": "форма с запятой отсутствует осознанно (её заменила краткая форма)",
+      "held": true
+     },
+     {
+      "what": "номинативная форма у сайта, управляемого словом «всех», отсутствует (находка)",
+      "held": true
+     }
+    ],
+    "missed": [
+     "верная форма «112 сегментов» сохранилась"
+    ]
+   },
+   {
+    "what": "УТВЕРЖДЕНИЕ _readback9.py не держится",
+    "code": -1,
+    "tail": "верная форма «112 сегментов» сохранилась"
+   },
+   {
+    "what": "python _readback_rest.py",
+    "code": 0,
+    "tail": "   * Передача D → Q НЕ инверсная: зафиксированные слова совпадают с входными побитово, расхождений 0 на 12 фазах. |    * Содержимое регистра до первой записи — нуль, и это НАБЛЮДАЕМО, а не предположение. В пункте 3 шина d[7..0] не отпущена ни на одной фазе (адресованная ячейка подключена всегда), и в фазе 0, задолго до первого фронта wr, она читается как 00000000. В изолированном зонде этот факт н",
+    "keys": [],
+    "expect": [
+     {
+      "what": "исправленное предложение 4.3 напечатано целиком",
+      "held": true
+     },
+     {
+      "what": "хвост абзаца о покрытии моделирования напечатан и не обрезан (1259 знаков)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _rb_bulk.py",
+    "code": 0,
+    "tail": "============================== 9.4 ============================== | ============================== 10 ============================== | [prose paragraphs dumped: 46]",
+    "keys": [],
+    "expect": [
+     {
+      "what": "дамп прозаических абзацев непустой (число напечатано)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _rb2.py",
+    "code": 0,
+    "tail": "========================== 9.3 ========================== | ========================== 9.4 ========================== | ========================== 10 ==========================",
+    "keys": [],
+    "expect": [
+     {
+      "what": "баннер раздела напечатан (дамп непустой)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _rb3.py",
+    "code": 0,
+    "tail": "======================== 9.3 ======================== | ======================== 9.4 ======================== | ======================== 10 ========================",
+    "keys": [],
+    "expect": [
+     {
+      "what": "баннер раздела напечатан (дамп непустой)",
+      "held": true
+     }
+    ],
+    "missed": []
+   },
+   {
+    "what": "python _composition_audit.py",
+    "code": 0,
+    "tail": "   expect=0  got=0  resolved=0  unres=1  own=0  OK | У 74244 при GN = 0 выход равен входу во всех 32  | self-test: 14 of 14 correct | VERDICT: THE LIBRARY FILES MATCH THEIR INDEPENDENT COPIES, AND EVERY ATTRIBUTABLE COMPOSITION CLAIM AGREES WITH THE AUTHENTIC .bdf FILE",
+    "keys": [
+     "VERDICT: THE LIBRARY FILES MATCH THEIR INDEPENDENT COPIES, AND EVERY ATTRIBUTABLE COMPOSITION CLAIM AGREES WITH THE AUTHENTIC .bdf FILE"
+    ],
+    "expect": [],
+    "missed": []
+   },
+   {
+    "what": "python _prep_case.py",
+    "code": 0,
+    "tail": "        unres: 12 минутах [not on the lexicon] | self-test: 13 of 13 correct | VERDICT: EVERY 'при <numeral> <noun>' SITE USES THE PREPOSITIONAL FORM THE CONSTRUCTION REQUIRES",
+    "keys": [
+     "VERDICT: EVERY 'при <numeral> <noun>' SITE USES THE PREPOSITIONAL FORM THE CONSTRUCTION REQUIRES"
+    ],
+    "expect": [],
+    "missed": []
+   },
+   {
+    "what": "python _prep_discover.py",
+    "code": 0,
+    "tail": "   [18 выводах] ...ляров примитивов (8 DFF, 8 TRI и 1 NOT) при 18 выводах символа (10 входов и 8 выходов). На каждый ра... |    [18 выводах] ...еров и 1 инвертор; всего 17 экземпляров при 18 выводах символа.... |    [295 переходах] ...крытие моделирования пункта 4 — 94.29 % при 295 переходах. Это наибольшее покрытие из всех четырёх п...",
+    "keys": [],
+    "expect": [],
+    "missed": []
+   },
+   {
+    "what": "python _rb_caps.py",
+    "code": 0,
+    "tail": "   Рисунок 6 — Подлинная внутренняя схема 74244 из файла библиотеки: 8 буферов в двух группах по четыре и 2 инвертора; стробы 1GN и 2GN измерены активными НИЗКИМ уровнем (раздел 9). |    Рисунок 7 — Задание 3: память 4 × 8 бит (рис. 18.8) — 74155, четыре 74374, 74244, общая шина d[7..0] | caption read-back: CLEAN",
+    "keys": [],
+    "expect": [],
+    "missed": []
+   },
+   {
+    "what": "python _rb72.py",
+    "code": 0,
+    "tail": "   Рисунок 5 — Подлинная внутренняя схема 74374 из файла библиотеки: 8 D-триггеров, 8 буферов и 1 инвертор; всего 17 экземпляров при 18 выводах символа. |    Рисунок 6 — Подлинная внутренняя схема 74244 из файла библиотеки: 8 буферов в двух группах по четыре и 2 инвертора; стробы 1GN и 2GN измерены активными НИЗКИМ уровнем (раздел 9). |    Рисунок 7 — Задание 3: память 4 × 8 бит (рис. 18.8) — 7415",
+    "keys": [],
+    "expect": [],
+    "missed": []
+   },
+   {
+    "what": "python _dbg_chain.py",
+    "code": 0,
+    "tail": "  step 1: num='6' phrase='входах' span=21..0 rest=' и 8 выходах' |      SEP did not match at 21: ' и 8 вых'",
+    "keys": [],
+    "expect": [],
+    "missed": []
+   }
+  ],
+  "restored": true,
+  "container": {
+   "members_a": 27,
+   "members_b": 27,
+   "names_identical": true,
+   "crc_divergent": [],
+   "size_divergent": [],
+   "compress_divergent": [],
+   "date_divergent": 27
+  },
+  "snapshot": {
+   "before": {
+    "bytes": 421565,
+    "sha": "7bdaefaabd83",
+    "full": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e"
+   },
+   "regen": {
+    "bytes": 421565,
+    "sha": "39197e0a01c6",
+    "full": "39197e0a01c6a10a0c470b482fd4679d7f06121d43382bde470a11f1c03d4a3e"
+   },
+   "after": {
+    "bytes": 421565,
+    "sha": "7bdaefaabd83",
+    "full": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e"
+   }
+  },
+  "refhash": {
+   "zadanieSha": "aa7c249226514b05783d2e99cc962715d38430aa7a9a3043124d970dfbfb90a5",
+   "docxSha": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+   "docxBytes": 421565,
+   "docxShaSuperseded": "d1364886cc6f090a18f02128927847f5cb77114369115cfe25bb10403161ea40",
+   "docxShaSupersededAll": [
+    "ecf106559e5bac232ce9dd7f829545c1c84459ba8395d2c7c2005da1f739aee0",
+    "8cee2e514bf7f4b34842ca9513fc4e2bf5fc80342a4b5883f2f8a0f3185581e1",
+    "d913f1cd4cc8afc11c3be56b44df8b9b291dace83bc0a8b9f268da7b063aa96c",
+    "ca6a61bd59d8c30157a631a3d7afece9a5529a1854ba7f637f63c0720b0fe28e",
+    "aa3d726adf5f588c3982ee8ef1c8f0e5c1586127ae6ba5afb321b113bf95ea81",
+    "d1364886cc6f090a18f02128927847f5cb77114369115cfe25bb10403161ea40"
+   ],
+   "docxBytesHistory": [
+    421182,
+    421182,
+    421179,
+    421178,
+    421252,
+    421266,
+    421565
+   ],
+   "zadanieMeasured": "aa7c249226514b05783d2e99cc962715d38430aa7a9a3043124d970dfbfb90a5",
+   "docxMeasured": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+   "docxMeasuredBytes": 421565,
+   "docxSourceMeasured": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+   "docxSourceMatch": true,
+   "zadanieMatch": true,
+   "docxMatch": true
+  },
+  "zadanie": {
+   "present": true,
+   "file": "zadanie_lab13.txt",
+   "bytes": 6803,
+   "sha": "aa7c24922651",
+   "full": "aa7c249226514b05783d2e99cc962715d38430aa7a9a3043124d970dfbfb90a5",
+   "preserved": true,
+   "source": "sdacha",
+   "lines": 93,
+   "mirror": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\zadanie_lab13.txt",
+   "crlfOnly": true
+  },
+  "reportCopy": {
+   "copied": true,
+   "bytes": 421565,
+   "sha": "7bdaefaabd83",
+   "src": "C:/Users/User/VirtualBox VMs/Microelectronics/lab13_report.docx",
+   "full": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+   "srcFull": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e"
+  }
+ },
+ "hashes": {
+  "vhdl": {
+   "staged": "e10ff38bc6fe",
+   "bytes": 3895,
+   "authoring": "e10ff38bc6fe",
+   "guest": "e10ff38bc6fe",
+   "identical": true
+  },
+  "tdf": [
+   {
+    "file": "lpramax.tdf",
+    "authorBytes": 2361,
+    "guestBytes": 1559,
+    "strippedChars": 319,
+    "strippedEqual": true,
+    "byteEqual": false
+   },
+   {
+    "file": "lpramwb.tdf",
+    "authorBytes": 1961,
+    "guestBytes": 1247,
+    "strippedChars": 319,
+    "strippedEqual": true,
+    "byteEqual": false
+   }
+  ]
+ },
+ "corpus": {
+  "workFiles": 73,
+  "workNames": 69,
+  "deliveryFiles": 69,
+  "deliveryNames": 69,
+  "pairs": 69,
+  "divergent": 0,
+  "namesMissingInDelivery": [],
+  "namesMissingInWork": [],
+  "duplicatesInWork": 4
+ },
+ "homoglyphGate": {
+  "code": 1,
+  "why": "Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe -X utf8 _homoglyph_all.py\n  File \"D:\\Desktop\\NF\\lab13\\sdacha\\8_sbornik_otcheta\\_homoglyph_all.py\", li",
+  "missed": [
+   "самотест слоя прошёл: 4 засланых токена обнаружены",
+   "текстовых файлов пройдено не меньше 200",
+   "смешанных токенов по всей сдаче 0"
+  ],
+  "checks": [
+   {
+    "what": "самотест слоя прошёл: 4 засланых токена обнаружены",
+    "held": false
+   },
+   {
+    "what": "текстовых файлов пройдено не меньше 200",
+    "held": false
+   },
+   {
+    "what": "смешанных токенов по всей сдаче 0",
+    "held": false
+   }
+  ],
+  "swept": "0",
+  "tokens": "?",
+  "rows": [],
+  "tail": "SyntaxError: invalid syntax"
+ },
+ "refCorpus": {
+  "files": 15,
+  "originalAvailable": 15,
+  "divergent": 0,
+  "rows": [
+   {
+    "file": "ref_vwf/D/D.vwf",
+    "bytes": 2707,
+    "hostOriginal": "D:\\Desktop\\NF\\dshagent\\ref\\vwf\\D\\D.vwf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_vwf/D/db/D.sim.vwf",
+    "bytes": 2757,
+    "hostOriginal": "D:\\Desktop\\NF\\dshagent\\ref\\vwf\\D\\db\\D.sim.vwf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_vwf/VHDLCMP_4BIT/VHDLCMP_4BIT.vwf",
+    "bytes": 6345,
+    "hostOriginal": "D:\\Desktop\\NF\\dshagent\\ref\\vwf\\VHDLCMP_4BIT\\VHDLCMP_4BIT.vwf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_vwf/VHDL_4_bit_memory/db/VHDL_4_bit_memory.sim.vwf",
+    "bytes": 7009,
+    "hostOriginal": "D:\\Desktop\\NF\\dshagent\\ref\\vwf\\VHDL_4_bit_memory\\db\\VHDL_4_bit_memory.sim.vwf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/lpm_ram_dp.bsf",
+    "bytes": 4975,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\lpm_ram_dp.bsf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/lpm_ram_dq.bsf",
+    "bytes": 3847,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\lpm_ram_dq.bsf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/lpm_ram_dq.inc",
+    "bytes": 232,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\lpm_ram_dq.inc",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/lpm_ram_dq.tdf",
+    "bytes": 7523,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\lpm_ram_dq.tdf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/lpm_ram_dq_info.xml",
+    "bytes": 1440,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\lpm_ram_dq_info.xml",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/lpm_rom.bsf",
+    "bytes": 3538,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\lpm_rom.bsf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/mega/altram.inc",
+    "bytes": 185,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\mega\\altram.inc",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/mega/altram.tdf",
+    "bytes": 19783,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\mega\\altram.tdf",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/mega/altsyncram.inc",
+    "bytes": 2184,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\mega\\altsyncram.inc",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/mega/lpm_decode.inc",
+    "bytes": 153,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\mega\\lpm_decode.inc",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   },
+   {
+    "file": "ref_altera/mega/lpm_mux.inc",
+    "bytes": 188,
+    "hostOriginal": "D:\\Desktop\\NF\\lab13\\ref\\mega\\lpm_mux.inc",
+    "originalAvailable": true,
+    "matchesOriginal": true
+   }
+  ]
+ },
+ "renderLayer": {
+  "check": {
+   "relocation_note": "Перенос путей: измеренные числа НЕ тронуты; переписаны только ссылки на авторский docx и на приватную папку превью, которые не едут в сдачу (6 замена, 8 совпадений).",
+   "what": "Independent render check of the report by a foreign engine (LibreOffice Kit, batch convert to PDF), verified text-only because this model cannot read images.",
+   "source_docx": {
+    "path": "../../0_zadanie_i_otchet/lab13_report.docx",
+    "bytes": 421182,
+    "sha256": "ecf106559e5bac232ce9dd7f829545c1c84459ba8395d2c7c2005da1f739aee0",
+      "measures_build": "measured input of THIS render run: report build v1 (421182 B, the hash above), which is superseded by the delivered build 7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e (421565 B). The hash has been left exactly as measured and has NOT been rewritten, because rewriting a recorded measurement would falsify it. The delivered build's own render record is render_live.json; an \"equals_reference\" flag beside this hash means equal to the reference AS OF THAT RUN."
+   },
+   "pinned_copy": "./_render_pin/lab13_report_pinned.docx (same sha256 as the source; pinned so the packer's swaps could not affect the check)",
+   "pdf": {
+    "bytes": 867972,
+    "signature": "%PDF-1.7",
+    "trailer": "%%EOF present",
+    "pages": 41,
+    "image_xobjects": 10,
+    "fonts_with_tounicode": 14,
+    "mediabox_pt": [
+     0,
+     0,
+     595.303937007874,
+     841.889763779528
+    ]
+   },
+   "converter_diagnostics": {
+    "backend": "native",
+    "missing_fonts": [
+     "Courier"
+    ],
+    "meaning": "the renderer has no Courier and substituted a face for the monospace runs; Word on Windows does have Courier, so this affects the PDF, not the deliverable"
+   },
+   "text_survival": {
+    "docx_units_checked": 735,
+    "paragraphs": 221,
+    "table_cells": 514,
+    "extracted_chars": 87023,
+    "unmatched_with_spaces": 9,
+    "unmatched_ignoring_whitespace": 0,
+    "explanation_of_the_nine": "the extractor walks TJ arrays and drops numeric kerning, so two adjacent words can be glued; removing all whitespace makes every one of the nine match, and none is absent from the render"
+   },
+   "scripts": [
+    "_pdf_text.py (extraction: object split, indirect Resources/Font resolution, per-font code width from /Type0, ToUnicode CMap, TJ-array tokenizer)",
+    "_pdf_cmp.py (comparison and verdict)"
+   ],
+   "bugs_found_in_my_own_extractor": [
+    "page filter /Type\\s*/Page(?![s/]) rejected every page because LibreOffice writes /Type/Page/Contents compactly",
+    "Contents resolved through flat() then the first integer was read from the stream object, which is /Length's reference - every page came out empty (40 chars total)",
+    "tokenizer required a show operator immediately after each string, but strings appear as array operands in TJ",
+    "string pattern applied to bytes in the image count"
+   ],
+   "limits": "LibreOffice output can differ from Word in pagination and fonts; this check establishes that the document opens, lays out 41 pages, places all 10 images and loses no text, not that Word paginates identically. Pixel-level layout was not inspected because the model cannot read images.",
+   "reproduce": {
+    "note": "the pinned copy and the PDF were private inspection artefacts and have been removed; rerun these two commands to reproduce the check",
+    "step1": "copy ../../0_zadanie_i_otchet/lab13_report.docx to a scratch file and verify its sha256 equals 7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+    "step2": "& \"<node>\" \"<libreoffice-kit cli>\" convert --input <scratch.docx> --output <scratch.pdf>",
+    "step3": "python _pdf_text.py  (expects the pair in ./_render_pin/) then python _pdf_cmp.py",
+    "page_size_confirmation": "MediaBox [0 0 595.303937007874 841.889763779528] pt = 21.0 x 29.7 cm, which independently confirms the A4 setting that check_report.py reads from the docx"
+   }
+  },
+  "recheck": {
+   "what": "ПОВТОРЕНИЕ слоя «сторонний движок»: упаковщик заново сконвертировал ДОСТАВЛЕННЫЙ docx в PDF и заново измерил текст, прогнав перенесённые копии авторских _pdf_text.py и _pdf_cmp.py. Это не новый метод, а независимое повторение метода руководителя: совпадение всех чисел означает, что слой воспроизводим, а не однократный.",
+   "measured_by": "packer (повторение check руководителя из lab13/evidence/render_check.json)",
+   "measured_at": "2026-11-26T22:37:37.857Z",
+   "source_docx": {
+    "path_in_sdacha": "0_zadanie_i_otchet/lab13_report.docx",
+    "bytes": 421182,
+    "sha256": "ecf106559e5bac232ce9dd7f829545c1c84459ba8395d2c7c2005da1f739aee0",
+      "measures_build": "measured input of THIS render run: report build v1 (421182 B, the hash above), which is superseded by the delivered build 7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e (421565 B). The hash has been left exactly as measured and has NOT been rewritten, because rewriting a recorded measurement would falsify it. The delivered build's own render record is render_live.json; an \"equals_reference\" flag beside this hash means equal to the reference AS OF THAT RUN.",
+    "equals_reference": true
+   },
+   "converter": {
+    "engine": "LibreOffice Kit (batch convert), нативный бэкенд",
+    "invocation": "& <node> <cli> convert --input 0_zadanie_i_otchet/lab13_report.docx --output <scratch>/lab13_report_pinned.pdf",
+    "note": "Полные пути <node> и <cli> намеренно НЕ цитируются: они принадлежат установке проверяющей машины, а доказательство не должно ссылаться на файл, которого нет в сдаче. Kit кладётся рядом с харнесом; путь меняется от установки к установке.",
+    "backend": "native",
+    "missing_fonts": [
+     "Courier"
+    ],
+    "meaning_missing_fonts": "в движке нет Courier, он подставил другое начертание для моноширинных запусков; на сам сдаваемый docx это не влияет (в Word на Windows Courier есть), но PDF не является доказательством типографики моноблоков"
+   },
+   "pdf": {
+    "bytes": 867972,
+    "signature": "%PDF-1.7",
+    "eof_present": true,
+    "pages": 41,
+    "image_xobjects": 10,
+    "fonts_with_tounicode": 14,
+    "mediabox_pt": [
+     0,
+     0,
+     595.303937007874,
+     841.889763779528
+    ],
+    "mediabox_cm": [
+     21,
+     29.7
+    ],
+    "page_format": "A4: MediaBox [0 0 595.303937007874 841.889763779528] pt = 210 x 297 мм = 21 x 29.7 см. Формат подтверждён НЕ из docx, а из геометрии страниц PDF, причём независимо от check_report.py, который читает его из docx.",
+    "mediabox_mm": [
+     210,
+     297
+    ]
+   },
+   "text_survival": {
+    "docx_units_checked": 735,
+    "paragraphs": 221,
+    "table_cells": 514,
+    "extracted_chars": 87023,
+    "unmatched_with_spaces": 9,
+    "unmatched_ignoring_whitespace": 0,
+    "nine_unmatched": [
+     {
+      "unit_index": 11,
+      "kind": "paragraph",
+      "chars": 108,
+      "sha256_normalized": "3f76048ce7f7fad4be584b5448fd17f772948d28a25231772667593bc9d635cd",
+      "found_ignoring_whitespace": true,
+      "shape": "contains a Windows drive path"
+     },
+     {
+      "unit_index": 42,
+      "kind": "paragraph",
+      "chars": 170,
+      "sha256_normalized": "298d68dc68c275faaf268c3ea0cc4d3f9c595419cddaa6fd225fbb2485abef90",
+      "found_ignoring_whitespace": true,
+      "shape": "plain Cyrillic/Latin text"
+     },
+     {
+      "unit_index": 114,
+      "kind": "paragraph",
+      "chars": 3464,
+      "sha256_normalized": "8a4d293a0d2f5ac7d2de0e1faeb01d0655e9bd548d5b0f275c89dc78299c442f",
+      "found_ignoring_whitespace": true,
+      "shape": "contains a Windows drive path; has box-drawing dashes"
+     },
+     {
+      "unit_index": 203,
+      "kind": "paragraph",
+      "chars": 751,
+      "sha256_normalized": "713460a8f0a0a44dbbeae0ec9c1f24884612ce69e62f1539ae9acb801b83dac8",
+      "found_ignoring_whitespace": true,
+      "shape": "plain Cyrillic/Latin text"
+     },
+     {
+      "unit_index": 251,
+      "kind": "table_cell",
+      "chars": 15,
+      "sha256_normalized": "c8d0a0faeee1266cc238766e94318dfd693308c9c1f9cc4be4d0c696bb9f47e0",
+      "found_ignoring_whitespace": true,
+      "shape": "plain Cyrillic/Latin text"
+     },
+     {
+      "unit_index": 252,
+      "kind": "table_cell",
+      "chars": 21,
+      "sha256_normalized": "c8e0a0323b8d38f7e016fe7a7ca0e210e18e199a41d9a26173d38295a34a41f4",
+      "found_ignoring_whitespace": true,
+      "shape": "plain Cyrillic/Latin text"
+     },
+     {
+      "unit_index": 509,
+      "kind": "table_cell",
+      "chars": 105,
+      "sha256_normalized": "7673386da4809ed2f7e3408d980eea95da2c495ef74f0abeed056cc930a1286f",
+      "found_ignoring_whitespace": true,
+      "shape": "plain Cyrillic/Latin text"
+     },
+     {
+      "unit_index": 621,
+      "kind": "table_cell",
+      "chars": 68,
+      "sha256_normalized": "101c383ac89522be2cff21997a3947f1972e61f5a467a5b67246abb531faef8f",
+      "found_ignoring_whitespace": true,
+      "shape": "contains a Windows drive path"
+     },
+     {
+      "unit_index": 625,
+      "kind": "table_cell",
+      "chars": 69,
+      "sha256_normalized": "1dd65ec8bfbc63b485e34ca939fa5261adb54bedff6294071cf23400224e555f",
+      "found_ignoring_whitespace": true,
+      "shape": "contains a Windows drive path"
+     }
+    ],
+    "identification_note": "Девятка опознана индексом в том же порядке, в каком их собирает _pdf_cmp.py (сначала абзацы, затем ячейки таблиц), плюс длина нормализованного текста и его sha256. Дословных цитат нет: три из девяти содержат путь установки Quartus, а цитата пути в доказательстве была бы ссылкой на файл, которого нет в сдаче. Все девять находятся в PDF при игнорировании пробелов, то есть ни одно слово не потеряно: расхождение даёт извлекатель, который бросает числовые кернинги между словами в TJ-массиве и склеивает соседние слова (у трёх из девяти kerning возникает на символе обратного слэша пути).",
+    "mechanism_check": "из девяти шесть не содержат ни одного пути - значит дело не в путях как таковых, а в разрыве строк рендером; у четырёх из девяти (индексы 11, 114, 621, 625) расхождение возникает на символе обратного слэша цитируемого пути установки"
+   },
+   "courier_runs": {
+    "declaring_courier": 12,
+    "total_runs": 381
+   },
+   "scripts_shipped": [
+    "6_proverki/_pdf_text.py",
+    "6_proverki/_pdf_cmp.py"
+   ],
+   "relocation_note": "Оба скрипта доехали перенесёнными: вместо приватной папки автора они берут корень сдачи из своего местоположения (HERE/..), читают ДОСТАВЛЕННЫЙ docx по 0_zadanie_i_otchet/lab13_report.docx и пишут промежуточный pdf_text.txt рядом с собой в _render_pin/. Логика разбора и сверки не тронута: изменены только пути.",
+   "limits": [
+    "Пиксельный осмотр не делался: эта модель не принимает изображения, поэтому слой целиком текстовый и не утверждает ничего о визуальной вёрстке.",
+    "PDF не доказательство типографики моноблоков: движок сообщил missing_fonts [Courier] и подставил начертание для 12 запусков из 381.",
+    "Конверсия сторонним движком может отличаться от Word по пагинации; слой устанавливает, что документ открывается, распадается на 41 страницу, все 10 изображений ставятся и ни один текст не теряется, - а не что Word paginate-ит одинаково.",
+    "Ни PDF, ни дамп pdf_text.txt в сдачу НЕ положены: это производные артефакты чужого движка (867972 Б и 87023 символа), они восстанавливаются двумя командами из reproduce, а сдача остаётся доказательством по отношению к OWN артефактам."
+   ],
+   "agree_with_lead": {
+    "fields_compared": 15,
+    "identical": 15,
+    "diffs": [],
+    "verdict": "ВСЕ ПОЛЯ СОВПАЛИ: слой воспроизводим сторонним повторением"
+   },
+   "reproduce": [
+    "1. cd 6_proverki; убедиться, что sha256 доставленного docx равен эталону (pack.json -> reportProof.refhash).",
+    "2. Сконвертировать ../0_zadanie_i_otchet/lab13_report.docx в <scratch>/_render_pin/lab13_report_pinned.pdf сторонним движком (LibreOffice Kit convert).",
+    "3. python _pdf_text.py  -> ожидает PDF рядом с собой, печатает pages/extracted chars/units/NOT FOUND.",
+    "4. python _pdf_cmp.py   -> печатает подпись, страницы, image XObject, ToUnicode, MediaBox, обе сверки и вердикт.",
+    "Оба скрипта падают с внятным сообщением, если PDF или дампа нет: пустого результата «0 найдено» на полом входе они не выдают."
+   ],
+   "required_find": {
+    "note": "Утверждения на заведомо правильном входе: пустой набор здесь читался бы как успех, поэтому каждый замер обязан найти ненулевое.",
+    "pages": "ровно 41 (не «>=0»)",
+    "image_xobjects": "ровно 10 = число рисунков отчёта",
+    "fonts_with_tounicode": "14",
+    "docx_units_checked": "735 = 221 абзац + 514 ячейка (совпадает со структурой check_report.py: 231 абзац всего, из них 221 непустой)",
+    "extracted_chars": "87023 (ненулевой корпус)",
+    "unmatched_with_spaces": "9, и все 9 обязаны быть найдены без пробелов",
+    "unmatched_ignoring_whitespace": "0 - единственное число, которое здесь означает успех",
+    "courier_runs": "12 из 381 (ненулевой, иначе фильтр начертаний сломан)"
+   }
+  },
+  "scripts": [
+   {
+    "name": "_pdf_text.py",
+    "bytes": 8055,
+    "sha": "26ae34794abe",
+    "logicIdentical": true
+   },
+   {
+    "name": "_pdf_cmp.py",
+    "bytes": 2242,
+    "sha": "fc0570ad0bdd",
+    "logicIdentical": true
+   }
+  ]
+ },
+ "zapiski": [
+  {
+   "folder": "0_zadanie_i_otchet",
+   "file": "ZIPISKA.txt",
+   "bytes": 19278,
+   "lines": 221,
+   "widest": 78
+  },
+  {
+   "folder": "1_ram4",
+   "file": "ZIPISKA.txt",
+   "bytes": 8672,
+   "lines": 112,
+   "widest": 78
+  },
+  {
+   "folder": "2_ram4beh",
+   "file": "ZIPISKA.txt",
+   "bytes": 6768,
+   "lines": 94,
+   "widest": 78
+  },
+  {
+   "folder": "3_mem4x8",
+   "file": "ZIPISKA.txt",
+   "bytes": 16325,
+   "lines": 218,
+   "widest": 78
+  },
+  {
+   "folder": "4_lpm_ram_dq",
+   "file": "ZIPISKA.txt",
+   "bytes": 14247,
+   "lines": 187,
+   "widest": 78
+  },
+  {
+   "folder": "5_proby_polyarnosti",
+   "file": "ZIPISKA.txt",
+   "bytes": 8827,
+   "lines": 117,
+   "widest": 78
+  },
+  {
+   "folder": "6_proverki",
+   "file": "ZIPISKA.txt",
+   "bytes": 55912,
+   "lines": 656,
+   "widest": 78
+  },
+  {
+   "folder": "7_avtorskie_iskhod",
+   "file": "ZIPISKA.txt",
+   "bytes": 2640,
+   "lines": 36,
+   "widest": 78
+  },
+  {
+   "folder": "8_sbornik_otcheta",
+   "file": "ZIPISKA.txt",
+   "bytes": 43250,
+   "lines": 583,
+   "widest": 78
+  },
+  {
+   "folder": "lib_maxplus2",
+   "file": "ZIPISKA.txt",
+   "bytes": 5972,
+   "lines": 79,
+   "widest": 78
+  },
+  {
+   "folder": "ref_altera",
+   "file": "ZIPISKA.txt",
+   "bytes": 6486,
+   "lines": 92,
+   "widest": 78
+  },
+  {
+   "folder": "ref_vwf",
+   "file": "ZIPISKA.txt",
+   "bytes": 4119,
+   "lines": 56,
+   "widest": 78
+  },
+  {
+   "folder": "guest_logs",
+   "file": "ZIPISKA.txt",
+   "bytes": 7842,
+   "lines": 107,
+   "widest": 78
+  }
+ ],
+ "rows": [
+  {
+   "folder": "0_zadanie_i_otchet",
+   "files": 3,
+   "bytes": 447646
+  },
+  {
+   "folder": "1_ram4",
+   "files": 19,
+   "bytes": 348690
+  },
+  {
+   "folder": "2_ram4beh",
+   "files": 17,
+   "bytes": 260189
+  },
+  {
+   "folder": "3_mem4x8",
+   "files": 26,
+   "bytes": 655500
+  },
+  {
+   "folder": "4_lpm_ram_dq",
+   "files": 39,
+   "bytes": 309392
+  },
+  {
+   "folder": "5_proby_polyarnosti",
+   "files": 51,
+   "bytes": 806762
+  },
+  {
+   "folder": "6_proverki",
+   "files": 27,
+   "bytes": 542447
+  },
+  {
+   "folder": "7_avtorskie_iskhod",
+   "files": 3,
+   "bytes": 6962
+  },
+  {
+   "folder": "8_sbornik_otcheta",
+   "files": 49,
+   "bytes": 512692
+  },
+  {
+   "folder": "lib_maxplus2",
+   "files": 11,
+   "bytes": 212672
+  },
+  {
+   "folder": "ref_altera",
+   "files": 12,
+   "bytes": 50534
+  },
+  {
+   "folder": "ref_vwf",
+   "files": 5,
+   "bytes": 22937
+  },
+  {
+   "folder": "guest_logs",
+   "files": 14,
+   "bytes": 203089
+  }
+ ],
+ "total": {
+  "files": 276,
+  "bytes": 4379512
+ },
+ "problems": [
+  "УТВЕРЖДЕНИЕ _ownref.py не держится -> код -1: указателей через раздел или подпись: 20",
+  "УТВЕРЖДЕНИЕ _sectref.py не держится -> код -1: 21 ссылка «раздел N.M», 0 висячих",
+  "УТВЕРЖДЕНИЕ _audit_final.py не держится -> код -1: измеренных чисел порядка 1090 (корпус не пуст)",
+  "python _homoglyph_all.py -> код 1 (Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe -X utf8 _homoglyph_all.py\n  File \"D:\\Desktop\\NF\\lab13\\sdacha\\8_sbornik_otcheta\\_homoglyph_all.py\", li):     // Контекст экранирования. r\"\\bпри\" ставит латинскую b рядом с кириллическим |     ^^ | SyntaxError: invalid syntax",
+  "УТВЕРЖДЕНИЕ _agree_system.py не держится -> код -1: сводка: 104 места, 19 сырых расхождений, 19 объяснено, 0 реальных",
+  "УТВЕРЖДЕНИЕ _yo_usage.py не держится -> код -1: размер конвенции: 104 слова с ё, 273 вхождения",
+  "УТВЕРЖДЕНИЕ _readback9.py не держится -> код -1: верная форма «112 сегментов» сохранилась",
+  "не удалось разобрать вывод _audit_final.py внутри сдачи: записка не имеет чисел для печати",
+  "слой гомоглифов изнутри сдачи -> код 1 (Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe -X utf8 _homoglyph_all.py\n  File \"D:\\Desktop\\NF\\lab13\\sdacha\\8_sbornik_otcheta\\_homoglyph_all.py\", li): SyntaxError: invalid syntax",
+  "утверждения слоя гомоглифов не держатся: самотест слоя прошёл: 4 засланых токена обнаружены; текстовых файлов пройдено не меньше 200; смешанных токенов по всей сдаче 0; вывод: SyntaxError: invalid syntax",
+  "смешанных кириллицей-латиницей токенов в сдаче: ? (обязан быть 0): ",
+  "аудит самодостаточности изнутри сдачи -> код 1 (Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node.exe sdacha_check.mjs\nfile:///D:/Desktop/NF/lab13/sdacha/6_proverki/sdacha_check.mjs:568\r\n    const RUNNED):     at async node:internal/modules/esm/loader:647:26 |     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) | Node.js v24.21.0",
+  "повторный аудит самодостаточности изнутри сдачи -> код 1 (Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node.exe sdacha_check.mjs\nfile:///D:/Desktop/NF/lab13/sdacha/6_proverki/sdacha_check.mjs:568\r\n    const RUNNED):     at async node:internal/modules/esm/loader:647:26 |     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) | Node.js v24.21.0",
+  "после прогонов аудитора в сдаче появилось не то, что ожидалось: ожидался 6_proverki/evidence/sdacha_selfcheck.json, появилось ничего"
+ ],
+ "verdict": "PROBLEMS",
+ "derivedJunkPurged": {
+  "removed": [],
+  "residue": []
+ },
+ "deliveryAudit": {
+  "first": {
+   "code": 1,
+   "why": "Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node.exe sdacha_check.mjs\nfile:///D:/Desktop/NF/lab13/sdacha/6_proverki/sdacha_check.mjs:568\r\n    const RUNNED",
+   "verdict": "",
+   "lines": [
+    "  внешние упоминания в ZIPISKA (не обещания): 1"
+   ],
+   "tail": "    at async node:internal/modules/esm/loader:647:26 |     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) | Node.js v24.21.0"
+  },
+  "second": {
+   "code": 1,
+   "why": "Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node.exe sdacha_check.mjs\nfile:///D:/Desktop/NF/lab13/sdacha/6_proverki/sdacha_check.mjs:568\r\n    const RUNNED",
+   "verdict": "",
+   "lines": [
+    "  внешние упоминания в ZIPISKA (не обещания): 1"
+   ],
+   "tail": "    at async node:internal/modules/esm/loader:647:26 |     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) | Node.js v24.21.0"
+  }
+ },
+ "grownAfterAudit": {
+  "expected": [
+   "6_proverki/evidence/sdacha_selfcheck.json"
+  ],
+  "added": [],
+  "vanished": [],
+  "bytesAdded": 0
+ },
+ "finalRows": [
+  {
+   "folder": "0_zadanie_i_otchet",
+   "files": 3,
+   "bytes": 447646
+  },
+  {
+   "folder": "1_ram4",
+   "files": 19,
+   "bytes": 348690
+  },
+  {
+   "folder": "2_ram4beh",
+   "files": 17,
+   "bytes": 260189
+  },
+  {
+   "folder": "3_mem4x8",
+   "files": 26,
+   "bytes": 655500
+  },
+  {
+   "folder": "4_lpm_ram_dq",
+   "files": 39,
+   "bytes": 309392
+  },
+  {
+   "folder": "5_proby_polyarnosti",
+   "files": 51,
+   "bytes": 806762
+  },
+  {
+   "folder": "6_proverki",
+   "files": 28,
+   "bytes": 657080
+  },
+  {
+   "folder": "7_avtorskie_iskhod",
+   "files": 3,
+   "bytes": 6962
+  },
+  {
+   "folder": "8_sbornik_otcheta",
+   "files": 49,
+   "bytes": 512692
+  },
+  {
+   "folder": "lib_maxplus2",
+   "files": 11,
+   "bytes": 212672
+  },
+  {
+   "folder": "ref_altera",
+   "files": 12,
+   "bytes": 50534
+  },
+  {
+   "folder": "ref_vwf",
+   "files": 5,
+   "bytes": 22937
+  },
+  {
+   "folder": "guest_logs",
+   "files": 14,
+   "bytes": 203089
+  }
+ ],
+ "finalTotal": {
+  "files": 277,
+  "bytes": 4494145
+ }
+}

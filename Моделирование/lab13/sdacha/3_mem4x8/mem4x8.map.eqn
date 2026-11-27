@@ -1,0 +1,533 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C3_20 is 74374:R2|20
+--operation mode is normal
+
+C3_20_lut_out = w[7];
+C3_20 = DFFEAS(C3_20_lut_out, K2, VCC, , , , , , );
+
+
+--C1_20 is 74374:R0|20
+--operation mode is normal
+
+C1_20_lut_out = w[7];
+C1_20 = DFFEAS(C1_20_lut_out, K0, VCC, , , , , , );
+
+
+--C4_20 is 74374:R3|20
+--operation mode is normal
+
+C4_20_lut_out = w[7];
+C4_20 = DFFEAS(C4_20_lut_out, K3, VCC, , , , , , );
+
+
+--C2_20 is 74374:R1|20
+--operation mode is normal
+
+C2_20_lut_out = w[7];
+C2_20 = DFFEAS(C2_20_lut_out, K1, VCC, , , , , , );
+
+
+--C4L32 is 74374:R3|47~79
+--operation mode is normal
+
+C4L32 = a0 & (a1 & C4_20 # !a1 & (C2_20)) # !a0 & a1;
+
+
+--C4L42 is 74374:R3|47~80
+--operation mode is normal
+
+C4L42 = a0 & (C4L32) # !a0 & (C4L32 & C3_20 # !C4L32 & (C1_20));
+
+
+--C3_19 is 74374:R2|19
+--operation mode is normal
+
+C3_19_lut_out = w[6];
+C3_19 = DFFEAS(C3_19_lut_out, K2, VCC, , , , , , );
+
+
+--C1_19 is 74374:R0|19
+--operation mode is normal
+
+C1_19_lut_out = w[6];
+C1_19 = DFFEAS(C1_19_lut_out, K0, VCC, , , , , , );
+
+
+--C4_19 is 74374:R3|19
+--operation mode is normal
+
+C4_19_lut_out = w[6];
+C4_19 = DFFEAS(C4_19_lut_out, K3, VCC, , , , , , );
+
+
+--C2_19 is 74374:R1|19
+--operation mode is normal
+
+C2_19_lut_out = w[6];
+C2_19 = DFFEAS(C2_19_lut_out, K1, VCC, , , , , , );
+
+
+--C4L12 is 74374:R3|46~65
+--operation mode is normal
+
+C4L12 = a0 & (a1 & C4_19 # !a1 & (C2_19)) # !a0 & a1;
+
+
+--C4L22 is 74374:R3|46~66
+--operation mode is normal
+
+C4L22 = a0 & (C4L12) # !a0 & (C4L12 & C3_19 # !C4L12 & (C1_19));
+
+
+--C3_18 is 74374:R2|18
+--operation mode is normal
+
+C3_18_lut_out = w[5];
+C3_18 = DFFEAS(C3_18_lut_out, K2, VCC, , , , , , );
+
+
+--C1_18 is 74374:R0|18
+--operation mode is normal
+
+C1_18_lut_out = w[5];
+C1_18 = DFFEAS(C1_18_lut_out, K0, VCC, , , , , , );
+
+
+--C4_18 is 74374:R3|18
+--operation mode is normal
+
+C4_18_lut_out = w[5];
+C4_18 = DFFEAS(C4_18_lut_out, K3, VCC, , , , , , );
+
+
+--C2_18 is 74374:R1|18
+--operation mode is normal
+
+C2_18_lut_out = w[5];
+C2_18 = DFFEAS(C2_18_lut_out, K1, VCC, , , , , , );
+
+
+--C4L91 is 74374:R3|45~65
+--operation mode is normal
+
+C4L91 = a0 & (a1 & C4_18 # !a1 & (C2_18)) # !a0 & a1;
+
+
+--C4L02 is 74374:R3|45~66
+--operation mode is normal
+
+C4L02 = a0 & (C4L91) # !a0 & (C4L91 & C3_18 # !C4L91 & (C1_18));
+
+
+--C3_17 is 74374:R2|17
+--operation mode is normal
+
+C3_17_lut_out = w[4];
+C3_17 = DFFEAS(C3_17_lut_out, K2, VCC, , , , , , );
+
+
+--C1_17 is 74374:R0|17
+--operation mode is normal
+
+C1_17_lut_out = w[4];
+C1_17 = DFFEAS(C1_17_lut_out, K0, VCC, , , , , , );
+
+
+--C4_17 is 74374:R3|17
+--operation mode is normal
+
+C4_17_lut_out = w[4];
+C4_17 = DFFEAS(C4_17_lut_out, K3, VCC, , , , , , );
+
+
+--C2_17 is 74374:R1|17
+--operation mode is normal
+
+C2_17_lut_out = w[4];
+C2_17 = DFFEAS(C2_17_lut_out, K1, VCC, , , , , , );
+
+
+--C4L71 is 74374:R3|44~65
+--operation mode is normal
+
+C4L71 = a0 & (a1 & C4_17 # !a1 & (C2_17)) # !a0 & a1;
+
+
+--C4L81 is 74374:R3|44~66
+--operation mode is normal
+
+C4L81 = a0 & (C4L71) # !a0 & (C4L71 & C3_17 # !C4L71 & (C1_17));
+
+
+--C3_16 is 74374:R2|16
+--operation mode is normal
+
+C3_16_lut_out = w[3];
+C3_16 = DFFEAS(C3_16_lut_out, K2, VCC, , , , , , );
+
+
+--C1_16 is 74374:R0|16
+--operation mode is normal
+
+C1_16_lut_out = w[3];
+C1_16 = DFFEAS(C1_16_lut_out, K0, VCC, , , , , , );
+
+
+--C4_16 is 74374:R3|16
+--operation mode is normal
+
+C4_16_lut_out = w[3];
+C4_16 = DFFEAS(C4_16_lut_out, K3, VCC, , , , , , );
+
+
+--C2_16 is 74374:R1|16
+--operation mode is normal
+
+C2_16_lut_out = w[3];
+C2_16 = DFFEAS(C2_16_lut_out, K1, VCC, , , , , , );
+
+
+--C4L51 is 74374:R3|43~65
+--operation mode is normal
+
+C4L51 = a0 & (a1 & C4_16 # !a1 & (C2_16)) # !a0 & a1;
+
+
+--C4L61 is 74374:R3|43~66
+--operation mode is normal
+
+C4L61 = a0 & (C4L51) # !a0 & (C4L51 & C3_16 # !C4L51 & (C1_16));
+
+
+--C3_15 is 74374:R2|15
+--operation mode is normal
+
+C3_15_lut_out = w[2];
+C3_15 = DFFEAS(C3_15_lut_out, K2, VCC, , , , , , );
+
+
+--C1_15 is 74374:R0|15
+--operation mode is normal
+
+C1_15_lut_out = w[2];
+C1_15 = DFFEAS(C1_15_lut_out, K0, VCC, , , , , , );
+
+
+--C4_15 is 74374:R3|15
+--operation mode is normal
+
+C4_15_lut_out = w[2];
+C4_15 = DFFEAS(C4_15_lut_out, K3, VCC, , , , , , );
+
+
+--C2_15 is 74374:R1|15
+--operation mode is normal
+
+C2_15_lut_out = w[2];
+C2_15 = DFFEAS(C2_15_lut_out, K1, VCC, , , , , , );
+
+
+--C4L31 is 74374:R3|42~65
+--operation mode is normal
+
+C4L31 = a0 & (a1 & C4_15 # !a1 & (C2_15)) # !a0 & a1;
+
+
+--C4L41 is 74374:R3|42~66
+--operation mode is normal
+
+C4L41 = a0 & (C4L31) # !a0 & (C4L31 & C3_15 # !C4L31 & (C1_15));
+
+
+--C3_14 is 74374:R2|14
+--operation mode is normal
+
+C3_14_lut_out = w[1];
+C3_14 = DFFEAS(C3_14_lut_out, K2, VCC, , , , , , );
+
+
+--C1_14 is 74374:R0|14
+--operation mode is normal
+
+C1_14_lut_out = w[1];
+C1_14 = DFFEAS(C1_14_lut_out, K0, VCC, , , , , , );
+
+
+--C4_14 is 74374:R3|14
+--operation mode is normal
+
+C4_14_lut_out = w[1];
+C4_14 = DFFEAS(C4_14_lut_out, K3, VCC, , , , , , );
+
+
+--C2_14 is 74374:R1|14
+--operation mode is normal
+
+C2_14_lut_out = w[1];
+C2_14 = DFFEAS(C2_14_lut_out, K1, VCC, , , , , , );
+
+
+--C4L11 is 74374:R3|41~65
+--operation mode is normal
+
+C4L11 = a0 & (a1 & C4_14 # !a1 & (C2_14)) # !a0 & a1;
+
+
+--C4L21 is 74374:R3|41~66
+--operation mode is normal
+
+C4L21 = a0 & (C4L11) # !a0 & (C4L11 & C3_14 # !C4L11 & (C1_14));
+
+
+--C3_13 is 74374:R2|13
+--operation mode is normal
+
+C3_13_lut_out = w[0];
+C3_13 = DFFEAS(C3_13_lut_out, K2, VCC, , , , , , );
+
+
+--C1_13 is 74374:R0|13
+--operation mode is normal
+
+C1_13_lut_out = w[0];
+C1_13 = DFFEAS(C1_13_lut_out, K0, VCC, , , , , , );
+
+
+--C4_13 is 74374:R3|13
+--operation mode is normal
+
+C4_13_lut_out = w[0];
+C4_13 = DFFEAS(C4_13_lut_out, K3, VCC, , , , , , );
+
+
+--C2_13 is 74374:R1|13
+--operation mode is normal
+
+C2_13_lut_out = w[0];
+C2_13 = DFFEAS(C2_13_lut_out, K1, VCC, , , , , , );
+
+
+--C4L9 is 74374:R3|40~65
+--operation mode is normal
+
+C4L9 = a0 & (a1 & C4_13 # !a1 & (C2_13)) # !a0 & a1;
+
+
+--C4L01 is 74374:R3|40~66
+--operation mode is normal
+
+C4L01 = a0 & (C4L9) # !a0 & (C4L9 & C3_13 # !C4L9 & (C1_13));
+
+
+--K2 is K2
+--operation mode is normal
+
+K2 = a1 & wr & (!a0);
+
+
+--K0 is K0
+--operation mode is normal
+
+K0 = wr & (!a1 & !a0);
+
+
+--K3 is K3
+--operation mode is normal
+
+K3 = a1 & a0 & wr;
+
+
+--K1 is K1
+--operation mode is normal
+
+K1 = a0 & wr & (!a1);
+
+
+--a0 is a0
+--operation mode is input
+
+a0 = INPUT();
+
+
+--a1 is a1
+--operation mode is input
+
+a1 = INPUT();
+
+
+--rd is rd
+--operation mode is input
+
+rd = INPUT();
+
+
+--w[7] is w[7]
+--operation mode is input
+
+w[7] = INPUT();
+
+
+--wr is wr
+--operation mode is input
+
+wr = INPUT();
+
+
+--w[6] is w[6]
+--operation mode is input
+
+w[6] = INPUT();
+
+
+--w[5] is w[5]
+--operation mode is input
+
+w[5] = INPUT();
+
+
+--w[4] is w[4]
+--operation mode is input
+
+w[4] = INPUT();
+
+
+--w[3] is w[3]
+--operation mode is input
+
+w[3] = INPUT();
+
+
+--w[2] is w[2]
+--operation mode is input
+
+w[2] = INPUT();
+
+
+--w[1] is w[1]
+--operation mode is input
+
+w[1] = INPUT();
+
+
+--w[0] is w[0]
+--operation mode is input
+
+w[0] = INPUT();
+
+
+--d[7] is d[7]
+--operation mode is output
+
+d[7] = OUTPUT(C4L42);
+
+
+--d[6] is d[6]
+--operation mode is output
+
+d[6] = OUTPUT(C4L22);
+
+
+--d[5] is d[5]
+--operation mode is output
+
+d[5] = OUTPUT(C4L02);
+
+
+--d[4] is d[4]
+--operation mode is output
+
+d[4] = OUTPUT(C4L81);
+
+
+--d[3] is d[3]
+--operation mode is output
+
+d[3] = OUTPUT(C4L61);
+
+
+--d[2] is d[2]
+--operation mode is output
+
+d[2] = OUTPUT(C4L41);
+
+
+--d[1] is d[1]
+--operation mode is output
+
+d[1] = OUTPUT(C4L21);
+
+
+--d[0] is d[0]
+--operation mode is output
+
+d[0] = OUTPUT(C4L01);
+
+
+--q[7] is q[7]
+--operation mode is output
+
+q[7]_tri_out = TRI(C4L42, rd);
+q[7] = OUTPUT(q[7]_tri_out);
+
+
+--q[6] is q[6]
+--operation mode is output
+
+q[6]_tri_out = TRI(C4L22, rd);
+q[6] = OUTPUT(q[6]_tri_out);
+
+
+--q[5] is q[5]
+--operation mode is output
+
+q[5]_tri_out = TRI(C4L02, rd);
+q[5] = OUTPUT(q[5]_tri_out);
+
+
+--q[4] is q[4]
+--operation mode is output
+
+q[4]_tri_out = TRI(C4L81, rd);
+q[4] = OUTPUT(q[4]_tri_out);
+
+
+--q[3] is q[3]
+--operation mode is output
+
+q[3]_tri_out = TRI(C4L61, rd);
+q[3] = OUTPUT(q[3]_tri_out);
+
+
+--q[2] is q[2]
+--operation mode is output
+
+q[2]_tri_out = TRI(C4L41, rd);
+q[2] = OUTPUT(q[2]_tri_out);
+
+
+--q[1] is q[1]
+--operation mode is output
+
+q[1]_tri_out = TRI(C4L21, rd);
+q[1] = OUTPUT(q[1]_tri_out);
+
+
+--q[0] is q[0]
+--operation mode is output
+
+q[0]_tri_out = TRI(C4L01, rd);
+q[0] = OUTPUT(q[0]_tri_out);
+
+

@@ -1,0 +1,168 @@
+{
+ "what": "ПОВТОРЕНИЕ слоя «сторонний движок»: упаковщик заново сконвертировал ДОСТАВЛЕННЫЙ docx в PDF и заново измерил текст, прогнав перенесённые копии авторских _pdf_text.py и _pdf_cmp.py. Это не новый метод, а независимое повторение метода руководителя: совпадение всех чисел означает, что слой воспроизводим, а не однократный.",
+ "measured_by": "packer (повторение check руководителя из lab13/evidence/render_check.json)",
+ "measured_at": "2026-11-26T22:37:37.857Z",
+ "source_docx": {
+  "path_in_sdacha": "0_zadanie_i_otchet/lab13_report.docx",
+  "bytes": 421182,
+  "sha256": "ecf106559e5bac232ce9dd7f829545c1c84459ba8395d2c7c2005da1f739aee0",
+      "measures_build": "measured input of THIS render run: report build v1 (421182 B, the hash above), which is superseded by the delivered build 72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43 (421565 B). The hash has been left exactly as measured and has NOT been rewritten, because rewriting a recorded measurement would falsify it. The delivered build's own render record is render_live.json; an \"equals_reference\" flag beside this hash means equal to the reference AS OF THAT RUN.",
+  "equals_reference": true
+ },
+ "converter": {
+  "engine": "LibreOffice Kit (batch convert), нативный бэкенд",
+  "invocation": "& <node> <cli> convert --input 0_zadanie_i_otchet/lab13_report.docx --output <scratch>/lab13_report_pinned.pdf",
+  "note": "Полные пути <node> и <cli> намеренно НЕ цитируются: они принадлежат установке проверяющей машины, а доказательство не должно ссылаться на файл, которого нет в сдаче. Kit кладётся рядом с харнесом; путь меняется от установки к установке.",
+  "backend": "native",
+  "missing_fonts": [
+   "Courier"
+  ],
+  "meaning_missing_fonts": "в движке нет Courier, он подставил другое начертание для моноширинных запусков; на сам сдаваемый docx это не влияет (в Word на Windows Courier есть), но PDF не является доказательством типографики моноблоков"
+ },
+ "pdf": {
+  "bytes": 867972,
+  "signature": "%PDF-1.7",
+  "eof_present": true,
+  "pages": 41,
+  "image_xobjects": 10,
+  "fonts_with_tounicode": 14,
+  "mediabox_pt": [
+   0,
+   0,
+   595.303937007874,
+   841.889763779528
+  ],
+  "mediabox_cm": [
+   21,
+   29.7
+  ],
+  "page_format": "A4: MediaBox [0 0 595.303937007874 841.889763779528] pt = 210 x 297 мм = 21 x 29.7 см. Формат подтверждён НЕ из docx, а из геометрии страниц PDF, причём независимо от check_report.py, который читает его из docx.",
+  "mediabox_mm": [
+   210,
+   297
+  ]
+ },
+ "text_survival": {
+  "docx_units_checked": 735,
+  "paragraphs": 221,
+  "table_cells": 514,
+  "extracted_chars": 87023,
+  "unmatched_with_spaces": 9,
+  "unmatched_ignoring_whitespace": 0,
+  "nine_unmatched": [
+   {
+    "unit_index": 11,
+    "kind": "paragraph",
+    "chars": 108,
+    "sha256_normalized": "3f76048ce7f7fad4be584b5448fd17f772948d28a25231772667593bc9d635cd",
+    "found_ignoring_whitespace": true,
+    "shape": "contains a Windows drive path"
+   },
+   {
+    "unit_index": 42,
+    "kind": "paragraph",
+    "chars": 170,
+    "sha256_normalized": "298d68dc68c275faaf268c3ea0cc4d3f9c595419cddaa6fd225fbb2485abef90",
+    "found_ignoring_whitespace": true,
+    "shape": "plain Cyrillic/Latin text"
+   },
+   {
+    "unit_index": 114,
+    "kind": "paragraph",
+    "chars": 3464,
+    "sha256_normalized": "8a4d293a0d2f5ac7d2de0e1faeb01d0655e9bd548d5b0f275c89dc78299c442f",
+    "found_ignoring_whitespace": true,
+    "shape": "contains a Windows drive path; has box-drawing dashes"
+   },
+   {
+    "unit_index": 203,
+    "kind": "paragraph",
+    "chars": 751,
+    "sha256_normalized": "713460a8f0a0a44dbbeae0ec9c1f24884612ce69e62f1539ae9acb801b83dac8",
+    "found_ignoring_whitespace": true,
+    "shape": "plain Cyrillic/Latin text"
+   },
+   {
+    "unit_index": 251,
+    "kind": "table_cell",
+    "chars": 15,
+    "sha256_normalized": "c8d0a0faeee1266cc238766e94318dfd693308c9c1f9cc4be4d0c696bb9f47e0",
+    "found_ignoring_whitespace": true,
+    "shape": "plain Cyrillic/Latin text"
+   },
+   {
+    "unit_index": 252,
+    "kind": "table_cell",
+    "chars": 21,
+    "sha256_normalized": "c8e0a0323b8d38f7e016fe7a7ca0e210e18e199a41d9a26173d38295a34a41f4",
+    "found_ignoring_whitespace": true,
+    "shape": "plain Cyrillic/Latin text"
+   },
+   {
+    "unit_index": 509,
+    "kind": "table_cell",
+    "chars": 105,
+    "sha256_normalized": "7673386da4809ed2f7e3408d980eea95da2c495ef74f0abeed056cc930a1286f",
+    "found_ignoring_whitespace": true,
+    "shape": "plain Cyrillic/Latin text"
+   },
+   {
+    "unit_index": 621,
+    "kind": "table_cell",
+    "chars": 68,
+    "sha256_normalized": "101c383ac89522be2cff21997a3947f1972e61f5a467a5b67246abb531faef8f",
+    "found_ignoring_whitespace": true,
+    "shape": "contains a Windows drive path"
+   },
+   {
+    "unit_index": 625,
+    "kind": "table_cell",
+    "chars": 69,
+    "sha256_normalized": "1dd65ec8bfbc63b485e34ca939fa5261adb54bedff6294071cf23400224e555f",
+    "found_ignoring_whitespace": true,
+    "shape": "contains a Windows drive path"
+   }
+  ],
+  "identification_note": "Девятка опознана индексом в том же порядке, в каком их собирает _pdf_cmp.py (сначала абзацы, затем ячейки таблиц), плюс длина нормализованного текста и его sha256. Дословных цитат нет: три из девяти содержат путь установки Quartus, а цитата пути в доказательстве была бы ссылкой на файл, которого нет в сдаче. Все девять находятся в PDF при игнорировании пробелов, то есть ни одно слово не потеряно: расхождение даёт извлекатель, который бросает числовые кернинги между словами в TJ-массиве и склеивает соседние слова (у трёх из девяти kerning возникает на символе обратного слэша пути).",
+  "mechanism_check": "из девяти шесть не содержат ни одного пути - значит дело не в путях как таковых, а в разрыве строк рендером; у четырёх из девяти (индексы 11, 114, 621, 625) расхождение возникает на символе обратного слэша цитируемого пути установки"
+ },
+ "courier_runs": {
+  "declaring_courier": 12,
+  "total_runs": 381
+ },
+ "scripts_shipped": [
+  "6_proverki/_pdf_text.py",
+  "6_proverki/_pdf_cmp.py"
+ ],
+ "relocation_note": "Оба скрипта доехали перенесёнными: вместо приватной папки автора они берут корень сдачи из своего местоположения (HERE/..), читают ДОСТАВЛЕННЫЙ docx по 0_zadanie_i_otchet/lab13_report.docx и пишут промежуточный pdf_text.txt рядом с собой в _render_pin/. Логика разбора и сверки не тронута: изменены только пути.",
+ "limits": [
+  "Пиксельный осмотр не делался: эта модель не принимает изображения, поэтому слой целиком текстовый и не утверждает ничего о визуальной вёрстке.",
+  "PDF не доказательство типографики моноблоков: движок сообщил missing_fonts [Courier] и подставил начертание для 12 запусков из 381.",
+  "Конверсия сторонним движком может отличаться от Word по пагинации; слой устанавливает, что документ открывается, распадается на 41 страницу, все 10 изображений ставятся и ни один текст не теряется, - а не что Word paginate-ит одинаково.",
+  "Ни PDF, ни дамп pdf_text.txt в сдачу НЕ положены: это производные артефакты чужого движка (867972 Б и 87023 символа), они восстанавливаются двумя командами из reproduce, а сдача остаётся доказательством по отношению к OWN артефактам."
+ ],
+ "agree_with_lead": {
+  "fields_compared": 15,
+  "identical": 15,
+  "diffs": [],
+  "verdict": "ВСЕ ПОЛЯ СОВПАЛИ: слой воспроизводим сторонним повторением"
+ },
+ "reproduce": [
+  "1. cd 6_proverki; убедиться, что sha256 доставленного docx равен эталону (pack.json -> reportProof.refhash).",
+  "2. Сконвертировать ../0_zadanie_i_otchet/lab13_report.docx в <scratch>/_render_pin/lab13_report_pinned.pdf сторонним движком (LibreOffice Kit convert).",
+  "3. python _pdf_text.py  -> ожидает PDF рядом с собой, печатает pages/extracted chars/units/NOT FOUND.",
+  "4. python _pdf_cmp.py   -> печатает подпись, страницы, image XObject, ToUnicode, MediaBox, обе сверки и вердикт.",
+  "Оба скрипта падают с внятным сообщением, если PDF или дампа нет: пустого результата «0 найдено» на полом входе они не выдают."
+ ],
+ "required_find": {
+  "note": "Утверждения на заведомо правильном входе: пустой набор здесь читался бы как успех, поэтому каждый замер обязан найти ненулевое.",
+  "pages": "ровно 41 (не «>=0»)",
+  "image_xobjects": "ровно 10 = число рисунков отчёта",
+  "fonts_with_tounicode": "14",
+  "docx_units_checked": "735 = 221 абзац + 514 ячейка (совпадает со структурой check_report.py: 231 абзац всего, из них 221 непустой)",
+  "extracted_chars": "87023 (ненулевой корпус)",
+  "unmatched_with_spaces": "9, и все 9 обязаны быть найдены без пробелов",
+  "unmatched_ignoring_whitespace": "0 - единственное число, которое здесь означает успех",
+  "courier_runs": "12 из 381 (ненулевой, иначе фильтр начертаний сломан)"
+ }
+}

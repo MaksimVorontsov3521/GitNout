@@ -1,0 +1,56 @@
+{
+ "entity": "lpramax",
+ "family": "ACEX1K",
+ "period": 100,
+ "rows": 17,
+ "phasesPerWrite": "setup(WE=0) / pulse(WE=1) / release(WE=0) - address and data held constant through the pulse",
+ "writes": [
+  {
+   "address": 0,
+   "addressHex": "0x0",
+   "data": 255,
+   "dataHex": "0xFF"
+  },
+  {
+   "address": 341,
+   "addressHex": "0x155",
+   "data": 240,
+   "dataHex": "0xF0"
+  },
+  {
+   "address": 682,
+   "addressHex": "0x2AA",
+   "data": 165,
+   "dataHex": "0xA5"
+  },
+  {
+   "address": 1023,
+   "addressHex": "0x3FF",
+   "data": 90,
+   "dataHex": "0x5A"
+  }
+ ],
+ "reads": [
+  {
+   "address": 0,
+   "expectData": 255
+  },
+  {
+   "address": 341,
+   "expectData": 240
+  },
+  {
+   "address": 682,
+   "expectData": 165
+  },
+  {
+   "address": 1023,
+   "expectData": 90
+  },
+  {
+   "address": 426,
+   "expectUnwritten": true
+  }
+ ],
+ "note": "LPM_NUMWORDS and LPM_FILE are deliberately omitted: the task fixes them as <none>, and lpm_ram_dq.tdf defaults them to 2^LPM_WIDTHAD and UNUSED, so the elaborated array is 8 bits by 1024 words with no initialisation file."
+}

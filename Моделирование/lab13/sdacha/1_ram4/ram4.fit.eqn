@@ -1,0 +1,119 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--F2 is F2 at LC_X52_Y1_N6
+--operation mode is normal
+
+F2_lut_out = GND;
+F2 = DFFEAS(F2_lut_out, GLOBAL(CLK), VCC, , A1L01, D, , , VCC);
+
+
+--A1L41 is T0~151 at LC_X52_Y1_N5
+--operation mode is normal
+
+F3_qfbk = F3;
+A1L41 = A0 & (F3_qfbk) # !A0 & (F2);
+
+--F3 is F3 at LC_X52_Y1_N5
+--operation mode is normal
+
+F3 = DFFEAS(A1L41, GLOBAL(CLK), VCC, , A1L9, D, , , VCC);
+
+
+--F0 is F0 at LC_X51_Y1_N4
+--operation mode is normal
+
+F0_lut_out = GND;
+F0 = DFFEAS(F0_lut_out, GLOBAL(CLK), VCC, , A1L21, D, , , VCC);
+
+
+--A1L51 is T0~152 at LC_X51_Y1_N2
+--operation mode is normal
+
+F1_qfbk = F1;
+A1L51 = A0 & F1_qfbk # !A0 & (F0);
+
+--F1 is F1 at LC_X51_Y1_N2
+--operation mode is normal
+
+F1 = DFFEAS(A1L51, GLOBAL(CLK), VCC, , A1L11, D, , , VCC);
+
+
+--A1L61 is T0~153 at LC_X52_Y1_N4
+--operation mode is normal
+
+A1L61 = WE # A1 & (A1L41) # !A1 & A1L51;
+
+
+--A1L9 is O0~108 at LC_X52_Y1_N9
+--operation mode is normal
+
+A1L9 = A0 & WE & A1;
+
+
+--A1L01 is O0~109 at LC_X52_Y1_N8
+--operation mode is normal
+
+A1L01 = !A0 & WE & A1;
+
+
+--A1L11 is O0~110 at LC_X52_Y1_N7
+--operation mode is normal
+
+A1L11 = A0 & WE & !A1;
+
+
+--A1L21 is O0~111 at LC_X52_Y1_N2
+--operation mode is normal
+
+A1L21 = !A0 & WE & !A1;
+
+
+--WE is WE at PIN_Y3
+--operation mode is input
+
+WE = INPUT();
+
+
+--A0 is A0 at PIN_AA3
+--operation mode is input
+
+A0 = INPUT();
+
+
+--A1 is A1 at PIN_AA2
+--operation mode is input
+
+A1 = INPUT();
+
+
+--D is D at PIN_W4
+--operation mode is input
+
+D = INPUT();
+
+
+--CLK is CLK at PIN_L2
+--operation mode is input
+
+CLK = INPUT();
+
+
+--Q is Q at PIN_W3
+--operation mode is output
+
+Q_tri_out = TRI(A1L61, !WE);
+Q = OUTPUT(Q_tri_out);
+
+
+

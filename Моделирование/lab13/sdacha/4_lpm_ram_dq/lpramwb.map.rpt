@@ -1,0 +1,264 @@
+Analysis & Synthesis report for lpramwb
+Sun Dec 11 02:11:05 2022
+Version 5.0 Build 148 04/26/2005 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Analysis & Synthesis Source Files Read
+  5. Analysis & Synthesis Resource Usage Summary
+  6. Analysis & Synthesis Resource Utilization by Entity
+  7. Analysis & Synthesis RAM Summary
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: lpm_ram_dq:mem
+ 10. Analysis & Synthesis Equations
+ 11. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2005 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic       
+functions, and any output files any of the foregoing           
+(including device programming or simulation files), and any    
+associated documentation or information are expressly subject  
+to the terms and conditions of the Altera Program License      
+Subscription Agreement, Altera MegaCore Function License       
+Agreement, or other applicable license agreement, including,   
+without limitation, that your use is for the sole purpose of   
+programming logic devices manufactured by Altera and sold by   
+Altera or its authorized distributors.  Please refer to the    
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Sun Dec 11 02:11:05 2022    ;
+; Quartus II Version          ; 5.0 Build 148 04/26/2005 SJ Full Version ;
+; Revision Name               ; lpramwb                                  ;
+; Top-level Entity Name       ; lpramwb                                  ;
+; Family                      ; ACEX1K                                   ;
+; Total logic elements        ; 0                                        ;
+; Total pins                  ; 27                                       ;
+; Total memory bits           ; 8,192                                    ;
+; Total PLLs                  ; 0                                        ;
++-----------------------------+------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                             ;
++------------------------------------------------------------+--------------+---------------+
+; Option                                                     ; Setting      ; Default Value ;
++------------------------------------------------------------+--------------+---------------+
+; Top-level entity name                                      ; lpramwb      ; lpramwb       ;
+; Family name                                                ; ACEX1K       ; Stratix       ;
+; Use smart compilation                                      ; Off          ; Off           ;
+; Create Debugging Nodes for IP Cores                        ; off          ; off           ;
+; Preserve fewer node names                                  ; On           ; On            ;
+; Disable OpenCore Plus hardware evaluation                  ; Off          ; Off           ;
+; Verilog Version                                            ; Verilog_2001 ; Verilog_2001  ;
+; VHDL Version                                               ; VHDL93       ; VHDL93        ;
+; State Machine Processing                                   ; Auto         ; Auto          ;
+; Extract Verilog State Machines                             ; On           ; On            ;
+; Extract VHDL State Machines                                ; On           ; On            ;
+; Add Pass-Through Logic to Inferred RAMs                    ; On           ; On            ;
+; NOT Gate Push-Back                                         ; On           ; On            ;
+; Power-Up Don't Care                                        ; On           ; On            ;
+; Remove Redundant Logic Cells                               ; Off          ; Off           ;
+; Remove Duplicate Registers                                 ; On           ; On            ;
+; Ignore CARRY Buffers                                       ; Off          ; Off           ;
+; Ignore CASCADE Buffers                                     ; Off          ; Off           ;
+; Ignore GLOBAL Buffers                                      ; Off          ; Off           ;
+; Ignore ROW GLOBAL Buffers                                  ; Off          ; Off           ;
+; Ignore LCELL Buffers                                       ; Off          ; Off           ;
+; Ignore SOFT Buffers                                        ; On           ; On            ;
+; Limit AHDL Integers to 32 Bits                             ; Off          ; Off           ;
+; Auto Implement in ROM                                      ; Off          ; Off           ;
+; Optimization Technique -- FLEX 10K/10KE/10KA/ACEX 1K       ; Area         ; Area          ;
+; Carry Chain Length -- FLEX 10K                             ; 32           ; 32            ;
+; Cascade Chain Length                                       ; 2            ; 2             ;
+; Auto Carry Chains                                          ; On           ; On            ;
+; Auto Open-Drain Pins                                       ; On           ; On            ;
+; Remove Duplicate Logic                                     ; On           ; On            ;
+; Auto ROM Replacement                                       ; On           ; On            ;
+; Auto RAM Replacement                                       ; On           ; On            ;
+; Auto Clock Enable Replacement                              ; On           ; On            ;
+; Auto Resource Sharing                                      ; Off          ; Off           ;
+; Allow Any RAM Size For Recognition                         ; Off          ; Off           ;
+; Allow Any ROM Size For Recognition                         ; Off          ; Off           ;
+; Ignore translate_off and translate_on Synthesis Directives ; Off          ; Off           ;
+; Show Parameter Settings Tables in Synthesis Report         ; On           ; On            ;
++------------------------------------------------------------+--------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                               ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+
+; lpramwb.tdf                      ; yes             ; User AHDL File  ; C:/dsh/lpramwb/lpramwb.tdf                                 ;
+; lpm_ram_dq.inc                   ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/lpm_ram_dq.inc ;
+; lpm_ram_dq.tdf                   ; yes             ; Megafunction    ; c:/altera/quartus50/libraries/megafunctions/lpm_ram_dq.tdf ;
+; altram.inc                       ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/altram.inc     ;
+; lpm_mux.inc                      ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/lpm_mux.inc    ;
+; lpm_decode.inc                   ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/lpm_decode.inc ;
+; aglobal50.inc                    ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/aglobal50.inc  ;
+; altram.tdf                       ; yes             ; Megafunction    ; c:/altera/quartus50/libraries/megafunctions/altram.tdf     ;
+; memmodes.inc                     ; yes             ; Other           ; c:/altera/quartus50/libraries/others/maxplus2/memmodes.inc ;
+; altsyncram.inc                   ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/altsyncram.inc ;
+; altqpram.inc                     ; yes             ; Other           ; c:/altera/quartus50/libraries/megafunctions/altqpram.inc   ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++---------------------------------+-----------+
+; Resource                        ; Usage     ;
++---------------------------------+-----------+
+; Total logic elements            ; 0         ;
+; Total combinational functions   ; 0         ;
+;     -- Total 4-input functions  ; 0         ;
+;     -- Total 3-input functions  ; 0         ;
+;     -- Total 2-input functions  ; 0         ;
+;     -- Total 1-input functions  ; 0         ;
+;     -- Total 0-input functions  ; 0         ;
+; Combinational cells for routing ; 0         ;
+; Total registers                 ; 0         ;
+; I/O pins                        ; 27        ;
+; Total memory bits               ; 8192      ;
+; Maximum fan-out node            ; we        ;
+; Maximum fan-out                 ; 8         ;
+; Total fan-out                   ; 104       ;
+; Average fan-out                 ; 2.97      ;
++---------------------------------+-----------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+-------------------------------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; Memory Bits ; Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Full Hierarchy Name                 ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+-------------------------------------+
+; |lpramwb                   ; 0 (0)       ; 0            ; 8192        ; 27   ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |lpramwb                            ;
+;    |lpm_ram_dq:mem|        ; 0 (0)       ; 0            ; 8192        ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |lpramwb|lpm_ram_dq:mem             ;
+;       |altram:sram|        ; 0 (0)       ; 0            ; 8192        ; 0    ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; |lpramwb|lpm_ram_dq:mem|altram:sram ;
++----------------------------+-------------+--------------+-------------+------+--------------+-------------------+------------------+-----------------+-------------------------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                           ;
++------------------------------------+-------------+--------------+--------------+--------------+--------------+------+------+
+; Name                               ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++------------------------------------+-------------+--------------+--------------+--------------+--------------+------+------+
+; lpm_ram_dq:mem|altram:sram|content ; Single Port ; 1024         ; 8            ; --           ; --           ; 8192 ; none ;
++------------------------------------+-------------+--------------+--------------+--------------+--------------+------+------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lpm_ram_dq:mem ;
++------------------------+--------------+---------------------+
+; Parameter Name         ; Value        ; Type                ;
++------------------------+--------------+---------------------+
+; LPM_WIDTH              ; 8            ; Untyped             ;
+; LPM_WIDTHAD            ; 10           ; Untyped             ;
+; LPM_NUMWORDS           ; 1024         ; Untyped             ;
+; LPM_INDATA             ; UNREGISTERED ; Untyped             ;
+; LPM_ADDRESS_CONTROL    ; UNREGISTERED ; Untyped             ;
+; LPM_OUTDATA            ; UNREGISTERED ; Untyped             ;
+; LPM_FILE               ; UNUSED       ; Untyped             ;
+; USE_EAB                ; ON           ; Untyped             ;
+; DEVICE_FAMILY          ; ACEX1K       ; Untyped             ;
+; CBXI_PARAMETER         ; NOTHING      ; Untyped             ;
+; AUTO_CARRY_CHAINS      ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS   ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS    ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS ; OFF          ; IGNORE_CASCADE      ;
++------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------+
+; Analysis & Synthesis Equations ;
++--------------------------------+
+The equations can be found in C:/dsh/lpramwb/lpramwb.map.eqn.
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 02:11:05 2022
+Info: Command: quartus_map lpramwb
+Info: Found 1 design units, including 1 entities, in source file lpramwb.tdf
+    Info: Found entity 1: lpramwb
+Info: Elaborating entity "lpramwb" for the top level hierarchy
+Info: Found 1 design units, including 1 entities, in source file ../../altera/quartus50/libraries/megafunctions/lpm_ram_dq.tdf
+    Info: Found entity 1: lpm_ram_dq
+Info: Elaborating entity "lpm_ram_dq" for hierarchy "lpm_ram_dq:mem"
+Info: Found 1 design units, including 1 entities, in source file ../../altera/quartus50/libraries/megafunctions/altram.tdf
+    Info: Found entity 1: altram
+Info: Elaborating entity "altram" for hierarchy "lpm_ram_dq:mem|altram:sram"
+Info: Issued messages during elaboration of megafunction "lpm_ram_dq:mem|altram:sram", which is child of megafunction "lpm_ram_dq:mem"
+Info: Instantiated megafunction "lpm_ram_dq:mem" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "10"
+    Info: Parameter "LPM_INDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "UNREGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+Warning: Memory Initialization File or Hexadecimal (Intel-Format) File for RAM is not specified -- setting initial contents to 0
+    Warning: RAM name is "segment[0][7]"
+    Warning: RAM name is "segment[0][6]"
+    Warning: RAM name is "segment[0][5]"
+    Warning: RAM name is "segment[0][4]"
+    Warning: RAM name is "segment[0][3]"
+    Warning: RAM name is "segment[0][2]"
+    Warning: RAM name is "segment[0][1]"
+    Warning: RAM name is "segment[0][0]"
+Info: Implemented 35 device resources after synthesis - the final resource count might be different
+    Info: Implemented 19 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 8 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Processing ended: Sun Dec 11 02:11:05 2022
+    Info: Elapsed time: 00:00:00
+
+

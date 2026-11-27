@@ -1,0 +1,44 @@
+------------------------------------------------------------------
+--  Lab 13, task 4: the universal configurable memory element LPM_RAM_DQ
+--  from the megafunction library, configured exactly as the assignment
+--  prescribes:
+--
+--      LPM_ADDRESS_CONTROL  "unregistered"
+--      LPM_FILE             <none>        (left at its default: no init file)
+--      LPM_INDATA           "unregistered"
+--      LPM_NUMWORDS         <none>        (left at its default: 2^LPM_WIDTHAD)
+--      LPM_OUTDATA          "unregistered"
+--      LPM_WIDTH            8
+--      LPM_WIDTHAD          10
+--
+--  Only the inputs WE, ADDRESS, DATA and the output Q are brought out, which
+--  is what ">AB0282 B>;L:> 2E>4K WE, ADDRESS, DATA 8 2KE>4 Q" asks for. The
+--  device family is FLEX10KE: the guest measurement showed that the parameter set
+--  above, i.e. an asynchronous-read single-port RAM, is refused by Stratix and
+--  Cyclone ("supports only synchronous single-port RAM") and by MAX3000A
+--  (internal error in the state synthesiser), and is accepted by FLEX10KE.
+------------------------------------------------------------------
+INCLUDE "lpm_ram_dq.inc";
+
+SUBDESIGN lpramfk
+(
+	data[7..0]	: INPUT;
+	address[9..0]	: INPUT;
+	we		: INPUT;
+	q[7..0]		: OUTPUT;
+)
+
+VARIABLE
+	mem : lpm_ram_dq WITH (
+		LPM_WIDTH = 8,
+		LPM_WIDTHAD = 10,
+		LPM_ADDRESS_CONTROL = "UNREGISTERED",
+		LPM_INDATA = "UNREGISTERED",
+		LPM_OUTDATA = "UNREGISTERED");
+
+BEGIN
+	mem.data[] = data[];
+	mem.address[] = address[];
+	mem.we = we;
+	q[] = mem.q[];
+END;

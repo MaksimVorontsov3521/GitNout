@@ -1,0 +1,10 @@
+# probe rqfk
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 5.0
+set_global_assignment -name LAST_QUARTUS_VERSION 5.0
+set_global_assignment -name AHDL_FILE rqfk.tdf
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name FAMILY "FLEX10KE"
+set_global_assignment -name DEVICE AUTO
+set_global_assignment -name TOP_LEVEL_ENTITY rqfk
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+

@@ -1,0 +1,119 @@
+{
+ "entity": "REG2",
+ "project": "REG2",
+ "top": "REG2",
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "CLK",
+  "OE"
+ ],
+ "outputs": [],
+ "buses": [
+  {
+   "name": "D",
+   "hi": 1,
+   "lo": 0,
+   "dir": "input"
+  },
+  {
+   "name": "Q",
+   "hi": 1,
+   "lo": 0,
+   "dir": "output"
+  }
+ ],
+ "instances": [
+  {
+   "id": "F0",
+   "type": "DFF"
+  },
+  {
+   "id": "F1",
+   "type": "DFF"
+  },
+  {
+   "id": "T0",
+   "type": "TRI"
+  },
+  {
+   "id": "T1",
+   "type": "TRI"
+  },
+  {
+   "id": "V0",
+   "type": "VCC"
+  },
+  {
+   "id": "V1",
+   "type": "VCC"
+  },
+  {
+   "id": "G0",
+   "type": "GND"
+  },
+  {
+   "id": "G1",
+   "type": "GND"
+  }
+ ],
+ "connect": [
+  [
+   "D0",
+   "F0.D"
+  ],
+  [
+   "D1",
+   "F1.D"
+  ],
+  [
+   "CLK",
+   "F0.CLK"
+  ],
+  [
+   "CLK",
+   "F1.CLK"
+  ],
+  [
+   "V0.1",
+   "F0.PRN"
+  ],
+  [
+   "G0.1",
+   "F0.CLRN"
+  ],
+  [
+   "V1.1",
+   "F1.PRN"
+  ],
+  [
+   "G1.1",
+   "F1.CLRN"
+  ],
+  [
+   "F0.Q",
+   "T0.IN"
+  ],
+  [
+   "F1.Q",
+   "T1.IN"
+  ],
+  [
+   "OE",
+   "T0.OE"
+  ],
+  [
+   "OE",
+   "T1.OE"
+  ],
+  [
+   "T0.OUT",
+   "Q0"
+  ],
+  [
+   "T1.OUT",
+   "Q1"
+  ]
+ ]
+}

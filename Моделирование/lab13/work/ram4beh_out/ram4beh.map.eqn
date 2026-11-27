@@ -1,0 +1,114 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--cell[2] is cell[2]
+--operation mode is normal
+
+cell[2]_lut_out = d;
+cell[2] = DFFEAS(cell[2]_lut_out, clk, VCC, , A1L01, , , , );
+
+
+--cell[1] is cell[1]
+--operation mode is normal
+
+cell[1]_lut_out = d;
+cell[1] = DFFEAS(cell[1]_lut_out, clk, VCC, , A1L8, , , , );
+
+
+--cell[0] is cell[0]
+--operation mode is normal
+
+cell[0]_lut_out = d;
+cell[0] = DFFEAS(cell[0]_lut_out, clk, VCC, , A1L6, , , , );
+
+
+--A1L61 is sel_bit~12
+--operation mode is normal
+
+A1L61 = a[1] & (a[0]) # !a[1] & (a[0] & cell[1] # !a[0] & (cell[0]));
+
+
+--cell[3] is cell[3]
+--operation mode is normal
+
+cell[3]_lut_out = d;
+cell[3] = DFFEAS(cell[3]_lut_out, clk, VCC, , A1L21, , , , );
+
+
+--A1L71 is sel_bit~13
+--operation mode is normal
+
+A1L71 = a[1] & (A1L61 & (cell[3]) # !A1L61 & cell[2]) # !a[1] & (A1L61);
+
+
+--A1L01 is cell[2]~1
+--operation mode is normal
+
+A1L01 = a[1] & we & (!a[0]);
+
+
+--A1L8 is cell[1]~0
+--operation mode is normal
+
+A1L8 = a[0] & we & (!a[1]);
+
+
+--A1L6 is cell[0]~63
+--operation mode is normal
+
+A1L6 = we & (!a[1] & !a[0]);
+
+
+--A1L21 is cell[3]~2
+--operation mode is normal
+
+A1L21 = a[1] & a[0] & we;
+
+
+--a[1] is a[1]
+--operation mode is input
+
+a[1] = INPUT();
+
+
+--a[0] is a[0]
+--operation mode is input
+
+a[0] = INPUT();
+
+
+--we is we
+--operation mode is input
+
+we = INPUT();
+
+
+--d is d
+--operation mode is input
+
+d = INPUT();
+
+
+--clk is clk
+--operation mode is input
+
+clk = INPUT();
+
+
+--q is q
+--operation mode is output
+
+q_tri_out = TRI(A1L71, !we);
+q = OUTPUT(q_tri_out);
+
+

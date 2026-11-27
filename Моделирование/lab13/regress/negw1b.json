@@ -1,0 +1,145 @@
+{
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "A",
+  "CLK",
+  "OE1",
+  "OE2"
+ ],
+ "outputs": [
+  "Z"
+ ],
+ "buses": [],
+ "vhdl": [
+  "busregs.vhd"
+ ],
+ "userSymbols": {
+  "RB": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    "A",
+    "CLK",
+    "OE"
+   ],
+   "outputs": [
+    {
+     "name": "Q",
+     "hi": 1,
+     "lo": 0
+    }
+   ]
+  },
+  "RB4": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    "A",
+    "CLK",
+    "OE"
+   ],
+   "outputs": [
+    {
+     "name": "R",
+     "hi": 3,
+     "lo": 0
+    }
+   ]
+  },
+  "SB": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    {
+     "name": "D",
+     "hi": 1,
+     "lo": 0
+    }
+   ],
+   "outputs": [
+    "Z"
+   ]
+  },
+  "SB4": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    {
+     "name": "E",
+     "hi": 3,
+     "lo": 0
+    }
+   ],
+   "outputs": [
+    "Z"
+   ]
+  }
+ },
+ "entity": "NEGW1B",
+ "project": "NEGW1B",
+ "top": "NEGW1B",
+ "instances": [
+  {
+   "id": "U1",
+   "type": "RB",
+   "tri": true
+  },
+  {
+   "id": "U2",
+   "type": "RB",
+   "tri": true
+  },
+  {
+   "id": "V1",
+   "type": "SB"
+  },
+  {
+   "id": "V2",
+   "type": "SB4"
+  }
+ ],
+ "connect": [
+  [
+   "A",
+   "U1.A"
+  ],
+  [
+   "CLK",
+   "U1.CLK"
+  ],
+  [
+   "OE1",
+   "U1.OE"
+  ],
+  [
+   "A",
+   "U2.A"
+  ],
+  [
+   "CLK",
+   "U2.CLK"
+  ],
+  [
+   "OE2",
+   "U2.OE"
+  ],
+  [
+   "U1.Q[1..0]",
+   "V1.D[1..0]"
+  ],
+  [
+   "U2.Q[1..0]",
+   "V1.D[1..0]"
+  ],
+  [
+   "U1.Q[1..0]",
+   "V2.E[3..0]"
+  ],
+  [
+   "V1.Z",
+   "Z"
+  ],
+  [
+   "V2.Z",
+   "Z"
+  ]
+ ]
+}

@@ -1,0 +1,29 @@
+------------------------------------------------------------------
+-- Lab 13 probe rqm3: LPM_RAM_DQ with the exact parameter set the assignment
+-- fixes (width 8, widthad 10, address/data/output unregistered, no init file),
+-- on family MAX3000A, LPM_OUTDATA="UNREGISTERED".
+------------------------------------------------------------------
+INCLUDE "lpm_ram_dq.inc";
+
+SUBDESIGN rqm3
+(
+	data[7..0]	: INPUT;
+	address[9..0]	: INPUT;
+	we		: INPUT;
+	q[7..0]		: OUTPUT;
+)
+
+VARIABLE
+	u1 : lpm_ram_dq WITH (
+		LPM_WIDTH = 8,
+		LPM_WIDTHAD = 10,
+		LPM_ADDRESS_CONTROL = "UNREGISTERED",
+		LPM_INDATA = "UNREGISTERED",
+		LPM_OUTDATA = "UNREGISTERED");
+
+BEGIN
+	u1.data[] = data[];
+	u1.address[] = address[];
+	u1.we = we;
+	q[] = u1.q[];
+END;

@@ -1,0 +1,103 @@
+{
+ "entity": "BUS2",
+ "project": "BUS2",
+ "top": "BUS2",
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "CLK",
+  "OE1",
+  "OE2"
+ ],
+ "outputs": [],
+ "buses": [
+  {
+   "name": "d",
+   "hi": 1,
+   "lo": 0,
+   "dir": "input"
+  },
+  {
+   "name": "q",
+   "hi": 1,
+   "lo": 0,
+   "dir": "output"
+  }
+ ],
+ "userSymbols": {
+  "REG2": {
+   "from": "reg2",
+   "inputs": [
+    "CLK",
+    "OE",
+    "D0",
+    "D1"
+   ],
+   "outputs": [
+    "Q0",
+    "Q1"
+   ]
+  }
+ },
+ "instances": [
+  {
+   "id": "U1",
+   "type": "REG2"
+  },
+  {
+   "id": "U2",
+   "type": "REG2"
+  }
+ ],
+ "connect": [
+  [
+   "d0",
+   "U1.D0"
+  ],
+  [
+   "d1",
+   "U1.D1"
+  ],
+  [
+   "CLK",
+   "U1.CLK"
+  ],
+  [
+   "OE1",
+   "U1.OE"
+  ],
+  [
+   "U1.Q0",
+   "q0"
+  ],
+  [
+   "U1.Q1",
+   "q1"
+  ],
+  [
+   "d0",
+   "U2.D0"
+  ],
+  [
+   "d1",
+   "U2.D1"
+  ],
+  [
+   "CLK",
+   "U2.CLK"
+  ],
+  [
+   "OE2",
+   "U2.OE"
+  ],
+  [
+   "U2.Q0",
+   "q0"
+  ],
+  [
+   "U2.Q1",
+   "q1"
+  ]
+ ]
+}

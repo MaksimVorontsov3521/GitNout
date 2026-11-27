@@ -1,0 +1,4 @@
+# lpramwb
+QUARTUS_VERSION = "5.0"
+
+PROJECT_REVISION = "lpramwb"

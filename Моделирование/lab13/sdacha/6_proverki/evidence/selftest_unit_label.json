@@ -1,0 +1,40 @@
+{
+  "what": "The report called the models' self-test counter \"утверждений\" (assertions). The code documents it as states checked, so the unit of measure was mislabelled.",
+  "found_by": "reading the live output of seqtest.mjs against the source of models.mjs, not by re-reading the report: models.mjs:15 states \"model.selfTest() -> number   states checked, throws on an internal contradiction\" and models.mjs:971 \"Returns {dffe, ram4, mem4x8, lpm_ram_dq} in states checked\".",
+  "live_confirmation": {
+    "command": "node lab13/seqtest.mjs",
+    "printed_states_line": "{\"dffe\":2198,\"ram4\":21882,\"mem4x8\":8733,\"lpm_ram_dq\":1196888}",
+    "arithmetic": "2198 + 21882 + 8733 + 1196888 = 1229701, matching the cited total",
+    "divergences_line": "1204 (ram4 1134, mem4x8 70), matching notes_total",
+    "seqtest_own_assertions": "RESULT: PASS - 84 assertions - these are the 84 named assertions of seqtest.mjs, a DIFFERENT and much smaller count, which is exactly why conflating the two units matters",
+    "raw_stdout_saved": "lab13/evidence/seqtest_stdout.txt (5355 B, verbatim)"
+  },
+  "false_start_recorded": "my first attempt to re-verify the foundation was `node lab13/models.mjs --selftest`, which printed nothing and exited 0: models.mjs has no CLI entry, so the flag was ignored and the run was a no-op. Reporting that EXIT=0 as confirmation would have been exactly the substitution of a green code for a measurement, so it was chased down instead: the real entry is seqtest.mjs, which calls runAllSelfTests() at line 468 and selfTestNotes() at line 477.",
+  "fixed_sites": [
+    {
+      "file": "_body1.py:196,200",
+      "section": "3.3",
+      "was": "Счётчик проверок такой: …; всего 1,229,701 утверждений.",
+      "now": "Единица счёта здесь — ПРОВЕРЕННОЕ СОСТОЯНИЕ модели, то есть одна сверка её ответа с ответом вентильного двойника; счётчик такой: …; всего 1,229,701 состояний."
+    },
+    {
+      "file": "_body7.py:155",
+      "section": "10",
+      "was": "выполнено 1,229,701 утверждений самодиагностики моделей и один исчерпывающий перебор…",
+      "now": "исчерпывающая самодиагностика моделей проверила 1,229,701 состояний, и выполнен один исчерпывающий перебор…"
+    }
+  ],
+  "secondary_defects_found_by_readback": [
+    "the first repair created a zeugma: \"проверила 1,229,701 состояний и один перебор\" makes \"перебор\" a second object of \"проверила\", which is not sensible; repaired by adding the own verb \"и выполнен\".",
+    "the first repair left an elliptical \"то одна сверка\" where \"то есть одна сверка\" is required.",
+    "both were caught only by reading the rendered sentence whole, which is the argument for making read-back a step rather than a spot check."
+  ],
+  "reference_after_fix": "421568 B, sha256 72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+  "battery": "15 / 15 checkers EXIT=0 on this build",
+  "build_reference": {
+    "docx_sha256": "72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+    "docx_bytes": 421565,
+    "stated_at": "2026-11-26T23:54:51.646Z",
+    "note": "Any other sha256 in this file is a measurement of an earlier build and is labelled as historical where it appears; it has deliberately not been rewritten, because rewriting a recorded measurement would falsify it."
+  }
+}

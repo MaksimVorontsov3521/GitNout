@@ -1,0 +1,29 @@
+------------------------------------------------------------------
+-- Lab 13 probe a: is an AHDL instantiation of the shipped LPM_RAM_DQ
+-- megafunction accepted, and with which parameter spellings?
+-- Small geometry (4 bits x 4 words) so the probe is fast; task 4 uses 8 x 1024.
+------------------------------------------------------------------
+INCLUDE "lpm_ram_dq.inc";
+
+SUBDESIGN ramlpa
+(
+	data[3..0]	: INPUT;
+	address[1..0]	: INPUT;
+	we		: INPUT;
+	q[3..0]		: OUTPUT;
+)
+
+VARIABLE
+	u1 : lpm_ram_dq WITH (
+		LPM_WIDTH = 4,
+		LPM_WIDTHAD = 2,
+		LPM_ADDRESS_CONTROL = "UNREGISTERED",
+		LPM_INDATA = "UNREGISTERED",
+		LPM_OUTDATA = "UNREGISTERED");
+
+BEGIN
+	u1.data[] = data[];
+	u1.address[] = address[];
+	u1.we = we;
+	q[] = u1.q[];
+END;

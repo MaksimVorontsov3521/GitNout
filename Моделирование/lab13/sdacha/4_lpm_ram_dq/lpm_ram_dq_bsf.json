@@ -1,0 +1,138 @@
+{
+ "symbol_rect": [
+  64,
+  64,
+  184,
+  176
+ ],
+ "ports": [
+  {
+   "name": "inclock",
+   "dir": "input",
+   "bus": false,
+   "line_width": 1
+  },
+  {
+   "name": "data[LPM_WIDTH-1..0]",
+   "dir": "input",
+   "bus": true,
+   "line_width": 3
+  },
+  {
+   "name": "address[LPM_WIDTHAD-1..0]",
+   "dir": "input",
+   "bus": true,
+   "line_width": 3
+  },
+  {
+   "name": "we",
+   "dir": "input",
+   "bus": false,
+   "line_width": 1
+  },
+  {
+   "name": "outclock",
+   "dir": "input",
+   "bus": false,
+   "line_width": 1
+  },
+  {
+   "name": "q[LPM_WIDTH-1..0]",
+   "dir": "output",
+   "bus": true,
+   "line_width": 3
+  }
+ ],
+ "parameters": [
+  {
+   "name": "LPM_ADDRESS_CONTROL",
+   "stored": "",
+   "help": "Should the address and control ports be registered?",
+   "options": [
+    "REGISTERED",
+    "UNREGISTERED"
+   ]
+  },
+  {
+   "name": "LPM_FILE",
+   "stored": "",
+   "help": "File containing initial contents of memory array",
+   "options": []
+  },
+  {
+   "name": "LPM_INDATA",
+   "stored": "",
+   "help": "Should the write data be registered?",
+   "options": [
+    "REGISTERED",
+    "UNREGISTERED"
+   ]
+  },
+  {
+   "name": "LPM_NUMWORDS",
+   "stored": "",
+   "help": "Number of memory words, default is 2^LPM_WIDTHAD",
+   "options": []
+  },
+  {
+   "name": "LPM_OUTDATA",
+   "stored": "\"UNREGISTERED\"",
+   "help": "Should the output data be registered?",
+   "options": [
+    "REGISTERED",
+    "UNREGISTERED"
+   ]
+  },
+  {
+   "name": "LPM_WIDTH",
+   "stored": "",
+   "help": "Data width in bits, any integer > 0",
+   "options": [
+    " 1",
+    " 2",
+    " 3",
+    " 4",
+    " 5",
+    " 6",
+    " 7",
+    " 8",
+    " 9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "20",
+    "24",
+    "28",
+    "32",
+    "40",
+    "48",
+    "56",
+    "64"
+   ]
+  },
+  {
+   "name": "LPM_WIDTHAD",
+   "stored": "",
+   "help": "Number of address lines, any integer > 0",
+   "options": [
+    " 1",
+    " 2",
+    " 3",
+    " 4",
+    " 5",
+    " 6",
+    " 7",
+    " 8",
+    " 9",
+    "10",
+    "11",
+    "12"
+   ]
+  }
+ ],
+ "note": "The seven parameters the assignment names are exactly the seven this symbol declares. Only LPM_OUTDATA carries a stored value in the file (\"UNREGISTERED\"); LPM_NUMWORDS is documented in the symbol itself as \"Number of memory words, default is 2^LPM_WIDTHAD\" and LPM_FILE as \"File containing initial contents of memory array\", which is why the assignment's two \"<none>\" entries are legal and resolve to 1024 and to no file - confirmed by the elaborated parameter table in lpramax.map.rpt."
+}

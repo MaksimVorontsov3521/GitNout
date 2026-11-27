@@ -1,0 +1,171 @@
+########## lpramfk (AHDL) ##########
+Z:\lab13/work\lpramfk\lpramfk.qpf
+The filename, directory name, or volume label syntax is incorrect.
+        0 file(s) copied.
+--- MAP
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:45:58 2022
+Info: Command: quartus_map lpramfk
+Error: Top-level design entity "lpramfk" is undefined
+Error: Quartus II Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:45:58 2022
+    Error: Elapsed time: 00:00:00
+MAP_EXIT=3
+--- FNET
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:45:58 2022
+Info: Command: quartus_map lpramfk --generate_functional_sim_netlist
+Error: Top-level design entity "lpramfk" is undefined
+Error: Quartus II Analysis & Synthesis was unsuccessful. 1 error, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:45:58 2022
+    Error: Elapsed time: 00:00:00
+FNET_EXIT=3
+--- SIM
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:45:58 2022
+Info: Command: quartus_sim lpramfk
+Error: Can't open project C:/dsh/lpramfk/lpramfk.qpf -- no Quartus II Settings Files exist for revisions listed in Quartus II Project File
+Error: Quartus II Simulator was unsuccessful. 1 error, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:45:58 2022
+    Error: Elapsed time: 00:00:00
+SIM_EXIT=3
+--- FIT
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:45:58 2022
+Info: Command: quartus_fit lpramfk
+Error: Run Analysis and Synthesis (quartus_map) with top-level entity name "lpramfk" before running Fitter (quartus_fit)
+Error: Quartus II Fitter was unsuccessful. 1 error, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:45:58 2022
+    Error: Elapsed time: 00:00:00
+FIT_EXIT=3
+--- ASM
+Info: *******************************************************************
+Info: Running Quartus II Assembler
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:45:58 2022
+Info: Command: quartus_asm lpramfk
+Error: Run Analysis and Synthesis (quartus_map)  with top-level entity name "lpramfk" before running the Assembler (quartus_asm)
+Error: Quartus II Assembler was unsuccessful. 1 error, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:45:58 2022
+    Error: Elapsed time: 00:00:00
+ASM_EXIT=3
+--- TAN
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:45:58 2022
+Info: Command: quartus_tan lpramfk
+Error: Can't run Timing Analyzer (quartus_tan) -- Analysis and Synthesis (quartus_map) failed
+Error: Quartus II Timing Analyzer was unsuccessful. 1 error, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:45:58 2022
+    Error: Elapsed time: 00:00:00
+TAN_EXIT=3
+C:\dsh\lpramfk\lpramfk.flow.rpt
+The filename, directory name, or volume label syntax is incorrect.
+        0 file(s) copied.
+C:\dsh\lpramfk\*.sof 
+The system cannot find the file specified.
+        0 file(s) copied.
+C:\dsh\lpramfk\*.bsf 
+The system cannot find the file specified.
+        0 file(s) copied.
+C:\dsh\lpramfk\*.vhd 
+The system cannot find the file specified.
+        0 file(s) copied.
+C:\dsh\lpramfk\*.eqn 
+The system cannot find the file specified.
+        0 file(s) copied.
+C:\dsh\lpramfk\*.pin 
+The system cannot find the file specified.
+        0 file(s) copied.
+C:\dsh\lpramfk\*.tdf 
+The system cannot find the file specified.
+        0 file(s) copied.
+########## ALL DONE ##########
+__EXIT=0

@@ -1,0 +1,117 @@
+{
+ "tristateMarks": true,
+ "entity": "TRIBUS4",
+ "project": "TRIBUS4",
+ "top": "TRIBUS4",
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "A",
+  "B",
+  "CLK",
+  "OE1",
+  "OE2"
+ ],
+ "outputs": [
+  "Q",
+  "RQ"
+ ],
+ "buses": [],
+ "instances": [
+  {
+   "id": "R0",
+   "type": "DFF"
+  },
+  {
+   "id": "T1",
+   "type": "TRI"
+  },
+  {
+   "id": "T2",
+   "type": "TRI"
+  },
+  {
+   "id": "R1",
+   "type": "DFF"
+  },
+  {
+   "id": "V0",
+   "type": "VCC"
+  },
+  {
+   "id": "G0",
+   "type": "GND"
+  },
+  {
+   "id": "V1",
+   "type": "VCC"
+  },
+  {
+   "id": "G1",
+   "type": "GND"
+  }
+ ],
+ "connect": [
+  [
+   "B",
+   "R0.D"
+  ],
+  [
+   "CLK",
+   "R0.CLK"
+  ],
+  [
+   "V0.1",
+   "R0.PRN"
+  ],
+  [
+   "G0.1",
+   "R0.CLRN"
+  ],
+  [
+   "A",
+   "T1.IN"
+  ],
+  [
+   "OE1",
+   "T1.OE"
+  ],
+  [
+   "R0.Q",
+   "T2.IN"
+  ],
+  [
+   "OE2",
+   "T2.OE"
+  ],
+  [
+   "T1.OUT",
+   "Q"
+  ],
+  [
+   "T2.OUT",
+   "Q"
+  ],
+  [
+   "T2.OUT",
+   "R1.D"
+  ],
+  [
+   "CLK",
+   "R1.CLK"
+  ],
+  [
+   "V1.1",
+   "R1.PRN"
+  ],
+  [
+   "G1.1",
+   "R1.CLRN"
+  ],
+  [
+   "R1.Q",
+   "RQ"
+  ]
+ ]
+}

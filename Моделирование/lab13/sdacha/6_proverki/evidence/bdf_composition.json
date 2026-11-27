@@ -1,0 +1,122 @@
+{
+  "what": "Instance composition of the three authentic MAX+plus II library schemes, parsed from the .bdf files themselves.",
+  "source": "sdacha/lib_maxplus2/{74155,74244,74374}.bdf - the copies used in the project, not redrawn analogues",
+  "parsed_by": "a one-off program; a count is of the form (symbol (rect …)(text \"TYPE\"…)(text \"INDEX\"…), which is how a Quartus II graphic file declares an instantiated primitive",
+  "caution": "INSTANCE COUNTS and INSTANCE INDEXES are different sequences and are recorded separately. Confusing them is exactly the defect this snapshot exists to prevent: in 74374 the TRI indexes run 40…47 and the NOT index is 2, which read as counts would give \"24 buffers\", \"two inverters\" and \"forty flip-flops\" instead of the truth 8, 1 and 8.",
+  "composition": {
+    "74155": {
+      "symbol_total": 15,
+      "symbols": {
+        "NOT": 5,
+        "BAND2": 2,
+        "NAND3": 8
+      },
+      "instance_indexes": {
+        "NOT": [
+          7,
+          12,
+          57,
+          58,
+          59
+        ],
+        "BAND2": [
+          41,
+          42
+        ],
+        "NAND3": [
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "pins": {
+        "input": 6,
+        "output": 8,
+        "inout": 0,
+        "total": 14
+      },
+      "junctions": 20,
+      "connectors": 81,
+      "port_decls": 48
+    },
+    "74244": {
+      "symbol_total": 10,
+      "symbols": {
+        "NOT": 2,
+        "TRI": 8
+      },
+      "instance_indexes": {
+        "NOT": [
+          4,
+          33
+        ],
+        "TRI": [
+          1,
+          6,
+          10,
+          11,
+          26,
+          27,
+          31,
+          36
+        ]
+      },
+      "pins": {
+        "input": 10,
+        "output": 8,
+        "inout": 0,
+        "total": 18
+      },
+      "junctions": 6,
+      "connectors": 42,
+      "port_decls": 28
+    },
+    "74374": {
+      "symbol_total": 17,
+      "symbols": {
+        "TRI": 8,
+        "NOT": 1,
+        "DFF": 8
+      },
+      "instance_indexes": {
+        "TRI": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "NOT": [
+          2
+        ],
+        "DFF": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "pins": {
+        "input": 10,
+        "output": 8,
+        "inout": 0,
+        "total": 18
+      },
+      "junctions": 14,
+      "connectors": 67,
+      "port_decls": 66
+    }
+  }
+}

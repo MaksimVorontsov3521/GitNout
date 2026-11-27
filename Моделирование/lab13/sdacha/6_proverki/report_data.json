@@ -1,0 +1,3544 @@
+{
+  "meta": {
+    "lab": "Лабораторная работа 13",
+    "topic": "Исследование функционирования схем памяти",
+    "chapter": "Глава 18. Схемы памяти",
+    "declared_tool": "Altera MAX+plus II (графический редактор, блоки библиотеки maxplus2, осциллограф .scf/.wfm)",
+    "actual_tool": "Quartus II 5.0, Build 148, 26.04.2005, Full Version (guest Windows XP, C:\\altera\\quartus50\\bin)",
+    "family": "Stratix",
+    "device": "EP1S10F484C5",
+    "device_for_task4": "ACEX1K / FLEX10KE (детальной базы устройств в установке нет)",
+    "period_ns": 100,
+    "sample_fraction": 0.5,
+    "simulation_coverage_definition": "Quartus II 5.0 Simulation Coverage = доля узлов функционального нетлиста (Simulation Netlist Size), в которых за время моделирования произошёл хотя бы один переход; Total Number of Transitions = общее число таких переходов по всем узлам.",
+    "delay_decomposition": "Quartus II 5.0 Timing Analyzer печатает агрегированные строки «Info: Total cell delay» и «Info: Total interconnect delay» по всем проанализированным путям. Приравнивать их к худшему tpd можно только после проверки: у зондов 74244 и TRI равенство выполняется, у зонда 74374 — нет, потому что там худший путь содержит регистр и величины tsu/tco."
+  },
+  "theory": {
+    "capacity_speed": "Ёмкость C (байт) и быстродействие B (оп/сек) связаны обратной зависимостью: в пределе C·B ограничено, поэтому иерархия памяти (рис. 18.1) строится из разноскоростных уровней, а не из одного большого блока.",
+    "flat_wires": 256,
+    "elements": 256,
+    "sqrt": 16,
+    "two_sqrt": 32,
+    "matrix_address_lines": 8,
+    "decoders": 2,
+    "decoder_width": 4,
+    "decoder_outs": 16,
+    "note_matrix": "Плоская организация 256 элементов требует 256 проводов выбора; матрица 16×16 даёт 16+16 = 2·√256 = 32 линии, а два дешифратора 4-в-16 сокращают внешний адрес до 8 линий.",
+    "address_word_limit": 256,
+    "address_word_note": "8-разрядный адрес различает не более 2^8 = 256 ячеек; 10 адресных линий задания 4 дают 2^10 = 1024 слова.",
+    "task4_words": 1024,
+    "task4_bytes": 8192,
+    "dram_density": "DRAM содержит ячейку плотнее SRAM в 4–16 раз, но требует регенерации и потому медленнее; отношение (Uon + dU)/2 делит напряжение между шиной и ёмкостью ячейки, а чувствительный усилитель восстанавливает уровень."
+  },
+  "tasks": {
+    "ram4": {
+      "family": "Stratix",
+      "device": "EP1S10F484C5",
+      "timing_models": "Final",
+      "logic_elements": "9 / 10,570 ( < 1 % )",
+      "pins": "6 / 336 ( 1 % )",
+      "memory_bits": "0 / 920,448 ( 0 % )",
+      "dsp": "0 / 48 ( 0 % )",
+      "plls": "0 / 6 ( 0 % )",
+      "tsu": {
+        "actual": "3.491 ns",
+        "from": "A0",
+        "to": "F0",
+        "from_clock": null,
+        "to_clock": "CLK",
+        "failed": "0"
+      },
+      "tco": {
+        "actual": "7.804 ns",
+        "from": "F0",
+        "to": "Q",
+        "from_clock": "CLK",
+        "to_clock": null,
+        "failed": "0"
+      },
+      "tpd": {
+        "actual": "9.366 ns",
+        "from": "A0",
+        "to": "Q",
+        "from_clock": null,
+        "to_clock": null,
+        "failed": "0"
+      },
+      "th": {
+        "actual": "-1.868 ns",
+        "from": "D",
+        "to": "F3",
+        "from_clock": null,
+        "to_clock": "CLK",
+        "failed": "0"
+      },
+      "failed_paths": "",
+      "coverage": "60.87",
+      "transitions": "144",
+      "map_warnings": [
+        "Warning: Primitive \"GND\" of instance \"G0\" not used"
+      ],
+      "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+      "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "labs": [],
+      "task": "Задание 1. Простейшая схема ЗУ на 4 бита (рис. 18.7)",
+      "phases": 20,
+      "mismatches": 0,
+      "cells": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "written_values": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "addresses": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "structure": "четыре триггера DV (DFFE), дешифратор 2-в-4 на элементах И-НЕ, четыре вентиля строба записи и четыре трёхстальных буфера на общую шину Q",
+      "decode": {
+        "addr_0": "!A0*!A1",
+        "addr_1": "A0*!A1",
+        "addr_2": "!A0*A1",
+        "addr_3": "A0*A1",
+        "en": "EN_i = addr_i * WE",
+        "oe": "OE_i = addr_i * !WE"
+      },
+      "sheet": {
+        "width_px": 1992,
+        "height_px": 1018
+      },
+      "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 1 warning",
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 1 warning",
+      "netlist_nodes": 23,
+      "nodes_toggled": 14
+    },
+    "ram4beh": {
+      "family": "Stratix",
+      "device": "EP1S10F484C5",
+      "timing_models": "Final",
+      "logic_elements": "8 / 10,570 ( < 1 % )",
+      "pins": "6 / 336 ( 1 % )",
+      "memory_bits": "0 / 920,448 ( 0 % )",
+      "dsp": "0 / 48 ( 0 % )",
+      "plls": "0 / 6 ( 0 % )",
+      "tsu": {
+        "actual": "3.456 ns",
+        "from": "a[0]",
+        "to": "cell[2]",
+        "from_clock": null,
+        "to_clock": "clk",
+        "failed": "0"
+      },
+      "tco": {
+        "actual": "7.808 ns",
+        "from": "cell[0]",
+        "to": "q",
+        "from_clock": "clk",
+        "to_clock": null,
+        "failed": "0"
+      },
+      "tpd": {
+        "actual": "9.289 ns",
+        "from": "a[1]",
+        "to": "q",
+        "from_clock": null,
+        "to_clock": null,
+        "failed": "0"
+      },
+      "th": {
+        "actual": "-1.864 ns",
+        "from": "d",
+        "to": "cell[2]",
+        "from_clock": null,
+        "to_clock": "clk",
+        "failed": "0"
+      },
+      "failed_paths": "",
+      "coverage": "82.76",
+      "transitions": "162",
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 0 warnings",
+      "map_warnings": [],
+      "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+      "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "labs": [],
+      "task": "Задание 2. Поведенческая VHDL-модель той же схемы",
+      "phases": 20,
+      "mismatches": 0,
+      "cells": [
+        "1",
+        "0",
+        "1",
+        "0"
+      ],
+      "vs_task1": {
+        "differences": 0,
+        "phases": 20
+      },
+      "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 1 warning",
+      "netlist_nodes": 29,
+      "nodes_toggled": 24
+    },
+    "mem4x8": {
+      "family": "Stratix",
+      "device": "EP1S10F484C5",
+      "timing_models": "Final",
+      "logic_elements": "36 / 10,570 ( < 1 % )",
+      "pins": "28 / 336 ( 8 % )",
+      "memory_bits": "0 / 920,448 ( 0 % )",
+      "dsp": "0 / 48 ( 0 % )",
+      "plls": "0 / 6 ( 0 % )",
+      "tsu": {
+        "actual": "0.024 ns",
+        "from": "w[1]",
+        "to": "74374:R1|14",
+        "from_clock": null,
+        "to_clock": "a0",
+        "failed": "0"
+      },
+      "tco": {
+        "actual": "11.875 ns",
+        "from": "74374:R1|18",
+        "to": "d[5]",
+        "from_clock": "wr",
+        "to_clock": null,
+        "failed": "0"
+      },
+      "tpd": {
+        "actual": "10.101 ns",
+        "from": "a1",
+        "to": "d[5]",
+        "from_clock": null,
+        "to_clock": null,
+        "failed": "0"
+      },
+      "th": {
+        "actual": "1.239 ns",
+        "from": "w[7]",
+        "to": "74374:R3|20",
+        "from_clock": null,
+        "to_clock": "wr",
+        "failed": "0"
+      },
+      "failed_paths": "",
+      "coverage": "54.17",
+      "transitions": "537",
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 15 warnings",
+      "map_warnings": [
+        "Warning: Entity \"74155\" obtained from \"C:/dsh/mem4x8/74155.bdf\" instead of from Quartus II megafunction library",
+        "Warning: Entity \"74244\" obtained from \"C:/dsh/mem4x8/74244.bdf\" instead of from Quartus II megafunction library",
+        "Warning: Entity \"74374\" obtained from \"C:/dsh/mem4x8/74374.bdf\" instead of from Quartus II megafunction library",
+        "Warning: No superset bus at connection",
+        "Warning: TRI or OPNDRN buffers permanently enabled",
+        "Warning: Node \"74374:R3|47~4\"",
+        "Warning: Node \"74374:R3|46~4\"",
+        "Warning: Node \"74374:R3|45~4\"",
+        "Warning: Node \"74374:R3|44~4\"",
+        "Warning: Node \"74374:R3|43~4\"",
+        "Warning: Node \"74374:R3|42~4\"",
+        "Warning: Node \"74374:R3|41~4\"",
+        "Warning: Node \"74374:R3|40~4\""
+      ],
+      "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+      "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+      "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 2 warnings",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "labs": [],
+      "task": "Задание 3. Память 4 × 8 бит (рис. 18.8)",
+      "phases": 17,
+      "d_mismatches": 0,
+      "q_mismatches": 0,
+      "words": [
+        "11111111",
+        "11110000",
+        "10100101",
+        "01011010"
+      ],
+      "words_lsb": [
+        "11111111",
+        "00001111",
+        "10100101",
+        "01011010"
+      ],
+      "composition": "74155 (дешифратор) + четыре 74374 (регистры) + 74244 (буфер), порты a0,a1,w[7..0],q[7..0],wr,rd, внутренняя шина d[7..0]",
+      "clock_rule": "CLK_i = wr AND NOT(1YiN)",
+      "oen_rule": "OEN_i = 2YiN (напрямую, инверсный строб)",
+      "rd_rule": "rd = 1 открывает 74244 (q = d), rd = 0 закрывает (q = Z)",
+      "decoder_passes_max": 3,
+      "decoder_instances": 15,
+      "decoder_entities": "NOT,NAND3,BAND2",
+      "decoder_nets": 21,
+      "decoder_combinations": 64,
+      "decoder_formula_violations": 0,
+      "d_rule": "d = содержимое адресованной ячейки во всех фазах, записи и чтения",
+      "decoder_geometry": {
+        "symbols": {
+          "NOT": 5,
+          "BAND2": 2,
+          "NAND3": 8
+        },
+        "symbol_total": 15,
+        "pins": 62,
+        "inputs": 6,
+        "outputs": 8,
+        "segs": 81,
+        "junctions": 20,
+        "nets_union_find": 21,
+        "source": "D:/Desktop/NF/dshagent/ref/mp2/74155.bdf, parsed by tools/bdf/verify.mjs netlistFromBdf",
+        "pins_top_level": 14,
+        "pin_names": [
+          "INPUT",
+          "INPUT",
+          "INPUT",
+          "INPUT",
+          "INPUT",
+          "INPUT",
+          "OUTPUT",
+          "OUTPUT",
+          "OUTPUT",
+          "OUTPUT",
+          "OUTPUT",
+          "OUTPUT",
+          "OUTPUT",
+          "OUTPUT"
+        ],
+        "note": "nets_union_find is the number of distinct electrical nets obtained by union-find over the 81 connector segments and 20 junctions; it equals the 21 nets recorded in evidence/74155_truth.json"
+      },
+      "map_warning_breakdown": {
+        "obtained_from": 3,
+        "no_superset_bus": 3,
+        "tri_permanently": 1,
+        "node_sublines": 8,
+        "total_declared": 15,
+        "sum": 15
+      },
+      "netlist_nodes": 120,
+      "nodes_toggled": 65
+    },
+    "lpramax": {
+      "elaborated": {
+        "LPM_WIDTH": "8",
+        "LPM_WIDTHAD": "10",
+        "LPM_NUMWORDS": "1024",
+        "LPM_INDATA": "UNREGISTERED",
+        "LPM_ADDRESS_CONTROL": "UNREGISTERED",
+        "LPM_OUTDATA": "UNREGISTERED",
+        "LPM_FILE": "UNUSED",
+        "USE_EAB": "ON",
+        "DEVICE_FAMILY": "ACEX1K",
+        "CBXI_PARAMETER": "NOTHING"
+      },
+      "ram_summary": {
+        "entity": "lpm_ram_dq:mem|altram:sram|content",
+        "mode": "Single Port",
+        "depth_a": "1024",
+        "width_a": "8",
+        "mif": "none",
+        "size_bits": "8192",
+        "raw": [
+          "lpm_ram_dq:mem|altram:sram|content",
+          "Single Port",
+          "1024",
+          "8",
+          "--",
+          "--",
+          "8192",
+          "none"
+        ]
+      },
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 9 warnings",
+      "init_warning": "Memory Initialization File or Hexadecimal (Intel-Format) File for RAM is not specified -- setting initial contents to 0",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "coverage": "94.29",
+      "transitions": "295",
+      "fit_error": "Can't select a device from device family ACEX1K because no devices in family are installed",
+      "fit_msg": "Quartus II Fitter was unsuccessful. 2 errors, 0 warnings",
+      "task": "Задание 4. lpm_ram_dq из библиотеки мегафункций",
+      "phases": 17,
+      "mismatches": 0,
+      "written": [
+        {
+          "address": "0x000",
+          "word_msb": "11111111",
+          "word_lsb_as_measured": "11111111"
+        },
+        {
+          "address": "0x155",
+          "word_msb": "10100101",
+          "word_lsb_as_measured": "10100101"
+        },
+        {
+          "address": "0x2AA",
+          "word_msb": "11110000",
+          "word_lsb_as_measured": "00001111"
+        },
+        {
+          "address": "0x3FF",
+          "word_msb": "01011010",
+          "word_lsb_as_measured": "01011010"
+        }
+      ],
+      "bsf_parameters": [
+        {
+          "name": "LPM_ADDRESS_CONTROL",
+          "stored": "",
+          "help": "Should the address and control ports be registered?",
+          "options": [
+            "REGISTERED",
+            "UNREGISTERED"
+          ]
+        },
+        {
+          "name": "LPM_FILE",
+          "stored": "",
+          "help": "File containing initial contents of memory array",
+          "options": []
+        },
+        {
+          "name": "LPM_INDATA",
+          "stored": "",
+          "help": "Should the write data be registered?",
+          "options": [
+            "REGISTERED",
+            "UNREGISTERED"
+          ]
+        },
+        {
+          "name": "LPM_NUMWORDS",
+          "stored": "",
+          "help": "Number of memory words, default is 2^LPM_WIDTHAD",
+          "options": []
+        },
+        {
+          "name": "LPM_OUTDATA",
+          "stored": "\"UNREGISTERED\"",
+          "help": "Should the output data be registered?",
+          "options": [
+            "REGISTERED",
+            "UNREGISTERED"
+          ]
+        },
+        {
+          "name": "LPM_WIDTH",
+          "stored": "",
+          "help": "Data width in bits, any integer > 0",
+          "options": [
+            " 1",
+            " 2",
+            " 3",
+            " 4",
+            " 5",
+            " 6",
+            " 7",
+            " 8",
+            " 9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "20",
+            "24",
+            "28",
+            "32",
+            "40",
+            "48",
+            "56",
+            "64"
+          ]
+        },
+        {
+          "name": "LPM_WIDTHAD",
+          "stored": "",
+          "help": "Number of address lines, any integer > 0",
+          "options": [
+            " 1",
+            " 2",
+            " 3",
+            " 4",
+            " 5",
+            " 6",
+            " 7",
+            " 8",
+            " 9",
+            "10",
+            "11",
+            "12"
+          ]
+        }
+      ],
+      "bsf_ports": [
+        {
+          "name": "inclock",
+          "dir": "input",
+          "bus": false,
+          "line_width": 1
+        },
+        {
+          "name": "data[LPM_WIDTH-1..0]",
+          "dir": "input",
+          "bus": true,
+          "line_width": 3
+        },
+        {
+          "name": "address[LPM_WIDTHAD-1..0]",
+          "dir": "input",
+          "bus": true,
+          "line_width": 3
+        },
+        {
+          "name": "we",
+          "dir": "input",
+          "bus": false,
+          "line_width": 1
+        },
+        {
+          "name": "outclock",
+          "dir": "input",
+          "bus": false,
+          "line_width": 1
+        },
+        {
+          "name": "q[LPM_WIDTH-1..0]",
+          "dir": "output",
+          "bus": true,
+          "line_width": 3
+        }
+      ],
+      "candidates": [
+        {
+          "write": "we-fall",
+          "sample": "post",
+          "lpramax": 0,
+          "lpramwb": 0
+        },
+        {
+          "write": "we-fall",
+          "sample": "pre",
+          "lpramax": 0,
+          "lpramwb": 5
+        },
+        {
+          "write": "we-rise",
+          "sample": "post",
+          "lpramax": 0,
+          "lpramwb": 3
+        },
+        {
+          "write": "we-rise",
+          "sample": "pre",
+          "lpramax": 0,
+          "lpramwb": 2
+        },
+        {
+          "write": "we-level",
+          "sample": "post",
+          "lpramax": 0,
+          "lpramwb": 5
+        },
+        {
+          "write": "clk-rise",
+          "sample": "post",
+          "lpramax": 12,
+          "lpramwb": 8
+        },
+        {
+          "write": "none",
+          "sample": "post",
+          "lpramax": 8,
+          "lpramwb": 3
+        }
+      ],
+      "we_fall_rule": "хранение происходит по спаду WE, беря адрес и данные в момент ПОСЛЕ перехода; при WE = 1 адресованное слово проходит на Q напрямую; адрес, в который ни разу не записывали, читается как X",
+      "corollary": "корректная временная диаграмма памяти обязана удерживать адрес и данные ещё один такт после снятия WE",
+      "families": {
+        "ACEX1K": "map/sim успешны, fit невозможен",
+        "FLEX10KE": "map/sim успешны, fit невозможен",
+        "Stratix": "отказ: Can't convert single-port RAM ... supports only synchronous single-port RAM (altram.tdf:236 via lpm_ram_dq.tdf:89)",
+        "Cyclone": "отказ, тот же текст",
+        "MAX3000A": "Internal Error: Sub-system: SCL, scl_state_syn.cpp:1302"
+      },
+      "mechanism_source": "altram.tdf: при USED(clocki)=0 GENERATE строк 439–441 не подключает clki, строка 427 задаёт real_we[0] = we, строка 449 подаёт его на порт we примитива MEMORY; RAM_MODES (строки 61–66) вырождается в 0, то есть регистрация отсутствует полностью",
+      "hierarchy": [
+        "lpramax",
+        "lpramax|lpm_ram_dq:mem",
+        "lpramax|lpm_ram_dq:mem|altram:sram"
+      ],
+      "altram_citations": [
+        {
+          "lines": "61–66",
+          "what": "RAM_MODES: при USED(clocki) = 0 левая ветвь вырождается в 0, то есть регистрация отсутствует"
+        },
+        {
+          "lines": "83",
+          "what": "STRATIX_RAM_POSSIBLE() = USED(clocki) & (REGISTERINPUTMODE == \"ALL\" # \"DEFAULT\")"
+        },
+        {
+          "lines": "86",
+          "what": "STRATIX_RAM_NOT_IMPOSSIBLE() = (USED(clocki) # USED(clocko)) & (NO_BENCHMARKING() != 1)"
+        },
+        {
+          "lines": "236–237",
+          "what": "ASSERT, выдающий «Can't convert single-port RAM ... supports only synchronous single-port RAM» с SEVERITY ERROR"
+        },
+        {
+          "lines": "427",
+          "what": "real_we[0] = we (ветвь без порта byte-enable)"
+        },
+        {
+          "lines": "439–441",
+          "what": "IF (USED(clocki)) GENERATE segment[bank][bit].clki = clocki — при неиспользованном такте clki не подключается"
+        },
+        {
+          "lines": "449",
+          "what": "segment[bank][bit].we = real_we[bank] — строб записи подаётся напрямую"
+        }
+      ],
+      "netlist_nodes": 35,
+      "nodes_toggled": 33
+    }
+  },
+  "polarity": {
+    "74244": {
+      "claim": "стробы 1GN/2GN активны НИЗКИМ уровнем, передача данных неинверсная",
+      "gn_low_pass": 10,
+      "observations_gn_low": 36,
+      "pass_through_gn_low": 36,
+      "inverted_gn_low": 0,
+      "high_z_gn_low": 0,
+      "observations_gn_high": 28,
+      "high_z_gn_high": 28,
+      "mismatches": 0,
+      "rows": 8,
+      "note": "8 наборов × 2 группы × 4 бита = 64 наблюдения"
+    },
+    "74374": {
+      "claim": "запись по ВОСХОДЯЩЕМУ фронту CLK, OEN активен НИЗКИМ уровнем, D→Q неинверсно, при OEN=1 выход действительно Z",
+      "edges": [
+        {
+          "phase": 2,
+          "captured": "10101010"
+        },
+        {
+          "phase": 6,
+          "captured": "11110000"
+        },
+        {
+          "phase": 9,
+          "captured": "10100101"
+        }
+      ],
+      "oen_low_drove": 7,
+      "oen_high_z": 5,
+      "mismatches": 0,
+      "rows": 12
+    },
+    "TRI": {
+      "claim": "вход OE активен ВЫСОКИМ уровнем: OE=0 → Z, OE=1 → сквозная передача",
+      "oe_high_pass": 2,
+      "oe_low_z": 2,
+      "mismatches": 0,
+      "rows": [
+        {
+          "phase": 0,
+          "IN": "1",
+          "OE": "0",
+          "OUT": "Z"
+        },
+        {
+          "phase": 1,
+          "IN": "1",
+          "OE": "1",
+          "OUT": "1"
+        },
+        {
+          "phase": 2,
+          "IN": "0",
+          "OE": "0",
+          "OUT": "Z"
+        },
+        {
+          "phase": 3,
+          "IN": "0",
+          "OE": "1",
+          "OUT": "0"
+        }
+      ]
+    },
+    "probe_tri": {
+      "rows": 8,
+      "data": [
+        {
+          "phase": 0,
+          "1GN": "0",
+          "2GN": "0",
+          "1A1": "0",
+          "1A2": "1",
+          "1A3": "0",
+          "1A4": "1",
+          "2A1": "1",
+          "2A2": "0",
+          "2A3": "1",
+          "2A4": "0",
+          "1Y1": "0",
+          "1Y2": "1",
+          "1Y3": "0",
+          "1Y4": "1",
+          "2Y1": "1",
+          "2Y2": "0",
+          "2Y3": "1",
+          "2Y4": "0"
+        },
+        {
+          "phase": 1,
+          "1GN": "0",
+          "2GN": "1",
+          "1A1": "1",
+          "1A2": "1",
+          "1A3": "0",
+          "1A4": "0",
+          "2A1": "1",
+          "2A2": "0",
+          "2A3": "1",
+          "2A4": "0",
+          "1Y1": "1",
+          "1Y2": "1",
+          "1Y3": "0",
+          "1Y4": "0",
+          "2Y1": "Z",
+          "2Y2": "Z",
+          "2Y3": "Z",
+          "2Y4": "Z"
+        },
+        {
+          "phase": 2,
+          "1GN": "1",
+          "2GN": "0",
+          "1A1": "0",
+          "1A2": "0",
+          "1A3": "1",
+          "1A4": "1",
+          "2A1": "0",
+          "2A2": "1",
+          "2A3": "0",
+          "2A4": "1",
+          "1Y1": "Z",
+          "1Y2": "Z",
+          "1Y3": "Z",
+          "1Y4": "Z",
+          "2Y1": "0",
+          "2Y2": "1",
+          "2Y3": "0",
+          "2Y4": "1"
+        },
+        {
+          "phase": 3,
+          "1GN": "1",
+          "2GN": "1",
+          "1A1": "1",
+          "1A2": "0",
+          "1A3": "1",
+          "1A4": "0",
+          "2A1": "0",
+          "2A2": "1",
+          "2A3": "1",
+          "2A4": "0",
+          "1Y1": "Z",
+          "1Y2": "Z",
+          "1Y3": "Z",
+          "1Y4": "Z",
+          "2Y1": "Z",
+          "2Y2": "Z",
+          "2Y3": "Z",
+          "2Y4": "Z"
+        },
+        {
+          "phase": 4,
+          "1GN": "0",
+          "2GN": "0",
+          "1A1": "1",
+          "1A2": "1",
+          "1A3": "1",
+          "1A4": "1",
+          "2A1": "1",
+          "2A2": "1",
+          "2A3": "1",
+          "2A4": "1",
+          "1Y1": "1",
+          "1Y2": "1",
+          "1Y3": "1",
+          "1Y4": "1",
+          "2Y1": "1",
+          "2Y2": "1",
+          "2Y3": "1",
+          "2Y4": "1"
+        },
+        {
+          "phase": 5,
+          "1GN": "0",
+          "2GN": "0",
+          "1A1": "0",
+          "1A2": "0",
+          "1A3": "0",
+          "1A4": "0",
+          "2A1": "0",
+          "2A2": "0",
+          "2A3": "0",
+          "2A4": "0",
+          "1Y1": "0",
+          "1Y2": "0",
+          "1Y3": "0",
+          "1Y4": "0",
+          "2Y1": "0",
+          "2Y2": "0",
+          "2Y3": "0",
+          "2Y4": "0"
+        },
+        {
+          "phase": 6,
+          "1GN": "1",
+          "2GN": "1",
+          "1A1": "0",
+          "1A2": "0",
+          "1A3": "0",
+          "1A4": "0",
+          "2A1": "0",
+          "2A2": "0",
+          "2A3": "0",
+          "2A4": "0",
+          "1Y1": "Z",
+          "1Y2": "Z",
+          "1Y3": "Z",
+          "1Y4": "Z",
+          "2Y1": "Z",
+          "2Y2": "Z",
+          "2Y3": "Z",
+          "2Y4": "Z"
+        },
+        {
+          "phase": 7,
+          "1GN": "0",
+          "2GN": "1",
+          "1A1": "0",
+          "1A2": "0",
+          "1A3": "0",
+          "1A4": "0",
+          "2A1": "1",
+          "2A2": "1",
+          "2A3": "1",
+          "2A4": "1",
+          "1Y1": "0",
+          "1Y2": "0",
+          "1Y3": "0",
+          "1Y4": "0",
+          "2Y1": "Z",
+          "2Y2": "Z",
+          "2Y3": "Z",
+          "2Y4": "Z"
+        }
+      ]
+    },
+    "probe_trioe": {
+      "rows": 4,
+      "data": [
+        {
+          "phase": 0,
+          "IN": "1",
+          "OE": "0",
+          "OUT": "Z"
+        },
+        {
+          "phase": 1,
+          "IN": "1",
+          "OE": "1",
+          "OUT": "1"
+        },
+        {
+          "phase": 2,
+          "IN": "0",
+          "OE": "0",
+          "OUT": "Z"
+        },
+        {
+          "phase": 3,
+          "IN": "0",
+          "OE": "1",
+          "OUT": "0"
+        }
+      ]
+    },
+    "probe_reg": {
+      "rows": 12,
+      "data": [
+        {
+          "phase": 0,
+          "CLK": "0",
+          "OEN": "1",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "1",
+          "W[2]": "0",
+          "W[1]": "1",
+          "W[0]": "0",
+          "Q[7]": "Z",
+          "Q[6]": "Z",
+          "Q[5]": "Z",
+          "Q[4]": "Z",
+          "Q[3]": "Z",
+          "Q[2]": "Z",
+          "Q[1]": "Z",
+          "Q[0]": "Z"
+        },
+        {
+          "phase": 1,
+          "CLK": "0",
+          "OEN": "1",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "1",
+          "W[2]": "0",
+          "W[1]": "1",
+          "W[0]": "0",
+          "Q[7]": "Z",
+          "Q[6]": "Z",
+          "Q[5]": "Z",
+          "Q[4]": "Z",
+          "Q[3]": "Z",
+          "Q[2]": "Z",
+          "Q[1]": "Z",
+          "Q[0]": "Z"
+        },
+        {
+          "phase": 2,
+          "CLK": "1",
+          "OEN": "1",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "1",
+          "W[2]": "0",
+          "W[1]": "1",
+          "W[0]": "0",
+          "Q[7]": "Z",
+          "Q[6]": "Z",
+          "Q[5]": "Z",
+          "Q[4]": "Z",
+          "Q[3]": "Z",
+          "Q[2]": "Z",
+          "Q[1]": "Z",
+          "Q[0]": "Z"
+        },
+        {
+          "phase": 3,
+          "CLK": "0",
+          "OEN": "1",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "1",
+          "W[2]": "0",
+          "W[1]": "1",
+          "W[0]": "0",
+          "Q[7]": "Z",
+          "Q[6]": "Z",
+          "Q[5]": "Z",
+          "Q[4]": "Z",
+          "Q[3]": "Z",
+          "Q[2]": "Z",
+          "Q[1]": "Z",
+          "Q[0]": "Z"
+        },
+        {
+          "phase": 4,
+          "CLK": "0",
+          "OEN": "0",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "1",
+          "W[2]": "0",
+          "W[1]": "1",
+          "W[0]": "0",
+          "Q[7]": "1",
+          "Q[6]": "0",
+          "Q[5]": "1",
+          "Q[4]": "0",
+          "Q[3]": "1",
+          "Q[2]": "0",
+          "Q[1]": "1",
+          "Q[0]": "0"
+        },
+        {
+          "phase": 5,
+          "CLK": "0",
+          "OEN": "0",
+          "W[7]": "1",
+          "W[6]": "1",
+          "W[5]": "1",
+          "W[4]": "1",
+          "W[3]": "0",
+          "W[2]": "0",
+          "W[1]": "0",
+          "W[0]": "0",
+          "Q[7]": "1",
+          "Q[6]": "0",
+          "Q[5]": "1",
+          "Q[4]": "0",
+          "Q[3]": "1",
+          "Q[2]": "0",
+          "Q[1]": "1",
+          "Q[0]": "0"
+        },
+        {
+          "phase": 6,
+          "CLK": "1",
+          "OEN": "0",
+          "W[7]": "1",
+          "W[6]": "1",
+          "W[5]": "1",
+          "W[4]": "1",
+          "W[3]": "0",
+          "W[2]": "0",
+          "W[1]": "0",
+          "W[0]": "0",
+          "Q[7]": "1",
+          "Q[6]": "1",
+          "Q[5]": "1",
+          "Q[4]": "1",
+          "Q[3]": "0",
+          "Q[2]": "0",
+          "Q[1]": "0",
+          "Q[0]": "0"
+        },
+        {
+          "phase": 7,
+          "CLK": "0",
+          "OEN": "0",
+          "W[7]": "1",
+          "W[6]": "1",
+          "W[5]": "1",
+          "W[4]": "1",
+          "W[3]": "0",
+          "W[2]": "0",
+          "W[1]": "0",
+          "W[0]": "0",
+          "Q[7]": "1",
+          "Q[6]": "1",
+          "Q[5]": "1",
+          "Q[4]": "1",
+          "Q[3]": "0",
+          "Q[2]": "0",
+          "Q[1]": "0",
+          "Q[0]": "0"
+        },
+        {
+          "phase": 8,
+          "CLK": "0",
+          "OEN": "0",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "0",
+          "W[2]": "1",
+          "W[1]": "0",
+          "W[0]": "1",
+          "Q[7]": "1",
+          "Q[6]": "1",
+          "Q[5]": "1",
+          "Q[4]": "1",
+          "Q[3]": "0",
+          "Q[2]": "0",
+          "Q[1]": "0",
+          "Q[0]": "0"
+        },
+        {
+          "phase": 9,
+          "CLK": "1",
+          "OEN": "0",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "0",
+          "W[2]": "1",
+          "W[1]": "0",
+          "W[0]": "1",
+          "Q[7]": "1",
+          "Q[6]": "0",
+          "Q[5]": "1",
+          "Q[4]": "0",
+          "Q[3]": "0",
+          "Q[2]": "1",
+          "Q[1]": "0",
+          "Q[0]": "1"
+        },
+        {
+          "phase": 10,
+          "CLK": "0",
+          "OEN": "1",
+          "W[7]": "1",
+          "W[6]": "0",
+          "W[5]": "1",
+          "W[4]": "0",
+          "W[3]": "0",
+          "W[2]": "1",
+          "W[1]": "0",
+          "W[0]": "1",
+          "Q[7]": "Z",
+          "Q[6]": "Z",
+          "Q[5]": "Z",
+          "Q[4]": "Z",
+          "Q[3]": "Z",
+          "Q[2]": "Z",
+          "Q[1]": "Z",
+          "Q[0]": "Z"
+        },
+        {
+          "phase": 11,
+          "CLK": "0",
+          "OEN": "0",
+          "W[7]": "0",
+          "W[6]": "1",
+          "W[5]": "0",
+          "W[4]": "1",
+          "W[3]": "1",
+          "W[2]": "0",
+          "W[1]": "1",
+          "W[0]": "0",
+          "Q[7]": "1",
+          "Q[6]": "0",
+          "Q[5]": "1",
+          "Q[4]": "0",
+          "Q[3]": "0",
+          "Q[2]": "1",
+          "Q[1]": "0",
+          "Q[0]": "1"
+        }
+      ]
+    }
+  },
+  "z_proof": {
+    "ok": true,
+    "zSegments": 52,
+    "zSampled": 52,
+    "lost": [],
+    "levelsSeen": [
+      "0",
+      "1",
+      "Z"
+    ],
+    "reports": [
+      {
+        "origin": "D:/Desktop/NF/lab13/work/ram4_out/ram4.sim.vwf",
+        "channels": 6,
+        "zRuns": 4,
+        "zRunsDetail": [
+          {
+            "chan": "Q",
+            "t0": 0,
+            "t1": 200,
+            "mid": 100,
+            "got": "Z"
+          },
+          {
+            "chan": "Q",
+            "t0": 300,
+            "t1": 500,
+            "mid": 400,
+            "got": "Z"
+          },
+          {
+            "chan": "Q",
+            "t0": 600,
+            "t1": 800,
+            "mid": 700,
+            "got": "Z"
+          },
+          {
+            "chan": "Q",
+            "t0": 900,
+            "t1": 1100,
+            "mid": 1000,
+            "got": "Z"
+          }
+        ]
+      },
+      {
+        "origin": "D:/Desktop/NF/lab13/work/ram4beh_out/ram4beh.sim.vwf",
+        "channels": 6,
+        "zRuns": 4,
+        "zRunsDetail": [
+          {
+            "chan": "q",
+            "t0": 0,
+            "t1": 200,
+            "mid": 100,
+            "got": "Z"
+          },
+          {
+            "chan": "q",
+            "t0": 300,
+            "t1": 500,
+            "mid": 400,
+            "got": "Z"
+          },
+          {
+            "chan": "q",
+            "t0": 600,
+            "t1": 800,
+            "mid": 700,
+            "got": "Z"
+          },
+          {
+            "chan": "q",
+            "t0": 900,
+            "t1": 1100,
+            "mid": 1000,
+            "got": "Z"
+          }
+        ]
+      },
+      {
+        "origin": "D:/Desktop/NF/lab13/work/mem4x8_out/mem4x8.sim.vwf",
+        "channels": 28,
+        "zRuns": 8,
+        "zRunsDetail": [
+          {
+            "chan": "q[7]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[6]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[5]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[4]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[3]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[2]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[1]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          },
+          {
+            "chan": "q[0]",
+            "t0": 0,
+            "t1": 1200,
+            "mid": 600,
+            "got": "Z"
+          }
+        ]
+      },
+      {
+        "origin": "D:/Desktop/NF/lab13/work/probe_tri_out/probe_tri.sim.vwf",
+        "channels": 18,
+        "zRuns": 20,
+        "zRunsDetail": [
+          {
+            "chan": "1Y1",
+            "t0": 80,
+            "t1": 160,
+            "mid": 120,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y1",
+            "t0": 240,
+            "t1": 280,
+            "mid": 260,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y2",
+            "t0": 80,
+            "t1": 160,
+            "mid": 120,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y2",
+            "t0": 240,
+            "t1": 280,
+            "mid": 260,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y3",
+            "t0": 80,
+            "t1": 160,
+            "mid": 120,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y3",
+            "t0": 240,
+            "t1": 280,
+            "mid": 260,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y4",
+            "t0": 80,
+            "t1": 160,
+            "mid": 120,
+            "got": "Z"
+          },
+          {
+            "chan": "1Y4",
+            "t0": 240,
+            "t1": 280,
+            "mid": 260,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y1",
+            "t0": 40,
+            "t1": 80,
+            "mid": 60,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y1",
+            "t0": 120,
+            "t1": 160,
+            "mid": 140,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y1",
+            "t0": 240,
+            "t1": 320,
+            "mid": 280,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y2",
+            "t0": 40,
+            "t1": 80,
+            "mid": 60,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y2",
+            "t0": 120,
+            "t1": 160,
+            "mid": 140,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y2",
+            "t0": 240,
+            "t1": 320,
+            "mid": 280,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y3",
+            "t0": 40,
+            "t1": 80,
+            "mid": 60,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y3",
+            "t0": 120,
+            "t1": 160,
+            "mid": 140,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y3",
+            "t0": 240,
+            "t1": 320,
+            "mid": 280,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y4",
+            "t0": 40,
+            "t1": 80,
+            "mid": 60,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y4",
+            "t0": 120,
+            "t1": 160,
+            "mid": 140,
+            "got": "Z"
+          },
+          {
+            "chan": "2Y4",
+            "t0": 240,
+            "t1": 320,
+            "mid": 280,
+            "got": "Z"
+          }
+        ]
+      },
+      {
+        "origin": "D:/Desktop/NF/lab13/work/probe_reg_out/probe_reg.sim.vwf",
+        "channels": 18,
+        "zRuns": 16,
+        "zRunsDetail": [
+          {
+            "chan": "Q[7]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[7]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[6]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[6]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[5]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[5]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[4]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[4]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[3]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[3]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[2]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[2]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[1]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[1]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[0]",
+            "t0": 0,
+            "t1": 400,
+            "mid": 200,
+            "got": "Z"
+          },
+          {
+            "chan": "Q[0]",
+            "t0": 1000,
+            "t1": 1100,
+            "mid": 1050,
+            "got": "Z"
+          }
+        ]
+      }
+    ]
+  },
+  "confrontation": {
+    "verdict": "ALL WAVES CONFRONT THEIR MODELS WITH ZERO DIFFERENCES",
+    "per_project": {
+      "ram4": {
+        "phases": 20,
+        "mismatches": 0
+      },
+      "ram4beh": {
+        "phases": 20,
+        "mismatches": 0
+      },
+      "mem4x8": {
+        "phases": 17,
+        "d": 0,
+        "q": 0
+      },
+      "lpramax": {
+        "phases": 17,
+        "mismatches": 0
+      },
+      "lpramwb": {
+        "phases": 11,
+        "mismatches": 0
+      }
+    },
+    "total_phases": 85
+  },
+  "images": {
+    "lib_74155.png": {
+      "width": 952,
+      "height": 634,
+      "bytes": 36599
+    },
+    "lib_74244.png": {
+      "width": 600,
+      "height": 554,
+      "bytes": 26127
+    },
+    "lib_74374.png": {
+      "width": 640,
+      "height": 1002,
+      "bytes": 44787
+    },
+    "lpm_ram_dq_symbol.png": {
+      "width": 270,
+      "height": 296,
+      "bytes": 10390
+    },
+    "lpramax_wf.png": {
+      "width": 2216,
+      "height": 1368,
+      "bytes": 59935
+    },
+    "mem4x8.png": {
+      "width": 2424,
+      "height": 1194,
+      "bytes": 103149
+    },
+    "mem4x8_wf.png": {
+      "width": 2216,
+      "height": 1410,
+      "bytes": 41457
+    },
+    "ram4.png": {
+      "width": 1992,
+      "height": 1018,
+      "bytes": 54786
+    },
+    "ram4_wf.png": {
+      "width": 2576,
+      "height": 360,
+      "bytes": 14350
+    },
+    "ram4beh_wf.png": {
+      "width": 2576,
+      "height": 402,
+      "bytes": 16812
+    }
+  },
+  "selftests": {
+    "dffe": 2198,
+    "ram4": 21882,
+    "mem4x8": 8733,
+    "lpm_ram_dq": 1196888,
+    "total": 1229701,
+    "notes_total": 1204,
+    "notes_by_scope": {
+      "ram4 (пункты 1 и 2)": 1134,
+      "mem4x8 (пункт 3)": 70,
+      "lpm_ram_dq (пункт 4)": 0
+    },
+    "notes_meaning": "Во всех 1204 случаях расхождение одного и же рода: поведенческая модель отдаёт Z (шина отпущена), вентильная - X (неопределённость на входе разрешения трёхстального буфера). В пункте 4 таких случаев нет: мегафункция не разворачивается в буфер с X на входе разрешения."
+  },
+  "lpramwb": {
+    "phases": 11,
+    "rows": [
+      {
+        "i": 0,
+        "we": "0",
+        "a": 16,
+        "d": 0,
+        "q": "X",
+        "label": "read unwritten 0x010"
+      },
+      {
+        "i": 1,
+        "we": "1",
+        "a": 16,
+        "d": 17,
+        "q": 17,
+        "label": "WE=1 A=0x010 D=0x11"
+      },
+      {
+        "i": 2,
+        "we": "1",
+        "a": 32,
+        "d": 34,
+        "q": 34,
+        "label": "WE=1 A=0x020 D=0x22 (A and D move, no edge)"
+      },
+      {
+        "i": 3,
+        "we": "0",
+        "a": 16,
+        "d": 0,
+        "q": 0,
+        "label": "read 0x010"
+      },
+      {
+        "i": 4,
+        "we": "0",
+        "a": 32,
+        "d": 0,
+        "q": "X",
+        "label": "read 0x020"
+      },
+      {
+        "i": 5,
+        "we": "1",
+        "a": 48,
+        "d": 51,
+        "q": 51,
+        "label": "WE=1 A=0x030 D=0x33"
+      },
+      {
+        "i": 6,
+        "we": "1",
+        "a": 48,
+        "d": 68,
+        "q": 68,
+        "label": "WE=1 A=0x030 D=0x44 (D moves, A held)"
+      },
+      {
+        "i": 7,
+        "we": "0",
+        "a": 48,
+        "d": 0,
+        "q": 0,
+        "label": "read 0x030"
+      },
+      {
+        "i": 8,
+        "we": "1",
+        "a": 16,
+        "d": 85,
+        "q": 85,
+        "label": "WE=1 A=0x010 D=0x55 (overwrite)"
+      },
+      {
+        "i": 9,
+        "we": "0",
+        "a": 16,
+        "d": 0,
+        "q": 0,
+        "label": "read 0x010"
+      },
+      {
+        "i": 10,
+        "we": "0",
+        "a": 32,
+        "d": 0,
+        "q": "X",
+        "label": "read 0x020 (must still be 0x22)"
+      }
+    ],
+    "purpose": "решающий эксперимент: inclock не подключён, тактовых фронтов в проекте нет вовсе"
+  },
+  "probes": {
+    "probe_tri": {
+      "device": "EP1S10F484C5",
+      "le": "0 / 10,570 ( 0 % )",
+      "pins": "18 / 336 ( 5 % )",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+      "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 0 warnings",
+      "coverage": "100.00",
+      "transitions": "138",
+      "cell_delay_info": "Info: Total cell delay = 3.491 ns ( 45.21 % )",
+      "interconnect_delay_info": "Info: Total interconnect delay = 4.230 ns ( 54.79 % )",
+      "timing": {
+        "tpd": {
+          "columns": [
+            "Slack",
+            "Required P2P Time",
+            "Actual P2P Time",
+            "From",
+            "To"
+          ],
+          "rows": [
+            {
+              "actual": "7.721 ns",
+              "from": "1A3",
+              "to": "1Y3",
+              "clock": null
+            },
+            {
+              "actual": "7.646 ns",
+              "from": "2A1",
+              "to": "2Y1",
+              "clock": null
+            },
+            {
+              "actual": "7.630 ns",
+              "from": "2A3",
+              "to": "2Y3",
+              "clock": null
+            },
+            {
+              "actual": "7.565 ns",
+              "from": "1A2",
+              "to": "1Y2",
+              "clock": null
+            },
+            {
+              "actual": "7.551 ns",
+              "from": "2GN",
+              "to": "2Y3",
+              "clock": null
+            },
+            {
+              "actual": "7.551 ns",
+              "from": "2GN",
+              "to": "2Y1",
+              "clock": null
+            },
+            {
+              "actual": "7.538 ns",
+              "from": "1GN",
+              "to": "1Y3",
+              "clock": null
+            },
+            {
+              "actual": "7.538 ns",
+              "from": "1GN",
+              "to": "1Y2",
+              "clock": null
+            },
+            {
+              "actual": "7.430 ns",
+              "from": "2GN",
+              "to": "2Y4",
+              "clock": null
+            },
+            {
+              "actual": "7.430 ns",
+              "from": "2GN",
+              "to": "2Y2",
+              "clock": null
+            },
+            {
+              "actual": "7.396 ns",
+              "from": "1GN",
+              "to": "1Y4",
+              "clock": null
+            },
+            {
+              "actual": "7.396 ns",
+              "from": "1GN",
+              "to": "1Y1",
+              "clock": null
+            },
+            {
+              "actual": "7.240 ns",
+              "from": "1A1",
+              "to": "1Y1",
+              "clock": null
+            },
+            {
+              "actual": "7.235 ns",
+              "from": "2A4",
+              "to": "2Y4",
+              "clock": null
+            },
+            {
+              "actual": "7.234 ns",
+              "from": "2A2",
+              "to": "2Y2",
+              "clock": null
+            },
+            {
+              "actual": "7.234 ns",
+              "from": "1A4",
+              "to": "1Y4",
+              "clock": null
+            }
+          ],
+          "worst": {
+            "actual": "7.721 ns",
+            "from": "1A3",
+            "to": "1Y3",
+            "clock": null
+          },
+          "count": 16
+        }
+      },
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 1 warning",
+      "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+      "cell_ns": 3.491,
+      "cell_pct": 45.21,
+      "interconnect_ns": 4.23,
+      "interconnect_pct": 54.79,
+      "tpd_ns": 7.721,
+      "decomposition_sum_ns": 7.721,
+      "decomposition_matches_tpd": true,
+      "decomposition_note": "cell + interconnect совпадает с худшим tpd до третьего знака: разложение относится именно к этому пути"
+    },
+    "probe_trioe": {
+      "device": "EP1S10F484C5",
+      "le": "0 / 10,570 ( 0 % )",
+      "pins": "3 / 336 ( < 1 % )",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+      "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 0 warnings",
+      "coverage": "75.00",
+      "transitions": "11",
+      "cell_delay_info": "Info: Total cell delay = 3.477 ns ( 47.68 % )",
+      "interconnect_delay_info": "Info: Total interconnect delay = 3.816 ns ( 52.32 % )",
+      "timing": {
+        "tpd": {
+          "columns": [
+            "Slack",
+            "Required P2P Time",
+            "Actual P2P Time",
+            "From",
+            "To"
+          ],
+          "rows": [
+            {
+              "actual": "7.293 ns",
+              "from": "OE",
+              "to": "OUT",
+              "clock": null
+            },
+            {
+              "actual": "7.254 ns",
+              "from": "IN",
+              "to": "OUT",
+              "clock": null
+            }
+          ],
+          "worst": {
+            "actual": "7.293 ns",
+            "from": "OE",
+            "to": "OUT",
+            "clock": null
+          },
+          "count": 2
+        }
+      },
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 1 warning",
+      "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+      "cell_ns": 3.477,
+      "cell_pct": 47.68,
+      "interconnect_ns": 3.816,
+      "interconnect_pct": 52.32,
+      "tpd_ns": 7.293,
+      "decomposition_sum_ns": 7.293,
+      "decomposition_matches_tpd": true,
+      "decomposition_note": "cell + interconnect совпадает с худшим tpd до третьего знака: разложение относится именно к этому пути"
+    },
+    "probe_reg": {
+      "device": "EP1S10F484C5",
+      "le": "8 / 10,570 ( < 1 % )",
+      "pins": "18 / 336 ( 5 % )",
+      "map_msg": "Analysis & Synthesis was successful. 0 errors, 3 warnings",
+      "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+      "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+      "coverage": "70.59",
+      "transitions": "101",
+      "cell_delay_info": "Info: Total cell delay = 1.457 ns ( 31.39 % )",
+      "interconnect_delay_info": "Info: Total interconnect delay = 3.184 ns ( 68.61 % )",
+      "timing": {
+        "tpd": {
+          "columns": [
+            "Slack",
+            "Required P2P Time",
+            "Actual P2P Time",
+            "From",
+            "To"
+          ],
+          "rows": [
+            {
+              "actual": "7.577 ns",
+              "from": "OEN",
+              "to": "Q[0]",
+              "clock": null
+            },
+            {
+              "actual": "7.577 ns",
+              "from": "OEN",
+              "to": "Q[2]",
+              "clock": null
+            },
+            {
+              "actual": "7.574 ns",
+              "from": "OEN",
+              "to": "Q[1]",
+              "clock": null
+            },
+            {
+              "actual": "7.574 ns",
+              "from": "OEN",
+              "to": "Q[6]",
+              "clock": null
+            },
+            {
+              "actual": "7.574 ns",
+              "from": "OEN",
+              "to": "Q[7]",
+              "clock": null
+            },
+            {
+              "actual": "7.546 ns",
+              "from": "OEN",
+              "to": "Q[3]",
+              "clock": null
+            },
+            {
+              "actual": "7.535 ns",
+              "from": "OEN",
+              "to": "Q[5]",
+              "clock": null
+            },
+            {
+              "actual": "7.314 ns",
+              "from": "OEN",
+              "to": "Q[4]",
+              "clock": null
+            }
+          ],
+          "worst": {
+            "actual": "7.577 ns",
+            "from": "OEN",
+            "to": "Q[0]",
+            "clock": null
+          },
+          "count": 8
+        },
+        "tsu": {
+          "columns": [
+            "Slack",
+            "Required tsu",
+            "Actual tsu",
+            "From",
+            "To",
+            "To Clock"
+          ],
+          "rows": [
+            {
+              "actual": "1.751 ns",
+              "from": "W[4]",
+              "to": "74374:U1|17",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.749 ns",
+              "from": "W[0]",
+              "to": "74374:U1|13",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.735 ns",
+              "from": "W[2]",
+              "to": "74374:U1|15",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.732 ns",
+              "from": "W[7]",
+              "to": "74374:U1|20",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.617 ns",
+              "from": "W[3]",
+              "to": "74374:U1|16",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.599 ns",
+              "from": "W[5]",
+              "to": "74374:U1|18",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.582 ns",
+              "from": "W[6]",
+              "to": "74374:U1|19",
+              "clock": "CLK"
+            },
+            {
+              "actual": "1.576 ns",
+              "from": "W[1]",
+              "to": "74374:U1|14",
+              "clock": "CLK"
+            }
+          ],
+          "worst": {
+            "actual": "1.751 ns",
+            "from": "W[4]",
+            "to": "74374:U1|17",
+            "clock": "CLK"
+          },
+          "count": 8
+        },
+        "tco": {
+          "columns": [
+            "Slack",
+            "Required tco",
+            "Actual tco",
+            "From",
+            "To",
+            "From Clock"
+          ],
+          "rows": [
+            {
+              "actual": "6.678 ns",
+              "from": "74374:U1|14",
+              "to": "Q[1]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.656 ns",
+              "from": "74374:U1|19",
+              "to": "Q[6]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.618 ns",
+              "from": "74374:U1|15",
+              "to": "Q[2]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.247 ns",
+              "from": "74374:U1|20",
+              "to": "Q[7]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.238 ns",
+              "from": "74374:U1|18",
+              "to": "Q[5]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.228 ns",
+              "from": "74374:U1|17",
+              "to": "Q[4]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.218 ns",
+              "from": "74374:U1|16",
+              "to": "Q[3]",
+              "clock": "CLK"
+            },
+            {
+              "actual": "6.210 ns",
+              "from": "74374:U1|13",
+              "to": "Q[0]",
+              "clock": "CLK"
+            }
+          ],
+          "worst": {
+            "actual": "6.678 ns",
+            "from": "74374:U1|14",
+            "to": "Q[1]",
+            "clock": "CLK"
+          },
+          "count": 8
+        },
+        "th": {
+          "columns": [
+            "Minimum Slack",
+            "Required th",
+            "Actual th",
+            "From",
+            "To",
+            "To Clock"
+          ],
+          "rows": [
+            {
+              "actual": "-1.466 ns",
+              "from": "W[1]",
+              "to": "74374:U1|14",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.472 ns",
+              "from": "W[6]",
+              "to": "74374:U1|19",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.489 ns",
+              "from": "W[5]",
+              "to": "74374:U1|18",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.507 ns",
+              "from": "W[3]",
+              "to": "74374:U1|16",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.622 ns",
+              "from": "W[7]",
+              "to": "74374:U1|20",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.625 ns",
+              "from": "W[2]",
+              "to": "74374:U1|15",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.639 ns",
+              "from": "W[0]",
+              "to": "74374:U1|13",
+              "clock": "CLK"
+            },
+            {
+              "actual": "-1.641 ns",
+              "from": "W[4]",
+              "to": "74374:U1|17",
+              "clock": "CLK"
+            }
+          ],
+          "worst": {
+            "actual": "-1.466 ns",
+            "from": "W[1]",
+            "to": "74374:U1|14",
+            "clock": "CLK"
+          },
+          "count": 8
+        }
+      },
+      "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 1 warning",
+      "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+      "cell_ns": 1.457,
+      "cell_pct": 31.39,
+      "interconnect_ns": 3.184,
+      "interconnect_pct": 68.61,
+      "tpd_ns": 7.577,
+      "decomposition_sum_ns": 4.641,
+      "decomposition_matches_tpd": false,
+      "decomposition_note": "cell + interconnect НЕ равно худшему tpd: строки Info агрегированы по всем путям, а не по худшему"
+    }
+  },
+  "seqwaves": {
+    "note": "expectations computed by lab13/models.mjs, stimulus read back out of each returned wave, comparison by lab13/seqcheck.mjs checkSeq",
+    "verdict": "EVERY RETURNED WAVE CONFRONTS models.mjs THROUGH seqcheck WITH ZERO MISMATCHES",
+    "waves": {
+      "ram4": {
+        "key": "ram4",
+        "what": "task 1, figure 18.7 structural RAM",
+        "path": "D:/Desktop/NF/lab13/work/ram4_out/ram4.sim.vwf",
+        "phases": 20,
+        "ok": true,
+        "checked": 20,
+        "mismatches": 0,
+        "zSeen": 8,
+        "xSeen": 0,
+        "unexplainedX": 0,
+        "absent": 0,
+        "warn": [],
+        "firstMismatch": null,
+        "busWord": null,
+        "retained": {
+          "cells": [
+            "1",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        "trace": [
+          {
+            "phase": 0,
+            "t": 50,
+            "CLK": "0",
+            "WE": "1",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 1,
+            "t": 150,
+            "CLK": "1",
+            "WE": "1",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 2,
+            "t": 250,
+            "CLK": "0",
+            "WE": "0",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "Q": "1"
+            }
+          },
+          {
+            "phase": 3,
+            "t": 350,
+            "CLK": "0",
+            "WE": "1",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 4,
+            "t": 450,
+            "CLK": "1",
+            "WE": "1",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 5,
+            "t": 550,
+            "CLK": "0",
+            "WE": "0",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "Q": "0"
+            }
+          },
+          {
+            "phase": 6,
+            "t": 650,
+            "CLK": "0",
+            "WE": "1",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 7,
+            "t": 750,
+            "CLK": "1",
+            "WE": "1",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 8,
+            "t": 850,
+            "CLK": "0",
+            "WE": "0",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "Q": "1"
+            }
+          },
+          {
+            "phase": 9,
+            "t": 950,
+            "CLK": "0",
+            "WE": "1",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 10,
+            "t": 1050,
+            "CLK": "1",
+            "WE": "1",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "Q": "Z"
+            }
+          },
+          {
+            "phase": 11,
+            "t": 1150,
+            "CLK": "0",
+            "WE": "0",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "Q": "0"
+            }
+          },
+          {
+            "phase": 12,
+            "t": 1250,
+            "CLK": "0",
+            "WE": "0",
+            "A": "00",
+            "D": "0",
+            "model": {
+              "Q": "1"
+            }
+          },
+          {
+            "phase": 13,
+            "t": 1350,
+            "CLK": "0",
+            "WE": "0",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "Q": "0"
+            }
+          },
+          {
+            "phase": 14,
+            "t": 1450,
+            "CLK": "0",
+            "WE": "0",
+            "A": "10",
+            "D": "0",
+            "model": {
+              "Q": "1"
+            }
+          },
+          {
+            "phase": 15,
+            "t": 1550,
+            "CLK": "0",
+            "WE": "0",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "Q": "0"
+            }
+          },
+          {
+            "phase": 16,
+            "t": 1650,
+            "CLK": "0",
+            "WE": "0",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "Q": "1"
+            }
+          },
+          {
+            "phase": 17,
+            "t": 1750,
+            "CLK": "0",
+            "WE": "0",
+            "A": "01",
+            "D": "1",
+            "model": {
+              "Q": "0"
+            }
+          },
+          {
+            "phase": 18,
+            "t": 1850,
+            "CLK": "0",
+            "WE": "0",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "Q": "1"
+            }
+          },
+          {
+            "phase": 19,
+            "t": 1950,
+            "CLK": "0",
+            "WE": "0",
+            "A": "11",
+            "D": "1",
+            "model": {
+              "Q": "0"
+            }
+          }
+        ],
+        "model": "ram4"
+      },
+      "ram4beh": {
+        "key": "ram4beh",
+        "what": "task 2, behavioural VHDL twin of the same circuit",
+        "path": "D:/Desktop/NF/lab13/work/ram4beh_out/ram4beh.sim.vwf",
+        "phases": 20,
+        "ok": true,
+        "checked": 20,
+        "mismatches": 0,
+        "zSeen": 8,
+        "xSeen": 0,
+        "unexplainedX": 0,
+        "absent": 0,
+        "warn": [],
+        "firstMismatch": null,
+        "busWord": null,
+        "retained": {
+          "cells": [
+            "1",
+            "0",
+            "1",
+            "0"
+          ]
+        },
+        "trace": [
+          {
+            "phase": 0,
+            "t": 50,
+            "CLK": "0",
+            "WE": "1",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 1,
+            "t": 150,
+            "CLK": "1",
+            "WE": "1",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 2,
+            "t": 250,
+            "CLK": "0",
+            "WE": "0",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "q": "1"
+            }
+          },
+          {
+            "phase": 3,
+            "t": 350,
+            "CLK": "0",
+            "WE": "1",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 4,
+            "t": 450,
+            "CLK": "1",
+            "WE": "1",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 5,
+            "t": 550,
+            "CLK": "0",
+            "WE": "0",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "q": "0"
+            }
+          },
+          {
+            "phase": 6,
+            "t": 650,
+            "CLK": "0",
+            "WE": "1",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 7,
+            "t": 750,
+            "CLK": "1",
+            "WE": "1",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 8,
+            "t": 850,
+            "CLK": "0",
+            "WE": "0",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "q": "1"
+            }
+          },
+          {
+            "phase": 9,
+            "t": 950,
+            "CLK": "0",
+            "WE": "1",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 10,
+            "t": 1050,
+            "CLK": "1",
+            "WE": "1",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "q": "Z"
+            }
+          },
+          {
+            "phase": 11,
+            "t": 1150,
+            "CLK": "0",
+            "WE": "0",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "q": "0"
+            }
+          },
+          {
+            "phase": 12,
+            "t": 1250,
+            "CLK": "0",
+            "WE": "0",
+            "A": "00",
+            "D": "0",
+            "model": {
+              "q": "1"
+            }
+          },
+          {
+            "phase": 13,
+            "t": 1350,
+            "CLK": "0",
+            "WE": "0",
+            "A": "01",
+            "D": "0",
+            "model": {
+              "q": "0"
+            }
+          },
+          {
+            "phase": 14,
+            "t": 1450,
+            "CLK": "0",
+            "WE": "0",
+            "A": "10",
+            "D": "0",
+            "model": {
+              "q": "1"
+            }
+          },
+          {
+            "phase": 15,
+            "t": 1550,
+            "CLK": "0",
+            "WE": "0",
+            "A": "11",
+            "D": "0",
+            "model": {
+              "q": "0"
+            }
+          },
+          {
+            "phase": 16,
+            "t": 1650,
+            "CLK": "0",
+            "WE": "0",
+            "A": "00",
+            "D": "1",
+            "model": {
+              "q": "1"
+            }
+          },
+          {
+            "phase": 17,
+            "t": 1750,
+            "CLK": "0",
+            "WE": "0",
+            "A": "01",
+            "D": "1",
+            "model": {
+              "q": "0"
+            }
+          },
+          {
+            "phase": 18,
+            "t": 1850,
+            "CLK": "0",
+            "WE": "0",
+            "A": "10",
+            "D": "1",
+            "model": {
+              "q": "1"
+            }
+          },
+          {
+            "phase": 19,
+            "t": 1950,
+            "CLK": "0",
+            "WE": "0",
+            "A": "11",
+            "D": "1",
+            "model": {
+              "q": "0"
+            }
+          }
+        ],
+        "model": "ram4"
+      },
+      "mem4x8": {
+        "key": "mem4x8",
+        "what": "task 3, figure 18.8: 74155 decoder + 4x 74374 + 74244 output",
+        "path": "D:/Desktop/NF/lab13/work/mem4x8_out/mem4x8.sim.vwf",
+        "phases": 17,
+        "ok": true,
+        "checked": 272,
+        "mismatches": 0,
+        "zSeen": 96,
+        "xSeen": 0,
+        "unexplainedX": 0,
+        "absent": 0,
+        "warn": [],
+        "firstMismatch": null,
+        "busWord": {
+          "checked": 17,
+          "nullReads": 12,
+          "bad": null
+        },
+        "retained": {
+          "words": [
+            "11111111",
+            "11110000",
+            "10100101",
+            "01011010"
+          ]
+        },
+        "trace": [
+          {
+            "phase": 0,
+            "t": 50,
+            "CLK": "0",
+            "WE": "1",
+            "A": "00",
+            "D": "11111111",
+            "rd": "0",
+            "model": {
+              "d": "00000000",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 1,
+            "t": 150,
+            "CLK": "1",
+            "WE": "1",
+            "A": "00",
+            "D": "11111111",
+            "rd": "0",
+            "model": {
+              "d": "11111111",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 2,
+            "t": 250,
+            "CLK": "0",
+            "WE": "1",
+            "A": "00",
+            "D": "11111111",
+            "rd": "0",
+            "model": {
+              "d": "11111111",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 3,
+            "t": 350,
+            "CLK": "0",
+            "WE": "1",
+            "A": "01",
+            "D": "11110000",
+            "rd": "0",
+            "model": {
+              "d": "00000000",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 4,
+            "t": 450,
+            "CLK": "1",
+            "WE": "1",
+            "A": "01",
+            "D": "11110000",
+            "rd": "0",
+            "model": {
+              "d": "11110000",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 5,
+            "t": 550,
+            "CLK": "0",
+            "WE": "1",
+            "A": "01",
+            "D": "11110000",
+            "rd": "0",
+            "model": {
+              "d": "11110000",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 6,
+            "t": 650,
+            "CLK": "0",
+            "WE": "1",
+            "A": "10",
+            "D": "10100101",
+            "rd": "0",
+            "model": {
+              "d": "00000000",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 7,
+            "t": 750,
+            "CLK": "1",
+            "WE": "1",
+            "A": "10",
+            "D": "10100101",
+            "rd": "0",
+            "model": {
+              "d": "10100101",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 8,
+            "t": 850,
+            "CLK": "0",
+            "WE": "1",
+            "A": "10",
+            "D": "10100101",
+            "rd": "0",
+            "model": {
+              "d": "10100101",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 9,
+            "t": 950,
+            "CLK": "0",
+            "WE": "1",
+            "A": "11",
+            "D": "01011010",
+            "rd": "0",
+            "model": {
+              "d": "00000000",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 10,
+            "t": 1050,
+            "CLK": "1",
+            "WE": "1",
+            "A": "11",
+            "D": "01011010",
+            "rd": "0",
+            "model": {
+              "d": "01011010",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 11,
+            "t": 1150,
+            "CLK": "0",
+            "WE": "1",
+            "A": "11",
+            "D": "01011010",
+            "rd": "0",
+            "model": {
+              "d": "01011010",
+              "q": "ZZZZZZZZ"
+            }
+          },
+          {
+            "phase": 12,
+            "t": 1250,
+            "CLK": "0",
+            "WE": "1",
+            "A": "00",
+            "D": "00000000",
+            "rd": "1",
+            "model": {
+              "d": "11111111",
+              "q": "11111111"
+            }
+          },
+          {
+            "phase": 13,
+            "t": 1350,
+            "CLK": "0",
+            "WE": "1",
+            "A": "01",
+            "D": "00000000",
+            "rd": "1",
+            "model": {
+              "d": "11110000",
+              "q": "11110000"
+            }
+          },
+          {
+            "phase": 14,
+            "t": 1450,
+            "CLK": "0",
+            "WE": "1",
+            "A": "10",
+            "D": "00000000",
+            "rd": "1",
+            "model": {
+              "d": "10100101",
+              "q": "10100101"
+            }
+          },
+          {
+            "phase": 15,
+            "t": 1550,
+            "CLK": "0",
+            "WE": "1",
+            "A": "11",
+            "D": "00000000",
+            "rd": "1",
+            "model": {
+              "d": "01011010",
+              "q": "01011010"
+            }
+          },
+          {
+            "phase": 16,
+            "t": 1650,
+            "CLK": "0",
+            "WE": "1",
+            "A": "00",
+            "D": "00000000",
+            "rd": "1",
+            "model": {
+              "d": "11111111",
+              "q": "11111111"
+            }
+          }
+        ],
+        "model": "mem4x8"
+      },
+      "lpramax": {
+        "key": "lpramax",
+        "what": "task 4, lpm_ram_dq 8x1024, all-unregistered (17 measured phases)",
+        "path": "D:/Desktop/NF/lab13/work/lpramax_out/lpramax.sim.vwf",
+        "phases": 17,
+        "ok": true,
+        "checked": 136,
+        "mismatches": 0,
+        "zSeen": 0,
+        "xSeen": 40,
+        "unexplainedX": 0,
+        "absent": 0,
+        "warn": [],
+        "firstMismatch": null,
+        "busWord": {
+          "checked": 17,
+          "nullReads": 5,
+          "bad": null
+        },
+        "retained": {
+          "words": [
+            "11111111",
+            "11110000",
+            "10100101",
+            "01011010"
+          ],
+          "written": 4
+        },
+        "trace": [
+          {
+            "phase": 0,
+            "t": 50,
+            "WE": "0",
+            "A": "0000000000",
+            "D": "11111111",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          },
+          {
+            "phase": 1,
+            "t": 150,
+            "WE": "1",
+            "A": "0000000000",
+            "D": "11111111",
+            "model": {
+              "DATAQ": "11111111"
+            }
+          },
+          {
+            "phase": 2,
+            "t": 250,
+            "WE": "0",
+            "A": "0000000000",
+            "D": "11111111",
+            "model": {
+              "DATAQ": "11111111"
+            }
+          },
+          {
+            "phase": 3,
+            "t": 350,
+            "WE": "0",
+            "A": "0101010101",
+            "D": "11110000",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          },
+          {
+            "phase": 4,
+            "t": 450,
+            "WE": "1",
+            "A": "0101010101",
+            "D": "11110000",
+            "model": {
+              "DATAQ": "11110000"
+            }
+          },
+          {
+            "phase": 5,
+            "t": 550,
+            "WE": "0",
+            "A": "0101010101",
+            "D": "11110000",
+            "model": {
+              "DATAQ": "11110000"
+            }
+          },
+          {
+            "phase": 6,
+            "t": 650,
+            "WE": "0",
+            "A": "1010101010",
+            "D": "10100101",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          },
+          {
+            "phase": 7,
+            "t": 750,
+            "WE": "1",
+            "A": "1010101010",
+            "D": "10100101",
+            "model": {
+              "DATAQ": "10100101"
+            }
+          },
+          {
+            "phase": 8,
+            "t": 850,
+            "WE": "0",
+            "A": "1010101010",
+            "D": "10100101",
+            "model": {
+              "DATAQ": "10100101"
+            }
+          },
+          {
+            "phase": 9,
+            "t": 950,
+            "WE": "0",
+            "A": "1111111111",
+            "D": "01011010",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          },
+          {
+            "phase": 10,
+            "t": 1050,
+            "WE": "1",
+            "A": "1111111111",
+            "D": "01011010",
+            "model": {
+              "DATAQ": "01011010"
+            }
+          },
+          {
+            "phase": 11,
+            "t": 1150,
+            "WE": "0",
+            "A": "1111111111",
+            "D": "01011010",
+            "model": {
+              "DATAQ": "01011010"
+            }
+          },
+          {
+            "phase": 12,
+            "t": 1250,
+            "WE": "0",
+            "A": "0000000000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "11111111"
+            }
+          },
+          {
+            "phase": 13,
+            "t": 1350,
+            "WE": "0",
+            "A": "0101010101",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "11110000"
+            }
+          },
+          {
+            "phase": 14,
+            "t": 1450,
+            "WE": "0",
+            "A": "1010101010",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "10100101"
+            }
+          },
+          {
+            "phase": 15,
+            "t": 1550,
+            "WE": "0",
+            "A": "1111111111",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "01011010"
+            }
+          },
+          {
+            "phase": 16,
+            "t": 1650,
+            "WE": "0",
+            "A": "0110101010",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          }
+        ],
+        "model": "lpm_ram_dq write=we-fall/post"
+      },
+      "lpramwb": {
+        "key": "lpramwb",
+        "what": "task 4 probe, the write-rule discriminator (11 measured phases)",
+        "path": "D:/Desktop/NF/lab13/work/lpramwb_out/lpramwb.sim.vwf",
+        "phases": 11,
+        "ok": true,
+        "checked": 88,
+        "mismatches": 0,
+        "zSeen": 0,
+        "xSeen": 24,
+        "unexplainedX": 0,
+        "absent": 0,
+        "warn": [],
+        "firstMismatch": null,
+        "busWord": {
+          "checked": 11,
+          "nullReads": 3,
+          "bad": null
+        },
+        "retained": {
+          "words": [
+            "00000000",
+            "00000000"
+          ],
+          "written": 2
+        },
+        "trace": [
+          {
+            "phase": 0,
+            "t": 50,
+            "WE": "0",
+            "A": "0000010000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          },
+          {
+            "phase": 1,
+            "t": 150,
+            "WE": "1",
+            "A": "0000010000",
+            "D": "00010001",
+            "model": {
+              "DATAQ": "00010001"
+            }
+          },
+          {
+            "phase": 2,
+            "t": 250,
+            "WE": "1",
+            "A": "0000100000",
+            "D": "00100010",
+            "model": {
+              "DATAQ": "00100010"
+            }
+          },
+          {
+            "phase": 3,
+            "t": 350,
+            "WE": "0",
+            "A": "0000010000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "00000000"
+            }
+          },
+          {
+            "phase": 4,
+            "t": 450,
+            "WE": "0",
+            "A": "0000100000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          },
+          {
+            "phase": 5,
+            "t": 550,
+            "WE": "1",
+            "A": "0000110000",
+            "D": "00110011",
+            "model": {
+              "DATAQ": "00110011"
+            }
+          },
+          {
+            "phase": 6,
+            "t": 650,
+            "WE": "1",
+            "A": "0000110000",
+            "D": "01000100",
+            "model": {
+              "DATAQ": "01000100"
+            }
+          },
+          {
+            "phase": 7,
+            "t": 750,
+            "WE": "0",
+            "A": "0000110000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "00000000"
+            }
+          },
+          {
+            "phase": 8,
+            "t": 850,
+            "WE": "1",
+            "A": "0000010000",
+            "D": "01010101",
+            "model": {
+              "DATAQ": "01010101"
+            }
+          },
+          {
+            "phase": 9,
+            "t": 950,
+            "WE": "0",
+            "A": "0000010000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "00000000"
+            }
+          },
+          {
+            "phase": 10,
+            "t": 1050,
+            "WE": "0",
+            "A": "0000100000",
+            "D": "00000000",
+            "model": {
+              "DATAQ": "XXXXXXXX"
+            }
+          }
+        ],
+        "model": "lpm_ram_dq write=we-fall/post"
+      }
+    },
+    "totals": {
+      "phases": 85,
+      "checks": 536,
+      "mism": 0,
+      "z": 112,
+      "x": 64,
+      "ux": 0,
+      "ab": 0
+    }
+  },
+  "library_composition": {
+    "74155": {
+      "symbol_total": 15,
+      "symbols": {
+        "NOT": 5,
+        "BAND2": 2,
+        "NAND3": 8
+      },
+      "instance_indexes": {
+        "NOT": [
+          7,
+          12,
+          57,
+          58,
+          59
+        ],
+        "BAND2": [
+          41,
+          42
+        ],
+        "NAND3": [
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "pins": {
+        "input": 6,
+        "output": 8,
+        "inout": 0,
+        "total": 14
+      },
+      "junctions": 20,
+      "connectors": 81,
+      "port_decls": 48
+    },
+    "74244": {
+      "symbol_total": 10,
+      "symbols": {
+        "NOT": 2,
+        "TRI": 8
+      },
+      "instance_indexes": {
+        "NOT": [
+          4,
+          33
+        ],
+        "TRI": [
+          1,
+          6,
+          10,
+          11,
+          26,
+          27,
+          31,
+          36
+        ]
+      },
+      "pins": {
+        "input": 10,
+        "output": 8,
+        "inout": 0,
+        "total": 18
+      },
+      "junctions": 6,
+      "connectors": 42,
+      "port_decls": 28
+    },
+    "74374": {
+      "symbol_total": 17,
+      "symbols": {
+        "TRI": 8,
+        "NOT": 1,
+        "DFF": 8
+      },
+      "instance_indexes": {
+        "TRI": [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47
+        ],
+        "NOT": [
+          2
+        ],
+        "DFF": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ]
+      },
+      "pins": {
+        "input": 10,
+        "output": 8,
+        "inout": 0,
+        "total": 18
+      },
+      "junctions": 14,
+      "connectors": 67,
+      "port_decls": 66
+    },
+    "note": "Parsed from the authentic .bdf copies used in the project. symbol_total counts instantiated primitives; instance_indexes is the separate sequence of their designator numbers and is kept here precisely because the two were once confused in prose."
+  },
+  "composition_own": {
+    "ram4": {
+      "source": "specs/ram4.json",
+      "instances_by_type": {
+        "NOT": 3,
+        "VCC": 1,
+        "GND": 1,
+        "AND3": 8,
+        "DFFE": 4,
+        "TRI": 4
+      },
+      "ids_by_type": {
+        "NOT": [
+          "N0",
+          "N1",
+          "N2"
+        ],
+        "VCC": [
+          "V0"
+        ],
+        "GND": [
+          "G0"
+        ],
+        "AND3": [
+          "E0",
+          "O0",
+          "E1",
+          "O1",
+          "E2",
+          "O2",
+          "E3",
+          "O3"
+        ],
+        "DFFE": [
+          "F0",
+          "F1",
+          "F2",
+          "F3"
+        ],
+        "TRI": [
+          "T0",
+          "T1",
+          "T2",
+          "T3"
+        ]
+      },
+      "total_instances": 21,
+      "total_connects": 59,
+      "vectors": 20,
+      "note": "Снято с той самой .json-спецификации, из которой собирается .bdf: перечень элементов схемы — не пересказ, а разбор источника монтажа."
+    },
+    "mem4x8": {
+      "source": "specs/mem4x8.json",
+      "instances_by_type": {
+        "74155": 1,
+        "74244": 1,
+        "74374": 4,
+        "VCC": 1,
+        "GND": 1,
+        "NOT": 5,
+        "AND2": 4
+      },
+      "ids_by_type": {
+        "74155": [
+          "U1"
+        ],
+        "74244": [
+          "B1"
+        ],
+        "74374": [
+          "R0",
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "VCC": [
+          "V0"
+        ],
+        "GND": [
+          "G0"
+        ],
+        "NOT": [
+          "NR",
+          "P0",
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "AND2": [
+          "K0",
+          "K1",
+          "K2",
+          "K3"
+        ]
+      },
+      "total_instances": 17,
+      "total_connects": 109,
+      "vectors": 17,
+      "note": "Снято с той самой .json-спецификации, из которой собирается .bdf: перечень элементов схемы — не пересказ, а разбор источника монтажа."
+    }
+  }
+}

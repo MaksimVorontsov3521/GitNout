@@ -1,0 +1,30 @@
+{
+  "what": "Numeric provenance audit (lab13/_audit_final.py) found to validate against its own previous output; defect located and fixed, then re-run.",
+  "defect": "The corpus is built from report_data.json, every lab13/evidence/*.json and every D:/Desktop/NF/lab13/work/*/*.rpt. 6_proverki/evidence/pack.json is a verbatim transcript of this audit's own stdout, including the \"proved by derivation\" list. Harvesting it put the strings 0.077, 0.735 and 7.8 into the corpus as scalars, so on the next run those numbers reported as literally traced instead of derived: the audit was grading the report against a recording of its own earlier grading.",
+  "how_detected": "Not by the audit itself - it printed 0 untraced either way. Detected by noticing that \"proved by derivation\" fell from 5 to 0 while MEASURED stayed 1090 and tokens stayed 1340, then asking where the three numbers now lived. They traced only in pack.json, and in no Quartus report as an exact token (0.077 and 0.735 appear in 0 corpus files; \"7.8\" appears only as a substring of 7.804 / 7.808 / 7.841 in three .tan.rpt, which the exact-token matcher does not accept).",
+  "fix": "Evidence files are now skipped when their raw text contains any of the audit's own output markers (\"MEASURED AND UNTRACED\", \"proved by derivation\", \"measured basis: t1=\"). The skip is by content, not by file name, and is printed: \"evidence files excluded as self-transcripts: 1 ['pack.json']\".",
+  "result_after_fix": {
+    "tokens": 1340,
+    "MEASURED": 1090,
+    "STRUCTURAL": 221,
+    "BITSTRING": 29,
+    "untraced": 0,
+    "proved_by_derivation": 5,
+    "derived_values": [
+      "0.077",
+      "0.735",
+      "7.8",
+      "1.08",
+      "4.0"
+    ],
+    "measured_basis": {
+      "t1_ns": 9.366,
+      "t2_ns": 9.289,
+      "t3_ns": 10.101,
+      "le_ram4": 9,
+      "le_mem4x8": 36
+    }
+  },
+  "recomputation_by_hand": "0.077 = t1-t2 = 9.366-9.289; 0.735 = t3-t1 = 10.101-9.366; 7.8 = 100*(t3-t1)/t1; 1.08 = t3/t1; 4.0 = le3/le1 = 36/9. All five reproduce from the printed basis, so they are arithmetic over measured numbers, not measurements themselves.",
+  "lesson": "A checker must not read its own output as ground truth. Any corpus that can contain a transcript of the check is a circular corpus; the guard belongs in corpus construction and must announce itself in the output."
+}

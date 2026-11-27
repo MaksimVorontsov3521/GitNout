@@ -1,0 +1,212 @@
+{
+ "entity": "TRIBUS8",
+ "project": "TRIBUS8",
+ "top": "TRIBUS8",
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "D0",
+  "D1",
+  "D2",
+  "D3",
+  "CLK",
+  "E0",
+  "E1",
+  "E2",
+  "E3"
+ ],
+ "outputs": [
+  "Q",
+  "LAT"
+ ],
+ "buses": [],
+ "instances": [
+  {
+   "id": "F0",
+   "type": "DFF"
+  },
+  {
+   "id": "F1",
+   "type": "DFF"
+  },
+  {
+   "id": "F2",
+   "type": "DFF"
+  },
+  {
+   "id": "F3",
+   "type": "DFF"
+  },
+  {
+   "id": "T0",
+   "type": "TRI"
+  },
+  {
+   "id": "T1",
+   "type": "TRI"
+  },
+  {
+   "id": "T2",
+   "type": "TRI"
+  },
+  {
+   "id": "T3",
+   "type": "TRI"
+  },
+  {
+   "id": "R9",
+   "type": "DFF"
+  },
+  {
+   "id": "VP",
+   "type": "VCC"
+  },
+  {
+   "id": "VN",
+   "type": "VCC"
+  },
+  {
+   "id": "GP",
+   "type": "GND"
+  },
+  {
+   "id": "GN",
+   "type": "GND"
+  }
+ ],
+ "connect": [
+  [
+   "D0",
+   "F0.D"
+  ],
+  [
+   "D1",
+   "F1.D"
+  ],
+  [
+   "D2",
+   "F2.D"
+  ],
+  [
+   "D3",
+   "F3.D"
+  ],
+  [
+   "CLK",
+   "F0.CLK"
+  ],
+  [
+   "CLK",
+   "F1.CLK"
+  ],
+  [
+   "CLK",
+   "F2.CLK"
+  ],
+  [
+   "CLK",
+   "F3.CLK"
+  ],
+  [
+   "VP.1",
+   "F0.PRN"
+  ],
+  [
+   "VP.1",
+   "F1.PRN"
+  ],
+  [
+   "VP.1",
+   "F2.PRN"
+  ],
+  [
+   "VP.1",
+   "F3.PRN"
+  ],
+  [
+   "GP.1",
+   "F0.CLRN"
+  ],
+  [
+   "GP.1",
+   "F1.CLRN"
+  ],
+  [
+   "GP.1",
+   "F2.CLRN"
+  ],
+  [
+   "GP.1",
+   "F3.CLRN"
+  ],
+  [
+   "F0.Q",
+   "T0.IN"
+  ],
+  [
+   "F1.Q",
+   "T1.IN"
+  ],
+  [
+   "F2.Q",
+   "T2.IN"
+  ],
+  [
+   "F3.Q",
+   "T3.IN"
+  ],
+  [
+   "E0",
+   "T0.OE"
+  ],
+  [
+   "E1",
+   "T1.OE"
+  ],
+  [
+   "E2",
+   "T2.OE"
+  ],
+  [
+   "E3",
+   "T3.OE"
+  ],
+  [
+   "T0.OUT",
+   "Q"
+  ],
+  [
+   "T1.OUT",
+   "Q"
+  ],
+  [
+   "T2.OUT",
+   "Q"
+  ],
+  [
+   "T3.OUT",
+   "Q"
+  ],
+  [
+   "T3.OUT",
+   "R9.D"
+  ],
+  [
+   "CLK",
+   "R9.CLK"
+  ],
+  [
+   "VN.1",
+   "R9.PRN"
+  ],
+  [
+   "GN.1",
+   "R9.CLRN"
+  ],
+  [
+   "R9.Q",
+   "LAT"
+  ]
+ ]
+}

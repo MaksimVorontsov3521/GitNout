@@ -1,0 +1,120 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--F3 is F3
+--operation mode is normal
+
+F3_lut_out = D;
+F3 = DFFEAS(F3_lut_out, CLK, VCC, , A1L9, , , , );
+
+
+--F2 is F2
+--operation mode is normal
+
+F2_lut_out = D;
+F2 = DFFEAS(F2_lut_out, CLK, VCC, , A1L01, , , , );
+
+
+--A1L41 is T0~151
+--operation mode is normal
+
+A1L41 = A0 & F3 # !A0 & (F2);
+
+
+--F1 is F1
+--operation mode is normal
+
+F1_lut_out = D;
+F1 = DFFEAS(F1_lut_out, CLK, VCC, , A1L11, , , , );
+
+
+--F0 is F0
+--operation mode is normal
+
+F0_lut_out = D;
+F0 = DFFEAS(F0_lut_out, CLK, VCC, , A1L21, , , , );
+
+
+--A1L51 is T0~152
+--operation mode is normal
+
+A1L51 = A0 & F1 # !A0 & (F0);
+
+
+--A1L61 is T0~153
+--operation mode is normal
+
+A1L61 = WE # A1 & A1L41 # !A1 & (A1L51);
+
+
+--A1L9 is O0~108
+--operation mode is normal
+
+A1L9 = A1 & A0 & WE;
+
+
+--A1L01 is O0~109
+--operation mode is normal
+
+A1L01 = A1 & WE & (!A0);
+
+
+--A1L11 is O0~110
+--operation mode is normal
+
+A1L11 = A0 & WE & (!A1);
+
+
+--A1L21 is O0~111
+--operation mode is normal
+
+A1L21 = WE & (!A1 & !A0);
+
+
+--WE is WE
+--operation mode is input
+
+WE = INPUT();
+
+
+--A0 is A0
+--operation mode is input
+
+A0 = INPUT();
+
+
+--A1 is A1
+--operation mode is input
+
+A1 = INPUT();
+
+
+--D is D
+--operation mode is input
+
+D = INPUT();
+
+
+--CLK is CLK
+--operation mode is input
+
+CLK = INPUT();
+
+
+--Q is Q
+--operation mode is output
+
+Q_tri_out = TRI(A1L61, !WE);
+Q = OUTPUT(Q_tri_out);
+
+

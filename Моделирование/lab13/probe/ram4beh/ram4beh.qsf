@@ -1,0 +1,10 @@
+# ram4beh - lab 13 task 2 (behavioural VHDL model of fig 18.7)
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 5.0
+set_global_assignment -name LAST_QUARTUS_VERSION 5.0
+set_global_assignment -name VHDL_FILE ram4beh.vhd
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name FAMILY "Stratix"
+set_global_assignment -name DEVICE AUTO
+set_global_assignment -name TOP_LEVEL_ENTITY ram4beh
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+

@@ -1,0 +1,54 @@
+{
+ "entity": "MIXNEG",
+ "project": "MIXNEG",
+ "top": "MIXNEG",
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "A",
+  "B",
+  "C",
+  "OE1"
+ ],
+ "outputs": [
+  "Q"
+ ],
+ "buses": [],
+ "instances": [
+  {
+   "id": "T1",
+   "type": "TRI"
+  },
+  {
+   "id": "G1",
+   "type": "AND2"
+  }
+ ],
+ "connect": [
+  [
+   "A",
+   "T1.IN"
+  ],
+  [
+   "OE1",
+   "T1.OE"
+  ],
+  [
+   "T1.OUT",
+   "Q"
+  ],
+  [
+   "B",
+   "G1.IN1"
+  ],
+  [
+   "C",
+   "G1.IN2"
+  ],
+  [
+   "G1.OUT",
+   "Q"
+  ]
+ ]
+}

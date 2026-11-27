@@ -1,0 +1,59 @@
+{
+  "relocation_note": "Перенос путей: измеренные числа НЕ тронуты; переписаны только ссылки на авторский docx и на приватную папку превью, которые не едут в сдачу (6 замена, 8 совпадений).",
+  "what": "Independent render check of the report by a foreign engine (LibreOffice Kit, batch convert to PDF), verified text-only because this model cannot read images.",
+  "source_docx": {
+    "path": "../../0_zadanie_i_otchet/lab13_report.docx",
+    "bytes": 421182,
+    "sha256": "ecf106559e5bac232ce9dd7f829545c1c84459ba8395d2c7c2005da1f739aee0",
+      "measures_build": "measured input of THIS render run: report build v1 (421182 B, the hash above), which is superseded by the delivered build 72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43 (421565 B). The hash has been left exactly as measured and has NOT been rewritten, because rewriting a recorded measurement would falsify it. The delivered build's own render record is render_live.json; an \"equals_reference\" flag beside this hash means equal to the reference AS OF THAT RUN."
+  },
+  "pinned_copy": "./_render_pin/lab13_report_pinned.docx (same sha256 as the source; pinned so the packer's swaps could not affect the check)",
+  "pdf": {
+    "bytes": 867972,
+    "signature": "%PDF-1.7",
+    "trailer": "%%EOF present",
+    "pages": 41,
+    "image_xobjects": 10,
+    "fonts_with_tounicode": 14,
+    "mediabox_pt": [
+      0,
+      0,
+      595.303937007874,
+      841.889763779528
+    ]
+  },
+  "converter_diagnostics": {
+    "backend": "native",
+    "missing_fonts": [
+      "Courier"
+    ],
+    "meaning": "the renderer has no Courier and substituted a face for the monospace runs; Word on Windows does have Courier, so this affects the PDF, not the deliverable"
+  },
+  "text_survival": {
+    "docx_units_checked": 735,
+    "paragraphs": 221,
+    "table_cells": 514,
+    "extracted_chars": 87023,
+    "unmatched_with_spaces": 9,
+    "unmatched_ignoring_whitespace": 0,
+    "explanation_of_the_nine": "the extractor walks TJ arrays and drops numeric kerning, so two adjacent words can be glued; removing all whitespace makes every one of the nine match, and none is absent from the render"
+  },
+  "scripts": [
+    "_pdf_text.py (extraction: object split, indirect Resources/Font resolution, per-font code width from /Type0, ToUnicode CMap, TJ-array tokenizer)",
+    "_pdf_cmp.py (comparison and verdict)"
+  ],
+  "bugs_found_in_my_own_extractor": [
+    "page filter /Type\\s*/Page(?![s/]) rejected every page because LibreOffice writes /Type/Page/Contents compactly",
+    "Contents resolved through flat() then the first integer was read from the stream object, which is /Length's reference - every page came out empty (40 chars total)",
+    "tokenizer required a show operator immediately after each string, but strings appear as array operands in TJ",
+    "string pattern applied to bytes in the image count"
+  ],
+  "limits": "LibreOffice output can differ from Word in pagination and fonts; this check establishes that the document opens, lays out 41 pages, places all 10 images and loses no text, not that Word paginates identically. Pixel-level layout was not inspected because the model cannot read images.",
+  "reproduce": {
+    "note": "the pinned copy and the PDF were private inspection artefacts and have been removed; rerun these two commands to reproduce the check",
+    "step1": "copy ../../0_zadanie_i_otchet/lab13_report.docx to a scratch file and verify its sha256 equals 72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43 (the live build; an instruction tracks the current эталон, unlike the measured fields above, which record one run and are never rewritten)",
+    "step2": "& \"<node>\" \"<libreoffice-kit cli>\" convert --input <scratch.docx> --output <scratch.pdf>",
+    "step3": "python _pdf_text.py  (expects the pair in ./_render_pin/) then python _pdf_cmp.py",
+    "page_size_confirmation": "MediaBox [0 0 595.303937007874 841.889763779528] pt = 21.0 x 29.7 cm, which independently confirms the A4 setting that check_report.py reads from the docx"
+  }
+}

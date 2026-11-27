@@ -1,0 +1,20 @@
+{
+ "entity": "lpramwb",
+ "family": "ACEX1K",
+ "period": 100,
+ "rows": 11,
+ "question": "with inclock unconnected (defaults to VCC) there is no clock edge in the design at all; does a write still take effect, and what controls it?",
+ "phases": [
+  "0 read unwritten 0x010",
+  "1 WE=1 A=0x010 D=0x11",
+  "2 WE=1 A=0x020 D=0x22 (address and data move, no edge)",
+  "3 read 0x010",
+  "4 read 0x020",
+  "5 WE=1 A=0x030 D=0x33",
+  "6 WE=1 A=0x030 D=0x44 (data changes, address held)",
+  "7 read 0x030",
+  "8 WE=1 A=0x010 D=0x55 (overwrite)",
+  "9 read 0x010",
+  "10 read 0x020 (must still be 0x22)"
+ ]
+}

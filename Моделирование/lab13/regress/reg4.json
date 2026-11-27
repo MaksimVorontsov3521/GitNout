@@ -1,0 +1,207 @@
+{
+ "entity": "REG4",
+ "project": "REG4",
+ "top": "REG4",
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "CLK",
+  "OE"
+ ],
+ "outputs": [],
+ "buses": [
+  {
+   "name": "D",
+   "hi": 3,
+   "lo": 0,
+   "dir": "input"
+  },
+  {
+   "name": "Q",
+   "hi": 3,
+   "lo": 0,
+   "dir": "output"
+  }
+ ],
+ "instances": [
+  {
+   "id": "F0",
+   "type": "DFF"
+  },
+  {
+   "id": "F1",
+   "type": "DFF"
+  },
+  {
+   "id": "F2",
+   "type": "DFF"
+  },
+  {
+   "id": "F3",
+   "type": "DFF"
+  },
+  {
+   "id": "T0",
+   "type": "TRI"
+  },
+  {
+   "id": "T1",
+   "type": "TRI"
+  },
+  {
+   "id": "T2",
+   "type": "TRI"
+  },
+  {
+   "id": "T3",
+   "type": "TRI"
+  },
+  {
+   "id": "VA",
+   "type": "VCC"
+  },
+  {
+   "id": "VB",
+   "type": "VCC"
+  },
+  {
+   "id": "VC",
+   "type": "VCC"
+  },
+  {
+   "id": "VD",
+   "type": "VCC"
+  },
+  {
+   "id": "GA",
+   "type": "GND"
+  },
+  {
+   "id": "GB",
+   "type": "GND"
+  },
+  {
+   "id": "GC",
+   "type": "GND"
+  },
+  {
+   "id": "GD",
+   "type": "GND"
+  }
+ ],
+ "connect": [
+  [
+   "D0",
+   "F0.D"
+  ],
+  [
+   "D1",
+   "F1.D"
+  ],
+  [
+   "D2",
+   "F2.D"
+  ],
+  [
+   "D3",
+   "F3.D"
+  ],
+  [
+   "CLK",
+   "F0.CLK"
+  ],
+  [
+   "CLK",
+   "F1.CLK"
+  ],
+  [
+   "CLK",
+   "F2.CLK"
+  ],
+  [
+   "CLK",
+   "F3.CLK"
+  ],
+  [
+   "VA.1",
+   "F0.PRN"
+  ],
+  [
+   "VB.1",
+   "F1.PRN"
+  ],
+  [
+   "VC.1",
+   "F2.PRN"
+  ],
+  [
+   "VD.1",
+   "F3.PRN"
+  ],
+  [
+   "GA.1",
+   "F0.CLRN"
+  ],
+  [
+   "GB.1",
+   "F1.CLRN"
+  ],
+  [
+   "GC.1",
+   "F2.CLRN"
+  ],
+  [
+   "GD.1",
+   "F3.CLRN"
+  ],
+  [
+   "F0.Q",
+   "T0.IN"
+  ],
+  [
+   "F1.Q",
+   "T1.IN"
+  ],
+  [
+   "F2.Q",
+   "T2.IN"
+  ],
+  [
+   "F3.Q",
+   "T3.IN"
+  ],
+  [
+   "OE",
+   "T0.OE"
+  ],
+  [
+   "OE",
+   "T1.OE"
+  ],
+  [
+   "OE",
+   "T2.OE"
+  ],
+  [
+   "OE",
+   "T3.OE"
+  ],
+  [
+   "T0.OUT",
+   "Q0"
+  ],
+  [
+   "T1.OUT",
+   "Q1"
+  ],
+  [
+   "T2.OUT",
+   "Q2"
+  ],
+  [
+   "T3.OUT",
+   "Q3"
+  ]
+ ]
+}

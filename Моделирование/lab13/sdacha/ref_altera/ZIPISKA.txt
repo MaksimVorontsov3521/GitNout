@@ -1,0 +1,92 @@
+﻿==========================================================================
+ФАЙЛЫ УСТАНОВКИ ALTERA - НЕ НАШИ
+==========================================================================
+
+ФАЙЛЫ (имя, размер в байтах):
+   lpm_ram_dp.bsf                        4975
+   lpm_ram_dq_info.xml                   1440
+   lpm_ram_dq.bsf                        3847
+   lpm_ram_dq.inc                         232
+   lpm_ram_dq.tdf                        7523
+   lpm_rom.bsf                           3538
+   mega/altram.inc                        185
+   mega/altram.tdf                      19783
+   mega/altsyncram.inc                   2184
+   mega/lpm_decode.inc                    153
+   mega/lpm_mux.inc                       188
+
+Что здесь и почему это не наша работа:
+   lpm_ram_dq.tdf  подлинное описание мегафункции одиночного ОЗУ из установки;
+lpm_ram_dq.inc  объявление FUNCTION lpm_ram_dq(data[], address[], we,
+   inclock,
+                     outclock) WITH (LPM_WIDTH, LPM_WIDTHAD, LPM_NUMWORDS,
+                     LPM_FILE, LPM_INDATA, LPM_ADDRESS_CONTROL, LPM_OUTDATA)
+                     RETURNS (q[]); именно этот INCLUDE стоит в каждом .tdf
+                     задания 4, и без него тот .tdf не читается;
+   lpm_ram_dq.bsf  символ мегафункции (порт и параметры прочитаны в
+4_lpm_ram_dq/lpm_ram_dq_bsf.json: выводов 6, параметров
+                     7);
+   lpm_ram_dq_info.xml  метаданные мегафункции;
+lpm_ram_dp.bsf, lpm_rom.bsf - соседние символы памяти, положены рядом
+   только
+                     для сопоставления портов; ни один проект сдачи их не
+instantiate, это проверено аудитом по иерархии каждого
+                     листа;
+   mega/altram.tdf, mega/altram.inc - подчинённая мегафункция, в которую
+разворачивается lpm_ram_dq (иерархия из map.rpt: lpramax
+                     -> lpramax|lpm_ram_dq:mem ->
+                     lpramax|lpm_ram_dq:mem|altram:sram); её строки с
+                     USED(clocki)=0 - то, откуда берётся
+измеренное правило записи по спаду WE, на которое
+                     ссылается
+4_lpm_ram_dq/ZIPISKA, где каждая цитата дана по номерам
+                     строк
+                     (7 ссылок на файл в 508 строк);
+   mega/altsyncram.inc, mega/lpm_decode.inc, mega/lpm_mux.inc - объявления
+соседних мегафункций, которые использует
+                     altram/lpm_ram_dq.
+
+РЕШЕНИЕ ПО ПУНКТУ «справочные материалы не наши»: КОПИРОВАТЬ, а не ссылаться.
+Прецедент задал lab12/sdacha/: там папка lib_maxplus2 привезла подлинные листы
+7483/74181/74182 и подлинный пакет lpm_pack.vhd из установки, а не указатель
+на
+неё. Расчёт тот же: без lpm_ram_dq.inc читатель не сможет ни прочесть, ни
+перекомпилировать задание 4 (это INCLUDE в каждом .tdf), а без altram.tdf -
+проверить, что правило записи действительно следует из подлинного источника, а
+не
+из пересказа в ZIPISKA.
+
+Точное место в гостевой установке, откуда файлы взяты и куда они указывают в
+таблице Design Files каждого .map.rpt задания 4:
+   c:/altera/quartus50/libraries/megafunctions/aglobal50.inc
+   c:/altera/quartus50/libraries/megafunctions/altqpram.inc
+   c:/altera/quartus50/libraries/megafunctions/altram.inc
+   c:/altera/quartus50/libraries/megafunctions/altram.tdf
+   c:/altera/quartus50/libraries/megafunctions/altsyncram.inc
+   c:/altera/quartus50/libraries/megafunctions/lpm_decode.inc
+   c:/altera/quartus50/libraries/megafunctions/lpm_mux.inc
+   c:/altera/quartus50/libraries/megafunctions/lpm_ram_dq.inc
+   c:/altera/quartus50/libraries/megafunctions/lpm_ram_dq.tdf
+   c:/altera/quartus50/libraries/others/maxplus2/memmodes.inc
+Для Quartus эти копии не обязательны: гость берёт мегафункции из своей
+установки
+по INCLUDE-пути, и .qsf задания 4 их не перечисляет (проверено аудитом: каждая
+запись .qsf разрешается в своей папке). Они положены ДЛЯ ЧТЕНИЯ.
+
+Замечание о полноте, чтобы не создавалось ложного впечатления. Из четвёрки
+altram/altsyncram/lpm_decode/lpm_mux побайтово сохранилось тело только у
+altram
+(19783 байт); остальные три в нашем сборе есть ТОЛЬКО как
+.inc-объявления. Их тела .tdf лежат в той же папке установки, имена указаны
+выше,
+чтобы читатель при желании снял их сам. Ничего не дорисовано и не подставлено:
+что было собрано в ходе работы, то и привезено.
+
+СВЕРКА С ПОДЛИННИКОМ (не на слово). Аудит сдачи (правило C.5) и упаковщик
+(measure -> refhash) сравнивают каждую доставленную копию - и верхний уровень,
+и mega/ - с файлом установки ПОБАЙТОВО по sha256. Результат последней сборки:
+файлов корпуса 11, из них подлинник доступен у 
+11, расхождений 
+0. При недоступном подлиннике совпадение с ним
+честно НЕ заявляется: сверка «файл равен сам себе» не должна читаться как
+успех.

@@ -1,0 +1,158 @@
+########## lpramax (AHDL) ##########
+A subdirectory or file C:\dsh\lpramax already exists.
+lpramax.qpf
+lpramax.qsf
+lpramax.tdf
+lpramax.vwf
+--- MAP
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:49:39 2022
+Info: Command: quartus_map lpramax
+Info: Found 1 design units, including 1 entities, in source file lpramax.tdf
+    Info: Found entity 1: lpramax
+Info: Elaborating entity "lpramax" for the top level hierarchy
+Info: Found 1 design units, including 1 entities, in source file ../../altera/quartus50/libraries/megafunctions/lpm_ram_dq.tdf
+    Info: Found entity 1: lpm_ram_dq
+Info: Elaborating entity "lpm_ram_dq" for hierarchy "lpm_ram_dq:mem"
+Info: Found 1 design units, including 1 entities, in source file ../../altera/quartus50/libraries/megafunctions/altram.tdf
+    Info: Found entity 1: altram
+Info: Elaborating entity "altram" for hierarchy "lpm_ram_dq:mem|altram:sram"
+Info: Issued messages during elaboration of megafunction "lpm_ram_dq:mem|altram:sram", which is child of megafunction "lpm_ram_dq:mem"
+Info: Instantiated megafunction "lpm_ram_dq:mem" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "10"
+    Info: Parameter "LPM_INDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "UNREGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+Warning: Memory Initialization File or Hexadecimal (Intel-Format) File for RAM is not specified -- setting initial contents to 0
+    Warning: RAM name is "segment[0][7]"
+    Warning: RAM name is "segment[0][6]"
+    Warning: RAM name is "segment[0][5]"
+    Warning: RAM name is "segment[0][4]"
+    Warning: RAM name is "segment[0][3]"
+    Warning: RAM name is "segment[0][2]"
+    Warning: RAM name is "segment[0][1]"
+    Warning: RAM name is "segment[0][0]"
+Info: Implemented 35 device resources after synthesis - the final resource count might be different
+    Info: Implemented 19 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 8 RAM segments
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Processing ended: Sun Dec 11 01:49:39 2022
+    Info: Elapsed time: 00:00:00
+MAP_EXIT=0
+--- FNET
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:49:39 2022
+Info: Command: quartus_map lpramax --generate_functional_sim_netlist
+Info: Found 1 design units, including 1 entities, in source file lpramax.tdf
+    Info: Found entity 1: lpramax
+Info: Elaborating entity "lpramax" for the top level hierarchy
+Info: Found 1 design units, including 1 entities, in source file ../../altera/quartus50/libraries/megafunctions/lpm_ram_dq.tdf
+    Info: Found entity 1: lpm_ram_dq
+Info: Elaborating entity "lpm_ram_dq" for hierarchy "lpm_ram_dq:mem"
+Info: Found 1 design units, including 1 entities, in source file ../../altera/quartus50/libraries/megafunctions/altram.tdf
+    Info: Found entity 1: altram
+Info: Elaborating entity "altram" for hierarchy "lpm_ram_dq:mem|altram:sram"
+Info: Issued messages during elaboration of megafunction "lpm_ram_dq:mem|altram:sram", which is child of megafunction "lpm_ram_dq:mem"
+Info: Instantiated megafunction "lpm_ram_dq:mem" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "8"
+    Info: Parameter "LPM_WIDTHAD" = "10"
+    Info: Parameter "LPM_INDATA" = "UNREGISTERED"
+    Info: Parameter "LPM_ADDRESS_CONTROL" = "UNREGISTERED"
+    Info: Parameter "LPM_OUTDATA" = "UNREGISTERED"
+Warning: Memory Initialization File or Hexadecimal (Intel-Format) File for RAM is not specified -- setting initial contents to 0
+    Warning: RAM name is "segment[0][7]"
+    Warning: RAM name is "segment[0][6]"
+    Warning: RAM name is "segment[0][5]"
+    Warning: RAM name is "segment[0][4]"
+    Warning: RAM name is "segment[0][3]"
+    Warning: RAM name is "segment[0][2]"
+    Warning: RAM name is "segment[0][1]"
+    Warning: RAM name is "segment[0][0]"
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Processing ended: Sun Dec 11 01:49:39 2022
+    Info: Elapsed time: 00:00:00
+FNET_EXIT=0
+--- SIM
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:49:40 2022
+Info: Command: quartus_sim lpramax
+Info: Simulation coverage is      94.29 %
+Info: Number of transitions in simulation is 295
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sun Dec 11 01:49:40 2022
+    Info: Elapsed time: 00:00:00
+SIM_EXIT=0
+--- FIT
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:49:40 2022
+Info: Command: quartus_fit lpramax
+Error: Can't select a device from device family ACEX1K because no devices in family are installed
+Error: Can't find device that meets Compiler settings specifications
+Error: Quartus II Fitter was unsuccessful. 2 errors, 0 warnings
+    Error: Processing ended: Sun Dec 11 01:49:40 2022
+    Error: Elapsed time: 00:00:00
+FIT_EXIT=3
+########## ALL DONE ##########
+__EXIT=0

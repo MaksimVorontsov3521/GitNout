@@ -1,0 +1,4 @@
+# ram4beh
+QUARTUS_VERSION = "5.0"
+
+PROJECT_REVISION = "ram4beh"

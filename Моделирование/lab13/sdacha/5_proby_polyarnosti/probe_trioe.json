@@ -1,0 +1,66 @@
+{
+ "entity": "probe_trioe",
+ "project": "probe_trioe",
+ "family": "Stratix",
+ "top": "probe_trioe",
+ "simulationMode": "FUNCTIONAL",
+ "period": 40,
+ "inputs": [
+  "IN",
+  "OE"
+ ],
+ "outputs": [
+  "OUT"
+ ],
+ "buses": [],
+ "instances": [
+  {
+   "id": "G1",
+   "type": "TRI"
+  },
+  {
+   "id": "V1",
+   "type": "VCC"
+  }
+ ],
+ "connect": [
+  [
+   "IN",
+   "G1.IN"
+  ],
+  [
+   "OE",
+   "G1.OE"
+  ],
+  [
+   "G1.OUT",
+   "OUT"
+  ]
+ ],
+ "vectors": [
+  {
+   "IN": 1,
+   "OE": 0
+  },
+  {
+   "IN": 1,
+   "OE": 1
+  },
+  {
+   "IN": 0,
+   "OE": 0
+  },
+  {
+   "IN": 0,
+   "OE": 1
+  }
+ ],
+ "expect": {
+  "OUT": [
+   "Z",
+   1,
+   "Z",
+   0
+  ]
+ }
+}

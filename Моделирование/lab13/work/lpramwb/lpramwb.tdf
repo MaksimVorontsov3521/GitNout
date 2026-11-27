@@ -1,0 +1,43 @@
+------------------------------------------------------------------
+--  Lab 13, task 4 supplement: how the prescribed lpm_ram_dq parameter set actually
+--  writes when inclock is not connected at all
+--  prescribes:
+--
+--      LPM_ADDRESS_CONTROL  "unregistered"
+--      LPM_FILE             <none>        (left at its default: no init file)
+--      LPM_INDATA           "unregistered"
+--      LPM_NUMWORDS         <none>        (left at its default: 2^LPM_WIDTHAD)
+--      LPM_OUTDATA          "unregistered"
+--      LPM_WIDTH            8
+--      LPM_WIDTHAD          10
+--
+--  Only the inputs WE, ADDRESS, DATA and the output Q are brought out, which
+--  is what ">AB0282 B>;L:> 2E>4K WE, ADDRESS, DATA 8 2KE>4 Q" asks for. The
+
+--  
+
+--  ------------------------------------------------------------------
+INCLUDE "lpm_ram_dq.inc";
+
+SUBDESIGN lpramwb
+(
+	data[7..0]	: INPUT;
+	address[9..0]	: INPUT;
+	we		: INPUT;
+	q[7..0]		: OUTPUT;
+)
+
+VARIABLE
+	mem : lpm_ram_dq WITH (
+		LPM_WIDTH = 8,
+		LPM_WIDTHAD = 10,
+		LPM_ADDRESS_CONTROL = "UNREGISTERED",
+		LPM_INDATA = "UNREGISTERED",
+		LPM_OUTDATA = "UNREGISTERED");
+
+BEGIN
+	mem.data[] = data[];
+	mem.address[] = address[];
+	mem.we = we;
+	q[] = mem.q[];
+END;

@@ -1,0 +1,109 @@
+
+lab13 sequential verification stack - self test
+
+
+[1 format]  10 passed, 0 failed, 0 skipped
+    ok  bus bits spelled NAME[i]
+    ok  bus bits carry PARENT
+    ok  BUS parent: WIDTH/LSB_INDEX=0 and no TRANSITION_LIST
+    ok  returned waves carry off-grid durations
+    ok  every duration has a decimal point
+    ok  stimulus output is a single LEVEL X
+    ok  GROUP block exists in Quartus output
+    ok  group name is not a SIGNAL or TRANSITION_LIST
+    ok  stimulus SIMULATION_TIME = 0.0
+    ok  returned SIMULATION_TIME is the run length
+
+[2 Z]  7 passed, 0 failed, 0 skipped
+    ok  parseVwf keeps a Z run
+    ok  sampleAt returns Z mid-run
+    ok  sampleAt returns X mid-run
+    ok  Z and X stay distinct through the parser
+    ok  parser keeps the run boundaries
+    ok  parseVwf preserves Z in real .sim.vwf
+    ok  every Z run sampled back as Z
+   skip   measured: probe_reg_out/probe_reg.sim.vwf, probe_tri_out/probe_tri.sim.vwf, probe_trioe_out/probe_trioe.sim.vwf
+         -> 38 Z runs across 18+18+3 channels; levels seen ["0","1","Z"]
+
+[3 roundtrip]  23 passed, 0 failed, 0 skipped
+    ok  clock lays a square wave across the whole timeline
+    ok  rising edges land on multiples of the period
+    ok  bus expands MSB-first into NAME[i] plus the parent
+    ok  a whole-bus integer splits bitwise MSB-first
+    ok  an output bus starts at X (unobserved until the guest answers)
+    ok  total counts the held gap as well as the named ops
+    ok  an "at" jump holds the previous value across the gap
+    ok  runs of equal level merge across a held gap
+    ok  stimulus emits one LEVEL X per observed bit channel
+    ok  Z appears in the emitted stimulus bus when asked
+    ok  stimulus shape: every channel at every ns (3600 samples)
+    ok  stimulus shape: boundaries honour the half-open rule
+    ok  drive-all shape: every channel at every ns (3600 samples)
+    ok  drive-all shape: boundaries honour the half-open rule
+    ok  the timeline contains a genuine Z interval on D[7]
+    ok  the parsed file reports Z there too
+    ok  a Z bus has no integer word value
+    ok  clock edges survive the round trip
+    ok  runs of equal level are collapsed in the emitted text
+    ok  uneven duty: high for 30 percent of the period
+    ok  a GROUP name is not a SIGNAL and not a transition list
+    ok  group members parse normally
+    ok  an empty set op is a pure delay
+
+[4 parity]  4 passed, 0 failed, 0 skipped
+    ok  checkSim reports zero errors on probe_reg
+    ok  checkSeq agrees (zero mismatches) on the same wave
+    ok  both cover the same rows
+    ok  the opts.phases sugar equals explicit samples
+
+[5 negative]  27 passed, 0 failed, 0 skipped
+    ok  an absent channel is a mismatch, not a skip
+    ok  an absent channel raises a loud warning
+    ok  a wrong expectation is caught with want/got/t/label
+    ok  Z is accepted as a legitimate idle bus and counted
+    ok  a driven value does not satisfy a Z expectation by default
+    ok  a want of Z is refused where the bus is really driven
+    ok  opts.relaxZ lets that driven bit satisfy a Z expectation
+    ok  busWord returns null on an idle (Z) bus, not 0
+    ok  busWord returns the integer on a driven bus
+    ok  busWord returns null for a bus the response does not carry
+    ok  the parseInt trap is real: a half-idle word parses as a number
+    ok  buildTimeline rejects an unknown channel
+    ok  buildTimeline rejects a bus overflow
+    ok  buildTimeline rejects a non-positive total
+    ok  buildTimeline rejects a malformed level
+    ok  buildTimeline rejects a duplicate channel
+    ok  buildTimeline rejects a bus of width 0 or 1
+    ok  buildTimeline rejects an unknown clock name
+    ok  buildTimeline rejects a backwards at (a sequential stream cannot rewind)
+    ok  emitSeqVwf rejects a group naming a channel that is not there
+    ok  a sample past the response end is a mismatch
+    ok  the same wave passes when sampled inside its range
+    ok  checkSeq rejects an empty vwfText
+    ok  checkSeq rejects a sample with neither samples nor opts.phases
+    ok  the emitted text never spells a bus bit bare NAMEi
+    ok  bus parents are declared SIGNAL_TYPE = BUS
+    ok  a BUS parent carries no TRANSITION_LIST of its own
+
+[6 models]  13 passed, 0 failed, 0 skipped
+    ok  every model reports a positive state count
+   skip   states checked
+         -> {"dffe":2198,"ram4":21882,"mem4x8":8733,"lpm_ram_dq":1196888}
+    ok  the ram4 behavioural-versus-gate divergences are recorded
+    ok  the mem4x8 behavioural-versus-gate divergences are recorded
+    ok  every recorded note is behavioural Z versus gate-level X, nothing else
+   skip   recorded divergences
+         -> 1204 (ram4 1134, mem4x8 70)
+    ok  models.mjs carries the two measured traces as data
+    ok  the default write mode is the measured we-fall rule
+    ok  the measured rule reproduces all 28 phases
+    ok  dffeInitial defaults to X and accepts an override
+    ok  the stimulus round-trips through the emitted file with real clock edges
+    ok  checkSeq verifies a model-driven output written by the emitter and read by the parser
+    ok  the composed wave holds the bus idle as Z during writes and the checker counts it
+    ok  the composed read-back matches the behavioural contract of ram4beh.vhd
+    ok  the model ended holding 1,0,1,0 in cells 0..3
+
+RESULT: PASS - 84 assertions
+
+EXIT=0

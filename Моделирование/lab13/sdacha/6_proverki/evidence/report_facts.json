@@ -1,0 +1,193 @@
+{
+ "ram4": {
+  "family": "Stratix",
+  "device": "EP1S10F484C5",
+  "timing_models": "Final",
+  "logic_elements": "9 / 10,570 ( < 1 % )",
+  "pins": "6 / 336 ( 1 % )",
+  "memory_bits": "0 / 920,448 ( 0 % )",
+  "dsp": "0 / 48 ( 0 % )",
+  "plls": "0 / 6 ( 0 % )",
+  "tsu": {
+   "actual": "3.491 ns",
+   "from": "A0",
+   "to": "F0",
+   "from_clock": null,
+   "to_clock": "CLK",
+   "failed": "0"
+  },
+  "tco": {
+   "actual": "7.804 ns",
+   "from": "F0",
+   "to": "Q",
+   "from_clock": "CLK",
+   "to_clock": null,
+   "failed": "0"
+  },
+  "tpd": {
+   "actual": "9.366 ns",
+   "from": "A0",
+   "to": "Q",
+   "from_clock": null,
+   "to_clock": null,
+   "failed": "0"
+  },
+  "th": {
+   "actual": "-1.868 ns",
+   "from": "D",
+   "to": "F3",
+   "from_clock": null,
+   "to_clock": "CLK",
+   "failed": "0"
+  },
+  "failed_paths": "",
+  "coverage": "60.87",
+  "transitions": "144",
+  "map_warnings": [
+   "Warning: Primitive \"GND\" of instance \"G0\" not used"
+  ],
+  "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+  "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+  "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+  "labs": []
+ },
+ "ram4beh": {
+  "family": "Stratix",
+  "device": "EP1S10F484C5",
+  "timing_models": "Final",
+  "logic_elements": "8 / 10,570 ( < 1 % )",
+  "pins": "6 / 336 ( 1 % )",
+  "memory_bits": "0 / 920,448 ( 0 % )",
+  "dsp": "0 / 48 ( 0 % )",
+  "plls": "0 / 6 ( 0 % )",
+  "tsu": {
+   "actual": "3.456 ns",
+   "from": "a[0]",
+   "to": "cell[2]",
+   "from_clock": null,
+   "to_clock": "clk",
+   "failed": "0"
+  },
+  "tco": {
+   "actual": "7.808 ns",
+   "from": "cell[0]",
+   "to": "q",
+   "from_clock": "clk",
+   "to_clock": null,
+   "failed": "0"
+  },
+  "tpd": {
+   "actual": "9.289 ns",
+   "from": "a[1]",
+   "to": "q",
+   "from_clock": null,
+   "to_clock": null,
+   "failed": "0"
+  },
+  "th": {
+   "actual": "-1.864 ns",
+   "from": "d",
+   "to": "cell[2]",
+   "from_clock": null,
+   "to_clock": "clk",
+   "failed": "0"
+  },
+  "failed_paths": "",
+  "coverage": "82.76",
+  "transitions": "162",
+  "map_msg": "Analysis & Synthesis was successful. 0 errors, 0 warnings",
+  "map_warnings": [],
+  "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+  "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+  "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+  "labs": []
+ },
+ "mem4x8": {
+  "family": "Stratix",
+  "device": "EP1S10F484C5",
+  "timing_models": "Final",
+  "logic_elements": "36 / 10,570 ( < 1 % )",
+  "pins": "28 / 336 ( 8 % )",
+  "memory_bits": "0 / 920,448 ( 0 % )",
+  "dsp": "0 / 48 ( 0 % )",
+  "plls": "0 / 6 ( 0 % )",
+  "tsu": {
+   "actual": "0.024 ns",
+   "from": "w[1]",
+   "to": "74374:R1|14",
+   "from_clock": null,
+   "to_clock": "a0",
+   "failed": "0"
+  },
+  "tco": {
+   "actual": "11.875 ns",
+   "from": "74374:R1|18",
+   "to": "d[5]",
+   "from_clock": "wr",
+   "to_clock": null,
+   "failed": "0"
+  },
+  "tpd": {
+   "actual": "10.101 ns",
+   "from": "a1",
+   "to": "d[5]",
+   "from_clock": null,
+   "to_clock": null,
+   "failed": "0"
+  },
+  "th": {
+   "actual": "1.239 ns",
+   "from": "w[7]",
+   "to": "74374:R3|20",
+   "from_clock": null,
+   "to_clock": "wr",
+   "failed": "0"
+  },
+  "failed_paths": "",
+  "coverage": "54.17",
+  "transitions": "537",
+  "map_msg": "Analysis & Synthesis was successful. 0 errors, 15 warnings",
+  "map_warnings": [
+   "Warning: Entity \"74155\" obtained from \"C:/dsh/mem4x8/74155.bdf\" instead of from Quartus II megafunction library",
+   "Warning: Entity \"74244\" obtained from \"C:/dsh/mem4x8/74244.bdf\" instead of from Quartus II megafunction library",
+   "Warning: Entity \"74374\" obtained from \"C:/dsh/mem4x8/74374.bdf\" instead of from Quartus II megafunction library",
+   "Warning: No superset bus at connection",
+   "Warning: TRI or OPNDRN buffers permanently enabled",
+   "Warning: Node \"74374:R3|47~4\"",
+   "Warning: Node \"74374:R3|46~4\"",
+   "Warning: Node \"74374:R3|45~4\"",
+   "Warning: Node \"74374:R3|44~4\"",
+   "Warning: Node \"74374:R3|43~4\"",
+   "Warning: Node \"74374:R3|42~4\"",
+   "Warning: Node \"74374:R3|41~4\"",
+   "Warning: Node \"74374:R3|40~4\""
+  ],
+  "fit_msg": "Quartus II Fitter was successful. 0 errors, 0 warnings",
+  "asm_msg": "Quartus II Assembler was successful. 0 errors, 0 warnings",
+  "tan_msg": "Quartus II Timing Analyzer was successful. 0 errors, 2 warnings",
+  "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+  "labs": []
+ },
+ "lpramax": {
+  "elaborated": {
+   "LPM_WIDTH": "8",
+   "LPM_WIDTHAD": "10",
+   "LPM_NUMWORDS": "1024",
+   "LPM_INDATA": "UNREGISTERED",
+   "LPM_ADDRESS_CONTROL": "UNREGISTERED",
+   "LPM_OUTDATA": "UNREGISTERED",
+   "LPM_FILE": "UNUSED",
+   "USE_EAB": "ON",
+   "DEVICE_FAMILY": "ACEX1K",
+   "CBXI_PARAMETER": "NOTHING"
+  },
+  "ram_summary": null,
+  "map_msg": "Analysis & Synthesis was successful. 0 errors, 9 warnings",
+  "init_warning": "Memory Initialization File or Hexadecimal (Intel-Format) File for RAM is not specified -- setting initial contents to 0",
+  "sim_msg": "Quartus II Simulator was successful. 0 errors, 0 warnings",
+  "coverage": "94.29",
+  "transitions": "295",
+  "fit_error": "Can't select a device from device family ACEX1K because no devices in family are installed",
+  "fit_msg": "Quartus II Fitter was unsuccessful. 2 errors, 0 warnings"
+ }
+}

@@ -1,0 +1,71 @@
+{
+  "delivery_tree": "D:\\Desktop\\NF\\lab13\\sdacha",
+  "files": 289,
+  "tree_bytes": 4628238,
+  "tokens": 97,
+  "by_class": {
+    "LIVE": 35,
+    "HISTORY": 34,
+    "UNLABELLED": 8,
+    "DIRECTIVE": 1,
+    "TEXTDIGEST": 18,
+    "ABSENT_BY_DESIGN": 1
+  },
+  "rule": "a dead hash inside a directive operand window (70 chars before the token) is a finding; a dead hash labelled by history or text-digest wording nearby or within two following lines is an honest record; an unlabelled dead hash is a finding because a reader cannot tell the two apart",
+  "findings": [
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 1270,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 1271,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 2548,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 2550,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 2572,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 2573,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\pack.json",
+      "line": 2807,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "DIRECTIVE"
+    },
+    {
+      "file": "6_proverki\\evidence\\sdacha_selfcheck.json",
+      "line": 1505,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    },
+    {
+      "file": "6_proverki\\evidence\\sdacha_selfcheck.json",
+      "line": 1507,
+      "token_prefix": "7bdaefaabd839311",
+      "class": "UNLABELLED"
+    }
+  ]
+}

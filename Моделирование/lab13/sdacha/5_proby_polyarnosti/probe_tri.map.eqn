@@ -1,0 +1,129 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--1A1 is 1A1
+--operation mode is input
+
+1A1 = INPUT();
+
+
+--1GN is 1GN
+--operation mode is input
+
+1GN = INPUT();
+
+
+--1A2 is 1A2
+--operation mode is input
+
+1A2 = INPUT();
+
+
+--1A3 is 1A3
+--operation mode is input
+
+1A3 = INPUT();
+
+
+--1A4 is 1A4
+--operation mode is input
+
+1A4 = INPUT();
+
+
+--2A1 is 2A1
+--operation mode is input
+
+2A1 = INPUT();
+
+
+--2GN is 2GN
+--operation mode is input
+
+2GN = INPUT();
+
+
+--2A2 is 2A2
+--operation mode is input
+
+2A2 = INPUT();
+
+
+--2A3 is 2A3
+--operation mode is input
+
+2A3 = INPUT();
+
+
+--2A4 is 2A4
+--operation mode is input
+
+2A4 = INPUT();
+
+
+--1Y1 is 1Y1
+--operation mode is output
+
+1Y1_tri_out = TRI(1A1, !1GN);
+1Y1 = OUTPUT(1Y1_tri_out);
+
+
+--1Y2 is 1Y2
+--operation mode is output
+
+1Y2_tri_out = TRI(1A2, !1GN);
+1Y2 = OUTPUT(1Y2_tri_out);
+
+
+--1Y3 is 1Y3
+--operation mode is output
+
+1Y3_tri_out = TRI(1A3, !1GN);
+1Y3 = OUTPUT(1Y3_tri_out);
+
+
+--1Y4 is 1Y4
+--operation mode is output
+
+1Y4_tri_out = TRI(1A4, !1GN);
+1Y4 = OUTPUT(1Y4_tri_out);
+
+
+--2Y1 is 2Y1
+--operation mode is output
+
+2Y1_tri_out = TRI(2A1, !2GN);
+2Y1 = OUTPUT(2Y1_tri_out);
+
+
+--2Y2 is 2Y2
+--operation mode is output
+
+2Y2_tri_out = TRI(2A2, !2GN);
+2Y2 = OUTPUT(2Y2_tri_out);
+
+
+--2Y3 is 2Y3
+--operation mode is output
+
+2Y3_tri_out = TRI(2A3, !2GN);
+2Y3 = OUTPUT(2Y3_tri_out);
+
+
+--2Y4 is 2Y4
+--operation mode is output
+
+2Y4_tri_out = TRI(2A4, !2GN);
+2Y4 = OUTPUT(2Y4_tri_out);
+
+

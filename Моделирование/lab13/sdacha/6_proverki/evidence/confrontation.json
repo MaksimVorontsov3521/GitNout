@@ -1,0 +1,1607 @@
+{
+ "ram4": {
+  "what": "ram4 (fig 18.7, structural)",
+  "path": "D:\\Desktop\\NF\\lab13\\sdacha\\1_ram4\\ram4.sim.vwf",
+  "phases": 20,
+  "checked": 20,
+  "mismatches": 0,
+  "detail": [],
+  "rows": [
+   {
+    "phase": 0,
+    "t": 50,
+    "CLK": "0",
+    "WE": "1",
+    "A": "00",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 1,
+    "t": 150,
+    "CLK": "1",
+    "WE": "1",
+    "A": "00",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 2,
+    "t": 250,
+    "CLK": "0",
+    "WE": "0",
+    "A": "00",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 3,
+    "t": 350,
+    "CLK": "0",
+    "WE": "1",
+    "A": "01",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 4,
+    "t": 450,
+    "CLK": "1",
+    "WE": "1",
+    "A": "01",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 5,
+    "t": 550,
+    "CLK": "0",
+    "WE": "0",
+    "A": "01",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 6,
+    "t": 650,
+    "CLK": "0",
+    "WE": "1",
+    "A": "10",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 7,
+    "t": 750,
+    "CLK": "1",
+    "WE": "1",
+    "A": "10",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 8,
+    "t": 850,
+    "CLK": "0",
+    "WE": "0",
+    "A": "10",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 9,
+    "t": 950,
+    "CLK": "0",
+    "WE": "1",
+    "A": "11",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 10,
+    "t": 1050,
+    "CLK": "1",
+    "WE": "1",
+    "A": "11",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 11,
+    "t": 1150,
+    "CLK": "0",
+    "WE": "0",
+    "A": "11",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 12,
+    "t": 1250,
+    "CLK": "0",
+    "WE": "0",
+    "A": "00",
+    "D": "0",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 13,
+    "t": 1350,
+    "CLK": "0",
+    "WE": "0",
+    "A": "01",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 14,
+    "t": 1450,
+    "CLK": "0",
+    "WE": "0",
+    "A": "10",
+    "D": "0",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 15,
+    "t": 1550,
+    "CLK": "0",
+    "WE": "0",
+    "A": "11",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 16,
+    "t": 1650,
+    "CLK": "0",
+    "WE": "0",
+    "A": "00",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 17,
+    "t": 1750,
+    "CLK": "0",
+    "WE": "0",
+    "A": "01",
+    "D": "1",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 18,
+    "t": 1850,
+    "CLK": "0",
+    "WE": "0",
+    "A": "10",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 19,
+    "t": 1950,
+    "CLK": "0",
+    "WE": "0",
+    "A": "11",
+    "D": "1",
+    "model": "0",
+    "measured": "0"
+   }
+  ],
+  "cells": [
+   "1",
+   "0",
+   "1",
+   "0"
+  ]
+ },
+ "ram4beh": {
+  "what": "ram4beh (task 2, behavioural VHDL)",
+  "path": "D:\\Desktop\\NF\\lab13\\sdacha\\2_ram4beh\\ram4beh.sim.vwf",
+  "phases": 20,
+  "mismatches": 0,
+  "detail": [],
+  "rows": [
+   {
+    "phase": 0,
+    "CLK": "0",
+    "WE": "1",
+    "A": "00",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 1,
+    "CLK": "1",
+    "WE": "1",
+    "A": "00",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 2,
+    "CLK": "0",
+    "WE": "0",
+    "A": "00",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 3,
+    "CLK": "0",
+    "WE": "1",
+    "A": "01",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 4,
+    "CLK": "1",
+    "WE": "1",
+    "A": "01",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 5,
+    "CLK": "0",
+    "WE": "0",
+    "A": "01",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 6,
+    "CLK": "0",
+    "WE": "1",
+    "A": "10",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 7,
+    "CLK": "1",
+    "WE": "1",
+    "A": "10",
+    "D": "1",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 8,
+    "CLK": "0",
+    "WE": "0",
+    "A": "10",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 9,
+    "CLK": "0",
+    "WE": "1",
+    "A": "11",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 10,
+    "CLK": "1",
+    "WE": "1",
+    "A": "11",
+    "D": "0",
+    "model": "Z",
+    "measured": "Z"
+   },
+   {
+    "phase": 11,
+    "CLK": "0",
+    "WE": "0",
+    "A": "11",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 12,
+    "CLK": "0",
+    "WE": "0",
+    "A": "00",
+    "D": "0",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 13,
+    "CLK": "0",
+    "WE": "0",
+    "A": "01",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 14,
+    "CLK": "0",
+    "WE": "0",
+    "A": "10",
+    "D": "0",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 15,
+    "CLK": "0",
+    "WE": "0",
+    "A": "11",
+    "D": "0",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 16,
+    "CLK": "0",
+    "WE": "0",
+    "A": "00",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 17,
+    "CLK": "0",
+    "WE": "0",
+    "A": "01",
+    "D": "1",
+    "model": "0",
+    "measured": "0"
+   },
+   {
+    "phase": 18,
+    "CLK": "0",
+    "WE": "0",
+    "A": "10",
+    "D": "1",
+    "model": "1",
+    "measured": "1"
+   },
+   {
+    "phase": 19,
+    "CLK": "0",
+    "WE": "0",
+    "A": "11",
+    "D": "1",
+    "model": "0",
+    "measured": "0"
+   }
+  ],
+  "cells": [
+   "1",
+   "0",
+   "1",
+   "0"
+  ]
+ },
+ "mem4x8": {
+  "what": "mem4x8 (fig 18.8, 74155 + 4x74374 + 74244)",
+  "path": "D:\\Desktop\\NF\\lab13\\sdacha\\3_mem4x8\\mem4x8.sim.vwf",
+  "phases": 17,
+  "d_mismatches": 0,
+  "q_mismatches": 0,
+  "detail": {
+   "d": [],
+   "q": []
+  },
+  "rows": [
+   {
+    "phase": 0,
+    "CLK": "0",
+    "A": "00",
+    "D_display": "11111111",
+    "rd": "0",
+    "model_d_display": "00000000",
+    "measured_d_display": "00000000",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "00000000",
+    "measured_d": "00000000",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 1,
+    "CLK": "1",
+    "A": "00",
+    "D_display": "11111111",
+    "rd": "0",
+    "model_d_display": "11111111",
+    "measured_d_display": "11111111",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "11111111",
+    "measured_d": "11111111",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 2,
+    "CLK": "0",
+    "A": "00",
+    "D_display": "11111111",
+    "rd": "0",
+    "model_d_display": "11111111",
+    "measured_d_display": "11111111",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "11111111",
+    "measured_d": "11111111",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 3,
+    "CLK": "0",
+    "A": "01",
+    "D_display": "11110000",
+    "rd": "0",
+    "model_d_display": "00000000",
+    "measured_d_display": "00000000",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "00000000",
+    "measured_d": "00000000",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 4,
+    "CLK": "1",
+    "A": "01",
+    "D_display": "11110000",
+    "rd": "0",
+    "model_d_display": "11110000",
+    "measured_d_display": "11110000",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "11110000",
+    "measured_d": "11110000",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 5,
+    "CLK": "0",
+    "A": "01",
+    "D_display": "11110000",
+    "rd": "0",
+    "model_d_display": "11110000",
+    "measured_d_display": "11110000",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "11110000",
+    "measured_d": "11110000",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 6,
+    "CLK": "0",
+    "A": "10",
+    "D_display": "10100101",
+    "rd": "0",
+    "model_d_display": "00000000",
+    "measured_d_display": "00000000",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "00000000",
+    "measured_d": "00000000",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 7,
+    "CLK": "1",
+    "A": "10",
+    "D_display": "10100101",
+    "rd": "0",
+    "model_d_display": "10100101",
+    "measured_d_display": "10100101",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "10100101",
+    "measured_d": "10100101",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 8,
+    "CLK": "0",
+    "A": "10",
+    "D_display": "10100101",
+    "rd": "0",
+    "model_d_display": "10100101",
+    "measured_d_display": "10100101",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "10100101",
+    "measured_d": "10100101",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 9,
+    "CLK": "0",
+    "A": "11",
+    "D_display": "01011010",
+    "rd": "0",
+    "model_d_display": "00000000",
+    "measured_d_display": "00000000",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "00000000",
+    "measured_d": "00000000",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 10,
+    "CLK": "1",
+    "A": "11",
+    "D_display": "01011010",
+    "rd": "0",
+    "model_d_display": "01011010",
+    "measured_d_display": "01011010",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "01011010",
+    "measured_d": "01011010",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 11,
+    "CLK": "0",
+    "A": "11",
+    "D_display": "01011010",
+    "rd": "0",
+    "model_d_display": "01011010",
+    "measured_d_display": "01011010",
+    "model_q_display": "ZZZZZZZZ",
+    "measured_q_display": "ZZZZZZZZ",
+    "model_d": "01011010",
+    "measured_d": "01011010",
+    "model_q": "ZZZZZZZZ",
+    "measured_q": "ZZZZZZZZ"
+   },
+   {
+    "phase": 12,
+    "CLK": "0",
+    "A": "00",
+    "D_display": "00000000",
+    "rd": "1",
+    "model_d_display": "11111111",
+    "measured_d_display": "11111111",
+    "model_q_display": "11111111",
+    "measured_q_display": "11111111",
+    "model_d": "11111111",
+    "measured_d": "11111111",
+    "model_q": "11111111",
+    "measured_q": "11111111"
+   },
+   {
+    "phase": 13,
+    "CLK": "0",
+    "A": "01",
+    "D_display": "00000000",
+    "rd": "1",
+    "model_d_display": "11110000",
+    "measured_d_display": "11110000",
+    "model_q_display": "11110000",
+    "measured_q_display": "11110000",
+    "model_d": "11110000",
+    "measured_d": "11110000",
+    "model_q": "11110000",
+    "measured_q": "11110000"
+   },
+   {
+    "phase": 14,
+    "CLK": "0",
+    "A": "10",
+    "D_display": "00000000",
+    "rd": "1",
+    "model_d_display": "10100101",
+    "measured_d_display": "10100101",
+    "model_q_display": "10100101",
+    "measured_q_display": "10100101",
+    "model_d": "10100101",
+    "measured_d": "10100101",
+    "model_q": "10100101",
+    "measured_q": "10100101"
+   },
+   {
+    "phase": 15,
+    "CLK": "0",
+    "A": "11",
+    "D_display": "00000000",
+    "rd": "1",
+    "model_d_display": "01011010",
+    "measured_d_display": "01011010",
+    "model_q_display": "01011010",
+    "measured_q_display": "01011010",
+    "model_d": "01011010",
+    "measured_d": "01011010",
+    "model_q": "01011010",
+    "measured_q": "01011010"
+   },
+   {
+    "phase": 16,
+    "CLK": "0",
+    "A": "00",
+    "D_display": "00000000",
+    "rd": "1",
+    "model_d_display": "11111111",
+    "measured_d_display": "11111111",
+    "model_q_display": "11111111",
+    "measured_q_display": "11111111",
+    "model_d": "11111111",
+    "measured_d": "11111111",
+    "model_q": "11111111",
+    "measured_q": "11111111"
+   }
+  ],
+  "words": [
+   "11111111",
+   "11110000",
+   "10100101",
+   "01011010"
+  ],
+  "words_as_measured_lsb_first": [
+   "11111111",
+   "11110000",
+   "10100101",
+   "01011010"
+  ]
+ },
+ "lpramax": {
+  "what": "lpramax (lpm_ram_dq 8 x 1024, prescribed parameters)",
+  "path": "D:\\Desktop\\NF\\lab13\\sdacha\\4_lpm_ram_dq\\lpramax.sim.vwf",
+  "phases": 17,
+  "mismatches": 0,
+  "detail": [],
+  "rows": [
+   {
+    "phase": 0,
+    "we": "0",
+    "a": 0,
+    "d": 255,
+    "a_hex": "0x000",
+    "d_bin_msb": "11111111",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   },
+   {
+    "phase": 1,
+    "we": "1",
+    "a": 0,
+    "d": 255,
+    "a_hex": "0x000",
+    "d_bin_msb": "11111111",
+    "q_bin_msb": "11111111",
+    "model_q": "11111111",
+    "model_q_hex": "0xFF",
+    "measured_q_hex": "0xFF"
+   },
+   {
+    "phase": 2,
+    "we": "0",
+    "a": 0,
+    "d": 255,
+    "a_hex": "0x000",
+    "d_bin_msb": "11111111",
+    "q_bin_msb": "11111111",
+    "model_q": "11111111",
+    "model_q_hex": "0xFF",
+    "measured_q_hex": "0xFF"
+   },
+   {
+    "phase": 3,
+    "we": "0",
+    "a": 341,
+    "d": 240,
+    "a_hex": "0x155",
+    "d_bin_msb": "11110000",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   },
+   {
+    "phase": 4,
+    "we": "1",
+    "a": 341,
+    "d": 240,
+    "a_hex": "0x155",
+    "d_bin_msb": "11110000",
+    "q_bin_msb": "11110000",
+    "model_q": "11110000",
+    "model_q_hex": "0xF0",
+    "measured_q_hex": "0xF0"
+   },
+   {
+    "phase": 5,
+    "we": "0",
+    "a": 341,
+    "d": 240,
+    "a_hex": "0x155",
+    "d_bin_msb": "11110000",
+    "q_bin_msb": "11110000",
+    "model_q": "11110000",
+    "model_q_hex": "0xF0",
+    "measured_q_hex": "0xF0"
+   },
+   {
+    "phase": 6,
+    "we": "0",
+    "a": 682,
+    "d": 165,
+    "a_hex": "0x2AA",
+    "d_bin_msb": "10100101",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   },
+   {
+    "phase": 7,
+    "we": "1",
+    "a": 682,
+    "d": 165,
+    "a_hex": "0x2AA",
+    "d_bin_msb": "10100101",
+    "q_bin_msb": "10100101",
+    "model_q": "10100101",
+    "model_q_hex": "0xA5",
+    "measured_q_hex": "0xA5"
+   },
+   {
+    "phase": 8,
+    "we": "0",
+    "a": 682,
+    "d": 165,
+    "a_hex": "0x2AA",
+    "d_bin_msb": "10100101",
+    "q_bin_msb": "10100101",
+    "model_q": "10100101",
+    "model_q_hex": "0xA5",
+    "measured_q_hex": "0xA5"
+   },
+   {
+    "phase": 9,
+    "we": "0",
+    "a": 1023,
+    "d": 90,
+    "a_hex": "0x3FF",
+    "d_bin_msb": "01011010",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   },
+   {
+    "phase": 10,
+    "we": "1",
+    "a": 1023,
+    "d": 90,
+    "a_hex": "0x3FF",
+    "d_bin_msb": "01011010",
+    "q_bin_msb": "01011010",
+    "model_q": "01011010",
+    "model_q_hex": "0x5A",
+    "measured_q_hex": "0x5A"
+   },
+   {
+    "phase": 11,
+    "we": "0",
+    "a": 1023,
+    "d": 90,
+    "a_hex": "0x3FF",
+    "d_bin_msb": "01011010",
+    "q_bin_msb": "01011010",
+    "model_q": "01011010",
+    "model_q_hex": "0x5A",
+    "measured_q_hex": "0x5A"
+   },
+   {
+    "phase": 12,
+    "we": "0",
+    "a": 0,
+    "d": 0,
+    "a_hex": "0x000",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "11111111",
+    "model_q": "11111111",
+    "model_q_hex": "0xFF",
+    "measured_q_hex": "0xFF"
+   },
+   {
+    "phase": 13,
+    "we": "0",
+    "a": 341,
+    "d": 0,
+    "a_hex": "0x155",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "11110000",
+    "model_q": "11110000",
+    "model_q_hex": "0xF0",
+    "measured_q_hex": "0xF0"
+   },
+   {
+    "phase": 14,
+    "we": "0",
+    "a": 682,
+    "d": 0,
+    "a_hex": "0x2AA",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "10100101",
+    "model_q": "10100101",
+    "model_q_hex": "0xA5",
+    "measured_q_hex": "0xA5"
+   },
+   {
+    "phase": 15,
+    "we": "0",
+    "a": 1023,
+    "d": 0,
+    "a_hex": "0x3FF",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "01011010",
+    "model_q": "01011010",
+    "model_q_hex": "0x5A",
+    "measured_q_hex": "0x5A"
+   },
+   {
+    "phase": 16,
+    "we": "0",
+    "a": 426,
+    "d": 0,
+    "a_hex": "0x1AA",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   }
+  ],
+  "written": [
+   {
+    "address": "0x000",
+    "word_bin_msb": "11111111",
+    "word_hex": "0xFF"
+   },
+   {
+    "address": "0x155",
+    "word_bin_msb": "11110000",
+    "word_hex": "0xF0"
+   },
+   {
+    "address": "0x2AA",
+    "word_bin_msb": "10100101",
+    "word_hex": "0xA5"
+   },
+   {
+    "address": "0x3FF",
+    "word_bin_msb": "01011010",
+    "word_hex": "0x5A"
+   }
+  ]
+ },
+ "lpramwb": {
+  "what": "lpramwb (lpm_ram_dq 8 x 1024, prescribed parameters)",
+  "path": "D:\\Desktop\\NF\\lab13\\sdacha\\4_lpm_ram_dq\\lpramwb.sim.vwf",
+  "phases": 11,
+  "mismatches": 0,
+  "detail": [],
+  "rows": [
+   {
+    "phase": 0,
+    "we": "0",
+    "a": 16,
+    "d": 0,
+    "a_hex": "0x010",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   },
+   {
+    "phase": 1,
+    "we": "1",
+    "a": 16,
+    "d": 17,
+    "a_hex": "0x010",
+    "d_bin_msb": "00010001",
+    "q_bin_msb": "00010001",
+    "model_q": "00010001",
+    "model_q_hex": "0x11",
+    "measured_q_hex": "0x11"
+   },
+   {
+    "phase": 2,
+    "we": "1",
+    "a": 32,
+    "d": 34,
+    "a_hex": "0x020",
+    "d_bin_msb": "00100010",
+    "q_bin_msb": "00100010",
+    "model_q": "00100010",
+    "model_q_hex": "0x22",
+    "measured_q_hex": "0x22"
+   },
+   {
+    "phase": 3,
+    "we": "0",
+    "a": 16,
+    "d": 0,
+    "a_hex": "0x010",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "00000000",
+    "model_q": "00000000",
+    "model_q_hex": "0x00",
+    "measured_q_hex": "0x00"
+   },
+   {
+    "phase": 4,
+    "we": "0",
+    "a": 32,
+    "d": 0,
+    "a_hex": "0x020",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   },
+   {
+    "phase": 5,
+    "we": "1",
+    "a": 48,
+    "d": 51,
+    "a_hex": "0x030",
+    "d_bin_msb": "00110011",
+    "q_bin_msb": "00110011",
+    "model_q": "00110011",
+    "model_q_hex": "0x33",
+    "measured_q_hex": "0x33"
+   },
+   {
+    "phase": 6,
+    "we": "1",
+    "a": 48,
+    "d": 68,
+    "a_hex": "0x030",
+    "d_bin_msb": "01000100",
+    "q_bin_msb": "01000100",
+    "model_q": "01000100",
+    "model_q_hex": "0x44",
+    "measured_q_hex": "0x44"
+   },
+   {
+    "phase": 7,
+    "we": "0",
+    "a": 48,
+    "d": 0,
+    "a_hex": "0x030",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "00000000",
+    "model_q": "00000000",
+    "model_q_hex": "0x00",
+    "measured_q_hex": "0x00"
+   },
+   {
+    "phase": 8,
+    "we": "1",
+    "a": 16,
+    "d": 85,
+    "a_hex": "0x010",
+    "d_bin_msb": "01010101",
+    "q_bin_msb": "01010101",
+    "model_q": "01010101",
+    "model_q_hex": "0x55",
+    "measured_q_hex": "0x55"
+   },
+   {
+    "phase": 9,
+    "we": "0",
+    "a": 16,
+    "d": 0,
+    "a_hex": "0x010",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "00000000",
+    "model_q": "00000000",
+    "model_q_hex": "0x00",
+    "measured_q_hex": "0x00"
+   },
+   {
+    "phase": 10,
+    "we": "0",
+    "a": 32,
+    "d": 0,
+    "a_hex": "0x020",
+    "d_bin_msb": "00000000",
+    "q_bin_msb": "XXXXXXXX",
+    "model_q": "XXXXXXXX",
+    "model_q_hex": "X",
+    "measured_q_hex": "X"
+   }
+  ],
+  "written": [
+   {
+    "address": "0x010",
+    "word_bin_msb": "00000000",
+    "word_hex": "0x00"
+   },
+   {
+    "address": "0x030",
+    "word_bin_msb": "00000000",
+    "word_hex": "0x00"
+   }
+  ]
+ },
+ "task1_vs_task2": {
+  "phases": 20,
+  "differences": 0,
+  "rows": [
+   {
+    "phase": 0,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 1,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 2,
+    "schematic": "1",
+    "vhdl": "1"
+   },
+   {
+    "phase": 3,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 4,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 5,
+    "schematic": "0",
+    "vhdl": "0"
+   },
+   {
+    "phase": 6,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 7,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 8,
+    "schematic": "1",
+    "vhdl": "1"
+   },
+   {
+    "phase": 9,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 10,
+    "schematic": "Z",
+    "vhdl": "Z"
+   },
+   {
+    "phase": 11,
+    "schematic": "0",
+    "vhdl": "0"
+   },
+   {
+    "phase": 12,
+    "schematic": "1",
+    "vhdl": "1"
+   },
+   {
+    "phase": 13,
+    "schematic": "0",
+    "vhdl": "0"
+   },
+   {
+    "phase": 14,
+    "schematic": "1",
+    "vhdl": "1"
+   },
+   {
+    "phase": 15,
+    "schematic": "0",
+    "vhdl": "0"
+   },
+   {
+    "phase": 16,
+    "schematic": "1",
+    "vhdl": "1"
+   },
+   {
+    "phase": 17,
+    "schematic": "0",
+    "vhdl": "0"
+   },
+   {
+    "phase": 18,
+    "schematic": "1",
+    "vhdl": "1"
+   },
+   {
+    "phase": 19,
+    "schematic": "0",
+    "vhdl": "0"
+   }
+  ]
+ },
+ "displayCrossCheck": {
+  "against": "evidence/lpramwb_measured.json",
+  "rows_checked": 11,
+  "disagreements": 0,
+  "detail": [],
+  "note": "the stimulus columns are compared with a separately written extraction of the same wave, so a bit-order slip in either one is caught"
+ },
+ "zProof": {
+  "ok": true,
+  "zSegments": 52,
+  "zSampled": 52,
+  "lost": [],
+  "levelsSeen": [
+   "0",
+   "1",
+   "Z"
+  ],
+  "reports": [
+   {
+    "origin": "D:\\Desktop\\NF\\lab13\\sdacha\\1_ram4\\ram4.sim.vwf",
+    "channels": 6,
+    "zRuns": 4,
+    "zRunsDetail": [
+     {
+      "chan": "Q",
+      "t0": 0,
+      "t1": 200,
+      "mid": 100,
+      "got": "Z"
+     },
+     {
+      "chan": "Q",
+      "t0": 300,
+      "t1": 500,
+      "mid": 400,
+      "got": "Z"
+     },
+     {
+      "chan": "Q",
+      "t0": 600,
+      "t1": 800,
+      "mid": 700,
+      "got": "Z"
+     },
+     {
+      "chan": "Q",
+      "t0": 900,
+      "t1": 1100,
+      "mid": 1000,
+      "got": "Z"
+     }
+    ]
+   },
+   {
+    "origin": "D:\\Desktop\\NF\\lab13\\sdacha\\2_ram4beh\\ram4beh.sim.vwf",
+    "channels": 6,
+    "zRuns": 4,
+    "zRunsDetail": [
+     {
+      "chan": "q",
+      "t0": 0,
+      "t1": 200,
+      "mid": 100,
+      "got": "Z"
+     },
+     {
+      "chan": "q",
+      "t0": 300,
+      "t1": 500,
+      "mid": 400,
+      "got": "Z"
+     },
+     {
+      "chan": "q",
+      "t0": 600,
+      "t1": 800,
+      "mid": 700,
+      "got": "Z"
+     },
+     {
+      "chan": "q",
+      "t0": 900,
+      "t1": 1100,
+      "mid": 1000,
+      "got": "Z"
+     }
+    ]
+   },
+   {
+    "origin": "D:\\Desktop\\NF\\lab13\\sdacha\\3_mem4x8\\mem4x8.sim.vwf",
+    "channels": 28,
+    "zRuns": 8,
+    "zRunsDetail": [
+     {
+      "chan": "q[7]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[6]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[5]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[4]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[3]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[2]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[1]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     },
+     {
+      "chan": "q[0]",
+      "t0": 0,
+      "t1": 1200,
+      "mid": 600,
+      "got": "Z"
+     }
+    ]
+   },
+   {
+    "origin": "D:\\Desktop\\NF\\lab13\\sdacha\\5_proby_polyarnosti\\probe_tri.sim.vwf",
+    "channels": 18,
+    "zRuns": 20,
+    "zRunsDetail": [
+     {
+      "chan": "1Y1",
+      "t0": 80,
+      "t1": 160,
+      "mid": 120,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y1",
+      "t0": 240,
+      "t1": 280,
+      "mid": 260,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y2",
+      "t0": 80,
+      "t1": 160,
+      "mid": 120,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y2",
+      "t0": 240,
+      "t1": 280,
+      "mid": 260,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y3",
+      "t0": 80,
+      "t1": 160,
+      "mid": 120,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y3",
+      "t0": 240,
+      "t1": 280,
+      "mid": 260,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y4",
+      "t0": 80,
+      "t1": 160,
+      "mid": 120,
+      "got": "Z"
+     },
+     {
+      "chan": "1Y4",
+      "t0": 240,
+      "t1": 280,
+      "mid": 260,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y1",
+      "t0": 40,
+      "t1": 80,
+      "mid": 60,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y1",
+      "t0": 120,
+      "t1": 160,
+      "mid": 140,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y1",
+      "t0": 240,
+      "t1": 320,
+      "mid": 280,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y2",
+      "t0": 40,
+      "t1": 80,
+      "mid": 60,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y2",
+      "t0": 120,
+      "t1": 160,
+      "mid": 140,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y2",
+      "t0": 240,
+      "t1": 320,
+      "mid": 280,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y3",
+      "t0": 40,
+      "t1": 80,
+      "mid": 60,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y3",
+      "t0": 120,
+      "t1": 160,
+      "mid": 140,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y3",
+      "t0": 240,
+      "t1": 320,
+      "mid": 280,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y4",
+      "t0": 40,
+      "t1": 80,
+      "mid": 60,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y4",
+      "t0": 120,
+      "t1": 160,
+      "mid": 140,
+      "got": "Z"
+     },
+     {
+      "chan": "2Y4",
+      "t0": 240,
+      "t1": 320,
+      "mid": 280,
+      "got": "Z"
+     }
+    ]
+   },
+   {
+    "origin": "D:\\Desktop\\NF\\lab13\\sdacha\\5_proby_polyarnosti\\probe_reg.sim.vwf",
+    "channels": 18,
+    "zRuns": 16,
+    "zRunsDetail": [
+     {
+      "chan": "Q[7]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[7]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[6]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[6]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[5]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[5]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[4]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[4]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[3]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[3]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[2]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[2]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[1]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[1]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[0]",
+      "t0": 0,
+      "t1": 400,
+      "mid": 200,
+      "got": "Z"
+     },
+     {
+      "chan": "Q[0]",
+      "t0": 1000,
+      "t1": 1100,
+      "mid": 1050,
+      "got": "Z"
+     }
+    ]
+   }
+  ]
+ },
+ "verdict": "ALL WAVES CONFRONT THEIR MODELS WITH ZERO DIFFERENCES"
+}

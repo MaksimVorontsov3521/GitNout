@@ -1,0 +1,186 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--B1_20 is 74374:U1|20 at LC_X1_Y6_N3
+--operation mode is normal
+
+B1_20_lut_out = W[7];
+B1_20 = DFFEAS(B1_20_lut_out, GLOBAL(CLK), VCC, , , , , , );
+
+
+--B1_19 is 74374:U1|19 at LC_X1_Y5_N2
+--operation mode is normal
+
+B1_19_lut_out = GND;
+B1_19 = DFFEAS(B1_19_lut_out, GLOBAL(CLK), VCC, , , W[6], , , VCC);
+
+
+--B1_18 is 74374:U1|18 at LC_X1_Y7_N3
+--operation mode is normal
+
+B1_18_lut_out = GND;
+B1_18 = DFFEAS(B1_18_lut_out, GLOBAL(CLK), VCC, , , W[5], , , VCC);
+
+
+--B1_17 is 74374:U1|17 at LC_X1_Y8_N3
+--operation mode is normal
+
+B1_17_lut_out = W[4];
+B1_17 = DFFEAS(B1_17_lut_out, GLOBAL(CLK), VCC, , , , , , );
+
+
+--B1_16 is 74374:U1|16 at LC_X1_Y9_N0
+--operation mode is normal
+
+B1_16_lut_out = GND;
+B1_16 = DFFEAS(B1_16_lut_out, GLOBAL(CLK), VCC, , , W[3], , , VCC);
+
+
+--B1_15 is 74374:U1|15 at LC_X1_Y11_N2
+--operation mode is normal
+
+B1_15_lut_out = W[2];
+B1_15 = DFFEAS(B1_15_lut_out, GLOBAL(CLK), VCC, , , , , , );
+
+
+--B1_14 is 74374:U1|14 at LC_X1_Y4_N2
+--operation mode is normal
+
+B1_14_lut_out = GND;
+B1_14 = DFFEAS(B1_14_lut_out, GLOBAL(CLK), VCC, , , W[1], , , VCC);
+
+
+--B1_13 is 74374:U1|13 at LC_X1_Y10_N0
+--operation mode is normal
+
+B1_13_lut_out = W[0];
+B1_13 = DFFEAS(B1_13_lut_out, GLOBAL(CLK), VCC, , , , , , );
+
+
+--OEN is OEN at PIN_U21
+--operation mode is input
+
+OEN = INPUT();
+
+
+--W[7] is W[7] at PIN_V21
+--operation mode is input
+
+W[7] = INPUT();
+
+
+--CLK is CLK at PIN_L2
+--operation mode is input
+
+CLK = INPUT();
+
+
+--W[6] is W[6] at PIN_P17
+--operation mode is input
+
+W[6] = INPUT();
+
+
+--W[5] is W[5] at PIN_R19
+--operation mode is input
+
+W[5] = INPUT();
+
+
+--W[4] is W[4] at PIN_U22
+--operation mode is input
+
+W[4] = INPUT();
+
+
+--W[3] is W[3] at PIN_M17
+--operation mode is input
+
+W[3] = INPUT();
+
+
+--W[2] is W[2] at PIN_N21
+--operation mode is input
+
+W[2] = INPUT();
+
+
+--W[1] is W[1] at PIN_P19
+--operation mode is input
+
+W[1] = INPUT();
+
+
+--W[0] is W[0] at PIN_P21
+--operation mode is input
+
+W[0] = INPUT();
+
+
+--Q[7] is Q[7] at PIN_T20
+--operation mode is output
+
+Q[7]_tri_out = TRI(B1_20, !OEN);
+Q[7] = OUTPUT(Q[7]_tri_out);
+
+
+--Q[6] is Q[6] at PIN_T19
+--operation mode is output
+
+Q[6]_tri_out = TRI(B1_19, !OEN);
+Q[6] = OUTPUT(Q[6]_tri_out);
+
+
+--Q[5] is Q[5] at PIN_R20
+--operation mode is output
+
+Q[5]_tri_out = TRI(B1_18, !OEN);
+Q[5] = OUTPUT(Q[5]_tri_out);
+
+
+--Q[4] is Q[4] at PIN_N17
+--operation mode is output
+
+Q[4]_tri_out = TRI(B1_17, !OEN);
+Q[4] = OUTPUT(Q[4]_tri_out);
+
+
+--Q[3] is Q[3] at PIN_T21
+--operation mode is output
+
+Q[3]_tri_out = TRI(B1_16, !OEN);
+Q[3] = OUTPUT(Q[3]_tri_out);
+
+
+--Q[2] is Q[2] at PIN_R21
+--operation mode is output
+
+Q[2]_tri_out = TRI(B1_15, !OEN);
+Q[2] = OUTPUT(Q[2]_tri_out);
+
+
+--Q[1] is Q[1] at PIN_V22
+--operation mode is output
+
+Q[1]_tri_out = TRI(B1_14, !OEN);
+Q[1] = OUTPUT(Q[1]_tri_out);
+
+
+--Q[0] is Q[0] at PIN_R22
+--operation mode is output
+
+Q[0]_tri_out = TRI(B1_13, !OEN);
+Q[0] = OUTPUT(Q[0]_tri_out);
+
+
+

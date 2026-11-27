@@ -1,0 +1,75 @@
+{
+  "what": "Two more defect classes in the delivered report, both found by reading the rendered text rather than by inspecting XML, and both invisible to the 24 checkers that were in service before this pass.",
+  "defect_1_composition": {
+    "site": "section 7.2, the paragraph introducing 74374 and 74244",
+    "was": "74374 — регистр на восемь бит: подлинная схема содержит 24 трёхстальных буфера TRI, два инвертора и сорок D-триггеров, то есть восемь DFF и три элемента на разряд",
+    "is": "74374 содержит 17 экземпляров примитивов (8 DFF, 8 TRI и 1 NOT) при 18 выводах символа (10 входов и 8 выходов). На каждый разряд 74374 приходится ровно один DFF и ровно один TRI с общим стробом вывода OEN.",
+    "root_cause": "Instance INDEXES of the authentic 74374.bdf were read as QUANTITIES. The TRI designators run 40, 41, …, 47 and the single NOT carries designator 2, which produced \"24 buffers\", \"two inverters\" and \"forty flip-flops\". The sentence then contradicted itself in the same breath (\"то есть восемь DFF\"), which is the only reason a human reader would have noticed.",
+    "truth_source": "parsed from the library files themselves: sdacha/lib_maxplus2/74374.bdf contains 8 DFF, 8 TRI, 1 NOT (17 primitives, 18 pins); 74244.bdf contains 8 TRI, 2 NOT (10 primitives, 18 pins); 74155.bdf contains 5 NOT, 2 BAND2, 8 NAND3 (15 primitives, 6 inputs, 8 outputs). Recorded in lab13/evidence/bdf_composition.json, with instance indexes kept in a separate field precisely because confusing the two sequences is the defect.",
+    "why_no_checker_saw_it": [
+      "the numeric audit (_audit_final.py) harvests DIGIT tokens from prose; \"сорок\" is a word, so the false quantity was never a number it looked at",
+      "the numeral-agreement layer checks CASE and NUMBER agreement, not whether the value is true",
+      "the composition of 74155 was already computed from data (DG[\"symbols\"]) and was correct; the 74374/74244 sentence was the only one written as literals, so the one place without a computed value was the one place that was wrong"
+    ],
+    "repair": "every composition number in the report is now computed from DATA[\"library_composition\"], which is loaded from the .bdf parse, and the new _composition_audit.py checks each such claim against the file independently of the report data."
+  },
+  "defect_2_prepositional_case": {
+    "site": "figure 5 caption, introduced by my own repair of defect 1",
+    "was": "Рисунок 5 — …: 8 D-триггеров и 8 буферов и 1 инвертор — 17 экземпляров при 18 выводов символа.",
+    "is": "Рисунок 5 — …: 8 D-триггеров, 8 буферов и 1 инвертор; всего 17 экземпляров при 18 выводах символа.",
+    "two_problems": "a doubled conjunction in a three-item enumeration, and «при 18 выводов» where the construction requires the prepositional «при 18 выводах».",
+    "methodological_finding": "The numeral-agreement checker deliberately exempts a numeral governed by a preposition, because the preposition overrides the case the digit would select. That exemption prevents false positives but verifies NOTHING about which oblique form is correct, so it let «при 18 выводов» through with the site counted as explained. The limitation was already recorded in evidence/agreement_layer.json; this is the case where it bit. Closed by lab13/_prep_case.py, which checks the construction over a lexicon of 46 nouns built from the sites a discovery pass found in the rendered file, and reports any noun outside the lexicon as unverified rather than guessing."
+  },
+  "checker_defects_found_by_self_tests_this_pass": [
+    {
+      "checker": "_composition_audit.py",
+      "stage": "first version",
+      "flaw": "required whitespace or punctuation after the primitive name, so a claim at the very end of a sentence was invisible; and it attributed a claim to whichever library appeared first in a sentence naming all three, producing false mismatches on the assembly paragraph.",
+      "fix": "end-of-string alternative added; attribution changed to the nearest preceding mention with an ambiguity veto, and sentences describing our own assembled scheme are excluded BY DESIGNATOR and the exclusion is printed.",
+      "self_test": "14 planted sentences, 14 correct, including the three shapes that had produced false positives and the original false sentence (caught 4 of its 3 defects and more)."
+    },
+    {
+      "checker": "_composition_audit.py",
+      "stage": "second version",
+      "flaw": "the number-to-noun binding consumed up to two intervening words blindly, so \"5 инверторов NOT\" lost its head and \"64 комбинации входов\" was bound to PINS_IN, reporting prose 64 against file 6.",
+      "fix": "a head-selection rule: the first intervening word that is itself a component name is the head; if the intervening words are all whitelisted modifiers the trailing noun is the head; otherwise the numeral counts a word that is not a primitive or pin count and the claim is left visibly unverified. The 29-word modifier whitelist is printed on every run so its extent is auditable.",
+      "self_test": "14/14."
+    },
+    {
+      "checker": "_prep_case.py",
+      "stage": "first version",
+      "flaw": "took the LAST word of a two-word phrase as the head, which is the opposite of the construction: «при 18 выводах символа» counts выводах, and «символа» is a dependent genitive. It also carried a \"^\" anchor inside pattern.match(string, pos), which in Python binds \"^\" to the real start of the string rather than to pos, so the coordinated-noun chain silently stopped after the first group and «и 8 выходах» was never checked.",
+      "fix": "head direction reversed (leading adjectives skipped, first noun is the head, dependents ignored); the anchor removed. The anchor bug was found by printing the walk step by step, not by reading the regular expression.",
+      "self_test": "13 planted sentences, 13 correct."
+    },
+    {
+      "checker": "_prep_case.py",
+      "stage": "planted expectations",
+      "flaw": "MY test was wrong twice: I expected four sites in a sentence that contains three numerals, and I expected «при 16 элементов» to be unverified when the construction genuinely requires «при 16 элементах», so flagging it is correct.",
+      "fix": "expectations recounted against the sentence. Recorded rather than silently cleaned, because a checker whose planted expectation is wrong is as untrustworthy as one whose rule is wrong.",
+      "note": "this is the second wrong-test-of-mine in this session (the first was «примера на 256 элементов» in _agree_neg.py, where the form after «на» of capacity is idiomatic)."
+    }
+  ],
+  "regression_caught_this_pass": "The paragraph count moved 231 to 230 during a text-only repair, because my line-index patch overwrote the H1(\"2. Инструментальная среда и замечание о замене САПР\") statement. 21 of the 22 checkers then in service reported the build clean. Refusing to treat a count that moves by exactly one as noise is what exposed it: lab13/_para_diff.py aligned the current document against the delivered copy and named the deleted heading. See evidence/structural_regression.json.",
+  "state_after": {
+    "docx": "421568 B, sha256 72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+    "headings": 37,
+    "paragraphs": 231,
+    "figures": 10,
+    "tables": 15,
+    "battery": "26 / 26 checkers EXIT=0, every one carrying a mandatory self-test that plants known-bad AND known-correct input",
+    "composition_claims_resolved": 31,
+    "composition_findings": 0,
+    "prepositional_sites": 8,
+    "prepositional_findings": 0,
+    "numeral_agreement_sites": 107,
+    "real_disagreements": 0
+  },
+  "standing_discipline_reaffirmed": "Read-back of the rendered document remains the highest-yield step in this project: both defects of this pass, and the deleted heading, were found by reading sentences whole or by watching a count, never by XML inspection. And a checker is not trusted until it has been shown to catch a planted defect and to leave a planted correct sentence alone — four of my own checkers failed that bar during this pass and each was fixed before its verdict was used.",
+  "build_reference": {
+    "docx_sha256": "72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+    "docx_bytes": 421565,
+    "stated_at": "2026-11-26T23:54:51.644Z",
+    "note": "Any other sha256 in this file is a measurement of an earlier build and is labelled as historical where it appears; it has deliberately not been rewritten, because rewriting a recorded measurement would falsify it."
+  }
+}

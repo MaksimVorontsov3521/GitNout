@@ -1,0 +1,26 @@
+{
+  "pdf_bytes": 871089,
+  "pdf_sha256": "abf0e01af51526270eceb5f55767cee5238c746ee1b0b2152fe32b47537db623",
+  "pdf_sha256_note": "The PDF is deliberately NOT part of the delivery: it is a derivative artifact of a third-party engine, reproducible from the delivered docx by the command recorded in 6_proverki/ZIPISKA.txt. This hash therefore names a file that is intentionally absent. It is measured from the docx in the same run - the staleness guard refuses to report when the PDF predates the docx - so it cannot describe a different build.",
+  "pdf_staleness_guard": "Refuses to run if the PDF mtime predates the docx mtime. Added because an earlier version pointed at an older directory and paired a live docx hash with a stale PDF measurement.",
+  "pdf_newer_than_docx_seconds": 449.0,
+  "docx_bytes": 421568,
+  "docx_sha256": "72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+  "pages": 41,
+  "images": 10,
+  "fonts": 28,
+  "fonts_with_tounicode": 14,
+  "mediabox": [
+    [
+      0.0,
+      0.0,
+      595.303937007874,
+      841.889763779528
+    ]
+  ],
+  "extracted_chars": 81369,
+  "units": 745,
+  "units_missing": 65,
+  "units_missing_explained": "units_missing is a CONTIGUITY statistic of this text-only check, not a claim that the conversion lost text. The order-independent character-multiset difference is in render_multiset.json; the deficit sits in the monospaced listings (Courier, reported missing by the converter) and in the SEQ caption numbers, whose cached field results LibreOffice does not emit into PDF text.",
+  "converter_font_substitution": "The converter reports missingFonts [\"Courier\"]; the report sets its listings in Courier, so the PDF substitutes a replacement face. A property of the conversion environment, recorded rather than hidden."
+}

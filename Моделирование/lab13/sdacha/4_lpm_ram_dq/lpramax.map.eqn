@@ -1,0 +1,239 @@
+-- Copyright (C) 1991-2005 Altera Corporation
+-- Your use of Altera Corporation's design tools, logic functions 
+-- and other software and tools, and its AMPP partner logic 
+-- functions, and any output files any of the foregoing 
+-- (including device programming or simulation files), and any 
+-- associated documentation or information are expressly subject 
+-- to the terms and conditions of the Altera Program License 
+-- Subscription Agreement, Altera MegaCore Function License 
+-- Agreement, or other applicable license agreement, including, 
+-- without limitation, that your use is for the sole purpose of 
+-- programming logic devices manufactured by Altera and sold by 
+-- Altera or its authorized distributors.  Please refer to the 
+-- applicable agreement for further details.
+--C1_q[0] is lpm_ram_dq:mem|altram:sram|q[0]
+C1_q[0]_data_in = data[0];
+C1_q[0]_write_enable = we;
+C1_q[0]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[0]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[0] = MEMORY_SEGMENT(C1_q[0]_data_in, C1_q[0]_write_enable, , , , , , , C1_q[0]_write_address, C1_q[0]_read_address);
+
+
+--C1_q[1] is lpm_ram_dq:mem|altram:sram|q[1]
+C1_q[1]_data_in = data[1];
+C1_q[1]_write_enable = we;
+C1_q[1]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[1]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[1] = MEMORY_SEGMENT(C1_q[1]_data_in, C1_q[1]_write_enable, , , , , , , C1_q[1]_write_address, C1_q[1]_read_address);
+
+
+--C1_q[2] is lpm_ram_dq:mem|altram:sram|q[2]
+C1_q[2]_data_in = data[2];
+C1_q[2]_write_enable = we;
+C1_q[2]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[2]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[2] = MEMORY_SEGMENT(C1_q[2]_data_in, C1_q[2]_write_enable, , , , , , , C1_q[2]_write_address, C1_q[2]_read_address);
+
+
+--C1_q[3] is lpm_ram_dq:mem|altram:sram|q[3]
+C1_q[3]_data_in = data[3];
+C1_q[3]_write_enable = we;
+C1_q[3]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[3]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[3] = MEMORY_SEGMENT(C1_q[3]_data_in, C1_q[3]_write_enable, , , , , , , C1_q[3]_write_address, C1_q[3]_read_address);
+
+
+--C1_q[4] is lpm_ram_dq:mem|altram:sram|q[4]
+C1_q[4]_data_in = data[4];
+C1_q[4]_write_enable = we;
+C1_q[4]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[4]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[4] = MEMORY_SEGMENT(C1_q[4]_data_in, C1_q[4]_write_enable, , , , , , , C1_q[4]_write_address, C1_q[4]_read_address);
+
+
+--C1_q[5] is lpm_ram_dq:mem|altram:sram|q[5]
+C1_q[5]_data_in = data[5];
+C1_q[5]_write_enable = we;
+C1_q[5]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[5]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[5] = MEMORY_SEGMENT(C1_q[5]_data_in, C1_q[5]_write_enable, , , , , , , C1_q[5]_write_address, C1_q[5]_read_address);
+
+
+--C1_q[6] is lpm_ram_dq:mem|altram:sram|q[6]
+C1_q[6]_data_in = data[6];
+C1_q[6]_write_enable = we;
+C1_q[6]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[6]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[6] = MEMORY_SEGMENT(C1_q[6]_data_in, C1_q[6]_write_enable, , , , , , , C1_q[6]_write_address, C1_q[6]_read_address);
+
+
+--C1_q[7] is lpm_ram_dq:mem|altram:sram|q[7]
+C1_q[7]_data_in = data[7];
+C1_q[7]_write_enable = we;
+C1_q[7]_write_address = WR_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[7]_read_address = RD_ADDR(address[0], address[1], address[2], address[3], address[4], address[5], address[6], address[7], address[8], address[9]);
+C1_q[7] = MEMORY_SEGMENT(C1_q[7]_data_in, C1_q[7]_write_enable, , , , , , , C1_q[7]_write_address, C1_q[7]_read_address);
+
+
+--data[0] is data[0]
+--operation mode is input
+
+data[0] = INPUT();
+
+
+--we is we
+--operation mode is input
+
+we = INPUT();
+
+
+--address[0] is address[0]
+--operation mode is input
+
+address[0] = INPUT();
+
+
+--address[1] is address[1]
+--operation mode is input
+
+address[1] = INPUT();
+
+
+--address[2] is address[2]
+--operation mode is input
+
+address[2] = INPUT();
+
+
+--address[3] is address[3]
+--operation mode is input
+
+address[3] = INPUT();
+
+
+--address[4] is address[4]
+--operation mode is input
+
+address[4] = INPUT();
+
+
+--address[5] is address[5]
+--operation mode is input
+
+address[5] = INPUT();
+
+
+--address[6] is address[6]
+--operation mode is input
+
+address[6] = INPUT();
+
+
+--address[7] is address[7]
+--operation mode is input
+
+address[7] = INPUT();
+
+
+--address[8] is address[8]
+--operation mode is input
+
+address[8] = INPUT();
+
+
+--address[9] is address[9]
+--operation mode is input
+
+address[9] = INPUT();
+
+
+--data[1] is data[1]
+--operation mode is input
+
+data[1] = INPUT();
+
+
+--data[2] is data[2]
+--operation mode is input
+
+data[2] = INPUT();
+
+
+--data[3] is data[3]
+--operation mode is input
+
+data[3] = INPUT();
+
+
+--data[4] is data[4]
+--operation mode is input
+
+data[4] = INPUT();
+
+
+--data[5] is data[5]
+--operation mode is input
+
+data[5] = INPUT();
+
+
+--data[6] is data[6]
+--operation mode is input
+
+data[6] = INPUT();
+
+
+--data[7] is data[7]
+--operation mode is input
+
+data[7] = INPUT();
+
+
+--q[0] is q[0]
+--operation mode is output
+
+q[0] = OUTPUT(C1_q[0]);
+
+
+--q[1] is q[1]
+--operation mode is output
+
+q[1] = OUTPUT(C1_q[1]);
+
+
+--q[2] is q[2]
+--operation mode is output
+
+q[2] = OUTPUT(C1_q[2]);
+
+
+--q[3] is q[3]
+--operation mode is output
+
+q[3] = OUTPUT(C1_q[3]);
+
+
+--q[4] is q[4]
+--operation mode is output
+
+q[4] = OUTPUT(C1_q[4]);
+
+
+--q[5] is q[5]
+--operation mode is output
+
+q[5] = OUTPUT(C1_q[5]);
+
+
+--q[6] is q[6]
+--operation mode is output
+
+q[6] = OUTPUT(C1_q[6]);
+
+
+--q[7] is q[7]
+--operation mode is output
+
+q[7] = OUTPUT(C1_q[7]);
+
+

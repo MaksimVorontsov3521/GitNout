@@ -1,0 +1,1584 @@
+{
+ "generated": "2026-11-27T00:31:55.663Z",
+ "sdacha": "D:\\Desktop\\NF\\lab13\\sdacha",
+ "verdict": "PROBLEMS",
+ "totals": {
+  "files": 283,
+  "bytes": 4555271,
+  "kb": 4449
+ },
+ "byFolder": {
+  "0_zadanie_i_otchet": {
+   "files": 3,
+   "bytes": 447646
+  },
+  "1_ram4": {
+   "files": 19,
+   "bytes": 348690
+  },
+  "2_ram4beh": {
+   "files": 17,
+   "bytes": 260189
+  },
+  "3_mem4x8": {
+   "files": 26,
+   "bytes": 655500
+  },
+  "4_lpm_ram_dq": {
+   "files": 39,
+   "bytes": 309392
+  },
+  "5_proby_polyarnosti": {
+   "files": 51,
+   "bytes": 806762
+  },
+  "6_proverki": {
+   "files": 32,
+   "bytes": 697988
+  },
+  "7_avtorskie_iskhod": {
+   "files": 3,
+   "bytes": 6962
+  },
+  "8_sbornik_otcheta": {
+   "files": 51,
+   "bytes": 532910
+  },
+  "guest_logs": {
+   "files": 14,
+   "bytes": 203089
+  },
+  "lib_maxplus2": {
+   "files": 11,
+   "bytes": 212672
+  },
+  "ref_altera": {
+   "files": 12,
+   "bytes": 50534
+  },
+  "ref_vwf": {
+   "files": 5,
+   "bytes": 22937
+  }
+ },
+ "scan": {
+  "textFiles": 212,
+  "skippedBinary": 11,
+  "exts": [
+   ".txt",
+   ".json",
+   ".qsf",
+   ".qpf",
+   ".vwf",
+   ".bdf",
+   ".bsf",
+   ".tdf",
+   ".vhd",
+   ".rpt",
+   ".eqn",
+   ".pin",
+   ".inc",
+   ".xml",
+   ".log"
+  ]
+ },
+ "absoluteReferences": {
+  "counts": {},
+  "rows": 0,
+  "unjustified": 0,
+  "sample": []
+ },
+ "docxContainer": [
+  {
+   "file": "0_zadanie_i_otchet/lab13_report.docx",
+   "pattern": "D:/Desktop",
+   "hits": 0,
+   "note": "в контейнере не встречается"
+  },
+  {
+   "file": "0_zadanie_i_otchet/lab13_report.docx",
+   "pattern": "D:\\Desktop",
+   "hits": 0,
+   "note": "в контейнере не встречается"
+  },
+  {
+   "file": "0_zadanie_i_otchet/lab13_report.docx",
+   "pattern": "C:/Users",
+   "hits": 0,
+   "note": "в контейнере не встречается"
+  },
+  {
+   "file": "0_zadanie_i_otchet/lab13_report.docx",
+   "pattern": "C:\\Users",
+   "hits": 0,
+   "note": "в контейнере не встречается"
+  },
+  {
+   "file": "0_zadanie_i_otchet/lab13_report.docx",
+   "pattern": "Z:\\",
+   "hits": 0,
+   "note": "в контейнере не встречается"
+  },
+  {
+   "file": "0_zadanie_i_otchet/lab13_report.docx",
+   "pattern": "(сигнатура)",
+   "hits": 1,
+   "note": "zip цел, есть word/document.xml"
+  }
+ ],
+ "structure": [
+  {
+   "rule": "B.1 ни одного нулевого файла; PNG и DOCX имеют сигнатуру контейнера",
+   "files": 283,
+   "zero": 0,
+   "sigBad": 0
+  },
+  {
+   "rule": "B.2 каждая FILE_*/TOP_LEVEL_ENTITY в .qsf указывает на файл ТОЙ ЖЕ папки",
+   "files": 9,
+   "refs": 9,
+   "unresolved": 0
+  },
+  {
+   "rule": "B.3 каждая инстанцируемая НЕ-мегафункция имеет .bdf или .bsf в той же папке",
+   "files": 14,
+   "missing": 0
+  },
+  {
+   "rule": "B.4 у каждого .qpf есть .vwf/.sim.vwf и map/fit/sim/flow; asm/tan/pin - только при удачном размещении",
+   "projects": 9,
+   "incomplete": 0
+  },
+  {
+   "rule": "B.5 в сдаче нет __pycache__ и .pyc/.pyo (байткод зависит от версии Python и не является материалом работы)",
+   "files": 283,
+   "junk": 0
+  },
+  {
+   "rule": "C.1 каждый файл, названный в ZIPISKA, существует в сдаче (точное имя, родов суффикс или квалификация чужого дерева в окне 3 строк)",
+   "notes": 13,
+   "names": 230,
+   "promises": 229,
+   "exact": 227,
+   "genericSuffix": 2,
+   "externalMentions": 1,
+   "unmet": 0
+  },
+  {
+   "rule": "C.2 дублированные листы библиотеки курса идентичны по sha256 между собой и с подлинником в mp2",
+   "names": 7,
+   "divergent": 0
+  },
+  {
+   "rule": "C.5 справочные корпуса ref_vwf и ref_altera (+mega, +db) сверены sha256 с подлинниками установки по относительному пути; при недоступном подлиннике совпадение НЕ заявляется",
+   "files": 15,
+   "perFolder": {
+    "ref_vwf": 4,
+    "ref_altera": 11
+   },
+   "originalAvailable": 15,
+   "originalMissing": 0,
+   "unavailableList": [],
+   "divergent": 0
+  },
+  {
+   "rule": "C.3 каждый .bdf/.bsf/.vwf/.tdf/.vhd/.qsf/.qpf разбирается",
+   "files": 73,
+   "failed": 0
+  },
+  {
+   "rule": "C.6 проза записки отчёта не противоречит доставленному: отрицание отсутствующего файла валитирует сборку",
+   "zadanieLezhit": true,
+   "otrechenieVTEkste": false
+  },
+  {
+   "rule": "C.4 доказательство упаковки (pack.json) зелёное: пересборка листа, стек изнутри сдачи, прогоны отчёта с утверждениями, эталонные хеши",
+   "present": true,
+   "verdict": "PROBLEMS"
+  }
+ ],
+ "qsf": [
+  {
+   "file": "1_ram4/ram4.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "2_ram4beh/ram4beh.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "3_mem4x8/mem4x8.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramax.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramfk.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramwb.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.qsf",
+   "refs": 1,
+   "unresolved": []
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.qsf",
+   "refs": 1,
+   "unresolved": []
+  }
+ ],
+ "instances": [
+  {
+   "file": "1_ram4/ram4.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "3_mem4x8/74155.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "3_mem4x8/74244.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "3_mem4x8/74374.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "3_mem4x8/mem4x8.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "5_proby_polyarnosti/74244.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "5_proby_polyarnosti/74374.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "lib_maxplus2/74155.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "lib_maxplus2/74244.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "lib_maxplus2/74374.bdf",
+   "entities": 0,
+   "missing": []
+  },
+  {
+   "file": "lib_maxplus2/enadff.bdf",
+   "entities": 0,
+   "missing": []
+  }
+ ],
+ "projects": [
+  {
+   "project": "ram4",
+   "folder": "1_ram4",
+   "fitOk": true,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf",
+    ".asm.rpt",
+    ".tan.rpt",
+    ".pin"
+   ],
+   "missing": []
+  },
+  {
+   "project": "ram4beh",
+   "folder": "2_ram4beh",
+   "fitOk": true,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf",
+    ".asm.rpt",
+    ".tan.rpt",
+    ".pin"
+   ],
+   "missing": []
+  },
+  {
+   "project": "mem4x8",
+   "folder": "3_mem4x8",
+   "fitOk": true,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf",
+    ".asm.rpt",
+    ".tan.rpt",
+    ".pin"
+   ],
+   "missing": []
+  },
+  {
+   "project": "lpramax",
+   "folder": "4_lpm_ram_dq",
+   "fitOk": false,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf"
+   ],
+   "missing": []
+  },
+  {
+   "project": "lpramfk",
+   "folder": "4_lpm_ram_dq",
+   "fitOk": false,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf"
+   ],
+   "missing": []
+  },
+  {
+   "project": "lpramwb",
+   "folder": "4_lpm_ram_dq",
+   "fitOk": false,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf"
+   ],
+   "missing": []
+  },
+  {
+   "project": "probe_reg",
+   "folder": "5_proby_polyarnosti",
+   "fitOk": true,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf",
+    ".asm.rpt",
+    ".tan.rpt",
+    ".pin"
+   ],
+   "missing": []
+  },
+  {
+   "project": "probe_tri",
+   "folder": "5_proby_polyarnosti",
+   "fitOk": true,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf",
+    ".asm.rpt",
+    ".tan.rpt",
+    ".pin"
+   ],
+   "missing": []
+  },
+  {
+   "project": "probe_trioe",
+   "folder": "5_proby_polyarnosti",
+   "fitOk": true,
+   "have": [
+    ".map.rpt",
+    ".fit.rpt",
+    ".sim.rpt",
+    ".flow.rpt",
+    ".vwf",
+    ".sim.vwf",
+    ".asm.rpt",
+    ".tan.rpt",
+    ".pin"
+   ],
+   "missing": []
+  }
+ ],
+ "duplicates": [
+  {
+   "name": "74155.bdf",
+   "copies": [
+    {
+     "loc": "3_mem4x8/74155.bdf",
+     "h": "33ad9041dcb9"
+    },
+    {
+     "loc": "lib_maxplus2/74155.bdf",
+     "h": "33ad9041dcb9"
+    }
+   ],
+   "original": "33ad9041dcb9",
+   "distinct": 1,
+   "matchesOriginal": true
+  },
+  {
+   "name": "74244.bdf",
+   "copies": [
+    {
+     "loc": "3_mem4x8/74244.bdf",
+     "h": "30ad665be8ef"
+    },
+    {
+     "loc": "5_proby_polyarnosti/74244.bdf",
+     "h": "30ad665be8ef"
+    },
+    {
+     "loc": "lib_maxplus2/74244.bdf",
+     "h": "30ad665be8ef"
+    }
+   ],
+   "original": "30ad665be8ef",
+   "distinct": 1,
+   "matchesOriginal": true
+  },
+  {
+   "name": "74374.bdf",
+   "copies": [
+    {
+     "loc": "3_mem4x8/74374.bdf",
+     "h": "e26ac781b4e5"
+    },
+    {
+     "loc": "5_proby_polyarnosti/74374.bdf",
+     "h": "e26ac781b4e5"
+    },
+    {
+     "loc": "lib_maxplus2/74374.bdf",
+     "h": "e26ac781b4e5"
+    }
+   ],
+   "original": "e26ac781b4e5",
+   "distinct": 1,
+   "matchesOriginal": true
+  },
+  {
+   "name": "enadff.bdf",
+   "copies": [
+    {
+     "loc": "lib_maxplus2/enadff.bdf",
+     "h": "3dca04cf3077"
+    }
+   ],
+   "original": "3dca04cf3077",
+   "distinct": 1,
+   "matchesOriginal": true
+  },
+  {
+   "name": "74155.bsf",
+   "copies": [
+    {
+     "loc": "3_mem4x8/74155.bsf",
+     "h": "573099985458"
+    },
+    {
+     "loc": "lib_maxplus2/74155.bsf",
+     "h": "573099985458"
+    }
+   ],
+   "original": null,
+   "distinct": 1,
+   "matchesOriginal": true
+  },
+  {
+   "name": "74244.bsf",
+   "copies": [
+    {
+     "loc": "3_mem4x8/74244.bsf",
+     "h": "dfc3152c2658"
+    },
+    {
+     "loc": "5_proby_polyarnosti/74244.bsf",
+     "h": "dfc3152c2658"
+    },
+    {
+     "loc": "lib_maxplus2/74244.bsf",
+     "h": "dfc3152c2658"
+    }
+   ],
+   "original": null,
+   "distinct": 1,
+   "matchesOriginal": true
+  },
+  {
+   "name": "74374.bsf",
+   "copies": [
+    {
+     "loc": "3_mem4x8/74374.bsf",
+     "h": "d3a9268b7000"
+    },
+    {
+     "loc": "5_proby_polyarnosti/74374.bsf",
+     "h": "d3a9268b7000"
+    },
+    {
+     "loc": "lib_maxplus2/74374.bsf",
+     "h": "d3a9268b7000"
+    }
+   ],
+   "original": null,
+   "distinct": 1,
+   "matchesOriginal": true
+  }
+ ],
+ "promises": {
+  "total": 230,
+  "unmet": 0,
+  "sample": [
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "lab13_report.docx",
+    "lines": [
+     9,
+     36,
+     41,
+     131
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "zadanie_lab13.txt",
+    "lines": [
+     10,
+     44,
+     49,
+     129
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "ZIPISKA.txt",
+    "lines": [
+     12
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "seqtest.mjs",
+    "lines": [
+     165
+    ],
+    "external": false,
+    "inFolder": false,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "pack.json",
+    "lines": [
+     178,
+     217,
+     217,
+     219
+    ],
+    "external": false,
+    "inFolder": false,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "sdacha_check.mjs",
+    "lines": [
+     193
+    ],
+    "external": false,
+    "inFolder": false,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "0_zadanie_i_otchet/ZIPISKA.txt",
+    "name": "map.rpt",
+    "lines": [
+     204
+    ],
+    "external": false,
+    "inFolder": false,
+    "anywhere": false,
+    "suffix": true
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.bdf",
+    "lines": [
+     6,
+     33
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.qsf",
+    "lines": [
+     7
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.qpf",
+    "lines": [
+     7
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.vwf",
+    "lines": [
+     9
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.sim.vwf",
+    "lines": [
+     11
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.map.rpt",
+    "lines": [
+     14
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.map.eqn",
+    "lines": [
+     15
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.json",
+    "lines": [
+     19,
+     33
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4.png",
+    "lines": [
+     20
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4_wf.png",
+    "lines": [
+     20
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "ram4_gatelevel_crosscheck.json",
+    "lines": [
+     23,
+     65
+    ],
+    "external": false,
+    "inFolder": true,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "report_data.json",
+    "lines": [
+     36
+    ],
+    "external": false,
+    "inFolder": false,
+    "anywhere": true,
+    "suffix": false
+   },
+   {
+    "note": "1_ram4/ZIPISKA.txt",
+    "name": "models.mjs",
+    "lines": [
+     67
+    ],
+    "external": false,
+    "inFolder": false,
+    "anywhere": true,
+    "suffix": false
+   }
+  ]
+ },
+ "parses": [
+  {
+   "file": "1_ram4/ram4.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "1_ram4/ram4.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "1_ram4/ram4.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 10,
+   "quotes": 4
+  },
+  {
+   "file": "1_ram4/ram4.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 6
+  },
+  {
+   "file": "1_ram4/ram4.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 6
+  },
+  {
+   "file": "2_ram4beh/ram4beh.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "2_ram4beh/ram4beh.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 8,
+   "quotes": 2
+  },
+  {
+   "file": "2_ram4beh/ram4beh.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 6
+  },
+  {
+   "file": "2_ram4beh/ram4beh.vhd",
+   "ext": ".vhd",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "ram4beh",
+   "architecture": "behaviour",
+   "balanced": true
+  },
+  {
+   "file": "2_ram4beh/ram4beh.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 6
+  },
+  {
+   "file": "3_mem4x8/74155.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/74155.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/74244.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/74244.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/74374.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/74374.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/mem4x8.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "3_mem4x8/mem4x8.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "3_mem4x8/mem4x8.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 13,
+   "quotes": 4
+  },
+  {
+   "file": "3_mem4x8/mem4x8.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 28
+  },
+  {
+   "file": "3_mem4x8/mem4x8.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 28
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramax.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramax.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 8,
+   "quotes": 2
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramax.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 27
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramax.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "lpramax"
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramax.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 27
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramfk.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramfk.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 8,
+   "quotes": 2
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramfk.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 27
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramfk.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "lpramfk"
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramfk.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 27
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramwb.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramwb.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 8,
+   "quotes": 2
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramwb.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 27
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramwb.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "lpramwb"
+  },
+  {
+   "file": "4_lpm_ram_dq/lpramwb.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 27
+  },
+  {
+   "file": "5_proby_polyarnosti/74244.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/74244.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/74374.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/74374.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 11,
+   "quotes": 4
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 18
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_reg.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 18
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 11,
+   "quotes": 4
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 18
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_tri.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 18
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.qpf",
+   "ext": ".qpf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "QUARTUS": true
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.qsf",
+   "ext": ".qsf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "assignments": 10,
+   "quotes": 4
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 3
+  },
+  {
+   "file": "5_proby_polyarnosti/probe_trioe.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 3
+  },
+  {
+   "file": "7_avtorskie_iskhod/lpramax.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "lpramax"
+  },
+  {
+   "file": "7_avtorskie_iskhod/lpramwb.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "lpramwb"
+  },
+  {
+   "file": "lib_maxplus2/74155.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "lib_maxplus2/74155.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "lib_maxplus2/74244.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "lib_maxplus2/74244.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "lib_maxplus2/74374.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "lib_maxplus2/74374.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "lib_maxplus2/enadff.bdf",
+   "ext": ".bdf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "ref_altera/lpm_ram_dp.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "ref_altera/lpm_ram_dq.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "ref_altera/lpm_ram_dq.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "lpm_ram_dq"
+  },
+  {
+   "file": "ref_altera/lpm_rom.bsf",
+   "ext": ".bsf",
+   "how": "sexpr.parse",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "file": "ref_altera/mega/altram.tdf",
+   "ext": ".tdf",
+   "how": "структурный",
+   "ok": true,
+   "why": "",
+   "entity": "altram"
+  },
+  {
+   "file": "ref_vwf/D/D.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 4
+  },
+  {
+   "file": "ref_vwf/D/db/D.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 4
+  },
+  {
+   "file": "ref_vwf/VHDL_4_bit_memory/db/VHDL_4_bit_memory.sim.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 11
+  },
+  {
+   "file": "ref_vwf/VHDLCMP_4BIT/VHDLCMP_4BIT.vwf",
+   "ext": ".vwf",
+   "how": "simcheck.parseVwf",
+   "ok": true,
+   "why": "",
+   "signals": 11
+  }
+ ],
+ "packEvidence": {
+  "present": true,
+  "verdict": "PROBLEMS",
+  "problems": 14,
+  "reportProof": {
+   "toolchain": [
+    {
+     "tool": "node",
+     "ok": true,
+     "exe": "C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/node/bin/node.exe",
+     "version": "v24.21.0"
+    },
+    {
+     "tool": "python",
+     "ok": true,
+     "exe": "C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe",
+     "version": "3.12.14"
+    }
+   ],
+   "runs": 44,
+   "run_what": [
+    "python make_report.py",
+    "python check_report.py",
+    "python check_spacing.py",
+    "python check_layout.py",
+    "python _audit2.py",
+    "python _latin_scan.py",
+    "python _req_cover.py",
+    "python _xref.py",
+    "python _ownref.py",
+    "УТВЕРЖДЕНИЕ _ownref.py не держится",
+    "python _sectref.py",
+    "УТВЕРЖДЕНИЕ _sectref.py не держится",
+    "python _audit_final.py",
+    "УТВЕРЖДЕНИЕ _audit_final.py не держится",
+    "python _homoglyph.py",
+    "python _homoglyph_all.py",
+    "python _homoglyph_docx.py",
+    "python _agree_system.py",
+    "УТВЕРЖДЕНИЕ _agree_system.py не держится",
+    "python _agree_neg.py",
+    "python _agree_verify.py",
+    "python _unit_readback.py",
+    "python _struct.py",
+    "python _task_verbatim.py",
+    "python _text_verify.py",
+    "python _adjnoun.py",
+    "python _none_check.py",
+    "python _yo.py",
+    "python _yo2.py",
+    "python _yo_usage.py",
+    "УТВЕРЖДЕНИЕ _yo_usage.py не держится",
+    "python _readback.py",
+    "python _readback9.py",
+    "УТВЕРЖДЕНИЕ _readback9.py не держится",
+    "python _readback_rest.py",
+    "python _rb_bulk.py",
+    "python _rb2.py",
+    "python _rb3.py",
+    "python _composition_audit.py",
+    "python _prep_case.py",
+    "python _prep_discover.py",
+    "python _rb_caps.py",
+    "python _rb72.py",
+    "python _dbg_chain.py"
+   ],
+   "nonzero": 7,
+   "assertions": 93,
+   "unheld": [
+    "python _ownref.py: указателей через раздел или подпись: 20",
+    "python _sectref.py: 21 ссылка «раздел N.M», 0 висячих",
+    "python _audit_final.py: измеренных чисел порядка 1090 (корпус не пуст)",
+    "python _homoglyph_all.py: самотест пройден: 4 засланых токена обнаружены",
+    "python _homoglyph_all.py: текстовых файлов пройдено >= 200 (свип не по пустому дереву)",
+    "python _homoglyph_all.py: смешанных токенов по всей сдаче 0",
+    "python _homoglyph_all.py: напечатаны сами шаблоны поиска (классы видны, а не подразумеваются)",
+    "python _agree_system.py: сводка: 104 места, 19 сырых расхождений, 19 объяснено, 0 реальных",
+    "python _yo_usage.py: размер конвенции: 104 слова с ё, 273 вхождения",
+    "python _readback9.py: верная форма «112 сегментов» сохранилась"
+   ],
+   "restored": true,
+   "refhash": {
+    "zadanieSha": "aa7c249226514b05783d2e99cc962715d38430aa7a9a3043124d970dfbfb90a5",
+    "docxSha": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+    "docxBytes": 421565,
+    "docxShaSuperseded": "d1364886cc6f090a18f02128927847f5cb77114369115cfe25bb10403161ea40",
+    "docxShaSupersededAll": [
+     "ecf106559e5bac232ce9dd7f829545c1c84459ba8395d2c7c2005da1f739aee0",
+     "8cee2e514bf7f4b34842ca9513fc4e2bf5fc80342a4b5883f2f8a0f3185581e1",
+     "d913f1cd4cc8afc11c3be56b44df8b9b291dace83bc0a8b9f268da7b063aa96c",
+     "ca6a61bd59d8c30157a631a3d7afece9a5529a1854ba7f637f63c0720b0fe28e",
+     "aa3d726adf5f588c3982ee8ef1c8f0e5c1586127ae6ba5afb321b113bf95ea81",
+     "d1364886cc6f090a18f02128927847f5cb77114369115cfe25bb10403161ea40"
+    ],
+    "docxBytesHistory": [
+     421182,
+     421182,
+     421179,
+     421178,
+     421252,
+     421266,
+     421565
+    ],
+    "zadanieMeasured": "aa7c249226514b05783d2e99cc962715d38430aa7a9a3043124d970dfbfb90a5",
+    "docxMeasured": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+    "docxMeasuredBytes": 421565,
+    "docxSourceMeasured": "7bdaefaabd8393118aa70847e9b30ff948ae0c88d81846272a7e7004af5f3d0e",
+    "docxSourceMatch": true,
+    "zadanieMatch": true,
+    "docxMatch": true
+   },
+   "zadanie": {
+    "present": true,
+    "file": "zadanie_lab13.txt",
+    "bytes": 6803,
+    "sha": "aa7c24922651",
+    "full": "aa7c249226514b05783d2e99cc962715d38430aa7a9a3043124d970dfbfb90a5",
+    "preserved": true,
+    "source": "sdacha",
+    "lines": 93,
+    "mirror": "C:\\Users\\User\\VirtualBox VMs\\Microelectronics\\lab13\\zadanie_lab13.txt",
+    "crlfOnly": true
+   },
+   "container": {
+    "members_a": 27,
+    "members_b": 27,
+    "names_identical": true,
+    "crc_divergent": [],
+    "size_divergent": [],
+    "compress_divergent": [],
+    "date_divergent": 27
+   }
+  },
+  "stackRuns": {
+   "total": 13,
+   "nonzero": 0
+  },
+  "regen": [
+   {
+    "entity": "mem4x8",
+    "failed": false,
+    "files": 0
+   },
+   {
+    "entity": "probe_tri",
+    "failed": false,
+    "files": 0
+   },
+   {
+    "entity": "probe_reg",
+    "failed": false,
+    "files": 0
+   }
+  ],
+  "homoglyphGate": {
+   "code": 1,
+   "swept": "0",
+   "tokens": "?",
+   "missed": 3
+  },
+  "corpus": {
+   "pairs": 69,
+   "deliveryFiles": 69,
+   "divergent": 0
+  }
+ },
+ "problems": [
+  "pack.json вердикт PROBLEMS",
+  "pack.json содержит 14 проблем",
+  "прегоны отчёта: 7 не нулевых",
+  "утверждения не держатся: python _ownref.py: указателей через раздел или подпись: 20 | python _sectref.py: 21 ссылка «раздел N.M», 0 висячих | python _audit_final.py: измеренных чисел порядка 1090 (корпус не пуст) | python _homoglyph_all.py: самотест пройден: 4 засланых токена обнаружены | python _homoglyph_all.py: текстовых файлов пройдено >= 200 (свип не по пустому дереву) | python _homoglyph_all.py: смешанных токенов по всей сдаче 0",
+  "слой гомоглифов изнутри сдачи -> код 1 (Command failed: C:/Users/User/.dsh/dsh-runtimes/dsh-primary-runtime/dependencies/python/python.exe -X utf8 _homoglyph_all.py\n  File \"D:\\Desktop\\NF\\lab13\\sdacha\\8_sbornik_otcheta\\_homoglyph_all.py\", li)",
+  "утверждения слоя гомоглифов не держатся: самотест слоя прошёл: 4 засланых токена обнаружены | текстовых файлов пройдено не меньше 200 | смешанных токенов по всей сдаче 0",
+  "смешанных токенов в сдаче: ? (обязан быть 0)",
+  "слоем гомоглифов пройдено всего 0 текстовых файлов (ожидалось не меньше 200): обход неполон",
+  "после прогонов аудитора появилось не то, что ожидалось:  вместо 6_proverki/evidence/sdacha_selfcheck.json"
+ ],
+ "runFrom": {
+  "here": "D:\\Desktop\\NF\\lab13\\sdacha\\6_proverki",
+  "sdacha": "D:\\Desktop\\NF\\lab13\\sdacha",
+  "inDelivery": true,
+  "evidenceDir": "D:\\Desktop\\NF\\lab13\\sdacha\\6_proverki\\evidence"
+ }
+}

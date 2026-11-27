@@ -1,0 +1,122 @@
+{
+ "family": "Stratix",
+ "simulationMode": "FUNCTIONAL",
+ "period": 20,
+ "inputs": [
+  "A",
+  "CLK",
+  "OE1",
+  "OE2"
+ ],
+ "outputs": [
+  "Z"
+ ],
+ "buses": [],
+ "vhdl": [
+  "busregs.vhd"
+ ],
+ "userSymbols": {
+  "RB": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    "A",
+    "CLK",
+    "OE"
+   ],
+   "outputs": [
+    {
+     "name": "Q",
+     "hi": 1,
+     "lo": 0
+    }
+   ],
+   "tri": [
+    "Q[1..0]"
+   ]
+  },
+  "RB2": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    "A",
+    "CLK",
+    "OE"
+   ],
+   "outputs": [
+    {
+     "name": "S",
+     "hi": 1,
+     "lo": 0
+    }
+   ]
+  },
+  "SB": {
+   "vhdl": "busregs.vhd",
+   "inputs": [
+    {
+     "name": "D",
+     "hi": 1,
+     "lo": 0
+    }
+   ],
+   "outputs": [
+    "Z"
+   ]
+  }
+ },
+ "entity": "BUSU",
+ "project": "BUSU",
+ "top": "BUSU",
+ "instances": [
+  {
+   "id": "U1",
+   "type": "RB"
+  },
+  {
+   "id": "U2",
+   "type": "RB"
+  },
+  {
+   "id": "V1",
+   "type": "SB"
+  }
+ ],
+ "connect": [
+  [
+   "A",
+   "U1.A"
+  ],
+  [
+   "CLK",
+   "U1.CLK"
+  ],
+  [
+   "OE1",
+   "U1.OE"
+  ],
+  [
+   "A",
+   "U2.A"
+  ],
+  [
+   "CLK",
+   "U2.CLK"
+  ],
+  [
+   "OE2",
+   "U2.OE"
+  ],
+  [
+   "U1.Q[1..0]",
+   "V1.D[1..0]"
+  ],
+  [
+   "U2.Q[1..0]",
+   "V1.D[1..0]"
+  ],
+  [
+   "V1.Z",
+   "Z"
+  ]
+ ],
+ "tristateMarks": true
+}

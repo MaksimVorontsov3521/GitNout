@@ -1,0 +1,302 @@
+########## probe_reg ##########
+74374.bdf
+74374.bsf
+probe_reg.bdf
+probe_reg.qpf
+probe_reg.qsf
+probe_reg.vwf
+--- MAP
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:46:00 2022
+Info: Command: quartus_map probe_reg
+Info: Found 1 design units, including 1 entities, in source file probe_reg.bdf
+    Info: Found entity 1: probe_reg
+Warning: Entity "74374" obtained from "C:/dsh/probe_reg/74374.bdf" instead of from Quartus II megafunction library
+Info: Found 1 design units, including 1 entities, in source file 74374.bdf
+    Info: Found entity 1: 74374
+Info: Elaborating entity "probe_reg" for the top level hierarchy
+Warning: No superset bus at connection
+Warning: No superset bus at connection
+Info: Elaborating entity "74374" for hierarchy "74374:U1"
+Info: Implemented 26 device resources after synthesis - the final resource count might be different
+    Info: Implemented 10 input pins
+    Info: Implemented 8 output pins
+    Info: Implemented 8 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Processing ended: Sun Dec 11 01:46:00 2022
+    Info: Elapsed time: 00:00:00
+MAP_EXIT=0
+--- FNET
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:46:00 2022
+Info: Command: quartus_map probe_reg --generate_functional_sim_netlist
+Info: Found 1 design units, including 1 entities, in source file probe_reg.bdf
+    Info: Found entity 1: probe_reg
+Warning: Entity "74374" obtained from "C:/dsh/probe_reg/74374.bdf" instead of from Quartus II megafunction library
+Info: Found 1 design units, including 1 entities, in source file 74374.bdf
+    Info: Found entity 1: 74374
+Info: Elaborating entity "probe_reg" for the top level hierarchy
+Warning: No superset bus at connection
+Warning: No superset bus at connection
+Info: Elaborating entity "74374" for hierarchy "74374:U1"
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Processing ended: Sun Dec 11 01:46:00 2022
+    Info: Elapsed time: 00:00:00
+FNET_EXIT=0
+--- SIM
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:46:00 2022
+Info: Command: quartus_sim probe_reg
+Info: Simulation coverage is      70.59 %
+Info: Number of transitions in simulation is 101
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sun Dec 11 01:46:00 2022
+    Info: Elapsed time: 00:00:00
+SIM_EXIT=0
+--- FIT
+Info: *******************************************************************
+Info: Running Quartus II Fitter
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:46:00 2022
+Info: Command: quartus_fit probe_reg
+Info: Auto device selection -- successful I/O standard check for EP1S10F484C5
+Info: Auto device selection -- successful PCI I/O clamp diode check for EP1S10F484C5
+Info: Automatically selected device EP1S10F484C5 for design probe_reg
+Info: Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
+Info: Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices. 
+    Info: Device EP1S20F484C5 is compatible
+Info: No exact pin location assignment(s) for 18 pins of 18 total pins
+    Info: Pin Q[7] not assigned to an exact location on the device
+    Info: Pin Q[6] not assigned to an exact location on the device
+    Info: Pin Q[5] not assigned to an exact location on the device
+    Info: Pin Q[4] not assigned to an exact location on the device
+    Info: Pin Q[3] not assigned to an exact location on the device
+    Info: Pin Q[2] not assigned to an exact location on the device
+    Info: Pin Q[1] not assigned to an exact location on the device
+    Info: Pin Q[0] not assigned to an exact location on the device
+    Info: Pin OEN not assigned to an exact location on the device
+    Info: Pin W[7] not assigned to an exact location on the device
+    Info: Pin CLK not assigned to an exact location on the device
+    Info: Pin W[6] not assigned to an exact location on the device
+    Info: Pin W[5] not assigned to an exact location on the device
+    Info: Pin W[4] not assigned to an exact location on the device
+    Info: Pin W[3] not assigned to an exact location on the device
+    Info: Pin W[2] not assigned to an exact location on the device
+    Info: Pin W[1] not assigned to an exact location on the device
+    Info: Pin W[0] not assigned to an exact location on the device
+Info: Timing requirements not specified -- optimizing circuit to achieve the following default global requirements
+    Info: Assuming a global fmax requirement of 1 MHz
+    Info: Not setting a global tsu requirement
+    Info: Not setting a global tco requirement
+    Info: Not setting a global tpd requirement
+Info: Performing register packing on registers with non-logic cell location assignments
+Info: Completed register packing on registers with non-logic cell location assignments
+Info: Completed User Assigned Global Signals Promotion Operation
+Info: Automatically promoted signal "CLK" to use Global clock in PIN L2
+Info: Completed Auto Global Promotion Operation
+Info: Starting register packing
+Info: Started Fast Input/Output/OE register processing
+Info: Finished Fast Input/Output/OE register processing
+Info: Start inferring scan chains for DSP blocks
+Info: Inferring scan chains for DSP blocks is complete
+Info: Fitter is using Normal packing mode for logic elements with Auto setting for Auto Packed Registers logic option
+Info: Moving registers into I/O cells, LUTs, RAM blocks, and DSP blocks to improve timing and density
+Info: Finished moving registers into LUTs, I/O cells, DSP blocks, and RAM blocks
+Info: Finished register packing
+Info: Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
+    Info: Number of I/O pins in group: 17 (unused VREF, 3.30 VCCIO, 9 input, 8 output, 0 bidirectional)
+        Info: I/O standards used: LVTTL.
+Info: I/O bank details before I/O pin placement
+    Info: Statistics of I/O banks
+        Info: I/O bank number 1 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  29 pins available
+        Info: I/O bank number 2 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  30 pins available
+        Info: I/O bank number 3 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  51 pins available
+        Info: I/O bank number 4 does not use VREF pins and has unused VCCIO pins. 1 total pin(s) used --  51 pins available
+        Info: I/O bank number 5 does not use VREF pins and has unused VCCIO pins. 1 total pin(s) used --  28 pins available
+        Info: I/O bank number 6 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  29 pins available
+        Info: I/O bank number 7 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  52 pins available
+        Info: I/O bank number 8 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  51 pins available
+        Info: I/O bank number 9 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  6 pins available
+        Info: I/O bank number 10 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  0 pins available
+        Info: I/O bank number 11 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  6 pins available
+        Info: I/O bank number 12 does not use VREF pins and has unused VCCIO pins. 0 total pin(s) used --  0 pins available
+Info: Fitter placement preparation operations beginning
+Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info: Fitter placement operations beginning
+Info: Fitter placement was successful
+Info: Fitter placement operations ending: elapsed time is 00:00:00
+Info: Fitter routing operations beginning
+Info: Fitter routing operations ending: elapsed time is 00:00:00
+Info: Fitter performed an Auto Fit compilation. Optimizations were skipped to reduce compilation time.
+Info: Completed Fixed Delay Chain Operation
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Info: Completed Auto Delay Chain Operation
+Info: Quartus II Fitter was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sun Dec 11 01:46:01 2022
+    Info: Elapsed time: 00:00:01
+FIT_EXIT=0
+--- ASM
+Info: *******************************************************************
+Info: Running Quartus II Assembler
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:46:01 2022
+Info: Command: quartus_asm probe_reg
+Info: Quartus II Assembler was successful. 0 errors, 0 warnings
+    Info: Processing ended: Sun Dec 11 01:46:02 2022
+    Info: Elapsed time: 00:00:01
+ASM_EXIT=0
+--- TAN
+Info: *******************************************************************
+Info: Running Quartus II Timing Analyzer
+    Info: Version 5.0 Build 148 04/26/2005 SJ Full Version
+    Info: Copyright (C) 1991-2005 Altera Corporation. All rights reserved.
+    Info: Your use of Altera Corporation's design tools, logic functions 
+    Info: and other software and tools, and its AMPP partner logic       
+    Info: functions, and any output files any of the foregoing           
+    Info: (including device programming or simulation files), and any    
+    Info: associated documentation or information are expressly subject  
+    Info: to the terms and conditions of the Altera Program License      
+    Info: Subscription Agreement, Altera MegaCore Function License       
+    Info: Agreement, or other applicable license agreement, including,   
+    Info: without limitation, that your use is for the sole purpose of   
+    Info: programming logic devices manufactured by Altera and sold by   
+    Info: Altera or its authorized distributors.  Please refer to the    
+    Info: applicable agreement for further details.
+    Info: Processing started: Sun Dec 11 01:46:02 2022
+Info: Command: quartus_tan probe_reg
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK" is an undefined clock
+Info: No valid register-to-register data paths exist for clock "CLK"
+Info: tsu for register "74374:U1|17" (data pin = "W[4]", clock pin = "CLK") is 1.751 ns
+    Info: + Longest pin to register delay is 4.641 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.234 ns) = 1.234 ns; Loc. = PIN_U22; Fanout = 1; PIN Node = 'W[4]'
+        Info: 2: + IC(3.184 ns) + CELL(0.223 ns) = 4.641 ns; Loc. = LC_X1_Y8_N3; Fanout = 1; REG Node = '74374:U1|17'
+        Info: Total cell delay = 1.457 ns ( 31.39 % )
+        Info: Total interconnect delay = 3.184 ns ( 68.61 % )
+    Info: + Micro setup delay of destination is 0.010 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 2.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.725 ns) = 0.725 ns; Loc. = PIN_L2; Fanout = 8; CLK Node = 'CLK'
+        Info: 2: + IC(1.633 ns) + CELL(0.542 ns) = 2.900 ns; Loc. = LC_X1_Y8_N3; Fanout = 1; REG Node = '74374:U1|17'
+        Info: Total cell delay = 1.267 ns ( 43.69 % )
+        Info: Total interconnect delay = 1.633 ns ( 56.31 % )
+Info: tco from clock "CLK" to destination pin "Q[1]" through register "74374:U1|14" is 6.678 ns
+    Info: + Longest clock path from clock "CLK" to source register is 2.933 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.725 ns) = 0.725 ns; Loc. = PIN_L2; Fanout = 8; CLK Node = 'CLK'
+        Info: 2: + IC(1.666 ns) + CELL(0.542 ns) = 2.933 ns; Loc. = LC_X1_Y4_N2; Fanout = 1; REG Node = '74374:U1|14'
+        Info: Total cell delay = 1.267 ns ( 43.20 % )
+        Info: Total interconnect delay = 1.666 ns ( 56.80 % )
+    Info: + Micro clock to output delay of source is 0.156 ns
+    Info: + Longest register to pin delay is 3.589 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC_X1_Y4_N2; Fanout = 1; REG Node = '74374:U1|14'
+        Info: 2: + IC(1.213 ns) + CELL(2.376 ns) = 3.589 ns; Loc. = PIN_V22; Fanout = 0; PIN Node = 'Q[1]'
+        Info: Total cell delay = 2.376 ns ( 66.20 % )
+        Info: Total interconnect delay = 1.213 ns ( 33.80 % )
+Info: Longest tpd from source pin "OEN" to destination pin "Q[0]" is 7.577 ns
+    Info: 1: + IC(0.000 ns) + CELL(1.234 ns) = 1.234 ns; Loc. = PIN_U21; Fanout = 8; PIN Node = 'OEN'
+    Info: 2: + IC(4.100 ns) + CELL(2.243 ns) = 7.577 ns; Loc. = PIN_R22; Fanout = 0; PIN Node = 'Q[0]'
+    Info: Total cell delay = 3.477 ns ( 45.89 % )
+    Info: Total interconnect delay = 4.100 ns ( 54.11 % )
+Info: th for register "74374:U1|14" (data pin = "W[1]", clock pin = "CLK") is -1.466 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 2.933 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.725 ns) = 0.725 ns; Loc. = PIN_L2; Fanout = 8; CLK Node = 'CLK'
+        Info: 2: + IC(1.666 ns) + CELL(0.542 ns) = 2.933 ns; Loc. = LC_X1_Y4_N2; Fanout = 1; REG Node = '74374:U1|14'
+        Info: Total cell delay = 1.267 ns ( 43.20 % )
+        Info: Total interconnect delay = 1.666 ns ( 56.80 % )
+    Info: + Micro hold delay of destination is 0.100 ns
+    Info: - Shortest pin to register delay is 4.499 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.234 ns) = 1.234 ns; Loc. = PIN_P19; Fanout = 1; PIN Node = 'W[1]'
+        Info: 2: + IC(3.180 ns) + CELL(0.085 ns) = 4.499 ns; Loc. = LC_X1_Y4_N2; Fanout = 1; REG Node = '74374:U1|14'
+        Info: Total cell delay = 1.319 ns ( 29.32 % )
+        Info: Total interconnect delay = 3.180 ns ( 70.68 % )
+Info: Quartus II Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Processing ended: Sun Dec 11 01:46:02 2022
+    Info: Elapsed time: 00:00:00
+TAN_EXIT=0
+74374.bsf
+probe_reg.asm.rpt
+probe_reg.fit.eqn
+probe_reg.fit.rpt
+probe_reg.flow.rpt
+probe_reg.map.eqn
+probe_reg.map.rpt
+probe_reg.pin
+probe_reg.sim.rpt
+probe_reg.sim.vwf
+probe_reg.sof
+probe_reg.tan.rpt
+########## ALL DONE ##########
+__EXIT=0

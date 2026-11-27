@@ -1,0 +1,51 @@
+------------------------------------------------------------------
+--  Lab 13, task 4 supplement: how LPM_RAM_DQ writes with no clock
+--
+--  Configuration fixed by the assignment (chapter 18, task 4):
+--
+--      LPM_ADDRESS_CONTROL  "unregistered"
+--      LPM_FILE             <none>        (left at its default, so no
+--                                          initialisation file is used)
+--      LPM_INDATA           "unregistered"
+--      LPM_NUMWORDS         <none>        (left at its default, which
+--                                          lpm_ram_dq.tdf defines as 2^LPM_WIDTHAD)
+--      LPM_OUTDATA          "unregistered"
+--      LPM_WIDTH            8
+--      LPM_WIDTHAD          10
+--
+--  Only the inputs WE, ADDRESS, DATA and the output Q are brought out, as the
+--  task requires ("leave only the inputs WE, ADDRESS, DATA and the output Q").
+--  inclock and outclock are deliberately NOT connected: lpm_ram_dq.tdf declares
+--  both with a default of VCC, and with all three registration parameters set to
+--  UNREGISTERED there is no register left to clock, so the design really has only
+--  the four ports the task asks for.
+--
+--  Supplement: this copy exists to settle, by measurement, HOW a write is
+--  taken when there is no clock edge anywhere in the design. The stimulus
+--  moves ADDRESS and DATA while WE is held high, which is exactly the case the
+--  simulator warns about ("Address line changed ... during write").
+------------------------------------------------------------------
+INCLUDE "lpm_ram_dq.inc";
+
+SUBDESIGN lpramwb
+(
+	data[7..0]	: INPUT;
+	address[9..0]	: INPUT;
+	we		: INPUT;
+	q[7..0]		: OUTPUT;
+)
+
+VARIABLE
+	mem : lpm_ram_dq WITH (
+		LPM_WIDTH = 8,
+		LPM_WIDTHAD = 10,
+		LPM_ADDRESS_CONTROL = "UNREGISTERED",
+		LPM_INDATA = "UNREGISTERED",
+		LPM_OUTDATA = "UNREGISTERED");
+
+BEGIN
+	mem.data[] = data[];
+	mem.address[] = address[];
+	mem.we = we;
+	q[] = mem.q[];
+END;

@@ -1,0 +1,105 @@
+{
+  "what": "Numeral-agreement layer: every \"<numeral> <noun>\" site in the report is checked against the Russian agreement rule, and every disagreement is either fixed or explained by a named grammatical construction.",
+  "measured_by": "lead",
+  "scripts": [
+    "lab13/_agree_system.py (checker)",
+    "lab13/_agree_neg.py (negative test of the exemptions)",
+    "lab13/_agree_verify.py (confirms the fixes landed and no stale form remains)"
+  ],
+  "counts": {
+    "sites_checked": 104,
+    "raw_disagreements": 19,
+    "exempt_by_construction": 19,
+    "real_remaining": 0
+  },
+  "lexicon": "24 countable nouns used by the report (переход, раз, комбинация, наблюдение, фаза, сверка, сегмент, узел, элемент, экземпляр, состояние, путь, вывод, слово, бит, байт, проход, нарушение, предупреждение, сообщение, строка, линия, провод, утверждение), each with its three agreement forms; the form is computed from the numeral, never typed.",
+  "defects_found_and_fixed": [
+    {
+      "where": "§5.3, table 5 cell",
+      "was": "144 переходов",
+      "now": "144 перехода",
+      "rule": "256-style agreement: last digit 4 selects the paucal form",
+      "file": "_body3.py:100"
+    },
+    {
+      "where": "§5.4",
+      "was": "зафиксировано 1204 раз",
+      "now": "зафиксировано 1204 раза",
+      "rule": "last digit 4 selects the paucal form",
+      "file": "_body3.py:111"
+    },
+    {
+      "where": "§10, first bullet",
+      "was": "64 комбинаций входов 74155",
+      "now": "64 комбинации входов 74155",
+      "rule": "nominative after 64",
+      "file": "_body7.py:157"
+    },
+    {
+      "where": "§10, polarity bullet",
+      "was": "64 наблюдений, ноль расхождений",
+      "now": "64 наблюдения, ноль расхождений",
+      "rule": "nominative after 64",
+      "file": "_body7.py:233"
+    },
+    {
+      "where": "§9.1",
+      "was": "у зонда TRI — 2 путь tpd",
+      "now": "у зонда TRI — 2 пути tpd",
+      "rule": "last digit 2 selects the paucal form",
+      "file": "_body7.py:26"
+    },
+    {
+      "where": "§3.1",
+      "was": "насчитала 52 сегментов со значением Z",
+      "now": "52 сегмента",
+      "rule": "nominative after 52",
+      "file": "_body1.py:180"
+    },
+    {
+      "where": "§3.2",
+      "was": "все 64 сегментов X предсказаны моделью",
+      "now": "все 64 сегмента X",
+      "rule": "nominative after 64",
+      "file": "_body1.py:164"
+    },
+    {
+      "where": "§9.4",
+      "was": "Насчитано 52 сегментов Z; 112 сегментов Z; 64 сегментов X",
+      "now": "52 сегмента Z; 112 сегментов Z; 64 сегмента X",
+      "rule": "the 112 site was already correct and stays genitive plural",
+      "file": "_body7.py:138,141,142"
+    },
+    {
+      "where": "§4.3",
+      "was": "Собственные схемы работы построенные по другому краю того же диапазона, и это полезно…",
+      "now": "Собственные схемы работы построены по другому краю того же диапазона, и это полезно…",
+      "rule": "the subject had no predicate: the first attempt inserted a comma and turned the participle into an adjoined phrase, which is an anacoluthon, not a fix; the correct repair is the short form «построены» as the predicate. Found only by reading the rendered sentence whole, which is why the read-back step is mandatory.",
+      "file": "_body2.py:88"
+    }
+  ],
+  "exemptions_inspected_one_by_one": {
+    "всех at a distance (1 site)": "«перебором ВСЕХ 2 в 6-й = 64 комбинаций шести входов» — the noun is governed by \"всех\", not by the numeral, so genitive plural is correct; the rule allows digits in the gap, which is why an earlier version of the checker reported this as a defect.",
+    "multi-group numerals (16 sites)": "«1024 слов», «8192 бит», «1024 байт», «1,229,701 утверждений», «74374 путей» — after a thousands-and-up numeral the idiomatic government is genitive plural, not the digit-selected form.",
+    "oblique case (2 sites)": "«смонтирована из 21 экземпляра» — after a governing preposition the noun takes the case of the phrase. HONEST LIMITATION: a regular expression cannot decline Russian, so this exemption is approximate, and for 21 both «из 21 экземпляра» and «из 21 экземпляров» occur in standard usage; the report uses the digit-agreeing variant consistently in both places, which is defensible but is the weakest of the three rules. It was kept because removing it would re-report two sites that are not errors."
+  },
+  "negative_test": {
+    "purpose": "prove the exemptions are not a blanket that hides real defects",
+    "result": "nominative disagreements (52 сегментов, 64 комбинаций) are still caught; all three exemption classes fire exactly on their intended shape",
+    "limitation_recorded": "one case in the first draft of the negative test was itself malformed: it asserted that \"примера на 256 элементов\" must be CATCHed, but that form is correct, so there is nothing to catch. The test was corrected, and the residual looseness (a preposition such as \"на\" will exempt whatever follows it) is stated above rather than concealed.",
+    "correction": "the first draft of the test asserted that «примера на 256 элементов» must be caught; that form is the norm after «на» of capacity (compare «комната на 5 человек»), so the expectation was wrong and the test, not the checker, was corrected. A case «распологает те же элементы в решётку 16 на 16» was added to prove a digit-agreeing form is still expected to be caught when no construction governs it."
+  },
+  "method_note": "This layer exists because four earlier defects in this lab were found only by reading the rendered document back, not by any checker. Agreement is the same class of defect: invisible to XML inspection, visible to a reader, and computable from the numeral, so it is worth automating. Every fixed site now computes its form from the data value via plural(), so a change in the numbers cannot silently reintroduce a wrong ending.",
+  "verification": {
+    "docx_after_fixes": "421568 B, sha256 72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+    "stale_forms_remaining": 0,
+    "full_battery": "14 checkers EXIT=0 on this build: check_report, check_spacing, check_layout, _audit2, _latin_scan, _audit_final, _req_cover, _xref, _ownref, _sectref, _homoglyph_docx, _agree_system, _agree_neg, _agree_verify",
+    "note_on_size": "the previous reference differed by one byte (421179 vs 421178), so the copies can only be told apart by the hash, not by length."
+  },
+  "build_reference": {
+    "docx_sha256": "72b89ad9a2c426920bf9b8c58a90e1aaa5eaeda6d4d743dc30593bd3ecfd9d43",
+    "docx_bytes": 421565,
+    "stated_at": "2026-11-26T23:54:51.643Z",
+    "note": "Any other sha256 in this file is a measurement of an earlier build and is labelled as historical where it appears; it has deliberately not been rewritten, because rewriting a recorded measurement would falsify it."
+  }
+}
